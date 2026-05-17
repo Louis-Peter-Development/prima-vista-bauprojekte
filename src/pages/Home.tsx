@@ -1,147 +1,16 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Counter from '../components/Counter';
-import { useLightbox, type LightboxItem } from '../components/Lightbox';
+import FeaturedProjects from '../components/home/FeaturedProjects';
+import HomeHero from '../components/home/HomeHero';
+import HomeMarquee from '../components/home/HomeMarquee';
+import { TRADES_PREVIEW } from '../data/home';
 import '../styles/pages/home.css';
 
-const HERO_IMAGES = [
-  '/assets/img/proj-moroccan-dining-wide.jpg',
-  '/assets/img/proj-sushi-wide.jpg',
-  '/assets/img/proj-lobby-tree-wide.jpg'
-];
-
-const TRADES = [
-  'Sanierung', 'Renovierung', 'Gastronomie-Ausbau', 'Bäder', 'Küchen', 'Böden',
-  'Elektro', 'Heizung', 'Fassade', 'Maler & Lack', 'Treppen', 'Trockenbau',
-];
-
-const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string }> = [
-  { num: '01', name: 'Bäder & Sanitär',     lead: 'Wanne, Dusche, WC' },
-  { num: '02', name: 'Küchen & Möbelbau',   lead: 'Schreinerei' },
-  { num: '03', name: 'Böden & Beläge',      lead: 'Parkett, Stein, Vinyl' },
-  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX' },
-  { num: '05', name: 'Heizungsbau',         lead: 'Wärmepumpe, FBH' },
-  { num: '06', name: 'Maler & Lackierer',   lead: 'Farben, Tapeten' },
-  { num: '07', name: 'Fassadensanierung',   lead: 'Putz, WDVS' },
-  { num: '08', name: 'Trockenbau',          lead: 'Wände, Decken' },
-];
-
-const FEATURED: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
-  {
-    src: '/assets/img/proj-moroccan-dining.jpg',
-    title: 'Riad — Gastronomie · Frankfurt · 2025',
-    year: '2025',
-    alt: 'Riad Restaurant Frankfurt',
-    gridClass: 'proj--a',
-  },
-  {
-    src: '/assets/img/proj-concrete-sofa-tall.jpg',
-    title: 'Villa Sichtbeton — Wohnsitz · Luzern · 2024',
-    year: '2024',
-    alt: 'Villa Sichtbeton Luzern',
-    gridClass: 'proj--b',
-    revealDelay: 1,
-  },
-  {
-    src: '/assets/img/proj-kitchen-oak.jpg',
-    title: 'Küche Eichenholz — Wohnsitz · Frankfurt · 2025',
-    year: '2025',
-    alt: 'Küche Eichenholz Frankfurt',
-    gridClass: 'proj--c',
-  },
-  {
-    src: '/assets/img/proj-spa-bath.jpg',
-    title: 'Spa-Bad — Hotel · Emmenbrücke · 2025',
-    year: '2025',
-    alt: 'Spa-Bad Hotel',
-    gridClass: 'proj--d',
-    revealDelay: 1,
-  },
-  {
-    src: '/assets/img/proj-lobby-tree.jpg',
-    title: 'Lobby — Office · Frankfurt · 2026',
-    year: '2026',
-    alt: 'Lobby Office Frankfurt',
-    gridClass: 'proj--e',
-    revealDelay: 2,
-  },
-];
-
-const FEATURED_TITLES: Record<string, string> = {
-  'proj--a': 'Riad — Gastronomie',
-  'proj--b': 'Villa Sichtbeton',
-  'proj--c': 'Küche Eichenholz',
-  'proj--d': 'Spa-Bad — Hotel',
-  'proj--e': 'Office Lobby',
-};
-
 export default function Home() {
-  const { open } = useLightbox();
-  const items: LightboxItem[] = FEATURED.map((p) => ({ src: p.src, title: p.title }));
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <>
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero__bg-slideshow">
-          {HERO_IMAGES.map((src, i) => (
-            <div
-              key={src}
-              className={`hero__bg-slide ${i === currentSlide ? 'is-active' : ''}`}
-              style={{ backgroundImage: `url(${src})` }}
-            />
-          ))}
-          <div className="hero__bg-overlay"></div>
-        </div>
-
-        <div className="hero__inner">
-          <div className="hero__topline">
-            <span><span className="dot"></span>Frankfurt &amp; Emmenbrücke</span>
-            <span>Sanierung &amp; Renovierung — Bauprojekte seit 2014</span>
-            <span>N° 26 / Frühjahr 2026</span>
-          </div>
-
-          <h1 className="hero__headline">
-            <span className="hero__headline-line"><em>Eine</em> Vision.</span>
-            <span className="hero__headline-line"><em>Eine</em> Adresse.</span>
-            <span className="hero__headline-line"><em>Ein</em> Team.</span>
-          </h1>
-
-          <div className="hero__meta">
-            <div>
-              <div className="hero__meta-num">01 — Editorial</div>
-              <p className="hero__lede">
-                <strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werksgewähr.
-              </p>
-            </div>
-            <div></div>
-            <div className="hero__cta">
-              <small>Termin in 48 Stunden</small>
-              <Link className="btn btn--light" to="/kontakt">
-                Termin vereinbaren <span className="arrow">&gt;</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MARQUEE */}
-      <section className="marquee" aria-hidden="true">
-        <div className="marquee__track">
-          {[...TRADES, ...TRADES].map((label, i) => (
-            <span className="marquee__item" key={`${label}-${i}`}>{label}</span>
-          ))}
-        </div>
-      </section>
+      <HomeHero />
+      <HomeMarquee />
 
       {/* PROMISE */}
       <section className="promise">
@@ -218,49 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED PROJECTS */}
-      <section className="featured">
-        <div className="featured__head">
-          <div className="reveal">
-            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Ausgewählte Projekte</div>
-            <h2>
-              Zuletzt aus der<br />
-              <em>Werkstatt.</em>
-            </h2>
-          </div>
-          <div className="meta reveal" data-delay="1">
-            2024 — 2026<br />
-            Frankfurt · Wiesbaden · Luzern
-          </div>
-        </div>
-
-        <div className="featured__grid">
-          {FEATURED.map((p, i) => (
-            <a
-              key={p.src}
-              className={`proj ${p.gridClass} reveal`}
-              data-delay={p.revealDelay}
-              href={p.src}
-              onClick={(e) => {
-                e.preventDefault();
-                open(items, i);
-              }}
-            >
-              <img src={p.src} alt={p.alt} />
-              <div className="proj__cap">
-                <span className="ttl">{FEATURED_TITLES[p.gridClass]}</span>
-                <span className="yr">{p.year}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="featured__more reveal">
-          <Link className="btn btn--light" to="/projekte">
-            Alle Projekte ansehen <span className="arrow">&gt;</span>
-          </Link>
-        </div>
-      </section>
+      <FeaturedProjects />
 
       {/* STATS */}
       <section className="stats">
