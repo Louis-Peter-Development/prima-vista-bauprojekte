@@ -1,25 +1,58 @@
-# CODING AGENTS: READ THIS FIRST
+# Prima Vista Bauprojekte
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Editorial website for Prima Vista Bauprojekte — a premium renovation & construction company (Frankfurt & Emmenbrücke).
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+Five pages — Home, Gewerke, Komplett-Pakete, Projekte, Kontakt — built as a React SPA with a cream-and-copper aesthetic, Cormorant Garamond + Manrope + Inter, scroll reveals, animated counters, lightbox gallery, and a filterable projects grid.
 
-## What you should do — IMPORTANT
+## Stack
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+- [Vite 5](https://vitejs.dev/) — dev server & build
+- [React 18](https://react.dev/) + TypeScript
+- [React Router 6](https://reactrouter.com/) — client-side routing
 
-**Read `project/index.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Scripts
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+```sh
+npm install
+npm run dev        # start dev server at http://localhost:5173
+npm run build      # type-check + production build to dist/
+npm run preview    # preview the production build
+npm run typecheck  # tsc --noEmit
+```
 
-## About the design files
+## Project structure
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+```
+public/assets/           Static fonts and images (referenced by absolute /assets/... paths)
+src/
+  main.tsx               Vite entry — mounts <App> in BrowserRouter
+  App.tsx                Route table
+  components/
+    Layout.tsx           Header + Footer + SocialRail + Chat + LightboxProvider wrapper
+    Header.tsx           Sticky nav with active-state NavLinks
+    Footer.tsx
+    SocialRail.tsx       Fixed left-edge social icons
+    ChatBubble.tsx       Fixed bottom-right chat button
+    Lightbox.tsx         Context provider + modal for image galleries
+    Counter.tsx          Wraps useCounter into a render-friendly element
+    icons.tsx            Inline SVG icon components
+  hooks/
+    useReveal.ts         IntersectionObserver — adds `.is-in` to `.reveal` elements
+    useCounter.ts        Eased number animation when the element scrolls into view
+  pages/
+    Home.tsx, Gewerke.tsx, KomplettPakete.tsx, Projekte.tsx, Kontakt.tsx
+  styles/
+    tokens.css           Design tokens (colors, type, space, motion) + @font-face
+    global.css           Reset, type utilities, buttons, header/footer, social rail, lightbox
+    pages/*.css          Per-page sections (extracted from the original embedded <style> blocks)
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Conventions
 
-## Bundle contents
+- Design tokens live in `src/styles/tokens.css` as CSS custom properties (`--pv-*`). Global components in `src/styles/global.css`; per-page sections in `src/styles/pages/`.
+- Images and fonts ship via `public/assets/` so the legacy class-based styles work unchanged.
+- Routes match the legacy filenames without the `.html` (e.g. `/komplett-pakete`).
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `PrimaVista` project files (HTML prototypes, assets, components)
+## Legacy reference
+
+`_legacy/` contains the original static HTML pages, the live-edit `tweaks-panel.jsx`, and the chat handoff notes (also under `chats/`) — kept for reference while diffing against the original design. They are not part of the build.
