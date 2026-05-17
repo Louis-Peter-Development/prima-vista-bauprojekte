@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SocialRail from './SocialRail';
 import ChatBubble from './ChatBubble';
+import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
 
@@ -36,6 +37,7 @@ export default function Layout() {
       </main>
       <SocialRail />
       <ChatBubble />
+      <CookieConsent />
       <Footer />
     </LightboxProvider>
   );
