@@ -262,9 +262,9 @@
 .kalk-trades__item button {
   width: 100%;
   display: grid;
-  grid-template-columns: 24px auto 1fr auto;
+  grid-template-columns: 20px 36px minmax(0, 1fr) max-content;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   padding: 18px 16px;
   background: transparent;
   border: 0;
@@ -309,14 +309,18 @@
   flex-direction: column;
   gap: 2px;
   min-width: 0;
+  padding-right: 8px;
 }
 .kalk-trades__name {
+  display: block;
   font-family: var(--pv-font-display);
   font-weight: 700;
   font-size: 13px;
-  letter-spacing: 0.08em;
+  line-height: 1.32;
+  letter-spacing: 0.075em;
   text-transform: uppercase;
   color: var(--pv-ink);
+  overflow-wrap: anywhere;
 }
 .kalk-trades__lead {
   font-family: var(--pv-font-body);
@@ -331,6 +335,8 @@
   font-size: 13px;
   color: var(--pv-ink);
   white-space: nowrap;
+  justify-self: end;
+  align-self: center;
 }
 .kalk-trades__price small {
   font-size: 10px;
@@ -567,7 +573,7 @@
   .kalk-quality__opt { min-height: auto; padding: 18px 20px 20px; }
 
   .kalk-trades__item button {
-    grid-template-columns: 22px 28px 1fr auto;
+    grid-template-columns: 22px 30px minmax(0, 1fr) max-content;
     gap: 10px;
     padding: 14px 8px;
   }
