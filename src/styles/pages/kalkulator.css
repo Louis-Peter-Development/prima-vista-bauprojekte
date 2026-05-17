@@ -339,10 +339,14 @@
 }
 
 /* ---- Result column (sticky aside) ---- */
-.kalk-result { min-width: 0; }
-.kalk-result__sticky {
+.kalk-result {
+  min-width: 0;
   position: sticky;
-  top: 96px;
+  top: 112px;
+  align-self: start;
+}
+.kalk-result__sticky {
+  position: relative;
   background: var(--pv-ink-1);
   color: var(--pv-bone);
   padding: 40px 36px 36px;
@@ -538,7 +542,7 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
-  .kalk-result__sticky { position: static; }
+  .kalk-result { position: static; }
   .kalk-trades { grid-template-columns: 1fr; }
   .kalk-trades__item:nth-child(odd) { border-right: 0; }
 }

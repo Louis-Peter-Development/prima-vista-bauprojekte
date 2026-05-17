@@ -5,7 +5,7 @@
   color: var(--pv-bone);
   padding: 96px 0 120px;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   isolation: isolate;
 }
 .kontakt::before {
@@ -189,8 +189,10 @@
   background: var(--pv-cream);
   color: var(--pv-ink);
   padding: 56px 56px 56px;
-  position: relative;
+  position: sticky;
+  top: 112px;
   overflow: hidden;
+  align-self: start;
 }
 .kontakt__form-num {
   position: absolute;
@@ -448,7 +450,7 @@
 @media (max-width: 880px) {
   .kontakt__inner, .kontakt__offices, .faq__inner { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
-  .kontakt__form-wrap { padding: 40px 32px; }
+  .kontakt__form-wrap { position: relative; top: auto; padding: 40px 32px; }
   .kontakt__form-num { font-size: 100px; }
 }
 
