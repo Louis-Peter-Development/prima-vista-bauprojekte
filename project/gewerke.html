@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gewerke — Prima Vista Bauprojekte</title>
+<meta name="description" content="Zwanzig Gewerke aus einer Hand — von Bauleitung bis Schreinerei. Prima Vista koordiniert alle Bauleistungen für Ihre Sanierung." />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  /* ============== GEWERKE ============== */
+
+  /* Featured trade row */
+  .featured-trades {
+    background: var(--pv-cream);
+    padding: 64px 0 96px;
+  }
+  .featured-trades__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .featured-trades__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 48px;
+  }
+  .featured-trades__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.05;
+    color: var(--pv-ink);
+    margin: 0;
+  }
+  .featured-trades__head h2 em { color: var(--pv-copper); }
+  .featured-trades__head p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--pv-text-on-light-muted);
+    margin: 0;
+    max-width: 380px;
+  }
+  .featured-trades__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+  .ft-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+  }
+  .ft-card--feature { aspect-ratio: 5 / 6; }
+  .ft-card img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 800ms var(--pv-ease-out);
+  }
+  .ft-card:hover img { transform: scale(1.06); }
+  .ft-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20, 19, 18, .78) 0%, rgba(20, 19, 18, .25) 50%, rgba(20, 19, 18, .1) 100%);
+  }
+  .ft-card__body {
+    position: absolute; inset: auto 28px 28px 28px;
+    z-index: 2; color: var(--pv-bone);
+  }
+  .ft-card__count {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--pv-copper-bright);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .ft-card__title {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    margin: 0 0 12px;
+  }
+  .ft-card--feature .ft-card__title { font-size: 30px; }
+  .ft-card__desc {
+    font-family: var(--pv-font-body);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0;
+  }
+
+  /* Full index — alphabetical list ---- */
+  .trade-index {
+    background: var(--pv-cream-paper);
+    padding: 140px 0;
+  }
+  .trade-index__head {
+    max-width: var(--pv-container);
+    margin: 0 auto 80px;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+  }
+  .trade-index__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    color: var(--pv-ink);
+    margin: 0;
+  }
+  .trade-index__head h2 em { color: var(--pv-copper); }
+  .trade-index__head p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--pv-text-on-light-muted);
+    margin: 0;
+  }
+
+  /* Two-column: sticky preview image + scrolling list */
+  .trade-index__split {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 80px;
+    align-items: start;
+  }
+  .trade-index__preview {
+    position: sticky;
+    top: 120px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+  }
+  .trade-index__preview img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 400ms var(--pv-ease-out);
+  }
+  .trade-index__preview img.is-active { opacity: 1; }
+  .trade-index__preview-cap {
+    position: absolute;
+    left: 24px; bottom: 24px;
+    z-index: 2;
+    color: var(--pv-bone);
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .trade-index__preview-cap .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
+  .trade-index__preview-cap .ttl { color: var(--pv-bone); }
+
+  .trade-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(26, 26, 26, .15);
+  }
+  .trade-list__row {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) 100px;
+    align-items: baseline;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, .12);
+    cursor: pointer;
+    transition: padding-left 200ms var(--pv-ease-out);
+  }
+  .trade-list__row:hover,
+  .trade-list__row.is-active {
+    padding-left: 12px;
+  }
+  .trade-list__row .num {
+    font-family: var(--pv-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--pv-text-on-light-muted);
+  }
+  .trade-list__row.is-active .num { color: var(--pv-copper); }
+  .trade-list__row .name {
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pv-ink);
+    line-height: 1.1;
+    transition: color 200ms;
+  }
+  .trade-list__row:hover .name,
+  .trade-list__row.is-active .name {
+    color: var(--pv-copper);
+  }
+  .trade-list__row .lead {
+    font-family: var(--pv-font-body);
+    font-size: 14px;
+    color: var(--pv-text-on-light-muted);
+    text-align: right;
+    letter-spacing: 0.04em;
+  }
+
+  /* Process band */
+  .process {
+    background: var(--pv-ink-1);
+    color: var(--pv-bone);
+    padding: 140px 0;
+  }
+  .process__inner {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .process__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 96px;
+  }
+  .process__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    color: var(--pv-bone);
+    margin: 0;
+  }
+  .process__head h2 em { color: var(--pv-copper-bright); }
+  .process__head p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0;
+    max-width: 420px;
+  }
+  .process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    border-top: 1px solid rgba(236, 229, 223, .15);
+    padding-top: 48px;
+  }
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .process-step__num {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 0.85;
+    color: var(--pv-copper-bright);
+  }
+  .process-step__label {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-bone);
+  }
+  .process-step h3 {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pv-bone);
+    margin: 0;
+    line-height: 1.15;
+  }
+  .process-step p {
+    font-family: var(--pv-font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0;
+    max-width: 260px;
+  }
+
+  /* End CTA local */
+  .end-cta-local {
+    background: var(--pv-cream);
+    padding: 120px 0;
+    text-align: center;
+  }
+  .end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+  .end-cta-local h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.05;
+    color: var(--pv-ink);
+    margin: 0 0 32px;
+  }
+  .end-cta-local h2 em { color: var(--pv-copper); }
+
+  @media (max-width: 880px) {
+    .featured-trades__head, .featured-trades__grid, .trade-index__head, .trade-index__split, .process__head, .process__steps { grid-template-columns: 1fr; gap: 32px; }
+    .trade-index__preview { position: relative; top: 0; aspect-ratio: 4/3; }
+  }
+</style>
+</head>
+<body>
+
+<div data-pv-header="gewerke.html"></div>
+
+<!-- Page intro -->
+<section class="page-intro">
+  <div class="page-intro__inner">
+    <div class="reveal">
+      <div class="crumb"><span class="num">02</span> Gewerke · Bauleistungen</div>
+      <h1>
+        Zwanzig<br/>
+        Gewerke,<br/>
+        <em>eine Hand.</em>
+      </h1>
+    </div>
+    <div class="reveal" data-delay="1">
+      <p class="lede">
+        Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Frankfurt und Emmenbrücke.
+      </p>
+      <ul class="meta-list">
+        <li>Auswahl<span>20 Gewerke</span></li>
+        <li>Koordination<span>Inhouse-Bauleitung</span></li>
+        <li>Materialien<span>Inklusive Festpreis</span></li>
+        <li>Garantie<span>5 Jahre</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Featured trades -->
+<section class="featured-trades">
+  <div class="featured-trades__inner">
+    <div class="featured-trades__head">
+      <div class="reveal">
+        <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Am häufigsten gefragt</div>
+        <h2 style="margin-top: 18px;">
+          Drei Gewerke, die fast<br/>
+          jedes Projekt <em>tragen.</em>
+        </h2>
+      </div>
+      <p class="reveal" data-delay="1">
+        Ob Komplettsanierung oder Einzelauftrag — drei Disziplinen sind in jedem zweiten Auftrag dabei. Mit eigenen Teams in Bad, Küche und Boden.
+      </p>
+    </div>
+    <div class="featured-trades__grid">
+      <a class="ft-card ft-card--feature reveal"
+         data-lightbox="featured-trades"
+         data-src="assets/img/photo-badezimmer.jpg"
+         data-title="Badezimmer — Sanitär &amp; Fliesen">
+        <img src="assets/img/photo-badezimmer.jpg" alt="Badezimmer-Sanierung" />
+        <div class="ft-card__body">
+          <span class="ft-card__count">01 — 142 Projekte</span>
+          <h3 class="ft-card__title">Bäder &amp;<br/>Sanitär</h3>
+          <p class="ft-card__desc">Komplettbäder von 4 bis 28 m². Fliesen, Sanitär, Heizkörper, Beleuchtung — aus einer Bestellung.</p>
+        </div>
+      </a>
+      <a class="ft-card reveal" data-delay="1"
+         data-lightbox="featured-trades"
+         data-src="assets/img/proj-kitchen-oak.jpg"
+         data-title="Küchen &amp; Möbelbau">
+        <img src="assets/img/proj-kitchen-oak.jpg" alt="Küche" />
+        <div class="ft-card__body">
+          <span class="ft-card__count">02 — 98 Projekte</span>
+          <h3 class="ft-card__title">Küchen &amp;<br/>Möbelbau</h3>
+          <p class="ft-card__desc">Maßgefertigte Schreiner­küchen und Einbauten.</p>
+        </div>
+      </a>
+      <a class="ft-card reveal" data-delay="2"
+         data-lightbox="featured-trades"
+         data-src="assets/img/proj-floor-oak.jpg"
+         data-title="Bodenbeläge">
+        <img src="assets/img/proj-floor-oak.jpg" alt="Boden" />
+        <div class="ft-card__body">
+          <span class="ft-card__count">03 — 187 Projekte</span>
+          <h3 class="ft-card__title">Böden &amp;<br/>Beläge</h3>
+          <p class="ft-card__desc">Parkett, Vinyl, Naturstein, Estrich, Industrieboden.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Full alphabetical index -->
+<section class="trade-index">
+  <div class="trade-index__head">
+    <div class="reveal">
+      <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Alle Gewerke</div>
+      <h2 style="margin-top: 18px;">
+        Das vollständige<br/>
+        <em>Verzeichnis.</em>
+      </h2>
+    </div>
+    <p class="reveal" data-delay="1">
+      Fahren Sie über einen Eintrag, um eine Vorschau zu sehen. Jedes Gewerk wird durch eigene Bauleitung koordiniert — Sie buchen einzeln oder gebündelt.
+    </p>
+  </div>
+
+  <div class="trade-index__split">
+    <div class="trade-index__preview" id="trade-preview">
+      <img src="assets/img/photo-badezimmer.jpg" alt="" data-key="bad" class="is-active" />
+      <img src="assets/img/proj-kitchen-oak.jpg" alt="" data-key="kueche" />
+      <img src="assets/img/photo-fassade.jpg" alt="" data-key="fassade" />
+      <img src="assets/img/photo-dach.jpg" alt="" data-key="dach" />
+      <img src="assets/img/photo-elektro.jpg" alt="" data-key="elektro" />
+      <img src="assets/img/proj-floor-oak.jpg" alt="" data-key="boden" />
+      <img src="assets/img/proj-stairs-concrete.jpg" alt="" data-key="treppen" />
+      <img src="assets/img/photo-luftwaerme-clean.jpg" alt="" data-key="heizung" />
+      <img src="assets/img/photo-abdichtung.jpg" alt="" data-key="abdichtung" />
+      <img src="assets/img/proj-paint-swatches.jpg" alt="" data-key="maler" />
+      <img src="assets/img/proj-concrete-corner.jpg" alt="" data-key="trockenbau" />
+      <img src="assets/img/photo-heizstraenge-clean.jpg" alt="" data-key="sanitaer" />
+      <div class="trade-index__preview-cap">
+        <span class="num" id="trade-preview-num">№ 01</span>
+        <span class="ttl" id="trade-preview-ttl">Bäder &amp; Sanitär</span>
+      </div>
+    </div>
+
+    <ul class="trade-list" id="trade-list">
+      <li class="trade-list__row is-active" data-key="bad" data-title="Bäder &amp; Sanitär" data-num="№ 01">
+        <span class="num">01</span>
+        <span class="name">Bäder &amp; Sanitär</span>
+        <span class="lead">Wanne, Dusche, WC</span>
+      </li>
+      <li class="trade-list__row" data-key="kueche" data-title="Küchen &amp; Möbelbau" data-num="№ 02">
+        <span class="num">02</span>
+        <span class="name">Küchen &amp; Möbelbau</span>
+        <span class="lead">Schreinerei</span>
+      </li>
+      <li class="trade-list__row" data-key="boden" data-title="Böden &amp; Beläge" data-num="№ 03">
+        <span class="num">03</span>
+        <span class="name">Böden &amp; Beläge</span>
+        <span class="lead">Parkett, Stein, Vinyl</span>
+      </li>
+      <li class="trade-list__row" data-key="elektro" data-title="Elektroinstallation" data-num="№ 04">
+        <span class="num">04</span>
+        <span class="name">Elektroinstallation</span>
+        <span class="lead">Strom, Licht, KNX</span>
+      </li>
+      <li class="trade-list__row" data-key="sanitaer" data-title="Sanitärinstallation" data-num="№ 05">
+        <span class="num">05</span>
+        <span class="name">Sanitärinstallation</span>
+        <span class="lead">Wasser, Abwasser</span>
+      </li>
+      <li class="trade-list__row" data-key="heizung" data-title="Heizungsbau" data-num="№ 06">
+        <span class="num">06</span>
+        <span class="name">Heizungsbau</span>
+        <span class="lead">Wärmepumpe, FBH</span>
+      </li>
+      <li class="trade-list__row" data-key="trockenbau" data-title="Trockenbau" data-num="№ 07">
+        <span class="num">07</span>
+        <span class="name">Trockenbau</span>
+        <span class="lead">Wände, Decken</span>
+      </li>
+      <li class="trade-list__row" data-key="maler" data-title="Maler &amp; Lackierer" data-num="№ 08">
+        <span class="num">08</span>
+        <span class="name">Maler &amp; Lackierer</span>
+        <span class="lead">Farben, Tapeten</span>
+      </li>
+      <li class="trade-list__row" data-key="fassade" data-title="Fassadensanierung" data-num="№ 09">
+        <span class="num">09</span>
+        <span class="name">Fassadensanierung</span>
+        <span class="lead">Putz, WDVS</span>
+      </li>
+      <li class="trade-list__row" data-key="dach" data-title="Dachsanierung" data-num="№ 10">
+        <span class="num">10</span>
+        <span class="name">Dachsanierung</span>
+        <span class="lead">Eindeckung, Dämmung</span>
+      </li>
+      <li class="trade-list__row" data-key="abdichtung" data-title="Abdichtung &amp; Keller" data-num="№ 11">
+        <span class="num">11</span>
+        <span class="name">Abdichtung &amp; Keller</span>
+        <span class="lead">Feuchtigkeit</span>
+      </li>
+      <li class="trade-list__row" data-key="treppen" data-title="Treppen &amp; Geländer" data-num="№ 12">
+        <span class="num">12</span>
+        <span class="name">Treppen &amp; Geländer</span>
+        <span class="lead">Holz, Beton, Stahl</span>
+      </li>
+      <li class="trade-list__row" data-key="kueche" data-title="Fliesenleger" data-num="№ 13">
+        <span class="num">13</span>
+        <span class="name">Fliesenleger</span>
+        <span class="lead">Bad, Küche, Bodenfliesen</span>
+      </li>
+      <li class="trade-list__row" data-key="trockenbau" data-title="Stuckateur" data-num="№ 14">
+        <span class="num">14</span>
+        <span class="name">Stuckateur</span>
+        <span class="lead">Putz, Altbau-Profile</span>
+      </li>
+      <li class="trade-list__row" data-key="boden" data-title="Estrich &amp; Industrieboden" data-num="№ 15">
+        <span class="num">15</span>
+        <span class="name">Estrich &amp; Industrieboden</span>
+        <span class="lead">Zement, Anhydrit</span>
+      </li>
+      <li class="trade-list__row" data-key="elektro" data-title="Glaser &amp; Spiegel" data-num="№ 16">
+        <span class="num">16</span>
+        <span class="name">Glaser &amp; Spiegel</span>
+        <span class="lead">Duschen, Fenster</span>
+      </li>
+      <li class="trade-list__row" data-key="bad" data-title="Marmor &amp; Naturstein" data-num="№ 17">
+        <span class="num">17</span>
+        <span class="name">Marmor &amp; Naturstein</span>
+        <span class="lead">Platten, Sockel</span>
+      </li>
+      <li class="trade-list__row" data-key="trockenbau" data-title="Tischlerei &amp; Türen" data-num="№ 18">
+        <span class="num">18</span>
+        <span class="name">Tischlerei &amp; Türen</span>
+        <span class="lead">Innen, Außen, Fenster</span>
+      </li>
+      <li class="trade-list__row" data-key="elektro" data-title="Smart-Home &amp; KNX" data-num="№ 19">
+        <span class="num">19</span>
+        <span class="name">Smart-Home &amp; KNX</span>
+        <span class="lead">Licht, Audio, Klima</span>
+      </li>
+      <li class="trade-list__row" data-key="fassade" data-title="Garten &amp; Außenanlagen" data-num="№ 20">
+        <span class="num">20</span>
+        <span class="name">Garten &amp; Außenanlagen</span>
+        <span class="lead">Terrasse, Wege</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="process__inner">
+    <div class="process__head">
+      <div class="reveal">
+        <div class="eyebrow eyebrow--on-dark"><span class="rule-red"></span>&nbsp;&nbsp;So arbeiten wir</div>
+        <h2 style="margin-top: 18px;">Vom Anruf bis zur<br/>schlüssel­fertigen <em>Übergabe.</em></h2>
+      </div>
+      <p class="reveal" data-delay="1">
+        Vier Etappen — jede mit fester Ansprechperson, festem Termin und schriftlichem Festpreis. Keine Stundenabrechnung, keine Übergaben zwischen Subunternehmern.
+      </p>
+    </div>
+    <div class="process__steps">
+      <div class="process-step reveal">
+        <span class="process-step__num">01</span>
+        <span class="process-step__label">Erstgespräch</span>
+        <h3>Aufnahme vor Ort</h3>
+        <p>Termin in 48 Stunden. Wir messen, hören zu und skizzieren grobe Optionen.</p>
+      </div>
+      <div class="process-step reveal" data-delay="1">
+        <span class="process-step__num">02</span>
+        <span class="process-step__label">Festpreis</span>
+        <h3>Verbindliches Angebot</h3>
+        <p>Innerhalb von 14 Tagen erhalten Sie ein Festpreis-Angebot mit Endtermin.</p>
+      </div>
+      <div class="process-step reveal" data-delay="2">
+        <span class="process-step__num">03</span>
+        <span class="process-step__label">Bauphase</span>
+        <h3>Eine Bauleitung</h3>
+        <p>Wöchentlicher Status, ein Ansprechpartner, alle Gewerke unter Vertrag.</p>
+      </div>
+      <div class="process-step reveal" data-delay="3">
+        <span class="process-step__num">04</span>
+        <span class="process-step__label">Übergabe</span>
+        <h3>Abnahme &amp; Pflege</h3>
+        <p>Schlüsselübergabe, Pflegeprotokoll, 5 Jahre Werks­gewähr — und Sie sind drin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end-cta-local">
+  <div class="end-cta-local__inner reveal">
+    <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Bereit zu starten?</div>
+    <h2 style="margin-top: 24px;">
+      Welches <em>Gewerk</em><br/>steht bei Ihnen an?
+    </h2>
+    <a class="btn btn--light" href="kontakt.html">Anfrage senden <span class="arrow">&gt;</span></a>
+  </div>
+</section>
+
+<div data-pv-footer></div>
+<div data-pv-floating></div>
+
+<script src="assets/site.js"></script>
+
+<script>
+/* ---- Trade index hover/click preview ---- */
+(function () {
+  const list = document.getElementById('trade-list');
+  const previewBox = document.getElementById('trade-preview');
+  const num = document.getElementById('trade-preview-num');
+  const ttl = document.getElementById('trade-preview-ttl');
+  if (!list || !previewBox) return;
+  const imgs = previewBox.querySelectorAll('img');
+  const rows = list.querySelectorAll('.trade-list__row');
+
+  function activate(row) {
+    rows.forEach(r => r.classList.remove('is-active'));
+    row.classList.add('is-active');
+    const key = row.getAttribute('data-key');
+    imgs.forEach(im => im.classList.toggle('is-active', im.getAttribute('data-key') === key));
+    num.textContent = row.getAttribute('data-num') || '';
+    ttl.innerHTML = row.getAttribute('data-title') || '';
+  }
+  rows.forEach(r => {
+    r.addEventListener('mouseenter', () => activate(r));
+    r.addEventListener('click', () => activate(r));
+  });
+})();
+</script>
+
+</body>
+</html>

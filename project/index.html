@@ -1,0 +1,1325 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prima Vista Bauprojekte — Sanierung &amp; Renovierung</title>
+<meta name="description" content="Prima Vista Bauprojekte: Komplettsanierung für Haus, Wohnung und Gastronomie. Aus einer Hand — Frankfurt &amp; Emmenbrücke." />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  /* ============== HOMEPAGE ============== */
+
+  /* ---- HERO (editorial — cream, type-first, photo below) ---- */
+  .hero {
+    background: var(--pv-cream);
+    padding: 88px 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .hero__topline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;
+    padding: 8px 0 56px;
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .hero__topline > span:first-child { justify-self: start; }
+  .hero__topline > span:last-child { justify-self: end; }
+  .hero__topline .dot {
+    display: inline-block; width: 6px; height: 6px;
+    background: var(--pv-red); border-radius: 50%;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .hero__headline {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(72px, 11.5vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.022em;
+    color: var(--pv-ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .hero__headline em {
+    color: var(--pv-copper);
+    font-style: italic;
+  }
+  .hero__headline .amp {
+    color: var(--pv-red);
+    font-style: italic;
+    font-family: var(--pv-font-serif-alt);
+    font-weight: 600;
+    margin: 0 .12em;
+  }
+  .hero__meta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: end;
+    padding: 56px 0 48px;
+    border-bottom: 1px solid rgba(26, 26, 26, .12);
+    margin-bottom: 0;
+  }
+  .hero__meta-num {
+    font-family: var(--pv-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .hero__lede {
+    font-family: var(--pv-font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--pv-ink-2);
+    max-width: 480px;
+    margin: 0;
+  }
+  .hero__lede strong {
+    font-weight: 500;
+    color: var(--pv-brown-deep);
+  }
+  .hero__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .hero__cta small {
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+
+  /* Hero photo band */
+  .hero__photo {
+    position: relative;
+    height: 64vh;
+    min-height: 480px;
+    max-height: 720px;
+    margin-top: 48px;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+  }
+  .hero__photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .hero__photo-cap {
+    position: absolute;
+    left: 48px;
+    bottom: 32px;
+    z-index: 2;
+    color: var(--pv-bone);
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .hero__photo-cap .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
+  .hero__photo-cap .ttl { color: var(--pv-bone); }
+  .hero__photo::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(20, 19, 18, .55), rgba(20, 19, 18, 0));
+    pointer-events: none;
+  }
+
+  /* ---- Marquee ticker ---- */
+  .marquee {
+    background: var(--pv-cream);
+    border-top: 1px solid rgba(26, 26, 26, .12);
+    border-bottom: 1px solid rgba(26, 26, 26, .12);
+    padding: 24px 0;
+    overflow: hidden;
+  }
+  .marquee__track {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: marquee 60s linear infinite;
+    width: max-content;
+  }
+  .marquee__item {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pv-ink-2);
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+  }
+  .marquee__item::after {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--pv-copper);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---- Promise band (manifesto) ---- */
+  .promise {
+    background: var(--pv-cream);
+    padding: 160px 0 160px;
+  }
+  .promise__inner {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: start;
+  }
+  .promise__num {
+    font-family: var(--pv-font-mono);
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-copper);
+    margin-bottom: 32px;
+  }
+  .promise__title {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    color: var(--pv-ink);
+    margin: 0;
+  }
+  .promise__title em { color: var(--pv-copper); font-style: italic; }
+  .promise__copy p {
+    font-family: var(--pv-font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--pv-ink-2);
+    margin: 0 0 22px;
+  }
+  .promise__list {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(26, 26, 26, .15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+    list-style: none;
+    padding-left: 0;
+  }
+  .promise__list li {
+    font-family: var(--pv-font-display);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pv-ink-2);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .promise__list .num {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    color: var(--pv-copper);
+    font-weight: 500;
+  }
+
+  /* ---- Packages preview ---- */
+  .packages {
+    background: var(--pv-cream-paper);
+    padding: 140px 0 160px;
+  }
+  .packages__head {
+    max-width: var(--pv-container);
+    margin: 0 auto 80px;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+  }
+  .packages__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.014em;
+    color: var(--pv-ink);
+    margin: 0;
+  }
+  .packages__head h2 em { color: var(--pv-copper); }
+  .packages__head p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--pv-text-on-light-muted);
+    margin: 0;
+    max-width: 420px;
+  }
+  .packages__grid {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .pkg-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--pv-ink-2);
+    aspect-ratio: 3 / 4;
+  }
+  .pkg-card img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 800ms var(--pv-ease-out);
+  }
+  .pkg-card:hover img { transform: scale(1.05); }
+  .pkg-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20, 19, 18, .82) 0%, rgba(20, 19, 18, .35) 45%, rgba(20, 19, 18, .15) 100%);
+    transition: background 400ms;
+  }
+  .pkg-card:hover::after {
+    background: linear-gradient(to top, rgba(20, 19, 18, .88) 0%, rgba(20, 19, 18, .55) 50%, rgba(20, 19, 18, .25) 100%);
+  }
+  .pkg-card__body {
+    position: absolute;
+    inset: auto 32px 32px 32px;
+    z-index: 2;
+    color: var(--pv-bone);
+  }
+  .pkg-card__num {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--pv-copper-bright);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .pkg-card__title {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 16px;
+  }
+  .pkg-card__desc {
+    font-family: var(--pv-font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0 0 24px;
+    max-width: 320px;
+  }
+  .pkg-card__more {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-bone);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--pv-bone);
+    transition: color 200ms, border-color 200ms;
+  }
+  .pkg-card:hover .pkg-card__more {
+    color: var(--pv-copper-bright);
+    border-color: var(--pv-copper-bright);
+  }
+
+  /* ---- Stats band (dark with animated counters) ---- */
+  .stats {
+    background: var(--pv-ink-1);
+    color: var(--pv-bone);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(200, 154, 106, .12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .stats__inner {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .stats__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 96px;
+  }
+  .stats__intro h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1.05;
+    color: var(--pv-bone);
+    margin: 0;
+  }
+  .stats__intro h2 em { color: var(--pv-copper-bright); }
+  .stats__intro p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0;
+    max-width: 460px;
+  }
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    border-top: 1px solid rgba(236, 229, 223, .15);
+    padding-top: 64px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stat__label {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-copper-bright);
+  }
+  .stat__num {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(72px, 8vw, 128px);
+    line-height: 0.95;
+    color: var(--pv-bone);
+    letter-spacing: -0.02em;
+  }
+  .stat__desc {
+    font-family: var(--pv-font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--pv-text-on-dark-muted);
+    max-width: 220px;
+  }
+
+  /* ---- Featured projects (asymmetric grid) ---- */
+  .featured {
+    background: var(--pv-cream);
+    padding: 140px 0 160px;
+  }
+  .featured__head {
+    max-width: var(--pv-container);
+    margin: 0 auto 72px;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: end;
+  }
+  .featured__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.014em;
+    color: var(--pv-ink);
+    margin: 0;
+  }
+  .featured__head h2 em { color: var(--pv-copper); }
+  .featured__head .meta {
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+    text-align: right;
+  }
+  .featured__grid {
+    max-width: 1480px;
+    margin: 0 auto 56px;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 100px;
+    gap: 28px;
+  }
+  .proj {
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+    background: var(--pv-ink-2);
+  }
+  .proj img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 800ms var(--pv-ease-out);
+  }
+  .proj:hover img { transform: scale(1.05); }
+  .proj::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20,19,18,.62) 0%, rgba(20,19,18,.10) 50%, rgba(20,19,18,0) 80%);
+    transition: background 400ms;
+  }
+  .proj:hover::after {
+    background: linear-gradient(to top, rgba(20,19,18,.75) 0%, rgba(20,19,18,.25) 50%, rgba(20,19,18,.10) 80%);
+  }
+  .proj__cap {
+    position: absolute;
+    left: 24px; right: 24px; bottom: 24px;
+    z-index: 2;
+    color: var(--pv-bone);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .proj__cap .ttl {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .proj__cap .yr {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--pv-copper-bright);
+  }
+  /* Grid placement */
+  .proj--a { grid-column: 1 / span 7; grid-row: span 5; }
+  .proj--b { grid-column: 8 / span 5; grid-row: span 5; }
+  .proj--c { grid-column: 1 / span 4; grid-row: span 4; }
+  .proj--d { grid-column: 5 / span 4; grid-row: span 4; }
+  .proj--e { grid-column: 9 / span 4; grid-row: span 4; }
+  .featured__more {
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  /* ---- Founders / Über uns ---- */
+  .founders {
+    background: var(--pv-ink-2);
+    color: var(--pv-bone);
+    padding: 140px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .founders__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 96px;
+    align-items: center;
+  }
+  .founders__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--pv-ink-1);
+  }
+  .founders__photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .founders__photo-label {
+    position: absolute;
+    left: 24px; bottom: 24px;
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-bone);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .founders__photo-label .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
+  .founders__body .eyebrow { color: var(--pv-copper-bright); }
+  .founders__body h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 4.8vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    color: var(--pv-bone);
+    margin: 24px 0 32px;
+  }
+  .founders__body h2 em { color: var(--pv-copper-bright); }
+  .founders__body p {
+    font-family: var(--pv-font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0 0 22px;
+    max-width: 520px;
+  }
+  .founders__sig {
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .founders__sig-name {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--pv-copper-bright);
+  }
+  .founders__sig-role {
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-dark-muted);
+  }
+
+  /* ---- Heating methods ---- */
+  .heating {
+    background: var(--pv-cream-paper);
+    padding: 140px 0;
+  }
+  .heating__head {
+    max-width: var(--pv-container-narrow);
+    margin: 0 auto 72px;
+    padding: 0 48px;
+    text-align: center;
+  }
+  .heating__head .eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    margin-bottom: 24px;
+  }
+  .heating__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.05;
+    color: var(--pv-ink);
+    margin: 0 0 24px;
+  }
+  .heating__head h2 em { color: var(--pv-copper); }
+  .heating__head p {
+    font-family: var(--pv-font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--pv-text-on-light-muted);
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .heating__grid {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .heat-card {
+    background: var(--pv-white);
+    overflow: hidden;
+    transition: transform 400ms var(--pv-ease-out), box-shadow 400ms var(--pv-ease-out);
+  }
+  .heat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--pv-shadow-lift);
+  }
+  .heat-card__photo {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+  }
+  .heat-card__photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 600ms var(--pv-ease-out);
+  }
+  .heat-card:hover .heat-card__photo img { transform: scale(1.05); }
+  .heat-card__body { padding: 32px 32px 36px; }
+  .heat-card__num {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--pv-copper);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .heat-card__title {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--pv-ink);
+    margin: 0 0 14px;
+    line-height: 1.1;
+  }
+  .heat-card__desc {
+    font-family: var(--pv-font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--pv-text-on-light-muted);
+    margin: 0 0 24px;
+  }
+  .heat-card__more {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-copper);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ---- Testimonial ---- */
+  .testimonial {
+    background: var(--pv-cream);
+    padding: 160px 0;
+    text-align: center;
+  }
+  .testimonial__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+  .testimonial .quote-mark {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-size: 140px;
+    line-height: 0.6;
+    color: var(--pv-copper);
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+  .testimonial blockquote {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.25;
+    letter-spacing: -0.008em;
+    color: var(--pv-ink);
+    margin: 0 0 48px;
+    text-wrap: balance;
+  }
+  .testimonial blockquote em { color: var(--pv-copper); }
+  .testimonial__attr {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .testimonial__attr .name { color: var(--pv-ink); }
+  .testimonial__attr .sep { color: var(--pv-copper); }
+
+  /* ---- Final CTA ---- */
+  .end-cta {
+    background: var(--pv-ink-1);
+    color: var(--pv-bone);
+    padding: 160px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .end-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(200, 154, 106, .14) 0%, transparent 60%);
+  }
+  .end-cta__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .end-cta h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(48px, 6vw, 96px);
+    line-height: 1.02;
+    color: var(--pv-bone);
+    margin: 0 0 40px;
+    text-wrap: balance;
+  }
+  .end-cta h2 em { color: var(--pv-copper-bright); }
+  .end-cta p {
+    font-family: var(--pv-font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--pv-text-on-dark-muted);
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+  .end-cta__buttons {
+    display: inline-flex;
+    gap: 16px;
+  }
+
+  @media (max-width: 880px) {
+    .hero__meta, .promise__inner, .packages__head, .stats__intro, .featured__head, .founders__inner { grid-template-columns: 1fr; gap: 32px; }
+    .packages__grid, .featured__grid, .heating__grid, .stats__grid { grid-template-columns: 1fr; }
+    .featured__grid { grid-auto-rows: 280px; }
+    .proj--a, .proj--b, .proj--c, .proj--d, .proj--e { grid-column: 1 / -1; grid-row: span 2; }
+    .end-cta__buttons { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div data-pv-header="index.html"></div>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__topline">
+      <span><span class="dot"></span>Frankfurt &amp; Emmenbrücke</span>
+      <span>Sanierung &amp; Renovierung — Bauprojekte seit 2014</span>
+      <span>N° 26 / Frühjahr 2026</span>
+    </div>
+
+    <h1 class="hero__headline">
+      Räume, die <em>bleiben.</em><br/>
+      Handwerk <span class="amp">&amp;</span> <em>Vision</em>
+    </h1>
+
+    <div class="hero__meta">
+      <div>
+        <div class="hero__meta-num">01 — Editorial</div>
+        <p class="hero__lede">
+          <strong>Verwandeln Sie Ihr Zuhause in Ihren Traumort.</strong>
+          Von der ersten Skizze bis zur finalen Fuge: Komplettsanierung für Haus, Wohnung und Gastronomie — Bauleitung und alle Materialien inklusive.
+        </p>
+      </div>
+      <div></div>
+      <div class="hero__cta">
+        <small>Termin in 48 Stunden</small>
+        <a class="btn btn--light" href="kontakt.html">
+          Termin vereinbaren <span class="arrow">&gt;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__photo">
+    <img class="kenburns" src="assets/img/proj-moroccan-dining-wide.jpg" alt="Innenausbau eines orientalischen Restaurants — Prima Vista Bauprojekte" />
+    <div class="hero__photo-cap">
+      <span class="num">№ 142</span>
+      <span class="ttl">Riad — Gastronomie-Ausbau · Frankfurt</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE ============== -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Sanierung</span>
+    <span class="marquee__item">Renovierung</span>
+    <span class="marquee__item">Gastronomie-Ausbau</span>
+    <span class="marquee__item">Bäder</span>
+    <span class="marquee__item">Küchen</span>
+    <span class="marquee__item">Böden</span>
+    <span class="marquee__item">Elektro</span>
+    <span class="marquee__item">Heizung</span>
+    <span class="marquee__item">Fassade</span>
+    <span class="marquee__item">Maler &amp; Lack</span>
+    <span class="marquee__item">Treppen</span>
+    <span class="marquee__item">Trockenbau</span>
+    <!-- duplicate for seamless loop -->
+    <span class="marquee__item">Sanierung</span>
+    <span class="marquee__item">Renovierung</span>
+    <span class="marquee__item">Gastronomie-Ausbau</span>
+    <span class="marquee__item">Bäder</span>
+    <span class="marquee__item">Küchen</span>
+    <span class="marquee__item">Böden</span>
+    <span class="marquee__item">Elektro</span>
+    <span class="marquee__item">Heizung</span>
+    <span class="marquee__item">Fassade</span>
+    <span class="marquee__item">Maler &amp; Lack</span>
+    <span class="marquee__item">Treppen</span>
+    <span class="marquee__item">Trockenbau</span>
+  </div>
+</section>
+
+<!-- ============== PROMISE / MANIFESTO ============== -->
+<section class="promise">
+  <div class="promise__inner">
+    <div class="reveal">
+      <div class="promise__num">№ 01 — Versprechen</div>
+      <h2 class="promise__title">
+        Eine Baustelle.<br/>
+        <em>Eine Adresse.</em><br/>
+        Ein Vertrag.
+      </h2>
+    </div>
+    <div class="promise__copy reveal" data-delay="1">
+      <p>
+        Wir glauben an Sanierung ohne Übergaben: ein Generalunternehmer, der die Verantwortung für jedes Gewerk trägt — vom Rohbau bis zur Möbelfuge. Sie sprechen mit einem Ansprechpartner, der für alles bürgt.
+      </p>
+      <p>
+        Diese Klarheit ist kein Komfort, sondern die Voraussetzung für Räume, die in fünfzehn Jahren noch dieselbe Ruhe ausstrahlen wie am ersten Tag.
+      </p>
+      <ul class="promise__list">
+        <li><span class="num">01</span>Bauleitung inkl.</li>
+        <li><span class="num">02</span>Alle Materialien</li>
+        <li><span class="num">03</span>Festpreisgarantie</li>
+        <li><span class="num">04</span>Termin in 48 Std.</li>
+        <li><span class="num">05</span>Festes Endtermin-Datum</li>
+        <li><span class="num">06</span>5 Jahre Werksgewähr</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PACKAGES PREVIEW ============== -->
+<section class="packages">
+  <div class="packages__head">
+    <div class="reveal">
+      <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Komplett-Pakete</div>
+      <h2 style="margin-top: 24px;">
+        Drei Wege zum<br/>
+        fertigen <em>Raum.</em>
+      </h2>
+    </div>
+    <p class="reveal" data-delay="1">
+      Ob Einzimmer-Refresh oder Generalsanierung: jedes Paket bündelt Planung, Bauleitung und alle Gewerke — mit klarem Preis und festem Endtermin.
+    </p>
+  </div>
+  <div class="packages__grid">
+    <a class="pkg-card reveal" data-delay="1" href="komplett-pakete.html">
+      <img src="assets/img/photo-haus-clean.jpg" alt="Haus-Sanierung" />
+      <div class="pkg-card__body">
+        <span class="pkg-card__num">№ 01 — Komplett</span>
+        <h3 class="pkg-card__title">Haus-<br/>Sanierung</h3>
+        <p class="pkg-card__desc">Generalsanierung von Bestandsbauten — Dach, Fassade, Innenausbau aus einer Hand.</p>
+        <span class="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </a>
+    <a class="pkg-card reveal" data-delay="2" href="komplett-pakete.html">
+      <img src="assets/img/photo-wohnung-clean.jpg" alt="Wohnung-Sanierung" />
+      <div class="pkg-card__body">
+        <span class="pkg-card__num">№ 02 — Modular</span>
+        <h3 class="pkg-card__title">Wohnung-<br/>Sanierung</h3>
+        <p class="pkg-card__desc">Bäder, Küchen, Böden, Elektrik: Etagenwohnungen — bewohnbar in 6–10 Wochen.</p>
+        <span class="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </a>
+    <a class="pkg-card reveal" data-delay="3" href="komplett-pakete.html">
+      <img src="assets/img/proj-moroccan-corner.jpg" alt="Gastronomie-Ausbau" />
+      <div class="pkg-card__body">
+        <span class="pkg-card__num">№ 03 — Konzept</span>
+        <h3 class="pkg-card__title">Gastronomie-<br/>Ausbau</h3>
+        <p class="pkg-card__desc">Restaurants, Bars, Hotels: von der Konzeptphase bis zur Eröffnung — schlüsselfertig.</p>
+        <span class="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ============== STATS (counters) ============== -->
+<section class="stats">
+  <div class="stats__inner">
+    <div class="stats__intro">
+      <h2 class="reveal">
+        Zwölf Jahre. <em>Eine Linie.</em>
+      </h2>
+      <p class="reveal" data-delay="1">
+        Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2014.
+      </p>
+    </div>
+    <div class="stats__grid">
+      <div class="stat reveal">
+        <span class="stat__label">Bauleitung seit</span>
+        <span class="stat__num" data-counter="2014" data-decimals="0" style="text-align:left;">2014</span>
+        <span class="stat__desc">Gegründet von Daniel und Monica in Frankfurt am Main.</span>
+      </div>
+      <div class="stat reveal" data-delay="1">
+        <span class="stat__label">Abgeschlossene Projekte</span>
+        <span class="stat__num" data-counter="412" data-decimals="0">0</span>
+        <span class="stat__desc">Von der Einliegerwohnung bis zum 220-Sitzplatz-Restaurant.</span>
+      </div>
+      <div class="stat reveal" data-delay="2">
+        <span class="stat__label">Gewerke aus einer Hand</span>
+        <span class="stat__num" data-counter="20" data-decimals="0">0</span>
+        <span class="stat__desc">Vom Rohbau bis zum Schreiner — alles inhouse oder unter Vertrag.</span>
+      </div>
+      <div class="stat reveal" data-delay="3">
+        <span class="stat__label">Termintreue</span>
+        <span class="stat__num" data-counter="98" data-decimals="0" data-suffix="%">0%</span>
+        <span class="stat__desc">Festes Endtermin-Datum im Vertrag — sonst Konventionalstrafe.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FEATURED PROJECTS ============== -->
+<section class="featured">
+  <div class="featured__head">
+    <div class="reveal">
+      <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Ausgewählte Projekte</div>
+      <h2 style="margin-top: 24px;">
+        Zuletzt aus der<br/>
+        <em>Werkstatt.</em>
+      </h2>
+    </div>
+    <div class="meta reveal" data-delay="1">
+      2024 — 2026<br/>
+      Frankfurt · Wiesbaden · Luzern
+    </div>
+  </div>
+
+  <div class="featured__grid">
+    <a class="proj proj--a reveal" data-lightbox="featured"
+       data-src="assets/img/proj-moroccan-dining.jpg"
+       data-title="Riad — Restaurant · Frankfurt · 2025">
+      <img src="assets/img/proj-moroccan-dining.jpg" alt="Riad Restaurant Frankfurt" />
+      <div class="proj__cap"><span class="ttl">Riad — Gastronomie</span><span class="yr">2025</span></div>
+    </a>
+    <a class="proj proj--b reveal" data-delay="1" data-lightbox="featured"
+       data-src="assets/img/proj-concrete-sofa-tall.jpg"
+       data-title="Villa Sichtbeton — Wohnsitz · Luzern · 2024">
+      <img src="assets/img/proj-concrete-sofa-tall.jpg" alt="Villa Sichtbeton Luzern" />
+      <div class="proj__cap"><span class="ttl">Villa Sichtbeton</span><span class="yr">2024</span></div>
+    </a>
+    <a class="proj proj--c reveal" data-lightbox="featured"
+       data-src="assets/img/proj-kitchen-oak.jpg"
+       data-title="Küche Eichenholz — Wohnsitz · Frankfurt · 2025">
+      <img src="assets/img/proj-kitchen-oak.jpg" alt="Küche Eichenholz Frankfurt" />
+      <div class="proj__cap"><span class="ttl">Küche Eichenholz</span><span class="yr">2025</span></div>
+    </a>
+    <a class="proj proj--d reveal" data-delay="1" data-lightbox="featured"
+       data-src="assets/img/proj-spa-bath.jpg"
+       data-title="Spa-Bad — Hotel · Emmenbrücke · 2025">
+      <img src="assets/img/proj-spa-bath.jpg" alt="Spa-Bad Hotel" />
+      <div class="proj__cap"><span class="ttl">Spa-Bad — Hotel</span><span class="yr">2025</span></div>
+    </a>
+    <a class="proj proj--e reveal" data-delay="2" data-lightbox="featured"
+       data-src="assets/img/proj-lobby-tree.jpg"
+       data-title="Lobby — Office · Frankfurt · 2026">
+      <img src="assets/img/proj-lobby-tree.jpg" alt="Lobby Office Frankfurt" />
+      <div class="proj__cap"><span class="ttl">Office Lobby</span><span class="yr">2026</span></div>
+    </a>
+  </div>
+
+  <div class="featured__more reveal">
+    <a class="btn btn--light" href="projekte.html">
+      Alle Projekte ansehen <span class="arrow">&gt;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============== FOUNDERS ============== -->
+<section class="founders">
+  <div class="founders__inner">
+    <div class="founders__photo reveal">
+      <img src="assets/img/founders.jpg" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" />
+      <div class="founders__photo-label">
+        <span class="num">№ 00</span>
+        <span>Daniel &amp; Monica — Frankfurt, 2026</span>
+      </div>
+    </div>
+    <div class="founders__body reveal" data-delay="1">
+      <div class="eyebrow" style="display: inline-flex; align-items: center; gap: 12px;">
+        <span class="rule-red"></span>&nbsp;Über uns
+      </div>
+      <h2>
+        Ein Bauunternehmen<br/>
+        geführt wie ein<br/>
+        <em>Familienbetrieb.</em>
+      </h2>
+      <p>
+        Daniel und Monica führen Prima Vista seit 2014 — als Paar, als Bauleiter, als Ansprechpartner. Wer hier baut, redet nicht mit einem Callcenter, sondern mit den Menschen, deren Namen am Vertrag stehen.
+      </p>
+      <p>
+        Von der Frankfurter Zentrale aus betreuen wir Projekte in Hessen; aus Emmenbrücke heraus die ganze Innerschweiz. Beide Büros teilen Materialien, Pläne und Standards — Sie bekommen überall denselben Anspruch.
+      </p>
+      <div class="founders__sig">
+        <span class="founders__sig-name">Daniel &amp; Monica</span>
+        <span class="founders__sig-role">Gründer &amp; Bauleitung</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== HEATING METHODS ============== -->
+<section class="heating">
+  <div class="heating__head reveal">
+    <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Moderne Heizmethoden</div>
+    <h2 style="margin-top: 24px;">
+      Bereit für die <em>Zukunft.</em>
+    </h2>
+    <p>
+      Rüsten Sie mit unseren Paketen auf innovative Heizmethoden auf — förderfähig, geräuscharm und unabhängig vom Gas.
+    </p>
+  </div>
+  <div class="heating__grid">
+    <article class="heat-card reveal">
+      <div class="heat-card__photo">
+        <img src="assets/img/photo-luftwaerme-clean.jpg" alt="Luftwärmepumpe" />
+      </div>
+      <div class="heat-card__body">
+        <span class="heat-card__num">№ 01</span>
+        <h3 class="heat-card__title">Luftwärme-<br/>pumpe</h3>
+        <p class="heat-card__desc">Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.</p>
+        <span class="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </article>
+    <article class="heat-card reveal" data-delay="1">
+      <div class="heat-card__photo">
+        <img src="assets/img/photo-heizstraenge-clean.jpg" alt="Heizungsstränge" />
+      </div>
+      <div class="heat-card__body">
+        <span class="heat-card__num">№ 02</span>
+        <h3 class="heat-card__title">Heizungs-<br/>stränge</h3>
+        <p class="heat-card__desc">Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.</p>
+        <span class="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </article>
+    <article class="heat-card reveal" data-delay="2">
+      <div class="heat-card__photo">
+        <img src="assets/img/photo-heizkoerper-clean.jpg" alt="Heizkörper" />
+      </div>
+      <div class="heat-card__body">
+        <span class="heat-card__num">№ 03</span>
+        <h3 class="heat-card__title">Design-<br/>Heizkörper</h3>
+        <p class="heat-card__desc">Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.</p>
+        <span class="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIAL ============== -->
+<section class="testimonial">
+  <div class="testimonial__inner reveal">
+    <div class="quote-mark">&ldquo;</div>
+    <blockquote>
+      Wir hatten Angst vor der Sanierung — und wurden überrascht: Prima Vista lieferte pünktlich, sauber und so präzise, dass wir <em>schon einen Monat früher</em> einziehen konnten.
+    </blockquote>
+    <div class="testimonial__attr">
+      <span class="name">Familie Brauer</span>
+      <span class="sep">·</span>
+      <span>Komplettsanierung Eigentumswohnung · Sachsenhausen</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="end-cta">
+  <div class="end-cta__inner reveal">
+    <h2>
+      Lassen Sie uns über<br/>
+      Ihr <em>Bauprojekt</em> reden.
+    </h2>
+    <p>
+      Erste Beratung kostenlos. Termin innerhalb von 48 Stunden, vor Ort oder per Video — in Frankfurt und Emmenbrücke.
+    </p>
+    <div class="end-cta__buttons">
+      <a class="btn btn--dark" href="kontakt.html">
+        Termin vereinbaren <span class="arrow">&gt;</span>
+      </a>
+      <a class="btn btn--dark" href="tel:+4969000000" style="border-color: rgba(236, 229, 223, .25);">
+        +49 69 0000 0000
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer + Floating -->
+<div data-pv-footer></div>
+<div data-pv-floating></div>
+
+<script src="assets/site.js"></script>
+
+<!-- Tweaks (React + Babel; only injected when host activates tweak mode) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "hero": "concrete",
+  "headline": "vision",
+  "accent": "copper",
+  "marquee": true,
+  "stats": true
+}/*EDITMODE-END*/;
+
+const HERO_PHOTOS = {
+  moroccan: { src: 'assets/img/proj-moroccan-dining-wide.jpg', num: '№ 142', cap: 'Riad — Gastronomie-Ausbau · Frankfurt' },
+  concrete: { src: 'assets/img/proj-concrete-sofa.jpg', num: '№ 138', cap: 'Villa Sichtbeton — Wohnsitz · Luzern' },
+  kitchen:  { src: 'assets/img/proj-kitchen-oak.jpg', num: '№ 140', cap: 'Küche Eichenholz — Wohnsitz · Frankfurt' },
+  bath:     { src: 'assets/img/proj-spa-bath.jpg', num: '№ 141', cap: 'Spa-Bad — Hotel · Emmenbrücke' },
+  lobby:    { src: 'assets/img/proj-lobby-tree-wide.jpg', num: '№ 145', cap: 'Lobby — Office · Frankfurt' }
+};
+
+const HEADLINES = {
+  raeume: {
+    title: 'Räume, die <em>bleiben.</em><br/>Handwerk <span class="amp">&amp;</span> <em>Vision</em>',
+    lede: '<strong>Verwandeln Sie Ihr Zuhause in Ihren Traumort.</strong> Von der ersten Skizze bis zur finalen Fuge: Komplettsanierung für Haus, Wohnung und Gastronomie — Bauleitung und alle Materialien inklusive.'
+  },
+  vision: {
+    title: 'Eine <em>Vision.</em><br/>Eine <span class="amp">&amp;</span> <em>Adresse.</em>',
+    lede: '<strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werks­gewähr.'
+  },
+  praezision: {
+    title: 'Sanieren mit<br/><em>Präzision</em> <span class="amp">&amp;</span> <em>Ruhe.</em>',
+    lede: '<strong>Zwölf Jahre Bauleitung in Hessen und der Schweiz.</strong> Wir bauen langsam genug, um jeden Übergang sauber zu setzen — und planen schnell genug, dass der Endtermin verbindlich bleibt.'
+  }
+};
+
+const ACCENTS = {
+  copper:   { c: '#826140', b: '#c89a6a', w: '#a07a52' },
+  bronze:   { c: '#9a6a3c', b: '#d8a878', w: '#b88556' },
+  rust:     { c: '#a3553a', b: '#c87a5c', w: '#b66045' },
+  forest:   { c: '#456343', b: '#7a9676', w: '#5f8259' }
+};
+
+function HomeTweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    // Apply hero photo
+    const heroImg = document.querySelector('.hero__photo img');
+    const heroCapNum = document.querySelector('.hero__photo-cap .num');
+    const heroCapTtl = document.querySelector('.hero__photo-cap .ttl');
+    const p = HERO_PHOTOS[t.hero] || HERO_PHOTOS.moroccan;
+    if (heroImg) heroImg.src = p.src;
+    if (heroCapNum) heroCapNum.textContent = p.num;
+    if (heroCapTtl) heroCapTtl.textContent = p.cap;
+
+    // Headline
+    const h1 = document.querySelector('.hero__headline');
+    const lede = document.querySelector('.hero__lede');
+    const h = HEADLINES[t.headline] || HEADLINES.raeume;
+    if (h1) h1.innerHTML = h.title;
+    if (lede) lede.innerHTML = h.lede;
+
+    // Accent colors — override design tokens
+    const a = ACCENTS[t.accent] || ACCENTS.copper;
+    document.documentElement.style.setProperty('--pv-copper', a.c);
+    document.documentElement.style.setProperty('--pv-copper-bright', a.b);
+    document.documentElement.style.setProperty('--pv-copper-warm', a.w);
+
+    // Section visibility
+    const marquee = document.querySelector('.marquee');
+    if (marquee) marquee.style.display = t.marquee ? '' : 'none';
+    const stats = document.querySelector('.stats');
+    if (stats) stats.style.display = t.stats ? '' : 'none';
+  }, [t]);
+
+  return (
+    <TweaksPanel>
+      <TweakSection label="Hero" />
+      <TweakSelect
+        label="Headline"
+        value={t.headline}
+        options={[
+          { value: 'raeume',     label: 'Räume, die bleiben' },
+          { value: 'vision',     label: 'Eine Vision. Eine Adresse.' },
+          { value: 'praezision', label: 'Präzision & Ruhe' }
+        ]}
+        onChange={(v) => setTweak('headline', v)}
+      />
+      <TweakSelect
+        label="Hero photo"
+        value={t.hero}
+        options={[
+          { value: 'moroccan', label: 'Riad — Gastronomie' },
+          { value: 'concrete', label: 'Villa Sichtbeton' },
+          { value: 'kitchen',  label: 'Küche Eichenholz' },
+          { value: 'bath',     label: 'Spa-Bad — Hotel' },
+          { value: 'lobby',    label: 'Office Lobby' }
+        ]}
+        onChange={(v) => setTweak('hero', v)}
+      />
+
+      <TweakSection label="Brand accent" />
+      <TweakColor
+        label="Accent colour"
+        value={ACCENTS[t.accent]?.c}
+        options={Object.values(ACCENTS).map(a => a.c)}
+        onChange={(v) => {
+          const key = Object.keys(ACCENTS).find(k => ACCENTS[k].c === v) || 'copper';
+          setTweak('accent', key);
+        }}
+      />
+
+      <TweakSection label="Sections" />
+      <TweakToggle label="Show marquee ticker" value={t.marquee} onChange={(v) => setTweak('marquee', v)} />
+      <TweakToggle label="Show stats band"      value={t.stats}   onChange={(v) => setTweak('stats', v)} />
+    </TweaksPanel>
+  );
+}
+
+const tweaksRoot = document.createElement('div');
+document.body.appendChild(tweaksRoot);
+ReactDOM.createRoot(tweaksRoot).render(<HomeTweaks />);
+</script>
+
+</body>
+</html>

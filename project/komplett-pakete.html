@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Komplett-Pakete — Prima Vista Bauprojekte</title>
+<meta name="description" content="Schlüsselfertige Komplettpakete für Haus, Wohnung und Gastronomie — Festpreis, fester Endtermin, alle Gewerke aus einer Hand." />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  /* ============== KOMPLETT-PAKETE ============== */
+
+  .pkg-detail {
+    background: var(--pv-cream);
+    padding: 120px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, .08);
+  }
+  .pkg-detail--paper { background: var(--pv-cream-paper); }
+  .pkg-detail--ink { background: var(--pv-ink-1); color: var(--pv-bone); border-bottom-color: rgba(236, 229, 223, .15); }
+
+  .pkg-detail__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: 80px;
+    align-items: center;
+  }
+  .pkg-detail--reverse .pkg-detail__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  }
+  .pkg-detail--reverse .pkg-detail__photo { order: 2; }
+  .pkg-detail--reverse .pkg-detail__body { order: 1; }
+
+  .pkg-detail__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+  }
+  .pkg-detail__photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1000ms var(--pv-ease-out);
+  }
+  .pkg-detail__photo:hover img { transform: scale(1.04); }
+  .pkg-detail__photo-num {
+    position: absolute;
+    left: -16px; top: -32px;
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 200px;
+    line-height: 0.85;
+    color: var(--pv-copper);
+    z-index: 2;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+    pointer-events: none;
+  }
+  .pkg-detail--ink .pkg-detail__photo-num { color: var(--pv-copper-bright); }
+
+  .pkg-detail__body { max-width: 560px; }
+  .pkg-detail__eyebrow {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--pv-copper);
+    margin-bottom: 28px;
+  }
+  .pkg-detail--ink .pkg-detail__eyebrow { color: var(--pv-copper-bright); }
+
+  .pkg-detail__title {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(48px, 5.8vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.012em;
+    color: var(--pv-ink);
+    margin: 0 0 28px;
+  }
+  .pkg-detail--ink .pkg-detail__title { color: var(--pv-bone); }
+  .pkg-detail__title em { color: var(--pv-copper); }
+  .pkg-detail--ink .pkg-detail__title em { color: var(--pv-copper-bright); }
+
+  .pkg-detail__lede {
+    font-family: var(--pv-font-body);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--pv-ink-2);
+    margin: 0 0 36px;
+  }
+  .pkg-detail--ink .pkg-detail__lede { color: var(--pv-text-on-dark-muted); }
+
+  .pkg-detail__price {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(26, 26, 26, .15);
+    border-bottom: 1px solid rgba(26, 26, 26, .15);
+    margin-bottom: 32px;
+  }
+  .pkg-detail--ink .pkg-detail__price { border-color: rgba(236, 229, 223, .15); }
+  .pkg-detail__price-label {
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .pkg-detail--ink .pkg-detail__price-label { color: var(--pv-text-on-dark-muted); }
+  .pkg-detail__price-val {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--pv-ink);
+    letter-spacing: -0.008em;
+  }
+  .pkg-detail--ink .pkg-detail__price-val { color: var(--pv-bone); }
+  .pkg-detail__price-from {
+    font-family: var(--pv-font-body);
+    font-size: 14px;
+    color: var(--pv-text-on-light-muted);
+  }
+  .pkg-detail--ink .pkg-detail__price-from { color: var(--pv-text-on-dark-muted); }
+
+  .pkg-detail__includes {
+    list-style: none;
+    margin: 0 0 36px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+  }
+  .pkg-detail__includes li {
+    font-family: var(--pv-font-body);
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--pv-ink-2);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .pkg-detail--ink .pkg-detail__includes li { color: var(--pv-text-on-dark-muted); }
+  .pkg-detail__includes li::before {
+    content: '';
+    flex: 0 0 8px;
+    width: 8px; height: 8px;
+    background: var(--pv-copper);
+    border-radius: 50%;
+    margin-top: 6px;
+  }
+  .pkg-detail--ink .pkg-detail__includes li::before { background: var(--pv-copper-bright); }
+
+  /* Comparison band */
+  .compare {
+    background: var(--pv-cream);
+    padding: 140px 0;
+  }
+  .compare__head {
+    max-width: var(--pv-container);
+    margin: 0 auto 64px;
+    padding: 0 48px;
+    text-align: center;
+  }
+  .compare__head h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.05;
+    color: var(--pv-ink);
+    margin: 0 0 18px;
+  }
+  .compare__head h2 em { color: var(--pv-copper); }
+  .compare__head p {
+    font-family: var(--pv-font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--pv-text-on-light-muted);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .compare__table {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+    overflow-x: auto;
+  }
+  .compare__grid {
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+    border-top: 1px solid rgba(26, 26, 26, .15);
+    min-width: 720px;
+  }
+  .compare__row {
+    display: contents;
+  }
+  .compare__cell {
+    padding: 22px 24px;
+    border-bottom: 1px solid rgba(26, 26, 26, .12);
+    font-family: var(--pv-font-body);
+    font-size: 15px;
+    color: var(--pv-ink-2);
+    display: flex;
+    align-items: center;
+  }
+  .compare__cell--head {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pv-ink);
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--pv-ink);
+  }
+  .compare__cell--first {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .compare__check {
+    color: var(--pv-copper);
+    font-size: 18px;
+  }
+  .compare__no {
+    color: rgba(26, 26, 26, .25);
+    font-size: 14px;
+  }
+  .compare__cell .num {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--pv-ink);
+  }
+  .compare__highlight { background: rgba(200, 154, 106, .06); }
+
+  /* Quote band */
+  .pkg-quote {
+    background: var(--pv-ink-2);
+    color: var(--pv-bone);
+    padding: 140px 0;
+    text-align: center;
+  }
+  .pkg-quote blockquote {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    color: var(--pv-bone);
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    padding: 0 48px;
+  }
+  .pkg-quote blockquote em { color: var(--pv-copper-bright); }
+  .pkg-quote .attr {
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-dark-muted);
+  }
+  .pkg-quote .attr .name { color: var(--pv-copper-bright); }
+
+  @media (max-width: 880px) {
+    .pkg-detail__inner, .pkg-detail--reverse .pkg-detail__inner { grid-template-columns: 1fr; gap: 32px; }
+    .pkg-detail__includes { grid-template-columns: 1fr; }
+    .pkg-detail__photo-num { font-size: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div data-pv-header="komplett-pakete.html"></div>
+
+<section class="page-intro">
+  <div class="page-intro__inner">
+    <div class="reveal">
+      <div class="crumb"><span class="num">03</span> Komplett-Pakete</div>
+      <h1>
+        Drei Wege<br/>
+        zum fertigen<br/>
+        <em>Raum.</em>
+      </h1>
+    </div>
+    <div class="reveal" data-delay="1">
+      <p class="lede">
+        Verwandeln Sie Ihr Zuhause in Ihren Traumort: sorgenfreie Komplett­sanierung für Haus, Wohnung und Gastronomie — Bauleitung und alle Materialien inklusive.
+      </p>
+      <ul class="meta-list">
+        <li>Festpreisgarantie<span>Schriftlich, vor Beginn</span></li>
+        <li>Bauzeit<span>6–32 Wochen</span></li>
+        <li>Bauleitung<span>Eigene Inhouse-Teams</span></li>
+        <li>Versicherung<span>5 Jahre Werksgewähr</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Package 01 — Haus-Sanierung -->
+<section class="pkg-detail">
+  <div class="pkg-detail__inner">
+    <div class="pkg-detail__photo reveal">
+      <span class="pkg-detail__photo-num">01</span>
+      <img src="assets/img/photo-haus-clean.jpg" alt="Haus-Sanierung" />
+    </div>
+    <div class="pkg-detail__body reveal" data-delay="1">
+      <div class="pkg-detail__eyebrow"><span class="rule-red"></span> Komplettpaket · Haus</div>
+      <h2 class="pkg-detail__title">
+        Haus-<br/>
+        <em>Sanierung.</em>
+      </h2>
+      <p class="pkg-detail__lede">
+        Generalsanierung von Bestandsbauten — vom Dach bis zur Hofeinfahrt. Für Einfamilienhäuser, Mehrfamilien­häuser und Reihenhäuser bis 480 m².
+      </p>
+      <div class="pkg-detail__price">
+        <span class="pkg-detail__price-label">Festpreis ab</span>
+        <span class="pkg-detail__price-val">€ 1.480 / m²</span>
+        <span class="pkg-detail__price-from">inkl. Material &amp; Bauleitung</span>
+      </div>
+      <ul class="pkg-detail__includes">
+        <li>Dach &amp; Dämmung</li>
+        <li>Fassade &amp; Putz</li>
+        <li>Fenster &amp; Türen</li>
+        <li>Elektrik &amp; Smart-Home</li>
+        <li>Sanitär &amp; Heizung</li>
+        <li>Innenausbau komplett</li>
+        <li>Garten &amp; Außenanlagen</li>
+        <li>Behörden &amp; Genehmigungen</li>
+      </ul>
+      <a class="btn btn--light" href="kontakt.html">Festpreis anfragen <span class="arrow">&gt;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Package 02 — Wohnung-Sanierung -->
+<section class="pkg-detail pkg-detail--paper pkg-detail--reverse">
+  <div class="pkg-detail__inner">
+    <div class="pkg-detail__body reveal">
+      <div class="pkg-detail__eyebrow"><span class="rule-red"></span> Komplettpaket · Wohnung</div>
+      <h2 class="pkg-detail__title">
+        Wohnung-<br/>
+        <em>Sanierung.</em>
+      </h2>
+      <p class="pkg-detail__lede">
+        Etagenwohnungen modular sanieren: Bäder, Küchen, Böden, Elektrik, Heizung — in 6 bis 10 Wochen bewohnbar. Auch bei vermieteten Einheiten.
+      </p>
+      <div class="pkg-detail__price">
+        <span class="pkg-detail__price-label">Festpreis ab</span>
+        <span class="pkg-detail__price-val">€ 980 / m²</span>
+        <span class="pkg-detail__price-from">inkl. Material &amp; Bauleitung</span>
+      </div>
+      <ul class="pkg-detail__includes">
+        <li>Bäder &amp; WCs</li>
+        <li>Küche &amp; Geräte</li>
+        <li>Parkett, Stein, Vinyl</li>
+        <li>Elektrik komplett</li>
+        <li>Sanitärstränge</li>
+        <li>Wände &amp; Decken</li>
+        <li>Maler &amp; Tapeten</li>
+        <li>Innentüren</li>
+      </ul>
+      <a class="btn btn--light" href="kontakt.html">Festpreis anfragen <span class="arrow">&gt;</span></a>
+    </div>
+    <div class="pkg-detail__photo reveal" data-delay="1">
+      <span class="pkg-detail__photo-num">02</span>
+      <img src="assets/img/photo-wohnung-clean.jpg" alt="Wohnung-Sanierung" />
+    </div>
+  </div>
+</section>
+
+<!-- Package 03 — Gastronomie -->
+<section class="pkg-detail pkg-detail--ink">
+  <div class="pkg-detail__inner">
+    <div class="pkg-detail__photo reveal">
+      <span class="pkg-detail__photo-num">03</span>
+      <img src="assets/img/proj-moroccan-dining.jpg" alt="Gastronomie-Ausbau" />
+    </div>
+    <div class="pkg-detail__body reveal" data-delay="1">
+      <div class="pkg-detail__eyebrow"><span class="rule-red"></span> Komplettpaket · Gastronomie</div>
+      <h2 class="pkg-detail__title">
+        Gastronomie-<br/>
+        <em>Ausbau.</em>
+      </h2>
+      <p class="pkg-detail__lede">
+        Restaurants, Bars und Hotels — von der Konzeptphase bis zur Eröffnung. Wir bauen schlüssel­fertig und stellen Sie auf das Veterinär­amt vor.
+      </p>
+      <div class="pkg-detail__price">
+        <span class="pkg-detail__price-label">Konzept-Sprint ab</span>
+        <span class="pkg-detail__price-val">€ 4.800</span>
+        <span class="pkg-detail__price-from">Bauleistung individuell</span>
+      </div>
+      <ul class="pkg-detail__includes">
+        <li>Innenarchitektur &amp; Konzept</li>
+        <li>Lüftungs- und Klimatechnik</li>
+        <li>Küche &amp; Theke (gewerblich)</li>
+        <li>Kühlhäuser &amp; Lager</li>
+        <li>Sanitärbereiche Gast/Personal</li>
+        <li>Möbel, Polster &amp; Licht</li>
+        <li>POS &amp; Audio-/Video-Technik</li>
+        <li>Brandschutz &amp; Abnahmen</li>
+      </ul>
+      <a class="btn btn--dark" href="kontakt.html">Konzept buchen <span class="arrow">&gt;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="compare">
+  <div class="compare__head reveal">
+    <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Im Vergleich</div>
+    <h2 style="margin-top: 18px;">
+      Welches Paket passt zu <em>Ihrem</em> Projekt?
+    </h2>
+    <p>
+      Die Antwort steckt fast immer in zwei Fragen: Wohnen Sie selbst dort? Und wie groß ist der Eingriff? Die folgenden Werte sind unsere Median-Erfahrungen aus 412 Projekten.
+    </p>
+  </div>
+  <div class="compare__table">
+    <div class="compare__grid">
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--head">Merkmal</div>
+        <div class="compare__cell compare__cell--head">Haus</div>
+        <div class="compare__cell compare__cell--head" style="color: var(--pv-copper);">Wohnung</div>
+        <div class="compare__cell compare__cell--head">Gastro</div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Bauzeit (Median)</div>
+        <div class="compare__cell"><span class="num">22 Wochen</span></div>
+        <div class="compare__cell compare__highlight"><span class="num">8 Wochen</span></div>
+        <div class="compare__cell"><span class="num">14 Wochen</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Investition (ab)</div>
+        <div class="compare__cell"><span class="num">€ 1.480 / m²</span></div>
+        <div class="compare__cell compare__highlight"><span class="num">€ 980 / m²</span></div>
+        <div class="compare__cell"><span class="num">Individuell</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Geeignet für Selbstbewohner</div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+        <div class="compare__cell compare__highlight"><span class="compare__check">✓</span></div>
+        <div class="compare__cell"><span class="compare__no">—</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Während Bewohnung möglich</div>
+        <div class="compare__cell"><span class="compare__no">teils</span></div>
+        <div class="compare__cell compare__highlight"><span class="compare__check">✓</span></div>
+        <div class="compare__cell"><span class="compare__no">—</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Behörden &amp; Genehmigungen</div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+        <div class="compare__cell compare__highlight"><span class="compare__check">✓</span></div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">Festpreisgarantie</div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+        <div class="compare__cell compare__highlight"><span class="compare__check">✓</span></div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+      </div>
+      <div class="compare__row">
+        <div class="compare__cell compare__cell--first">5 Jahre Werksgewähr</div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+        <div class="compare__cell compare__highlight"><span class="compare__check">✓</span></div>
+        <div class="compare__cell"><span class="compare__check">✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="pkg-quote">
+  <div class="reveal">
+    <blockquote>
+      Sie zahlen <em>einen</em> Preis, sehen <em>ein</em> Datum, sprechen mit <em>einer</em> Person — und das vom ersten Telefonat bis zur Schlüsselübergabe.
+    </blockquote>
+    <div class="attr">
+      <span class="name">Daniel &amp; Monica</span> &nbsp;·&nbsp; Gründer, Prima Vista Bauprojekte
+    </div>
+  </div>
+</section>
+
+<section class="end-cta-local" style="background: var(--pv-cream-paper);">
+  <div class="end-cta-local__inner reveal">
+    <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Erste Beratung kostenlos</div>
+    <h2 style="margin-top: 24px;">
+      Welches <em>Paket</em><br/>passt zu Ihnen?
+    </h2>
+    <a class="btn btn--light" href="kontakt.html">Termin vereinbaren <span class="arrow">&gt;</span></a>
+  </div>
+</section>
+
+<div data-pv-footer></div>
+<div data-pv-floating></div>
+
+<script src="assets/site.js"></script>
+
+</body>
+</html>

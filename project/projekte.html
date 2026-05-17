@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Projekte — Prima Vista Bauprojekte</title>
+<meta name="description" content="Ausgewählte Projekte aus Frankfurt, Wiesbaden und der Innerschweiz — Wohnsitz und Gastronomie 2024–2026." />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<style>
+  /* ============== PROJEKTE ============== */
+
+  /* Filter row */
+  .proj-filter {
+    background: var(--pv-cream);
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(26, 26, 26, .08);
+    position: sticky;
+    top: 88px;
+    z-index: 30;
+    backdrop-filter: blur(8px);
+    background: rgba(232, 223, 223, .92);
+  }
+  .proj-filter__inner {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .proj-filter__label {
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .proj-filter__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .proj-filter__chip {
+    font-family: var(--pv-font-display);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border: 1px solid rgba(26, 26, 26, .15);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--pv-ink-2);
+    cursor: pointer;
+    transition: all 200ms var(--pv-ease-out);
+  }
+  .proj-filter__chip:hover {
+    border-color: var(--pv-copper);
+    color: var(--pv-copper);
+  }
+  .proj-filter__chip.is-active {
+    background: var(--pv-ink);
+    color: var(--pv-bone);
+    border-color: var(--pv-ink);
+  }
+  .proj-filter__count {
+    font-family: var(--pv-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--pv-copper);
+  }
+
+  /* Gallery grid */
+  .gallery {
+    background: var(--pv-cream);
+    padding: 72px 0 120px;
+  }
+  .gallery__grid {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 110px;
+    gap: 24px;
+  }
+  .g-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+    cursor: zoom-in;
+    transition: transform 400ms var(--pv-ease-out), opacity 400ms var(--pv-ease-out);
+  }
+  .g-card.is-hidden { display: none; }
+  .g-card img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 900ms var(--pv-ease-out);
+  }
+  .g-card:hover img { transform: scale(1.05); }
+  .g-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(20, 19, 18, .70) 0%, rgba(20, 19, 18, .12) 50%, rgba(20, 19, 18, 0) 80%);
+    transition: background 400ms;
+    opacity: .85;
+  }
+  .g-card:hover::after {
+    background: linear-gradient(to top, rgba(20, 19, 18, .82) 0%, rgba(20, 19, 18, .25) 55%, rgba(20, 19, 18, .10) 85%);
+  }
+  .g-card__body {
+    position: absolute;
+    left: 24px; right: 24px; bottom: 24px;
+    z-index: 2;
+    color: var(--pv-bone);
+  }
+  .g-card__num {
+    font-family: var(--pv-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--pv-copper-bright);
+    display: block;
+    margin-bottom: 8px;
+  }
+  .g-card__ttl {
+    font-family: var(--pv-font-display);
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0 0 6px;
+  }
+  .g-card__meta {
+    font-family: var(--pv-font-display);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-dark-muted);
+  }
+
+  /* Grid spans — varied for editorial rhythm */
+  .g-card[data-size="lg"]  { grid-column: span 7; grid-row: span 5; }
+  .g-card[data-size="md"]  { grid-column: span 5; grid-row: span 5; }
+  .g-card[data-size="sm"]  { grid-column: span 4; grid-row: span 4; }
+  .g-card[data-size="tall"]{ grid-column: span 4; grid-row: span 6; }
+  .g-card[data-size="wide"]{ grid-column: span 8; grid-row: span 4; }
+  .g-card[data-size="sq"]  { grid-column: span 4; grid-row: span 4; }
+
+  /* Map band (locations) */
+  .map-band {
+    background: var(--pv-ink-1);
+    color: var(--pv-bone);
+    padding: 140px 0;
+  }
+  .map-band__inner {
+    max-width: var(--pv-container);
+    margin: 0 auto;
+    padding: 0 48px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: center;
+  }
+  .map-band h2 {
+    font-family: var(--pv-font-serif);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    color: var(--pv-bone);
+    margin: 0 0 28px;
+  }
+  .map-band h2 em { color: var(--pv-copper-bright); }
+  .map-band p {
+    font-family: var(--pv-font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--pv-text-on-dark-muted);
+    margin: 0 0 36px;
+    max-width: 480px;
+  }
+  .map-band__cities {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+    border-top: 1px solid rgba(236, 229, 223, .15);
+    padding-top: 32px;
+  }
+  .map-band__cities li {
+    font-family: var(--pv-font-display);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-dark-muted);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+  .map-band__cities .num {
+    font-family: var(--pv-font-mono);
+    color: var(--pv-copper-bright);
+  }
+  .map-band__cities .city {
+    color: var(--pv-bone);
+  }
+
+  /* Tall composite photo block */
+  .map-band__photo {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: var(--pv-ink-2);
+  }
+  .map-band__photo img { width: 100%; height: 100%; object-fit: cover; }
+  .map-band__photo-label {
+    position: absolute;
+    left: 24px; bottom: 24px;
+    font-family: var(--pv-font-display);
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--pv-bone);
+  }
+  .map-band__photo-label .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); margin-right: 10px; }
+
+  @media (max-width: 880px) {
+    .gallery__grid { grid-template-columns: 1fr; grid-auto-rows: 280px; gap: 18px; }
+    .g-card[data-size] { grid-column: 1 / -1; grid-row: span 1; }
+    .proj-filter__inner { flex-direction: column; align-items: flex-start; }
+    .map-band__inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div data-pv-header="projekte.html"></div>
+
+<section class="page-intro">
+  <div class="page-intro__inner">
+    <div class="reveal">
+      <div class="crumb"><span class="num">04</span> Projekte · Werkschau</div>
+      <h1>
+        Räume aus<br/>
+        der <em>Werkstatt.</em>
+      </h1>
+    </div>
+    <div class="reveal" data-delay="1">
+      <p class="lede">
+        Eine Auswahl der Projekte, die wir 2024 bis 2026 abgeschlossen haben — Wohnsitz, Gastronomie und gemischte Nutzungen in Hessen und der Innerschweiz.
+      </p>
+      <ul class="meta-list">
+        <li>Gezeigt<span>16 Projekte</span></li>
+        <li>Zeitraum<span>2024–2026</span></li>
+        <li>Region<span>DE Frankfurt · CH Luzern</span></li>
+        <li>Vollständiges Portfolio<span>Auf Anfrage</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Filter -->
+<div class="proj-filter">
+  <div class="proj-filter__inner">
+    <span class="proj-filter__label">Filtern nach</span>
+    <ul class="proj-filter__list" id="proj-filter">
+      <li><button class="proj-filter__chip is-active" data-filter="all">Alle</button></li>
+      <li><button class="proj-filter__chip" data-filter="wohnsitz">Wohnsitz</button></li>
+      <li><button class="proj-filter__chip" data-filter="gastro">Gastronomie</button></li>
+      <li><button class="proj-filter__chip" data-filter="bad">Bäder</button></li>
+      <li><button class="proj-filter__chip" data-filter="kueche">Küchen</button></li>
+      <li><button class="proj-filter__chip" data-filter="commercial">Commercial</button></li>
+    </ul>
+    <span class="proj-filter__count" id="proj-count">16 / 16</span>
+  </div>
+</div>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="gallery__grid" id="proj-grid">
+
+    <a class="g-card reveal" data-size="lg" data-tags="gastro" data-lightbox="proj"
+       data-src="assets/img/proj-moroccan-dining-wide.jpg"
+       data-title="Riad — Restaurant · Frankfurt · 2025">
+      <img src="assets/img/proj-moroccan-dining-wide.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 142</span>
+        <h3 class="g-card__ttl">Riad Restaurant</h3>
+        <span class="g-card__meta">Gastronomie · Frankfurt · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="md" data-delay="1" data-tags="wohnsitz" data-lightbox="proj"
+       data-src="assets/img/proj-concrete-sofa-tall.jpg"
+       data-title="Villa Sichtbeton · Luzern · 2024">
+      <img src="assets/img/proj-concrete-sofa-tall.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 138</span>
+        <h3 class="g-card__ttl">Villa Sichtbeton</h3>
+        <span class="g-card__meta">Wohnsitz · Luzern · 2024</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-tags="wohnsitz kueche" data-lightbox="proj"
+       data-src="assets/img/proj-kitchen-oak.jpg"
+       data-title="Küche Eichenholz · Frankfurt · 2025">
+      <img src="assets/img/proj-kitchen-oak.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 140</span>
+        <h3 class="g-card__ttl">Küche Eiche</h3>
+        <span class="g-card__meta">Wohnsitz · Frankfurt · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-delay="1" data-tags="commercial bad" data-lightbox="proj"
+       data-src="assets/img/proj-spa-bath.jpg"
+       data-title="Spa-Bad — Hotel · Emmenbrücke · 2025">
+      <img src="assets/img/proj-spa-bath.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 141</span>
+        <h3 class="g-card__ttl">Spa-Bad</h3>
+        <span class="g-card__meta">Hotel · Emmenbrücke · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-delay="2" data-tags="commercial" data-lightbox="proj"
+       data-src="assets/img/proj-lobby-tree-wide.jpg"
+       data-title="Office Lobby · Frankfurt · 2026">
+      <img src="assets/img/proj-lobby-tree-wide.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 145</span>
+        <h3 class="g-card__ttl">Office Lobby</h3>
+        <span class="g-card__meta">Commercial · Frankfurt · 2026</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="wide" data-tags="gastro" data-lightbox="proj"
+       data-src="assets/img/proj-sushi-wide.jpg"
+       data-title="Sushi Counter · Wiesbaden · 2025">
+      <img src="assets/img/proj-sushi-wide.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 139</span>
+        <h3 class="g-card__ttl">Sushi Counter</h3>
+        <span class="g-card__meta">Gastronomie · Wiesbaden · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="tall" data-delay="1" data-tags="commercial" data-lightbox="proj"
+       data-src="assets/img/proj-stairs-concrete.jpg"
+       data-title="Sichtbeton-Treppenhaus · Luzern · 2024">
+      <img src="assets/img/proj-stairs-concrete.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 136</span>
+        <h3 class="g-card__ttl">Treppenhaus</h3>
+        <span class="g-card__meta">Commercial · Luzern · 2024</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-tags="wohnsitz bad" data-lightbox="proj"
+       data-src="assets/img/proj-bath-double.jpg"
+       data-title="Doppelbad · Frankfurt · 2025">
+      <img src="assets/img/proj-bath-double.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 143</span>
+        <h3 class="g-card__ttl">Doppelbad</h3>
+        <span class="g-card__meta">Wohnsitz · Frankfurt · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-delay="1" data-tags="wohnsitz bad" data-lightbox="proj"
+       data-src="assets/img/proj-bath-stone.jpg"
+       data-title="Naturstein-Bad · Sachsenhausen · 2024">
+      <img src="assets/img/proj-bath-stone.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 137</span>
+        <h3 class="g-card__ttl">Naturstein-Bad</h3>
+        <span class="g-card__meta">Wohnsitz · Sachsenhausen · 2024</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="md" data-tags="gastro" data-lightbox="proj"
+       data-src="assets/img/proj-moroccan-corner.jpg"
+       data-title="Riad — Bar-Ecke · Frankfurt · 2025">
+      <img src="assets/img/proj-moroccan-corner.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 142b</span>
+        <h3 class="g-card__ttl">Riad Bar-Ecke</h3>
+        <span class="g-card__meta">Gastronomie · Frankfurt · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="lg" data-delay="1" data-tags="wohnsitz" data-lightbox="proj"
+       data-src="assets/img/proj-concrete-corner.jpg"
+       data-title="Concrete Corner · Luzern · 2024">
+      <img src="assets/img/proj-concrete-corner.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 138b</span>
+        <h3 class="g-card__ttl">Concrete Corner</h3>
+        <span class="g-card__meta">Wohnsitz · Luzern · 2024</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-tags="gastro" data-lightbox="proj"
+       data-src="assets/img/proj-wine-restaurant.jpg"
+       data-title="Wine Bar · Frankfurt · 2026">
+      <img src="assets/img/proj-wine-restaurant.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 146</span>
+        <h3 class="g-card__ttl">Wine Bar</h3>
+        <span class="g-card__meta">Gastronomie · Frankfurt · 2026</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-delay="1" data-tags="commercial" data-lightbox="proj"
+       data-src="assets/img/proj-spa-corridor.jpg"
+       data-title="Spa-Korridor · Emmenbrücke · 2025">
+      <img src="assets/img/proj-spa-corridor.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 141b</span>
+        <h3 class="g-card__ttl">Spa Korridor</h3>
+        <span class="g-card__meta">Hotel · Emmenbrücke · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="sm" data-delay="2" data-tags="wohnsitz" data-lightbox="proj"
+       data-src="assets/img/proj-floor-oak.jpg"
+       data-title="Eiche Parkett · Wiesbaden · 2025">
+      <img src="assets/img/proj-floor-oak.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 144</span>
+        <h3 class="g-card__ttl">Eiche Parkett</h3>
+        <span class="g-card__meta">Wohnsitz · Wiesbaden · 2025</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="wide" data-tags="commercial" data-lightbox="proj"
+       data-src="assets/img/proj-lobby-tree.jpg"
+       data-title="Lobby Garden · Frankfurt · 2026">
+      <img src="assets/img/proj-lobby-tree.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 145b</span>
+        <h3 class="g-card__ttl">Lobby Garden</h3>
+        <span class="g-card__meta">Commercial · Frankfurt · 2026</span>
+      </div>
+    </a>
+
+    <a class="g-card reveal" data-size="tall" data-delay="1" data-tags="gastro" data-lightbox="proj"
+       data-src="assets/img/proj-moroccan-lamps.jpg"
+       data-title="Riad — Lampen · Frankfurt · 2025">
+      <img src="assets/img/proj-moroccan-lamps.jpg" alt="" />
+      <div class="g-card__body">
+        <span class="g-card__num">№ 142c</span>
+        <h3 class="g-card__ttl">Riad Lampen</h3>
+        <span class="g-card__meta">Gastronomie · Frankfurt · 2025</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- Map band -->
+<section class="map-band">
+  <div class="map-band__inner">
+    <div class="reveal">
+      <div class="eyebrow eyebrow--on-dark"><span class="rule-red"></span>&nbsp;&nbsp;Standorte</div>
+      <h2 style="margin-top: 18px;">
+        Gebaut in zwei<br/>
+        Ländern, gleicher<br/>
+        <em>Anspruch.</em>
+      </h2>
+      <p>
+        Von der Frankfurter Zentrale aus betreuen wir Projekte in ganz Hessen. Aus Emmenbrücke heraus die Innerschweiz. Beide Büros teilen Bauleiter, Lieferanten und Standards.
+      </p>
+      <ul class="map-band__cities">
+        <li><span class="num">DE</span><span class="city">Frankfurt am Main</span></li>
+        <li><span class="num">CH</span><span class="city">Emmenbrücke / Luzern</span></li>
+        <li><span class="num">DE</span><span class="city">Wiesbaden</span></li>
+        <li><span class="num">CH</span><span class="city">Zug, Zürich</span></li>
+        <li><span class="num">DE</span><span class="city">Darmstadt, Offenbach</span></li>
+        <li><span class="num">CH</span><span class="city">Innerschweiz</span></li>
+      </ul>
+    </div>
+    <div class="map-band__photo reveal" data-delay="1">
+      <img src="assets/img/proj-team-jacket.jpg" alt="Prima Vista Team auf der Baustelle" />
+      <div class="map-band__photo-label">
+        <span class="num">№ 00</span><span>Team Frankfurt — 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end-cta-local" style="background: var(--pv-cream-paper);">
+  <div class="end-cta-local__inner reveal">
+    <div class="eyebrow"><span class="rule-red"></span>&nbsp;&nbsp;Ihr Projekt</div>
+    <h2 style="margin-top: 24px;">
+      Erzählen Sie uns von<br/>Ihrem <em>nächsten Raum.</em>
+    </h2>
+    <a class="btn btn--light" href="kontakt.html">Termin vereinbaren <span class="arrow">&gt;</span></a>
+  </div>
+</section>
+
+<div data-pv-footer></div>
+<div data-pv-floating></div>
+
+<script src="assets/site.js"></script>
+
+<script>
+/* ---- Projekte filter ---- */
+(function () {
+  const chips = document.querySelectorAll('.proj-filter__chip');
+  const cards = document.querySelectorAll('.g-card');
+  const count = document.getElementById('proj-count');
+  const total = cards.length;
+
+  function applyFilter(filter) {
+    let shown = 0;
+    cards.forEach(c => {
+      const tags = (c.getAttribute('data-tags') || '').split(/\s+/);
+      const match = filter === 'all' || tags.includes(filter);
+      c.classList.toggle('is-hidden', !match);
+      if (match) shown++;
+    });
+    if (count) count.textContent = shown + ' / ' + total;
+  }
+
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+    applyFilter(chip.getAttribute('data-filter'));
+  }));
+})();
+</script>
+
+</body>
+</html>
