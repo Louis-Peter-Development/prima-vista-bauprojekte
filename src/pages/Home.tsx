@@ -15,6 +15,17 @@ const TRADES = [
   'Elektro', 'Heizung', 'Fassade', 'Maler & Lack', 'Treppen', 'Trockenbau',
 ];
 
+const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string }> = [
+  { num: '01', name: 'Bäder & Sanitär',     lead: 'Wanne, Dusche, WC' },
+  { num: '02', name: 'Küchen & Möbelbau',   lead: 'Schreinerei' },
+  { num: '03', name: 'Böden & Beläge',      lead: 'Parkett, Stein, Vinyl' },
+  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX' },
+  { num: '05', name: 'Heizungsbau',         lead: 'Wärmepumpe, FBH' },
+  { num: '06', name: 'Maler & Lackierer',   lead: 'Farben, Tapeten' },
+  { num: '07', name: 'Fassadensanierung',   lead: 'Putz, WDVS' },
+  { num: '08', name: 'Trockenbau',          lead: 'Wände, Decken' },
+];
+
 const FEATURED: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
   {
     src: '/assets/img/proj-moroccan-dining.jpg',
@@ -207,42 +218,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="stats">
-        <div className="stats__inner">
-          <div className="stats__intro">
-            <h2 className="reveal">
-              Zwölf Jahre. <em>Eine Linie.</em>
-            </h2>
-            <p className="reveal" data-delay="1">
-              Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2014.
-            </p>
-          </div>
-          <div className="stats__grid">
-            <div className="stat reveal">
-              <span className="stat__label">Bauleitung seit</span>
-              <Counter className="stat__num" target={2014} style={{ textAlign: 'left' }} />
-              <span className="stat__desc">Gegründet von Daniel und Monica in Frankfurt am Main.</span>
-            </div>
-            <div className="stat reveal" data-delay="1">
-              <span className="stat__label">Abgeschlossene Projekte</span>
-              <Counter className="stat__num" target={412} />
-              <span className="stat__desc">Von der Einliegerwohnung bis zum 220-Sitzplatz-Restaurant.</span>
-            </div>
-            <div className="stat reveal" data-delay="2">
-              <span className="stat__label">Gewerke aus einer Hand</span>
-              <Counter className="stat__num" target={20} />
-              <span className="stat__desc">Vom Rohbau bis zum Schreiner — alles inhouse oder unter Vertrag.</span>
-            </div>
-            <div className="stat reveal" data-delay="3">
-              <span className="stat__label">Termintreue</span>
-              <Counter className="stat__num" target={98} suffix="%" />
-              <span className="stat__desc">Festes Endtermin-Datum im Vertrag — sonst Konventionalstrafe.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FEATURED PROJECTS */}
       <section className="featured">
         <div className="featured__head">
@@ -287,6 +262,241 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STATS */}
+      <section className="stats">
+        <div className="stats__inner">
+          <div className="stats__intro">
+            <h2 className="reveal">
+              Zwölf Jahre. <em>Eine Linie.</em>
+            </h2>
+            <p className="reveal" data-delay="1">
+              Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2014.
+            </p>
+          </div>
+          <div className="stats__grid">
+            <div className="stat reveal">
+              <span className="stat__label">Bauleitung seit</span>
+              <Counter className="stat__num" target={2014} style={{ textAlign: 'left' }} />
+              <span className="stat__desc">Gegründet von Daniel und Monica in Frankfurt am Main.</span>
+            </div>
+            <div className="stat reveal" data-delay="1">
+              <span className="stat__label">Abgeschlossene Projekte</span>
+              <Counter className="stat__num" target={412} />
+              <span className="stat__desc">Von der Einliegerwohnung bis zum 220-Sitzplatz-Restaurant.</span>
+            </div>
+            <div className="stat reveal" data-delay="2">
+              <span className="stat__label">Gewerke aus einer Hand</span>
+              <Counter className="stat__num" target={20} />
+              <span className="stat__desc">Vom Rohbau bis zum Schreiner — alles inhouse oder unter Vertrag.</span>
+            </div>
+            <div className="stat reveal" data-delay="3">
+              <span className="stat__label">Termintreue</span>
+              <Counter className="stat__num" target={98} suffix="%" />
+              <span className="stat__desc">Festes Endtermin-Datum im Vertrag — sonst Konventionalstrafe.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KALKULATOR — live interactive */}
+      <section className="kalk">
+        <div className="kalk__inner">
+          <div className="kalk__head reveal">
+            <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;№ 05 · Kalkulator</div>
+            <h2>
+              Live-Schätzung.<br />
+              In <em>Sekunden.</em>
+            </h2>
+            <p>
+              Vier Klicks, eine Spanne: Objektart, Fläche, Ausbaustandard, Gewerke. Der Kalkulator rechnet in Echtzeit — keine Anmeldung, kein Telefonat. Eine erste Orientierung, sofort.
+            </p>
+            <ul className="kalk__steps">
+              <li><span className="num">01</span>Objektart & Fläche wählen</li>
+              <li><span className="num">02</span>Gewerke an- und abwählen</li>
+              <li><span className="num">03</span>Spanne aktualisiert live</li>
+            </ul>
+            <div className="kalk__actions">
+              <Link className="btn btn--solid" to="/kalkulator">
+                Zum Kalkulator <span className="arrow">&gt;</span>
+              </Link>
+              <Link className="btn btn--dark" to="/kontakt">
+                Termin vereinbaren <span className="arrow">&gt;</span>
+              </Link>
+            </div>
+          </div>
+          <div className="kalk__card reveal" data-delay="1" aria-hidden="true">
+            <div className="kalk__card-head">
+              <span className="kalk__card-num">№ 05</span>
+              <span className="kalk__card-label">Kalkulator · Live</span>
+            </div>
+            <div className="kalk__field">
+              <span className="kalk__field-label">Objektart</span>
+              <div className="kalk__chips">
+                <span className="kalk__chip is-on">Haus</span>
+                <span className="kalk__chip">Wohnung</span>
+                <span className="kalk__chip">Gastro</span>
+                <span className="kalk__chip">Anderes</span>
+              </div>
+            </div>
+            <div className="kalk__field">
+              <span className="kalk__field-label">Fläche</span>
+              <div className="kalk__input">
+                <span className="kalk__input-value">142</span>
+                <span className="kalk__input-unit">m²</span>
+              </div>
+            </div>
+            <div className="kalk__field">
+              <span className="kalk__field-label">Gewerke</span>
+              <div className="kalk__chips">
+                <span className="kalk__chip is-on">Bad</span>
+                <span className="kalk__chip is-on">Küche</span>
+                <span className="kalk__chip">Boden</span>
+                <span className="kalk__chip is-on">Elektrik</span>
+                <span className="kalk__chip">Heizung</span>
+              </div>
+            </div>
+            <div className="kalk__result">
+              <span className="kalk__result-label">Live-Spanne</span>
+              <span className="kalk__result-value">€ 84 – 112 Tsd.</span>
+              <span className="kalk__result-note">Mittelwert € 98 Tsd. · ca. € 690 / m²</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BLITZ-ANGEBOT — written 24h quote */}
+      <section className="blitz-home">
+        <div className="blitz-home__inner">
+          <div className="blitz-home__doc reveal" aria-hidden="true">
+            <div className="blitz-home__doc-paper">
+              <div className="blitz-home__doc-head">
+                <div>
+                  <span className="blitz-home__doc-num">№ 06 / BA-2026-142</span>
+                  <span className="blitz-home__doc-label">Vorab-Kostenschätzung</span>
+                </div>
+                <span className="blitz-home__doc-stamp">In 24 Std.</span>
+              </div>
+              <ul className="blitz-home__doc-rows">
+                <li><span>Projekt</span><strong>Wohnungssanierung · 142 m²</strong></li>
+                <li><span>Standort</span><strong>Frankfurt-Sachsenhausen</strong></li>
+                <li><span>Gewerke</span><strong>Bad, Küche, Elektrik, Maler</strong></li>
+                <li><span>Standard</span><strong>Gehoben</strong></li>
+              </ul>
+              <div className="blitz-home__doc-total">
+                <span className="blitz-home__doc-total-label">Geschätzte Investition</span>
+                <span className="blitz-home__doc-total-value">€ 184 – 226 Tsd.</span>
+                <span className="blitz-home__doc-total-note">Verbindlich nach Aufmaß vor Ort.</span>
+              </div>
+              <div className="blitz-home__doc-sig">
+                <span className="blitz-home__doc-sig-name">Daniel Vogel · Bauleitung</span>
+                <span className="blitz-home__doc-sig-date">Frankfurt · 17. Mai 2026</span>
+              </div>
+            </div>
+          </div>
+          <div className="blitz-home__head reveal" data-delay="1">
+            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;№ 06 · Blitz-Angebot</div>
+            <h2>
+              Festpreis. Schwarz auf weiß.<br />
+              In <em>24 Stunden.</em>
+            </h2>
+            <p>
+              Etwas konkreter? Beantworten Sie ein Kurzformular — wir prüfen, kalkulieren und schicken eine schriftliche Vorab-Kostenschätzung, per Mail, von unserer Bauleitung gegengezeichnet.
+            </p>
+            <ul className="blitz-home__list">
+              <li><span className="num">01</span>Kurzformular ausfüllen (3 Minuten)</li>
+              <li><span className="num">02</span>Bauleitung prüft Substanz &amp; Gewerke</li>
+              <li><span className="num">03</span>Schriftliches Angebot in 24 Stunden</li>
+            </ul>
+            <div className="blitz-home__actions">
+              <Link className="btn btn--solid" to="/blitz-angebot">
+                Blitz-Angebot anfordern <span className="arrow">&gt;</span>
+              </Link>
+              <Link className="btn btn--light" to="/kontakt">
+                Termin vereinbaren <span className="arrow">&gt;</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRADES PREVIEW */}
+      <section className="trades-preview">
+        <div className="trades-preview__head">
+          <div className="reveal">
+            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Gewerke</div>
+            <h2>
+              Zwanzig Gewerke,<br />
+              <em>eine Hand.</em>
+            </h2>
+          </div>
+          <p className="reveal" data-delay="1">
+            Jedes Gewerk koordiniert durch unsere eigene Bauleitung — einzeln buchbar oder als Komplettpaket. Hier ein Auszug der am häufigsten gefragten Disziplinen.
+          </p>
+        </div>
+        <ul className="trades-preview__grid">
+          {TRADES_PREVIEW.map((t, i) => (
+            <li key={t.num} className="trade-chip reveal" data-delay={i % 4 || undefined}>
+              <span className="trade-chip__num">{t.num}</span>
+              <span className="trade-chip__name">{t.name}</span>
+              <span className="trade-chip__lead">{t.lead}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="trades-preview__more reveal">
+          <Link className="btn btn--dark" to="/gewerke">
+            Alle 20 Gewerke ansehen <span className="arrow">&gt;</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* HEATING */}
+      <section className="heating">
+        <div className="heating__head reveal">
+          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Moderne Heizmethoden</div>
+          <h2>
+            Bereit für die <em>Zukunft.</em>
+          </h2>
+          <p>
+            Rüsten Sie mit unseren Paketen auf innovative Heizmethoden auf — förderfähig, geräuscharm und unabhängig vom Gas.
+          </p>
+        </div>
+        <div className="heating__grid">
+          <article className="heat-card reveal">
+            <div className="heat-card__photo">
+              <img src="/assets/img/proj-stairs-concrete.jpg" alt="Luftwärmepumpe" />
+            </div>
+            <div className="heat-card__body">
+              <span className="heat-card__num">№ 01</span>
+              <h3 className="heat-card__title">Luftwärme-<br />pumpe</h3>
+              <p className="heat-card__desc">Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.</p>
+              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+            </div>
+          </article>
+          <article className="heat-card reveal" data-delay="1">
+            <div className="heat-card__photo">
+              <img src="/assets/img/proj-floor-oak.jpg" alt="Heizungsstränge" />
+            </div>
+            <div className="heat-card__body">
+              <span className="heat-card__num">№ 02</span>
+              <h3 className="heat-card__title">Heizungs-<br />stränge</h3>
+              <p className="heat-card__desc">Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.</p>
+              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+            </div>
+          </article>
+          <article className="heat-card reveal" data-delay="2">
+            <div className="heat-card__photo">
+              <img src="/assets/img/proj-spa-corridor.jpg" alt="Heizkörper" />
+            </div>
+            <div className="heat-card__body">
+              <span className="heat-card__num">№ 03</span>
+              <h3 className="heat-card__title">Design-<br />Heizkörper</h3>
+              <p className="heat-card__desc">Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.</p>
+              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
       {/* FOUNDERS */}
       <section className="founders" id="ueber-uns">
         <div className="founders__inner">
@@ -319,54 +529,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HEATING */}
-      <section className="heating">
-        <div className="heating__head reveal">
-          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Moderne Heizmethoden</div>
-          <h2>
-            Bereit für die <em>Zukunft.</em>
-          </h2>
-          <p>
-            Rüsten Sie mit unseren Paketen auf innovative Heizmethoden auf — förderfähig, geräuscharm und unabhängig vom Gas.
-          </p>
-        </div>
-        <div className="heating__grid">
-          <article className="heat-card reveal">
-            <div className="heat-card__photo">
-              <img src="/assets/img/photo-luftwaerme-clean.jpg" alt="Luftwärmepumpe" />
-            </div>
-            <div className="heat-card__body">
-              <span className="heat-card__num">№ 01</span>
-              <h3 className="heat-card__title">Luftwärme-<br />pumpe</h3>
-              <p className="heat-card__desc">Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.</p>
-              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
-            </div>
-          </article>
-          <article className="heat-card reveal" data-delay="1">
-            <div className="heat-card__photo">
-              <img src="/assets/img/photo-heizstraenge-clean.jpg" alt="Heizungsstränge" />
-            </div>
-            <div className="heat-card__body">
-              <span className="heat-card__num">№ 02</span>
-              <h3 className="heat-card__title">Heizungs-<br />stränge</h3>
-              <p className="heat-card__desc">Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.</p>
-              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
-            </div>
-          </article>
-          <article className="heat-card reveal" data-delay="2">
-            <div className="heat-card__photo">
-              <img src="/assets/img/photo-heizkoerper-clean.jpg" alt="Heizkörper" />
-            </div>
-            <div className="heat-card__body">
-              <span className="heat-card__num">№ 03</span>
-              <h3 className="heat-card__title">Design-<br />Heizkörper</h3>
-              <p className="heat-card__desc">Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.</p>
-              <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
-            </div>
-          </article>
-        </div>
-      </section>
-
       {/* TESTIMONIAL */}
       <section className="testimonial">
         <div className="testimonial__inner reveal">
@@ -395,6 +557,12 @@ export default function Home() {
           <div className="end-cta__buttons">
             <Link className="btn btn--dark" to="/kontakt">
               Termin vereinbaren <span className="arrow">&gt;</span>
+            </Link>
+            <Link className="btn btn--dark" to="/kalkulator">
+              Zum Kalkulator <span className="arrow">&gt;</span>
+            </Link>
+            <Link className="btn btn--dark" to="/blitz-angebot">
+              Blitz-Angebot <span className="arrow">&gt;</span>
             </Link>
             <a className="btn btn--dark" href="tel:+4915789818308" style={{ borderColor: 'rgba(236, 229, 223, .25)' }}>
               +49 1578 98 18 308

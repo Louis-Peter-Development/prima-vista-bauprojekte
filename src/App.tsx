@@ -6,6 +6,7 @@ import KomplettPakete from './pages/KomplettPakete';
 import Projekte from './pages/Projekte';
 import Kontakt from './pages/Kontakt';
 import BlitzAngebot from './pages/BlitzAngebot';
+import Kalkulator from './pages/Kalkulator';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/projekte" element={<Projekte />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/blitz-angebot" element={<BlitzAngebot />} />
+        <Route path="/kalkulator" element={<Kalkulator />} />
       </Route>
     </Routes>
   );

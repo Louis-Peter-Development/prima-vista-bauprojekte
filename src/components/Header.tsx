@@ -6,8 +6,7 @@ const NAV = [
   { to: '/komplett-pakete', label: 'Komplett-Pakete' },
   { to: '/gewerke', label: 'Gewerke' },
   { to: '/projekte', label: 'Projekte' },
-  { to: '/blitz-angebot', label: 'Blitz Angebot' },
-  { to: '/kontakt', label: 'Kontakt' },
+  { to: '/kalkulator', label: 'Kalkulator' },
 ];
 
 export default function Header() {
