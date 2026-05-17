@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Counter from '../components/Counter';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import '../styles/pages/home.css';
+
+const HERO_IMAGES = [
+  '/assets/img/proj-moroccan-dining-wide.jpg',
+  '/assets/img/proj-sushi-wide.jpg',
+  '/assets/img/proj-lobby-tree-wide.jpg'
+];
 
 const TRADES = [
   'Sanierung', 'Renovierung', 'Gastronomie-Ausbau', 'Bäder', 'Küchen', 'Böden',
@@ -61,10 +68,30 @@ export default function Home() {
   const { open } = useLightbox();
   const items: LightboxItem[] = FEATURED.map((p) => ({ src: p.src, title: p.title }));
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <>
       {/* HERO */}
       <section className="hero">
+        <div className="hero__bg-slideshow">
+          {HERO_IMAGES.map((src, i) => (
+            <div
+              key={src}
+              className={`hero__bg-slide ${i === currentSlide ? 'is-active' : ''}`}
+              style={{ backgroundImage: `url(${src})` }}
+            />
+          ))}
+          <div className="hero__bg-overlay"></div>
+        </div>
+
         <div className="hero__inner">
           <div className="hero__topline">
             <span><span className="dot"></span>Frankfurt &amp; Emmenbrücke</span>
@@ -73,16 +100,15 @@ export default function Home() {
           </div>
 
           <h1 className="hero__headline">
-            Räume, die <em>bleiben.</em><br />
-            Handwerk <span className="amp">&amp;</span> <em>Vision</em>
+            <em>Eine</em> Vision.<br />
+            <em>Eine</em> <span className="amp">&amp;</span> Adresse.
           </h1>
 
           <div className="hero__meta">
             <div>
               <div className="hero__meta-num">01 — Editorial</div>
               <p className="hero__lede">
-                <strong>Verwandeln Sie Ihr Zuhause in Ihren Traumort.</strong>{' '}
-                Von der ersten Skizze bis zur finalen Fuge: Komplettsanierung für Haus, Wohnung und Gastronomie — Bauleitung und alle Materialien inklusive.
+                <strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werksgewähr.
               </p>
             </div>
             <div></div>
@@ -92,14 +118,6 @@ export default function Home() {
                 Termin vereinbaren <span className="arrow">&gt;</span>
               </Link>
             </div>
-          </div>
-        </div>
-
-        <div className="hero__photo">
-          <img className="kenburns" src="/assets/img/proj-moroccan-dining-wide.jpg" alt="Innenausbau eines orientalischen Restaurants — Prima Vista Bauprojekte" />
-          <div className="hero__photo-cap">
-            <span className="num">№ 142</span>
-            <span className="ttl">Riad — Gastronomie-Ausbau · Frankfurt</span>
           </div>
         </div>
       </section>

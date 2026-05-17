@@ -22,7 +22,7 @@ type Pkg = {
 const PACKAGES: Pkg[] = [
   {
     num: '01',
-    photo: '/assets/img/photo-haus-clean.jpg',
+    photo: '/assets/img/proj-concrete-sofa.jpg',
     alt: 'Haus-Sanierung',
     eyebrow: 'Komplettpaket · Haus',
     title: <>Haus-<br /><em>Sanierung.</em></>,

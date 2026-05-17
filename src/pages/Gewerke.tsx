@@ -74,6 +74,7 @@ const FEATURED: Array<{ src: string; title: string; count: string; heading: Reac
   },
 ];
 
+
 export default function Gewerke() {
   const { open } = useLightbox();
   const [active, setActive] = useState<TradeRow>(TRADES[0]);

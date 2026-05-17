@@ -7,7 +7,34 @@
   overflow: hidden;
   position: relative;
 }
+.hero__bg-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero__bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 8s ease-out;
+  transform: scale(1.02);
+}
+.hero__bg-slide.is-active {
+  opacity: 1;
+  transform: scale(1.05); /* subtle ken burns effect */
+}
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  /* Reduced cream wash so images are more prominent while text stays legible */
+  background: linear-gradient(to top, rgba(232, 223, 223, 0.4) 0%, rgba(232, 223, 223, 0.75) 60%, rgba(232, 223, 223, 0.85) 100%);
+}
 .hero__inner {
+  position: relative;
+  z-index: 1;
   max-width: 1480px;
   margin: 0 auto;
   padding: 0 48px;
@@ -33,17 +60,17 @@
 }
 .hero__headline {
   font-family: var(--pv-font-serif);
-  font-style: italic;
+  font-style: normal;
   font-weight: 500;
   font-size: clamp(72px, 11.5vw, 200px);
   line-height: 0.92;
   letter-spacing: -0.022em;
-  color: var(--pv-ink);
+  color: var(--pv-copper);
   margin: 0;
   text-wrap: balance;
 }
 .hero__headline em {
-  color: var(--pv-copper);
+  color: var(--pv-ink);
   font-style: italic;
 }
 .hero__headline .amp {
@@ -59,7 +86,6 @@
   gap: 56px;
   align-items: end;
   padding: 56px 0 48px;
-  border-bottom: 1px solid rgba(26, 26, 26, .12);
   margin-bottom: 0;
 }
 .hero__meta-num {

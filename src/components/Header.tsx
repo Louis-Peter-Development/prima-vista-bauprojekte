@@ -30,7 +30,7 @@ export default function Header() {
             ))}
           </ul>
           <Link className="btn btn--light" to="/kontakt">
-            Termin vereinbaren <span className="arrow">&gt;</span>
+            Jetzt anfragen <span className="arrow">&gt;</span>
           </Link>
         </nav>
       </div>
