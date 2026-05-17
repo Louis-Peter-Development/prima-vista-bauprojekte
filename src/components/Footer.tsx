@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FacebookIcon, InstagramIcon, MailIcon } from './icons';
 
 export default function Footer() {
   return (
@@ -19,39 +20,121 @@ export default function Footer() {
           </div>
           <div>
             <h4>Standorte</h4>
-            <p>
-              <strong style={{ color: 'var(--pv-bone)', fontWeight: 500 }}>Frankfurt</strong>
-              <br />
-              Hessen, Deutschland
-              <br />
-              +49 69 0000 0000
-            </p>
-            <p style={{ marginTop: 16 }}>
-              <strong style={{ color: 'var(--pv-bone)', fontWeight: 500 }}>Emmenbrücke</strong>
-              <br />
-              Luzern, Schweiz
-              <br />
-              +41 41 000 00 00
-            </p>
+            <ul className="pv-footer__contact-list">
+              <li>
+                <div className="pv-footer__contact-link pv-footer__contact-link--static">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">DE</span>
+                  <span>
+                    <strong>Frankfurt</strong>
+                    <br />
+                    Gref-Völsing-Strasse 13
+                    <br />
+                    60314 Frankfurt
+                    <br />
+                    Deutschland
+                    <br />
+                    <a href="tel:+4915789818308">+49 1578 98 18 308</a>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div className="pv-footer__contact-link pv-footer__contact-link--static">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">CH</span>
+                  <span>
+                    <strong>Emmenbrücke</strong>
+                    <br />
+                    Spinnereistrasse 5
+                    <br />
+                    6020 Emmenbrücke
+                    <br />
+                    Schweiz
+                    <br />
+                    <a href="tel:+41782659332">+41 78 265 93 32</a>
+                  </span>
+                </div>
+              </li>
+            </ul>
           </div>
           <div>
             <h4>Leistungen</h4>
-            <ul>
-              <li><Link to="/komplett-pakete">Komplett-Pakete</Link></li>
-              <li><Link to="/gewerke">Gewerke</Link></li>
-              <li><Link to="/projekte">Projekte</Link></li>
-              <li><Link to="/kontakt">Service</Link></li>
-              <li><Link to="/kontakt">Blitz-Angebote</Link></li>
+            <ul className="pv-footer__contact-list">
+              <li>
+                <Link className="pv-footer__contact-link" to="/komplett-pakete">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">01</span>
+                  <span>Komplett-Pakete</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/gewerke">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">02</span>
+                  <span>Gewerke</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/projekte">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">03</span>
+                  <span>Projekte</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/kontakt">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">04</span>
+                  <span>Service</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/kontakt">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">05</span>
+                  <span>Blitz-Angebote</span>
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Kontakt</h4>
-            <ul>
-              <li><Link to="/kontakt">Termin vereinbaren</Link></li>
-              <li><Link to="/kontakt">Anfrage senden</Link></li>
-              <li><Link to="/kontakt">Über uns</Link></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <ul className="pv-footer__contact-list">
+              <li>
+                <a className="pv-footer__contact-link" href="tel:+4915789818308">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">DE</span>
+                  <span>+49 1578 98 18 308</span>
+                </a>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="tel:+41782659332">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">CH</span>
+                  <span>+41 78 265 93 32</span>
+                </a>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="mailto:office@primavista-bauprojekte.com">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><MailIcon /></span>
+                  <span>office@primavista-bauprojekte.com</span>
+                </a>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="mailto:info@primavista-bauprojekte.ch">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><MailIcon /></span>
+                  <span>info@primavista-bauprojekte.ch</span>
+                </a>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/#ueber-uns">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">PV</span>
+                  <span>Über uns</span>
+                </Link>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><InstagramIcon /></span>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a className="pv-footer__contact-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><FacebookIcon /></span>
+                  <span>Facebook</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>

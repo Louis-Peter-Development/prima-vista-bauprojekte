@@ -50,15 +50,15 @@ export default function BlitzAngebot() {
   }
 
   return (
-    <section className="kontakt" style={{ paddingBottom: '160px', minHeight: '100vh' }}>
-      <div className="kontakt__inner" style={{ gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.4fr)' }}>
+    <section className="kontakt kontakt--blitz">
+      <div className="kontakt__inner">
         
         <div className="kontakt__intro reveal">
-          <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;Fast-Track Vorab-Schätzung</div>
-          <h2 style={{ marginTop: 20 }}>
+          <div className="crumb crumb--on-dark"><span className="num">06</span> Blitz-Angebot · Vorab-Schätzung</div>
+          <h1>
             Das Blitz<br />
             <em>Angebot.</em>
-          </h2>
+          </h1>
           <p>
             Sie wissen genau, was Sie wollen? Beantworten Sie ein paar konkrete Fragen zu Fläche und Gewerken. Wir analysieren und schicken Ihnen innerhalb von 24 Stunden eine erste, handfeste Kostenschätzung ohne langes Vorab-Telefonat.
           </p>
@@ -74,7 +74,7 @@ export default function BlitzAngebot() {
           {sent ? (
             <div style={{ textAlign: 'center', padding: '64px 0' }}>
               <div className="eyebrow" style={{ justifyContent: 'center' }}>Gesendet</div>
-              <h3 className="kontakt__form-title" style={{ marginTop: 24 }}>Vielen Dank.</h3>
+              <h3 className="kontakt__form-title">Vielen Dank.</h3>
               <p className="pv-body">
                 Ihre Anfrage ist bei uns eingegangen. Wir werten das Projekt aus und stellen Ihnen innerhalb von 24 Stunden unsere erste Einschätzung zu.
               </p>

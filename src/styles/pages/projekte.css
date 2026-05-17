@@ -227,3 +227,125 @@
   .proj-filter__inner { flex-direction: column; align-items: flex-start; }
   .map-band__inner { grid-template-columns: 1fr; gap: 32px; }
 }
+
+@media (max-width: 600px) {
+  .proj-filter {
+    position: static;
+    padding: 20px 0;
+  }
+  .proj-filter__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px 18px;
+    padding: 0 20px;
+  }
+  .proj-filter__label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+  }
+  .proj-filter__list {
+    grid-column: 1 / -1;
+    gap: 8px;
+  }
+  .proj-filter__chip {
+    padding: 9px 12px;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+  .proj-filter__count {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+  }
+
+  .gallery {
+    padding: 48px 0 88px;
+  }
+  .gallery__grid {
+    padding: 0 20px;
+    grid-auto-rows: auto;
+    gap: 18px;
+  }
+  .g-card,
+  .g-card[data-size] {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .g-card[data-size="md"],
+  .g-card[data-size="tall"] {
+    aspect-ratio: 4 / 5;
+  }
+  .g-card__body {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .g-card__num {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+  .g-card__ttl {
+    font-size: 15px;
+    letter-spacing: 0.03em;
+  }
+  .g-card__meta {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+  }
+
+  .map-band {
+    padding: 88px 0;
+  }
+  .map-band__inner {
+    padding: 0 20px;
+    gap: 40px;
+  }
+  .map-band h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+    margin-bottom: 24px;
+  }
+  .map-band p {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: 30px;
+  }
+  .map-band__cities {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 28px;
+  }
+  .map-band__cities li {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    gap: 12px;
+  }
+  .map-band__photo {
+    aspect-ratio: 4 / 4.6;
+  }
+  .map-band__photo-label {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    line-height: 1.4;
+  }
+
+  .end-cta-local {
+    padding: 88px 0;
+  }
+  .end-cta-local__inner {
+    max-width: none;
+    padding: 0 20px;
+  }
+  .end-cta-local h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+  .end-cta-local .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}

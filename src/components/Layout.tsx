@@ -8,10 +8,20 @@ import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { hash, pathname } = useLocation();
+
   useEffect(() => {
+    if (hash) {
+      const frame = window.requestAnimationFrame(() => {
+        const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+        target?.scrollIntoView({ block: 'start', behavior: 'instant' as ScrollBehavior });
+      });
+      return () => window.cancelAnimationFrame(frame);
+    }
+
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
-  }, [pathname]);
+  }, [hash, pathname]);
+
   return null;
 }
 

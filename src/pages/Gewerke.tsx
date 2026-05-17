@@ -8,15 +8,15 @@ type TradeKey =
   | 'treppen' | 'heizung' | 'abdichtung' | 'maler' | 'trockenbau' | 'sanitaer';
 
 const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/photo-badezimmer.jpg',
+  bad: '/assets/img/proj-bath-stone.jpg',
   kueche: '/assets/img/proj-kitchen-oak.jpg',
-  fassade: '/assets/img/photo-fassade.jpg',
-  dach: '/assets/img/photo-dach.jpg',
-  elektro: '/assets/img/photo-elektro.jpg',
+  fassade: '/assets/img/proj-team-jacket.jpg',
+  dach: '/assets/img/proj-concrete-corner.jpg',
+  elektro: '/assets/img/proj-lobby-tree.jpg',
   boden: '/assets/img/proj-floor-oak.jpg',
   treppen: '/assets/img/proj-stairs-concrete.jpg',
   heizung: '/assets/img/photo-luftwaerme-clean.jpg',
-  abdichtung: '/assets/img/photo-abdichtung.jpg',
+  abdichtung: '/assets/img/proj-spa-corridor.jpg',
   maler: '/assets/img/proj-paint-swatches.jpg',
   trockenbau: '/assets/img/proj-concrete-corner.jpg',
   sanitaer: '/assets/img/photo-heizstraenge-clean.jpg',
@@ -49,7 +49,7 @@ const TRADES: TradeRow[] = [
 
 const FEATURED: Array<{ src: string; title: string; count: string; heading: ReactNode; desc: string; feature?: boolean; revealDelay?: number }> = [
   {
-    src: '/assets/img/photo-badezimmer.jpg',
+    src: '/assets/img/proj-bath-stone.jpg',
     title: 'Badezimmer — Sanitär & Fliesen',
     count: '01 — 142 Projekte',
     heading: <>Bäder &amp;<br />Sanitär</>,
@@ -83,7 +83,7 @@ export default function Gewerke() {
 
   return (
     <>
-      <section className="page-intro">
+      <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-spa-bath.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
             <div className="crumb"><span className="num">02</span> Gewerke · Bauleistungen</div>
@@ -112,7 +112,7 @@ export default function Gewerke() {
           <div className="featured-trades__head">
             <div className="reveal">
               <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Am häufigsten gefragt</div>
-              <h2 style={{ marginTop: 18 }}>
+              <h2>
                 Drei Gewerke, die fast<br />
                 jedes Projekt <em>tragen.</em>
               </h2>
@@ -146,7 +146,7 @@ export default function Gewerke() {
         <div className="trade-index__head">
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Alle Gewerke</div>
-            <h2 style={{ marginTop: 18 }}>
+            <h2>
               Das vollständige<br />
               <em>Verzeichnis.</em>
             </h2>
@@ -194,7 +194,7 @@ export default function Gewerke() {
           <div className="process__head">
             <div className="reveal">
               <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;So arbeiten wir</div>
-              <h2 style={{ marginTop: 18 }}>Vom Anruf bis zur<br />schlüssel­fertigen <em>Übergabe.</em></h2>
+              <h2>Vom Anruf bis zur<br />schlüssel­fertigen <em>Übergabe.</em></h2>
             </div>
             <p className="reveal" data-delay="1">
               Vier Etappen — jede mit fester Ansprechperson, festem Termin und schriftlichem Festpreis. Keine Stundenabrechnung, keine Übergaben zwischen Subunternehmern.
@@ -221,7 +221,7 @@ export default function Gewerke() {
       <section className="end-cta-local">
         <div className="end-cta-local__inner reveal">
           <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Bereit zu starten?</div>
-          <h2 style={{ marginTop: 24 }}>
+          <h2>
             Welches <em>Gewerk</em><br />steht bei Ihnen an?
           </h2>
           <Link className="btn btn--light" to="/kontakt">Anfrage senden <span className="arrow">&gt;</span></Link>

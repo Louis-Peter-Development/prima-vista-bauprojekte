@@ -59,7 +59,7 @@ export default function Projekte() {
 
   return (
     <>
-      <section className="page-intro">
+      <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-moroccan-dining-wide.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
             <div className="crumb"><span className="num">04</span> Projekte · Werkschau</div>
@@ -131,7 +131,7 @@ export default function Projekte() {
         <div className="map-band__inner">
           <div className="reveal">
             <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;Standorte</div>
-            <h2 style={{ marginTop: 18 }}>
+            <h2>
               Gebaut in zwei<br />
               Ländern, gleicher<br />
               <em>Anspruch.</em>
@@ -151,7 +151,7 @@ export default function Projekte() {
           <div className="map-band__photo reveal" data-delay="1">
             <img src="/assets/img/proj-team-jacket.jpg" alt="Prima Vista Team auf der Baustelle" />
             <div className="map-band__photo-label">
-              <span className="num">№ 00</span><span>Team Frankfurt — 2026</span>
+              <span>Team Frankfurt — 2026</span>
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function Projekte() {
       <section className="end-cta-local" style={{ background: 'var(--pv-cream-paper)' }}>
         <div className="end-cta-local__inner reveal">
           <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Ihr Projekt</div>
-          <h2 style={{ marginTop: 24 }}>
+          <h2>
             Erzählen Sie uns von<br />Ihrem <em>nächsten Raum.</em>
           </h2>
           <Link className="btn btn--light" to="/kontakt">Termin vereinbaren <span className="arrow">&gt;</span></Link>

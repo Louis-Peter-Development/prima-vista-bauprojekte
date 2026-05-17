@@ -38,7 +38,7 @@ const PACKAGES: Pkg[] = [
     num: '02',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/photo-wohnung-clean.jpg',
+    photo: '/assets/img/proj-kitchen-oak.jpg',
     alt: 'Wohnung-Sanierung',
     eyebrow: 'Komplettpaket · Wohnung',
     title: <>Wohnung-<br /><em>Sanierung.</em></>,
@@ -82,7 +82,7 @@ const COMPARE_ROWS: Array<{ feature: string; haus: React.ReactNode; wohnung: Rea
 export default function KomplettPakete() {
   return (
     <>
-      <section className="page-intro">
+      <section className="page-intro" style={{ ['--page-intro-bg' as string]: 'url(/assets/img/proj-concrete-sofa.jpg)' }}>
         <div className="page-intro__inner">
           <div className="reveal">
             <div className="crumb"><span className="num">03</span> Komplett-Pakete</div>
@@ -114,7 +114,7 @@ export default function KomplettPakete() {
 
         const photo = (
           <div className="pkg-detail__photo reveal">
-            <span className="pkg-detail__photo-num">{pkg.num}</span>
+            <span className="pkg-detail__photo-num">№&nbsp;{pkg.num}</span>
             <img src={pkg.photo} alt={pkg.alt} />
           </div>
         );
@@ -149,7 +149,7 @@ export default function KomplettPakete() {
       <section className="compare">
         <div className="compare__head reveal">
           <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Im Vergleich</div>
-          <h2 style={{ marginTop: 18 }}>
+          <h2>
             Welches Paket passt zu <em>Ihrem</em> Projekt?
           </h2>
           <p>
@@ -167,9 +167,9 @@ export default function KomplettPakete() {
             {COMPARE_ROWS.map((row) => (
               <div key={row.feature} className="compare__row">
                 <div className="compare__cell compare__cell--first">{row.feature}</div>
-                <div className="compare__cell">{row.haus}</div>
-                <div className="compare__cell compare__highlight">{row.wohnung}</div>
-                <div className="compare__cell">{row.gastro}</div>
+                <div className="compare__cell" data-label="Haus">{row.haus}</div>
+                <div className="compare__cell compare__highlight" data-label="Wohnung">{row.wohnung}</div>
+                <div className="compare__cell" data-label="Gastro">{row.gastro}</div>
               </div>
             ))}
           </div>
@@ -190,7 +190,7 @@ export default function KomplettPakete() {
       <section className="end-cta-local" style={{ background: 'var(--pv-cream-paper)' }}>
         <div className="end-cta-local__inner reveal">
           <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Erste Beratung kostenlos</div>
-          <h2 style={{ marginTop: 24 }}>
+          <h2>
             Welches <em>Paket</em><br />passt zu Ihnen?
           </h2>
           <Link className="btn btn--light" to="/kontakt">Termin vereinbaren <span className="arrow">&gt;</span></Link>

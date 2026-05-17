@@ -100,8 +100,9 @@ export default function Home() {
           </div>
 
           <h1 className="hero__headline">
-            <em>Eine</em> Vision.<br />
-            <em>Eine</em> <span className="amp">&amp;</span> Adresse.
+            <span className="hero__headline-line"><em>Eine</em> Vision.</span>
+            <span className="hero__headline-line"><em>Eine</em> Adresse.</span>
+            <span className="hero__headline-line"><em>Ein</em> Team.</span>
           </h1>
 
           <div className="hero__meta">
@@ -166,7 +167,7 @@ export default function Home() {
         <div className="packages__head">
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Komplett-Pakete</div>
-            <h2 style={{ marginTop: 24 }}>
+            <h2>
               Drei Wege zum<br />
               fertigen <em>Raum.</em>
             </h2>
@@ -177,7 +178,7 @@ export default function Home() {
         </div>
         <div className="packages__grid">
           <Link className="pkg-card reveal" data-delay="1" to="/komplett-pakete">
-            <img src="/assets/img/photo-haus-clean.jpg" alt="Haus-Sanierung" />
+            <img src="/assets/img/proj-concrete-sofa.jpg" alt="Haus-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
               <h3 className="pkg-card__title">Haus-<br />Sanierung</h3>
@@ -186,7 +187,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="2" to="/komplett-pakete">
-            <img src="/assets/img/photo-wohnung-clean.jpg" alt="Wohnung-Sanierung" />
+            <img src="/assets/img/proj-kitchen-oak.jpg" alt="Wohnung-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
               <h3 className="pkg-card__title">Wohnung-<br />Sanierung</h3>
@@ -247,7 +248,7 @@ export default function Home() {
         <div className="featured__head">
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Ausgewählte Projekte</div>
-            <h2 style={{ marginTop: 24 }}>
+            <h2>
               Zuletzt aus der<br />
               <em>Werkstatt.</em>
             </h2>
@@ -287,12 +288,11 @@ export default function Home() {
       </section>
 
       {/* FOUNDERS */}
-      <section className="founders">
+      <section className="founders" id="ueber-uns">
         <div className="founders__inner">
           <div className="founders__photo reveal">
             <img src="/assets/img/founders.jpg" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" />
             <div className="founders__photo-label">
-              <span className="num">№ 00</span>
               <span>Daniel &amp; Monica — Frankfurt, 2026</span>
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function Home() {
       <section className="heating">
         <div className="heating__head reveal">
           <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Moderne Heizmethoden</div>
-          <h2 style={{ marginTop: 24 }}>
+          <h2>
             Bereit für die <em>Zukunft.</em>
           </h2>
           <p>
@@ -396,8 +396,8 @@ export default function Home() {
             <Link className="btn btn--dark" to="/kontakt">
               Termin vereinbaren <span className="arrow">&gt;</span>
             </Link>
-            <a className="btn btn--dark" href="tel:+4969000000" style={{ borderColor: 'rgba(236, 229, 223, .25)' }}>
-              +49 69 0000 0000
+            <a className="btn btn--dark" href="tel:+4915789818308" style={{ borderColor: 'rgba(236, 229, 223, .25)' }}>
+              +49 1578 98 18 308
             </a>
           </div>
         </div>

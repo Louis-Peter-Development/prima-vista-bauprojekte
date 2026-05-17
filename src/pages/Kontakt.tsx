@@ -74,12 +74,12 @@ export default function Kontakt() {
       <section className="kontakt">
         <div className="kontakt__inner">
           <div className="kontakt__intro reveal">
-            <div className="eyebrow eyebrow--on-dark"><span className="rule-red"></span>&nbsp;&nbsp;Kontakt</div>
-            <h2 style={{ marginTop: 20 }}>
+            <div className="crumb crumb--on-dark"><span className="num">05</span> Kontakt</div>
+            <h1>
               Sprechen wir<br />
               über Ihr<br />
               <em>Bauprojekt.</em>
-            </h2>
+            </h1>
             <p>
               Erste Beratung kostenlos und unverbindlich. Termin in 48 Stunden, vor Ort oder per Video — wir hören erst zu, dann skizzieren wir.
             </p>
@@ -89,7 +89,11 @@ export default function Kontakt() {
                 <div className="kontakt__channel-icon"><PhoneIcon /></div>
                 <div className="kontakt__channel-body">
                   <h4 className="kontakt__channel-label">Telefon</h4>
-                  <p className="kontakt__channel-val">+49 69 0000 0000</p>
+                  <p className="kontakt__channel-val">
+                    <a href="tel:+4915789818308">+49 1578 98 18 308</a>
+                    <br />
+                    <a href="tel:+41782659332">+41 78 265 93 32</a>
+                  </p>
                   <p className="kontakt__channel-meta">Mo–Fr · 08:00–18:00 · DE / CH</p>
                 </div>
               </div>
@@ -97,7 +101,11 @@ export default function Kontakt() {
                 <div className="kontakt__channel-icon"><MailIcon /></div>
                 <div className="kontakt__channel-body">
                   <h4 className="kontakt__channel-label">E-Mail</h4>
-                  <p className="kontakt__channel-val">hallo@primavista.bau</p>
+                  <p className="kontakt__channel-val">
+                    <a href="mailto:office@primavista-bauprojekte.com">office@primavista-bauprojekte.com</a>
+                    <br />
+                    <a href="mailto:info@primavista-bauprojekte.ch">info@primavista-bauprojekte.ch</a>
+                  </p>
                   <p className="kontakt__channel-meta">Antwort innerhalb von 24 Stunden — werktags.</p>
                 </div>
               </div>
@@ -120,16 +128,18 @@ export default function Kontakt() {
               <div className="kontakt__office">
                 <h4>Frankfurt — DE</h4>
                 <p><strong>Prima Vista Bauprojekte</strong><br />
-                  Mainzer Landstraße 000<br />
-                  60329 Frankfurt am Main<br />
-                  Hessen, Deutschland</p>
+                  Gref-Völsing-Strasse 13<br />
+                  60314 Frankfurt<br />
+                  Deutschland<br />
+                  <a href="tel:+4915789818308">+49 1578 98 18 308</a></p>
               </div>
               <div className="kontakt__office">
                 <h4>Emmenbrücke — CH</h4>
                 <p><strong>Prima Vista Bauprojekte AG</strong><br />
-                  Seetalstrasse 000<br />
+                  Spinnereistrasse 5<br />
                   6020 Emmenbrücke<br />
-                  Kanton Luzern, Schweiz</p>
+                  Schweiz<br />
+                  <a href="tel:+41782659332">+41 78 265 93 32</a></p>
               </div>
             </div>
           </div>
@@ -239,7 +249,7 @@ export default function Kontakt() {
         <div className="faq__inner">
           <div className="faq__intro reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Häufige Fragen</div>
-            <h2 style={{ marginTop: 18 }}>
+            <h2>
               Was<br />
               Auftraggeber<br />
               am häufigsten<br />

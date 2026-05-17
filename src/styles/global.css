@@ -245,6 +245,59 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .pv-footer ul { list-style: none; margin: 0; padding: 0; }
 .pv-footer li { margin-bottom: 6px; }
 .pv-footer a:hover { color: var(--pv-copper-bright); }
+.pv-footer__contact-list {
+  display: grid;
+  gap: 9px;
+}
+.pv-footer__contact-list li {
+  margin-bottom: 0;
+}
+.pv-footer__contact-link {
+  display: inline-grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+}
+.pv-footer__contact-link--static {
+  align-items: start;
+}
+.pv-footer__contact-link--static strong {
+  color: var(--pv-bone);
+  font-weight: 500;
+}
+.pv-footer__contact-link--static .pv-footer__contact-icon {
+  margin-top: 1px;
+}
+.pv-footer__contact-link span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.pv-footer__contact-icon {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(200, 154, 106, .45);
+  border-radius: 50%;
+  color: var(--pv-copper-bright);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 200ms var(--pv-ease-out), color 200ms var(--pv-ease-out), background 200ms var(--pv-ease-out);
+}
+.pv-footer__contact-icon svg {
+  width: 13px;
+  height: 13px;
+}
+.pv-footer__contact-icon--text {
+  font-family: var(--pv-font-mono);
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+.pv-footer__contact-link:hover .pv-footer__contact-icon {
+  border-color: var(--pv-copper-bright);
+  background: rgba(200, 154, 106, .10);
+}
 .pv-footer__brand .pv-logo__name { color: var(--pv-bone); }
 .pv-footer__brand .pv-logo__tag { color: var(--pv-text-on-dark-faint); }
 .pv-footer__brand .pv-logo img { filter: brightness(1.1); }
@@ -375,6 +428,36 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   background: var(--pv-cream);
   padding: 140px 0 72px;
   border-bottom: 1px solid rgba(26, 26, 26, .08);
+  min-height: calc(100vh - 89px);
+  min-height: calc(100svh - 89px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+}
+.page-intro::before,
+.page-intro::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.page-intro::before {
+  background-image: var(--page-intro-bg, none);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  z-index: 0;
+}
+.page-intro::after {
+  /* Heavier wash at the bottom (where content sits) for legibility,
+     softer at the top so the image shows through the empty space. */
+  background: linear-gradient(to bottom,
+    rgba(232, 223, 223, 0.45) 0%,
+    rgba(232, 223, 223, 0.78) 50%,
+    rgba(232, 223, 223, 0.95) 100%);
+  z-index: 1;
 }
 .page-intro__inner {
   max-width: var(--pv-container);
@@ -384,8 +467,11 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
   gap: 80px;
   align-items: end;
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
-.page-intro .crumb {
+.crumb {
   font-family: var(--pv-font-display);
   font-size: 11px;
   letter-spacing: 0.24em;
@@ -396,11 +482,21 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   align-items: center;
   gap: 12px;
 }
-.page-intro .crumb .num {
+.crumb .num {
   color: var(--pv-copper);
   font-family: var(--pv-font-mono);
   font-weight: 500;
 }
+.crumb--on-dark { color: var(--pv-text-on-dark-muted); }
+.crumb--on-dark .num { color: var(--pv-copper-bright); }
+
+/* Default spacing between an eyebrow and the heading that follows it.
+   Lets pages drop the per-h2 inline marginTop overrides.
+   `body` prefix added so this longhand wins over per-page
+   `.section h2 { margin: 0 0 X }` shorthands of equal class specificity. */
+body .eyebrow + h1,
+body .eyebrow + h2,
+body .eyebrow + h3 { margin-top: 24px; }
 .page-intro h1 {
   font-family: var(--pv-font-serif);
   font-style: italic;
@@ -524,6 +620,104 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   .kenburns { animation: none; }
 }
 
+/* ----- Mobile burger + overlay menu ----- */
+.pv-burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 60;
+}
+.pv-burger span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 1.5px;
+  background: var(--pv-ink);
+  transition: transform 240ms var(--pv-ease-out), opacity 180ms var(--pv-ease-out), top 240ms var(--pv-ease-out), background-color 200ms var(--pv-ease-out);
+}
+.pv-burger span:nth-child(1) { top: 14px; }
+.pv-burger span:nth-child(2) { top: 21px; }
+.pv-burger span:nth-child(3) { top: 28px; }
+.pv-burger.is-open span { background: var(--pv-bone); }
+.pv-burger.is-open span:nth-child(1) { top: 21px; transform: rotate(45deg); }
+.pv-burger.is-open span:nth-child(2) { opacity: 0; }
+.pv-burger.is-open span:nth-child(3) { top: 21px; transform: rotate(-45deg); }
+
+.pv-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: var(--pv-ink-1);
+  color: var(--pv-bone);
+  padding: 112px 32px 48px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms var(--pv-ease-out);
+}
+.pv-mobile-menu.is-open {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+.pv-mobile-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pv-mobile-menu__list li {
+  border-top: 1px solid rgba(236, 229, 223, .12);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 320ms var(--pv-ease-out), transform 320ms var(--pv-ease-out);
+  transition-delay: calc(60ms + var(--i, 0) * 50ms);
+}
+.pv-mobile-menu__list li:last-child { border-bottom: 1px solid rgba(236, 229, 223, .12); }
+.pv-mobile-menu.is-open .pv-mobile-menu__list li { opacity: 1; transform: translateY(0); }
+.pv-mobile-menu__list a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 4px;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 7vw, 40px);
+  line-height: 1;
+  color: var(--pv-bone);
+  transition: color 180ms var(--pv-ease-out);
+}
+.pv-mobile-menu__list a:hover,
+.pv-mobile-menu__list a.is-active { color: var(--pv-copper-bright); }
+.pv-mobile-menu__num {
+  font-family: var(--pv-font-mono);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--pv-copper-bright);
+  flex: 0 0 auto;
+  margin-top: 6px;
+}
+.pv-mobile-menu__cta {
+  align-self: flex-start;
+  margin-top: 32px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 320ms var(--pv-ease-out), transform 320ms var(--pv-ease-out);
+  transition-delay: 400ms;
+}
+.pv-mobile-menu.is-open .pv-mobile-menu__cta { opacity: 1; transform: translateY(0); }
+
 /* ----- Responsive trim (basic) ----- */
 @media (max-width: 1180px) {
   .pv-header__inner { padding: 0 32px; gap: 20px; }
@@ -533,7 +727,33 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 }
 @media (max-width: 880px) {
   .pv-nav__list { display: none; }
+  .pv-header__cta { display: none; }
+  .pv-burger { display: block; }
   .pv-social-rail { display: none; }
+  .pv-footer { padding: 64px 0 28px; }
+  .pv-footer__inner { padding: 0 24px; }
+  .pv-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .pv-footer__legal { flex-wrap: wrap; gap: 14px 20px; }
   .pv-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .page-intro__inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .pv-header__inner { padding: 0 20px; height: 72px; }
+  .pv-logo img { height: 36px; }
+  .pv-logo__name { font-size: 14px; letter-spacing: 0.18em; }
+  .pv-logo__tag { font-size: 8px; letter-spacing: 0.26em; }
+  .pv-chat {
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+  .pv-chat svg { width: 18px; height: 18px; }
+  .pv-footer__grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .page-intro { padding: 100px 20px 56px; }
+  .page-intro__inner { padding: 0; gap: 24px; }
 }
