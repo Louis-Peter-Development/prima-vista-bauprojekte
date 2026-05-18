@@ -27,11 +27,11 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
   elektro: '/assets/img/photo-office-light.jpg',
   boden: '/assets/img/photo-parkett-altbau.jpg',
   treppen: '/assets/img/proj-stairs-concrete.jpg',
-  heizung: '/assets/img/photo-luftwaerme-clean.jpg',
+  heizung: '/assets/img/photo-haus-exterior.jpg',
   abdichtung: '/assets/img/proj-spa-corridor.jpg',
   maler: '/assets/img/proj-paint-swatches.jpg',
   trockenbau: '/assets/img/photo-parkett-rohbau.jpg',
-  sanitaer: '/assets/img/photo-heizstraenge-clean.jpg',
+  sanitaer: '/assets/img/photo-bad-prima-vista.jpg',
 };
 
 export const TRADES: TradeRow[] = [

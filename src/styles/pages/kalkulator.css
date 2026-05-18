@@ -538,8 +538,15 @@
   flex-direction: column;
   gap: 10px;
 }
-.kalk-result__btn-light {
-  border-color: rgba(236, 229, 223, .25);
+.btn.kalk-result__btn-light {
+  color: var(--pv-bone);
+  border-color: rgba(236, 229, 223, .45);
+  background: rgba(255, 255, 255, .04);
+}
+.btn.kalk-result__btn-light:hover {
+  color: var(--pv-copper-bright);
+  border-color: var(--pv-copper-bright);
+  background: rgba(200, 154, 106, .10);
 }
 
 /* ---- Responsive ---- */

@@ -15,6 +15,7 @@ export type Package = {
   includes: string[];
   ctaLabel: string;
   ctaDark?: boolean;
+  detailTo?: string;
 };
 
 export const PACKAGES: Package[] = [
@@ -23,6 +24,7 @@ export const PACKAGES: Package[] = [
     photo: '/assets/img/photo-haus-exterior.jpg',
     alt: 'Haus-Sanierung',
     eyebrow: 'Komplettpaket · Haus',
+    detailTo: '/haus-sanierung',
     title: <>Haus-<br /><em>Sanierung.</em></>,
     lede: 'Generalsanierung von Bestandsbauten — vom Dach bis zur Hofeinfahrt. Für Einfamilienhäuser, Mehrfamilien­häuser und Reihenhäuser bis 480 m².',
     priceLabel: 'Festpreis ab',
@@ -39,6 +41,7 @@ export const PACKAGES: Package[] = [
     photo: '/assets/img/photo-parkett-altbau.jpg',
     alt: 'Wohnung-Sanierung',
     eyebrow: 'Komplettpaket · Wohnung',
+    detailTo: '/wohnung-sanierung',
     title: <>Wohnung-<br /><em>Sanierung.</em></>,
     lede: 'Etagenwohnungen modular sanieren: Bäder, Küchen, Böden, Elektrik, Heizung — in 6 bis 10 Wochen bewohnbar. Auch bei vermieteten Einheiten.',
     priceLabel: 'Festpreis ab',

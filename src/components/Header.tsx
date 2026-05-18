@@ -1,13 +1,22 @@
 import { useEffect, useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 
-const NAV = [
+type NavItem = { to: string; label: string; activeOn?: string[] };
+
+const NAV: NavItem[] = [
   { to: '/', label: 'Start' },
-  { to: '/komplett-pakete', label: 'Komplett-Pakete' },
+  { to: '/komplett-pakete', label: 'Komplett-Pakete', activeOn: ['/haus-sanierung', '/wohnung-sanierung'] },
   { to: '/gewerke', label: 'Gewerke' },
+  { to: '/heizmethoden', label: 'Heizmethoden', activeOn: ['/heizkoerper', '/heizstraenge', '/fussbodenheizung', '/waermepumpe', '/gas-heizung', '/pelletofen', '/saunaofen'] },
   { to: '/projekte', label: 'Projekte' },
   { to: '/kalkulator', label: 'Kalkulator' },
 ];
+
+function navItemMatches(item: NavItem, pathname: string): boolean {
+  if (item.to === '/') return pathname === '/';
+  if (pathname === item.to || pathname.startsWith(`${item.to}/`)) return true;
+  return item.activeOn?.some((p) => pathname === p || pathname.startsWith(`${p}/`)) ?? false;
+}
 
 const FEATURED_PROJECT = {
   src: '/assets/img/proj-spa-bath.jpg',
@@ -48,13 +57,16 @@ export default function Header() {
         </Link>
         <nav className="pv-nav" aria-label="Hauptnavigation">
           <ul className="pv-nav__list">
-            {NAV.map(({ to, label }) => (
-              <li key={to}>
-                <NavLink to={to} end={to === '/'} className={({ isActive }) => (isActive ? 'is-active' : '')}>
-                  {label}
-                </NavLink>
-              </li>
-            ))}
+            {NAV.map((item) => {
+              const active = navItemMatches(item, pathname);
+              return (
+                <li key={item.to}>
+                  <NavLink to={item.to} end={item.to === '/'} className={active ? 'is-active' : ''}>
+                    {item.label}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
           <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
             Blitz-Angebot <span className="arrow">&gt;</span>
@@ -101,18 +113,21 @@ export default function Header() {
 
         <nav className="pv-mobile-menu__nav" aria-label="Mobile Navigation">
           <ul className="pv-mobile-menu__list">
-            {NAV.map(({ to, label }, i) => (
-              <li key={to} style={{ ['--i' as string]: i }}>
+            {NAV.map((item, i) => {
+              const active = navItemMatches(item, pathname);
+              return (
+              <li key={item.to} style={{ ['--i' as string]: i }}>
                 <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) => `pv-mobile-menu__link${isActive ? ' is-active' : ''}`}
+                  to={item.to}
+                  end={item.to === '/'}
+                  className={`pv-mobile-menu__link${active ? ' is-active' : ''}`}
                 >
-                  <span className="pv-mobile-menu__label">{label}</span>
+                  <span className="pv-mobile-menu__label">{item.label}</span>
                   <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>
                 </NavLink>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </nav>
 

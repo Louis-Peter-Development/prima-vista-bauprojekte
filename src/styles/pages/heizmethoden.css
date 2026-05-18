@@ -1,0 +1,175 @@
+/* ============== HEIZMETHODEN PAGE ============== */
+.heiz {
+  background: var(--pv-cream-paper);
+  padding: 96px 0 120px;
+}
+.heiz__inner {
+  max-width: var(--pv-container);
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.heiz__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 56px;
+  align-items: end;
+  margin-bottom: 72px;
+}
+.heiz__head h2 {
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(40px, 4.4vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.012em;
+  color: var(--pv-ink);
+  margin: 18px 0 0;
+}
+.heiz__head h2 em { color: var(--pv-copper); }
+.heiz__head p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--pv-ink-2);
+  margin: 0;
+}
+
+/* Grid */
+.heiz__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+.heiz-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--pv-white);
+  border: 1px solid rgba(20, 19, 18, .07);
+  overflow: hidden;
+  transition: transform 320ms var(--pv-ease-out), box-shadow 320ms var(--pv-ease-out);
+}
+.heiz-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px -22px rgba(0, 0, 0, .22);
+}
+.heiz-card__link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  color: inherit;
+  text-decoration: none;
+}
+.heiz-card__photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--pv-ink-1);
+}
+.heiz-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 480ms var(--pv-ease-out);
+}
+.heiz-card:hover .heiz-card__photo img { transform: scale(1.04); }
+.heiz-card__num {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  font-family: var(--pv-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--pv-bone);
+  background: rgba(20, 19, 18, .55);
+  padding: 6px 10px;
+  border-radius: 2px;
+  backdrop-filter: blur(2px);
+}
+.heiz-card__body {
+  padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.heiz-card__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0;
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pv-ink);
+}
+.heiz-card__sub {
+  font-family: var(--pv-font-body);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--pv-copper);
+}
+.heiz-card__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pv-text-on-light-muted);
+}
+.heiz-card__more {
+  margin-top: auto;
+  padding-top: 10px;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--pv-copper);
+}
+.heiz-card__more span {
+  font-weight: 400;
+}
+
+/* Foot CTA row */
+.heiz__foot {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding-top: 56px;
+  border-top: 1px solid rgba(20, 19, 18, .08);
+}
+.heiz__foot p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--pv-ink-2);
+}
+.heiz__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 1180px) {
+  .heiz__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+}
+@media (max-width: 880px) {
+  .heiz { padding: 64px 0 96px; }
+  .heiz__inner { padding: 0 24px; }
+  .heiz__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
+  .heiz__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .heiz__foot { grid-template-columns: 1fr; gap: 24px; }
+  .heiz__actions { justify-content: flex-start; }
+}
+@media (max-width: 540px) {
+  .heiz__grid { grid-template-columns: 1fr; gap: 18px; }
+}

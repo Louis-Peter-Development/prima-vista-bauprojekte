@@ -11,16 +11,30 @@ export default function PackageDetailSection({ pkg }: PackageDetailSectionProps)
   if (pkg.variant === 'ink') cls.push('pkg-detail--ink');
   if (pkg.reverse) cls.push('pkg-detail--reverse');
 
-  const photo = (
-    <div className="pkg-detail__photo reveal">
+  const photoInner = (
+    <>
       <span className="pkg-detail__photo-num">№&nbsp;{pkg.num}</span>
       <img src={pkg.photo} alt={pkg.alt} />
-    </div>
+    </>
+  );
+  const photo = pkg.detailTo ? (
+    <Link className="pkg-detail__photo pkg-detail__photo--link reveal" to={pkg.detailTo} aria-label={pkg.alt}>
+      {photoInner}
+    </Link>
+  ) : (
+    <div className="pkg-detail__photo reveal">{photoInner}</div>
+  );
+  const title = pkg.detailTo ? (
+    <Link className="pkg-detail__title-link" to={pkg.detailTo}>
+      {pkg.title}
+    </Link>
+  ) : (
+    pkg.title
   );
   const body = (
     <div className="pkg-detail__body reveal" data-delay="1">
       <div className="pkg-detail__eyebrow"><span className="rule-red"></span> {pkg.eyebrow}</div>
-      <h2 className="pkg-detail__title">{pkg.title}</h2>
+      <h2 className="pkg-detail__title">{title}</h2>
       <p className="pkg-detail__lede">{pkg.lede}</p>
       <div className="pkg-detail__price">
         <span className="pkg-detail__price-label">{pkg.priceLabel}</span>
@@ -30,9 +44,16 @@ export default function PackageDetailSection({ pkg }: PackageDetailSectionProps)
       <ul className="pkg-detail__includes">
         {pkg.includes.map((item) => <li key={item}>{item}</li>)}
       </ul>
-      <Link className={`btn ${pkg.ctaDark ? 'btn--dark' : 'btn--light'}`} to="/kontakt">
-        {pkg.ctaLabel} <span className="arrow">&gt;</span>
-      </Link>
+      <div className="pkg-detail__actions">
+        <Link className={`btn ${pkg.ctaDark ? 'btn--dark' : 'btn--light'}`} to="/kontakt">
+          {pkg.ctaLabel} <span className="arrow">&gt;</span>
+        </Link>
+        {pkg.detailTo && (
+          <Link className="btn btn--solid pkg-detail__cta-secondary" to={pkg.detailTo}>
+            Sanierung kalkulieren <span className="arrow">&gt;</span>
+          </Link>
+        )}
+      </div>
     </div>
   );
 

@@ -42,6 +42,9 @@
 .heat-card {
   background: var(--pv-white);
   overflow: hidden;
+  color: inherit;
+  display: block;
+  text-decoration: none;
   transition: transform 400ms var(--pv-ease-out), box-shadow 400ms var(--pv-ease-out);
 }
 .heat-card:hover {
@@ -95,4 +98,11 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+.heating__more {
+  max-width: 1480px;
+  margin: 34px auto 0;
+  padding: 0 48px;
+  display: flex;
+  justify-content: center;
 }

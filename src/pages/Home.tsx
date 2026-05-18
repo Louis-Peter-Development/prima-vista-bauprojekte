@@ -59,7 +59,7 @@ export default function Home() {
           </p>
         </div>
         <div className="packages__grid">
-          <Link className="pkg-card reveal" data-delay="1" to="/komplett-pakete">
+          <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
             <img src="/assets/img/photo-haus-exterior.jpg" alt="Haus-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
@@ -68,7 +68,7 @@ export default function Home() {
               <span className="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
           </Link>
-          <Link className="pkg-card reveal" data-delay="2" to="/komplett-pakete">
+          <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
             <img src="/assets/img/photo-parkett-altbau.jpg" alt="Wohnung-Sanierung" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
@@ -292,7 +292,7 @@ export default function Home() {
           </p>
         </div>
         <div className="heating__grid">
-          <article className="heat-card reveal">
+          <Link className="heat-card reveal" to="/waermepumpe">
             <div className="heat-card__photo">
               <img src="/assets/img/proj-stairs-concrete.jpg" alt="Luftwärmepumpe" />
             </div>
@@ -302,8 +302,8 @@ export default function Home() {
               <p className="heat-card__desc">Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.</p>
               <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
-          </article>
-          <article className="heat-card reveal" data-delay="1">
+          </Link>
+          <Link className="heat-card reveal" data-delay="1" to="/heizstraenge">
             <div className="heat-card__photo">
               <img src="/assets/img/proj-floor-oak.jpg" alt="Heizungsstränge" />
             </div>
@@ -313,8 +313,8 @@ export default function Home() {
               <p className="heat-card__desc">Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.</p>
               <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
-          </article>
-          <article className="heat-card reveal" data-delay="2">
+          </Link>
+          <Link className="heat-card reveal" data-delay="2" to="/heizkoerper">
             <div className="heat-card__photo">
               <img src="/assets/img/proj-spa-corridor.jpg" alt="Heizkörper" />
             </div>
@@ -324,7 +324,12 @@ export default function Home() {
               <p className="heat-card__desc">Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.</p>
               <span className="heat-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
-          </article>
+          </Link>
+        </div>
+        <div className="heating__more reveal">
+          <Link className="btn btn--light" to="/heizmethoden">
+            Alle Heizmethoden ansehen <span className="arrow">&gt;</span>
+          </Link>
         </div>
       </section>
 

@@ -1,0 +1,75 @@
+/* ---- Haus-Sanierung: house type picker ---- */
+.haus-types {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.haus-types__opt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 18px 18px 16px;
+  background: var(--pv-ink-2);
+  color: var(--pv-bone);
+  border: 1px solid rgba(236, 229, 223, .12);
+  border-radius: var(--pv-radius-md, 6px);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 200ms var(--pv-ease-out),
+    background 200ms var(--pv-ease-out),
+    transform 200ms var(--pv-ease-out);
+}
+.haus-types__opt:hover {
+  border-color: var(--pv-copper-bright);
+  transform: translateY(-1px);
+}
+.haus-types__opt.is-on {
+  background: var(--pv-ink-3);
+  border-color: var(--pv-copper-bright);
+}
+.haus-types__factor {
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--pv-text-on-dark-muted);
+}
+.haus-types__opt.is-on .haus-types__factor { color: var(--pv-copper-bright); }
+.haus-types__label {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pv-bone);
+}
+.haus-types__detail {
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  color: var(--pv-text-on-dark-muted);
+  line-height: 1.4;
+}
+
+/* Equal-width chip row for fixed area buckets */
+.kalk-chips--equal {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.kalk-chips--equal .kalk-chip {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Disabled gewerk (e.g. Dachsanierung when no roof selected) */
+.kalk-trades__item.is-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.kalk-trades__item.is-disabled button { cursor: not-allowed; }
+
+@media (max-width: 720px) {
+  .haus-types { grid-template-columns: 1fr; }
+  .kalk-chips--equal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
