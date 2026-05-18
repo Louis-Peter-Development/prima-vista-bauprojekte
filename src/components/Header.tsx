@@ -9,6 +9,15 @@ const NAV = [
   { to: '/kalkulator', label: 'Kalkulator' },
 ];
 
+const FEATURED_PROJECT = {
+  src: '/assets/img/proj-spa-bath.jpg',
+  num: '№ 141',
+  titleLead: 'Spa-Bad —',
+  titleAccent: 'Hotel.',
+  loc: 'Emmenbrücke',
+  year: '2025',
+};
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
@@ -71,19 +80,54 @@ export default function Header() {
         aria-label="Hauptnavigation"
         hidden={!open}
       >
-        <ul className="pv-mobile-menu__list">
-          {NAV.map(({ to, label }, i) => (
-            <li key={to} style={{ ['--i' as string]: i }}>
-              <NavLink to={to} end={to === '/'} className={({ isActive }) => (isActive ? 'is-active' : '')}>
-                <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>
-                {label}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-        <Link className="btn btn--solid pv-mobile-menu__cta" to="/blitz-angebot">
-          Blitz-Angebot <span className="arrow">&gt;</span>
+        <Link to="/projekte" className="pv-mobile-menu__feature">
+          <img src={FEATURED_PROJECT.src} alt="" />
+          <span className="pv-mobile-menu__feature-overlay" aria-hidden="true" />
+          <span className="pv-mobile-menu__feature-eyebrow">
+            Im Fokus <span className="pv-mobile-menu__feature-sep">·</span> {FEATURED_PROJECT.num}
+          </span>
+          <span className="pv-mobile-menu__feature-body">
+            <span className="pv-mobile-menu__feature-title">
+              {FEATURED_PROJECT.titleLead}{' '}
+              <em>{FEATURED_PROJECT.titleAccent}</em>
+            </span>
+            <span className="pv-mobile-menu__feature-meta">
+              <span>{FEATURED_PROJECT.loc}</span>
+              <span className="pv-mobile-menu__feature-dot">·</span>
+              <span>{FEATURED_PROJECT.year}</span>
+            </span>
+          </span>
         </Link>
+
+        <nav className="pv-mobile-menu__nav" aria-label="Mobile Navigation">
+          <ul className="pv-mobile-menu__list">
+            {NAV.map(({ to, label }, i) => (
+              <li key={to} style={{ ['--i' as string]: i }}>
+                <NavLink
+                  to={to}
+                  end={to === '/'}
+                  className={({ isActive }) => `pv-mobile-menu__link${isActive ? ' is-active' : ''}`}
+                >
+                  <span className="pv-mobile-menu__label">{label}</span>
+                  <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="pv-mobile-menu__foot">
+          <Link to="/blitz-angebot" className="pv-mobile-menu__cta">
+            Blitz-Angebot <span className="arrow">&gt;</span>
+          </Link>
+          <Link to="/kontakt" className="pv-mobile-menu__cta pv-mobile-menu__cta--ghost">
+            Termin vereinbaren <span className="arrow">&gt;</span>
+          </Link>
+          <div className="pv-mobile-menu__phone">
+            oder rufen Sie an <span className="pv-mobile-menu__phone-sep">·</span>{' '}
+            <a href="tel:+4915789818308">+49 1578 98 18 308</a>
+          </div>
+        </div>
       </div>
     </header>
   );
