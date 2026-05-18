@@ -274,7 +274,7 @@ export default function Home() {
           ))}
         </ul>
         <div className="trades-preview__more reveal">
-          <Link className="btn btn--dark" to="/gewerke">
+          <Link className="btn btn--light" to="/gewerke">
             Alle 20 Gewerke ansehen <span className="arrow">&gt;</span>
           </Link>
         </div>
