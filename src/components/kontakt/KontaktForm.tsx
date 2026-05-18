@@ -20,7 +20,7 @@ export default function KontaktForm() {
   }
 
   return (
-    <div className="kontakt__form-wrap reveal" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
+    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
       <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Anfrage senden</div>
       <h3 className="kontakt__form-title">
         Erzählen Sie uns von<br />

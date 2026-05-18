@@ -28,7 +28,7 @@ export default function BlitzForm() {
   }
 
   return (
-    <div className="kontakt__form-wrap reveal" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
+    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
       {sent ? (
         <div style={{ textAlign: 'center', padding: '64px 0' }}>
           <div className="eyebrow" style={{ justifyContent: 'center' }}>Gesendet</div>

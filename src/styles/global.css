@@ -481,6 +481,35 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .reveal[data-delay="4"] { transition-delay: 320ms; }
 .reveal[data-delay="5"] { transition-delay: 400ms; }
 
+/* Direction & style variants — combine with .reveal */
+.js-reveal .reveal--left   { transform: translateX(-28px); }
+.js-reveal .reveal--right  { transform: translateX(28px); }
+.js-reveal .reveal--scale  { transform: scale(0.96); }
+.js-reveal .reveal--blur   { filter: blur(10px); transition: opacity 700ms var(--pv-ease-out), transform 700ms var(--pv-ease-out), filter 900ms var(--pv-ease-out); }
+.js-reveal .reveal--left.is-in,
+.js-reveal .reveal--right.is-in,
+.js-reveal .reveal--scale.is-in { transform: none; }
+.js-reveal .reveal--blur.is-in  { filter: blur(0); }
+
+/* Auto-stagger: drop .reveal-group on a parent — its direct children fade-up in sequence */
+.js-reveal .reveal-group > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms var(--pv-ease-out), transform 700ms var(--pv-ease-out);
+}
+.js-reveal .reveal-group.is-in > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-group.is-in > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-group.is-in > *:nth-child(2) { transition-delay: 70ms; }
+.reveal-group.is-in > *:nth-child(3) { transition-delay: 140ms; }
+.reveal-group.is-in > *:nth-child(4) { transition-delay: 210ms; }
+.reveal-group.is-in > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-group.is-in > *:nth-child(6) { transition-delay: 350ms; }
+.reveal-group.is-in > *:nth-child(7) { transition-delay: 420ms; }
+.reveal-group.is-in > *:nth-child(8) { transition-delay: 490ms; }
+
 /* Slow-pan effect on hero images */
 .kenburns {
   animation: kenburns 18s ease-in-out infinite alternate;
@@ -700,7 +729,14 @@ body .eyebrow + h3 { margin-top: 24px; }
 .end-cta-local h2 em { color: var(--pv-copper); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal,
+  .reveal--blur,
+  .reveal-group > * {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
   .kenburns { animation: none; }
 }
 

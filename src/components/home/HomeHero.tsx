@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HERO_IMAGES } from '../../data/home';
 
+const PARALLAX_RANGE = 600;
+
 export default function HomeHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -12,8 +15,30 @@ export default function HomeHero() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const y = Math.min(Math.max(window.scrollY, 0), PARALLAX_RANGE);
+      el.style.setProperty('--pv-hero-scroll', String(y / PARALLAX_RANGE));
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section className="hero">
+    <section className="hero" ref={heroRef}>
       <div className="hero__bg-slideshow">
         {HERO_IMAGES.map((src, i) => (
           <div

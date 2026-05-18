@@ -331,13 +331,13 @@ export default function Home() {
       {/* FOUNDERS */}
       <section className="founders" id="ueber-uns">
         <div className="founders__inner">
-          <div className="founders__photo reveal">
+          <div className="founders__photo reveal reveal--left">
             <img src="/assets/img/founders.jpg" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" />
             <div className="founders__photo-label">
               <span>Daniel &amp; Monica — Frankfurt, 2026</span>
             </div>
           </div>
-          <div className="founders__body reveal" data-delay="1">
+          <div className="founders__body reveal reveal--right" data-delay="1">
             <div className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
               <span className="rule-red"></span>&nbsp;Über uns
             </div>
@@ -362,7 +362,7 @@ export default function Home() {
 
       {/* TESTIMONIAL */}
       <section className="testimonial">
-        <div className="testimonial__inner reveal">
+        <div className="testimonial__inner reveal reveal--scale">
           <div className="quote-mark">&ldquo;</div>
           <blockquote>
             Wir hatten Angst vor der Sanierung — und wurden überrascht: Prima Vista lieferte pünktlich, sauber und so präzise, dass wir <em>schon einen Monat früher</em> einziehen konnten.
@@ -377,7 +377,7 @@ export default function Home() {
 
       {/* FINAL CTA */}
       <section className="end-cta">
-        <div className="end-cta__inner reveal">
+        <div className="end-cta__inner reveal reveal--scale">
           <h2>
             Lassen Sie uns über<br />
             Ihr <em>Bauprojekt</em> reden.

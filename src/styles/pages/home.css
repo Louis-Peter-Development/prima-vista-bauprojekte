@@ -17,6 +17,8 @@
   z-index: 0;
   pointer-events: none;
   animation: pvHeroImageIn 1200ms var(--pv-ease-out) both;
+  transform: translate3d(0, calc(var(--pv-hero-scroll, 0) * 60px), 0);
+  will-change: transform;
 }
 .hero__bg-slide {
   position: absolute;
@@ -161,12 +163,10 @@
   from {
     opacity: 0;
     filter: blur(8px) saturate(.86);
-    transform: scale(1.035);
   }
   to {
     opacity: 1;
     filter: blur(0) saturate(1);
-    transform: scale(1);
   }
 }
 @keyframes pvHeroToplineIn {

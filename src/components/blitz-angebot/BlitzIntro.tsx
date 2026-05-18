@@ -1,6 +1,6 @@
 export default function BlitzIntro() {
   return (
-    <div className="kontakt__intro reveal">
+    <div className="kontakt__intro reveal reveal--left">
       <div className="crumb crumb--on-dark"><span className="num">06</span> Blitz-Angebot · Vorab-Schätzung</div>
       <h1>
         Das Blitz<br />

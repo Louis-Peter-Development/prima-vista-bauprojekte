@@ -13,7 +13,7 @@ export default function MapBand() {
   return (
     <section className="map-band">
       <div className="map-band__inner">
-        <div className="reveal">
+        <div className="reveal reveal--left">
           <SectionEyebrow onDark>Standorte</SectionEyebrow>
           <h2>
             Gebaut in zwei<br />
@@ -29,7 +29,7 @@ export default function MapBand() {
             ))}
           </ul>
         </div>
-        <div className="map-band__photo reveal" data-delay="1">
+        <div className="map-band__photo reveal reveal--right" data-delay="1">
           <img src="/assets/img/proj-team-jacket.jpg" alt="Prima Vista Team auf der Baustelle" />
           <div className="map-band__photo-label">
             <span>Team Frankfurt — 2026</span>

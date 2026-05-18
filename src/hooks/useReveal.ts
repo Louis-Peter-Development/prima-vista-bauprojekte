@@ -10,7 +10,7 @@ export function useReveal() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const reveals = document.querySelectorAll<HTMLElement>('.reveal');
+    const reveals = document.querySelectorAll<HTMLElement>('.reveal, .reveal-group');
     if (!reveals.length) return;
 
     if (!('IntersectionObserver' in window)) {

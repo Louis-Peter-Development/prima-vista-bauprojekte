@@ -2,7 +2,7 @@ import { MailIcon, PhoneIcon } from '../icons';
 
 export default function KontaktIntro() {
   return (
-    <div className="kontakt__intro reveal">
+    <div className="kontakt__intro reveal reveal--left">
       <div className="crumb crumb--on-dark"><span className="num">05</span> Kontakt</div>
       <h1>
         Sprechen wir<br />

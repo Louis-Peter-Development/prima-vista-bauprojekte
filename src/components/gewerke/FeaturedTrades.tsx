@@ -27,7 +27,7 @@ export default function FeaturedTrades({ items, onOpen }: FeaturedTradesProps) {
           {FEATURED_TRADES.map((card, i) => (
             <a
               key={card.src}
-              className={`ft-card${card.feature ? ' ft-card--feature' : ''} reveal`}
+              className={`ft-card${card.feature ? ' ft-card--feature' : ''} reveal reveal--scale`}
               data-delay={card.revealDelay}
               href={card.src}
               onClick={(e) => { e.preventDefault(); onOpen(items, i); }}
