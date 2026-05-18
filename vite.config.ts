@@ -43,6 +43,6 @@ export default defineConfig(({ mode }) => {
   }
   return {
     plugins: [react(), chatDevPlugin()],
-    server: { port: 5173, open: true },
+    server: { host: true, port: 5173, open: true },
   };
 });
