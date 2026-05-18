@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2023"],
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "skipLibCheck": true,
@@ -9,5 +10,5 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts", "server/**/*", "netlify/functions/**/*"]
 }

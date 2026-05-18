@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import SocialRail from './SocialRail';
-import ChatBubble from './ChatBubble';
+import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
@@ -36,7 +36,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <SocialRail />
-      <ChatBubble />
+      <Chat />
       <CookieConsent />
       <Footer />
     </LightboxProvider>
