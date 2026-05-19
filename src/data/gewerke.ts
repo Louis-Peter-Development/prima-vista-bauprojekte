@@ -7,6 +7,7 @@ export type TradeRow = {
   name: string;
   lead: string;
   key: TradeKey;
+  detailTo?: string;
 };
 
 export type FeaturedTrade = {
@@ -17,6 +18,7 @@ export type FeaturedTrade = {
   desc: string;
   feature?: boolean;
   revealDelay?: number;
+  detailTo?: string;
 };
 
 export const PREVIEW_IMAGES: Record<TradeKey, string> = {
@@ -35,14 +37,14 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
 };
 
 export const TRADES: TradeRow[] = [
-  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', key: 'bad' },
-  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', key: 'kueche' },
-  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', key: 'boden' },
-  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', key: 'elektro' },
+  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', key: 'bad', detailTo: '/badsanierung' },
+  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', key: 'kueche', detailTo: '/kuechen-moebelbau' },
+  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', key: 'boden', detailTo: '/boeden-belaege' },
+  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', key: 'elektro', detailTo: '/elektroinstallation' },
   { num: '05', name: 'Sanitärinstallation', lead: 'Wasser, Abwasser', key: 'sanitaer' },
   { num: '06', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH', key: 'heizung' },
-  { num: '07', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau' },
-  { num: '08', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', key: 'maler' },
+  { num: '07', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
+  { num: '08', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', key: 'maler', detailTo: '/maler-lackierer' },
   { num: '09', name: 'Fassadensanierung', lead: 'Putz, WDVS', key: 'fassade' },
   { num: '10', name: 'Dachsanierung', lead: 'Eindeckung, Dämmung', key: 'dach' },
   { num: '11', name: 'Abdichtung & Keller', lead: 'Feuchtigkeit', key: 'abdichtung' },
@@ -65,6 +67,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     heading: ['Bäder &', 'Sanitär'],
     desc: 'Komplettbäder von 4 bis 28 m². Fliesen, Sanitär, Heizkörper, Beleuchtung — aus einer Bestellung.',
     feature: true,
+    detailTo: '/badsanierung',
   },
   {
     src: '/assets/img/proj-kitchen-oak.jpg',
@@ -73,6 +76,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     heading: ['Küchen &', 'Möbelbau'],
     desc: 'Maßgefertigte Schreiner­küchen und Einbauten.',
     revealDelay: 1,
+    detailTo: '/kuechen-moebelbau',
   },
   {
     src: '/assets/img/photo-parkett-altbau.jpg',
@@ -81,6 +85,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     heading: ['Böden &', 'Beläge'],
     desc: 'Parkett, Vinyl, Naturstein, Estrich, Industrieboden.',
     revealDelay: 2,
+    detailTo: '/boeden-belaege',
   },
 ];
 

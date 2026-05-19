@@ -42,10 +42,13 @@
 }
 .ft-card {
   position: relative;
+  display: block;
   overflow: hidden;
   background: var(--pv-ink-2);
   cursor: pointer;
   aspect-ratio: 1 / 1;
+  color: inherit;
+  text-decoration: none;
 }
 .ft-card--feature { aspect-ratio: 5 / 6; }
 .ft-card img {
@@ -88,6 +91,16 @@
   line-height: 1.55;
   color: var(--pv-text-on-dark-muted);
   margin: 0;
+}
+.ft-card__more {
+  display: inline-block;
+  margin-top: 18px;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pv-copper-bright);
 }
 
 /* Full index — alphabetical list ---- */
@@ -159,8 +172,29 @@
   align-items: baseline;
   gap: 12px;
 }
+.trade-index__preview-cap--with-link { bottom: 64px; }
 .trade-index__preview-cap .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
 .trade-index__preview-cap .ttl { color: var(--pv-bone); }
+.trade-index__preview-link {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--pv-copper-bright);
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.trade-index__preview-link span {
+  font-size: 16px;
+  line-height: 1;
+}
 
 .trade-list {
   list-style: none;
@@ -179,8 +213,14 @@
   transition: padding-left 200ms var(--pv-ease-out);
 }
 .trade-list__row:hover,
-.trade-list__row.is-active {
+.trade-list__row.is-active,
+.trade-list__row:focus-visible {
   padding-left: 12px;
+}
+.trade-list__row--link { cursor: pointer; }
+.trade-list__row:focus-visible {
+  outline: 1px solid var(--pv-copper);
+  outline-offset: -1px;
 }
 .trade-list__row .num {
   font-family: var(--pv-font-mono);
@@ -396,6 +436,16 @@
     font-size: 10px;
     letter-spacing: 0.16em;
     line-height: 1.4;
+  }
+  .trade-index__preview-cap--with-link {
+    bottom: 56px;
+  }
+  .trade-index__preview-link {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
   }
   .trade-list__row {
     grid-template-columns: 44px minmax(0, 1fr);

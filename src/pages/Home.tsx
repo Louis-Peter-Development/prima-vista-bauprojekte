@@ -265,10 +265,11 @@ export default function Home() {
         <ul className="trades-preview__grid">
           {TRADES_PREVIEW.map((t, i) => (
             <li key={t.num} className="trade-chip reveal" data-delay={i % 4 || undefined}>
-              <Link className="trade-chip__link" to="/gewerke">
+              <Link className="trade-chip__link" to={t.detailTo ?? '/gewerke'}>
                 <span className="trade-chip__num">{t.num}</span>
                 <span className="trade-chip__name">{t.name}</span>
                 <span className="trade-chip__lead">{t.lead}</span>
+                {t.detailTo ? <span className="trade-chip__more">Kostenrechner öffnen ›</span> : null}
               </Link>
             </li>
           ))}

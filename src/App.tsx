@@ -2,6 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Gewerke from './pages/Gewerke';
+import Badsanierung from './pages/Badsanierung';
+import KuechenMoebelbau from './pages/KuechenMoebelbau';
+import BoedenBelaege from './pages/BoedenBelaege';
+import Elektroinstallation from './pages/Elektroinstallation';
+import Trockenbau from './pages/Trockenbau';
+import MalerLackierer from './pages/MalerLackierer';
 import KomplettPakete from './pages/KomplettPakete';
 import Projekte from './pages/Projekte';
 import Kontakt from './pages/Kontakt';
@@ -26,6 +32,12 @@ export default function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/gewerke" element={<Gewerke />} />
+        <Route path="/badsanierung" element={<Badsanierung />} />
+        <Route path="/kuechen-moebelbau" element={<KuechenMoebelbau />} />
+        <Route path="/boeden-belaege" element={<BoedenBelaege />} />
+        <Route path="/elektroinstallation" element={<Elektroinstallation />} />
+        <Route path="/trockenbau" element={<Trockenbau />} />
+        <Route path="/maler-lackierer" element={<MalerLackierer />} />
         <Route path="/komplett-pakete" element={<KomplettPakete />} />
         <Route path="/projekte" element={<Projekte />} />
         <Route path="/kontakt" element={<Kontakt />} />

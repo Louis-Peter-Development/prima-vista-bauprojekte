@@ -11,15 +11,15 @@ export const HOME_TRADES = [
   'Elektro', 'Heizung', 'Fassade', 'Maler & Lack', 'Treppen', 'Trockenbau',
 ];
 
-export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string }> = [
-  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC' },
-  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei' },
-  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl' },
-  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX' },
+export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; detailTo?: string }> = [
+  { num: '01', name: 'Bäder & Sanitär', lead: 'Wanne, Dusche, WC', detailTo: '/badsanierung' },
+  { num: '02', name: 'Küchen & Möbelbau', lead: 'Schreinerei', detailTo: '/kuechen-moebelbau' },
+  { num: '03', name: 'Böden & Beläge', lead: 'Parkett, Stein, Vinyl', detailTo: '/boeden-belaege' },
+  { num: '04', name: 'Elektroinstallation', lead: 'Strom, Licht, KNX', detailTo: '/elektroinstallation' },
   { num: '05', name: 'Heizungsbau', lead: 'Wärmepumpe, FBH' },
-  { num: '06', name: 'Maler & Lackierer', lead: 'Farben, Tapeten' },
+  { num: '06', name: 'Maler & Lackierer', lead: 'Farben, Tapeten', detailTo: '/maler-lackierer' },
   { num: '07', name: 'Fassadensanierung', lead: 'Putz, WDVS' },
-  { num: '08', name: 'Trockenbau', lead: 'Wände, Decken' },
+  { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', detailTo: '/trockenbau' },
 ];
 
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
