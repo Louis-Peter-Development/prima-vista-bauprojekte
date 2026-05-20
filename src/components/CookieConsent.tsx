@@ -41,7 +41,7 @@ export default function CookieConsent() {
           <div className="pv-cookie__eyebrow"><span className="rule-red"></span> Datenschutz</div>
           <h2>Cookies & Dienste</h2>
           <p>
-            Wir nutzen notwendige Technologien für den Betrieb der Website. Optionale Dienste wie Analyse und der geplante Chatbot werden erst nach Ihrer Zustimmung aktiviert.
+            Wir nutzen notwendige Technologien für den Betrieb der Website. Optionale Dienste wie Analyse und unser Claude-basierter Chatbot werden erst nach Ihrer Zustimmung aktiviert.
           </p>
           <Link className="pv-cookie__link" to="/datenschutz">Datenschutzerklärung ansehen</Link>
         </div>

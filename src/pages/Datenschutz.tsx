@@ -123,10 +123,27 @@ const PRIVACY_SECTIONS = [
       <>
         <h3>Claude-basierter Chatbot</h3>
         <p>
-          Wir planen den Einsatz eines Chatbots auf Basis von Claude. Wenn Sie den Chatbot nutzen, können die von Ihnen eingegebenen Inhalte, technische Metadaten und gegebenenfalls Kontaktdaten verarbeitet werden, um Ihre Anfrage zu beantworten und den Dienst technisch bereitzustellen.
+          Wir setzen auf dieser Website einen Chatbot („Bau-Concierge“) ein, der auf dem KI-Modell Claude des Anbieters Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA, basiert. Der Chatbot ist nur aktiv, wenn Sie über das Cookie-Banner Ihre Einwilligung erteilt haben.
         </p>
+        <h3>Verarbeitete Daten</h3>
         <p>
-          Bitte geben Sie im Chat keine sensiblen Daten ein, sofern dies für Ihre Anfrage nicht erforderlich ist. Die konkrete technische Einbindung, Anbieterinformationen, Speicherdauer und etwaige Drittlandübermittlungen werden vor dem produktiven Einsatz des Chatbots in dieser Datenschutzerklärung ergänzt.
+          Wenn Sie den Chatbot nutzen, werden die von Ihnen im Chat eingegebenen Inhalte sowie technische Metadaten (z. B. Zeitpunkt der Anfrage, IP-Adresse) verarbeitet, um Ihre Anfrage zu beantworten und den Dienst technisch bereitzustellen. Ihre Eingaben werden von unserem Server an die Schnittstelle von Anthropic übermittelt und dort zur Generierung der Antwort verarbeitet.
+        </p>
+        <h3>Rechtsgrundlage</h3>
+        <p>
+          Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Sie können diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie Ihre Cookie-Einstellungen ändern oder Ihre Browser-Speicherdaten für diese Website löschen.
+        </p>
+        <h3>Drittlandübermittlung (USA)</h3>
+        <p>
+          Anthropic verarbeitet Daten unter anderem in den USA. Die Übermittlung erfolgt auf Grundlage der Standardvertragsklauseln der EU-Kommission gemäß Art. 46 Abs. 2 lit. c DSGVO sowie ergänzender technischer und organisatorischer Maßnahmen. Weitere Informationen finden Sie in den Datenschutzhinweisen von Anthropic unter <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a>.
+        </p>
+        <h3>Speicherdauer</h3>
+        <p>
+          Wir speichern Chatverläufe nicht dauerhaft auf unseren Servern. Anthropic kann übermittelte Inhalte gemäß den geltenden Geschäftsbedingungen für einen begrenzten Zeitraum zu Zwecken der Diensterbringung, Missbrauchsprävention und Einhaltung gesetzlicher Pflichten speichern; Einzelheiten ergeben sich aus den oben verlinkten Hinweisen von Anthropic.
+        </p>
+        <h3>Hinweis</h3>
+        <p>
+          Bitte geben Sie im Chat keine sensiblen Daten (z. B. Gesundheitsdaten, Finanzdaten, Passwörter) ein. Für vertrauliche Anliegen wenden Sie sich bitte direkt per E-Mail oder Telefon an uns.
         </p>
       </>
     ),
@@ -159,7 +176,7 @@ export default function Datenschutz() {
           { label: 'Verantwortlich', value: 'Monica Irimia' },
           { label: 'Kontakt', value: 'info@primavista-bauprojekte.com' },
           { label: 'Analyse', value: 'Google Analytics' },
-          { label: 'Chatbot', value: 'Claude geplant' },
+          { label: 'Chatbot', value: 'Claude (Anthropic)' },
         ]}
       />
 
