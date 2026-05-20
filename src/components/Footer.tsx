@@ -93,8 +93,26 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="pv-footer__contact-link" to="/blitz-angebot">
+                <Link className="pv-footer__contact-link" to="/heizmethoden">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">03</span>
+                  <span>Heizmethoden</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/kalkulator">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">04</span>
+                  <span>Kalkulator</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/projekte">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">05</span>
+                  <span>Projekte</span>
+                </Link>
+              </li>
+              <li>
+                <Link className="pv-footer__contact-link" to="/blitz-angebot">
+                  <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">06</span>
                   <span>Blitz-Angebote</span>
                 </Link>
               </li>
