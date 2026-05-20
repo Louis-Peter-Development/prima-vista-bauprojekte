@@ -4,6 +4,8 @@ import FeaturedProjects from '../components/home/FeaturedProjects';
 import GoogleReviews from '../components/home/GoogleReviews';
 import HomeHero from '../components/home/HomeHero';
 import HomeMarquee from '../components/home/HomeMarquee';
+import HomeKalkulatorLive from '../components/home/HomeKalkulatorLive';
+import HomeBlitzLive from '../components/home/HomeBlitzLive';
 import { TRADES_PREVIEW } from '../data/home';
 import { PREVIEW_IMAGES } from '../data/gewerke';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -155,75 +157,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="kalk__card reveal" data-delay="1" aria-hidden="true">
-            <div className="kalk__card-head">
-              <span className="kalk__card-num">№ 05</span>
-              <span className="kalk__card-label">Kalkulator · Live</span>
-            </div>
-            <div className="kalk__field">
-              <span className="kalk__field-label">Objektart</span>
-              <div className="kalk__chips">
-                <span className="kalk__chip is-on">Haus</span>
-                <span className="kalk__chip">Wohnung</span>
-                <span className="kalk__chip">Gastro</span>
-                <span className="kalk__chip">Anderes</span>
-              </div>
-            </div>
-            <div className="kalk__field">
-              <span className="kalk__field-label">Fläche</span>
-              <div className="kalk__input">
-                <span className="kalk__input-value">142</span>
-                <span className="kalk__input-unit">m²</span>
-              </div>
-            </div>
-            <div className="kalk__field">
-              <span className="kalk__field-label">Gewerke</span>
-              <div className="kalk__chips">
-                <span className="kalk__chip is-on">Bad</span>
-                <span className="kalk__chip is-on">Küche</span>
-                <span className="kalk__chip">Boden</span>
-                <span className="kalk__chip is-on">Elektrik</span>
-                <span className="kalk__chip">Heizung</span>
-              </div>
-            </div>
-            <div className="kalk__result">
-              <span className="kalk__result-label">Live-Spanne</span>
-              <span className="kalk__result-value">€ 84 – 112 Tsd.</span>
-              <span className="kalk__result-note">Mittelwert € 98 Tsd. · ca. € 690 / m²</span>
-            </div>
-          </div>
+          <HomeKalkulatorLive />
         </div>
       </section>
 
       {/* BLITZ-ANGEBOT — written 24h quote */}
       <section className="blitz-home">
         <div className="blitz-home__inner">
-          <div className="blitz-home__doc reveal" aria-hidden="true">
-            <div className="blitz-home__doc-paper">
-              <div className="blitz-home__doc-head">
-                <div>
-                  <span className="blitz-home__doc-num">№ 06 / BA-2026-142</span>
-                  <span className="blitz-home__doc-label">Vorab-Kostenschätzung</span>
-                </div>
-                <span className="blitz-home__doc-stamp">In 24 Std.</span>
-              </div>
-              <ul className="blitz-home__doc-rows">
-                <li><span>Projekt</span><strong>Wohnungssanierung · 142 m²</strong></li>
-                <li><span>Standort</span><strong>Frankfurt-Sachsenhausen</strong></li>
-                <li><span>Gewerke</span><strong>Bad, Küche, Elektrik, Maler</strong></li>
-                <li><span>Standard</span><strong>Gehoben</strong></li>
-              </ul>
-              <div className="blitz-home__doc-total">
-                <span className="blitz-home__doc-total-label">Geschätzte Investition</span>
-                <span className="blitz-home__doc-total-value">€ 184 – 226 Tsd.</span>
-                <span className="blitz-home__doc-total-note">Verbindlich nach Aufmaß vor Ort.</span>
-              </div>
-              <div className="blitz-home__doc-sig">
-                <span className="blitz-home__doc-sig-name">Daniel Vogel · Bauleitung</span>
-                <span className="blitz-home__doc-sig-date">Frankfurt · 17. Mai 2026</span>
-              </div>
-            </div>
-          </div>
+          <HomeBlitzLive />
           <div className="blitz-home__head reveal" data-delay="1">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;№ 06 · Blitz-Angebot</div>
             <h2>
@@ -385,7 +326,7 @@ export default function Home() {
 
       {/* FINAL CTA */}
       <section className="end-cta">
-        <div className="end-cta__inner reveal reveal--scale">
+        <div className="end-cta__inner reveal-group">
           <h2>
             Lassen Sie uns über<br />
             Ihr <em>Bauprojekt</em> reden.
@@ -394,7 +335,7 @@ export default function Home() {
             Erste Beratung kostenlos. Termin innerhalb von 48 Stunden, vor Ort oder per Video — in Frankfurt und Emmenbrücke.
           </p>
           <div className="end-cta__buttons">
-            <Link className="btn btn--dark" to="/kontakt">
+            <Link className="btn btn--dark btn--shimmer" to="/kontakt">
               Termin vereinbaren <span className="arrow">&gt;</span>
             </Link>
             <Link className="btn btn--dark" to="/kalkulator">

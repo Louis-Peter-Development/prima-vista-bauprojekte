@@ -37,11 +37,11 @@ export default function PageIntro({
   return (
     <section className={['page-intro', className].filter(Boolean).join(' ')} style={style}>
       <div className="page-intro__inner">
-        <div className="reveal">
+        <div className="animate-in">
           <div className="crumb"><span className="num">{crumbNumber}</span> {crumbLabel}</div>
           <h1>{title}</h1>
         </div>
-        <div className="reveal" data-delay="1">
+        <div className="animate-in" data-delay="1">
           <p className="lede">{lede}</p>
           <ul className="meta-list">
             {meta.map((item) => (

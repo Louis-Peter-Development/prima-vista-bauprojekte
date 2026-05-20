@@ -19,10 +19,10 @@ export default function EndCtaLocal({
 }: EndCtaLocalProps) {
   return (
     <section className="end-cta-local" style={style}>
-      <div className="end-cta-local__inner reveal reveal--scale">
+      <div className="end-cta-local__inner reveal-group">
         <SectionEyebrow>{eyebrow}</SectionEyebrow>
         <h2>{title}</h2>
-        <Link className="btn btn--light" to={to}>{ctaLabel} <span className="arrow">&gt;</span></Link>
+        <Link className="btn btn--light btn--shimmer" to={to}>{ctaLabel} <span className="arrow">&gt;</span></Link>
       </div>
     </section>
   );

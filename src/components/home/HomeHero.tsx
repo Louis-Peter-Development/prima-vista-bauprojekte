@@ -51,19 +51,19 @@ export default function HomeHero() {
       </div>
 
       <div className="hero__inner">
-        <div className="hero__topline">
+        <div className="hero__topline animate-in">
           <span><span className="dot"></span>Frankfurt &amp; Emmenbrücke</span>
           <span>Sanierung &amp; Renovierung — Bauprojekte seit 2014</span>
           <span>N° 26 / Frühjahr 2026</span>
         </div>
 
-        <h1 className="hero__headline">
+        <h1 className="hero__headline animate-in" data-delay="1">
           <span className="hero__headline-line"><em>Eine</em> Vision.</span>
           <span className="hero__headline-line"><em>Eine</em> Adresse.</span>
           <span className="hero__headline-line"><em>Ein</em> Team.</span>
         </h1>
 
-        <div className="hero__meta">
+        <div className="hero__meta animate-in" data-delay="2">
           <div>
             <div className="hero__meta-num">01 — Editorial</div>
             <p className="hero__lede">

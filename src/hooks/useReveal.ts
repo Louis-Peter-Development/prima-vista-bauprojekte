@@ -16,6 +16,13 @@ export function useReveal() {
     }
 
     document.body.classList.add('js-reveal');
+
+    // Modern CSS Scroll-driven animations fallback bypass
+    if (CSS.supports('(animation-timeline: view()) and (animation-range: entry)')) {
+      // For browsers that support scroll-driven animations natively, CSS handles everything!
+      // We just need the `.js-reveal` class on the body which is added above.
+      return;
+    }
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
