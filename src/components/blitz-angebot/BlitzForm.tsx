@@ -9,6 +9,9 @@ import {
 export default function BlitzForm() {
   const [form, setForm] = useState(INITIAL_BLITZ_FORM);
   const [sent, setSent] = useState(false);
+  const [step, setStep] = useState(1);
+
+  const totalSteps = 5;
 
   function update<K extends keyof BlitzFormState>(key: K, value: BlitzFormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -22,8 +25,23 @@ export default function BlitzForm() {
     }
   }
 
+  function onNext() {
+    if (step === 2) {
+      if (!form.groesse || !form.starttermin) {
+        alert('Bitte füllen Sie Fläche und Baubeginn aus.');
+        return;
+      }
+    }
+    setStep(s => Math.min(s + 1, totalSteps));
+  }
+
+  function onBack() {
+    setStep(s => Math.max(s - 1, 1));
+  }
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
+    if (step !== totalSteps) return;
     setSent(true);
   }
 
@@ -39,76 +57,115 @@ export default function BlitzForm() {
         </div>
       ) : (
         <form onSubmit={onSubmit}>
-          <div className="form-field">
-            <label>Um was für ein Objekt handelt es sich?</label>
-            <div className="form-chips">
-              {BLITZ_ART_OPTIONS.map(({ value, label }) => (
-                <span key={value}>
-                  <input type="radio" name="blitz-art" id={`blitz-art-${value}`} checked={form.art === value} onChange={() => update('art', value)} />
-                  <label htmlFor={`blitz-art-${value}`}>{label}</label>
-                </span>
-              ))}
-            </div>
+          <div className="kontakt__form-eyebrow">
+            Schritt {step} von {totalSteps}
           </div>
 
-          <div className="form-row">
-            <div className="form-field">
-              <label htmlFor="groesse">Geschätzte Fläche (m²)</label>
-              <input id="groesse" type="number" placeholder="z. B. 120" value={form.groesse} onChange={(e) => update('groesse', e.target.value)} required />
+          {step === 1 && (
+            <div className="form-step fade-in">
+              <div className="form-field">
+                <label>Um was für ein Objekt handelt es sich?</label>
+                <div className="form-chips">
+                  {BLITZ_ART_OPTIONS.map(({ value, label }) => (
+                    <span key={value}>
+                      <input type="radio" name="blitz-art" id={`blitz-art-${value}`} checked={form.art === value} onChange={() => update('art', value)} />
+                      <label htmlFor={`blitz-art-${value}`}>{label}</label>
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="form-field form-field--select">
-              <label htmlFor="starttermin">Gewünschter Baubeginn</label>
-              <select id="starttermin" value={form.starttermin} onChange={(e) => update('starttermin', e.target.value)} required>
-                <option value="" disabled>Bitte wählen</option>
-                <option value="sofort">So schnell wie möglich</option>
-                <option value="1-3m">In 1 – 3 Monaten</option>
-                <option value="3-6m">In 3 – 6 Monaten</option>
-                <option value="spaeter">Noch unklar / Nächstes Jahr</option>
-              </select>
-            </div>
-          </div>
+          )}
 
-          <div className="form-field">
-            <label>Welche Gewerke werden in etwa benötigt? (Mehrfachauswahl)</label>
-            <div className="form-chips">
-              {BLITZ_GEWERKE_OPTIONS.map((g) => (
-                <span key={g}>
-                  <input type="checkbox" id={`blitz-g-${g}`} checked={form.gewerke.includes(g)} onChange={() => toggleGewerk(g)} />
-                  <label htmlFor={`blitz-g-${g}`}>{g}</label>
-                </span>
-              ))}
+          {step === 2 && (
+            <div className="form-step fade-in">
+              <div className="form-row">
+                <div className="form-field">
+                  <label htmlFor="groesse">Geschätzte Fläche (m²)</label>
+                  <input id="groesse" type="number" placeholder="z. B. 120" value={form.groesse} onChange={(e) => update('groesse', e.target.value)} required />
+                </div>
+                <div className="form-field form-field--select">
+                  <label htmlFor="starttermin">Gewünschter Baubeginn</label>
+                  <select id="starttermin" value={form.starttermin} onChange={(e) => update('starttermin', e.target.value)} required>
+                    <option value="" disabled>Bitte wählen</option>
+                    <option value="sofort">So schnell wie möglich</option>
+                    <option value="1-3m">In 1 – 3 Monaten</option>
+                    <option value="3-6m">In 3 – 6 Monaten</option>
+                    <option value="spaeter">Noch unklar / Nächstes Jahr</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
 
-          <div className="form-field" style={{ marginTop: '24px' }}>
-            <label htmlFor="msg">Besonderheiten / Kurzfassung Ihres Vorhabens</label>
-            <textarea id="msg" placeholder="Gibt es Besonderheiten, wie z.B. Denkmalschutz, spezielle Wünsche, oder Herausforderungen? Beschreiben Sie es kurz hier." value={form.msg} onChange={(e) => update('msg', e.target.value)} />
-          </div>
-
-          <div className="form-field form-field--eyebrow" style={{ marginTop: '32px', marginBottom: '16px' }}>
-            <label style={{ color: 'var(--pv-copper)' }}>Ihre Kontaktdaten</label>
-          </div>
-
-          <div className="form-field">
-            <label htmlFor="name">Vollständiger Name</label>
-            <input id="name" type="text" placeholder="Vor- und Nachname" value={form.name} onChange={(e) => update('name', e.target.value)} required />
-          </div>
-          <div className="form-row">
-            <div className="form-field">
-              <label htmlFor="email">E-Mail</label>
-              <input id="email" type="email" placeholder="ihre@email.de" value={form.email} onChange={(e) => update('email', e.target.value)} required />
+          {step === 3 && (
+            <div className="form-step fade-in">
+              <div className="form-field">
+                <label>Welche Gewerke werden in etwa benötigt? (Mehrfachauswahl)</label>
+                <div className="form-chips">
+                  {BLITZ_GEWERKE_OPTIONS.map((g) => (
+                    <span key={g}>
+                      <input type="checkbox" id={`blitz-g-${g}`} checked={form.gewerke.includes(g)} onChange={() => toggleGewerk(g)} />
+                      <label htmlFor={`blitz-g-${g}`}>{g}</label>
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="form-field">
-              <label htmlFor="tel">Telefon</label>
-              <input id="tel" type="tel" placeholder="Für eventuelle Rückfragen" value={form.tel} onChange={(e) => update('tel', e.target.value)} required />
+          )}
+
+          {step === 4 && (
+            <div className="form-step fade-in">
+              <div className="form-field">
+                <label htmlFor="msg">Besonderheiten / Kurzfassung Ihres Vorhabens</label>
+                <textarea id="msg" placeholder="Gibt es Besonderheiten, wie z.B. Denkmalschutz, spezielle Wünsche, oder Herausforderungen? Beschreiben Sie es kurz hier." value={form.msg} onChange={(e) => update('msg', e.target.value)} />
+              </div>
             </div>
-          </div>
+          )}
+
+          {step === 5 && (
+            <div className="form-step fade-in">
+              <div className="form-field form-field--eyebrow" style={{ marginBottom: '16px' }}>
+                <label style={{ color: 'var(--pv-copper)' }}>Ihre Kontaktdaten</label>
+              </div>
+
+              <div className="form-field">
+                <label htmlFor="name">Vollständiger Name</label>
+                <input id="name" type="text" placeholder="Vor- und Nachname" value={form.name} onChange={(e) => update('name', e.target.value)} required />
+              </div>
+              <div className="form-row">
+                <div className="form-field">
+                  <label htmlFor="email">E-Mail</label>
+                  <input id="email" type="email" placeholder="ihre@email.de" value={form.email} onChange={(e) => update('email', e.target.value)} required />
+                </div>
+                <div className="form-field">
+                  <label htmlFor="tel">Telefon</label>
+                  <input id="tel" type="tel" placeholder="Für eventuelle Rückfragen" value={form.tel} onChange={(e) => update('tel', e.target.value)} required />
+                </div>
+              </div>
+            </div>
+          )}
 
           <div className="form-actions" style={{ marginTop: '40px' }}>
-            <span className="form-actions__note"><span className="dot"></span>Schätzung in 24 Std.</span>
-            <button className="btn btn--solid" type="submit">
-              Angebot anfordern <span className="arrow">&gt;</span>
-            </button>
+            <span className="form-actions__note">
+              <span className="dot"></span>Schätzung in 24 Std.
+            </span>
+            <div className="form-actions__buttons">
+              {step > 1 && (
+                <button type="button" className="btn btn--light" onClick={onBack}>
+                  Zurück
+                </button>
+              )}
+              {step < totalSteps ? (
+                <button type="button" className="btn btn--solid" onClick={onNext}>
+                  Weiter <span className="arrow">&gt;</span>
+                </button>
+              ) : (
+                <button type="submit" className="btn btn--solid">
+                  Angebot anfordern <span className="arrow">&gt;</span>
+                </button>
+              )}
+            </div>
           </div>
         </form>
       )}
