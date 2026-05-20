@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   lighting: false,
 };
 
-export default function BadsanierungCalculator() {
+export default function BadsanierungCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<BadVariantKey>('all');
   const [area, setArea] = useState(8);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function BadsanierungCalculator() {
   return (
     <section className="hk-calc hk-calc--bad" aria-label="Badsanierung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function BadsanierungCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

@@ -20,7 +20,7 @@ type QuoteLine = {
   totalNet: number;
 };
 
-export default function HeizkoerperCalculator() {
+export default function HeizkoerperCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [modelKey, setModelKey] = useState<RadiatorModelKey>('plan');
   const [quantity, setQuantity] = useState(1);
   const [pipePackage, setPipePackage] = useState(false);
@@ -93,6 +93,7 @@ export default function HeizkoerperCalculator() {
   return (
     <section className="hk-calc" aria-label="Heizkörper Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/photo-bad-prima-vista.jpg" alt="Modernisiertes Bad mit Heizkörper- und Sanitärdetails" />
@@ -109,6 +110,7 @@ export default function HeizkoerperCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

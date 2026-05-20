@@ -21,7 +21,7 @@ const defaultExtras: ExtrasState = {
   demontage: false,
 };
 
-export default function WasserCalculator() {
+export default function WasserCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<WasserVariantKey>('all');
   const [points, setPoints] = useState(8);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -63,6 +63,7 @@ export default function WasserCalculator() {
   return (
     <section className="hk-calc hk-calc--wasser" aria-label="Wasserinstallation Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -79,6 +80,7 @@ export default function WasserCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

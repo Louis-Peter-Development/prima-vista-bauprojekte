@@ -1,29 +1,27 @@
 import { Link } from 'react-router-dom';
-import { GEWERKE, formatTsd } from '../../data/kalkulator';
+import { GASTRONOMIE_GEWERKE, formatTsd } from '../../data/gastronomieAusbau';
 
-type KalkResultProps = {
+type Props = {
   hasPicks: boolean;
   totalMin: number;
   totalMax: number;
   totalMid: number;
   perM2: number;
-  flaeche: number;
+  area: number;
   picked: string[];
-  objektFactor: number;
-  qMult: number;
+  factor: number;
 };
 
-export default function KalkResult({
+export default function GastronomieAusbauResult({
   hasPicks,
   totalMin,
   totalMax,
   totalMid,
   perM2,
-  flaeche,
+  area,
   picked,
-  objektFactor,
-  qMult,
-}: KalkResultProps) {
+  factor,
+}: Props) {
   return (
     <aside className="kalk-result">
       <div className="kalk-result__sticky">
@@ -65,8 +63,8 @@ export default function KalkResult({
               <span>nach Gewerk</span>
             </div>
             <ul>
-              {GEWERKE.filter(g => picked.includes(g.key)).map((g) => {
-                const sub = g.pricePerM2 * flaeche * objektFactor * qMult;
+              {GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key)).map((g) => {
+                const sub = g.pricePerM2 * area * factor;
                 return (
                   <li key={g.key}>
                     <span className="kalk-result__row-num">{g.num}</span>
@@ -80,7 +78,7 @@ export default function KalkResult({
         )}
 
         <p className="kalk-result__disclaimer">
-          Vorab-Schätzung auf Basis von Erfahrungswerten — exklusive Sondergewerke, Genehmigungen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß vor Ort.
+          Vorab-Schätzung für die gewählten Typ- und Gewerk-Optionen — exklusive Sondergewerke, Gastronomie-Konzessionen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung.
         </p>
 
         <div className="kalk-result__actions">

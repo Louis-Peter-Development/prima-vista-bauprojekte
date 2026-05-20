@@ -326,86 +326,140 @@
 }
 
 .hk-summary__sticky {
-  padding: 24px;
+  position: relative;
+  background: var(--pv-ink-1);
+  color: var(--pv-bone);
+  padding: 40px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+}
+.hk-summary__sticky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 100% 0%, rgba(200, 154, 106, .15) 0%, transparent 60%);
+  z-index: 0;
+}
+.hk-summary__sticky > * { position: relative; z-index: 1; }
+.hk-summary__sticky .btn--light {
+  color: var(--pv-bone);
+  border-color: rgba(236, 229, 223, .45);
+  background: rgba(255, 255, 255, .04);
+}
+.hk-summary__sticky .btn--light:hover {
+  color: var(--pv-copper-bright);
+  border-color: var(--pv-copper-bright);
+  background: rgba(200, 154, 106, .10);
 }
 .hk-summary__top {
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(20, 19, 18, .1);
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(236, 229, 223, .14);
 }
-.hk-summary__top span,
-.hk-summary__top small {
-  display: block;
-  font-family: var(--pv-font-mono);
+.hk-summary__top span {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--pv-font-display);
+  font-weight: 600;
   font-size: 11px;
-  letter-spacing: .16em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--pv-copper);
+  color: var(--pv-copper-bright);
+  margin-bottom: 24px;
+}
+.hk-summary__top small {
+  font-family: var(--pv-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--pv-text-on-dark-muted);
+  display: block;
 }
 .hk-summary__top strong {
   display: block;
-  margin: 8px 0 4px;
   font-family: var(--pv-font-serif);
   font-style: italic;
   font-weight: 500;
   font-size: clamp(34px, 3.2vw, 48px);
   line-height: 1;
-  color: var(--pv-ink);
+  color: var(--pv-bone);
+  margin-bottom: 8px;
 }
 .hk-summary__totals {
   display: grid;
-  gap: 7px;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(20, 19, 18, .1);
+  gap: 10px;
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(236, 229, 223, .14);
 }
 .hk-summary__totals span {
   display: flex;
   justify-content: space-between;
   gap: 14px;
-  color: var(--pv-ink-2);
+  color: var(--pv-bone);
+  font-family: var(--pv-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
 }
 .hk-lines {
   display: grid;
-  gap: 8px;
+  gap: 0;
   padding: 14px 0;
 }
 .hk-line {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(20, 19, 18, .07);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(236, 229, 223, .08);
 }
+.hk-line:last-child { border-bottom: 0; }
 .hk-line strong,
 .hk-line span,
 .hk-line small {
+  margin-top: 4px;
+  font-family: var(--pv-font-mono);
+  letter-spacing: .1em;
+  color: var(--pv-copper-bright);
+  font-size: 11px;
   display: block;
 }
 .hk-line strong {
-  font-family: var(--pv-font-display);
-  font-size: 12px;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--pv-ink);
+  font-family: var(--pv-font-body);
+  font-size: 14px;
+  color: var(--pv-bone);
+  letter-spacing: normal;
+  text-transform: none;
+  display: block;
 }
 .hk-line span {
   margin-top: 4px;
-  color: var(--pv-text-on-light-muted);
+  color: var(--pv-text-on-dark-muted);
   line-height: 1.35;
+  font-size: 12px;
+  display: block;
 }
 .hk-line small {
   margin-top: 4px;
   font-family: var(--pv-font-mono);
   letter-spacing: .1em;
-  color: var(--pv-copper);
+  color: var(--pv-copper-bright);
+  font-size: 11px;
+  display: block;
 }
 .hk-line > div:last-child {
   text-align: right;
 }
 .hk-summary p {
   margin: 0;
-  color: var(--pv-text-on-light-muted);
-  font-size: 13px;
-  line-height: 1.5;
+  padding: 18px 0;
+  border-top: 1px dashed rgba(236, 229, 223, .14);
+  border-bottom: 1px dashed rgba(236, 229, 223, .14);
+  color: var(--pv-text-on-dark-muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 .hk-summary__actions {
   display: grid;
@@ -462,7 +516,7 @@
 @media (max-width: 560px) {
   .hk-config,
   .hk-summary__sticky {
-    padding: 20px;
+    padding: 28px 22px;
   }
   .hk-config__head,
   .hk-meter {

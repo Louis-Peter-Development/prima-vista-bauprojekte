@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   lighting: false,
 };
 
-export default function KuechenCalculator() {
+export default function KuechenCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<KuechenVariantKey>('all');
   const [meters, setMeters] = useState(4);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function KuechenCalculator() {
   return (
     <section className="hk-calc hk-calc--kueche" aria-label="Küchen und Möbelbau Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function KuechenCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

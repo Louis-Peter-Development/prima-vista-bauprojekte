@@ -18,7 +18,7 @@ type QuoteLine = {
   totalNet: number;
 };
 
-export default function WaermepumpeCalculator() {
+export default function WaermepumpeCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [quantity, setQuantity] = useState(1);
   const [oilTank, setOilTank] = useState(false);
   const [foundation, setFoundation] = useState(false);
@@ -73,6 +73,7 @@ export default function WaermepumpeCalculator() {
   return (
     <section className="hk-calc hk-calc--heat-pump" aria-label="Wärmepumpe Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/photo-haus-exterior.jpg" alt="Modernisiertes Haus als Einsatzort für eine Luft-Wärmepumpe" />
@@ -89,6 +90,7 @@ export default function WaermepumpeCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

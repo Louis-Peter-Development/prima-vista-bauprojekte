@@ -57,6 +57,7 @@ export const PACKAGES: Package[] = [
     photo: '/assets/img/proj-moroccan-dining.jpg',
     alt: 'Gastronomie-Ausbau',
     eyebrow: 'Komplettpaket · Gastronomie',
+    detailTo: '/gastronomie-ausbau',
     title: <>Gastronomie-<br /><em>Ausbau.</em></>,
     lede: 'Restaurants, Bars und Hotels — von der Konzeptphase bis zur Eröffnung. Wir bauen schlüssel­fertig und stellen Sie auf das Veterinär­amt vor.',
     priceLabel: 'Konzept-Sprint ab',

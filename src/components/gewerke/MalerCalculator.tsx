@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   premiumPaint: false,
 };
 
-export default function MalerCalculator() {
+export default function MalerCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<MalerVariantKey>('all');
   const [area, setArea] = useState(80);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function MalerCalculator() {
   return (
     <section className="hk-calc hk-calc--maler" aria-label="Maler und Lackierer Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function MalerCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

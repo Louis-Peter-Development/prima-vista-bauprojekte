@@ -24,7 +24,7 @@ const defaultExtras: ExtrasState = {
   door: false,
 };
 
-export default function BarrierefreiheitCalculator() {
+export default function BarrierefreiheitCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<BarrierefreiheitVariantKey>('complete');
   const [area, setArea] = useState(8);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -66,6 +66,7 @@ export default function BarrierefreiheitCalculator() {
   return (
     <section className="hk-calc hk-calc--barrierefreiheit" aria-label="Barrierefreiheit Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -82,6 +83,7 @@ export default function BarrierefreiheitCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

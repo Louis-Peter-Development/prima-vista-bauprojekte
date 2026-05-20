@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   details: false,
 };
 
-export default function FassadeCalculator() {
+export default function FassadeCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<FassadeVariantKey>('all');
   const [area, setArea] = useState(120);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function FassadeCalculator() {
   return (
     <section className="hk-calc hk-calc--fassade" aria-label="Fassadensanierung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function FassadeCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

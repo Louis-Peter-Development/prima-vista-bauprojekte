@@ -22,9 +22,9 @@ export default function Home() {
           <div className="reveal">
             <div className="promise__num">№ 01 — Versprechen</div>
             <h2 className="promise__title">
-              Eine Baustelle.<br />
-              <em>Eine Adresse.</em><br />
-              Ein Vertrag.
+              Verantwortung<br />
+              <em>aus einer</em><br />
+              Hand.
             </h2>
           </div>
           <div className="promise__copy reveal" data-delay="1">

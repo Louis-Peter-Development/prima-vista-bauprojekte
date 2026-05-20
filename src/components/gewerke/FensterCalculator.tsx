@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   interior: false,
 };
 
-export default function FensterCalculator() {
+export default function FensterCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<FensterVariantKey>('all');
   const [count, setCount] = useState(8);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function FensterCalculator() {
   return (
     <section className="hk-calc hk-calc--fenster" aria-label="Fenster Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function FensterCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

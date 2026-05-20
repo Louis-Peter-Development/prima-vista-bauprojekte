@@ -18,7 +18,7 @@ type QuoteLine = {
   totalNet: number;
 };
 
-export default function FussbodenheizungCalculator() {
+export default function FussbodenheizungCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [area, setArea] = useState(100);
   const [dryScreed, setDryScreed] = useState(false);
   const [removeScreed, setRemoveScreed] = useState(false);
@@ -93,6 +93,7 @@ export default function FussbodenheizungCalculator() {
   return (
     <section className="hk-calc hk-calc--floor" aria-label="Fußbodenheizung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/proj-floor-oak.jpg" alt="Holzboden als Oberfläche für Fußbodenheizung" />
@@ -109,6 +110,7 @@ export default function FussbodenheizungCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

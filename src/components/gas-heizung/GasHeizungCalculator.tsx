@@ -17,7 +17,7 @@ type QuoteLine = {
   totalNet: number;
 };
 
-export default function GasHeizungCalculator() {
+export default function GasHeizungCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [quantity, setQuantity] = useState(1);
   const [foundation, setFoundation] = useState(false);
   const [oilTank, setOilTank] = useState(false);
@@ -60,6 +60,7 @@ export default function GasHeizungCalculator() {
   return (
     <section className="hk-calc hk-calc--gas" aria-label="Gas-Heizung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/proj-stairs-concrete.jpg" alt="Sanierter Innenbereich als Referenz für Heiztechnik im Bestand" />
@@ -76,6 +77,7 @@ export default function GasHeizungCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

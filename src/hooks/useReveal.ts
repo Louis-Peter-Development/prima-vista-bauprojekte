@@ -10,11 +10,8 @@ export function useReveal() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const reveals = document.querySelectorAll<HTMLElement>('.reveal, .reveal-group');
-    if (!reveals.length) return;
-
     if (!('IntersectionObserver' in window)) {
-      reveals.forEach((el) => el.classList.add('is-in'));
+      document.querySelectorAll<HTMLElement>('.reveal, .reveal-group').forEach((el) => el.classList.add('is-in'));
       return;
     }
 
@@ -30,14 +27,29 @@ export function useReveal() {
       },
       { rootMargin: '0px 0px -8% 0px', threshold: 0.01 },
     );
-    reveals.forEach((el) => io.observe(el));
+
+    const observeAll = () => {
+      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => io.observe(el));
+    };
+
+    observeAll();
+
+    const mo = new MutationObserver(() => {
+      observeAll();
+    });
+
+    mo.observe(document.body, { childList: true, subtree: true });
 
     const safety = window.setTimeout(() => {
-      reveals.forEach((el) => el.classList.add('is-in'));
+      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => {
+        el.classList.add('is-in');
+        io.unobserve(el);
+      });
     }, 1500);
 
     return () => {
       io.disconnect();
+      mo.disconnect();
       window.clearTimeout(safety);
     };
   }, [pathname]);

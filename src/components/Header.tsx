@@ -5,7 +5,7 @@ type NavItem = { to: string; label: string; activeOn?: string[] };
 
 const NAV: NavItem[] = [
   { to: '/', label: 'Start' },
-  { to: '/komplett-pakete', label: 'Komplett-Pakete', activeOn: ['/haus-sanierung', '/wohnung-sanierung'] },
+  { to: '/komplett-pakete', label: 'Komplett-Pakete', activeOn: ['/haus-sanierung', '/wohnung-sanierung', '/gastronomie-ausbau'] },
   { to: '/gewerke', label: 'Gewerke', activeOn: ['/badsanierung', '/kuechen-moebelbau', '/boeden-belaege', '/elektroinstallation', '/trockenbau', '/maler-lackierer', '/fassadensanierung', '/abdichtung-keller', '/dachsanierung', '/treppen-gelaender', '/garten-aussenanlagen', '/barrierefreiheit', '/fenstertechnik', '/rohbau-abbruch', '/tueren-zargen', '/sanitaerinstallation', '/zaeune'] },
   { to: '/heizmethoden', label: 'Heizmethoden', activeOn: ['/heizkoerper', '/heizstraenge', '/fussbodenheizung', '/waermepumpe', '/gas-heizung', '/pelletofen', '/saunaofen'] },
   { to: '/projekte', label: 'Projekte' },

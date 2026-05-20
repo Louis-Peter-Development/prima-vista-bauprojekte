@@ -20,7 +20,7 @@ type QuoteLine = {
 
 const chimneyTotal = PELLET_CHIMNEY_ITEMS.reduce((sum, item) => sum + item.netPrice, 0);
 
-export default function PelletofenCalculator() {
+export default function PelletofenCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [quantity, setQuantity] = useState(1);
   const [chimney, setChimney] = useState(false);
   const [oilTank, setOilTank] = useState(false);
@@ -79,6 +79,7 @@ export default function PelletofenCalculator() {
   return (
     <section className="hk-calc hk-calc--pellet" aria-label="Pelletofen Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/proj-concrete-sofa.jpg" alt="Wohnbereich mit ruhiger Oberfläche als Referenz für Pelletofen-Wärme" />
@@ -95,6 +96,7 @@ export default function PelletofenCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

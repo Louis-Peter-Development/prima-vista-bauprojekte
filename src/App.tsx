@@ -26,6 +26,7 @@ import BlitzAngebot from './pages/BlitzAngebot';
 import Kalkulator from './pages/Kalkulator';
 import HausSanierung from './pages/HausSanierung';
 import WohnungSanierung from './pages/WohnungSanierung';
+import GastronomieAusbau from './pages/GastronomieAusbau';
 import Heizmethoden from './pages/Heizmethoden';
 import Heizkoerper from './pages/Heizkoerper';
 import Heizstraenge from './pages/Heizstraenge';
@@ -67,6 +68,7 @@ export default function App() {
         <Route path="/kalkulator" element={<Kalkulator />} />
         <Route path="/haus-sanierung" element={<HausSanierung />} />
         <Route path="/wohnung-sanierung" element={<WohnungSanierung />} />
+        <Route path="/gastronomie-ausbau" element={<GastronomieAusbau />} />
         <Route path="/heizmethoden" element={<Heizmethoden />} />
         <Route path="/heizkoerper" element={<Heizkoerper />} />
         <Route path="/heizstraenge" element={<Heizstraenge />} />

@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   doors: false,
 };
 
-export default function BoedenCalculator() {
+export default function BoedenCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<BodenVariantKey>('all');
   const [area, setArea] = useState(45);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function BoedenCalculator() {
   return (
     <section className="hk-calc hk-calc--boeden" aria-label="Bodenverlegung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function BoedenCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

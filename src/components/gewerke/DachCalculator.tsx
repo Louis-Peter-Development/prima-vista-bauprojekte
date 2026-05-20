@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   gutters: false,
 };
 
-export default function DachCalculator() {
+export default function DachCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<DachVariantKey>('all');
   const [area, setArea] = useState(110);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function DachCalculator() {
   return (
     <section className="hk-calc hk-calc--dach" aria-label="Dachsanierung Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function DachCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

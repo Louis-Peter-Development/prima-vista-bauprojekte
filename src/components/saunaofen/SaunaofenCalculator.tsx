@@ -21,7 +21,7 @@ type QuoteLine = {
 
 const chimneyTotal = SAUNA_CHIMNEY_ITEMS.reduce((sum, item) => sum + item.netPrice, 0);
 
-export default function SaunaofenCalculator() {
+export default function SaunaofenCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [quantity, setQuantity] = useState(1);
   const [materialRequest, setMaterialRequest] = useState(false);
   const [chimney, setChimney] = useState(false);
@@ -92,6 +92,7 @@ export default function SaunaofenCalculator() {
   return (
     <section className="hk-calc hk-calc--sauna" aria-label="Saunaofen Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/proj-spa-tub.jpg" alt="Wellnessbereich als Referenz für Saunaofen und Ofenplanung" />
@@ -108,6 +109,7 @@ export default function SaunaofenCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

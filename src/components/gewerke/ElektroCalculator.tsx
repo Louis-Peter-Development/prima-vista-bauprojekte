@@ -19,7 +19,7 @@ const defaultExtras: ExtrasState = {
   documentation: true,
 };
 
-export default function ElektroCalculator() {
+export default function ElektroCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [variantKey, setVariantKey] = useState<ElektroVariantKey>('all');
   const [rooms, setRooms] = useState(5);
   const [extras, setExtras] = useState<ExtrasState>(defaultExtras);
@@ -61,6 +61,7 @@ export default function ElektroCalculator() {
   return (
     <section className="hk-calc hk-calc--elektro" aria-label="Elektroinstallation Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src={variant.image} alt={variant.title} />
@@ -77,6 +78,7 @@ export default function ElektroCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">

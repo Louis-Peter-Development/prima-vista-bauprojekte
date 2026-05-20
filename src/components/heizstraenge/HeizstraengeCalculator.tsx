@@ -18,7 +18,7 @@ type QuoteLine = {
   totalNet: number;
 };
 
-export default function HeizstraengeCalculator() {
+export default function HeizstraengeCalculator({ embedded }: { embedded?: boolean } = {}) {
   const [modeKey, setModeKey] = useState<PipeModeKey>('ap');
   const [meters, setMeters] = useState(50);
   const [shortRunPackage, setShortRunPackage] = useState(false);
@@ -62,6 +62,7 @@ export default function HeizstraengeCalculator() {
   return (
     <section className="hk-calc hk-calc--pipes" aria-label="Heizstränge Kostenrechner">
       <div className="hk-calc__inner">
+        {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
             <img src="/assets/img/photo-parkett-rohbau.jpg" alt="Rohbau mit vorbereiteter Leitungsführung" />
@@ -78,6 +79,7 @@ export default function HeizstraengeCalculator() {
             </p>
           </div>
         </div>
+        )}
 
         <div className="hk-config reveal" data-delay="1">
           <div className="hk-config__field">
