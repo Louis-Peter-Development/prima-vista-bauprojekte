@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import {
   BLITZ_ART_OPTIONS,
   BLITZ_GEWERKE_OPTIONS,
@@ -63,18 +64,40 @@ export default function BlitzForm() {
     setSent(true);
   }
 
-  return (
-    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1" style={sent ? { opacity: 0.7 } : undefined}>
-      {sent ? (
-        <div style={{ textAlign: 'center', padding: '64px 0' }}>
-          <div className="eyebrow" style={{ justifyContent: 'center' }}>Gesendet</div>
-          <h3 className="kontakt__form-title">Vielen Dank.</h3>
-          <p className="pv-body">
-            Ihre Anfrage ist bei uns eingegangen. Wir werten das Projekt aus und stellen Ihnen innerhalb von 24 Stunden unsere erste Einschätzung zu.
+  if (sent) {
+    const firstName = form.name.trim().split(/\s+/)[0] ?? '';
+    const email = form.email.trim();
+    const tel = form.tel.trim();
+    return (
+      <div className="kontakt__form-wrap kontakt__form-wrap--success reveal reveal--right" data-delay="1">
+        <div className="kontakt__form-success">
+          <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Gesendet</div>
+          <h3 className="kontakt__form-title">
+            Vielen Dank{firstName && <>, <em>{firstName}</em></>}.
+          </h3>
+          <p className="kontakt__form-success-body">
+            Ihre Blitz-Anfrage ist bei uns eingegangen. Wir werten Ihr Projekt aus und
+            stellen Ihnen innerhalb von <strong>24&nbsp;Stunden</strong> eine erste
+            Kostenschätzung zu — per E-Mail an <strong>{email}</strong>
+            {tel && <> oder telefonisch unter <strong>{tel}</strong></>}.
           </p>
+          <ol className="kontakt__form-success-steps">
+            <li><span className="num">01</span>Bauleitung prüft Fläche, Standort und gewünschte Gewerke.</li>
+            <li><span className="num">02</span>Sie erhalten eine schriftliche Vorab-Kostenschätzung.</li>
+            <li><span className="num">03</span>Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.</li>
+          </ol>
+          <div className="kontakt__form-success-actions">
+            <Link className="btn btn--light" to="/">Zur Startseite <span className="arrow">&gt;</span></Link>
+            <Link className="btn btn--light" to="/projekte">Projekte ansehen <span className="arrow">&gt;</span></Link>
+          </div>
         </div>
-      ) : (
-        <form onSubmit={onSubmit}>
+      </div>
+    );
+  }
+
+  return (
+    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1">
+      <form onSubmit={onSubmit}>
           <div className="kontakt__form-eyebrow">
             Schritt {step} von {totalSteps}
           </div>
@@ -211,8 +234,7 @@ export default function BlitzForm() {
               )}
             </div>
           </div>
-        </form>
-      )}
+      </form>
     </div>
   );
 }
