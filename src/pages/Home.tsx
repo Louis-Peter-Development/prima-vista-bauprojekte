@@ -119,7 +119,7 @@ export default function Home() {
             </div>
             <div className="stat reveal" data-delay="2">
               <span className="stat__label">Gewerke aus einer Hand</span>
-              <Counter className="stat__num" target={20} />
+              <Counter className="stat__num" target={18} />
               <span className="stat__desc">Vom Rohbau bis zum Schreiner — alles inhouse oder unter Vertrag.</span>
             </div>
             <div className="stat reveal" data-delay="3">
