@@ -6,8 +6,11 @@ import {
   type BlitzFormState,
 } from '../../data/blitzAngebot';
 
+type BlitzErrors = Partial<Record<keyof BlitzFormState, string>>;
+
 export default function BlitzForm() {
   const [form, setForm] = useState(INITIAL_BLITZ_FORM);
+  const [errors, setErrors] = useState<BlitzErrors>({});
   const [sent, setSent] = useState(false);
   const [step, setStep] = useState(1);
 
@@ -15,6 +18,12 @@ export default function BlitzForm() {
 
   function update<K extends keyof BlitzFormState>(key: K, value: BlitzFormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
+    setErrors((prev) => {
+      if (!prev[key]) return prev;
+      const next = { ...prev };
+      delete next[key];
+      return next;
+    });
   }
 
   function toggleGewerk(gewerk: string) {
@@ -27,11 +36,20 @@ export default function BlitzForm() {
 
   function onNext() {
     if (step === 2) {
-      if (!form.groesse || !form.starttermin) {
-        alert('Bitte füllen Sie Fläche und Baubeginn aus.');
+      const nextErrors: BlitzErrors = {};
+      if (!form.groesse) nextErrors.groesse = 'Bitte geben Sie die geschätzte Fläche an.';
+      if (!form.starttermin) nextErrors.starttermin = 'Bitte wählen Sie einen Baubeginn.';
+      if (Object.keys(nextErrors).length > 0) {
+        setErrors(nextErrors);
+        // Focus the first invalid field for accessibility
+        requestAnimationFrame(() => {
+          const firstKey = Object.keys(nextErrors)[0];
+          document.getElementById(firstKey)?.focus();
+        });
         return;
       }
     }
+    setErrors({});
     setStep(s => Math.min(s + 1, totalSteps));
   }
 
@@ -80,19 +98,45 @@ export default function BlitzForm() {
           {step === 2 && (
             <div className="form-step fade-in">
               <div className="form-row">
-                <div className="form-field">
+                <div className={`form-field${errors.groesse ? ' is-invalid' : ''}`}>
                   <label htmlFor="groesse">Geschätzte Fläche (m²)</label>
-                  <input id="groesse" type="number" placeholder="z. B. 120" value={form.groesse} onChange={(e) => update('groesse', e.target.value)} required />
+                  <input
+                    id="groesse"
+                    type="number"
+                    placeholder="z. B. 120"
+                    value={form.groesse}
+                    onChange={(e) => update('groesse', e.target.value)}
+                    aria-invalid={errors.groesse ? true : undefined}
+                    aria-describedby={errors.groesse ? 'groesse-error' : undefined}
+                    required
+                  />
+                  {errors.groesse && (
+                    <span id="groesse-error" className="form-field__error" role="alert">
+                      {errors.groesse}
+                    </span>
+                  )}
                 </div>
-                <div className="form-field form-field--select">
+                <div className={`form-field form-field--select${errors.starttermin ? ' is-invalid' : ''}`}>
                   <label htmlFor="starttermin">Gewünschter Baubeginn</label>
-                  <select id="starttermin" value={form.starttermin} onChange={(e) => update('starttermin', e.target.value)} required>
+                  <select
+                    id="starttermin"
+                    value={form.starttermin}
+                    onChange={(e) => update('starttermin', e.target.value)}
+                    aria-invalid={errors.starttermin ? true : undefined}
+                    aria-describedby={errors.starttermin ? 'starttermin-error' : undefined}
+                    required
+                  >
                     <option value="" disabled>Bitte wählen</option>
                     <option value="sofort">So schnell wie möglich</option>
                     <option value="1-3m">In 1 – 3 Monaten</option>
                     <option value="3-6m">In 3 – 6 Monaten</option>
                     <option value="spaeter">Noch unklar / Nächstes Jahr</option>
                   </select>
+                  {errors.starttermin && (
+                    <span id="starttermin-error" className="form-field__error" role="alert">
+                      {errors.starttermin}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

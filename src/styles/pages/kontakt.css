@@ -288,6 +288,34 @@
   pointer-events: none;
 }
 
+/* ----- Inline field validation ----- */
+.form-field.is-invalid input,
+.form-field.is-invalid select,
+.form-field.is-invalid textarea {
+  border-bottom-color: var(--pv-red);
+}
+.form-field.is-invalid label {
+  color: var(--pv-red);
+}
+.form-field__error {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-red);
+  animation: form-error-in 240ms var(--pv-ease-out);
+}
+@keyframes form-error-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-field__error { animation: none; }
+}
+
 .form-chips {
   display: flex;
   flex-wrap: wrap;
