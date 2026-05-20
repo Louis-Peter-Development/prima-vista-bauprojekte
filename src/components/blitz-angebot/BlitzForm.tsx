@@ -14,6 +14,13 @@ type BlitzErrors = Partial<Record<keyof BlitzFormState, string>>;
 
 type LocationState = { kalkulator?: KalkulatorHandoff } | null;
 
+const STARTTERMIN_LABELS: Record<string, string> = {
+  sofort: 'So schnell wie möglich',
+  '1-3m': 'In 1 – 3 Monaten',
+  '3-6m': 'In 3 – 6 Monaten',
+  spaeter: 'Noch unklar / Nächstes Jahr',
+};
+
 export default function BlitzForm() {
   const location = useLocation();
   const handoff = (location.state as LocationState)?.kalkulator ?? null;
@@ -30,6 +37,8 @@ export default function BlitzForm() {
   });
   const [errors, setErrors] = useState<BlitzErrors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   // If we came in from the kalkulator, skip the object-type step
   const [step, setStep] = useState(handoff ? 2 : 1);
 
@@ -86,10 +95,45 @@ export default function BlitzForm() {
     setStep(s => Math.max(s - 1, 1));
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
-    if (step !== totalSteps) return;
-    setSent(true);
+    if (step !== totalSteps || submitting) return;
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const artLabel =
+        BLITZ_ART_OPTIONS.find((o) => o.value === form.art)?.label ?? form.art;
+      const starterminLabel =
+        STARTTERMIN_LABELS[form.starttermin] ?? form.starttermin;
+      const res = await fetch('/api/blitz', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          art: form.art,
+          artLabel,
+          groesse: form.groesse,
+          starttermin: form.starttermin,
+          starterminLabel,
+          gewerke: form.gewerke,
+          msg: form.msg.trim(),
+          name: form.name.trim(),
+          email: form.email.trim(),
+          tel: form.tel.trim(),
+        }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+      setSent(true);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Unbekannter Fehler';
+      setSubmitError(
+        `Ihre Anfrage konnte nicht gesendet werden (${msg}). Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@primavista-bauprojekte.com.`,
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (sent) {
@@ -129,6 +173,10 @@ export default function BlitzForm() {
           <div className="kontakt__form-eyebrow">
             Schritt {step} von {totalSteps}
           </div>
+
+          {submitError && (
+            <div className="form-submit-error" role="alert">{submitError}</div>
+          )}
 
           {handoff && (
             <div className="blitz-handoff" role="status">
@@ -275,8 +323,8 @@ export default function BlitzForm() {
                   Weiter <span className="arrow">&gt;</span>
                 </button>
               ) : (
-                <button type="submit" className="btn btn--solid">
-                  Angebot anfordern <span className="arrow">&gt;</span>
+                <button type="submit" className="btn btn--solid" disabled={submitting}>
+                  {submitting ? 'Wird gesendet…' : <>Angebot anfordern <span className="arrow">&gt;</span></>}
                 </button>
               )}
             </div>

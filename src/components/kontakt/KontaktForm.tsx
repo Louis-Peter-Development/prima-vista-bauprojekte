@@ -15,6 +15,8 @@ export default function KontaktForm() {
   const [form, setForm] = useState(INITIAL_CONTACT_FORM);
   const [errors, setErrors] = useState<KontaktErrors>({});
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function update<K extends keyof ContactFormState>(key: K, value: ContactFormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -40,8 +42,9 @@ export default function KontaktForm() {
     return next;
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
+    if (submitting) return;
     const nextErrors = validate();
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
@@ -52,7 +55,37 @@ export default function KontaktForm() {
       return;
     }
     setErrors({});
-    setSent(true);
+    setSubmitError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          vorname: form.vorname.trim(),
+          nachname: form.nachname.trim(),
+          email: form.email.trim(),
+          tel: form.tel.trim(),
+          art: form.art,
+          region: form.region,
+          budget: form.budget,
+          msg: form.msg.trim(),
+          dsgvo: form.dsgvo,
+        }),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
+      setSent(true);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Unbekannter Fehler';
+      setSubmitError(
+        `Ihre Anfrage konnte nicht gesendet werden (${msg}). Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@primavista-bauprojekte.com.`,
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (sent) {
@@ -93,6 +126,9 @@ export default function KontaktForm() {
       </h3>
 
       <form onSubmit={onSubmit} noValidate>
+        {submitError && (
+          <div className="form-submit-error" role="alert">{submitError}</div>
+        )}
         <div className="form-row">
           <div className={`form-field${errors.vorname ? ' is-invalid' : ''}`}>
             <label htmlFor="vorname">Vorname</label>
@@ -230,8 +266,8 @@ export default function KontaktForm() {
 
         <div className="form-actions">
           <span className="form-actions__note"><span className="dot"></span>Antwort in 24 Std.</span>
-          <button className="btn btn--solid" type="submit">
-            Absenden <span className="arrow">&gt;</span>
+          <button className="btn btn--solid" type="submit" disabled={submitting}>
+            {submitting ? 'Wird gesendet…' : <>Absenden <span className="arrow">&gt;</span></>}
           </button>
         </div>
       </form>
