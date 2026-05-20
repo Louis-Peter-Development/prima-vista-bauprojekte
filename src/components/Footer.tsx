@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
+import { ChatIcon, FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
 
 export default function Footer() {
   return (
@@ -121,6 +121,12 @@ export default function Footer() {
           <div>
             <h4>Kontakt</h4>
             <ul className="pv-footer__contact-list">
+              <li>
+                <Link className="pv-footer__contact-link" to="/kontakt">
+                  <span className="pv-footer__contact-icon" aria-hidden="true"><ChatIcon /></span>
+                  <span>Kontaktformular</span>
+                </Link>
+              </li>
               <li>
                 <a className="pv-footer__contact-link" href="tel:+4915789818308">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">DE</span>
