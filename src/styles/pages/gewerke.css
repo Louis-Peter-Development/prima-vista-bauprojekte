@@ -155,10 +155,15 @@
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 400ms var(--pv-ease-out);
+  animation: trade-preview-in 420ms var(--pv-ease-out) both;
+  transform-origin: center;
+  transition: transform 900ms var(--pv-ease-out);
 }
-.trade-index__preview img.is-active { opacity: 1; }
+.trade-index__preview:hover img { transform: scale(1.04); }
+@keyframes trade-preview-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 .trade-index__preview-cap {
   position: absolute;
   left: 24px; bottom: 24px;

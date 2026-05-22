@@ -1,7 +1,7 @@
-import type { KeyboardEvent } from 'react';
+import { useEffect, type KeyboardEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import SectionEyebrow from '../common/SectionEyebrow';
-import { PREVIEW_IMAGES, TRADES, type TradeKey, type TradeRow } from '../../data/gewerke';
+import { PREVIEW_IMAGES, TRADES, type TradeRow } from '../../data/gewerke';
 
 type TradeIndexProps = {
   active: TradeRow;
@@ -10,6 +10,13 @@ type TradeIndexProps = {
 
 export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    Object.values(PREVIEW_IMAGES).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const handleRowClick = (row: TradeRow) => {
     onActiveChange(row);
@@ -40,15 +47,12 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
       </div>
 
       <div className="trade-index__split">
-        <div className="trade-index__preview">
-          {(Object.keys(PREVIEW_IMAGES) as TradeKey[]).map((key) => (
-            <img
-              key={key}
-              src={PREVIEW_IMAGES[key]}
-              alt=""
-              className={key === active.key ? 'is-active' : ''}
-            />
-          ))}
+        <div className="trade-index__preview reveal reveal--scale">
+          <img
+            key={active.key}
+            src={PREVIEW_IMAGES[active.key]}
+            alt={active.name}
+          />
           <div className={`trade-index__preview-cap${active.detailTo ? ' trade-index__preview-cap--with-link' : ''}`}>
             <span className="num">№ {active.num}</span>
             <span className="ttl">{active.name}</span>
@@ -64,13 +68,16 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
           {TRADES.map((row) => (
             <li
               key={row.num}
-              className={`trade-list__row${row === active ? ' is-active' : ''}${row.detailTo ? ' trade-list__row--link' : ''}`}
+              className={`trade-list__row${row.key === active.key ? ' is-active' : ''}${row.detailTo ? ' trade-list__row--link' : ''}`}
+              onPointerEnter={() => onActiveChange(row)}
               onMouseEnter={() => onActiveChange(row)}
+              onFocus={() => onActiveChange(row)}
               onClick={() => handleRowClick(row)}
               onKeyDown={(event) => handleRowKeyDown(event, row)}
               tabIndex={row.detailTo ? 0 : undefined}
               role={row.detailTo ? 'link' : undefined}
               aria-label={row.detailTo ? `${row.name} Kostenrechner öffnen` : undefined}
+              aria-current={row.key === active.key ? 'true' : undefined}
             >
               <span className="num">{row.num}</span>
               <span className="name">{row.name}</span>
