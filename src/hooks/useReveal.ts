@@ -111,17 +111,9 @@ export function useReveal() {
 
     mo.observe(document.body, { childList: true, subtree: true });
 
-    const safety = window.setTimeout(() => {
-      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => {
-        el.classList.add('is-in');
-        io.unobserve(el);
-      });
-    }, 1500);
-
     return () => {
       io.disconnect();
       mo.disconnect();
-      window.clearTimeout(safety);
     };
   }, [pathname]);
 }
