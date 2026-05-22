@@ -32,7 +32,7 @@ export default function ProjectGallery({
           <div
             key={p.num}
             id={projectAnchorId(p.src)}
-            className={`g-card reveal${match ? '' : ' is-hidden'}`}
+            className={`g-card reveal reveal--scale${match ? '' : ' is-hidden'}`}
             data-size={p.size}
             data-delay={p.revealDelay}
           >

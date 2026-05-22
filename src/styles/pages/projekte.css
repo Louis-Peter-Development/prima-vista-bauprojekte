@@ -87,19 +87,6 @@
 }
 .g-card.is-hidden { display: none; }
 
-/* Architectural curtain reveal — overrides the default fade-up on .reveal */
-.js-reveal .g-card.reveal {
-  opacity: 1;
-  transform: none;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1100ms var(--pv-ease-out);
-}
-.js-reveal .g-card.reveal.is-in {
-  clip-path: inset(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .js-reveal .g-card.reveal { clip-path: none; transition: none; }
-}
 .g-card__img-link {
   position: absolute; inset: 0;
   display: block;

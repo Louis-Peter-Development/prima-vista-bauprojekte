@@ -73,46 +73,79 @@ export function useReveal() {
   }, [pathname]);
 
   useEffect(() => {
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll<HTMLElement>('.reveal, .reveal-group').forEach((el) => el.classList.add('is-in'));
-      return;
+    const targetSelector = '.reveal:not(.is-in), .reveal-group:not(.is-in)';
+    let io: IntersectionObserver | null = null;
+
+    const reveal = (el: Element) => {
+      el.classList.add('is-in');
+      io?.unobserve(el);
+    };
+
+    const revealAll = () => {
+      document.querySelectorAll<HTMLElement>('.reveal, .reveal-group').forEach(reveal);
+    };
+
+    const revealIfVisible = () => {
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      document.querySelectorAll<HTMLElement>(targetSelector).forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewportHeight && rect.bottom > 0) {
+          reveal(el);
+        }
+      });
+    };
+
+    let revealFrame = 0;
+    const scheduleRevealIfVisible = () => {
+      if (revealFrame) return;
+      revealFrame = window.requestAnimationFrame(() => {
+        revealFrame = 0;
+        revealIfVisible();
+      });
+    };
+
+    if (typeof window.IntersectionObserver !== 'function') {
+      autoTag();
+      revealAll();
+
+      const fallbackMo = new MutationObserver(() => {
+        if (revealFrame) return;
+        revealFrame = window.requestAnimationFrame(() => {
+          revealFrame = 0;
+          autoTag();
+          revealAll();
+        });
+      });
+
+      fallbackMo.observe(document.body, { childList: true, subtree: true });
+
+      return () => {
+        if (revealFrame) window.cancelAnimationFrame(revealFrame);
+        fallbackMo.disconnect();
+      };
     }
 
-    const io = new IntersectionObserver(
+    io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add('is-in');
-            io.unobserve(e.target);
+            reveal(e.target);
           }
         });
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.01 },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0 },
     );
 
     const observeAll = () => {
-      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => io.observe(el));
-    };
-
-    // Anything currently inside the viewport at this moment should be revealed
-    // immediately instead of waiting for the (async) IO callback. Without this,
-    // elements that are already on screen at mount time can stay invisible for
-    // a few frames — and in StrictMode dev the first IO is disconnected before
-    // its callback fires, so an above-the-fold .g-card can stay clipped.
-    const revealIfVisible = () => {
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      document.querySelectorAll<HTMLElement>('.reveal:not(.is-in), .reveal-group:not(.is-in)').forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < viewportHeight && rect.bottom > 0) {
-          el.classList.add('is-in');
-          io.unobserve(el);
-        }
-      });
+      document.querySelectorAll<HTMLElement>(targetSelector).forEach((el) => io?.observe(el));
     };
 
     autoTag();
     observeAll();
     revealIfVisible();
+    window.addEventListener('scroll', scheduleRevealIfVisible, { passive: true });
+    window.addEventListener('resize', scheduleRevealIfVisible);
+    window.addEventListener('orientationchange', scheduleRevealIfVisible);
 
     let scheduled = false;
     const mo = new MutationObserver(() => {
@@ -123,14 +156,19 @@ export function useReveal() {
         scheduled = false;
         autoTag();
         observeAll();
+        revealIfVisible();
       });
     });
 
-    mo.observe(document.body, { childList: true, subtree: true });
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
 
     return () => {
-      io.disconnect();
+      if (revealFrame) window.cancelAnimationFrame(revealFrame);
+      io?.disconnect();
       mo.disconnect();
+      window.removeEventListener('scroll', scheduleRevealIfVisible);
+      window.removeEventListener('resize', scheduleRevealIfVisible);
+      window.removeEventListener('orientationchange', scheduleRevealIfVisible);
     };
   }, [pathname]);
 }
