@@ -20,6 +20,7 @@ type Props = {
   livingArea?: number;
   onLivingAreaChange?: (value: number) => void;
   kindLabel?: string;
+  customAreaLabel?: string;
 };
 
 const BLITZ_CATEGORY_KEYS: Record<string, string> = {
@@ -59,6 +60,7 @@ export default function RenovationCalculator({
   livingArea,
   onLivingAreaChange,
   kindLabel = '1 Etage ohne Dach',
+  customAreaLabel,
 }: Props = {}) {
   const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
@@ -137,7 +139,7 @@ export default function RenovationCalculator({
         <div className="renocalc__main">
           <div className="renocalc__toolbar">
             <div className="renocalc__area">
-              <label htmlFor="renocalc-area">Wohnfläche in qm</label>
+              <label htmlFor="renocalc-area">{customAreaLabel || 'Wohnfläche in qm'}</label>
               <input
                 id="renocalc-area"
                 type="number"

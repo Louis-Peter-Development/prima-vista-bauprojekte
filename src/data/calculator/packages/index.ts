@@ -14,6 +14,46 @@ import {
   packageAbdichtungKeller,
   packageAbdichtungAlles
 } from './abdichtung';
+import {
+  packageBadGaeste,
+  packageBadKomplett,
+  packageBadWanne,
+  packageBadDusche,
+  packageBadWhirlpool,
+  packageBadWhirlpoolDusche,
+  packageBadBarrierefrei
+} from './badsanierung';
+import {
+  packageBarrierefreiDusche,
+  packageBarrierefreiWc,
+  packageBarrierefreiSenioren,
+  packageBarrierefreiRollstuhl
+} from './barrierefrei';
+import {
+  packageBoedenParkettVerlegung,
+  packageBoedenLaminatVerlegung,
+  packageBoedenFliesenVerlegung,
+  packageBoedenSockelleisten,
+  packageBoedenParkettAufbereiten,
+  packageBoedenKorkboden,
+  packageBoedenVinyl,
+  packageBoedenEstrichplatten,
+  packageBoedenSichtestrich,
+  packageBoedenTeppich,
+  packageBoedenAlles
+} from './boeden';
+import {
+  packageDachAlles,
+  packageDachDachNeubedachung as packageDachNeubedachung,
+  packageDachDachDachstuhl as packageDachDachstuhl,
+  packageDachDachInnenausbau as packageDachInnenausbau,
+  packageDachDachDaemmung as packageDachDaemmung,
+  packageDachDachGauben as packageDachGauben,
+  packageDachDachFenster as packageDachFenster,
+  packageDachDachanhebung as packageDachanhebung,
+  packageFlachdach,
+  packageDachbodenDaemmung
+} from './dach';
 import type { RenovationPackage } from '../types';
 
 export const RENOVATION_PACKAGES: RenovationPackage[] = [
@@ -29,6 +69,38 @@ export const RENOVATION_PACKAGES: RenovationPackage[] = [
   packageAbdichtungPerimeter,
   packageAbdichtungKeller,
   packageAbdichtungAlles,
+  packageBadGaeste,
+  packageBadKomplett,
+  packageBadWanne,
+  packageBadDusche,
+  packageBadWhirlpool,
+  packageBadWhirlpoolDusche,
+  packageBadBarrierefrei,
+  packageBarrierefreiDusche,
+  packageBarrierefreiWc,
+  packageBarrierefreiSenioren,
+  packageBarrierefreiRollstuhl,
+  packageBoedenParkettVerlegung,
+  packageBoedenLaminatVerlegung,
+  packageBoedenFliesenVerlegung,
+  packageBoedenSockelleisten,
+  packageBoedenParkettAufbereiten,
+  packageBoedenKorkboden,
+  packageBoedenVinyl,
+  packageBoedenEstrichplatten,
+  packageBoedenSichtestrich,
+  packageBoedenTeppich,
+  packageBoedenAlles,
+  packageDachAlles,
+  packageDachNeubedachung,
+  packageDachDachstuhl,
+  packageDachInnenausbau,
+  packageDachDaemmung,
+  packageDachGauben,
+  packageDachFenster,
+  packageDachanhebung,
+  packageFlachdach,
+  packageDachbodenDaemmung,
 ];
 
 // Helper to get a package by ID

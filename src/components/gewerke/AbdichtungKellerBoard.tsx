@@ -1,21 +1,20 @@
-import { ABDICHTUNG_PACKAGES } from '../../data/abdichtungPakete';
 import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 export type AbdichtungType = 'abdichtungHorizontal' | 'abdichtungPerimeter' | 'abdichtungKeller' | 'abdichtung';
 
-const TYPE_MAPPING: Record<AbdichtungType, string> = {
-  abdichtungHorizontal: '01',
-  abdichtungPerimeter: '02',
-  abdichtungKeller: '03',
-  abdichtung: '04',
+type VariantDefinition = {
+  value: AbdichtungType;
+  label: string;
+  detail: string;
+  num: string;
 };
 
-const ID_MAPPING: Record<string, AbdichtungType> = {
-  '01': 'abdichtungHorizontal',
-  '02': 'abdichtungPerimeter',
-  '03': 'abdichtungKeller',
-  '04': 'abdichtung',
-};
+const ABDICHTUNG_TYPES: VariantDefinition[] = [
+  { value: 'abdichtung', label: 'Komplette Abdichtung', detail: 'Komplettpaket', num: '01' },
+  { value: 'abdichtungHorizontal', label: 'Horizontal-Abdichtung', detail: 'Horizontalsperre', num: '02' },
+  { value: 'abdichtungPerimeter', label: 'Perimeter-Abdichtung', detail: 'Außenabdichtung', num: '03' },
+  { value: 'abdichtungKeller', label: 'Keller-Abdichtung (Innen)', detail: 'Innenabdichtung', num: '04' },
+];
 
 type Props = {
   activeType: AbdichtungType;
@@ -26,8 +25,6 @@ export default function AbdichtungKellerBoard({
   activeType,
   onTypeChange,
 }: Props) {
-  const activeId = TYPE_MAPPING[activeType];
-
   function chooseType(value: AbdichtungType) {
     onTypeChange(value);
     scrollToCalculatorResult();
@@ -41,17 +38,18 @@ export default function AbdichtungKellerBoard({
           <span className="kalk-board__label">Abdichtungssystem</span>
           <span className="kalk-board__hint">Wählen Sie Ihre Abdichtungsart</span>
         </div>
-        <div className="haus-types">
-          {ABDICHTUNG_PACKAGES.map((t) => (
+        <div className="haus-types" style={{ flexWrap: 'wrap', gap: '12px' }}>
+          {ABDICHTUNG_TYPES.map((t) => (
             <button
               key={t.num}
               type="button"
-              className={`haus-types__opt${t.num === activeId ? ' is-on' : ''}`}
-              onClick={() => chooseType(ID_MAPPING[t.num]!)}
-              aria-pressed={t.num === activeId}
+              className={`haus-types__opt${t.value === activeType ? ' is-on' : ''}`}
+              onClick={() => chooseType(t.value)}
+              aria-pressed={t.value === activeType}
+              style={{ flex: '1 1 calc(50% - 12px)', minWidth: '180px' }}
             >
-              <span className="haus-types__label">{t.eyebrow.replace('Abdichtung · ', '')}</span>
-              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t.lede.substring(0, 70)}...</span>
+              <span className="haus-types__label">{t.label}</span>
+              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t.detail}</span>
             </button>
           ))}
         </div>

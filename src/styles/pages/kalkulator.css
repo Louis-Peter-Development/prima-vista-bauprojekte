@@ -733,6 +733,8 @@
   color: var(--pv-text-on-light-muted);
 }
 
+
+
 /* ---- Responsive ---- */
 @media (max-width: 1180px) {
   .kalkulator__inner {

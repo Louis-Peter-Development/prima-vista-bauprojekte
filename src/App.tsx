@@ -50,6 +50,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/gewerke" element={<Gewerke />} />
           <Route path="/badsanierung" element={<Badsanierung />} />
+          <Route path="/badsanierung-gaeste-wc" element={<Badsanierung />} />
           <Route path="/kuechen-moebelbau" element={<KuechenMoebelbau />} />
           <Route path="/boeden-belaege" element={<BoedenBelaege />} />
           <Route path="/elektroinstallation" element={<Elektroinstallation />} />
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="/maler-lackierer" element={<MalerLackierer />} />
           <Route path="/fassadensanierung" element={<Fassadensanierung />} />
           <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
+
           <Route path="/dachsanierung" element={<Dachsanierung />} />
           <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
           <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />

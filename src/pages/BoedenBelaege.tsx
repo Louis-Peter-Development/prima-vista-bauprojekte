@@ -1,29 +1,33 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import BoedenCalculator from '../components/gewerke/BoedenCalculator';
+import BoedenConfigurator from '../components/gewerke/BoedenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function BoedenBelaege() {
-  usePageTitle('Böden & Beläge Kostenrechner');
+  usePageTitle('Böden & Beläge Kostenrechner | Prima Vista');
 
   return (
     <>
       <PageIntro
+        className="kalk-intro"
         backgroundImage="/assets/img/proj-floor-oak.jpg"
         crumbNumber="03"
         crumbLabel="Gewerke · Böden & Beläge"
         title={<>Böden &<br /><em>Beläge kalkulieren.</em></>}
-        lede="Parkett, Laminat, Vinyl, Linoleum, Fliesen, Teppich, Kork oder Estrich: Wählen Sie die passende Bodenleistung und erhalten Sie eine erste Vorab-Schätzung."
+        lede="Parkett, Laminat, Vinyl, Fliesen, Kork oder Estrich: Wählen Sie die passende Bodenleistung und erhalten Sie eine erste Vorab-Schätzung."
         meta={[
-          { label: 'Varianten', value: '11 Rechner' },
+          { label: 'Varianten', value: '4 Konzepte' },
           { label: 'Gewerke', value: 'Boden & Estrich' },
           { label: 'Aufmaß', value: 'Vor Ort' },
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
 
-      <BoedenCalculator />
+      <section className="kalkulator">
+        <BoedenConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Boden erneuern?"
