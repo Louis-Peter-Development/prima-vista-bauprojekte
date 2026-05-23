@@ -87,9 +87,10 @@ export function useReveal() {
 
     const revealIfVisible = () => {
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const revealOffset = Math.min(640, viewportHeight * 0.85);
       document.querySelectorAll<HTMLElement>(targetSelector).forEach((el) => {
         const rect = el.getBoundingClientRect();
-        if (rect.top < viewportHeight && rect.bottom > 0) {
+        if (rect.top < viewportHeight + revealOffset && rect.bottom > -revealOffset) {
           reveal(el);
         }
       });
@@ -133,7 +134,7 @@ export function useReveal() {
           }
         });
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0 },
+      { rootMargin: '0px 0px 85% 0px', threshold: 0 },
     );
 
     const observeAll = () => {
