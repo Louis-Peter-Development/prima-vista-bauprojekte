@@ -2,6 +2,7 @@ import {
   WOHNUNG_TYPES,
   type WohnungType,
 } from '../../data/wohnungSanierung';
+import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 type Props = {
   wohnungType: WohnungType;
@@ -12,6 +13,11 @@ export default function WohnungSanierungBoard({
   wohnungType,
   onWohnungTypeChange,
 }: Props) {
+  function chooseWohnungType(value: WohnungType) {
+    onWohnungTypeChange(value);
+    scrollToCalculatorResult();
+  }
+
   return (
     <div className="kalk-board">
       <div className="kalk-board__field reveal">
@@ -26,7 +32,7 @@ export default function WohnungSanierungBoard({
               key={t.value}
               type="button"
               className={`haus-types__opt${t.value === wohnungType ? ' is-on' : ''}`}
-              onClick={() => onWohnungTypeChange(t.value)}
+              onClick={() => chooseWohnungType(t.value)}
               aria-pressed={t.value === wohnungType}
             >
               <span className="haus-types__factor">× {t.factor.toFixed(2).replace('.', ',')}</span>

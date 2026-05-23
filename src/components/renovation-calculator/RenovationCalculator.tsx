@@ -128,7 +128,11 @@ export default function RenovationCalculator({
   }
 
   return (
-    <section className={`renocalc${embedded ? ' renocalc--embedded' : ''}`} aria-label="Renovierung Konfigurator">
+    <section
+      className={`renocalc${embedded ? ' renocalc--embedded' : ''}`}
+      aria-label="Renovierung Konfigurator"
+      data-calculator-result
+    >
       <div className="renocalc__workspace">
         <div className="renocalc__main">
           <div className="renocalc__toolbar">

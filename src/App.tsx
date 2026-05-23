@@ -13,7 +13,6 @@ const Trockenbau = lazy(() => import('./pages/Trockenbau'));
 const MalerLackierer = lazy(() => import('./pages/MalerLackierer'));
 const Fassadensanierung = lazy(() => import('./pages/Fassadensanierung'));
 const AbdichtungKeller = lazy(() => import('./pages/AbdichtungKeller'));
-const AbdichtungKellerCalculator = lazy(() => import('./pages/AbdichtungKellerCalculator'));
 const Dachsanierung = lazy(() => import('./pages/Dachsanierung'));
 const TreppenGelaender = lazy(() => import('./pages/TreppenGelaender'));
 const GartenAussenanlagen = lazy(() => import('./pages/GartenAussenanlagen'));
@@ -58,7 +57,6 @@ export default function App() {
           <Route path="/maler-lackierer" element={<MalerLackierer />} />
           <Route path="/fassadensanierung" element={<Fassadensanierung />} />
           <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
-          <Route path="/abdichtung-keller/:type" element={<AbdichtungKellerCalculator />} />
           <Route path="/dachsanierung" element={<Dachsanierung />} />
           <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
           <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />

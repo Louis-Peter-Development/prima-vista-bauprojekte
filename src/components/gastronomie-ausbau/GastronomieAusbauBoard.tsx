@@ -4,6 +4,7 @@ import {
   GASTRONOMIE_TYPES,
   type GastronomieType,
 } from '../../data/gastronomieAusbau';
+import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 type Props = {
   gastronomieType: GastronomieType;
@@ -25,6 +26,11 @@ export default function GastronomieAusbauBoard({
   const selectedType = GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType);
   const multiLevel = selectedType?.multiLevel ?? false;
 
+  function chooseGastronomieType(value: GastronomieType) {
+    onGastronomieTypeChange(value);
+    scrollToCalculatorResult();
+  }
+
   return (
     <div className="kalk-board">
       <div className="kalk-board__field reveal">
@@ -39,7 +45,7 @@ export default function GastronomieAusbauBoard({
               key={t.value}
               type="button"
               className={`haus-types__opt${t.value === gastronomieType ? ' is-on' : ''}`}
-              onClick={() => onGastronomieTypeChange(t.value)}
+              onClick={() => chooseGastronomieType(t.value)}
               aria-pressed={t.value === gastronomieType}
             >
               <span className="haus-types__factor">× {t.factor.toFixed(2).replace('.', ',')}</span>
