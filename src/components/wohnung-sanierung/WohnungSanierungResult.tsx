@@ -43,7 +43,7 @@ export default function WohnungSanierungResult({
       }
     : null;
   return (
-    <aside className="kalk-result">
+    <aside className="kalk-result" data-calculator-result>
       <div className="kalk-result__sticky">
         <div className="kalk-result__head">
           <div className="kalk-result__eyebrow">

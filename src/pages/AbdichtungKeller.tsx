@@ -1,9 +1,9 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import PackageDetailSection from '../components/komplett-pakete/PackageDetailSection';
-import { ABDICHTUNG_PACKAGES } from '../data/abdichtungPakete';
+import AbdichtungKellerConfigurator from '../components/gewerke/AbdichtungKellerConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/komplett-pakete.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function AbdichtungKeller() {
   usePageTitle('Abdichtung & Keller | Prima Vista');
@@ -11,6 +11,7 @@ export default function AbdichtungKeller() {
   return (
     <>
       <PageIntro
+        className="kalk-intro"
         backgroundImage="/assets/img/proj-spa-corridor.jpg"
         crumbNumber="03"
         crumbLabel="Gewerke · Abdichtung & Keller"
@@ -24,9 +25,9 @@ export default function AbdichtungKeller() {
         ]}
       />
 
-      {ABDICHTUNG_PACKAGES.map((pkg) => (
-        <PackageDetailSection key={pkg.num} pkg={pkg} />
-      ))}
+      <section className="kalkulator">
+        <AbdichtungKellerConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Feuchtigkeit stoppen?"

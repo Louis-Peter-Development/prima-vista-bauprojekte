@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import type { Package } from './komplettPakete';
 
 export const ABDICHTUNG_PACKAGES: Package[] = [
