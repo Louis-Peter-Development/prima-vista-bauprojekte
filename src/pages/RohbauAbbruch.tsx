@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import RohbauCalculator from '../components/gewerke/RohbauCalculator';
+import RohbauConfigurator from '../components/gewerke/RohbauConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function RohbauAbbruch() {
   usePageTitle('Rohbau & Abbruch Kostenrechner');
@@ -23,7 +25,9 @@ export default function RohbauAbbruch() {
         ]}
       />
 
-      <RohbauCalculator />
+      <section className="kalkulator">
+        <RohbauConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Bauvorhaben starten?"

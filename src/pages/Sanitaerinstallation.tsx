@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import WasserCalculator from '../components/gewerke/WasserCalculator';
+import WasserConfigurator from '../components/gewerke/WasserConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Sanitaerinstallation() {
   usePageTitle('Wasserinstallation Kostenrechner');
@@ -23,7 +25,9 @@ export default function Sanitaerinstallation() {
         ]}
       />
 
-      <WasserCalculator />
+      <section className="kalkulator">
+        <WasserConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Neuinstallation geplant?"

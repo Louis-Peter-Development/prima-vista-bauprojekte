@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import FensterCalculator from '../components/gewerke/FensterCalculator';
+import FensterConfigurator from '../components/gewerke/FensterConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Fenstertechnik() {
   usePageTitle('Fenstertechnik Kostenrechner');
@@ -23,7 +25,9 @@ export default function Fenstertechnik() {
         ]}
       />
 
-      <FensterCalculator />
+      <section className="kalkulator">
+        <FensterConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Fenster erneuern?"

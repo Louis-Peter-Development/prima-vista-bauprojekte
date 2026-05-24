@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import ZaeuneCalculator from '../components/gewerke/ZaeuneCalculator';
+import ZaeuneConfigurator from '../components/gewerke/ZaeuneConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Zaeune() {
   usePageTitle('Zäune Kostenrechner');
@@ -23,7 +25,9 @@ export default function Zaeune() {
         ]}
       />
 
-      <ZaeuneCalculator />
+      <section className="kalkulator">
+        <ZaeuneConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Grundstück einfrieden?"

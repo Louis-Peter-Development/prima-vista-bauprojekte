@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import KuechenCalculator from '../components/gewerke/KuechenCalculator';
+import KuechenConfigurator from '../components/gewerke/KuechenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function KuechenMoebelbau() {
   usePageTitle('Küchen & Möbelbau Kostenrechner');
@@ -23,7 +25,9 @@ export default function KuechenMoebelbau() {
         ]}
       />
 
-      <KuechenCalculator />
+      <section className="kalkulator">
+        <KuechenConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Küche planen?"

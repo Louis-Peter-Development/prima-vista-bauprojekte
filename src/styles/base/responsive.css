@@ -5,11 +5,18 @@
   .pv-nav__list { gap: 18px; }
   .pv-nav__list a { font-size: 10.5px; letter-spacing: 0.18em; }
 }
-@media (max-width: 880px) {
+@media (max-width: 1280px) {
   .pv-nav__list { display: none; }
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }
+}
+/* Hide the fixed social rail until the viewport is wide enough to have a real
+   side gutter beside the 1280px content container. Below this, the rail would
+   sit on top of headline text and project cards. */
+@media (max-width: 1380px) {
   .pv-social-rail { display: none; }
+}
+@media (max-width: 880px) {
   .pv-footer { padding: 64px 0 28px; }
   .pv-footer__inner { padding: 0 24px; }
   .pv-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }

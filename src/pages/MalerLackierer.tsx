@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import MalerCalculator from '../components/gewerke/MalerCalculator';
+import MalerConfigurator from '../components/gewerke/MalerConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function MalerLackierer() {
   usePageTitle('Maler & Lackierer Kostenrechner');
@@ -23,7 +25,9 @@ export default function MalerLackierer() {
         ]}
       />
 
-      <MalerCalculator />
+      <section className="kalkulator">
+        <MalerConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Malerarbeiten planen?"

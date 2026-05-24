@@ -10,6 +10,14 @@ export type ContactFormState = {
   dsgvo: boolean;
 };
 
+export type ContactFormPreset = Partial<Pick<ContactFormState, 'art' | 'region' | 'budget' | 'msg'>> & {
+  sourceLabel?: string;
+};
+
+export type ContactLocationState = {
+  contact?: ContactFormPreset;
+};
+
 export const INITIAL_CONTACT_FORM: ContactFormState = {
   vorname: '',
   nachname: '',
@@ -29,6 +37,49 @@ export const CONTACT_ART_OPTIONS: Array<{ value: ContactFormState['art']; label:
   { value: 'einzel', label: 'Einzelgewerk' },
   { value: 'andere', label: 'Andere' },
 ];
+
+function inferContactArt(label: string): ContactFormState['art'] {
+  const normalized = label.toLocaleLowerCase('de-DE');
+
+  if (normalized.includes('wohnung')) return 'wohnung';
+  if (normalized.includes('gastro') || normalized.includes('gastronomie')) return 'gastro';
+  if (normalized.includes('komplett') || normalized.includes('haus')) return 'haus';
+  if (
+    normalized.includes('anfragen')
+    || normalized.includes('beratung')
+    || normalized.includes('termin')
+    || normalized.includes('wärmepumpe')
+    || normalized.includes('heizung')
+    || normalized.includes('bad')
+    || normalized.includes('tür')
+    || normalized.includes('tuer')
+    || normalized.includes('fenster')
+    || normalized.includes('boden')
+    || normalized.includes('dach')
+    || normalized.includes('fassade')
+    || normalized.includes('elektro')
+    || normalized.includes('sanitär')
+    || normalized.includes('sanitaer')
+    || normalized.includes('trockenbau')
+    || normalized.includes('garten')
+    || normalized.includes('treppen')
+    || normalized.includes('zaun')
+  ) {
+    return 'einzel';
+  }
+
+  return 'andere';
+}
+
+export function createContactPresetFromCtaLabel(label: string): ContactFormPreset {
+  const sourceLabel = label.trim();
+
+  return {
+    sourceLabel,
+    art: inferContactArt(sourceLabel),
+    msg: `Hallo Prima Vista Team,\n\nich interessiere mich für: ${sourceLabel}.\n\nBitte melden Sie sich bei mir zur ersten Abstimmung.`,
+  };
+}
 
 export const FAQ = [
   {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   ChevronDownIcon,
   CopyIcon,
+  MinusIcon,
   PlusIcon,
   ResetIcon,
   SwapIcon,
@@ -20,6 +21,7 @@ type Props = {
   livingArea?: number;
   onLivingAreaChange?: (value: number) => void;
   kindLabel?: string;
+  customAreaLabel?: string;
 };
 
 const BLITZ_CATEGORY_KEYS: Record<string, string> = {
@@ -53,21 +55,29 @@ function typeLabel(type: RenovationProduct['type']): string {
   }
 }
 
+function decimalPlaces(value: number): number {
+  const [, decimals = ''] = String(value).split('.');
+  return decimals.length;
+}
+
 export default function RenovationCalculator({
   packageId = '1e',
   embedded,
   livingArea,
   onLivingAreaChange,
   kindLabel = '1 Etage ohne Dach',
+  customAreaLabel,
 }: Props = {}) {
   const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
 
+  const livingAreaForEffect = state.status === 'ready' ? state.livingArea : null;
   useEffect(() => {
-    if (typeof livingArea === 'number' && Number.isFinite(livingArea) && livingArea !== state.livingArea) {
+    if (livingAreaForEffect == null) return;
+    if (typeof livingArea === 'number' && Number.isFinite(livingArea) && livingArea !== livingAreaForEffect) {
       dispatch({ type: 'setArea', value: livingArea });
     }
-  }, [dispatch, livingArea, state.livingArea]);
+  }, [dispatch, livingArea, livingAreaForEffect]);
 
   const categoryBreakdown = useMemo(() => (
     rowsByCategory
@@ -88,11 +98,12 @@ export default function RenovationCalculator({
       .filter((category) => category.subtotal > 0)
   ), [rowsByCategory]);
 
+  const handoffArea = state.status === 'ready' ? state.livingArea : 0;
   const handoff = useMemo<KalkulatorHandoff>(() => {
     return {
       kind: 'haus',
       kindLabel,
-      area: state.livingArea,
+      area: handoffArea,
       picks: categoryBreakdown.map((category) => ({
         key: category.key,
         label: category.label,
@@ -103,9 +114,10 @@ export default function RenovationCalculator({
       totalMid: totals.net,
       perM2: totals.perM2,
     };
-  }, [categoryBreakdown, kindLabel, state.livingArea, totals.net, totals.perM2]);
+  }, [categoryBreakdown, kindLabel, handoffArea, totals.net, totals.perM2]);
 
   function replaceRow(rowId: string, alternativeId: string) {
+    if (state.status !== 'ready') return;
     const row = state.rows.find((item) => item.id === rowId);
     const alternative = row?.alternatives.find((item) => item.id === alternativeId);
     if (!alternative) return;
@@ -121,10 +133,30 @@ export default function RenovationCalculator({
   }
 
   function onAreaBlur() {
+    if (state.status !== 'ready') return;
     if (state.livingArea < minArea) {
       dispatch({ type: 'setArea', value: minArea });
       onLivingAreaChange?.(minArea);
     }
+  }
+
+  if (state.status !== 'ready') {
+    return (
+      <section
+        className={`renocalc renocalc--loading${embedded ? ' renocalc--embedded' : ''}`}
+        aria-label="Renovierung Konfigurator"
+        aria-busy="true"
+      >
+        <div className="renocalc__loading">Konfigurator wird geladen …</div>
+      </section>
+    );
+  }
+
+  function stepRowQuantity(row: RenovationProduct, direction: -1 | 1) {
+    const step = row.quantityStep || 1;
+    const precision = Math.max(decimalPlaces(step), decimalPlaces(row.quantity));
+    const next = Number((row.quantity + (step * direction)).toFixed(precision));
+    dispatch({ type: 'updateQuantity', id: row.id, value: next });
   }
 
   return (
@@ -137,7 +169,7 @@ export default function RenovationCalculator({
         <div className="renocalc__main">
           <div className="renocalc__toolbar">
             <div className="renocalc__area">
-              <label htmlFor="renocalc-area">Wohnfläche in qm</label>
+              <label htmlFor="renocalc-area">{customAreaLabel || 'Wohnfläche in qm'}</label>
               <input
                 id="renocalc-area"
                 type="number"
@@ -251,18 +283,37 @@ export default function RenovationCalculator({
                                   )}
                                 </td>
                                 <td data-label="Menge">
-                                  <input
-                                    type="number"
-                                    min={row.minQuantity}
-                                    step={row.quantityStep}
-                                    value={row.quantity}
-                                    onChange={(event) => dispatch({
-                                      type: 'updateQuantity',
-                                      id: row.id,
-                                      value: Number(event.target.value),
-                                    })}
-                                    aria-label={`Menge ${row.title}`}
-                                  />
+                                  <div className="renocalc-stepper">
+                                    <button
+                                      type="button"
+                                      onClick={() => stepRowQuantity(row, -1)}
+                                      disabled={row.quantity <= row.minQuantity}
+                                      title="Menge verringern"
+                                      aria-label={`Menge ${row.title} verringern`}
+                                    >
+                                      <MinusIcon aria-hidden="true" />
+                                    </button>
+                                    <input
+                                      type="number"
+                                      min={row.minQuantity}
+                                      step={row.quantityStep}
+                                      value={row.quantity}
+                                      onChange={(event) => dispatch({
+                                        type: 'updateQuantity',
+                                        id: row.id,
+                                        value: Number(event.target.value),
+                                      })}
+                                      aria-label={`Menge ${row.title}`}
+                                    />
+                                    <button
+                                      type="button"
+                                      onClick={() => stepRowQuantity(row, 1)}
+                                      title="Menge erhoehen"
+                                      aria-label={`Menge ${row.title} erhoehen`}
+                                    >
+                                      <PlusIcon aria-hidden="true" />
+                                    </button>
+                                  </div>
                                 </td>
                                 <td data-label="VPE">{row.unit}</td>
                                 <td data-label="Preis">{formatEuro(row.basePrice)}</td>

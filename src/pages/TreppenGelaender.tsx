@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import TreppenCalculator from '../components/gewerke/TreppenCalculator';
+import TreppenConfigurator from '../components/gewerke/TreppenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function TreppenGelaender() {
   usePageTitle('Treppen & Geländer Kostenrechner');
@@ -23,7 +25,9 @@ export default function TreppenGelaender() {
         ]}
       />
 
-      <TreppenCalculator />
+      <section className="kalkulator">
+        <TreppenConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Treppen planen?"

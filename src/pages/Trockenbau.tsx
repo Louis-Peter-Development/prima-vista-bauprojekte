@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import TrockenbauCalculator from '../components/gewerke/TrockenbauCalculator';
+import TrockenbauConfigurator from '../components/gewerke/TrockenbauConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Trockenbau() {
   usePageTitle('Trockenbau Kostenrechner');
@@ -23,7 +25,9 @@ export default function Trockenbau() {
         ]}
       />
 
-      <TrockenbauCalculator />
+      <section className="kalkulator">
+        <TrockenbauConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Innenausbau starten?"

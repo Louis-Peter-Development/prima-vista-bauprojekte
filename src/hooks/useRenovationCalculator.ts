@@ -1,12 +1,29 @@
 import { useEffect, useMemo, useReducer } from 'react';
-import { RENOVATION_PACKAGES, getRenovationPackage } from '../data/calculator/packages';
+import {
+  DEFAULT_PACKAGE_ID,
+  getCachedRenovationPackage,
+  loadRenovationPackage,
+} from '../data/calculator/packages';
 import { computeQuantity, clampQuantity } from '../data/calculator/engine';
-import type { RenovationProduct, RenovationProductAlternative } from '../data/calculator/types';
+import type {
+  RenovationCategory,
+  RenovationPackage,
+  RenovationProduct,
+  RenovationProductAlternative,
+  RenovationSubsection,
+} from '../data/calculator/types';
+
+export type RowsByCategory = Array<
+  Omit<RenovationCategory, 'subsections'> & {
+    subsections: Array<RenovationSubsection & { rows: RenovationProduct[] }>;
+  }
+>;
 
 export const RENOVATION_VAT_RATE = 0.19;
 export const RENOVATION_MIN_AREA = 10;
 
-export type RenovationCalculatorState = {
+type ReadyState = {
+  status: 'ready';
   packageId: string;
   livingArea: number;
   floorCount: number;
@@ -14,8 +31,16 @@ export type RenovationCalculatorState = {
   collapsed: Record<string, boolean>;
 };
 
+type LoadingState = {
+  status: 'loading';
+  packageId: string;
+};
+
+export type RenovationCalculatorState = ReadyState | LoadingState;
+
 type RenovationCalculatorAction =
-  | { type: 'switchPackage'; packageId: string }
+  | { type: 'hydrate'; state: ReadyState }
+  | { type: 'startLoading'; packageId: string }
   | { type: 'setArea'; value: number }
   | { type: 'toggleRow'; id: string }
   | { type: 'updateQuantity'; id: string; value: number }
@@ -26,25 +51,26 @@ type RenovationCalculatorAction =
   | { type: 'enableSubsection'; category: string; subcategory: string }
   | { type: 'reset' };
 
-type PersistedState = Partial<Pick<RenovationCalculatorState, 'livingArea' | 'rows' | 'collapsed'>>;
+type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapsed'>>;
 
-const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${packageId}`;
+const STORAGE_VERSION = 'v3';
+const getStorageKey = (packageId: string) => `prima-vista-renovation-calculator-modular-${STORAGE_VERSION}-${packageId}`;
 
-function createInitialState(packageId: string): RenovationCalculatorState {
-  const pkg = getRenovationPackage(packageId) || RENOVATION_PACKAGES[0];
-  const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category) => {
-    acc[category.id] = Boolean(category.collapsedByDefault);
+function buildInitialState(pkg: RenovationPackage): ReadyState {
+  const collapsed = pkg.categories.reduce<Record<string, boolean>>((acc, category, index) => {
+    acc[category.id] = category.collapsedByDefault ?? index > 0;
     category.subsections.forEach((subsection) => {
       if (subsection.collapsedByDefault) acc[`${category.id}:${subsection.id}`] = true;
     });
     return acc;
   }, {});
 
-  const rows = pkg.categories.flatMap(category => 
-    category.subsections.flatMap(subsection => subsection.products)
+  const rows = pkg.categories.flatMap((category) =>
+    category.subsections.flatMap((subsection) => subsection.products),
   );
 
   return {
+    status: 'ready',
     packageId: pkg.id,
     livingArea: pkg.defaultArea,
     floorCount: pkg.defaultFloorCount,
@@ -65,12 +91,12 @@ function isValidRow(row: unknown): row is RenovationProduct {
     && typeof maybe.quantity === 'number';
 }
 
-function readPersistedState(packageId: string): RenovationCalculatorState {
-  const initial = createInitialState(packageId);
+function hydrateFromStorage(pkg: RenovationPackage): ReadyState {
+  const initial = buildInitialState(pkg);
   if (typeof window === 'undefined') return initial;
 
   try {
-    const raw = window.localStorage.getItem(getStorageKey(packageId));
+    const raw = window.localStorage.getItem(getStorageKey(pkg.id));
     if (!raw) return initial;
 
     const saved = JSON.parse(raw) as PersistedState;
@@ -85,8 +111,7 @@ function readPersistedState(packageId: string): RenovationCalculatorState {
       : initial.collapsed;
 
     return {
-      packageId: initial.packageId,
-      floorCount: initial.floorCount,
+      ...initial,
       livingArea,
       rows,
       collapsed,
@@ -100,10 +125,16 @@ function renovationReducer(
   state: RenovationCalculatorState,
   action: RenovationCalculatorAction,
 ): RenovationCalculatorState {
+  if (action.type === 'hydrate') {
+    return action.state;
+  }
+  if (action.type === 'startLoading') {
+    if (state.status === 'loading' && state.packageId === action.packageId) return state;
+    return { status: 'loading', packageId: action.packageId };
+  }
+  if (state.status !== 'ready') return state;
+
   switch (action.type) {
-    case 'switchPackage': {
-      return readPersistedState(action.packageId);
-    }
     case 'setArea': {
       const livingArea = Math.max(0, action.value);
       return {
@@ -204,25 +235,53 @@ function renovationReducer(
         },
       };
 
-    case 'reset':
-      return createInitialState(state.packageId);
+    case 'reset': {
+      const pkg = getCachedRenovationPackage(state.packageId);
+      if (!pkg) return state;
+      return buildInitialState(pkg);
+    }
 
     default:
       return state;
   }
 }
 
-export function useRenovationCalculator(packageId: string = '1e') {
-  const [state, dispatch] = useReducer(renovationReducer, undefined, () => readPersistedState(packageId));
+function initialStateFor(packageId: string): RenovationCalculatorState {
+  const cached = getCachedRenovationPackage(packageId);
+  if (cached) return hydrateFromStorage(cached);
+  return { status: 'loading', packageId };
+}
+
+export function useRenovationCalculator(packageId: string = DEFAULT_PACKAGE_ID) {
+  const [state, dispatch] = useReducer(renovationReducer, packageId, initialStateFor);
 
   useEffect(() => {
-    if (state.packageId !== packageId) {
-      dispatch({ type: 'switchPackage', packageId });
+    let cancelled = false;
+
+    const cached = getCachedRenovationPackage(packageId);
+    if (cached) {
+      if (state.packageId !== packageId || state.status !== 'ready') {
+        dispatch({ type: 'hydrate', state: hydrateFromStorage(cached) });
+      }
+      return () => {
+        cancelled = true;
+      };
     }
-  }, [packageId, state.packageId]);
+
+    dispatch({ type: 'startLoading', packageId });
+    loadRenovationPackage(packageId).then((pkg) => {
+      if (cancelled || !pkg) return;
+      dispatch({ type: 'hydrate', state: hydrateFromStorage(pkg) });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [packageId, state.packageId, state.status]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (state.status !== 'ready') return;
     try {
       window.localStorage?.setItem(getStorageKey(state.packageId), JSON.stringify(state));
     } catch {
@@ -230,12 +289,15 @@ export function useRenovationCalculator(packageId: string = '1e') {
     }
   }, [state]);
 
+  const rows = state.status === 'ready' ? state.rows : EMPTY_ROWS;
+  const livingArea = state.status === 'ready' ? state.livingArea : 0;
+
   const totals = useMemo(() => {
-    const activeRows = state.rows.filter((row) => row.enabled);
+    const activeRows = rows.filter((row) => row.enabled);
     const net = activeRows.reduce((sum, row) => sum + row.quantity * row.basePrice, 0);
     const vat = net * RENOVATION_VAT_RATE;
     const gross = net + vat;
-    const perM2 = state.livingArea > 0 ? net / state.livingArea : 0;
+    const perM2 = livingArea > 0 ? net / livingArea : 0;
 
     return {
       net,
@@ -244,12 +306,14 @@ export function useRenovationCalculator(packageId: string = '1e') {
       perM2,
       activeRows,
       activeCount: activeRows.length,
-      totalCount: state.rows.length,
+      totalCount: rows.length,
     };
-  }, [state.livingArea, state.rows]);
+  }, [livingArea, rows]);
 
-  const rowsByCategory = useMemo(() => {
-    const pkg = getRenovationPackage(state.packageId) || RENOVATION_PACKAGES[0];
+  const rowsByCategory = useMemo<RowsByCategory>(() => {
+    if (state.status !== 'ready') return [];
+    const pkg = getCachedRenovationPackage(state.packageId);
+    if (!pkg) return [];
     return pkg.categories.map((category) => ({
       ...category,
       subsections: category.subsections.map((subsection) => ({
@@ -259,13 +323,16 @@ export function useRenovationCalculator(packageId: string = '1e') {
         )),
       })),
     }));
-  }, [state.rows, state.packageId]);
+  }, [state]);
 
   return {
     state,
+    isReady: state.status === 'ready',
     totals,
     rowsByCategory,
     dispatch,
     minArea: RENOVATION_MIN_AREA,
   };
 }
+
+const EMPTY_ROWS: RenovationProduct[] = [];

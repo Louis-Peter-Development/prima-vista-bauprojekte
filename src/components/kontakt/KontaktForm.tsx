@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   CONTACT_ART_OPTIONS,
   INITIAL_CONTACT_FORM,
+  type ContactLocationState,
   type ContactFormState,
 } from '../../data/kontakt';
 
@@ -12,7 +13,19 @@ type KontaktErrors = Partial<Record<keyof ContactFormState, string>>;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function KontaktForm() {
-  const [form, setForm] = useState(INITIAL_CONTACT_FORM);
+  const location = useLocation();
+  const contactPreset = (location.state as ContactLocationState | null)?.contact;
+  const [form, setForm] = useState<ContactFormState>(() => {
+    const { art, region, budget, msg } = contactPreset ?? {};
+
+    return {
+      ...INITIAL_CONTACT_FORM,
+      ...(art ? { art } : {}),
+      ...(region ? { region } : {}),
+      ...(budget ? { budget } : {}),
+      ...(msg ? { msg } : {}),
+    };
+  });
   const [errors, setErrors] = useState<KontaktErrors>({});
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);

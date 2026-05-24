@@ -1,15 +1,17 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import ElektroCalculator from '../components/gewerke/ElektroCalculator';
+import ElektroConfigurator from '../components/gewerke/ElektroConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Elektroinstallation() {
-  usePageTitle('Elektroinstallation Kostenrechner');
+  usePageTitle('Elektroinstallation Kostenrechner | Prima Vista');
 
   return (
     <>
       <PageIntro
+        className="kalk-intro"
         backgroundImage="/assets/img/photo-office-light.jpg"
         crumbNumber="03"
         crumbLabel="Gewerke · Elektroinstallation"
@@ -23,7 +25,9 @@ export default function Elektroinstallation() {
         ]}
       />
 
-      <ElektroCalculator />
+      <section className="kalkulator">
+        <ElektroConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Elektrik erneuern?"

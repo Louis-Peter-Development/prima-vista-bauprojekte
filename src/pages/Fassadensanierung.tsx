@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import FassadeCalculator from '../components/gewerke/FassadeCalculator';
+import FassadeConfigurator from '../components/gewerke/FassadeConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function Fassadensanierung() {
   usePageTitle('Fassadensanierung Kostenrechner');
@@ -23,7 +25,9 @@ export default function Fassadensanierung() {
         ]}
       />
 
-      <FassadeCalculator />
+      <section className="kalkulator">
+        <FassadeConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Fassade erneuern?"

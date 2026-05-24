@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import GartenCalculator from '../components/gewerke/GartenCalculator';
+import GartenConfigurator from '../components/gewerke/GartenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function GartenAussenanlagen() {
   usePageTitle('Garten & Außenanlagen Kostenrechner');
@@ -23,7 +25,9 @@ export default function GartenAussenanlagen() {
         ]}
       />
 
-      <GartenCalculator />
+      <section className="kalkulator">
+        <GartenConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Außenbereich planen?"

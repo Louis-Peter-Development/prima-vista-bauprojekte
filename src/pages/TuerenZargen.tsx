@@ -1,8 +1,10 @@
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
-import TuerenCalculator from '../components/gewerke/TuerenCalculator';
+import TuerenConfigurator from '../components/gewerke/TuerenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/heizkoerper.css';
+import '../styles/pages/kalkulator.css';
+import '../styles/pages/haus-sanierung.css';
 
 export default function TuerenZargen() {
   usePageTitle('Türen & Zargen Kostenrechner');
@@ -23,7 +25,9 @@ export default function TuerenZargen() {
         ]}
       />
 
-      <TuerenCalculator />
+      <section className="kalkulator">
+        <TuerenConfigurator />
+      </section>
 
       <EndCtaLocal
         eyebrow="Türen tauschen?"
