@@ -12,7 +12,7 @@ export default function Zaeune() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="25"
         crumbLabel="Gewerke · Zäune"
         title={<>Zäune<br /><em>kalkulieren.</em></>}

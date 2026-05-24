@@ -12,7 +12,7 @@ export default function Fassadensanierung() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Fassaden & Dämmung"
         title={<>Fassaden &<br /><em>Dämmung kalkulieren.</em></>}

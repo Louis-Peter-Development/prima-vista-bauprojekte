@@ -30,7 +30,7 @@ export default function Kalkulator() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-parkett-altbau.jpg"
+        backgroundImage="/assets/img/photo-parkett-altbau.webp"
         crumbNumber="06"
         crumbLabel="Kalkulator · Live-Schätzung"
         title={<>Was kostet<br />Ihr <em>Bauprojekt?</em></>}

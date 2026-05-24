@@ -12,7 +12,7 @@ export default function RohbauAbbruch() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-parkett-rohbau.jpg"
+        backgroundImage="/assets/img/photo-parkett-rohbau.webp"
         crumbNumber="23"
         crumbLabel="Gewerke · Rohbau & Abbruch"
         title={<>Rohbau<br /><em>kalkulieren.</em></>}

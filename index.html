@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
     <title>Premium Sanierung & Bau in Frankfurt und Emmenbrücke | Prima Vista Bauprojekte</title>
     <meta name="description" content="Prima Vista Bauprojekte — Komplett-Sanierung, alle Gewerke aus einer Hand, Festpreisgarantie und Bauleitung in Frankfurt und Emmenbrücke." />
+
+    <!-- Preload the LCP hero. imagesrcset + imagesizes mirrors the
+         <picture> in HomeHero so the browser picks the right width per
+         viewport. AVIF is supported in Chrome / Firefox / Safari 16+ —
+         browsers without it fall back to the <source type="image/webp">
+         once HTML parses, losing only the preload optimization. -->
+    <link rel="preload" as="image" type="image/avif"
+          imagesrcset="/assets/img/hero/moroccan-dining-600.avif 600w, /assets/img/hero/moroccan-dining-800.avif 800w, /assets/img/hero/moroccan-dining-1600.avif 1600w"
+          imagesizes="100vw" fetchpriority="high" />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/CormorantGaramond-VariableFont_wght.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-VariableFont_opsz_wght.woff2" crossorigin />
+
+    <!-- PWA — vite-plugin-pwa injects <link rel="manifest"> automatically -->
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Prima Vista" />
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
   </head>
   <body>
     <div id="root"></div>

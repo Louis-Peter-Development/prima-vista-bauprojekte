@@ -53,7 +53,7 @@ export default function GastronomieAusbau() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/proj-moroccan-dining.jpg"
+        backgroundImage="/assets/img/proj-moroccan-dining.webp"
         crumbNumber="07"
         crumbLabel="Gastronomie-Ausbau · Konfigurator"
         title={<>Gastronomie-Ausbau<br /><em>nach Maß.</em></>}

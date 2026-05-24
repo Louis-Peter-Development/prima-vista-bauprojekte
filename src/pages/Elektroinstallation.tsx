@@ -12,7 +12,7 @@ export default function Elektroinstallation() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-office-light.jpg"
+        backgroundImage="/assets/img/photo-office-light.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Elektroinstallation"
         title={<>Elektroinstallation<br /><em>kalkulieren.</em></>}

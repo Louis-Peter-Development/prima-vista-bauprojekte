@@ -19,7 +19,7 @@ function navItemMatches(item: NavItem, pathname: string): boolean {
 }
 
 const FEATURED_PROJECT = {
-  src: '/assets/img/proj-spa-bath.jpg',
+  src: '/assets/img/proj-spa-bath.webp',
   num: '№ 141',
   titleLead: 'Spa-Bad —',
   titleAccent: 'Hotel.',

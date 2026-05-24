@@ -12,7 +12,7 @@ export default function Fenstertechnik() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-office-light.jpg"
+        backgroundImage="/assets/img/photo-office-light.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Fenstertechnik"
         title={<>Fenstertechnik<br /><em>kalkulieren.</em></>}

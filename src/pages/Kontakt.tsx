@@ -11,7 +11,7 @@ export default function Kontakt() {
       <section
         className="kontakt"
         style={{
-          ['--kontakt-bg' as string]: 'url(/assets/img/photo-office-light.jpg)',
+          ['--kontakt-bg' as string]: 'url(/assets/img/photo-office-light.webp)',
           ['--kontakt-bg-position' as string]: 'center',
         }}
       >

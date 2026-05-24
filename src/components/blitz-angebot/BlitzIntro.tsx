@@ -16,7 +16,7 @@ export default function BlitzIntro() {
       </ul>
 
       <figure className="kontakt__media kontakt__media--blitz">
-        <img src="/assets/img/photo-altbausanierung.jpg" alt="Altbau vor der Sanierung als Grundlage für ein Blitz-Angebot" />
+        <img src="/assets/img/photo-altbausanierung.webp" alt="Altbau vor der Sanierung als Grundlage für ein Blitz-Angebot" loading="lazy" />
         <figcaption>
           <span className="num">№ 06</span>
           <span>Substanzaufnahme · Vorab-Schätzung</span>

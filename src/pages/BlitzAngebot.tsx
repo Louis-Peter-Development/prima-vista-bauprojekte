@@ -9,7 +9,7 @@ export default function BlitzAngebot() {
     <section
       className="kontakt kontakt--blitz"
       style={{
-        ['--kontakt-bg' as string]: 'url(/assets/img/photo-altbausanierung.jpg)',
+        ['--kontakt-bg' as string]: 'url(/assets/img/photo-altbausanierung.webp)',
         ['--kontakt-bg-position' as string]: 'center top',
       }}
     >

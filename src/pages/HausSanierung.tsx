@@ -11,7 +11,7 @@ export default function HausSanierung() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="07"
         crumbLabel="Haus-Sanierung · Konfigurator"
         title={<>Haus-Sanierung<br /><em>nach Maß.</em></>}

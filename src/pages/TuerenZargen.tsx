@@ -12,7 +12,7 @@ export default function TuerenZargen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-lobby-tree.jpg"
+        backgroundImage="/assets/img/proj-lobby-tree.webp"
         crumbNumber="24"
         crumbLabel="Gewerke · Türen & Zargen"
         title={<>Türen<br /><em>kalkulieren.</em></>}

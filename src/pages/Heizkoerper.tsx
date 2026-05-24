@@ -10,7 +10,7 @@ export default function Heizkoerper() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-bad-prima-vista.jpg"
+        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
         crumbNumber="10"
         crumbLabel="Heizkörper · Kostenrechner"
         title={<>Heizkörper<br /><em>kalkulieren.</em></>}

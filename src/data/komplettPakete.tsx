@@ -21,7 +21,7 @@ export type Package = {
 export const PACKAGES: Package[] = [
   {
     num: '01',
-    photo: '/assets/img/photo-haus-exterior.jpg',
+    photo: '/assets/img/photo-haus-exterior.webp',
     alt: 'Haus-Sanierung',
     eyebrow: 'Komplettpaket · Haus',
     detailTo: '/haus-sanierung',
@@ -38,7 +38,7 @@ export const PACKAGES: Package[] = [
     num: '02',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/photo-parkett-altbau.jpg',
+    photo: '/assets/img/photo-parkett-altbau.webp',
     alt: 'Wohnung-Sanierung',
     eyebrow: 'Komplettpaket · Wohnung',
     detailTo: '/wohnung-sanierung',
@@ -54,7 +54,7 @@ export const PACKAGES: Package[] = [
   {
     num: '03',
     variant: 'ink',
-    photo: '/assets/img/proj-sushi.jpg',
+    photo: '/assets/img/proj-sushi.webp',
     alt: 'Gastronomie-Ausbau',
     eyebrow: 'Komplettpaket · Gastronomie',
     detailTo: '/gastronomie-ausbau',

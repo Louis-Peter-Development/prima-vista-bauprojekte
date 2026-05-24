@@ -27,7 +27,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Alles zu Maler & Lackierung',
     lead: 'Komplettleistung',
     detail: 'Wände, Decken, Tapeten, Lackflächen, Abklebung, Ausbesserung und saubere Übergabe aus einer Hand.',
-    image: '/assets/img/proj-paint-swatches.jpg',
+    image: '/assets/img/proj-paint-swatches.webp',
     netBase: 9400,
   },
   {
@@ -36,7 +36,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Anstrich',
     lead: 'Wände & Decken',
     detail: 'Innenanstrich für Wände und Decken inklusive Abdeckung, Untergrundprüfung und zweifachem Farbauftrag.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 5200,
   },
   {
@@ -45,7 +45,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Glätten & Anstrich',
     lead: 'Malerfertig',
     detail: 'Spachteln, Schleifen, Grundieren und anschließender Anstrich für ruhige, glatte Wand- und Deckenflächen.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 7800,
   },
   {
@@ -54,7 +54,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Tapezieren & Anstrich',
     lead: 'Vlies & Tapete',
     detail: 'Tapezierarbeiten mit Untergrundvorbereitung, Stoßausbildung, Anstrich und sauberer Raumübergabe.',
-    image: '/assets/img/proj-paint-swatches.jpg',
+    image: '/assets/img/proj-paint-swatches.webp',
     netBase: 6900,
   },
   {
@@ -63,7 +63,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Decken-Lackierung',
     lead: 'Holzdecken',
     detail: 'Holzdecken anschleifen, vorbereiten, grundieren und deckend oder lasierend neu lackieren.',
-    image: '/assets/img/proj-lobby-tree.jpg',
+    image: '/assets/img/proj-lobby-tree.webp',
     netBase: 6400,
   },
   {
@@ -72,7 +72,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Heizkörper-Lackierung',
     lead: 'Radiatoren',
     detail: 'Heizkörper reinigen, anschleifen, grundieren und mit hitzebeständigem Lack neu beschichten.',
-    image: '/assets/img/photo-bad-prima-vista.jpg',
+    image: '/assets/img/photo-bad-prima-vista.webp',
     netBase: 3600,
   },
   {
@@ -81,7 +81,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Fenster-Lackierung',
     lead: 'Holzfenster',
     detail: 'Fensterflächen vorbereiten, schadhafte Stellen ausbessern, grundieren und wetterfest lackieren.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 5800,
   },
   {
@@ -90,7 +90,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Türen-Lackierung',
     lead: 'Innentüren',
     detail: 'Türblätter und Zargen anschleifen, ausbessern, grundieren und in Wunschfarbton lackieren.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 4300,
   },
   {
@@ -99,7 +99,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Treppe & Geländer',
     lead: 'Lackierung',
     detail: 'Treppen, Handläufe und Geländer vorbereiten, beschichten und widerstandsfähig versiegeln.',
-    image: '/assets/img/proj-stairs-concrete.jpg',
+    image: '/assets/img/proj-stairs-concrete.webp',
     netBase: 8200,
   },
   {
@@ -108,7 +108,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Fassadenanstrich',
     lead: 'Außenfläche',
     detail: 'Fassade reinigen, grundieren, Risse prüfen und mit wetterbeständigem Außenanstrich beschichten.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 11600,
   },
 ];

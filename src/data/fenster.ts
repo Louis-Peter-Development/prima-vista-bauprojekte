@@ -28,7 +28,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Alles zu Fenster',
     lead: 'Komplettpaket',
     detail: 'Fenster, Balkontüren, Rollladen, Markisen, Fensterläden, Dachfenster und Aufbereitung als koordinierte Fensterleistung.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 24600,
   },
   {
@@ -37,7 +37,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Aluminium-Fenster',
     lead: 'Modern',
     detail: 'Aluminiumfenster mit Aufmaß, Ausbau, Montage, Anschlussfugen, Abdichtung und sauberer Übergabe.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 14800,
   },
   {
@@ -46,7 +46,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Balkon- & Terrassentüren',
     lead: 'Übergang',
     detail: 'Balkon- oder Terrassentüren einbauen inklusive Schwellenanschluss, Abdichtung, Beschläge und Justage.',
-    image: '/assets/img/proj-spa-corridor.jpg',
+    image: '/assets/img/proj-spa-corridor.webp',
     netBase: 12600,
   },
   {
@@ -55,7 +55,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Carport & Garagentore',
     lead: 'Zufahrt',
     detail: 'Garagentor, Carportabschluss oder Toranlage mit Aufmaß, Befestigung, Antriebsvorbereitung und Einweisung montieren.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 16400,
   },
   {
@@ -64,7 +64,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Dach-Fenster',
     lead: 'Belichtung',
     detail: 'Dachfenster einbauen oder tauschen inklusive Eindeckrahmen, Innenfutter, Dämmanschluss und regensicherer Einbindung.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 8600,
   },
   {
@@ -73,7 +73,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Fenster aufbereiten',
     lead: 'Renovierung',
     detail: 'Bestehende Fenster schleifen, ausbessern, lackieren, Beschläge prüfen und Oberflächen wieder schützen.',
-    image: '/assets/img/proj-paint-swatches.jpg',
+    image: '/assets/img/proj-paint-swatches.webp',
     netBase: 5400,
   },
   {
@@ -82,7 +82,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Fensterläden',
     lead: 'Sichtschutz',
     detail: 'Fensterläden montieren oder erneuern inklusive Beschläge, Anschläge, Ausrichtung und Wetterschutz.',
-    image: '/assets/img/proj-concrete-corner.jpg',
+    image: '/assets/img/proj-concrete-corner.webp',
     netBase: 7800,
   },
   {
@@ -91,7 +91,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Holz-Fenster',
     lead: 'Natürlich',
     detail: 'Holzfenster liefern und montieren mit Anschlussfugen, Oberflächenschutz, Justage und sauberem Innenanschluss.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 13200,
   },
   {
@@ -100,7 +100,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Kunststoff-Fenster',
     lead: 'Pflegeleicht',
     detail: 'Kunststofffenster einbauen inklusive Ausbau alter Elemente, Montage, Dämmung, Abdichtung und Beschläge.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 9800,
   },
   {
@@ -109,7 +109,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Markisen',
     lead: 'Sonnenschutz',
     detail: 'Markise mit Konsolen, Ausrichtung, Wandbefestigung, Bedienung und Abstimmung auf Fenster oder Terrasse montieren.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 6200,
   },
   {
@@ -118,7 +118,7 @@ export const FENSTER_VARIANTS: FensterVariant[] = [
     title: 'Rollladen',
     lead: 'Schutz',
     detail: 'Rollladen oder Vorsatzrollladen mit Führungsschienen, Kasten, Bedienung und Fensteranschluss montieren.',
-    image: '/assets/img/proj-concrete-sofa.jpg',
+    image: '/assets/img/proj-concrete-sofa.webp',
     netBase: 7200,
   },
 ];

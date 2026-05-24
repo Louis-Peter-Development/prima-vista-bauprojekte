@@ -1,11 +1,25 @@
 import type { LightboxItem } from '../components/Lightbox';
 import type { TradeKey } from './gewerke';
 
-export const HERO_IMAGES = [
-  '/assets/img/proj-moroccan-dining-wide.jpg',
-  '/assets/img/proj-sushi-wide.jpg',
-  '/assets/img/proj-lobby-tree-wide.jpg',
+export type HeroSlide = {
+  /** Base name (under /assets/img/hero/) and shape: `${name}-800.avif`, `${name}-1600.webp`, etc. */
+  name: string;
+  alt: string;
+};
+
+/**
+ * Hero slideshow. Each slide ships in AVIF + WebP at 800w (mobile) and 1600w
+ * (desktop) under /assets/img/hero/. The first slide is the LCP image and gets
+ * `fetchpriority="high"`.
+ */
+export const HERO_SLIDES: HeroSlide[] = [
+  { name: 'moroccan-dining', alt: 'Restaurant Riad — marokkanisches Esszimmer' },
+  { name: 'sushi', alt: 'Sushi Bar — Innenausbau' },
+  { name: 'lobby-tree', alt: 'Office Lobby mit Pflanzenkonzept' },
 ];
+
+/** Back-compat for any caller that still imports HERO_IMAGES (high-res fallback). */
+export const HERO_IMAGES = HERO_SLIDES.map((s) => `/assets/img/hero/${s.name}-1600.webp`);
 
 export const HOME_TRADES = [
   'Sanierung', 'Renovierung', 'Gastronomie-Ausbau', 'Bäder', 'Küchen', 'Böden',
@@ -25,14 +39,14 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
 
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
   {
-    src: '/assets/img/proj-moroccan-dining.jpg',
+    src: '/assets/img/proj-moroccan-dining.webp',
     title: 'Riad — Gastronomie · Frankfurt · 2025',
     year: '2025',
     alt: 'Riad Restaurant Frankfurt',
     gridClass: 'proj--a',
   },
   {
-    src: '/assets/img/proj-concrete-sofa-tall.jpg',
+    src: '/assets/img/proj-concrete-sofa-tall.webp',
     title: 'Villa Sichtbeton — Wohnsitz · Luzern · 2024',
     year: '2024',
     alt: 'Villa Sichtbeton Luzern',
@@ -40,14 +54,14 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     revealDelay: 1,
   },
   {
-    src: '/assets/img/proj-kitchen-oak.jpg',
+    src: '/assets/img/proj-kitchen-oak.webp',
     title: 'Küche Eichenholz — Wohnsitz · Frankfurt · 2025',
     year: '2025',
     alt: 'Küche Eichenholz Frankfurt',
     gridClass: 'proj--c',
   },
   {
-    src: '/assets/img/proj-spa-bath.jpg',
+    src: '/assets/img/proj-spa-bath.webp',
     title: 'Spa-Bad — Hotel · Emmenbrücke · 2025',
     year: '2025',
     alt: 'Spa-Bad Hotel',
@@ -55,7 +69,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     revealDelay: 1,
   },
   {
-    src: '/assets/img/proj-lobby-tree.jpg',
+    src: '/assets/img/proj-lobby-tree.webp',
     title: 'Lobby — Office · Frankfurt · 2026',
     year: '2026',
     alt: 'Lobby Office Frankfurt',

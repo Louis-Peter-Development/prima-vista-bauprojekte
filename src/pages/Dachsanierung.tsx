@@ -12,7 +12,7 @@ export default function Dachsanierung() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-altbausanierung.jpg"
+        backgroundImage="/assets/img/photo-altbausanierung.webp"
         crumbNumber="05"
         crumbLabel="Gewerke · Dachsanierung"
         title={<>Dach &<br /><em>Ausbau kalkulieren.</em></>}

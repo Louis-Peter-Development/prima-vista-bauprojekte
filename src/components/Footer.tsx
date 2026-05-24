@@ -18,7 +18,7 @@ export default function Footer() {
                 }
               }}
             >
-              <img src="/assets/img/logo.png" alt="" style={{ filter: 'brightness(1.2)' }} />
+              <img src="/assets/img/logo.png" alt="" loading="lazy" style={{ filter: 'brightness(1.2)' }} />
               <span className="pv-logo__txt">
                 <span className="pv-logo__name">Prima Vista</span>
                 <span className="pv-logo__tag">Bauprojekte</span>
@@ -51,7 +51,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4>Standorte</h4>
+            <h3>Standorte</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <div className="pv-footer__contact-link pv-footer__contact-link--static">
@@ -88,7 +88,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Leistungen</h4>
+            <h3>Leistungen</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <Link className="pv-footer__contact-link" to="/komplett-pakete">
@@ -129,7 +129,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Kontakt</h4>
+            <h3>Kontakt</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <Link className="pv-footer__contact-link" to="/kontakt">

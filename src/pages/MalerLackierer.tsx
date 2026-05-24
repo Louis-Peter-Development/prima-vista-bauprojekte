@@ -12,7 +12,7 @@ export default function MalerLackierer() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-paint-swatches.jpg"
+        backgroundImage="/assets/img/proj-paint-swatches.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Maler & Lackierer"
         title={<>Maler &<br /><em>Lackierer kalkulieren.</em></>}

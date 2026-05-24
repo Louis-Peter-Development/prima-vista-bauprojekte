@@ -28,7 +28,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Alle Gewerkpositionen',
     lead: 'Einzelanwahl',
     detail: 'Treppen, Geländer, Durchbrüche, Stufenbelegung und Aufbereitung als koordinierte Treppenleistung.',
-    image: '/assets/img/proj-stairs-concrete.jpg',
+    image: '/assets/img/proj-stairs-concrete.webp',
     netBase: 18600,
   },
   {
@@ -37,7 +37,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Holztreppe',
     lead: 'Massivholz',
     detail: 'Holztreppe planen, fertigen und montieren inklusive Stufen, Wangen, Handlauf und Anschlussdetails.',
-    image: '/assets/img/proj-stairs-concrete.jpg',
+    image: '/assets/img/proj-stairs-concrete.webp',
     netBase: 14200,
   },
   {
@@ -46,7 +46,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Betontreppe',
     lead: 'Rohbau',
     detail: 'Betontreppe herstellen oder sanieren mit Schalung, Bewehrung, Betonage und belegreifer Oberfläche.',
-    image: '/assets/img/proj-stairs-concrete.jpg',
+    image: '/assets/img/proj-stairs-concrete.webp',
     netBase: 16400,
   },
   {
@@ -55,7 +55,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Durchbruch Treppenloch',
     lead: 'Treppenauge',
     detail: 'Deckendurchbruch vorbereiten, sichern, herstellen und für die neue Treppenführung sauber anschließen.',
-    image: '/assets/img/photo-parkett-rohbau.jpg',
+    image: '/assets/img/photo-parkett-rohbau.webp',
     netBase: 9200,
   },
   {
@@ -64,7 +64,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Geländer',
     lead: 'Absturzschutz',
     detail: 'Geländer, Handlauf oder Absturzsicherung aus Holz, Stahl oder Glas mit sicherer Befestigung montieren.',
-    image: '/assets/img/proj-concrete-corner.jpg',
+    image: '/assets/img/proj-concrete-corner.webp',
     netBase: 7200,
   },
   {
@@ -73,7 +73,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Außen-Treppe',
     lead: 'Erschließung',
     detail: 'Außentreppe mit witterungsbeständiger Konstruktion, Podest, Geländer und tragfähigem Anschluss.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 13800,
   },
   {
@@ -82,7 +82,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Raumspar-Treppe',
     lead: 'Kompakt',
     detail: 'Kompakte Treppenlösung für enge Grundrisse inklusive Aufmaß, Laufbreite, Geländer und Montage.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 9800,
   },
   {
@@ -91,7 +91,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Dachboden-Treppe',
     lead: 'Bodentreppe',
     detail: 'Dachboden- oder Bodentreppe mit Deckenausschnitt, Klappe, Wärmeschutz und sauberer Einfassung.',
-    image: '/assets/img/photo-parkett-rohbau.jpg',
+    image: '/assets/img/photo-parkett-rohbau.webp',
     netBase: 6200,
   },
   {
@@ -100,7 +100,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Spindel-Treppe',
     lead: 'Rundlauf',
     detail: 'Spindeltreppe mit Mittelspindel, Stufen, Geländer, Podestanschluss und präziser Montage.',
-    image: '/assets/img/proj-stairs-concrete.jpg',
+    image: '/assets/img/proj-stairs-concrete.webp',
     netBase: 11800,
   },
   {
@@ -109,7 +109,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Aufbereiten der Treppe',
     lead: 'Renovierung',
     detail: 'Bestehende Treppe schleifen, ausbessern, beschichten oder ölen und wieder sauber nutzbar machen.',
-    image: '/assets/img/proj-floor-oak.jpg',
+    image: '/assets/img/proj-floor-oak.webp',
     netBase: 5600,
   },
   {
@@ -118,7 +118,7 @@ export const TREPPEN_VARIANTS: TreppenVariant[] = [
     title: 'Belegung der Treppe',
     lead: 'Stufenbelag',
     detail: 'Treppenstufen mit Holz, Vinyl, Stein oder anderem Belag belegen inklusive Kanten und Übergängen.',
-    image: '/assets/img/photo-parkett-altbau.jpg',
+    image: '/assets/img/photo-parkett-altbau.webp',
     netBase: 8400,
   },
 ];

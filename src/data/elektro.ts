@@ -26,7 +26,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Alles zu Elektroinstallation',
     lead: 'Komplettpaket',
     detail: 'Elektroplanung, Leitungsführung, Sicherungskasten, Schalter, Steckdosen, Licht und Abnahme koordiniert aus einer Hand.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 22400,
   },
   {
@@ -35,7 +35,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Neuinstallation pro Etage',
     lead: 'Grundinstallation',
     detail: 'Etagenweise Elektroinstallation mit Leitungswegen, Dosen, Schaltern, Steckdosen und Abstimmung der Stromkreise.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 16800,
   },
   {
@@ -44,7 +44,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Sicherungskasten',
     lead: 'Verteilung',
     detail: 'Sicherungskasten erneuern, Stromkreise sauber auflegen, FI/LS-Konzept prüfen und beschriften.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 6200,
   },
   {
@@ -53,7 +53,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Netzwerk & Bus',
     lead: 'Daten & KNX',
     detail: 'Netzwerkleitungen, Busleitungen, Dosen, Patchpunkte und Verteilerstruktur für moderne Gebäudetechnik.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 7400,
   },
   {
@@ -62,7 +62,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Einzelinstallation',
     lead: 'Zuleitung',
     detail: 'Einzelne Zuleitungen, Schalter, Steckdosen, Geräteanschlüsse oder Wandpunkte gezielt ergänzen.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 2800,
   },
   {
@@ -71,7 +71,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Lichttechnik & Beleuchtung',
     lead: 'Lichtplanung',
     detail: 'Einbauspots, Pendelleuchten, Unterbauleuchten, Schaltgruppen und dimmbare Lichtkreise abstimmen.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 5400,
   },
   {
@@ -80,7 +80,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Free Home',
     lead: 'Smart Home',
     detail: 'Smart-Home-Basis mit Schaltaktoren, Szenen, App-Steuerung und sauberer Einbindung in die Elektroplanung.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 9200,
   },
   {
@@ -89,7 +89,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Rolladen-Steuerung',
     lead: 'Beschattung',
     detail: 'Rolladenmotoren, Taster, Zeitsteuerung, Leitungsführung und zentrale Steuerpunkte vorbereiten.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 4800,
   },
   {
@@ -98,7 +98,7 @@ export const ELEKTRO_VARIANTS: ElektroVariant[] = [
     title: 'Sprechanlagen',
     lead: 'Türkommunikation',
     detail: 'Audio- oder Video-Sprechanlage mit Innenstation, Außenstelle, Leitungsweg und Inbetriebnahme.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 3600,
   },
 ];

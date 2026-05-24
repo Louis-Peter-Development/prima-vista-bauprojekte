@@ -10,7 +10,7 @@ export default function Saunaofen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-spa-tub.jpg"
+        backgroundImage="/assets/img/proj-spa-tub.webp"
         crumbNumber="16"
         crumbLabel="Saunaofen Prestige · Kostenrechner"
         title={<>Saunaofen<br /><em>Prestige.</em></>}

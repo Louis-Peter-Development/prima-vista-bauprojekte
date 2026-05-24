@@ -11,7 +11,7 @@ export default function Heizmethoden() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="09"
         crumbLabel="Heizmethoden · Wärme & Energie"
         title={<>Moderne<br />Heizmethoden.<br /><em>Sieben Wege.</em></>}

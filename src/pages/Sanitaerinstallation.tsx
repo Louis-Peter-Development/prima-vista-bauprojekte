@@ -12,7 +12,7 @@ export default function Sanitaerinstallation() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-bad-prima-vista.jpg"
+        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
         crumbNumber="05"
         crumbLabel="Gewerke · Wasser & Sanitär"
         title={<>Wasser<br /><em>kalkulieren.</em></>}

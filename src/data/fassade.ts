@@ -27,7 +27,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Alles zu Fassade',
     lead: 'Sanierung',
     detail: 'Dämmung, Putz, Anstrich, Sockel, Verkleidung und Anschlüsse als koordinierte Fassadenleistung.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 28600,
   },
   {
@@ -36,7 +36,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Dämmung - Fassade',
     lead: 'WDVS',
     detail: 'Fassadendämmung mit Dämmplatten, Armierung, Putzsystem, Anstrich und sauber ausgeführten Anschlüssen.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 24800,
   },
   {
@@ -45,7 +45,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Anstrich - Fassade',
     lead: 'Wetterschutz',
     detail: 'Fassade reinigen, Untergrund prüfen, grundieren und mit wetterbeständigem Außenanstrich beschichten.',
-    image: '/assets/img/proj-paint-swatches.jpg',
+    image: '/assets/img/proj-paint-swatches.webp',
     netBase: 9200,
   },
   {
@@ -54,7 +54,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Holzverkleidung',
     lead: 'Naturfassade',
     detail: 'Unterkonstruktion, Holzprofile, Hinterlüftung, Schutzbehandlung und präzise Abschlüsse an Öffnungen.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 22600,
   },
   {
@@ -63,7 +63,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Sockeldämmung',
     lead: 'Sockelzone',
     detail: 'Perimeternahe Sockelbereiche dämmen, abdichten, armieren und robust gegen Spritzwasser ausbilden.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 7800,
   },
   {
@@ -72,7 +72,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Klinker & Steinriemchen',
     lead: 'Riemchen',
     detail: 'Klinker- oder Steinriemchen auf vorbereiteter Fassade mit Fugenbild, Eckausbildung und Anschlüssen.',
-    image: '/assets/img/proj-concrete-corner.jpg',
+    image: '/assets/img/proj-concrete-corner.webp',
     netBase: 19600,
   },
   {
@@ -81,7 +81,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Plattenverkleidung',
     lead: 'Fassadenplatten',
     detail: 'Moderne Fassadenplatten inklusive Unterkonstruktion, Hinterlüftung und objektbezogener Detailplanung.',
-    image: '/assets/img/proj-lobby-tree.jpg',
+    image: '/assets/img/proj-lobby-tree.webp',
     netBase: 23800,
   },
   {
@@ -90,7 +90,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Natursteinverkleidung',
     lead: 'Steinoberfläche',
     detail: 'Natursteinbekleidung mit Untergrundvorbereitung, Zuschnitten, Befestigung und sauberen Übergängen.',
-    image: '/assets/img/proj-bath-stone.jpg',
+    image: '/assets/img/proj-bath-stone.webp',
     netBase: 26400,
   },
   {
@@ -99,7 +99,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Vorhangfassade',
     lead: 'Hinterlüftet',
     detail: 'Vorgehängte hinterlüftete Fassade mit Dämmung, Tragprofilen, Bekleidung und Anschlussdetails.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 31200,
   },
   {
@@ -108,7 +108,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Verblendmauerwerk',
     lead: 'Mauerwerk',
     detail: 'Verblendschale mit Steinen, Mörtel, Luftschicht, Ankern und sauber ausgebildeten Öffnungen.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 29400,
   },
 ];

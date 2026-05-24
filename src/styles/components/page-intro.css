@@ -57,7 +57,7 @@
   gap: 12px;
 }
 .crumb .num {
-  color: var(--pv-copper);
+  color: var(--pv-copper-ink);
   font-family: var(--pv-font-mono);
   font-weight: 500;
 }

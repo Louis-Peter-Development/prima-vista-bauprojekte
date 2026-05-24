@@ -10,7 +10,7 @@ export default function Fussbodenheizung() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-floor-oak.jpg"
+        backgroundImage="/assets/img/proj-floor-oak.webp"
         crumbNumber="12"
         crumbLabel="Fußbodenheizung · Kostenrechner"
         title={<>Fußbodenheizung<br /><em>kalkulieren.</em></>}

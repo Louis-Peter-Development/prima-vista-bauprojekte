@@ -10,7 +10,7 @@ export default function Pelletofen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-concrete-sofa.jpg"
+        backgroundImage="/assets/img/proj-concrete-sofa.webp"
         crumbNumber="15"
         crumbLabel="Pelletofen · Kostenrechner"
         title={<>Pelletofen<br /><em>kalkulieren.</em></>}

@@ -12,7 +12,7 @@ export default function Trockenbau() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-parkett-rohbau.jpg"
+        backgroundImage="/assets/img/photo-parkett-rohbau.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Trockenbau"
         title={<>Trockenbau<br /><em>kalkulieren.</em></>}

@@ -3,20 +3,21 @@
    Renovation & refurbishment, premium warm-bronze aesthetic.
    ============================================================ */
 
-/* ────────────── BRAND FONTS (local @font-face) ────────────── */
+/* ────────────── BRAND FONTS (local @font-face)
+   Subsetted to Latin + Latin Extended-A and shipped as WOFF2 only —
+   4.1 MB of raw TTFs compressed down to ~630 kB.
+   ────────────── */
 
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Inter-VariableFont_opsz_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Inter-VariableFont_opsz_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Inter-Italic-VariableFont_opsz_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -24,16 +25,14 @@
 
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/PlayfairDisplay-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Playfair Display';
-  src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -41,16 +40,14 @@
 
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/assets/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/CormorantGaramond-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Cormorant Garamond';
-  src: url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/CormorantGaramond-Italic-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -58,8 +55,7 @@
 
 @font-face {
   font-family: 'Manrope';
-  src: url('/assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype-variations'),
-       url('/assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  src: url('/assets/fonts/Manrope-VariableFont_wght.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -74,6 +70,7 @@
   --pv-copper:        #826140;   /* logo P-form — primary copper */
   --pv-copper-warm:   #a07a52;   /* lighter copper for hover / accents */
   --pv-copper-bright: #c89a6a;   /* glow / highlight on dark bg */
+  --pv-copper-ink:    #7a5b37;   /* WCAG-AA safe copper for small text on cream/bone */
 
   /* Surface — Dark (main site palette) */
   --pv-ink:           #141312;   /* deepest charcoal — page bg */
@@ -92,7 +89,7 @@
   /* Text */
   --pv-text-on-dark:        #ece5df;   /* primary white-ish on dark */
   --pv-text-on-dark-muted:  #b0a89f;   /* secondary on dark */
-  --pv-text-on-dark-faint:  #6f6862;   /* tertiary on dark */
+  --pv-text-on-dark-faint:  #898279;   /* tertiary on dark (WCAG-AA on --pv-ink-1) */
   --pv-text-on-light:        #1a1a1a;
   --pv-text-on-light-muted:  #5b5752;
   --pv-text-on-light-faint:  #8a857f;

@@ -19,7 +19,7 @@ export default function Gewerke() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-spa-bath.jpg"
+        backgroundImage="/assets/img/proj-spa-bath.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Bauleistungen"
         title={<>Achtzehn<br />Gewerke,<br /><em>eine Hand.</em></>}

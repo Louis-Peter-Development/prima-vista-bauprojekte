@@ -23,7 +23,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Alles zu Küchen',
     lead: 'Komplettpaket',
     detail: 'Küchenmöbel, Arbeitsplatte, Anschlüsse, Beleuchtung, Boden- und Deckenarbeiten koordiniert aus einer Hand.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 28600,
   },
   {
@@ -32,7 +32,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Küchenzeile',
     lead: 'Einbau & Montage',
     detail: 'Montage einer Küchenzeile mit Schränken, Geräten, Blenden, Sockeln und sauberem Anschluss an die Wandflächen.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 14600,
   },
   {
@@ -41,7 +41,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Arbeitsplatte & Spüle',
     lead: 'Oberfläche',
     detail: 'Arbeitsplatte einpassen, Ausschnitte herstellen, Spüle und Armatur montieren, Fugen und Kanten sauber schließen.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 5200,
   },
   {
@@ -50,7 +50,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Boden & Decken',
     lead: 'Raumhülle',
     detail: 'Untergrund, Bodenbelag, Deckenflächen und Anschlüsse rund um die Küche vorbereiten und ausführen.',
-    image: '/assets/img/photo-parkett-altbau.jpg',
+    image: '/assets/img/photo-parkett-altbau.webp',
     netBase: 7800,
   },
   {
@@ -59,7 +59,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Elektro & Beleuchtung',
     lead: 'Strom & Licht',
     detail: 'Steckdosen, Geräteanschlüsse, Lichtpunkte, Unterbauleuchten und Absicherung für die Küchenplanung koordinieren.',
-    image: '/assets/img/photo-office-light.jpg',
+    image: '/assets/img/photo-office-light.webp',
     netBase: 6400,
   },
   {
@@ -68,7 +68,7 @@ export const KUECHEN_VARIANTS: KuechenVariant[] = [
     title: 'Wasserinstallation',
     lead: 'Anschlüsse',
     detail: 'Frischwasser, Abwasser, Spülmaschinenanschluss und Spülenposition fachgerecht vorbereiten oder versetzen.',
-    image: '/assets/img/photo-bad-prima-vista.jpg',
+    image: '/assets/img/photo-bad-prima-vista.webp',
     netBase: 4600,
   },
 ];

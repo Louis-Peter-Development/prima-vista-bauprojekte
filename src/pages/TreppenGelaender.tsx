@@ -12,7 +12,7 @@ export default function TreppenGelaender() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-stairs-concrete.jpg"
+        backgroundImage="/assets/img/proj-stairs-concrete.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Treppen & Geländer"
         title={<>Treppen &<br /><em>Geländer kalkulieren.</em></>}

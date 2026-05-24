@@ -22,7 +22,7 @@ export const ZAUN_VARIANTS: ZaunVariant[] = [
     title: 'Zaun-Paket komplett',
     lead: 'Grundstück',
     detail: 'Zaunanlage rundum inklusive Pfosten, Fundamenten, Toranlage und Demontage als koordiniertes Außenanlagen-Paket.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 9800,
   },
   {
@@ -31,7 +31,7 @@ export const ZAUN_VARIANTS: ZaunVariant[] = [
     title: 'Doppelstab- & Metallzaun',
     lead: 'Robust',
     detail: 'Doppelstabmatten oder Stabgitter mit pulverbeschichteten Pfosten, Punktfundamenten und Beschlägen.',
-    image: '/assets/img/proj-concrete-corner.jpg',
+    image: '/assets/img/proj-concrete-corner.webp',
     netBase: 4200,
   },
   {
@@ -40,7 +40,7 @@ export const ZAUN_VARIANTS: ZaunVariant[] = [
     title: 'Holz- & Steckzaun',
     lead: 'Natürlich',
     detail: 'Lattenzaun, Bohlen- oder Steckzaun aus Lärche oder Douglasie inklusive Pfostenanker und Lasur.',
-    image: '/assets/img/proj-spa-corridor.jpg',
+    image: '/assets/img/proj-spa-corridor.webp',
     netBase: 5400,
   },
   {
@@ -49,7 +49,7 @@ export const ZAUN_VARIANTS: ZaunVariant[] = [
     title: 'Sichtschutz, Alu & Glas',
     lead: 'Privatsphäre',
     detail: 'WPC-, Aluminium- oder Glaselement-Zaun als blickdichter Sichtschutz inklusive LED-Vorrichtung.',
-    image: '/assets/img/proj-concrete-sofa.jpg',
+    image: '/assets/img/proj-concrete-sofa.webp',
     netBase: 7200,
   },
   {
@@ -58,7 +58,7 @@ export const ZAUN_VARIANTS: ZaunVariant[] = [
     title: 'Maschendraht & Vorgarten',
     lead: 'Schlicht',
     detail: 'Maschendraht- oder niedriger Vorgartenzaun inklusive Spanndraht, Pfosten und Eckaussteifung.',
-    image: '/assets/img/photo-altbausanierung.jpg',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 2800,
   },
 ];

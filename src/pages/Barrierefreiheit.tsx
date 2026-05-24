@@ -12,7 +12,7 @@ export default function Barrierefreiheit() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-bad-prima-vista.jpg"
+        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Barrierefreiheit"
         title={<>Barrierefreiheit<br /><em>kalkulieren.</em></>}

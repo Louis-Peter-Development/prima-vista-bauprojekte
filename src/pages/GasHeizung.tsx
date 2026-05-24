@@ -10,7 +10,7 @@ export default function GasHeizung() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-stairs-concrete.jpg"
+        backgroundImage="/assets/img/proj-stairs-concrete.webp"
         crumbNumber="14"
         crumbLabel="Gas-Heizung · Kostenrechner"
         title={<>Gas-Heizung<br /><em>kalkulieren.</em></>}

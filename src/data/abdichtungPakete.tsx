@@ -3,7 +3,7 @@ import type { Package } from './komplettPakete';
 export const ABDICHTUNG_PACKAGES: Package[] = [
   {
     num: '01',
-    photo: '/assets/img/proj-concrete-corner.jpg',
+    photo: '/assets/img/proj-concrete-corner.webp',
     alt: 'Horizontal-Abdichtung',
     eyebrow: 'Abdichtung · Horizontal',
     detailTo: '/abdichtung-keller/horizontal',
@@ -19,7 +19,7 @@ export const ABDICHTUNG_PACKAGES: Package[] = [
     num: '02',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/proj-spa-corridor.jpg',
+    photo: '/assets/img/proj-spa-corridor.webp',
     alt: 'Perimeter-Abdichtung',
     eyebrow: 'Abdichtung · Perimeter',
     detailTo: '/abdichtung-keller/perimeter',
@@ -34,7 +34,7 @@ export const ABDICHTUNG_PACKAGES: Package[] = [
   {
     num: '03',
     variant: 'ink',
-    photo: '/assets/img/proj-concrete-sofa.jpg',
+    photo: '/assets/img/proj-concrete-sofa.webp',
     alt: 'Keller-Abdichtung',
     eyebrow: 'Abdichtung · Keller (Innen)',
     detailTo: '/abdichtung-keller/keller',
@@ -48,7 +48,7 @@ export const ABDICHTUNG_PACKAGES: Package[] = [
   },
   {
     num: '04',
-    photo: '/assets/img/proj-stairs-concrete.jpg',
+    photo: '/assets/img/proj-stairs-concrete.webp',
     alt: 'Alles zu Abdichtung',
     eyebrow: 'Abdichtung · Komplett',
     detailTo: '/abdichtung-keller/alles',

@@ -93,7 +93,7 @@ export default function Impressum() {
     <>
       <PageIntro
         className="impressum-intro"
-        backgroundImage="/assets/img/photo-office-light.jpg"
+        backgroundImage="/assets/img/photo-office-light.webp"
         crumbNumber="07"
         crumbLabel="Impressum · Rechtliches"
         title={<>Impressum</>}

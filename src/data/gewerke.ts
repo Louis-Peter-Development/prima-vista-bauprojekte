@@ -23,25 +23,25 @@ export type FeaturedTrade = {
 };
 
 export const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/proj-bath-double.jpg',
-  kueche: '/assets/img/proj-kitchen-oak.jpg',
-  fassade: '/assets/img/photo-haus-exterior.jpg',
-  dach: '/assets/img/photo-altbausanierung.jpg',
-  elektro: '/assets/img/photo-office-light.jpg',
-  boden: '/assets/img/photo-parkett-altbau.jpg',
-  treppen: '/assets/img/proj-stairs-concrete.jpg',
-  heizung: '/assets/img/proj-floor-oak.jpg',
-  abdichtung: '/assets/img/proj-spa-corridor.jpg',
-  maler: '/assets/img/proj-paint-swatches.jpg',
-  trockenbau: '/assets/img/proj-concrete-corner.jpg',
-  sanitaer: '/assets/img/proj-spa-tub.jpg',
-  rohbau: '/assets/img/photo-parkett-rohbau.jpg',
-  tueren: '/assets/img/proj-lobby-tree.jpg',
-  zaun: '/assets/img/proj-concrete-sofa-tall.jpg',
-  garten: '/assets/img/proj-moroccan-corner.jpg',
-  barrierefreiheit: '/assets/img/proj-bath-stone.jpg',
-  fenster: '/assets/img/proj-lobby-tree-wide.jpg',
-  thermen: '/assets/img/proj-floor-oak.jpg',
+  bad: '/assets/img/proj-bath-double.webp',
+  kueche: '/assets/img/proj-kitchen-oak.webp',
+  fassade: '/assets/img/photo-haus-exterior.webp',
+  dach: '/assets/img/photo-altbausanierung.webp',
+  elektro: '/assets/img/photo-office-light.webp',
+  boden: '/assets/img/photo-parkett-altbau.webp',
+  treppen: '/assets/img/proj-stairs-concrete.webp',
+  heizung: '/assets/img/proj-floor-oak.webp',
+  abdichtung: '/assets/img/proj-spa-corridor.webp',
+  maler: '/assets/img/proj-paint-swatches.webp',
+  trockenbau: '/assets/img/proj-concrete-corner.webp',
+  sanitaer: '/assets/img/proj-spa-tub.webp',
+  rohbau: '/assets/img/photo-parkett-rohbau.webp',
+  tueren: '/assets/img/proj-lobby-tree.webp',
+  zaun: '/assets/img/proj-concrete-sofa-tall.webp',
+  garten: '/assets/img/proj-moroccan-corner.webp',
+  barrierefreiheit: '/assets/img/proj-bath-stone.webp',
+  fenster: '/assets/img/proj-lobby-tree-wide.webp',
+  thermen: '/assets/img/proj-floor-oak.webp',
 };
 
 export const TRADES: TradeRow[] = [
@@ -68,7 +68,7 @@ export const TRADES: TradeRow[] = [
 
 export const FEATURED_TRADES: FeaturedTrade[] = [
   {
-    src: '/assets/img/photo-bad-prima-vista.jpg',
+    src: '/assets/img/photo-bad-prima-vista.webp',
     title: 'Badezimmer — Sanitär & Fliesen',
     count: '01 — 142 Projekte',
     heading: ['Bäder &', 'Sanitär'],
@@ -77,7 +77,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     detailTo: '/badsanierung',
   },
   {
-    src: '/assets/img/proj-kitchen-oak.jpg',
+    src: '/assets/img/proj-kitchen-oak.webp',
     title: 'Küchen & Möbelbau',
     count: '02 — 98 Projekte',
     heading: ['Küchen &', 'Möbelbau'],
@@ -86,7 +86,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     detailTo: '/kuechen-moebelbau',
   },
   {
-    src: '/assets/img/photo-parkett-altbau.jpg',
+    src: '/assets/img/photo-parkett-altbau.webp',
     title: 'Bodenbeläge',
     count: '03 — 187 Projekte',
     heading: ['Böden &', 'Beläge'],

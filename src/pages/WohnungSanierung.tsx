@@ -11,7 +11,7 @@ export default function WohnungSanierung() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-parkett-altbau.jpg"
+        backgroundImage="/assets/img/photo-parkett-altbau.webp"
         crumbNumber="08"
         crumbLabel="Wohnung-Sanierung · Konfigurator"
         title={<>Wohnung-Sanierung<br /><em>nach Maß.</em></>}

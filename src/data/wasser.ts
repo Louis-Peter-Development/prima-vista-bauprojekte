@@ -22,7 +22,7 @@ export const WASSER_VARIANTS: WasserVariant[] = [
     title: 'Wasserinstallation komplett',
     lead: 'Haus & Anschlüsse',
     detail: 'Bad, Küche, Keller und Außenanschlüsse koordiniert: Trink- und Abwasserleitungen, Verteiler, Armaturen und Inbetriebnahme.',
-    image: '/assets/img/photo-bad-prima-vista.jpg',
+    image: '/assets/img/photo-bad-prima-vista.webp',
     netBase: 18400,
   },
   {
@@ -31,7 +31,7 @@ export const WASSER_VARIANTS: WasserVariant[] = [
     title: 'Bad & Gäste-WC',
     lead: 'Sanitärstrang',
     detail: 'Komplettstrang für Wanne, Dusche, WC und Waschbecken inklusive Vorwand, Spülkasten und Armaturen.',
-    image: '/assets/img/proj-bath-stone.jpg',
+    image: '/assets/img/proj-bath-stone.webp',
     netBase: 8400,
   },
   {
@@ -40,7 +40,7 @@ export const WASSER_VARIANTS: WasserVariant[] = [
     title: 'Küche & Geräteanschlüsse',
     lead: 'Spüle & Maschinen',
     detail: 'Trink- und Abwasseranschluss für Spüle, Geschirrspüler, Waschmaschine inklusive Eckventile und Siphon.',
-    image: '/assets/img/proj-kitchen-oak.jpg',
+    image: '/assets/img/proj-kitchen-oak.webp',
     netBase: 4200,
   },
   {
@@ -49,7 +49,7 @@ export const WASSER_VARIANTS: WasserVariant[] = [
     title: 'Keller & Hauptstrang',
     lead: 'Verteilung',
     detail: 'Hausanschluss, Hauptverteiler, Steigleitungen, Druckminderer und Trinkwasserfilter inklusive Spülung.',
-    image: '/assets/img/photo-parkett-rohbau.jpg',
+    image: '/assets/img/photo-parkett-rohbau.webp',
     netBase: 6800,
   },
   {
@@ -58,7 +58,7 @@ export const WASSER_VARIANTS: WasserVariant[] = [
     title: 'Garten & Außenzapfstellen',
     lead: 'Außenbereich',
     detail: 'Frostsichere Außenarmaturen, Garten- und Pool-Zapfstellen inklusive Leitungsführung und Absperrung.',
-    image: '/assets/img/proj-spa-corridor.jpg',
+    image: '/assets/img/proj-spa-corridor.webp',
     netBase: 3400,
   },
 ];

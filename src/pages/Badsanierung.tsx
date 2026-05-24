@@ -12,7 +12,7 @@ export default function Badsanierung() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/proj-bad-modern.jpg"
+        backgroundImage="/assets/img/proj-bad-modern.webp"
         crumbNumber="04"
         crumbLabel="Gewerke · Badsanierung"
         title={<>Badsanierung<br /><em>kalkulieren.</em></>}

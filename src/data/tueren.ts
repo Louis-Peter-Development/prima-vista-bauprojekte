@@ -22,7 +22,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Türen-Paket komplett',
     lead: 'Innen & Außen',
     detail: 'Innentüren, Haustür und Nebeneingänge inklusive Zargen, Beschlägen und Demontage als koordiniertes Gewerke-Paket.',
-    image: '/assets/img/proj-lobby-tree.jpg',
+    image: '/assets/img/proj-lobby-tree.webp',
     netBase: 14800,
   },
   {
@@ -31,7 +31,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Innen- & Zimmertüren',
     lead: 'Wohnbereich',
     detail: 'Zimmertüren in Holz, CPL oder lackiert inklusive Stahl- oder Holzzarge, Drücker und Anschlag-Justage.',
-    image: '/assets/img/proj-moroccan-corner.jpg',
+    image: '/assets/img/proj-moroccan-corner.webp',
     netBase: 6800,
   },
   {
@@ -40,7 +40,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Haustüren',
     lead: 'Eingang',
     detail: 'Sicherheits-Haustür aus Aluminium, Holz oder Kunststoff inklusive Mehrfachverriegelung, RC2-Optionen und Schwelle.',
-    image: '/assets/img/photo-haus-exterior.jpg',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 5200,
   },
   {
@@ -49,7 +49,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Schiebe- & Glastüren',
     lead: 'Raumtrenner',
     detail: 'Schiebetür auf Wandlauf oder im Wandeinbau inklusive ESG-Glas, Beschlag und Soft-Close-Mechanik.',
-    image: '/assets/img/proj-spa-corridor.jpg',
+    image: '/assets/img/proj-spa-corridor.webp',
     netBase: 4400,
   },
   {
@@ -58,7 +58,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Keller- & Nebeneingangstüren',
     lead: 'Funktional',
     detail: 'Robuste Keller- und Nebeneingangstüren mit Wärmedämmung, Mehrfachverriegelung und Bautiefenanpassung.',
-    image: '/assets/img/photo-parkett-rohbau.jpg',
+    image: '/assets/img/photo-parkett-rohbau.webp',
     netBase: 3200,
   },
 ];

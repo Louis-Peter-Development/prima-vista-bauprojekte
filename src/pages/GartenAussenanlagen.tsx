@@ -12,7 +12,7 @@ export default function GartenAussenanlagen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Garten & Außenanlagen"
         title={<>Garten &<br /><em>Außenanlagen kalkulieren.</em></>}

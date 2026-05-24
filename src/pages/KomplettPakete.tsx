@@ -11,7 +11,7 @@ export default function KomplettPakete() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="02"
         crumbLabel="Komplett-Pakete"
         title={<>Drei Wege<br />zum fertigen<br /><em>Raum.</em></>}

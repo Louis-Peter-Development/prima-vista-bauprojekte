@@ -10,7 +10,7 @@ export default function Waermepumpe() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.jpg"
+        backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="13"
         crumbLabel="Wärmepumpe · Kostenrechner"
         title={<>Wärmepumpe<br /><em>kalkulieren.</em></>}

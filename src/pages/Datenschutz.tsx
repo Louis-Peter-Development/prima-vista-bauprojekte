@@ -167,7 +167,7 @@ export default function Datenschutz() {
     <>
       <PageIntro
         className="impressum-intro"
-        backgroundImage="/assets/img/photo-office-light.jpg"
+        backgroundImage="/assets/img/photo-office-light.webp"
         crumbNumber="08"
         crumbLabel="Datenschutz · DSGVO"
         title={<>Datenschutz</>}
