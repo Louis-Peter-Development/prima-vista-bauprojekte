@@ -154,12 +154,18 @@
   text-align: left;
 }
 
-.renocalc-table thead th:nth-child(1) { width: 36%; }
-.renocalc-table thead th:nth-child(2) { width: 11%; }
-.renocalc-table thead th:nth-child(3) { width: 8%; }
-.renocalc-table thead th:nth-child(4) { width: 13%; }
-.renocalc-table thead th:nth-child(5) { width: 15%; }
+.renocalc-table thead th:nth-child(1) { width: 30%; }
+.renocalc-table thead th:nth-child(2) { width: 16%; }
+.renocalc-table thead th:nth-child(3) { width: 11%; }
+.renocalc-table thead th:nth-child(4) { width: 12%; }
+.renocalc-table thead th:nth-child(5) { width: 14%; }
 .renocalc-table thead th:nth-child(6) { width: 17%; }
+
+.renocalc-table thead th:nth-child(4),
+.renocalc-table thead th:nth-child(5),
+.renocalc-table thead th:nth-child(6) {
+  text-align: right;
+}
 
 .renocalc-table td {
   padding: 12px clamp(8px, 1.2vw, 14px);
@@ -356,6 +362,80 @@
   padding: 0 10px;
   font-family: var(--pv-font-mono);
   font-size: 13px;
+}
+
+.renocalc-table input[type="number"] {
+  min-width: 0;
+  padding: 0 8px;
+  text-align: center;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  -moz-appearance: textfield;
+}
+
+.renocalc-table input[type="number"]::-webkit-outer-spin-button,
+.renocalc-table input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.renocalc-table td[data-label="Preis"],
+.renocalc-table td[data-label="Gesamt"] {
+  text-align: right;
+}
+
+.renocalc-table td[data-label="VPE"] {
+  color: var(--pv-text-on-light-muted);
+}
+
+.renocalc-table td[data-label="Preis"],
+.renocalc-table td[data-label="Gesamt"],
+.renocalc-table td[data-label="VPE"] {
+  white-space: nowrap;
+}
+
+.renocalc-stepper {
+  width: 100%;
+  min-width: 104px;
+  max-width: 108px;
+  display: grid;
+  grid-template-columns: 24px minmax(52px, 1fr) 24px;
+  gap: 2px;
+  align-items: stretch;
+}
+
+.renocalc-stepper input,
+.renocalc-stepper button {
+  box-sizing: border-box;
+}
+
+.renocalc-stepper button {
+  width: 24px;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(20, 19, 18, .16);
+  background: var(--pv-cream);
+  color: var(--pv-ink);
+  cursor: pointer;
+  transition: background 160ms var(--pv-ease-out), color 160ms var(--pv-ease-out), border-color 160ms var(--pv-ease-out);
+}
+
+.renocalc-stepper button:hover:not(:disabled) {
+  background: var(--pv-ink);
+  border-color: var(--pv-ink);
+  color: var(--pv-bone);
+}
+
+.renocalc-stepper button:disabled {
+  color: var(--pv-text-on-light-faint);
+  cursor: not-allowed;
+}
+
+.renocalc-stepper svg {
+  width: 15px;
+  height: 15px;
 }
 
 .renocalc-replace {

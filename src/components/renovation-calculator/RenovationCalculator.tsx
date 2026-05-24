@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   ChevronDownIcon,
   CopyIcon,
+  MinusIcon,
   PlusIcon,
   ResetIcon,
   SwapIcon,
@@ -52,6 +53,11 @@ function typeLabel(type: RenovationProduct['type']): string {
     default:
       return 'Montage';
   }
+}
+
+function decimalPlaces(value: number): number {
+  const [, decimals = ''] = String(value).split('.');
+  return decimals.length;
 }
 
 export default function RenovationCalculator({
@@ -127,6 +133,13 @@ export default function RenovationCalculator({
       dispatch({ type: 'setArea', value: minArea });
       onLivingAreaChange?.(minArea);
     }
+  }
+
+  function stepRowQuantity(row: RenovationProduct, direction: -1 | 1) {
+    const step = row.quantityStep || 1;
+    const precision = Math.max(decimalPlaces(step), decimalPlaces(row.quantity));
+    const next = Number((row.quantity + (step * direction)).toFixed(precision));
+    dispatch({ type: 'updateQuantity', id: row.id, value: next });
   }
 
   return (
@@ -253,18 +266,37 @@ export default function RenovationCalculator({
                                   )}
                                 </td>
                                 <td data-label="Menge">
-                                  <input
-                                    type="number"
-                                    min={row.minQuantity}
-                                    step={row.quantityStep}
-                                    value={row.quantity}
-                                    onChange={(event) => dispatch({
-                                      type: 'updateQuantity',
-                                      id: row.id,
-                                      value: Number(event.target.value),
-                                    })}
-                                    aria-label={`Menge ${row.title}`}
-                                  />
+                                  <div className="renocalc-stepper">
+                                    <button
+                                      type="button"
+                                      onClick={() => stepRowQuantity(row, -1)}
+                                      disabled={row.quantity <= row.minQuantity}
+                                      title="Menge verringern"
+                                      aria-label={`Menge ${row.title} verringern`}
+                                    >
+                                      <MinusIcon aria-hidden="true" />
+                                    </button>
+                                    <input
+                                      type="number"
+                                      min={row.minQuantity}
+                                      step={row.quantityStep}
+                                      value={row.quantity}
+                                      onChange={(event) => dispatch({
+                                        type: 'updateQuantity',
+                                        id: row.id,
+                                        value: Number(event.target.value),
+                                      })}
+                                      aria-label={`Menge ${row.title}`}
+                                    />
+                                    <button
+                                      type="button"
+                                      onClick={() => stepRowQuantity(row, 1)}
+                                      title="Menge erhoehen"
+                                      aria-label={`Menge ${row.title} erhoehen`}
+                                    >
+                                      <PlusIcon aria-hidden="true" />
+                                    </button>
+                                  </div>
                                 </td>
                                 <td data-label="VPE">{row.unit}</td>
                                 <td data-label="Preis">{formatEuro(row.basePrice)}</td>
