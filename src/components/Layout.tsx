@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Outlet, useLocation, useNavigationType } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
@@ -33,7 +33,25 @@ function ScrollToTop() {
   const currentKey = useRef(key);
   const currentPathKey = useRef(pathKey);
 
-  useEffect(() => {
+  const readSavedScroll = (storageKey: string) => {
+    const value = window.sessionStorage.getItem(storageKey);
+    if (value === null) return null;
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  };
+
+  const writeScrollState = (scrollY: number) => {
+    try {
+      window.history.replaceState(
+        { ...(window.history.state ?? {}), pvScrollY: scrollY },
+        document.title,
+      );
+    } catch {
+      // Keep the sessionStorage fallback when history state is unavailable.
+    }
+  };
+
+  useLayoutEffect(() => {
     currentKey.current = key;
     currentPathKey.current = pathKey;
   }, [key, pathKey]);
@@ -45,6 +63,7 @@ function ScrollToTop() {
     const saveCurrentScroll = () => {
       lastScrollByKey.current[currentKey.current] = window.scrollY;
       lastScrollByPath.current[currentPathKey.current] = window.scrollY;
+      writeScrollState(window.scrollY);
       window.sessionStorage.setItem(`scroll:${currentKey.current}`, String(window.scrollY));
       window.sessionStorage.setItem(`scroll:${currentPathKey.current}`, String(window.scrollY));
     };
@@ -64,6 +83,7 @@ function ScrollToTop() {
     const saveScroll = () => {
       lastScrollByKey.current[key] = window.scrollY;
       lastScrollByPath.current[pathKey] = window.scrollY;
+      writeScrollState(window.scrollY);
       window.sessionStorage.setItem(`scroll:${key}`, String(window.scrollY));
       window.sessionStorage.setItem(`scroll:${pathKey}`, String(window.scrollY));
     };
@@ -76,7 +96,7 @@ function ScrollToTop() {
     };
   }, [key, navigationType, pathKey]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (hash) {
       const frame = window.requestAnimationFrame(() => {
         const target = document.getElementById(decodeURIComponent(hash.slice(1)));
@@ -115,16 +135,29 @@ function ScrollToTop() {
 
     if (navigationType === 'POP') {
       const frame = window.requestAnimationFrame(() => {
-        const storedScroll = window.sessionStorage.getItem(`scroll:${key}`);
-        const storedPathScroll = window.sessionStorage.getItem(`scroll:${pathKey}`);
-        const savedScroll = lastScrollByPath.current[pathKey]
+        const storedScroll = readSavedScroll(`scroll:${key}`);
+        const storedPathScroll = readSavedScroll(`scroll:${pathKey}`);
+        const historyScroll = window.history.state?.pvScrollY;
+        const savedScroll = (typeof historyScroll === 'number' && Number.isFinite(historyScroll) ? historyScroll : null)
           ?? lastScrollByKey.current[key]
-          ?? Number(storedPathScroll ?? storedScroll ?? 0);
+          ?? storedScroll
+          ?? lastScrollByPath.current[pathKey]
+          ?? storedPathScroll
+          ?? 0;
         const restore = () => {
           window.scrollTo({ top: savedScroll, behavior: 'instant' as ScrollBehavior });
         };
 
-        restore();
+        const restoreWhenReady = (attempt = 0) => {
+          const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+          if (savedScroll <= maxScroll || attempt > 12) {
+            restore();
+            return;
+          }
+          window.requestAnimationFrame(() => restoreWhenReady(attempt + 1));
+        };
+
+        restoreWhenReady();
         if (savedScroll > 0) {
           window.setTimeout(restore, 100);
           window.setTimeout(restore, 300);
