@@ -73,7 +73,7 @@ export default function KontaktIntro() {
       </div>
 
       <figure className="kontakt__media">
-        <img src="/assets/img/photo-office-light.jpg" alt="Heller Besprechungsraum für die Projektberatung" />
+        <img src="/assets/img/photo-office-light.jpg" alt="Heller Besprechungsraum für die Projektberatung" loading="lazy" />
         <figcaption>
           <span className="num">№ 05</span>
           <span>Erstberatung · Frankfurt &amp; Emmenbrücke</span>

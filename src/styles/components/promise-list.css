@@ -24,6 +24,6 @@
 .promise__list .num {
   font-family: var(--pv-font-mono);
   font-size: 11px;
-  color: var(--pv-copper);
+  color: var(--pv-copper-ink);
   font-weight: 500;
 }

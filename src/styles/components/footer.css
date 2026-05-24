@@ -16,7 +16,7 @@
   padding-bottom: 64px;
   border-bottom: 1px solid rgba(236, 229, 223, .15);
 }
-.pv-footer h4 {
+.pv-footer h3 {
   font-family: var(--pv-font-display);
   font-weight: 700;
   font-size: 11px;

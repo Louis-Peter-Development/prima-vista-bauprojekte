@@ -17,7 +17,7 @@
   font-size: 13px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--pv-copper);
+  color: var(--pv-copper-ink);
   margin-bottom: 32px;
 }
 .promise__title {

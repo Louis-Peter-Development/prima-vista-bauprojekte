@@ -74,6 +74,7 @@
   --pv-copper:        #826140;   /* logo P-form — primary copper */
   --pv-copper-warm:   #a07a52;   /* lighter copper for hover / accents */
   --pv-copper-bright: #c89a6a;   /* glow / highlight on dark bg */
+  --pv-copper-ink:    #7a5b37;   /* WCAG-AA safe copper for small text on cream/bone */
 
   /* Surface — Dark (main site palette) */
   --pv-ink:           #141312;   /* deepest charcoal — page bg */
@@ -92,7 +93,7 @@
   /* Text */
   --pv-text-on-dark:        #ece5df;   /* primary white-ish on dark */
   --pv-text-on-dark-muted:  #b0a89f;   /* secondary on dark */
-  --pv-text-on-dark-faint:  #6f6862;   /* tertiary on dark */
+  --pv-text-on-dark-faint:  #898279;   /* tertiary on dark (WCAG-AA on --pv-ink-1) */
   --pv-text-on-light:        #1a1a1a;
   --pv-text-on-light-muted:  #5b5752;
   --pv-text-on-light-faint:  #8a857f;
