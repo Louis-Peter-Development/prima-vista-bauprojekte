@@ -45,6 +45,9 @@
   position: relative;
   z-index: 2;
 }
+.page-intro__inner > * {
+  min-width: 0;
+}
 .crumb {
   font-family: var(--pv-font-display);
   font-size: 11px;
@@ -116,4 +119,20 @@ body .eyebrow + h3 { margin-top: 24px; }
   text-transform: none;
   color: var(--pv-ink);
   margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .page-intro h1 {
+    font-size: clamp(40px, 12.4vw, 48px);
+    line-height: 1;
+    letter-spacing: 0;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .page-intro .lede {
+    max-width: 100%;
+  }
+  .page-intro .meta-list {
+    gap: 16px 22px;
+  }
 }

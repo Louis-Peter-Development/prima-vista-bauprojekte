@@ -1,5 +1,5 @@
-import { useEffect, type KeyboardEvent } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, type PointerEvent } from 'react';
+import { Link } from 'react-router-dom';
 import SectionEyebrow from '../common/SectionEyebrow';
 import { PREVIEW_IMAGES, TRADES, type TradeRow } from '../../data/gewerke';
 
@@ -9,8 +9,6 @@ type TradeIndexProps = {
 };
 
 export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) {
-  const navigate = useNavigate();
-
   useEffect(() => {
     Object.values(PREVIEW_IMAGES).forEach((src) => {
       const img = new Image();
@@ -18,16 +16,9 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
     });
   }, []);
 
-  const handleRowClick = (row: TradeRow) => {
-    onActiveChange(row);
-    if (row.detailTo) navigate(row.detailTo);
-  };
-
-  const handleRowKeyDown = (event: KeyboardEvent<HTMLLIElement>, row: TradeRow) => {
-    if (!row.detailTo) return;
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      handleRowClick(row);
+  const handleRowPointerEnter = (event: PointerEvent, row: TradeRow) => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+      onActiveChange(row);
     }
   };
 
@@ -68,20 +59,20 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
           {TRADES.map((row) => (
             <li
               key={row.num}
-              className={`trade-list__row${row.key === active.key ? ' is-active' : ''}${row.detailTo ? ' trade-list__row--link' : ''}`}
-              onPointerEnter={() => onActiveChange(row)}
-              onMouseEnter={() => onActiveChange(row)}
-              onFocus={() => onActiveChange(row)}
-              onClick={() => handleRowClick(row)}
-              onKeyDown={(event) => handleRowKeyDown(event, row)}
-              tabIndex={row.detailTo ? 0 : undefined}
-              role={row.detailTo ? 'link' : undefined}
-              aria-label={row.detailTo ? `${row.name} Kostenrechner öffnen` : undefined}
-              aria-current={row.key === active.key ? 'true' : undefined}
+              className={row.key === active.key ? 'is-active' : undefined}
             >
-              <span className="num">{row.num}</span>
-              <span className="name">{row.name}</span>
-              <span className="lead">{row.lead}</span>
+              <Link
+                className={`trade-list__row${row.key === active.key ? ' is-active' : ''}`}
+                to={row.detailTo ?? '/kontakt'}
+                onPointerEnter={(event) => handleRowPointerEnter(event, row)}
+                onFocus={() => onActiveChange(row)}
+                aria-label={`${row.name} Kostenrechner öffnen`}
+                aria-current={row.key === active.key ? 'page' : undefined}
+              >
+                <span className="num">{row.num}</span>
+                <span className="name">{row.name}</span>
+                <span className="lead">{row.lead}</span>
+              </Link>
             </li>
           ))}
         </ul>
