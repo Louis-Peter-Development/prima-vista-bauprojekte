@@ -214,7 +214,9 @@
   gap: 24px;
   padding: 24px 0;
   border-bottom: 1px solid rgba(26, 26, 26, .12);
+  color: inherit;
   cursor: pointer;
+  text-decoration: none;
   transition: padding-left 200ms var(--pv-ease-out);
 }
 .trade-list__row:hover,

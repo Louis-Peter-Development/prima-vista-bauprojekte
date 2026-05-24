@@ -15,3 +15,23 @@
   margin: 0 0 32px;
 }
 .end-cta-local h2 em { color: var(--pv-copper); }
+
+@media (max-width: 600px) {
+  .end-cta-local {
+    padding: 88px 0;
+  }
+  .end-cta-local__inner {
+    max-width: none;
+    padding: 0 20px;
+  }
+  .end-cta-local h2 {
+    font-size: 40px;
+    letter-spacing: 0;
+  }
+  .end-cta-local .btn {
+    justify-content: center;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+}
