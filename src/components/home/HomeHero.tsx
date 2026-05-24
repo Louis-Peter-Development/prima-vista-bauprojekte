@@ -1,18 +1,39 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HERO_IMAGES } from '../../data/home';
+import { HERO_SLIDES } from '../../data/home';
 
 const PARALLAX_RANGE = 600;
+/** Stay on slide 1 long enough that LCP measurement settles before the
+ *  first rotation. Without this delay the rotation moves the LCP candidate
+ *  onto slide 2 (which is lazy + low-priority), tanking the metric. */
+const FIRST_ROTATION_DELAY = 7000;
+const ROTATION_INTERVAL = 5000;
 
 export default function HomeHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  /** Which slides have been mounted into the DOM. Starts with just the
+   *  first slide so subsequent slides don't compete for bandwidth or
+   *  trigger Lighthouse to pick a later, low-priority image as LCP. */
+  const [mountedSlides, setMountedSlides] = useState<Set<number>>(() => new Set([0]));
   const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
+    let interval: ReturnType<typeof setInterval> | undefined;
+    const advance = () => {
+      setCurrentSlide((prev) => {
+        const next = (prev + 1) % HERO_SLIDES.length;
+        setMountedSlides((s) => (s.has(next) ? s : new Set(s).add(next)));
+        return next;
+      });
+    };
+    const start = setTimeout(() => {
+      advance();
+      interval = setInterval(advance, ROTATION_INTERVAL);
+    }, FIRST_ROTATION_DELAY);
+    return () => {
+      clearTimeout(start);
+      if (interval) clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -40,13 +61,36 @@ export default function HomeHero() {
   return (
     <section className="hero" ref={heroRef}>
       <div className="hero__bg-slideshow">
-        {HERO_IMAGES.map((src, i) => (
-          <div
-            key={src}
-            className={`hero__bg-slide ${i === currentSlide ? 'is-active' : ''}`}
-            style={{ backgroundImage: `url(${src})` }}
-          />
-        ))}
+        {HERO_SLIDES.map((slide, i) => {
+          if (!mountedSlides.has(i)) return null;
+          const isFirst = i === 0;
+          const base = `/assets/img/hero/${slide.name}`;
+          return (
+            <picture
+              key={slide.name}
+              className={`hero__bg-slide ${i === currentSlide ? 'is-active' : ''}`}
+            >
+              <source
+                type="image/avif"
+                srcSet={`${base}-600.avif 600w, ${base}-800.avif 800w, ${base}-1600.avif 1600w`}
+                sizes="100vw"
+              />
+              <source
+                type="image/webp"
+                srcSet={`${base}-600.webp 600w, ${base}-800.webp 800w, ${base}-1600.webp 1600w`}
+                sizes="100vw"
+              />
+              <img
+                src={`${base}-1600.webp`}
+                alt={isFirst ? slide.alt : ''}
+                aria-hidden={isFirst ? undefined : true}
+                loading={isFirst ? 'eager' : 'lazy'}
+                fetchPriority={isFirst ? 'high' : 'low'}
+                decoding={isFirst ? 'sync' : 'async'}
+              />
+            </picture>
+          );
+        })}
         <div className="hero__bg-overlay"></div>
       </div>
 

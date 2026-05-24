@@ -1,11 +1,25 @@
 import type { LightboxItem } from '../components/Lightbox';
 import type { TradeKey } from './gewerke';
 
-export const HERO_IMAGES = [
-  '/assets/img/proj-moroccan-dining-wide.webp',
-  '/assets/img/proj-sushi-wide.webp',
-  '/assets/img/proj-lobby-tree-wide.webp',
+export type HeroSlide = {
+  /** Base name (under /assets/img/hero/) and shape: `${name}-800.avif`, `${name}-1600.webp`, etc. */
+  name: string;
+  alt: string;
+};
+
+/**
+ * Hero slideshow. Each slide ships in AVIF + WebP at 800w (mobile) and 1600w
+ * (desktop) under /assets/img/hero/. The first slide is the LCP image and gets
+ * `fetchpriority="high"`.
+ */
+export const HERO_SLIDES: HeroSlide[] = [
+  { name: 'moroccan-dining', alt: 'Restaurant Riad — marokkanisches Esszimmer' },
+  { name: 'sushi', alt: 'Sushi Bar — Innenausbau' },
+  { name: 'lobby-tree', alt: 'Office Lobby mit Pflanzenkonzept' },
 ];
+
+/** Back-compat for any caller that still imports HERO_IMAGES (high-res fallback). */
+export const HERO_IMAGES = HERO_SLIDES.map((s) => `/assets/img/hero/${s.name}-1600.webp`);
 
 export const HOME_TRADES = [
   'Sanierung', 'Renovierung', 'Gastronomie-Ausbau', 'Bäder', 'Küchen', 'Böden',

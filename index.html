@@ -7,8 +7,14 @@
     <title>Premium Sanierung & Bau in Frankfurt und Emmenbrücke | Prima Vista Bauprojekte</title>
     <meta name="description" content="Prima Vista Bauprojekte — Komplett-Sanierung, alle Gewerke aus einer Hand, Festpreisgarantie und Bauleitung in Frankfurt und Emmenbrücke." />
 
-    <!-- Preload critical above-the-fold assets to cut LCP / FCP -->
-    <link rel="preload" as="image" type="image/webp" href="/assets/img/proj-moroccan-dining-wide.webp" fetchpriority="high" />
+    <!-- Preload the LCP hero. imagesrcset + imagesizes mirrors the
+         <picture> in HomeHero so the browser picks the right width per
+         viewport. AVIF is supported in Chrome / Firefox / Safari 16+ —
+         browsers without it fall back to the <source type="image/webp">
+         once HTML parses, losing only the preload optimization. -->
+    <link rel="preload" as="image" type="image/avif"
+          imagesrcset="/assets/img/hero/moroccan-dining-600.avif 600w, /assets/img/hero/moroccan-dining-800.avif 800w, /assets/img/hero/moroccan-dining-1600.avif 1600w"
+          imagesizes="100vw" fetchpriority="high" />
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/CormorantGaramond-VariableFont_wght.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/Inter-VariableFont_opsz_wght.woff2" crossorigin />
 
