@@ -2,7 +2,10 @@
 .pv-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  /* Must stay above the cookie banner (z-index 80) — sticky positioning
+     creates a stacking context, so the mobile menu nested inside the header
+     can only render above the cookie when the header itself does. */
+  z-index: 100;
   background: var(--pv-white);
   border-bottom: 1px solid rgba(26, 26, 26, .08);
   transition: background 200ms var(--pv-ease-out), border-color 200ms var(--pv-ease-out);

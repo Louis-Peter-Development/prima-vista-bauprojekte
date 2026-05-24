@@ -1,0 +1,29 @@
+/* ----- Promise list (numbered manifesto bullets)
+   Used on Home, Blitz-Angebot intro, Kontakt form footer, etc.
+   Lives outside the home stylesheet so it loads on every page. ----- */
+.promise__list {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(26, 26, 26, .15);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  list-style: none;
+  padding-left: 0;
+}
+.promise__list li {
+  font-family: var(--pv-font-display);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-ink-2);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.promise__list .num {
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  color: var(--pv-copper);
+  font-weight: 500;
+}

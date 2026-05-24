@@ -10,8 +10,13 @@
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }
 }
-@media (max-width: 880px) {
+/* Hide the fixed social rail until the viewport is wide enough to have a real
+   side gutter beside the 1280px content container. Below this, the rail would
+   sit on top of headline text and project cards. */
+@media (max-width: 1380px) {
   .pv-social-rail { display: none; }
+}
+@media (max-width: 880px) {
   .pv-footer { padding: 64px 0 28px; }
   .pv-footer__inner { padding: 0 24px; }
   .pv-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
