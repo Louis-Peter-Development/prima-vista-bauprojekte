@@ -42,3 +42,6 @@ out
 
 # Local site export
 Site Files/
+
+# Local Netlify folder
+.netlify
