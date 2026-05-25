@@ -16,14 +16,17 @@
     font-size: 7.5px;
     letter-spacing: 0.26em;
   }
-  .pv-nav { gap: 14px; }
+  .pv-nav {
+    margin-left: 32px;
+  }
   .pv-nav__list {
     display: flex;
-    gap: 13px;
+    gap: 20px;
   }
   .pv-nav__list a {
-    font-size: 9px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
   }
   .pv-header__cta {
     display: inline-flex;
@@ -39,6 +42,10 @@
   .pv-mobile-menu { top: 80px; }
 }
 @media (max-width: 980px) {
+  .pv-nav {
+    justify-content: flex-end;
+    margin-left: 0;
+  }
   .pv-nav__list,
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }

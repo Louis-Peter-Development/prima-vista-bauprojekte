@@ -54,22 +54,24 @@
   white-space: nowrap;
 }
 .pv-nav {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 32px;
+  justify-content: space-between;
+  margin-left: 64px;
 }
 .pv-nav__list {
   display: flex;
-  gap: 28px;
+  gap: 36px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .pv-nav__list a {
   font-family: var(--pv-font-display);
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--pv-ink);
   transition: color 140ms var(--pv-ease-out);
