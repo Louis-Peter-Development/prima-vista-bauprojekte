@@ -1,5 +1,5 @@
 import type { RenovationPackage } from '../types';
-import { createBossmannHousePackage } from './bossmann-house';
+import { createBossmannHousePackage } from './aligned-house';
 
 export const packageBlitzHaus1: RenovationPackage = createBossmannHousePackage(
   '1e-d',
