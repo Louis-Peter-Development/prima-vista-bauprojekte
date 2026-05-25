@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function Dachsanierung() {
-  usePageTitle('Dachsanierung Kostenrechner | Prima Vista');
+  usePageTitle('Dachsanierung Kostenrechner');
 
   return (
     <>

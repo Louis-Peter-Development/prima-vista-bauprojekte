@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function AbdichtungKeller() {
-  usePageTitle('Abdichtung & Keller | Prima Vista');
+  usePageTitle('Abdichtung & Keller');
 
   return (
     <>

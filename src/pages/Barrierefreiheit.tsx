@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function Barrierefreiheit() {
-  usePageTitle('Barrierefreies Bad Kostenrechner | Prima Vista');
+  usePageTitle('Barrierefreies Bad Kostenrechner');
 
   return (
     <>

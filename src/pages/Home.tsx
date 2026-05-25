@@ -197,7 +197,7 @@ export default function Home() {
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Gewerke</div>
             <h2>
-              Achtzehn Gewerke,<br />
+              Neunzehn Gewerke,<br />
               <em>eine Hand.</em>
             </h2>
           </div>
@@ -224,7 +224,7 @@ export default function Home() {
         </ul>
         <div className="trades-preview__more reveal">
           <Link className="btn btn--light" to="/gewerke">
-            Alle 18 Gewerke ansehen <span className="arrow">&gt;</span>
+            Alle 19 Gewerke ansehen <span className="arrow">&gt;</span>
           </Link>
         </div>
       </section>

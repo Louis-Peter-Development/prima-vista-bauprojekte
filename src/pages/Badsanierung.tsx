@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function Badsanierung() {
-  usePageTitle('Badsanierung & Gäste-WC | Prima Vista');
+  usePageTitle('Badsanierung & Gäste-WC');
 
   return (
     <>

@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function BoedenBelaege() {
-  usePageTitle('Böden & Beläge Kostenrechner | Prima Vista');
+  usePageTitle('Böden & Beläge Kostenrechner');
 
   return (
     <>

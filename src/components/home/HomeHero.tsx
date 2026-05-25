@@ -85,7 +85,7 @@ export default function HomeHero() {
                 alt={isFirst ? slide.alt : ''}
                 aria-hidden={isFirst ? undefined : true}
                 loading={isFirst ? 'eager' : 'lazy'}
-                fetchPriority={isFirst ? 'high' : 'low'}
+                {...{ fetchpriority: isFirst ? 'high' : 'low' }}
                 decoding={isFirst ? 'sync' : 'async'}
               />
             </picture>

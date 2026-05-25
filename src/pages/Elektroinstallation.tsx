@@ -6,7 +6,7 @@ import '../styles/pages/kalkulator.css';
 import '../styles/pages/haus-sanierung.css';
 
 export default function Elektroinstallation() {
-  usePageTitle('Elektroinstallation Kostenrechner | Prima Vista');
+  usePageTitle('Elektroinstallation Kostenrechner');
 
   return (
     <>
