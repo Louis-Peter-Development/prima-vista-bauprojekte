@@ -235,7 +235,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('rohb-201-mat', 'stahltraeger-basis-haus', 'stahltraeger-basis-haus-sub', `STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**`, 'ROHB-201-MAT', 1781.33, 'Stk', `Profil HE-A-140 - (max. 2m) |**Varianten**`, false, true, 1, 'optional'),
-            createProduct('rohb-201-1-zu', 'stahltraeger-basis-haus', 'stahltraeger-basis-haus-sub', `BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage`, 'ROHB-201-1-ZU', 188.1, 'Stk', `**VARIANTEN** | 🛠 Zusatz-Montage`, false, true, 2, 'optional')
+            createProduct('rohb-201-1-zu', 'stahltraeger-basis-haus', 'stahltraeger-basis-haus-sub', `BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage`, 'ROHB-201-1-ZU', 188.1, 'Stk', `**VARIANTEN** | 🛠 Zusatz-Montage`, true, true, 2, 'optional')
           ]
         }
       ]
@@ -275,7 +275,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('mon-10222', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ESTRICH | 🛠 Montage`, 'MON-10222', 29, 'qm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -292,7 +292,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           products: [
             createProduct('uv298-373', 'material', 'material-sub', `Holcim ECOPact - klimafreundlicher Transportbeton für Außenbauteile - C25/30 XC4 XF1 XA1 F3 L`, 'uv298-373', 4973.95, 'Lieferung', `Holcim ECOPact - klimafreundlicher Transportbeton für Außenbauteile - C25/30 XC4 XF1 XA1 F3 L`, true, false, 1, 'material'),
             createProduct('uv50-00011', 'material', 'material-sub', `Bekaert Armanet-D Distanet Armierungsgitter Maschenweite 19,0x19,0x1,0 mm - 2 m Tafel`, 'uv50-00011', 38.45, 'Stk', `Bekaert Armanet-D Distanet Armierungsgitter Maschenweite 19,0x19,0x1,0 mm - 2 m Tafel`, true, false, 20, 'material'),
-            createProduct('uv21-117', 'material', 'material-sub', `ALUJET Jetfoam Dämmbahn RS grn | 8 mm, Rolle á 50 m`, 'uv21-117', 32.89, 'Rolle', `8 mm, Rolle á 50 m`, true, false, 1, 'material'),
+            createProduct('uv21-117', 'material', 'material-sub', `ALUJET Jetfoam Dämmbahn RS grn | 8 mm, Rolle á 50 m`, 'uv21-117', 32.89, 'Rolle', `8 mm, Rolle á 50 m`, false, false, 1, 'material'),
             createProduct('uv204-000321', 'material', 'material-sub', `Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm`, 'uv204-000321', 26.39, 'Stk', `Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm`, true, false, 1, 'material')
           ]
         }
@@ -308,7 +308,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('mon-10222-2', 'optionale-positionen', 'optionale-positionen-sub', `ESTRICH | 🛠 Montage`, 'MON-10222', 29, 'qm', `🛠 Montage`, false, true, 1, 'optional'),
+            createProduct('mon-10222-2', 'optionale-positionen', 'optionale-positionen-sub', `ESTRICH | 🛠 Montage`, 'MON-10222', 29, 'qm', `🛠 Montage`, true, true, 1, 'optional'),
             createProduct('rohb-501-1-op-2', 'optionale-positionen', 'optionale-positionen-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, true, 1, 'optional')
           ]
         }
@@ -324,13 +324,13 @@ export const packageRohbauEstrich: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('204-00071', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Kleber - 1 kg Flasche`, '204-00071', 25.19, 'Stk', `Fermacell Estrich-Kleber - 1 kg Flasche`, true, false, 1, 'extra'),
-            createProduct('204-00073', 'extra-positionen', 'extra-positionen-sub', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, '204-00073', 21.89, 'Stk', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, true, false, 1, 'extra'),
+            createProduct('204-00071', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Kleber - 1 kg Flasche`, '204-00071', 25.19, 'Stk', `Fermacell Estrich-Kleber - 1 kg Flasche`, false, false, 1, 'extra'),
+            createProduct('204-00073', 'extra-positionen', 'extra-positionen-sub', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, '204-00073', 21.89, 'Stk', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, false, false, 1, 'extra'),
             createProduct('rohb-501-2-op', 'extra-positionen', 'extra-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, true, false, 1, 'extra'),
-            createProduct('204-85', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, true, false, 1, 'extra'),
-            createProduct('204-00088', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, true, false, 1, 'extra'),
-            createProduct('204-00086', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, true, false, 1, 'extra'),
-            createProduct('021-187', 'extra-positionen', 'extra-positionen-sub', `ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m`, '021-187', 270.6, 'Stk', `ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m`, true, false, 1, 'extra')
+            createProduct('204-85', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, false, false, 1, 'extra'),
+            createProduct('204-00088', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, false, false, 1, 'extra'),
+            createProduct('204-00086', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, false, false, 1, 'extra'),
+            createProduct('021-187', 'extra-positionen', 'extra-positionen-sub', `ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m`, '021-187', 270.6, 'Stk', `ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -355,7 +355,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('rohb-201-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**`, 'ROHB-201-MAT', 1781.33, 'Stk', `Profil HE-A-140 - (max. 2m) |**Varianten**`, false, true, 1, 'optional'),
-            createProduct('rohb-201-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage`, 'ROHB-201-1-ZU', 188.1, 'Stk', `**VARIANTEN** | 🛠 Zusatz-Montage`, false, true, 2, 'optional'),
+            createProduct('rohb-201-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage`, 'ROHB-201-1-ZU', 188.1, 'Stk', `**VARIANTEN** | 🛠 Zusatz-Montage`, true, true, 2, 'optional'),
             createProduct('rohb-100-au', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `Weitere Produkte - zu ROHBAU |**Varianten**`, 'ROHB-100-AU', 0, 'Stk', `**Varianten**`, false, true, 1, 'optional')
           ]
         }
@@ -413,8 +413,8 @@ export const packageRohbauVerputzen: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('rohb-401-mat', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `WANDPUTZ-GIPS | 🛠 Montage-Leistungspaket`, 'ROHB-401-MAT', 34.6, 'qm', `🛠 Montage-Leistungspaket`, true, false, 100, 'service'),
-            createProduct('rohb-401-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-PUTZ |🛠 Demontage & Entsorgung`, 'ROHB-401-1-OP', 11.88, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
-            createProduct('rohb-401-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERPUTZEN DES DURCHGANGS | 🛠 Zusatz-Montage`, 'ROHB-401-ZU', 465.35, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra')
+            createProduct('rohb-401-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-PUTZ |🛠 Demontage & Entsorgung`, 'ROHB-401-1-OP', 11.88, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'service'),
+            createProduct('rohb-401-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `VERPUTZEN DES DURCHGANGS | 🛠 Zusatz-Montage`, 'ROHB-401-ZU', 465.35, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -431,8 +431,8 @@ export const packageRohbauVerputzen: RenovationPackage = {
           products: [
             createProduct('uv50-00004', 'material', 'material-sub', `Bekaert Armanet Putzarmierungsgitter Maschenweite 12,7x12,7x1,0 mm - 25 m Rolle`, 'uv50-00004', 381.63, 'Rolle', `Bekaert Armanet Putzarmierungsgitter Maschenweite 12,7x12,7x1,0 mm - 25 m Rolle`, true, false, 4, 'material'),
             createProduct('uv545-00450', 'material', 'material-sub', `Protektor Nr.: 1044Z Kantenprofil 135° für den Innen- und Außenputz`, 'uv545-00450', 33.77, 'lfm', `Protektor Nr.: 1044Z Kantenprofil 135° für den Innen- und Außenputz`, true, false, 10, 'material'),
-            createProduct('uv545-00534', 'material', 'material-sub', `Protektor Nr.: 1005 Kantenprofil für den Innenputz`, 'uv545-00534', 1.36, 'lfm', `Protektor Nr.: 1005 Kantenprofil für den Innenputz`, true, false, 1, 'material'),
-            createProduct('uv121-2119', 'material', 'material-sub', `Claytec YOSIMA Lehm-Designputz SCRO 1.0 - siena-braun`, 'uv121-2119', 87.88, 'Stk', `Claytec YOSIMA Lehm-Designputz SCRO 1.0 - siena-braun`, true, false, 1, 'material')
+            createProduct('uv545-00534', 'material', 'material-sub', `Protektor Nr.: 1005 Kantenprofil für den Innenputz`, 'uv545-00534', 1.36, 'lfm', `Protektor Nr.: 1005 Kantenprofil für den Innenputz`, false, false, 1, 'material'),
+            createProduct('uv121-2119', 'material', 'material-sub', `Claytec YOSIMA Lehm-Designputz SCRO 1.0 - siena-braun`, 'uv121-2119', 87.88, 'Stk', `Claytec YOSIMA Lehm-Designputz SCRO 1.0 - siena-braun`, false, false, 1, 'material')
           ]
         }
       ]
@@ -520,14 +520,14 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('uv4-11036', 'extra-positionen', 'extra-positionen-sub', `ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN`, 'uv4-11036', 349.01, 'Stk', `ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN`, true, false, 1, 'extra'),
-            createProduct('uv4-11051', 'extra-positionen', 'extra-positionen-sub', `ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte`, 'uv4-11051', 499.46, 'Stk', `ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte`, true, false, 1, 'extra'),
-            createProduct('uv4-11579', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung mit Längsprofilrost und Einfassungsrahmen Silber für Kunststofflichtschächte`, 'uv4-11579', 1759.03, 'Stk', `ACO Vario Designabdeckung mit Längsprofilrost und Einfassungsrahmen Silber für Kunststofflichtschächte`, true, false, 1, 'extra'),
-            createProduct('uv4-11605', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung Teilglas mit Maschenrost und Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, 'uv4-11605', 2229.1, 'Stk', `ACO Vario Designabdeckung Teilglas mit Maschenrost und Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, true, false, 1, 'extra'),
-            createProduct('uv4-11617', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung Vollglas mit Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, 'uv4-11617', 1873.22, 'Stk', `ACO Vario Designabdeckung Vollglas mit Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, true, false, 1, 'extra'),
-            createProduct('uv4-110991', 'extra-positionen', 'extra-positionen-sub', `ACO Rückwand für Kunststofflichtschächte mit 600 mm Tiefe`, 'uv4-110991', 150.15, 'Stk', `ACO Rückwand für Kunststofflichtschächte mit 600 mm Tiefe`, true, false, 1, 'extra'),
-            createProduct('uv4-11112', 'extra-positionen', 'extra-positionen-sub', `ACO Therm® Block Erhöhungselement für Therm Block Standardmontage für Kunststofflichtschächte 1230x650 mm`, 'uv4-11112', 293.22, 'Stk', `ACO Therm® Block Erhöhungselement für Therm Block Standardmontage für Kunststofflichtschächte 1230x650 mm`, true, false, 1, 'extra'),
-            createProduct('uv4-11133', 'extra-positionen', 'extra-positionen-sub', `ACO Therm® Block Leibungselement Set für Therm Block Set 1000x1000 mm für Kunststofflichtschächte`, 'uv4-11133', 238.24, 'Stk', `ACO Therm® Block Leibungselement Set für Therm Block Set 1000x1000 mm für Kunststofflichtschächte`, true, false, 1, 'extra')
+            createProduct('uv4-11036', 'extra-positionen', 'extra-positionen-sub', `ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN`, 'uv4-11036', 349.01, 'Stk', `ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN`, false, false, 1, 'extra'),
+            createProduct('uv4-11051', 'extra-positionen', 'extra-positionen-sub', `ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte`, 'uv4-11051', 499.46, 'Stk', `ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte`, false, false, 1, 'extra'),
+            createProduct('uv4-11579', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung mit Längsprofilrost und Einfassungsrahmen Silber für Kunststofflichtschächte`, 'uv4-11579', 1759.03, 'Stk', `ACO Vario Designabdeckung mit Längsprofilrost und Einfassungsrahmen Silber für Kunststofflichtschächte`, false, false, 1, 'extra'),
+            createProduct('uv4-11605', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung Teilglas mit Maschenrost und Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, 'uv4-11605', 2229.1, 'Stk', `ACO Vario Designabdeckung Teilglas mit Maschenrost und Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, false, false, 1, 'extra'),
+            createProduct('uv4-11617', 'extra-positionen', 'extra-positionen-sub', `ACO Vario Designabdeckung Vollglas mit Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, 'uv4-11617', 1873.22, 'Stk', `ACO Vario Designabdeckung Vollglas mit Einfassungsrahmen Anthrazit für Kunststofflichtschächte`, false, false, 1, 'extra'),
+            createProduct('uv4-110991', 'extra-positionen', 'extra-positionen-sub', `ACO Rückwand für Kunststofflichtschächte mit 600 mm Tiefe`, 'uv4-110991', 150.15, 'Stk', `ACO Rückwand für Kunststofflichtschächte mit 600 mm Tiefe`, false, false, 1, 'extra'),
+            createProduct('uv4-11112', 'extra-positionen', 'extra-positionen-sub', `ACO Therm® Block Erhöhungselement für Therm Block Standardmontage für Kunststofflichtschächte 1230x650 mm`, 'uv4-11112', 293.22, 'Stk', `ACO Therm® Block Erhöhungselement für Therm Block Standardmontage für Kunststofflichtschächte 1230x650 mm`, false, false, 1, 'extra'),
+            createProduct('uv4-11133', 'extra-positionen', 'extra-positionen-sub', `ACO Therm® Block Leibungselement Set für Therm Block Set 1000x1000 mm für Kunststofflichtschächte`, 'uv4-11133', 238.24, 'Stk', `ACO Therm® Block Leibungselement Set für Therm Block Set 1000x1000 mm für Kunststofflichtschächte`, false, false, 1, 'extra')
           ]
         }
       ]

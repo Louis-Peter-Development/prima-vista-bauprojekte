@@ -228,8 +228,8 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -268,7 +268,7 @@ export const packageBoedenParkettAufbereiten: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -340,8 +340,8 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -397,7 +397,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -491,8 +491,8 @@ export const packageBoedenKorkboden: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -562,9 +562,9 @@ export const packageBoedenVinyl: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('763-10094', 'optionale-positionen', 'optionale-positionen-sub', `Ziro Lino-klick Linoleumboden HDF | 620x450x10 mm | Velluto Kurzdiele`, '763-10094', 55, 'Stk', `620x450x10 mm | Velluto Kurzdiele`, true, true, 1, 'optional'),
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('763-10094', 'optionale-positionen', 'optionale-positionen-sub', `Ziro Lino-klick Linoleumboden HDF | 620x450x10 mm | Velluto Kurzdiele`, '763-10094', 55, 'Stk', `620x450x10 mm | Velluto Kurzdiele`, false, true, 1, 'optional'),
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -589,7 +589,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('mon-10222', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ESTRICH | 🛠 Montage`, 'MON-10222', 29, 'qm', `🛠 Montage`, true, false, 100, 'service'),
-            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -636,9 +636,9 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('rohb-501-2-op', 'optionale-positionen', 'optionale-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, true, true, 1, 'optional'),
-            createProduct('204-85', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, true, true, 1, 'optional'),
-            createProduct('204-00088', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, true, true, 1, 'optional'),
-            createProduct('204-00086', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, true, true, 1, 'optional')
+            createProduct('204-85', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, false, true, 1, 'optional'),
+            createProduct('204-00088', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, false, true, 1, 'optional'),
+            createProduct('204-00086', 'optionale-positionen', 'optionale-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -662,13 +662,13 @@ export const packageBoedenSichtestrich: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-100-2-OP', 0, '-', `-`, true, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-100-2-OP', 0, '-', `-`, false, true, 1, 'optional'),
             createProduct('rohb-501-mat', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'ROHB-501-MAT', 0, '-', `-`, true, true, 100, 'optional'),
             createProduct('rohb-501-1-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'ROHB-501-1-OP', 0, '-', `-`, true, true, 100, 'optional'),
-            createProduct('rohb-501-2-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'ROHB-501-2-OP', 0, '-', `-`, true, true, 1, 'optional'),
-            createProduct('bode-701-mat', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-701-MAT', 0, '-', `-`, true, true, 1, 'optional'),
-            createProduct('v520-00029', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'v520-00029', 0, '-', `-`, true, true, 1, 'optional'),
-            createProduct('bode-100-1-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-100-1-OP', 0, '-', `-`, true, true, 1, 'optional')
+            createProduct('rohb-501-2-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'ROHB-501-2-OP', 0, '-', `-`, false, true, 1, 'optional'),
+            createProduct('bode-701-mat', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-701-MAT', 0, '-', `-`, false, true, 1, 'optional'),
+            createProduct('v520-00029', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'v520-00029', 0, '-', `-`, false, true, 1, 'optional'),
+            createProduct('bode-100-1-op', 'optionale-positionen', 'optionale-positionen-sub', `-`, 'BODE-100-1-OP', 0, '-', `-`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -738,8 +738,8 @@ export const packageBoedenTeppich: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, true, true, 1, 'optional')
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('bode-100-2-op', 'optionale-positionen', 'optionale-positionen-sub', `AUSGLEICH-Boden | max. 1 cm der Bodenfläche`, 'BODE-100-2-OP', 39.9, 'qm', `max. 1 cm der Bodenfläche`, false, true, 1, 'optional')
           ]
         }
       ]

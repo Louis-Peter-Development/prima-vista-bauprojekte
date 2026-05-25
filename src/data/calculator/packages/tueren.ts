@@ -316,7 +316,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('mon-10238', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `HEBESCHIEBE | 🛠 Montage`, 'MON-10238', 395, 'qm', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -427,7 +427,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('tuer-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `TÜREN | 🛠 Montage-Leistungspaket`, 'TUER-100-BASIS', 149.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('tuer-101-1-zu', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-TÜREN |🛠 Demontage & Entsorgung`, 'TUER-101-1-ZU', 49.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]

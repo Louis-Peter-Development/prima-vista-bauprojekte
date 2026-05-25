@@ -181,7 +181,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
           products: [
             createProduct('troc-100-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `DECKEN | 🛠 Montage-Leistungspaket`, 'TROC-100-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, true, false, 100, 'service'),
             createProduct('troc-101-1-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage`, 'TROC-101-1-ZU', 22.82, 'qm', `STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage`, true, false, 100, 'extra'),
-            createProduct('troc-201-2-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage`, 'TROC-201-2-ZU', 67.37, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra')
+            createProduct('troc-201-2-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage`, 'TROC-201-2-ZU', 67.37, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -239,10 +239,10 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('troc-200-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `WÄNDE | 🛠 Montage-Leistungspaket`, 'TROC-200-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, true, false, 100, 'service'),
-            createProduct('troc-300-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VORSATZWÄNDE | 🛠 Montage-Leistungspaket`, 'TROC-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('troc-300-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VORSATZWÄNDE | 🛠 Montage-Leistungspaket`, 'TROC-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('troc-101-1-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage`, 'TROC-101-1-ZU', 22.82, 'qm', `STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage`, true, false, 100, 'extra'),
             createProduct('troc-201-1-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage`, 'TROC-201-1-ZU', 64.22, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('troc-201-2-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage`, 'TROC-201-2-ZU', 67.37, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra')
+            createProduct('troc-201-2-zu', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage`, 'TROC-201-2-ZU', 67.37, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -273,9 +273,9 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('troc-401-zu', 'extra-positionen', 'extra-positionen-sub', `ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage`, 'TROC-401-ZU', 235.91, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('troc-501-zu', 'extra-positionen', 'extra-positionen-sub', `DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage`, 'TROC-501-ZU', 423.81, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
-            createProduct('uv169-236', 'extra-positionen', 'extra-positionen-sub', `ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand`, 'uv169-236', 927.65, 'Stk', `ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand`, true, false, 1, 'extra')
+            createProduct('troc-401-zu', 'extra-positionen', 'extra-positionen-sub', `ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage`, 'TROC-401-ZU', 235.91, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('troc-501-zu', 'extra-positionen', 'extra-positionen-sub', `DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage`, 'TROC-501-ZU', 423.81, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
+            createProduct('uv169-236', 'extra-positionen', 'extra-positionen-sub', `ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand`, 'uv169-236', 927.65, 'Stk', `ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -347,7 +347,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           products: [
             createProduct('auspan2021-03', 'optionale-positionen', 'optionale-positionen-sub', `JOKA PARO AKUSTIK Echtholzpaneel GEPRÄGT 2400 x 600 x 20 mm,`, 'AUSPAN2021_03', 132.28, 'qm', `JOKA PARO AKUSTIK Echtholzpaneel GEPRÄGT 2400 x 600 x 20 mm,`, false, true, 1, 'optional'),
             createProduct('737-00336', 'optionale-positionen', 'optionale-positionen-sub', `De Ryck Steinriemchen Murok Sierra M47`, '737-00336', 90.42, 'Stk', `De Ryck Steinriemchen Murok Sierra M47`, false, true, 1, 'optional'),
-            createProduct('080-28', 'optionale-positionen', 'optionale-positionen-sub', `Botament M21 HP Premium-Flexkleber - 25Kg`, '080-28', 47.96, 'Stk', `Botament M21 HP Premium-Flexkleber - 25Kg`, false, true, 2, 'optional')
+            createProduct('080-28', 'optionale-positionen', 'optionale-positionen-sub', `Botament M21 HP Premium-Flexkleber - 25Kg`, '080-28', 47.96, 'Stk', `Botament M21 HP Premium-Flexkleber - 25Kg`, true, true, 2, 'optional')
           ]
         }
       ]
@@ -362,9 +362,9 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('troc-300-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VORSATZWÄNDE | 🛠 Montage-Leistungspaket`, 'TROC-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('556617', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `Rigips Gipsplatte`, '556617', 3.49, 'qm', `Rigips Gipsplatte`, true, false, 1, 'material'),
-            createProduct('1010766', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal`, '1010766', 8.9, 'qm', `Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal`, true, false, 1, 'material')
+            createProduct('troc-300-basis', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `VORSATZWÄNDE | 🛠 Montage-Leistungspaket`, 'TROC-300-BASIS', 49, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
+            createProduct('556617', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `Rigips Gipsplatte`, '556617', 3.49, 'qm', `Rigips Gipsplatte`, false, false, 1, 'material'),
+            createProduct('1010766', 'trockenbau-basis-haus', 'trockenbau-basis-haus-sub', `Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal`, '1010766', 8.9, 'qm', `Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal`, false, false, 1, 'material')
           ]
         }
       ]
@@ -389,7 +389,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('mon-10222', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ESTRICH | 🛠 Montage`, 'MON-10222', 29, 'qm', `🛠 Montage`, true, false, 100, 'service'),
-            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('rohb-501-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -422,9 +422,9 @@ export const packageTrockenbauEstrich: RenovationPackage = {
             createProduct('204-00071', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Kleber - 1 kg Flasche`, '204-00071', 25.19, 'Stk', `Fermacell Estrich-Kleber - 1 kg Flasche`, true, false, 2, 'extra'),
             createProduct('204-00073', 'extra-positionen', 'extra-positionen-sub', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, '204-00073', 21.89, 'Stk', `Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück`, true, false, 2, 'extra'),
             createProduct('rohb-501-2-op', 'extra-positionen', 'extra-positionen-sub', `Ausgleichsschüttung Herstellen (bis 3 cm)`, 'ROHB-501-2-OP', 11.68, 'qm', `Ausgleichsschüttung Herstellen (bis 3 cm)`, true, false, 1, 'extra'),
-            createProduct('204-85', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, true, false, 1, 'extra'),
-            createProduct('204-00088', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, true, false, 1, 'extra'),
-            createProduct('204-00086', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, true, false, 1, 'extra')
+            createProduct('204-85', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wabenschüttung - 15 Liter Sack`, '204-85', 9.24, 'Stk', `Fermacell Wabenschüttung - 15 Liter Sack`, false, false, 1, 'extra'),
+            createProduct('204-00088', 'extra-positionen', 'extra-positionen-sub', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, '204-00088', 25.85, 'Stk', `Fermacell Wärmedämmschüttung - 100 Liter Sack`, false, false, 1, 'extra'),
+            createProduct('204-00086', 'extra-positionen', 'extra-positionen-sub', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, '204-00086', 15.84, 'Stk', `Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -465,13 +465,13 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           products: [
             createProduct('dach-601-1-zu', 'extra-positionen', 'extra-positionen-sub', `VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage`, 'DACH-601-1-ZU', 24.9, 'qm', `STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage`, true, false, 100, 'extra'),
             createProduct('dach-600-2-op', 'extra-positionen', 'extra-positionen-sub', `ALT-DÄMMUNG |🛠 Demontage & Entsorgung`, 'DACH-600-2-OP', 13.4, 'qm', `🛠 Demontage & Entsorgung`, true, false, 100, 'extra'),
-            createProduct('dach-602-mon', 'extra-positionen', 'extra-positionen-sub', `DÄMMUNG | 🛠 Montage`, 'DACH-602-MON', 29, 'qm', `🛠 Montage`, true, false, 1, 'extra'),
-            createProduct('688152', 'extra-positionen', 'extra-positionen-sub', `Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO`, '688152', 41.86, 'qm', `Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO`, true, false, 1, 'extra'),
-            createProduct('uv569-00014', 'extra-positionen', 'extra-positionen-sub', `Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm`, 'uv569-00014', 59.83, 'Pak', `Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm`, true, false, 1, 'extra'),
-            createProduct('uv383-00605', 'extra-positionen', 'extra-positionen-sub', `Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm`, 'uv383-00605', 134.15, 'Stk', `Dicke: 25 mm | LxB: 300 x 300 mm`, true, false, 1, 'extra'),
-            createProduct('dach-500-basis', 'extra-positionen', 'extra-positionen-sub', `DACHFENSTER | 🛠 Montage-Leistungspaket`, 'DACH-500-BASIS', 795.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('uv702-1369', 'extra-positionen', 'extra-positionen-sub', `Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster`, 'uv702-1369', 1147.8, 'Stk', `Schwingfenster Solarfenster`, true, false, 1, 'extra'),
-            createProduct('uv704-91870', 'extra-positionen', 'extra-positionen-sub', `Velux DG Verdunkelungs-Rollo manuell`, 'uv704-91870', 83.72, 'Stk', `Velux DG Verdunkelungs-Rollo manuell`, true, false, 1, 'extra')
+            createProduct('dach-602-mon', 'extra-positionen', 'extra-positionen-sub', `DÄMMUNG | 🛠 Montage`, 'DACH-602-MON', 29, 'qm', `🛠 Montage`, false, false, 1, 'extra'),
+            createProduct('688152', 'extra-positionen', 'extra-positionen-sub', `Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO`, '688152', 41.86, 'qm', `Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO`, false, false, 1, 'extra'),
+            createProduct('uv569-00014', 'extra-positionen', 'extra-positionen-sub', `Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm`, 'uv569-00014', 59.83, 'Pak', `Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm`, false, false, 1, 'extra'),
+            createProduct('uv383-00605', 'extra-positionen', 'extra-positionen-sub', `Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm`, 'uv383-00605', 134.15, 'Stk', `Dicke: 25 mm | LxB: 300 x 300 mm`, false, false, 1, 'extra'),
+            createProduct('dach-500-basis', 'extra-positionen', 'extra-positionen-sub', `DACHFENSTER | 🛠 Montage-Leistungspaket`, 'DACH-500-BASIS', 795.9, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('uv702-1369', 'extra-positionen', 'extra-positionen-sub', `Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster`, 'uv702-1369', 1147.8, 'Stk', `Schwingfenster Solarfenster`, false, false, 1, 'extra'),
+            createProduct('uv704-91870', 'extra-positionen', 'extra-positionen-sub', `Velux DG Verdunkelungs-Rollo manuell`, 'uv704-91870', 83.72, 'Stk', `Velux DG Verdunkelungs-Rollo manuell`, false, false, 1, 'extra')
           ]
         }
       ]

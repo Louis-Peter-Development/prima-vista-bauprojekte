@@ -152,7 +152,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('fens-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `FENSTER & Türen | 🛠 Montage-Leistungspaket`, 'FENS-100-BASIS', 415.31, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 5, 'service'),
-            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -231,7 +231,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('fens-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `FENSTER & Türen | 🛠 Montage-Leistungspaket`, 'FENS-100-BASIS', 415.31, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 5, 'service'),
-            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -310,7 +310,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('fens-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `FENSTER & Türen | 🛠 Montage-Leistungspaket`, 'FENS-100-BASIS', 415.31, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 5, 'service'),
-            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -403,7 +403,7 @@ export const packageFensterFensterlaeden: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('fens-101-basis', 'material', 'material-sub', `ROLLADENPANZER | Antrieb-MANUELL |**Varianten**`, 'FENS-101-BASIS', 1292, 'Stk', `Antrieb-MANUELL |**Varianten**`, false, true, 1, 'optional')
+            createProduct('fens-101-basis', 'material', 'material-sub', `ROLLADENPANZER | Antrieb-MANUELL |**Varianten**`, 'FENS-101-BASIS', 1292, 'Stk', `Antrieb-MANUELL |**Varianten**`, true, true, 1, 'optional')
           ]
         }
       ]
@@ -457,7 +457,7 @@ export const packageFensterRolladen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]
@@ -536,7 +536,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('fens-100-basis', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `FENSTER & Türen | 🛠 Montage-Leistungspaket`, 'FENS-100-BASIS', 415.31, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
+            createProduct('fens-102-1-op', 'art-der-ausfuehrung', 'art-der-ausfuehrung-sub', `ALT-FENSTER |🛠 Demontage & Entsorgung`, 'FENS-102-1-OP', 70.5, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'service')
           ]
         }
       ]
@@ -584,8 +584,8 @@ export const packageFensterBalkontueren: RenovationPackage = {
           products: [
             createProduct('uv789-1039', 'extra-positionen', 'extra-positionen-sub', `Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive`, 'uv789-1039', 33.03, 'Stk', `Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive`, true, false, 1, 'extra'),
             createProduct('fens-101-basis', 'extra-positionen', 'extra-positionen-sub', `ROLLADENPANZER | Antrieb-MANUELL |**Varianten**`, 'FENS-101-BASIS', 1292, 'Stk', `Antrieb-MANUELL |**Varianten**`, false, true, 1, 'optional'),
-            createProduct('uv600-130', 'extra-positionen', 'extra-positionen-sub', `Schellenberg Insektenschutz Rollo`, 'uv600-130', 71.38, 'Stk', `Schellenberg Insektenschutz Rollo`, true, false, 1, 'extra'),
-            createProduct('uv600-142', 'extra-positionen', 'extra-positionen-sub', `Schellenberg Insektenschutz Schiebetür`, 'uv600-142', 168.25, 'Stk', `Schellenberg Insektenschutz Schiebetür`, true, false, 1, 'extra'),
+            createProduct('uv600-130', 'extra-positionen', 'extra-positionen-sub', `Schellenberg Insektenschutz Rollo`, 'uv600-130', 71.38, 'Stk', `Schellenberg Insektenschutz Rollo`, false, false, 1, 'extra'),
+            createProduct('uv600-142', 'extra-positionen', 'extra-positionen-sub', `Schellenberg Insektenschutz Schiebetür`, 'uv600-142', 168.25, 'Stk', `Schellenberg Insektenschutz Schiebetür`, false, false, 1, 'extra'),
             createProduct('fens-100-au', 'extra-positionen', 'extra-positionen-sub', `Weitere Produkte - zu FENSTER |**Varianten**`, 'FENS-100-AU', 0, 'Stk', `**Varianten**`, false, true, 1, 'optional'),
             createProduct('uv652-10002', 'extra-positionen', 'extra-positionen-sub', `Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)`, 'uv652-10002', 488.14, 'Pak', `Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)`, true, false, 1, 'extra')
           ]
@@ -626,9 +626,9 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('uv595-30018', 'material', 'material-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, true, false, 1, 'material'),
-            createProduct('uv595-30003', 'material', 'material-sub', `Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten`, 'uv595-30003', 4168.93, 'Stk', `Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten`, true, false, 1, 'material'),
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('uv595-30018', 'material', 'material-sub', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, 'uv595-30018', 2848.95, 'Stk', `Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten`, false, false, 1, 'material'),
+            createProduct('uv595-30003', 'material', 'material-sub', `Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten`, 'uv595-30003', 4168.93, 'Stk', `Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten`, false, false, 1, 'material'),
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]
@@ -643,11 +643,11 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('carp-10008-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORTBELEUCHTUNG | 🛠 Montage-Leistungspaket`, 'CARP-10008-Basis', 295, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('carp-10009-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORTBODEN | 🛠 Montage-Leistungspaket`, 'CARP-10009-Basis', 59, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('carp-10010-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT-SEITENWÄNDE | 🛠 Montage-Leistungspaket`, 'CARP-10010-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('carp-10011-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT REGENRINNEN | 🛠 Montage-Leistungspaket`, 'CARP-10011-Basis', 95, 'lfm', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('carp-10012-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT-TOR | 🛠 Montage-Leistungspaket`, 'CARP-10012-Basis', 595, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra')
+            createProduct('carp-10008-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORTBELEUCHTUNG | 🛠 Montage-Leistungspaket`, 'CARP-10008-Basis', 295, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('carp-10009-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORTBODEN | 🛠 Montage-Leistungspaket`, 'CARP-10009-Basis', 59, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('carp-10010-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT-SEITENWÄNDE | 🛠 Montage-Leistungspaket`, 'CARP-10010-Basis', 149, 'qm', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('carp-10011-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT REGENRINNEN | 🛠 Montage-Leistungspaket`, 'CARP-10011-Basis', 95, 'lfm', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('carp-10012-basis', 'extra-positionen', 'extra-positionen-sub', `CARPORT-TOR | 🛠 Montage-Leistungspaket`, 'CARP-10012-Basis', 595, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -725,7 +725,7 @@ export const packageFensterMarkisen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]

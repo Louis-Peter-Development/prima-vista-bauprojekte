@@ -71,8 +71,8 @@ export const packageBarrierefreiDusche: RenovationPackage = {
           type: 'material',
           products: [
             createProduct('dusche-bodengleich', 'duschbereich', 'dusche', 'Bodengleiche Dusche (gefliest)', 1580, 'Stk', 'Inkl. Rinne, Abdichtung und Fliesen.'),
-            createProduct('duschsitz', 'duschbereich', 'dusche', 'Duschsitz / Klappsitz', 676, 'Stk', 'Tragfähige Befestigung an der Wand.', true, false, 1, 'material'),
-            createProduct('haltegriff-dusche', 'duschbereich', 'dusche', 'Stützklappgriff Dusche', 435, 'Stk', 'Sicherer Halt im Duschbereich.', true, false, 1, 'material')
+            createProduct('duschsitz', 'duschbereich', 'dusche', 'Duschsitz / Klappsitz', 676, 'Stk', 'Tragfähige Befestigung an der Wand.', false, false, 1, 'material'),
+            createProduct('haltegriff-dusche', 'duschbereich', 'dusche', 'Stützklappgriff Dusche', 435, 'Stk', 'Sicherer Halt im Duschbereich.', false, false, 1, 'material')
           ]
         }
       ]
@@ -142,7 +142,7 @@ export const packageBarrierefreiSenioren: RenovationPackage = {
           title: 'Sicherheitselemente',
           type: 'material',
           products: [
-            createProduct('haltegriff-wc', 'sicherheit', 'hygiene', 'Stützklappgriffe WC', 870, 'Paar', 'Beidseitig am WC montiert.', true, false, 1, 'material'),
+            createProduct('haltegriff-wc', 'sicherheit', 'hygiene', 'Stützklappgriffe WC', 870, 'Paar', 'Beidseitig am WC montiert.', false, false, 1, 'material'),
             createProduct('hygiene-zubehoer', 'sicherheit', 'hygiene', 'Hygienezubehör', 738, 'pauschal', 'Spender, Abfallbox, Halterungen.', false, true, 1, 'material')
           ]
         }
@@ -168,8 +168,8 @@ export const packageBarrierefreiRollstuhl: RenovationPackage = {
           title: 'Tür & Zugang',
           type: 'service',
           products: [
-            createProduct('tuerverbreiterung', 'grundriss', 'tuer', 'Türverbreiterung', 3200, 'pauschal', 'Wandausschnitt vergrößern für Rollstuhl.', true, false, 1, 'service'),
-            createProduct('planung', 'grundriss', 'tuer', 'Aufmaß & Bewegungsflächenplanung', 950, 'pauschal', 'Planung nach DIN 18040-2.', true, false, 1, 'service')
+            createProduct('tuerverbreiterung', 'grundriss', 'tuer', 'Türverbreiterung', 3200, 'pauschal', 'Wandausschnitt vergrößern für Rollstuhl.', false, false, 1, 'service'),
+            createProduct('planung', 'grundriss', 'tuer', 'Aufmaß & Bewegungsflächenplanung', 950, 'pauschal', 'Planung nach DIN 18040-2.', false, false, 1, 'service')
           ]
         }
       ]

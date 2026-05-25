@@ -275,8 +275,8 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('rohb-501-mat', 'extra-positionen', 'extra-positionen-sub', `ESTRICH | Trocken-Platten`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten`, true, false, 1, 'extra'),
-            createProduct('rohb-501-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, true, false, 1, 'extra')
+            createProduct('rohb-501-mat', 'extra-positionen', 'extra-positionen-sub', `ESTRICH | Trocken-Platten`, 'ROHB-501-MAT', 48.46, 'qm', `Trocken-Platten`, false, false, 1, 'extra'),
+            createProduct('rohb-501-1-op', 'extra-positionen', 'extra-positionen-sub', `ALT-ESTRICH |🛠 Demontage & Entsorgung`, 'ROHB-501-1-OP', 45.89, 'qm', `🛠 Demontage & Entsorgung`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -469,10 +469,10 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
           type: 'extra',
           products: [
             createProduct('heiz-405-mat', 'extra-positionen', 'extra-positionen-sub', `PELLETTHEIZUNG | Vitoligno 300 - 12kW`, 'HEIZ-405-MAT', 9900, 'Stk', `Vitoligno 300 - 12kW`, true, false, 1, 'extra'),
-            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra')
+            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -527,7 +527,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -542,10 +542,10 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra')
+            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -698,7 +698,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'material')
           ]
         }
       ]
@@ -713,10 +713,10 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra')
+            createProduct('743-1204', 'extra-positionen', 'extra-positionen-sub', `Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146`, '743-1204', 545.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10076', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461`, '743-10076', 190.3, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10042', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655`, '743-10042', 457.6, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('743-10068', 'extra-positionen', 'extra-positionen-sub', `Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461`, '743-10068', 68.75, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -800,12 +800,12 @@ export const packageHeizmethodenSaunaofen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('uv886-10216', 'extra-positionen', 'extra-positionen-sub', `Eliga Elektro-Saunaofen mit Verdampfer Wandgerät`, 'uv886-10216', 1366.27, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('886-10353', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna-Zubehör-Set 9-teilig All-in`, '886-10353', 143.18, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('886-10315', 'extra-positionen', 'extra-positionen-sub', `Eliga Leuchte für Dampfbad und Sauna`, '886-10315', 121.09, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('728-00476', 'extra-positionen', 'extra-positionen-sub', `Weka Spezial-Sauna-Leuchten-Set`, '728-00476', 61.27, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('886-10479', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna Messstation`, '886-10479', 48.28, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra'),
-            createProduct('uv886-10081', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna-Aufgusskonzentrat`, 'uv886-10081', 12.28, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, true, false, 1, 'extra')
+            createProduct('uv886-10216', 'extra-positionen', 'extra-positionen-sub', `Eliga Elektro-Saunaofen mit Verdampfer Wandgerät`, 'uv886-10216', 1366.27, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('886-10353', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna-Zubehör-Set 9-teilig All-in`, '886-10353', 143.18, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('886-10315', 'extra-positionen', 'extra-positionen-sub', `Eliga Leuchte für Dampfbad und Sauna`, '886-10315', 121.09, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('728-00476', 'extra-positionen', 'extra-positionen-sub', `Weka Spezial-Sauna-Leuchten-Set`, '728-00476', 61.27, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('886-10479', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna Messstation`, '886-10479', 48.28, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra'),
+            createProduct('uv886-10081', 'extra-positionen', 'extra-positionen-sub', `Eliga Sauna-Aufgusskonzentrat`, 'uv886-10081', 12.28, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -970,7 +970,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('uv835-981', 'optionale-positionen', 'optionale-positionen-sub', `Ximax Handtuchwärmer C3 Typ 1 - Chrom`, 'uv835-981', 489.81, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, true, 1, 'optional'),
-            createProduct('mon-10158-2', 'optionale-positionen', 'optionale-positionen-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, false, true, 3, 'optional'),
+            createProduct('mon-10158-2', 'optionale-positionen', 'optionale-positionen-sub', `FLÄCHENHEIZSYSTEME | 🛠 Montage`, 'MON-10158', 69, 'qm', `🛠 Montage`, true, true, 3, 'optional'),
             createProduct('uv722-00108', 'optionale-positionen', 'optionale-positionen-sub', `Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt`, 'uv722-00108', 219.93, 'Stk', `Kalkulationsposition fuer Montage, Material oder Zusatzleistung.`, false, true, 1, 'optional')
           ]
         }

@@ -325,7 +325,7 @@ export const packageFlachdach: RenovationPackage = {
           title: 'Beschichtung',
           type: 'service',
           products: [
-            createProduct('flachdach-beschichtung', 'flachdach', 'sanierung', 'Flachdach beschichten', 167, 'qm', 'Reinigen, grundieren und mit Flüssigkunststoff abdichten.', true, false, 80, 'service')
+            createProduct('flachdach-beschichtung', 'flachdach', 'sanierung', 'Flachdach beschichten', 167, 'qm', 'Reinigen, grundieren und mit Flüssigkunststoff abdichten.', false, false, 80, 'service')
           ]
         }
       ]

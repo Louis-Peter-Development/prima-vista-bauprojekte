@@ -70,10 +70,10 @@ export const packageBadGaeste: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('cvis3wt112', 'material', 'material-sub', `VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage`, 'CVIS3WT112', 203.94, 'Stk', `CONEL VIS Waschtisch-Montage`, true, false, 1, 'service'),
+            createProduct('cvis3wt112', 'material', 'material-sub', `VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage`, 'CVIS3WT112', 203.94, 'Stk', `CONEL VIS Waschtisch-Montage`, false, false, 1, 'service'),
             createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
-            createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
+            createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, false, false, 1, 'material'),
             createProduct('1168296', 'material', 'material-sub', `V&B 30x 60 1571TW010 Unit Two weiß matt`, '1168296', 30.22, 'qm', `V&B 30x 60 1571TW010 Unit Two weiß matt`, true, false, 12, 'material'),
             createProduct('1176157', 'material', 'material-sub', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, '1176157', 30.22, 'qm', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, true, false, 4, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 1, 'material'),
@@ -100,13 +100,13 @@ export const packageBadGaeste: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional')
+            createProduct('uv816-00746', 'optionale-positionen', 'optionale-positionen-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, true, 1, 'optional'),
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional'),
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -121,7 +121,7 @@ export const packageBadGaeste: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service')
+            createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, false, false, 1, 'service')
           ]
         }
       ]
@@ -136,9 +136,9 @@ export const packageBadGaeste: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('heiz-301-mat', 'extra-positionen', 'extra-positionen-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'extra'),
-            createProduct('vede218b', 'extra-positionen', 'extra-positionen-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, true, false, 1, 'extra'),
-            createProduct('heiz-201-1-op', 'extra-positionen', 'extra-positionen-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'extra')
+            createProduct('heiz-301-mat', 'extra-positionen', 'extra-positionen-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'extra'),
+            createProduct('vede218b', 'extra-positionen', 'extra-positionen-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, false, false, 1, 'extra'),
+            createProduct('heiz-201-1-op', 'extra-positionen', 'extra-positionen-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -193,7 +193,7 @@ export const packageBadKomplett: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -213,8 +213,8 @@ export const packageBadKomplett: RenovationPackage = {
             createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
             createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
-            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, true, false, 1, 'material'),
-            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, false, 1, 'material'),
+            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, false, false, 1, 'material'),
+            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, false, 1, 'material'),
             createProduct('1168296', 'material', 'material-sub', `V&B 30x 60 1571TW010 Unit Two weiß matt`, '1168296', 30.22, 'qm', `V&B 30x 60 1571TW010 Unit Two weiß matt`, true, false, 18, 'material'),
             createProduct('1176157', 'material', 'material-sub', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, '1176157', 30.22, 'qm', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, true, false, 6, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 3, 'material'),
@@ -247,13 +247,13 @@ export const packageBadKomplett: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('bade-507-4-mat', 'optionale-positionen', 'optionale-positionen-sub', `Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket`, 'BADE-507.4-MAT', 1579.9, 'Stk', `🛠 Montage-Leistungspaket`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional')
+            createProduct('bade-507-4-mat', 'optionale-positionen', 'optionale-positionen-sub', `Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket`, 'BADE-507.4-MAT', 1579.9, 'Stk', `🛠 Montage-Leistungspaket`, false, true, 1, 'optional'),
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional'),
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -268,7 +268,7 @@ export const packageBadKomplett: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('heiz-201-1-op', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
             createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service')
           ]
@@ -325,7 +325,7 @@ export const packageBadWanne: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -345,8 +345,8 @@ export const packageBadWanne: RenovationPackage = {
             createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
             createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
-            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, true, false, 1, 'material'),
-            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, false, 1, 'material'),
+            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, false, false, 1, 'material'),
+            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, false, 1, 'material'),
             createProduct('1092361', 'material', 'material-sub', `V&B 30x 60 2576SD9B0 Hudson volcano matt ugl. FS R10/A rekt.`, '1092361', 41.99, 'qm', `V&B 30x 60 2576SD9B0 Hudson volcano matt ugl. FS R10/A rekt.`, true, false, 6, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 3, 'material'),
             createProduct('uv867-00298', 'material', 'material-sub', `Ottoseal S 110 Premium Neutral Silicon`, 'uv867-00298', 8.79, 'Stk', `Ottoseal S 110 Premium Neutral Silicon`, true, false, 10, 'material'),
@@ -374,12 +374,12 @@ export const packageBadWanne: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional')
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional'),
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -394,7 +394,7 @@ export const packageBadWanne: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('heiz-201-1-op', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
             createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
             createProduct('heiz-201-1-op-2', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
@@ -452,7 +452,7 @@ export const packageBadDusche: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -472,8 +472,8 @@ export const packageBadDusche: RenovationPackage = {
             createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
             createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
-            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, true, false, 1, 'material'),
-            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, false, 1, 'material'),
+            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, false, false, 1, 'material'),
+            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, false, 1, 'material'),
             createProduct('1168296', 'material', 'material-sub', `V&B 30x 60 1571TW010 Unit Two weiß matt`, '1168296', 30.22, 'qm', `V&B 30x 60 1571TW010 Unit Two weiß matt`, true, false, 18, 'material'),
             createProduct('1176157', 'material', 'material-sub', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, '1176157', 30.22, 'qm', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, true, false, 6, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 3, 'material'),
@@ -504,13 +504,13 @@ export const packageBadDusche: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('bade-507-4-mat', 'optionale-positionen', 'optionale-positionen-sub', `Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket`, 'BADE-507.4-MAT', 1579.9, 'Stk', `🛠 Montage-Leistungspaket`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional')
+            createProduct('bade-507-4-mat', 'optionale-positionen', 'optionale-positionen-sub', `Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket`, 'BADE-507.4-MAT', 1579.9, 'Stk', `🛠 Montage-Leistungspaket`, false, true, 1, 'optional'),
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional'),
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -525,7 +525,7 @@ export const packageBadDusche: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('heiz-201-1-op', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
             createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
             createProduct('heiz-201-1-op-2', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
@@ -583,7 +583,7 @@ export const packageBadWhirlpool: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -603,8 +603,8 @@ export const packageBadWhirlpool: RenovationPackage = {
             createProduct('dfix320wc112', 'material', 'material-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material', 'material-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
             createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
-            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, true, false, 1, 'material'),
-            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, false, 1, 'material'),
+            createProduct('vede218b', 'material', 'material-sub', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, 'VEDE218B', 373.23, 'Stk', `Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss`, false, false, 1, 'material'),
+            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, false, 1, 'material'),
             createProduct('1092361', 'material', 'material-sub', `V&B 30x 60 2576SD9B0 Hudson volcano matt ugl. FS R10/A rekt.`, '1092361', 41.99, 'qm', `V&B 30x 60 2576SD9B0 Hudson volcano matt ugl. FS R10/A rekt.`, true, false, 6, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 3, 'material'),
             createProduct('uv867-00298', 'material', 'material-sub', `Ottoseal S 110 Premium Neutral Silicon`, 'uv867-00298', 8.79, 'Stk', `Ottoseal S 110 Premium Neutral Silicon`, true, false, 10, 'material'),
@@ -632,12 +632,12 @@ export const packageBadWhirlpool: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional')
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional'),
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -652,7 +652,7 @@ export const packageBadWhirlpool: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('heiz-201-1-op', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service'),
             createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
             createProduct('heiz-201-1-op-2', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
@@ -842,7 +842,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service'),
             createProduct('bade-507-4-mat', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket`, 'BADE-507.4-MAT', 1579.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service')
           ]
@@ -864,8 +864,8 @@ export const packageBadBarrierefrei: RenovationPackage = {
             createProduct('gebpffnwcs10n', 'material', 'material-sub', `WC-Strg. mit elektr. Spül, Netz, BT 1-Mengen-Sp. Sigma10, für SKG, Funk`, 'GEBPFFNWCS10N', 733.59, 'Stk', `WC-Strg. mit elektr. Spül, Netz, BT 1-Mengen-Sp. Sigma10, für SKG, Funk`, true, false, 1, 'material'),
             createProduct('clpufs', 'material', 'material-sub', `Universalfunkauslöser clivia plus mit Schelle, schwarz VIGOUR`, 'CLPUFS', 408.87, 'Stk', `Universalfunkauslöser clivia plus mit Schelle, schwarz VIGOUR`, true, false, 1, 'material'),
             createProduct('uv835-10017', 'material', 'material-sub', `Ximax Badheizkörper BIANCA - weiß`, 'uv835-10017', 388.95, 'Stk', `Ximax Badheizkörper BIANCA - weiß`, true, false, 1, 'material'),
-            createProduct('clagecfxun', 'material', 'material-sub', `Clage Kompakt-Durchlauferhitzer CFX-U FUNKTRONIC MPS`, 'CLAGECFXUN', 486.09, 'Stk', `Clage Kompakt-Durchlauferhitzer CFX-U FUNKTRONIC MPS`, true, false, 1, 'material'),
-            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, true, false, 1, 'material'),
+            createProduct('clagecfxun', 'material', 'material-sub', `Clage Kompakt-Durchlauferhitzer CFX-U FUNKTRONIC MPS`, 'CLAGECFXUN', 486.09, 'Stk', `Clage Kompakt-Durchlauferhitzer CFX-U FUNKTRONIC MPS`, false, false, 1, 'material'),
+            createProduct('uv816-00746', 'material', 'material-sub', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, 'uv816-00746', 395.95, 'Stk', `Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung`, false, false, 1, 'material'),
             createProduct('1168296', 'material', 'material-sub', `V&B 30x 60 1571TW010 Unit Two weiß matt`, '1168296', 30.22, 'qm', `V&B 30x 60 1571TW010 Unit Two weiß matt`, true, false, 18, 'material'),
             createProduct('1176157', 'material', 'material-sub', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, '1176157', 30.22, 'qm', `V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B`, true, false, 6, 'material'),
             createProduct('1054265', 'material', 'material-sub', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, '1054265', 298.67, 'qm', `V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.`, true, false, 3, 'material'),
@@ -896,12 +896,12 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: 'optional',
           products: [
             createProduct('wass-100-au', 'optionale-positionen', 'optionale-positionen-sub', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, 'WASS-100-AU', 0, 'Stk', `WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)`, true, true, 1, 'optional'),
-            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, true, true, 1, 'optional'),
-            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, true, true, 1, 'optional'),
-            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, true, true, 1, 'optional'),
-            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, true, true, 1, 'optional'),
-            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, true, true, 1, 'optional'),
-            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, true, true, 1, 'optional')
+            createProduct('hewiksiw448', 'optionale-positionen', 'optionale-positionen-sub', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, 'HEWIKSIW448', 676.17, 'Stk', `Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung`, false, true, 1, 'optional'),
+            createProduct('hewiwig600', 'optionale-positionen', 'optionale-positionen-sub', `Winkelgriff Hewi 600x300mm reinweiss`, 'HEWIWIG600', 255.42, 'Stk', `Winkelgriff Hewi 600x300mm reinweiss`, false, true, 1, 'optional'),
+            createProduct('strahyr', 'optionale-positionen', 'optionale-positionen-sub', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, 'STRAHYR', 112.86, 'Stk', `AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke`, false, true, 1, 'optional'),
+            createProduct('santralabh18', 'optionale-positionen', 'optionale-positionen-sub', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, 'SANTRALABH18', 312.84, 'Stk', `Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt`, false, true, 1, 'optional'),
+            createProduct('codessp50', 'optionale-positionen', 'optionale-positionen-sub', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, 'CODESSP50', 146.52, 'Stk', `Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti`, false, true, 1, 'optional'),
+            createProduct('cwsssppas', 'optionale-positionen', 'optionale-positionen-sub', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, 'CWSSSPPAS', 165.83, 'Stk', `Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss`, false, true, 1, 'optional')
           ]
         }
       ]
@@ -917,7 +917,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('heiz-101-mon', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER | 🛠 Montage`, 'HEIZ-101-MON', 149, 'Stk', `🛠 Montage`, true, false, 1, 'service'),
-            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
+            createProduct('heiz-301-mat', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket`, 'HEIZ-301-MAT', 434.56, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'service'),
             createProduct('heiz-201-1-op', 'heizkoerper-basis-haus', 'heizkoerper-basis-haus-sub', `HEIZKÖRPER |🛠 Demontage & Entsorgung`, 'HEIZ-201-1-OP', 67.13, 'Stk', `🛠 Demontage & Entsorgung`, true, false, 1, 'service')
           ]
         }

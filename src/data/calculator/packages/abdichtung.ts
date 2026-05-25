@@ -83,7 +83,7 @@ export const packageAbdichtungHorizontal: RenovationPackage = {
           title: 'Leistungen & Material',
           type: 'service',
           products: [
-            createProduct('abbd-101-2-mat', 'abdichtung', 'abdichtung', `HORIZONTAL`, 119, 'qm', `Abdichtung des Kellergeschosses`, true, false, 1, 'material')
+            createProduct('abbd-101-2-mat', 'abdichtung', 'abdichtung', `HORIZONTAL`, 119, 'qm', `Abdichtung des Kellergeschosses`, false, false, 1, 'material')
           ]
         }
       ]
@@ -109,8 +109,8 @@ export const packageAbdichtungPerimeter: RenovationPackage = {
           title: 'Leistungen & Material',
           type: 'service',
           products: [
-            createProduct('abbd-101-1-mat', 'abdichtung', 'abdichtung', `PERIMETERDÄMMUNG Abdichtung`, 249, 'qm', `🛠 Montage-Leistungspaket`, true, false, 50, 'service'),
-            createProduct('uv868-00421', 'abdichtung', 'abdichtung', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, 22.62, 'Stk', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, true, false, 55, 'material')
+            createProduct('abbd-101-1-mat', 'abdichtung', 'abdichtung', `PERIMETERDÄMMUNG Abdichtung`, 249, 'qm', `🛠 Montage-Leistungspaket`, false, false, 50, 'service'),
+            createProduct('uv868-00421', 'abdichtung', 'abdichtung', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, 22.62, 'Stk', `weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte`, false, false, 55, 'material')
           ]
         }
       ]
@@ -136,7 +136,7 @@ export const packageAbdichtungKeller: RenovationPackage = {
           title: 'Leistungen & Material',
           type: 'service',
           products: [
-            createProduct('abbd-101-3-mat', 'abdichtung', 'abdichtung', `DICHTSYSTEM`, 69.25, 'qm', `Anti Feuchtigkeit`, true, false, 1, 'material')
+            createProduct('abbd-101-3-mat', 'abdichtung', 'abdichtung', `DICHTSYSTEM`, 69.25, 'qm', `Anti Feuchtigkeit`, false, false, 1, 'material')
           ]
         }
       ]

@@ -142,9 +142,9 @@ export const packageZaeuneHolz: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10307', 'alternativ', 'alternativ-sub', `VORGARTENZAUN | 🛠 Montage`, 'MON-10307', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('679-00661', 'alternativ', 'alternativ-sub', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, '679-00661', 178.2, 'Stk', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, true, false, 24, 'material'),
-            createProduct('679-01292', 'alternativ', 'alternativ-sub', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, '679-01292', 609.4, 'Stk', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, true, false, 1, 'material')
+            createProduct('mon-10307', 'alternativ', 'alternativ-sub', `VORGARTENZAUN | 🛠 Montage`, 'MON-10307', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('679-00661', 'alternativ', 'alternativ-sub', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, '679-00661', 178.2, 'Stk', `LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm`, false, false, 24, 'material'),
+            createProduct('679-01292', 'alternativ', 'alternativ-sub', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, '679-01292', 609.4, 'Stk', `LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm`, false, false, 1, 'material')
           ]
         }
       ]

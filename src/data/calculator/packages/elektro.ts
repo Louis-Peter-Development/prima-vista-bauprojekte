@@ -199,7 +199,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
           title: 'Material',
           type: 'optional',
           products: [
-            createProduct('elek-201-mat', 'material', 'material-sub', `SCHALTER/STECKD. SET 25/8`, 1495.9, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 2, 'ELEK-201-MAT', 'optional')
+            createProduct('elek-201-mat', 'material', 'material-sub', `SCHALTER/STECKD. SET 25/8`, 1495.9, 'Stk', `Gira S 55 weiß | **Varianten**`, true, true, 2, 'ELEK-201-MAT', 'optional')
           ]
         }
       ]
@@ -318,10 +318,10 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           title: 'Material',
           type: 'optional',
           products: [
-            createProduct('elek-302-mat', 'material', 'material-sub', `STECKDOSE`, 49.9, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 2, 'ELEK-302-MAT', 'optional'),
-            createProduct('elek-301-mat', 'material', 'material-sub', `LICHTSCHALTER`, 65.39, 'Stk', `Gira S 55 weiß | **Varianten**`, false, true, 1, 'ELEK-301-MAT', 'optional'),
-            createProduct('elek-201-2-zu', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-2-ZU', 'extra'),
-            createProduct('elek-101-2-mat', 'material', 'material-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'ELEK-101.2-MAT', 'service')
+            createProduct('elek-302-mat', 'material', 'material-sub', `STECKDOSE`, 49.9, 'Stk', `Gira S 55 weiß | **Varianten**`, true, true, 2, 'ELEK-302-MAT', 'optional'),
+            createProduct('elek-301-mat', 'material', 'material-sub', `LICHTSCHALTER`, 65.39, 'Stk', `Gira S 55 weiß | **Varianten**`, true, true, 1, 'ELEK-301-MAT', 'optional'),
+            createProduct('elek-201-2-zu', 'material', 'material-sub', `HERDANSCHLUSS ZULEITUNG + DOSE`, 391.9, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-2-ZU', 'extra'),
+            createProduct('elek-101-2-mat', 'material', 'material-sub', `SICHERUNGSKASTEN`, 1678.5, 'Stk', `🛠 Montage-Leistungspaket`, false, false, 1, 'ELEK-101.2-MAT', 'service')
           ]
         }
       ]
@@ -336,7 +336,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           title: 'Extra Positionen',
           type: 'extra',
           products: [
-            createProduct('elek-201-3-zu', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-201-3-ZU', 'extra'),
+            createProduct('elek-201-3-zu', 'extra-positionen', 'extra-positionen-sub', `MAUERSCHLITZE BETON`, 69.25, 'Stk', `HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-201-3-ZU', 'extra'),
             createProduct('elek-310-mat', 'extra-positionen', 'extra-positionen-sub', `ELEKTRO_CHECK (pro Etage)`, 295.9, 'Stk', `ELEKTRO_CHECK (pro Etage)`, true, false, 1, 'ELEK-310-MAT', 'extra')
           ]
         }
@@ -352,7 +352,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           title: 'IT-NETZWERK | Basis-Haus',
           type: 'extra',
           products: [
-            createProduct('elek-301-zu', 'it-netzwerk-basis-haus', 'it-netzwerk-basis-haus-sub', `IT NETZWERKINSTALLATION`, 1978.96, 'Stk', `SET BIS 50 QM | 🛠 Zusatz-Montage`, true, false, 1, 'ELEK-301-ZU', 'extra')
+            createProduct('elek-301-zu', 'it-netzwerk-basis-haus', 'it-netzwerk-basis-haus-sub', `IT NETZWERKINSTALLATION`, 1978.96, 'Stk', `SET BIS 50 QM | 🛠 Zusatz-Montage`, false, false, 1, 'ELEK-301-ZU', 'extra')
           ]
         }
       ]
@@ -449,7 +449,7 @@ export const packageElektroFreeHome: RenovationPackage = {
           title: 'Material',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 0, 'Stk.', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'MAT-Anfrage', 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 0, 'Stk.', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'MAT-Anfrage', 'material')
           ]
         }
       ]
@@ -488,7 +488,7 @@ export const packageElektroRolladen: RenovationPackage = {
           title: 'Material',
           type: 'optional',
           products: [
-            createProduct('elek-501-mat', 'material', 'material-sub', `JALOUSIESCHALTER`, 203.94, 'Stk', `Free-Home | **Varianten**`, false, true, 1, 'ELEK-501-MAT', 'optional')
+            createProduct('elek-501-mat', 'material', 'material-sub', `JALOUSIESCHALTER`, 203.94, 'Stk', `Free-Home | **Varianten**`, true, true, 1, 'ELEK-501-MAT', 'optional')
           ]
         }
       ]
@@ -503,7 +503,7 @@ export const packageElektroRolladen: RenovationPackage = {
           title: 'Extra Positionen',
           type: 'extra',
           products: [
-            createProduct('elek-601-27', 'extra-positionen', 'extra-positionen-sub', `Verteilerkomponenten Rollo Steuerung`, 1683, 'Stk', `Verteilerkomponenten Rollo Steuerung`, true, false, 1, 'ELEK-601.27', 'extra')
+            createProduct('elek-601-27', 'extra-positionen', 'extra-positionen-sub', `Verteilerkomponenten Rollo Steuerung`, 1683, 'Stk', `Verteilerkomponenten Rollo Steuerung`, false, false, 1, 'ELEK-601.27', 'extra')
           ]
         }
       ]
@@ -542,7 +542,7 @@ export const packageElektroSprechanlagen: RenovationPackage = {
           title: 'Material',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 0, 'Stk.', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'MAT-Anfrage', 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 0, 'Stk.', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'MAT-Anfrage', 'material')
           ]
         }
       ]

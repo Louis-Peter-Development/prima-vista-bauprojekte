@@ -135,7 +135,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-100-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket`, 'WASS-100-BASIS', 1995.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -193,7 +193,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
           type: 'service',
           products: [
             createProduct('wass-200-basis', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket`, 'WASS-200-BASIS', 1195.9, 'Stk', `🛠 Montage-Leistungspaket`, true, false, 1, 'service'),
-            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, true, false, 1, 'extra'),
+            createProduct('wass-105-zu', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage`, 'WASS-105-ZU', 355.36, 'Stk', `🛠 Zusatz-Montage`, false, false, 1, 'extra'),
             createProduct('wass-101-mon', 'wasserinstallation-basis-haus', 'wasserinstallation-basis-haus-sub', `VORSATZ-ELEMENT | 🛠 Montage`, 'WASS-101-MON', 279, 'Stk', `🛠 Montage`, true, false, 2, 'service')
           ]
         }
@@ -389,8 +389,8 @@ export const packageWasserGarten: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-100-stk', 'alternativ', 'alternativ-sub', `MONTAGE | 🛠 Montage 100`, 'MON-100-stk', 999.9, 'Stk', `🛠 Montage 100`, true, false, 1, 'service'),
-            createProduct('uv563-01018', 'alternativ', 'alternativ-sub', `Rewatec NEO Gartenanlage Basic`, 'uv563-01018', 1946.93, 'Stk', `Rewatec NEO Gartenanlage Basic`, true, false, 1, 'material')
+            createProduct('mon-100-stk', 'alternativ', 'alternativ-sub', `MONTAGE | 🛠 Montage 100`, 'MON-100-stk', 999.9, 'Stk', `🛠 Montage 100`, false, false, 1, 'service'),
+            createProduct('uv563-01018', 'alternativ', 'alternativ-sub', `Rewatec NEO Gartenanlage Basic`, 'uv563-01018', 1946.93, 'Stk', `Rewatec NEO Gartenanlage Basic`, false, false, 1, 'material')
           ]
         }
       ]
@@ -405,7 +405,7 @@ export const packageWasserGarten: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'extra',
           products: [
-            createProduct('563-01344', 'extra-positionen', 'extra-positionen-sub', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, '563-01344', 299.2, 'Stk', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, true, false, 1, 'extra')
+            createProduct('563-01344', 'extra-positionen', 'extra-positionen-sub', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, '563-01344', 299.2, 'Stk', `Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041`, false, false, 1, 'extra')
           ]
         }
       ]
@@ -447,7 +447,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
             createProduct('cvis3wt112', 'material-unter-ue-mat', 'material-unter-ue-mat-sub', `VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage`, 'CVIS3WT112', 203.94, 'Stk', `CONEL VIS Waschtisch-Montage`, true, false, 1, 'service'),
             createProduct('dfix320wc112', 'material-unter-ue-mat', 'material-unter-ue-mat-sub', `Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |`, 'DFIX320WC112', 390.06, 'Stk', ``, true, false, 1, 'service'),
             createProduct('sigma30wech', 'material-unter-ue-mat', 'material-unter-ue-mat-sub', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, 'SIGMA30WECH', 101.5, 'Stk', `Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE`, true, false, 1, 'material'),
-            createProduct('wass-101-mat', 'material-unter-ue-mat', 'material-unter-ue-mat-sub', `SPÜLKASTEN | Unterputz für Hänge-WC |**Varianten**`, 'WASS-101-MAT', 920.65, 'Stk', `Unterputz für Hänge-WC |**Varianten**`, false, true, 1, 'optional')
+            createProduct('wass-101-mat', 'material-unter-ue-mat', 'material-unter-ue-mat-sub', `SPÜLKASTEN | Unterputz für Hänge-WC |**Varianten**`, 'WASS-101-MAT', 920.65, 'Stk', `Unterputz für Hänge-WC |**Varianten**`, true, true, 1, 'optional')
           ]
         }
       ]

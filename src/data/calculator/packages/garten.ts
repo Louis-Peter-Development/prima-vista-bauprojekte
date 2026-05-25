@@ -840,19 +840,19 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'service',
           products: [
-            createProduct('mon-10299', 'alternativ', 'alternativ-sub', `DOPPELSTABMATTENZAUN | 🛠 Montage`, 'MON-10299', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv265-84105', 'alternativ', 'alternativ-sub', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, 'uv265-84105', 847.69, 'Set', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, true, false, 1, 'material'),
-            createProduct('mon-10305', 'alternativ', 'alternativ-sub', `STECKZAUN | 🛠 Montage`, 'MON-10305', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00567', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, true, false, 24, 'material'),
-            createProduct('uv257-00946', 'alternativ', 'alternativ-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, true, false, 48, 'material'),
-            createProduct('uv257-00746', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, true, false, 1, 'material'),
-            createProduct('uv257-00569', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, true, false, 1, 'material'),
-            createProduct('zaun-10013', 'alternativ', 'alternativ-sub', `GLASZAUN 🛠 Montage`, 'ZAUN-10013', 149, 'lfm', `GLASZAUN 🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv257-00457', 'alternativ', 'alternativ-sub', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, 'uv257-00457', 174.77, 'Stk', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, true, false, 24, 'material'),
-            createProduct('zaun-10005', 'alternativ', 'alternativ-sub', `GABIONENZAUN | 🛠 Montage`, 'ZAUN-10005', 149, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('uv12-00355', 'alternativ', 'alternativ-sub', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, 'uv12-00355', 295.77, 'Stk', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, true, false, 48, 'material'),
-            createProduct('mon-10302', 'alternativ', 'alternativ-sub', `LATTENZAUN | 🛠 Montage`, 'MON-10302', 98, 'lfm', `🛠 Montage`, true, false, 20, 'service'),
-            createProduct('679-01308', 'alternativ', 'alternativ-sub', `LIGHTLINE Lamellenzaun 180 x 150 cm`, '679-01308', 314.6, 'Stk', `LIGHTLINE Lamellenzaun 180 x 150 cm`, true, false, 24, 'material')
+            createProduct('mon-10299', 'alternativ', 'alternativ-sub', `DOPPELSTABMATTENZAUN | 🛠 Montage`, 'MON-10299', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv265-84105', 'alternativ', 'alternativ-sub', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, 'uv265-84105', 847.69, 'Set', `Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen`, false, false, 1, 'material'),
+            createProduct('mon-10305', 'alternativ', 'alternativ-sub', `STECKZAUN | 🛠 Montage`, 'MON-10305', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv257-00567', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, 'uv257-00567', 478.43, 'Stk', `GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten`, false, false, 24, 'material'),
+            createProduct('uv257-00946', 'alternativ', 'alternativ-sub', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, 'uv257-00946', 41.73, 'Stk', `GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra`, false, false, 48, 'material'),
+            createProduct('uv257-00746', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, 'uv257-00746', 2804.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau`, false, false, 1, 'material'),
+            createProduct('uv257-00569', 'alternativ', 'alternativ-sub', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, 'uv257-00569', 780.95, 'Stk', `GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen`, false, false, 1, 'material'),
+            createProduct('zaun-10013', 'alternativ', 'alternativ-sub', `GLASZAUN 🛠 Montage`, 'ZAUN-10013', 149, 'lfm', `GLASZAUN 🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv257-00457', 'alternativ', 'alternativ-sub', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, 'uv257-00457', 174.77, 'Stk', `GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas`, false, false, 24, 'material'),
+            createProduct('zaun-10005', 'alternativ', 'alternativ-sub', `GABIONENZAUN | 🛠 Montage`, 'ZAUN-10005', 149, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('uv12-00355', 'alternativ', 'alternativ-sub', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, 'uv12-00355', 295.77, 'Stk', `DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt`, false, false, 48, 'material'),
+            createProduct('mon-10302', 'alternativ', 'alternativ-sub', `LATTENZAUN | 🛠 Montage`, 'MON-10302', 98, 'lfm', `🛠 Montage`, false, false, 20, 'service'),
+            createProduct('679-01308', 'alternativ', 'alternativ-sub', `LIGHTLINE Lamellenzaun 180 x 150 cm`, '679-01308', 314.6, 'Stk', `LIGHTLINE Lamellenzaun 180 x 150 cm`, false, false, 24, 'material')
           ]
         }
       ]

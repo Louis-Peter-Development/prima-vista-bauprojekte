@@ -289,7 +289,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: 'material',
           products: [
             createProduct('tr-uv-11773', 'material', 'material-sub', `Treppengeländer Modell Kos gerade`, 'TR-uv-11773', 758, 'Stk', `Treppengeländer Modell Kos gerade`, true, false, 1, 'material'),
-            createProduct('tr-uv-11798', 'material', 'material-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, true, false, 1, 'material')
+            createProduct('tr-uv-11798', 'material', 'material-sub', `Brüstungsgeländer Modell Kos`, 'TR-uv-11798', 526.87, 'Stk', `Brüstungsgeländer Modell Kos`, false, false, 1, 'material')
           ]
         }
       ]

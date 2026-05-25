@@ -398,7 +398,7 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'optional',
           products: [
-            createProduct('fass-401-mat', 'material', 'material-sub', `VERKLEIDUNG | Fassade aus Lärchen-Holz |**Varianten**`, 'FASS-401-MAT', 97.96, 'qm', `Fassade aus Lärchen-Holz |**Varianten**`, false, true, 1, 'optional')
+            createProduct('fass-401-mat', 'material', 'material-sub', `VERKLEIDUNG | Fassade aus Lärchen-Holz |**Varianten**`, 'FASS-401-MAT', 97.96, 'qm', `Fassade aus Lärchen-Holz |**Varianten**`, true, true, 1, 'optional')
           ]
         }
       ]
@@ -568,7 +568,7 @@ export const packageFassadePlattenverkleidung: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]
@@ -678,7 +678,7 @@ export const packageFassadeVorhangfassade: RenovationPackage = {
           title: 'Leistungen & Materialien',
           type: 'material',
           products: [
-            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, true, false, 1, 'material')
+            createProduct('mat-anfrage', 'material', 'material-sub', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, 'MAT-Anfrage', 0, 'Stk', `AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN`, false, false, 1, 'material')
           ]
         }
       ]
