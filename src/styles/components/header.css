@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 24px;
 }
 .pv-logo {
   display: inline-flex;
@@ -58,7 +58,7 @@
 }
 .pv-nav__list {
   display: flex;
-  gap: 36px;
+  gap: 24px;
   list-style: none;
   margin: 0 auto;
   padding: 0;
@@ -66,8 +66,8 @@
 .pv-nav__list a {
   font-family: var(--pv-font-display);
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--pv-ink);
   transition: color 140ms var(--pv-ease-out);
