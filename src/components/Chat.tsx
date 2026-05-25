@@ -351,7 +351,7 @@ function BrandRail() {
   return (
     <aside className="pv-chat-rail" aria-label="Prima Vista Bau-Concierge">
       <Link className="pv-chat-rail__brand" to="/" aria-label="Prima Vista Startseite">
-        <img src="/assets/img/logo.png" alt="" />
+        <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
         <span>
           <strong>Prima Vista</strong>
           <small>Bauprojekte</small>

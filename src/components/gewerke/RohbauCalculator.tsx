@@ -66,7 +66,7 @@ export default function RohbauCalculator({ embedded }: { embedded?: boolean } = 
         {!embedded && (
         <div className="hk-product reveal">
           <div className="hk-product__media">
-            <img src={variant.image} alt={variant.title} loading="lazy" />
+            <img src={variant.image} alt={variant.title} width="800" height="600" loading="lazy" />
             <span>№ {variant.num}</span>
           </div>
           <div className="hk-product__copy">

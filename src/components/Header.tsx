@@ -58,7 +58,7 @@ export default function Header() {
             }
           }}
         >
-          <img src="/assets/img/logo.png" alt="" />
+          <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
           <span className="pv-logo__txt">
             <span className="pv-logo__name">Prima Vista</span>
             <span className="pv-logo__tag">Bauprojekte</span>
@@ -111,7 +111,7 @@ export default function Header() {
         hidden={!open}
       >
         <Link to="/projekte" className="pv-mobile-menu__feature" onClick={() => setOpen(false)}>
-          <img src={FEATURED_PROJECT.src} alt="" />
+          <img src={FEATURED_PROJECT.src} alt="" width="1500" height="1125" loading="lazy" />
           <span className="pv-mobile-menu__feature-overlay" aria-hidden="true" />
           <span className="pv-mobile-menu__feature-eyebrow">
             Im Fokus <span className="pv-mobile-menu__feature-sep">·</span> {FEATURED_PROJECT.num}

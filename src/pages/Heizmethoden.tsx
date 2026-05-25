@@ -42,7 +42,7 @@ export default function Heizmethoden() {
               const card = (
                 <>
                   <div className="heiz-card__photo">
-                    <img src={m.photo} alt={m.title} loading="lazy" />
+                    <img src={m.photo} alt={m.title} width="1600" height="1200" loading="lazy" />
                     <span className="heiz-card__num">№&nbsp;{String(i + 1).padStart(2, '0')}</span>
                   </div>
                   <div className="heiz-card__body">

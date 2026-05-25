@@ -43,6 +43,8 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
             key={active.key}
             src={PREVIEW_IMAGES[active.key]}
             alt={active.name}
+            width="800"
+            height="600"
           />
           <div className={`trade-index__preview-cap${active.detailTo ? ' trade-index__preview-cap--with-link' : ''}`}>
             <span className="num">№ {active.num}</span>

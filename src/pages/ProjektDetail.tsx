@@ -122,7 +122,7 @@ export default function ProjektDetail() {
                     open(lightboxItems, i);
                   }}
                 >
-                  <img src={src} alt={`${detail.headline} — Bild ${i + 1}`} loading="lazy" />
+                  <img src={src} alt={`${detail.headline} — Bild ${i + 1}`} width="1600" height="1200" loading="lazy" />
                 </a>
               ))}
             </div>

@@ -30,7 +30,7 @@ export default function MapBand() {
           </ul>
         </div>
         <div className="map-band__photo reveal reveal--right" data-delay="1">
-          <img src="/assets/img/proj-team-jacket.webp" alt="Prima Vista Team auf der Baustelle" loading="lazy" />
+          <img src="/assets/img/proj-team-jacket.webp" alt="Prima Vista Team auf der Baustelle" width="900" height="1600" loading="lazy" />
           <div className="map-band__photo-label">
             <span>Team Frankfurt — 2026</span>
           </div>

@@ -18,7 +18,7 @@ export default function Footer() {
                 }
               }}
             >
-              <img src="/assets/img/logo.png" alt="" loading="lazy" style={{ filter: 'brightness(1.2)' }} />
+              <img src="/assets/img/logo.png" alt="" width="1085" height="1051" loading="lazy" style={{ filter: 'brightness(1.2)' }} />
               <span className="pv-logo__txt">
                 <span className="pv-logo__name">Prima Vista</span>
                 <span className="pv-logo__tag">Bauprojekte</span>

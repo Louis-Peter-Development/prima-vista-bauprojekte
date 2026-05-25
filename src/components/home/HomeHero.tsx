@@ -87,6 +87,8 @@ export default function HomeHero() {
                 loading={isFirst ? 'eager' : 'lazy'}
                 {...{ fetchpriority: isFirst ? 'high' : 'low' }}
                 decoding={isFirst ? 'sync' : 'async'}
+                width="1600"
+                height="1000"
               />
             </picture>
           );

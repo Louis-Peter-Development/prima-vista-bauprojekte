@@ -64,7 +64,7 @@ export default function Home() {
         </div>
         <div className="packages__grid">
           <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
-            <img src="/assets/img/photo-haus-exterior-thumb.webp" alt="Haus-Sanierung" loading="lazy" />
+            <img src="/assets/img/photo-haus-exterior-thumb.webp" alt="Haus-Sanierung" width="800" height="364" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 01 — Komplett</span>
               <h3 className="pkg-card__title">Haus-<br />Sanierung</h3>
@@ -73,7 +73,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
-            <img src="/assets/img/photo-parkett-altbau-thumb.webp" alt="Wohnung-Sanierung" loading="lazy" />
+            <img src="/assets/img/photo-parkett-altbau-thumb.webp" alt="Wohnung-Sanierung" width="800" height="534" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 02 — Modular</span>
               <h3 className="pkg-card__title">Wohnung-<br />Sanierung</h3>
@@ -82,7 +82,7 @@ export default function Home() {
             </div>
           </Link>
           <Link className="pkg-card reveal" data-delay="3" to="/komplett-pakete">
-            <img src="/assets/img/proj-moroccan-corner-thumb.webp" alt="Gastronomie-Ausbau" loading="lazy" />
+            <img src="/assets/img/proj-moroccan-corner-thumb.webp" alt="Gastronomie-Ausbau" width="800" height="374" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 03 — Konzept</span>
               <h3 className="pkg-card__title">Gastronomie-<br />Ausbau</h3>
@@ -210,7 +210,7 @@ export default function Home() {
             <li key={t.num} className="trade-chip reveal" data-delay={i % 4 || undefined}>
               <Link className="trade-chip__link" to={t.detailTo ?? '/gewerke'}>
                 <span className="trade-chip__thumb">
-                  <img src={PREVIEW_IMAGES[t.key]} alt="" loading="lazy" />
+                  <img src={PREVIEW_IMAGES[t.key]} alt="" width="400" height="300" loading="lazy" />
                 </span>
                 <span className="trade-chip__body">
                   <span className="trade-chip__num">{t.num}</span>
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="heating__grid">
           <Link className="heat-card reveal" to="/waermepumpe">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-stairs-concrete.webp" alt="Luftwärmepumpe" loading="lazy" />
+              <img src="/assets/img/proj-stairs-concrete.webp" alt="Luftwärmepumpe" width="1500" height="2000" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 01</span>
@@ -254,7 +254,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="1" to="/heizstraenge">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-floor-oak.webp" alt="Heizungsstränge" loading="lazy" />
+              <img src="/assets/img/proj-floor-oak.webp" alt="Heizungsstränge" width="1500" height="1875" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 02</span>
@@ -265,7 +265,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="2" to="/heizkoerper">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-spa-corridor.webp" alt="Heizkörper" loading="lazy" />
+              <img src="/assets/img/proj-spa-corridor.webp" alt="Heizkörper" width="1500" height="1125" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 03</span>
@@ -286,7 +286,7 @@ export default function Home() {
       <section className="founders" id="ueber-uns">
         <div className="founders__inner">
           <div className="founders__photo reveal reveal--left">
-            <img src="/assets/img/founders.webp" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" loading="lazy" />
+            <img src="/assets/img/founders.webp" alt="Daniel und Monica — Gründer Prima Vista Bauprojekte" width="1500" height="1000" loading="lazy" />
             <div className="founders__photo-label">
               <span>Daniel &amp; Monica — Frankfurt, 2026</span>
             </div>

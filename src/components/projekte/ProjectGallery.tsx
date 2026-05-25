@@ -44,7 +44,13 @@ export default function ProjectGallery({
                 if (match) onOpen(lightboxItems, getIndex(p));
               }}
             >
-              <img src={p.src} alt="" loading="lazy" />
+              <img
+                src={p.src}
+                alt=""
+                width={p.size === 'tall' ? 1125 : p.size === 'wide' ? 1500 : 1500}
+                height={p.size === 'tall' ? 1500 : p.size === 'wide' ? 750 : 1125}
+                loading="lazy"
+              />
             </a>
             <div className="g-card__body">
               <span className="g-card__num">{p.num}</span>

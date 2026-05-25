@@ -29,7 +29,7 @@ export default function FeaturedTrades({ items, onOpen }: FeaturedTradesProps) {
             const className = `ft-card${card.feature ? ' ft-card--feature' : ''} reveal reveal--scale`;
             const body = (
               <>
-                <img src={card.src} alt={card.title} loading="lazy" />
+                <img src={card.src} alt={card.title} width="800" height="600" loading="lazy" />
                 <div className="ft-card__body">
                   <span className="ft-card__count">{card.count}</span>
                   <h3 className="ft-card__title">{card.heading[0]}<br />{card.heading[1]}</h3>

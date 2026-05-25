@@ -37,13 +37,15 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
   { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
 ];
 
-export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number }> = [
+export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number; width: number; height: number }> = [
   {
     src: '/assets/img/proj-moroccan-dining.webp',
     title: 'Riad — Gastronomie · Frankfurt · 2025',
     year: '2025',
     alt: 'Riad Restaurant Frankfurt',
     gridClass: 'proj--a',
+    width: 1500,
+    height: 1125,
   },
   {
     src: '/assets/img/proj-concrete-sofa-tall.webp',
@@ -52,6 +54,8 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     alt: 'Villa Sichtbeton Luzern',
     gridClass: 'proj--b',
     revealDelay: 1,
+    width: 1125,
+    height: 1500,
   },
   {
     src: '/assets/img/proj-kitchen-oak.webp',
@@ -59,6 +63,8 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     year: '2025',
     alt: 'Küche Eichenholz Frankfurt',
     gridClass: 'proj--c',
+    width: 1500,
+    height: 1125,
   },
   {
     src: '/assets/img/proj-spa-bath.webp',
@@ -67,6 +73,8 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     alt: 'Spa-Bad Hotel',
     gridClass: 'proj--d',
     revealDelay: 1,
+    width: 1500,
+    height: 1125,
   },
   {
     src: '/assets/img/proj-lobby-tree.webp',
@@ -75,6 +83,8 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     alt: 'Lobby Office Frankfurt',
     gridClass: 'proj--e',
     revealDelay: 2,
+    width: 1500,
+    height: 1125,
   },
 ];
 
