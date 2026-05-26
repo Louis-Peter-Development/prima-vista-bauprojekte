@@ -48,75 +48,77 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={`pv-header${open ? ' is-menu-open' : ''}`}>
-      <div className="pv-header__inner">
-        <Link
-          className="pv-logo"
-          to="/"
-          aria-label="Prima Vista — Startseite"
-          onClick={() => {
-            if (pathname === '/') {
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-          }}
-        >
-          <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
-          <span className="pv-logo__txt">
-            <span className="pv-logo__name">Prima Vista</span>
-            <span className="pv-logo__tag">Bauprojekte</span>
-          </span>
-        </Link>
-        <nav className="pv-nav" aria-label="Hauptnavigation">
-          <ul className="pv-nav__list">
-            {NAV.map((item) => {
-              const active = navItemMatches(item, pathname);
-              return (
-                <li key={item.to}>
-                  <NavLink
-                    to={item.to}
-                    end={item.to === '/'}
-                    className={active ? 'is-active' : ''}
-                    onClick={() => {
-                      if (pathname === item.to || (item.to === '/' && pathname === '/')) {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }
-                    }}
-                  >
-                    {item.label}
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-          <button
-            type="button"
-            className="pv-theme-toggle"
-            aria-label={theme === 'dark' ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln'}
-            aria-pressed={theme === 'dark'}
-            title={theme === 'dark' ? 'Helles Design' : 'Dunkles Design'}
-            onClick={toggleTheme}
+    <>
+      <header className={`pv-header${open ? ' is-menu-open' : ''}`}>
+        <div className="pv-header__inner">
+          <Link
+            className="pv-logo"
+            to="/"
+            aria-label="Prima Vista — Startseite"
+            onClick={() => {
+              if (pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
           >
-            <span className="pv-theme-toggle__track" aria-hidden="true">
-              <span className="pv-theme-toggle__sun" />
-              <span className="pv-theme-toggle__moon" />
-              <span className="pv-theme-toggle__knob" />
+            <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
+            <span className="pv-logo__txt">
+              <span className="pv-logo__name">Prima Vista</span>
+              <span className="pv-logo__tag">Bauprojekte</span>
             </span>
-          </button>
-          <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
-            Blitz-Angebot <span className="arrow">&gt;</span>
           </Link>
-          <button
-            type="button"
-            className={`pv-burger${open ? ' is-open' : ''}`}
-            aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
-            aria-expanded={open}
-            aria-controls="pv-mobile-menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span></span><span></span><span></span>
-          </button>
-        </nav>
-      </div>
+          <nav className="pv-nav" aria-label="Hauptnavigation">
+            <ul className="pv-nav__list">
+              {NAV.map((item) => {
+                const active = navItemMatches(item, pathname);
+                return (
+                  <li key={item.to}>
+                    <NavLink
+                      to={item.to}
+                      end={item.to === '/'}
+                      className={active ? 'is-active' : ''}
+                      onClick={() => {
+                        if (pathname === item.to || (item.to === '/' && pathname === '/')) {
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </ul>
+            <button
+              type="button"
+              className="pv-theme-toggle"
+              aria-label={theme === 'dark' ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln'}
+              aria-pressed={theme === 'dark'}
+              title={theme === 'dark' ? 'Helles Design' : 'Dunkles Design'}
+              onClick={toggleTheme}
+            >
+              <span className="pv-theme-toggle__track" aria-hidden="true">
+                <span className="pv-theme-toggle__sun" />
+                <span className="pv-theme-toggle__moon" />
+                <span className="pv-theme-toggle__knob" />
+              </span>
+            </button>
+            <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
+              Blitz-Angebot <span className="arrow">&gt;</span>
+            </Link>
+            <button
+              type="button"
+              className={`pv-burger${open ? ' is-open' : ''}`}
+              aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
+              aria-expanded={open}
+              aria-controls="pv-mobile-menu"
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span></span><span></span><span></span>
+            </button>
+          </nav>
+        </div>
+      </header>
 
       <div
         id="pv-mobile-menu"
@@ -184,6 +186,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
+    </>
   );
 }
