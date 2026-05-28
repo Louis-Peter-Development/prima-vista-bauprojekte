@@ -3,11 +3,22 @@
   position: fixed;
   left: 24px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(-8px);
   z-index: 40;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms var(--pv-ease-out), transform 280ms var(--pv-ease-out);
+}
+.pv-social-rail.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pv-social-rail { transition: none; transform: translateY(-50%); }
 }
 .pv-social-rail a {
   width: 36px; height: 36px;
