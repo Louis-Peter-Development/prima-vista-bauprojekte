@@ -13,9 +13,9 @@ export type HeroSlide = {
  * `fetchpriority="high"`.
  */
 export const HERO_SLIDES: HeroSlide[] = [
-  { name: 'moroccan-dining', alt: 'Restaurant Riad — marokkanisches Esszimmer' },
-  { name: 'sushi', alt: 'Sushi Bar — Innenausbau' },
-  { name: 'lobby-tree', alt: 'Office Lobby mit Pflanzenkonzept' },
+  { name: 'lounge-modern', alt: 'Moderne Lounge mit Holzdecke und Naturmaterialien' },
+  { name: 'atrium-tree', alt: 'Atrium mit Glasrotunde und Baum-Installation' },
+  { name: 'spa-bath', alt: 'Spa-Badezimmer mit freistehender Wanne und Holzwand' },
 ];
 
 /** Back-compat for any caller that still imports HERO_IMAGES (high-res fallback). */

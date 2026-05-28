@@ -183,13 +183,13 @@
 
 :root[data-theme='dark'] .hero__bg-slide img,
 :root[data-theme='dark'] .page-intro::before {
-  filter: brightness(.58) saturate(.82) contrast(1.08);
+  filter: brightness(.78) saturate(.9) contrast(1.04);
 }
 
 :root[data-theme='dark'] .hero__bg-overlay {
   background:
-    linear-gradient(90deg, rgba(17, 16, 15, .92) 0%, rgba(17, 16, 15, .78) 42%, rgba(17, 16, 15, .48) 74%, rgba(17, 16, 15, .38) 100%),
-    linear-gradient(to top, rgba(17, 16, 15, .88) 0%, rgba(17, 16, 15, .62) 48%, rgba(17, 16, 15, .74) 100%);
+    linear-gradient(90deg, rgba(17, 16, 15, .78) 0%, rgba(17, 16, 15, .58) 42%, rgba(17, 16, 15, .22) 74%, rgba(17, 16, 15, .12) 100%),
+    linear-gradient(to top, rgba(17, 16, 15, .72) 0%, rgba(17, 16, 15, .34) 48%, rgba(17, 16, 15, .48) 100%);
 }
 
 :root[data-theme='dark'] .hero__inner::before {

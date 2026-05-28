@@ -40,8 +40,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(232, 223, 223, .94) 0%, rgba(232, 223, 223, .84) 42%, rgba(232, 223, 223, .48) 74%, rgba(232, 223, 223, .38) 100%),
-    linear-gradient(to top, rgba(232, 223, 223, .72) 0%, rgba(232, 223, 223, .58) 48%, rgba(232, 223, 223, .86) 100%);
+    linear-gradient(90deg, rgba(232, 223, 223, .82) 0%, rgba(232, 223, 223, .64) 42%, rgba(232, 223, 223, .28) 74%, rgba(232, 223, 223, .16) 100%),
+    linear-gradient(to top, rgba(232, 223, 223, .58) 0%, rgba(232, 223, 223, .34) 48%, rgba(232, 223, 223, .68) 100%);
 }
 .hero__inner {
   position: relative;
