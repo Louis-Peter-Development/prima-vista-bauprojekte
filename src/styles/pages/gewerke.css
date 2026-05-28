@@ -37,7 +37,7 @@
 }
 .featured-trades__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 .ft-card {
@@ -46,11 +46,10 @@
   overflow: hidden;
   background: var(--pv-ink-2);
   cursor: pointer;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 5 / 6;
   color: inherit;
   text-decoration: none;
 }
-.ft-card--feature { aspect-ratio: 5 / 6; }
 .ft-card img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
@@ -78,13 +77,12 @@
 .ft-card__title {
   font-family: var(--pv-font-display);
   font-weight: 800;
-  font-size: 22px;
+  font-size: 30px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1.05;
   margin: 0 0 12px;
 }
-.ft-card--feature .ft-card__title { font-size: 30px; }
 .ft-card__desc {
   font-family: var(--pv-font-body);
   font-size: 13px;
