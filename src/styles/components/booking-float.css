@@ -50,9 +50,8 @@
   flex-shrink: 0;
 }
 .pv-booking-float__label {
-  /* Vertical text, reading bottom-to-top (natural for right-edge tabs). */
+  /* Vertical text, reading top-to-bottom. */
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 .pv-booking-float__arrow {
   font-family: var(--pv-font-mono);
