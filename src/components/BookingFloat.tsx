@@ -15,7 +15,6 @@ export default function BookingFloat() {
     >
       <span className="pv-booking-float__dot" aria-hidden="true"></span>
       <span className="pv-booking-float__label">Termin vereinbaren</span>
-      <span className="pv-booking-float__arrow" aria-hidden="true">&gt;</span>
     </Link>
   );
 }

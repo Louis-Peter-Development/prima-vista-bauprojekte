@@ -1,4 +1,4 @@
-/* ----- Booking float (right edge, fixed, mirrors social rail) ----- */
+/* ----- Booking float (right edge, vertical pill, mirrors social rail) ----- */
 .pv-booking-float {
   position: fixed;
   right: 24px;
@@ -6,9 +6,11 @@
   transform: translateY(-50%) translateX(8px);
   z-index: 40;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 12px 18px;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 10px;
   border: 1px solid rgba(26, 26, 26, .15);
   border-radius: 999px;
   background: rgba(255, 255, 255, .85);
@@ -17,7 +19,7 @@
   font-family: var(--pv-font-display);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
@@ -47,26 +49,35 @@
   background: var(--pv-copper);
   flex-shrink: 0;
 }
+.pv-booking-float__label {
+  /* Vertical text, reading bottom-to-top (natural for right-edge tabs). */
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
 .pv-booking-float__arrow {
   font-family: var(--pv-font-mono);
   font-size: 12px;
   letter-spacing: 0;
   opacity: 0.6;
-  transition: transform 200ms var(--pv-ease-out);
+  /* Arrow points upward (toward the label). */
+  transform: rotate(-90deg);
+  transition: transform 200ms var(--pv-ease-out), opacity 200ms var(--pv-ease-out);
 }
 .pv-booking-float:hover .pv-booking-float__arrow {
-  transform: translateX(2px);
+  transform: rotate(-90deg) translateX(2px);
   opacity: 1;
 }
 
 :root[data-theme='dark'] .pv-booking-float {
-  background: rgba(26, 26, 26, .65);
-  border-color: rgba(241, 233, 226, .18);
+  background: rgba(241, 233, 226, .08);
+  border-color: rgba(241, 233, 226, .32);
   color: var(--pv-paper);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
 }
 :root[data-theme='dark'] .pv-booking-float:hover {
   color: var(--pv-copper-bright);
   border-color: var(--pv-copper-bright);
+  background: rgba(241, 233, 226, .12);
 }
 
 @media (prefers-reduced-motion: reduce) {
