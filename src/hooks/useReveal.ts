@@ -144,7 +144,11 @@ export function useReveal() {
     autoTag();
     observeAll();
     revealIfVisible();
-    window.addEventListener('scroll', scheduleRevealIfVisible, { passive: true });
+    // The IntersectionObserver handles reveal-on-scroll on its own. We
+    // deliberately do NOT add a scroll listener here — running
+    // getBoundingClientRect() over every element on each scroll frame caused
+    // noticeable stutter on touch devices. Resize/orientation still re-check
+    // because those change which elements are in view without scrolling.
     window.addEventListener('resize', scheduleRevealIfVisible);
     window.addEventListener('orientationchange', scheduleRevealIfVisible);
 
@@ -161,13 +165,16 @@ export function useReveal() {
       });
     });
 
-    mo.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+    // Only watch for added/removed nodes (e.g. route content, lazy components).
+    // We must NOT watch class attributes: reveal() adds the `is-in` class, which
+    // would re-trigger this observer on every reveal — a feedback loop that
+    // degrades scrolling on touch devices.
+    mo.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       if (revealFrame) window.cancelAnimationFrame(revealFrame);
       io?.disconnect();
       mo.disconnect();
-      window.removeEventListener('scroll', scheduleRevealIfVisible);
       window.removeEventListener('resize', scheduleRevealIfVisible);
       window.removeEventListener('orientationchange', scheduleRevealIfVisible);
     };

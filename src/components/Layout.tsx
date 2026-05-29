@@ -91,19 +91,41 @@ function ScrollToTop() {
   }, []);
 
   useEffect(() => {
-    const saveScroll = () => {
+    let timer = 0;
+
+    // Expensive: history.replaceState + sessionStorage writes. Kept OUT of the
+    // per-scroll path — running these on every scroll event stuttered badly on
+    // touch devices.
+    const persist = () => {
+      timer = 0;
+      const y = window.scrollY;
+      writeScrollState(y);
+      writeSavedScroll(`scroll:${key}`, y);
+      writeSavedScroll(`scroll:${pathKey}`, y);
+    };
+
+    // Cheap: update in-memory refs on every scroll, but debounce the costly
+    // persistence to once scrolling settles. The latest position is always in
+    // the refs and is flushed on unmount / pagehide regardless.
+    const onScroll = () => {
+      const y = window.scrollY;
+      lastScrollByKey.current[key] = y;
+      lastScrollByPath.current[pathKey] = y;
+      if (timer) window.clearTimeout(timer);
+      timer = window.setTimeout(persist, 200);
+    };
+
+    if (navigationType !== 'POP') {
       lastScrollByKey.current[key] = window.scrollY;
       lastScrollByPath.current[pathKey] = window.scrollY;
-      writeScrollState(window.scrollY);
-      writeSavedScroll(`scroll:${key}`, window.scrollY);
-      writeSavedScroll(`scroll:${pathKey}`, window.scrollY);
-    };
-    if (navigationType !== 'POP') saveScroll();
-    window.addEventListener('scroll', saveScroll, { passive: true });
+      persist();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
-      saveScroll();
-      window.removeEventListener('scroll', saveScroll);
+      if (timer) window.clearTimeout(timer);
+      persist();
+      window.removeEventListener('scroll', onScroll);
     };
   }, [key, navigationType, pathKey]);
 
@@ -145,6 +167,19 @@ function ScrollToTop() {
     }
 
     if (navigationType === 'POP') {
+      let cancelled = false;
+      const timers: number[] = [];
+      // The moment the user scrolls/taps, stop forcing the saved position —
+      // otherwise the late retries below yank the page back under them.
+      const stop = () => {
+        cancelled = true;
+        timers.forEach((t) => window.clearTimeout(t));
+        timers.length = 0;
+        window.removeEventListener('wheel', stop);
+        window.removeEventListener('touchstart', stop);
+        window.removeEventListener('keydown', stop);
+      };
+
       const frame = window.requestAnimationFrame(() => {
         const storedScroll = readSavedScroll(`scroll:${key}`);
         const storedPathScroll = readSavedScroll(`scroll:${pathKey}`);
@@ -156,10 +191,12 @@ function ScrollToTop() {
           ?? storedPathScroll
           ?? 0;
         const restore = () => {
+          if (cancelled) return;
           window.scrollTo({ top: savedScroll, behavior: 'instant' as ScrollBehavior });
         };
 
         const restoreWhenReady = (attempt = 0) => {
+          if (cancelled) return;
           const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
           if (savedScroll <= maxScroll || attempt > 12) {
             restore();
@@ -170,13 +207,22 @@ function ScrollToTop() {
 
         restoreWhenReady();
         if (savedScroll > 0) {
-          window.setTimeout(restore, 100);
-          window.setTimeout(restore, 300);
-          window.setTimeout(restore, 700);
-          window.setTimeout(restore, 1200);
+          // Late retries catch content that grows after first layout (e.g.
+          // images), so restoration stays reliable — but they bail out the
+          // instant the user scrolls/taps, so they never yank the page back.
+          window.addEventListener('wheel', stop, { passive: true });
+          window.addEventListener('touchstart', stop, { passive: true });
+          window.addEventListener('keydown', stop);
+          timers.push(window.setTimeout(restore, 100));
+          timers.push(window.setTimeout(restore, 300));
+          timers.push(window.setTimeout(restore, 700));
+          timers.push(window.setTimeout(() => { restore(); stop(); }, 1200));
         }
       });
-      return () => window.cancelAnimationFrame(frame);
+      return () => {
+        window.cancelAnimationFrame(frame);
+        stop();
+      };
     }
 
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
