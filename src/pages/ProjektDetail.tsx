@@ -3,6 +3,8 @@ import { useMemo } from 'react';
 import { PROJECTS } from '../data/projects';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { projectAnchorId } from '../components/projekte/ProjectGallery';
+import ProjectVideos from '../components/projekte/ProjectVideos';
+import ProjectFeatureVideo from '../components/projekte/ProjectFeatureVideo';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/projekt-detail.css';
 
@@ -79,6 +81,11 @@ export default function ProjektDetail() {
         </div>
       </section>
 
+      {/* Feature film — shown prominently right after the hero/facts */}
+      {detail.featuredVideo && (
+        <ProjectFeatureVideo video={detail.featuredVideo} headline={detail.headline} />
+      )}
+
       {/* Description */}
       <section className="pd-body">
         <div className="pd-body__inner">
@@ -105,6 +112,11 @@ export default function ProjektDetail() {
           </div>
         </div>
       </section>
+
+      {/* Videos — Rundgang */}
+      {detail.videos && detail.videos.length > 0 && (
+        <ProjectVideos videos={detail.videos} headline={detail.headline} />
+      )}
 
       {/* Gallery */}
       {detail.gallery.length > 1 && (

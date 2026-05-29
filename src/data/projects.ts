@@ -26,9 +26,64 @@ export type ProjectDetail = {
   description: string[];
   gewerke: string[];
   gallery: string[];
+  /** Single hero/feature film shown prominently right after the hero. */
+  featuredVideo?: { id: string; label?: string };
+  videos?: { id: string; label?: string }[];
 };
 
 export const PROJECTS: Project[] = [
+  {
+    num: '№ 147', slug: 'zoi-restaurant', title: 'Zoi — Restaurant · Frankfurt · 2026', ttl: 'Zoi Restaurant', meta: 'Gastronomie · Frankfurt · 2026', src: '/assets/img/proj-zoi-01.webp', size: 'lg', tags: ['gastro'],
+    detail: {
+      heroImg: '/assets/img/proj-zoi-01.webp',
+      headline: 'Zoi Restaurant',
+      location: 'Frankfurt',
+      year: '2026',
+      area: '240 m²',
+      duration: '16 Wochen',
+      scope: 'Komplett-Ausbau',
+      description: [
+        'Ein griechisch-mediterranes Restaurant — Zoi (griechisch für „Leben") — von der rohen Gewerbefläche bis zur schlüsselfertigen Eröffnung aus einer Hand.',
+        'Das Raumkonzept lebt von skulpturalen Bögen und Rundbogen-Nischen: tiefe Terrakotta-Wände mit eingelassenen Rundnischen, dunkle Holzvertäfelungen und eine maßgefertigte Bar mit Mosaiktresen bilden das gestalterische Rückgrat des Gastraums.',
+        'Handgemalte botanische Wandmalereien und ein abgestimmtes Lichtkonzept setzen warme Akzente, während alle Gewerke — inklusive Gastro-Lüftung und kompletter Kücheninstallation — koordiniert ineinandergreifen.',
+      ],
+      gewerke: ['Trockenbau', 'Elektroinstallation', 'Sanitär', 'Lüftung', 'Bodenbelag', 'Fliesen', 'Maler & Lackierer', 'Schreinerei', 'Möbelbau', 'Beleuchtung'],
+      featuredVideo: { id: 'tVQud9TzU64', label: 'Restaurant sanieren in Rekordzeit — der Film' },
+      videos: [
+        { id: 'zI_MKILDPow' },
+        { id: '2ZonoUK1uls' },
+        { id: '1LKky-fCKu0' },
+        { id: 'bk9gSI3zuTs' },
+        { id: 'h5wWnVZpFZE' },
+        { id: 'wg983ttU8ro' },
+      ],
+      gallery: [
+        '/assets/img/proj-zoi-01.webp',
+        '/assets/img/proj-zoi-02.webp',
+        '/assets/img/proj-zoi-03.webp',
+        '/assets/img/proj-zoi-04.webp',
+        '/assets/img/proj-zoi-05.webp',
+        '/assets/img/proj-zoi-06.webp',
+        '/assets/img/proj-zoi-07.webp',
+        '/assets/img/proj-zoi-08.webp',
+        '/assets/img/proj-zoi-09.webp',
+        '/assets/img/proj-zoi-10.webp',
+        '/assets/img/proj-zoi-11.webp',
+        '/assets/img/proj-zoi-12.webp',
+        '/assets/img/proj-zoi-13.webp',
+        '/assets/img/proj-zoi-14.webp',
+        '/assets/img/proj-zoi-15.webp',
+        '/assets/img/proj-zoi-16.webp',
+        '/assets/img/proj-zoi-17.webp',
+        '/assets/img/proj-zoi-18.webp',
+        '/assets/img/proj-zoi-19.webp',
+        '/assets/img/proj-zoi-20.webp',
+        '/assets/img/proj-zoi-21.webp',
+        '/assets/img/proj-zoi-22.webp',
+        '/assets/img/proj-zoi-23.webp',
+      ],
+    },
+  },
   {
     num: '№ 142', slug: 'riad-restaurant', title: 'Riad — Restaurant · Frankfurt · 2025', ttl: 'Riad Restaurant', meta: 'Gastronomie · Frankfurt · 2025', src: '/assets/img/proj-moroccan-dining-wide.webp', size: 'lg', tags: ['gastro'],
     detail: {
