@@ -89,9 +89,10 @@
 @media (max-width: 880px) {
   .pv-footer { padding: 64px 0 28px; }
   .pv-footer__inner { padding: 0 24px; }
-  .pv-footer__bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .pv-footer__bottom { flex-wrap: wrap; gap: 12px 24px; }
   .pv-footer__legal { flex-wrap: wrap; gap: 14px 20px; }
-  .pv-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  /* Keep the desktop 4-column row down to ~800px — just tighten the gap so it fits. */
+  .pv-footer__grid { gap: 32px; }
   .page-intro__inner { grid-template-columns: 1fr; gap: 32px; }
   .pv-cookie__content {
     grid-template-columns: 1fr;
@@ -103,6 +104,11 @@
   .pv-cookie__actions .btn {
     flex: 1 1 220px;
   }
+}
+/* Below ~800px four columns get too narrow, so drop to a 2-column grid
+   (Brand | Standorte over Leistungen | Kontakt) before going single-column. */
+@media (max-width: 800px) {
+  .pv-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 600px) {
   :root { --pv-header-height: 72px; }
@@ -123,6 +129,8 @@
   }
   .pv-chat svg { width: 18px; height: 18px; }
   .pv-footer__grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 40px; }
+  .pv-footer__bottom { justify-content: center; text-align: center; }
+  .pv-footer__legal { width: 100%; justify-content: center; }
   .page-intro { padding: 100px 20px 56px; }
   .page-intro__inner { padding: 0; gap: 24px; }
   .pv-cookie {
