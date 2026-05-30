@@ -336,7 +336,17 @@ function ConciergeIcon({
 }
 
 function Avatar() {
-  return <span className="pv-chat-avatar" aria-hidden="true">PV</span>;
+  return (
+    <span className="pv-chat-avatar" aria-hidden="true">
+      <img
+        src="/assets/img/founders-avatar.webp"
+        alt=""
+        width="256"
+        height="256"
+        loading="lazy"
+      />
+    </span>
+  );
 }
 
 function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
@@ -432,6 +442,7 @@ function TypingDots() {
 
 export default function Chat() {
   const [open, setOpen] = useState(false);
+  const [previewDismissed, setPreviewDismissed] = useState(false);
   const [messages, setMessages] = useState<Message[]>([GREETING]);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
@@ -610,11 +621,16 @@ export default function Chat() {
     <>
       {!open && (
         <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}${shouldAvoidLauncher ? ' is-avoiding' : ''}`} aria-hidden={!canShowLauncher}>
-          {canShowPreview && (
-            <div
-              className="pv-chat-preview"
-              aria-hidden="true"
-            >
+          {canShowPreview && !previewDismissed && (
+            <div className="pv-chat-preview">
+              <button
+                type="button"
+                className="pv-chat-preview__close"
+                aria-label="Hinweis schließen"
+                onClick={() => setPreviewDismissed(true)}
+              >
+                <CloseIcon />
+              </button>
               <Avatar />
               <span>
                 <strong>Bau-Concierge</strong>

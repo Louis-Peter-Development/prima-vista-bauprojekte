@@ -49,3 +49,14 @@ Site Files/
 # Temporary and Scraper files
 .tmp/
 
+# Raw image/video sources in docs (optimized assets live in public/assets/)
+docs/iStock-*
+docs/**/*.jpeg
+docs/**/*.jpg
+docs/**/*.png
+docs/**/*.mp4
+docs/zoi restaurant/
+
+# Scraped site snapshots (one-time exports, not used by the build)
+docs/*.html
+

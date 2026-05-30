@@ -39,13 +39,13 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
 
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number; width: number; height: number }> = [
   {
-    src: '/assets/img/proj-moroccan-dining.webp',
-    title: 'Riad — Gastronomie · Frankfurt · 2025',
-    year: '2025',
-    alt: 'Riad Restaurant Frankfurt',
+    src: '/assets/img/proj-zoi-01.webp',
+    title: 'Zoi — Restaurant · Frankfurt · 2026',
+    year: '2026',
+    alt: 'Zoi Restaurant Frankfurt',
     gridClass: 'proj--a',
-    width: 1500,
-    height: 1125,
+    width: 1600,
+    height: 1200,
   },
   {
     src: '/assets/img/proj-concrete-sofa-tall.webp',
@@ -89,7 +89,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
 ];
 
 export const FEATURED_HOME_TITLES: Record<string, string> = {
-  'proj--a': 'Riad — Gastronomie',
+  'proj--a': 'Zoi — Restaurant',
   'proj--b': 'Villa Sichtbeton',
   'proj--c': 'Küche Eichenholz',
   'proj--d': 'Spa-Bad — Hotel',
