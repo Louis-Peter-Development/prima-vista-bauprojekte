@@ -40,11 +40,6 @@ function serialize(post: PostDocument & { _id?: unknown }) {
   };
 }
 
-async function nextSortOrder(Post: PostModel) {
-  const last = await Post.findOne({}).sort({ sortOrder: -1 }).select('sortOrder').lean();
-  return typeof last?.sortOrder === 'number' ? last.sortOrder + 1 : 0;
-}
-
 async function normalizeSortOrders(Post: PostModel) {
   const posts = await Post.find({})
     .sort({ sortOrder: 1, publishedAt: -1, createdAt: -1 })
@@ -116,10 +111,13 @@ async function createPost(req: Request, context: Context) {
 
   const { Post } = await connectDb();
   const now = new Date();
+  await normalizeSortOrders(Post);
+  await Post.updateMany({}, { $inc: { sortOrder: 1 } });
+
   const post = await Post.create({
     ...payload,
     slug: await uniqueSlug(Post, payload.title),
-    sortOrder: await nextSortOrder(Post),
+    sortOrder: 0,
     excerpt: excerptFromDoc(payload.body),
     readingTime: readingTimeFromDoc(payload.body),
     publishedAt: payload.status === 'published' ? now : null,
