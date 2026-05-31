@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CoverImage from '../components/blog/CoverImage';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
@@ -150,11 +151,7 @@ export default function Blog() {
           <Link className="mag-lead" to={`/blog/${lead.slug}`}>
             <span className="mag-lead__media">
               <span className="mag-lead__tag">Leitartikel</span>
-              {lead.coverImageUrl ? (
-                <img src={lead.coverImageUrl} alt="" />
-              ) : (
-                <span className="blog-card__placeholder" />
-              )}
+              <CoverImage src={lead.coverImageUrl} />
             </span>
             <span className="mag-lead__body">
               <span className="mag-lead__kicker">
@@ -189,11 +186,7 @@ export default function Blog() {
                 <Link className="mag-card" to={`/blog/${post.slug}`} key={post.id}>
                   <span className="mag-card__media">
                     <span className="mag-card__num">№ {pad(issueOf(post))}</span>
-                    {post.coverImageUrl ? (
-                      <img src={post.coverImageUrl} alt="" loading="lazy" />
-                    ) : (
-                      <span className="blog-card__placeholder" />
-                    )}
+                    <CoverImage src={post.coverImageUrl} loading="lazy" />
                   </span>
                   <span className="mag-card__body">
                     <span className="mag-card__kicker">
