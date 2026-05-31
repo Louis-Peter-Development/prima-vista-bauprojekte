@@ -49,12 +49,66 @@
 .mag__inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 56px 48px 0;
 }
 
-/* ---------- Masthead / nameplate ---------- */
+/* ---------- Masthead / nameplate (image-backed hero) ----------
+   Always-dark hero: a background photo + scrim, with the editorial
+   nameplate content over it (light text, pinned so it holds in both themes). */
 .mag-masthead {
-  padding: 72px 0 0;
+  position: relative;
+  background: var(--pv-cream);
+  color: var(--mag-text);
+  overflow: hidden;
+}
+.mag-masthead__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  z-index: 0;
+  animation: hero-photo-in 1400ms var(--pv-ease-out) both;
+}
+/* Cream wash that fades the photo into the page — the same treatment as the
+   PageIntro hero. theme.css-style dark gradient supplied below for dark mode. */
+.mag-masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(232, 223, 223, 0.22) 0%,
+    rgba(232, 223, 223, 0.5) 50%,
+    rgba(232, 223, 223, 0.8) 100%);
+}
+[data-theme='dark'] .mag-masthead::after {
+  background: linear-gradient(to bottom,
+    rgba(17, 16, 15, .34) 0%,
+    rgba(17, 16, 15, .68) 48%,
+    rgba(17, 16, 15, .94) 100%);
+}
+.mag-masthead__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  min-height: calc(100dvh - var(--pv-header-height));
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 56px;
+}
+
+/* Rule pinned to the top; the foot (nameplate + meta) sits at the bottom,
+   nameplate bottom-left and meta bottom-right — mirroring the PageIntro hero. */
+.mag-masthead__foot {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: end;
 }
 
 .mag-masthead__rule {
@@ -72,7 +126,6 @@
   text-transform: uppercase;
   color: var(--mag-muted);
 }
-
 .mag-masthead__rule .num {
   font-family: var(--pv-font-mono);
   letter-spacing: .14em;
@@ -80,10 +133,8 @@
 }
 
 .mag-masthead__plate {
-  text-align: center;
-  padding: 40px 0 30px;
+  text-align: left;
 }
-
 .mag-masthead__eyebrow {
   display: inline-flex;
   align-items: center;
@@ -103,21 +154,19 @@
   height: 2px;
   background: var(--pv-red);
 }
-
 .mag-masthead__name {
   margin: 0;
   font-family: var(--pv-font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(72px, 13vw, 188px);
-  line-height: .84;
+  font-size: clamp(60px, 7.5vw, 128px);
+  line-height: .9;
   letter-spacing: -.02em;
   color: var(--mag-ink);
 }
-
 .mag-masthead__sub {
-  max-width: 640px;
-  margin: 26px auto 0;
+  max-width: 48ch;
+  margin: 22px 0 0;
   font-family: var(--pv-font-body);
   font-size: 17px;
   line-height: 1.7;
@@ -126,23 +175,17 @@
 }
 
 .mag-masthead__meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+  margin: 0;
+  padding-top: 22px;
   border-top: 1px solid var(--mag-rule);
-  border-bottom: 1.5px solid var(--mag-ink);
 }
-
 .mag-masthead__meta div {
-  flex: 1 1 0;
-  min-width: 150px;
-  padding: 16px 22px;
+  min-width: 0;
+  padding: 0;
   text-align: left;
-}
-.mag-masthead__meta div + div {
-  border-left: 1px solid var(--mag-rule);
 }
 .mag-masthead__meta dt {
   font-family: var(--pv-font-display);
@@ -166,7 +209,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
   gap: 0;
-  margin-top: 56px;
+  margin-top: 0;
   border: 1px solid var(--mag-rule);
   background: var(--mag-card);
   overflow: hidden;
@@ -1416,11 +1459,10 @@
 }
 
 @media (max-width: 760px) {
-  .mag__inner { padding: 0 24px; }
-  .mag-masthead { padding-top: 40px; }
+  .mag__inner { padding: 40px 24px 0; }
+  .mag-masthead__inner { padding: 28px 24px 40px; }
   .mag-masthead__rule { flex-direction: column; gap: 6px; text-align: center; }
-  .mag-masthead__meta { flex-direction: column; }
-  .mag-masthead__meta div + div { border-left: 0; border-top: 1px solid var(--mag-rule); }
+  .mag-masthead__foot { grid-template-columns: 1fr; gap: 32px; }
   .mag-grid { grid-template-columns: 1fr; }
   .mag-card,
   .mag-card:nth-child(1),

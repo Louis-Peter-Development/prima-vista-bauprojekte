@@ -26,14 +26,15 @@
   background-position: center;
   transform: scale(1.04);
   z-index: 0;
+  animation: hero-photo-in 1400ms var(--pv-ease-out) both;
 }
 .page-intro::after {
   /* Heavier wash at the bottom (where content sits) for legibility,
      softer at the top so the image shows through the empty space. */
   background: linear-gradient(to bottom,
-    rgba(232, 223, 223, 0.45) 0%,
-    rgba(232, 223, 223, 0.78) 50%,
-    rgba(232, 223, 223, 0.95) 100%);
+    rgba(232, 223, 223, 0.22) 0%,
+    rgba(232, 223, 223, 0.5) 50%,
+    rgba(232, 223, 223, 0.8) 100%);
   z-index: 1;
 }
 .page-intro__inner {
