@@ -79,9 +79,9 @@
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(to bottom,
-    rgba(232, 223, 223, 0.45) 0%,
-    rgba(232, 223, 223, 0.78) 50%,
-    rgba(232, 223, 223, 0.95) 100%);
+    rgba(232, 223, 223, 0.22) 0%,
+    rgba(232, 223, 223, 0.5) 50%,
+    rgba(232, 223, 223, 0.8) 100%);
 }
 [data-theme='dark'] .mag-masthead::after {
   background: linear-gradient(to bottom,
