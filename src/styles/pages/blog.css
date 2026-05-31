@@ -69,6 +69,7 @@
   object-fit: cover;
   transform: scale(1.04);
   z-index: 0;
+  animation: hero-photo-in 1400ms var(--pv-ease-out) both;
 }
 /* Cream wash that fades the photo into the page — the same treatment as the
    PageIntro hero. theme.css-style dark gradient supplied below for dark mode. */

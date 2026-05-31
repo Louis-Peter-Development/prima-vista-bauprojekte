@@ -26,6 +26,7 @@
   background-position: center;
   transform: scale(1.04);
   z-index: 0;
+  animation: hero-photo-in 1400ms var(--pv-ease-out) both;
 }
 .page-intro::after {
   /* Heavier wash at the bottom (where content sits) for legibility,
