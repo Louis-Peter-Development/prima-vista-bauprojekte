@@ -163,7 +163,9 @@ export default function BlogDetail() {
       </header>
 
       <section className="blog-article__main">
-        <ArticleRenderer content={post.body} />
+        <div className="blog-article__body">
+          <ArticleRenderer content={post.body} />
+        </div>
 
         <div className="blog-article__tools">
           <button type="button" className="btn btn--light" disabled={liked} onClick={likePost}>
