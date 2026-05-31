@@ -47,6 +47,7 @@ export default function AdminLogin() {
   // Public Google OAuth client id, served at runtime by /api/auth/session when
   // Google login is configured on the server. Null = hide the Google button.
   const [googleClientId, setGoogleClientId] = useState<string | null>(null);
+  const [checkingSession, setCheckingSession] = useState(true);
   const googleButtonRef = useRef<HTMLDivElement | null>(null);
   const googleWrapRef = useRef<HTMLDivElement | null>(null);
 
@@ -64,7 +65,10 @@ export default function AdminLogin() {
         }
         setGoogleClientId(data.googleClientId ?? null);
       })
-      .catch(() => undefined);
+      .catch(() => undefined)
+      .finally(() => {
+        if (!cancelled) setCheckingSession(false);
+      });
     return () => {
       cancelled = true;
     };
@@ -155,16 +159,23 @@ export default function AdminLogin() {
         <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="E-Mail" required />
         <input type="password" name="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Passwort" required />
         <button className="btn btn--solid" type="submit">Einloggen</button>
-        {googleClientId && (
+        {(checkingSession || googleClientId) && (
           <>
             <span className="blog-admin-panel__divider">oder</span>
-            <div className="pv-google" ref={googleWrapRef}>
-              <span className="btn btn--light pv-google__face" aria-hidden="true">
+            {googleClientId ? (
+              <div className="pv-google" ref={googleWrapRef}>
+                <span className="btn btn--light pv-google__face" aria-hidden="true">
+                  <GoogleG />
+                  Mit Google anmelden
+                </span>
+                <div className="pv-google__gsi" ref={googleButtonRef} />
+              </div>
+            ) : (
+              <span className="btn btn--light pv-google__face pv-google__face--pending" aria-hidden="true">
                 <GoogleG />
-                Mit Google anmelden
+                Google wird geprüft …
               </span>
-              <div className="pv-google__gsi" ref={googleButtonRef} />
-            </div>
+            )}
           </>
         )}
         {error && <p className="blog-state blog-state--error">{error}</p>}

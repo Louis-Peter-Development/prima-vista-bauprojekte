@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout';
+import './styles/components/route-loading.css';
 
 // Lazy load all pages for code splitting
 const Home = lazy(() => import('./pages/Home'));
@@ -47,9 +48,75 @@ const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const AdminBlog = lazy(() => import('./pages/AdminBlog'));
 const AdminEditor = lazy(() => import('./pages/AdminEditor'));
 
+function RouteFallback() {
+  const { pathname } = useLocation();
+
+  if (pathname === '/blog') {
+    return (
+      <main className="route-loading route-loading--blog" aria-busy="true">
+        <p className="route-loading__sr" role="status">Beiträge werden geladen.</p>
+        <div className="route-loading__blog-grid" aria-hidden="true">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <div className="route-loading__card" key={index}>
+              <span className="route-loading__media route-loading__shimmer" />
+              <span className="route-loading__card-body">
+                <span className="route-loading__line route-loading__line--meta route-loading__shimmer" />
+                <span className="route-loading__line route-loading__line--title route-loading__shimmer" />
+                <span className="route-loading__line route-loading__line--title-short route-loading__shimmer" />
+                <span className="route-loading__line route-loading__shimmer" />
+                <span className="route-loading__line route-loading__shimmer" />
+                <span className="route-loading__line route-loading__line--short route-loading__shimmer" />
+              </span>
+            </div>
+          ))}
+        </div>
+      </main>
+    );
+  }
+
+  if (pathname.startsWith('/blog/')) {
+    return (
+      <main className="route-loading route-loading--article" aria-busy="true">
+        <p className="route-loading__sr" role="status">Beitrag wird geladen.</p>
+        <section className="route-loading__article-hero" aria-hidden="true">
+          <div className="route-loading__article-inner">
+            <span className="route-loading__line route-loading__line--back route-loading__shimmer" />
+            <span className="route-loading__line route-loading__line--hero route-loading__shimmer" />
+            <span className="route-loading__line route-loading__line--hero-short route-loading__shimmer" />
+            <span className="route-loading__line route-loading__line--lede route-loading__shimmer" />
+          </div>
+        </section>
+        <section className="route-loading__article-body" aria-hidden="true">
+          {Array.from({ length: 9 }).map((_, index) => (
+            <span
+              className={`route-loading__line route-loading__shimmer${index % 4 === 3 ? ' route-loading__line--short' : ''}`}
+              key={index}
+            />
+          ))}
+        </section>
+      </main>
+    );
+  }
+
+  if (pathname.startsWith('/admin')) {
+    return (
+      <main className="route-loading route-loading--admin" aria-busy="true">
+        <p className="route-loading__state" role="status">Anmeldung wird geprüft …</p>
+      </main>
+    );
+  }
+
+  return (
+    <main className="route-loading route-loading--page" aria-busy="true">
+      <p className="route-loading__sr" role="status">Seite wird geladen.</p>
+      <span className="route-loading__line route-loading__line--page route-loading__shimmer" aria-hidden="true" />
+    </main>
+  );
+}
+
 export default function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<RouteFallback />}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />

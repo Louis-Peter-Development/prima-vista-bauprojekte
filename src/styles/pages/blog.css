@@ -618,6 +618,11 @@
   flex: none;
 }
 
+.pv-google__face--pending {
+  color: var(--pv-text-on-light-muted);
+  pointer-events: none;
+}
+
 .pv-google:hover .pv-google__face {
   color: var(--pv-copper);
   border-color: var(--pv-copper);
