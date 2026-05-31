@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CoverImage from '../components/blog/CoverImage';
+import PageIntro from '../components/common/PageIntro';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
@@ -76,45 +77,22 @@ export default function Blog() {
   })();
 
   return (
+    <>
+    <PageIntro
+      backgroundImage="/assets/img/photo-altbausanierung.webp"
+      crumbNumber="07"
+      crumbLabel="Magazin"
+      title={<>Ideen für<br />bessere <em>Räume.</em></>}
+      lede="Planung, Material, Ablauf und Entscheidungen rund um Sanierung, Ausbau und Renovierung."
+      meta={[
+        { label: 'Format', value: 'Ratgeber & Einblicke' },
+        { label: 'Fokus', value: 'Wohnsitz · Gewerbe · Gastro' },
+        { label: 'Region', value: 'Frankfurt · Luzern' },
+        { label: 'Archiv', value: `${total} ${total === 1 ? 'Beitrag' : 'Beiträge'}` },
+      ]}
+    />
     <section className="mag" aria-busy={loading}>
       <div className="mag__inner">
-        <header className="mag-masthead">
-          <div className="mag-masthead__rule">
-            <span>Prima Vista Bauprojekte</span>
-            <span>
-              <span className="num">Ausgabe №{total > 0 ? pad(total) : '—'}</span>
-              &nbsp;&nbsp;·&nbsp;&nbsp;Frankfurt · Luzern · MMXXVI
-            </span>
-          </div>
-
-          <div className="mag-masthead__plate">
-            <span className="mag-masthead__eyebrow">Das Magazin</span>
-            <h1 className="mag-masthead__name">Magazin</h1>
-            <p className="mag-masthead__sub">
-              Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf
-              und Handwerk rund um Sanierung, Ausbau und Renovierung.
-            </p>
-          </div>
-
-          <dl className="mag-masthead__meta">
-            <div>
-              <dt>Format</dt>
-              <dd>Ratgeber &amp; Einblicke</dd>
-            </div>
-            <div>
-              <dt>Fokus</dt>
-              <dd>Wohnsitz · Gewerbe · Gastro</dd>
-            </div>
-            <div>
-              <dt>Region</dt>
-              <dd>Frankfurt · Luzern</dd>
-            </div>
-            <div>
-              <dt>Archiv</dt>
-              <dd>{total} {total === 1 ? 'Beitrag' : 'Beiträge'}</dd>
-            </div>
-          </dl>
-        </header>
 
         {loading && (
           <>
@@ -207,5 +185,6 @@ export default function Blog() {
         <div className="mag__outro" />
       </div>
     </section>
+    </>
   );
 }
