@@ -3,7 +3,10 @@
   background: var(--pv-cream);
   padding: 140px 0 72px;
   border-bottom: 1px solid rgba(26, 26, 26, .08);
-  min-height: calc(100dvh - 89px);
+  /* Fill the viewport below the sticky header at every breakpoint.
+     --pv-header-height tracks the responsive header (88/80/72px); the
+     extra 1px accounts for the header's bottom border. */
+  min-height: calc(100dvh - var(--pv-header-height) - 1px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

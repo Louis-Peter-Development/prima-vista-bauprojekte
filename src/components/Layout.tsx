@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SocialRail from './SocialRail';
 import BookingFloat from './BookingFloat';
+import AdminBackFloat from './AdminBackFloat';
 import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
@@ -243,6 +244,7 @@ export default function Layout() {
       </main>
       <SocialRail />
       <BookingFloat />
+      <AdminBackFloat />
       {isDesktop && <Chat />}
       <CookieConsent />
       <Footer />

@@ -159,9 +159,9 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    num: '№ 145', slug: 'office-lobby', title: 'Office Lobby · Frankfurt · 2026', ttl: 'Office Lobby', meta: 'Commercial · Frankfurt · 2026', src: '/assets/img/proj-lobby-tree-wide.webp', size: 'sm', tags: ['commercial'], revealDelay: 2,
+    num: '№ 145', slug: 'office-lobby', title: 'Office Lobby · Frankfurt · 2026', ttl: 'Office Lobby', meta: 'Commercial · Frankfurt · 2026', src: '/assets/img/photo-altbausanierung.webp', size: 'sm', tags: ['commercial'], revealDelay: 2,
     detail: {
-      heroImg: '/assets/img/proj-lobby-tree-wide.webp',
+      heroImg: '/assets/img/photo-altbausanierung.webp',
       headline: 'Office Lobby',
       location: 'Frankfurt-Innenstadt',
       year: '2026',
@@ -173,7 +173,7 @@ export const PROJECTS: Project[] = [
         'Die Bodengestaltung kombiniert großformatige Feinsteinzeugplatten mit eingelassenen Metallstreifen — ein visuelles Leitsystem, das Besucher intuitiv zum Empfang führt.',
       ],
       gewerke: ['Trockenbau', 'Bodenbelag', 'Elektro', 'Maler', 'Möbelbau', 'Bepflanzung'],
-      gallery: ['/assets/img/proj-lobby-tree-wide.webp', '/assets/img/proj-lobby-tree.webp'],
+      gallery: ['/assets/img/photo-altbausanierung.webp', '/assets/img/proj-lobby-tree.webp'],
     },
   },
   {
@@ -352,7 +352,7 @@ export const PROJECTS: Project[] = [
         'Bewässerung und Drainage wurden unter dem Bodenbelag versteckt, das Licht über einen automatisierten Tageslichtzyklus gesteuert.',
       ],
       gewerke: ['Bepflanzung', 'Sanitär', 'Elektro', 'Bodenbelag', 'Möbelbau'],
-      gallery: ['/assets/img/proj-lobby-tree.webp', '/assets/img/proj-lobby-tree-wide.webp'],
+      gallery: ['/assets/img/proj-lobby-tree.webp', '/assets/img/photo-altbausanierung.webp'],
     },
   },
   {

@@ -1,0 +1,56 @@
+/* ----- Admin back float (bottom-left pill, shown to logged-in admins) ----- */
+.pv-admin-float {
+  position: fixed;
+  right: 24px;
+  top: calc(var(--pv-header-height) + 16px);
+  z-index: 45;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid rgba(26, 26, 26, .15);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(8px);
+  color: var(--pv-ink);
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+  transition:
+    color 200ms var(--pv-ease-out),
+    border-color 200ms var(--pv-ease-out),
+    background 200ms var(--pv-ease-out),
+    transform 200ms var(--pv-ease-out);
+}
+.pv-admin-float:hover {
+  color: var(--pv-copper);
+  border-color: var(--pv-copper);
+  transform: translateY(-2px);
+}
+.pv-admin-float__arrow {
+  font-family: var(--pv-font-mono);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+:root[data-theme='dark'] .pv-admin-float {
+  background: rgba(241, 233, 226, .08);
+  border-color: rgba(241, 233, 226, .32);
+  color: var(--pv-paper);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .35);
+}
+:root[data-theme='dark'] .pv-admin-float:hover {
+  color: var(--pv-copper-bright);
+  border-color: var(--pv-copper-bright);
+  background: rgba(241, 233, 226, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pv-admin-float { transition: color 200ms linear, border-color 200ms linear; }
+  .pv-admin-float:hover { transform: none; }
+}

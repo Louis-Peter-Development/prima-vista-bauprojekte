@@ -55,7 +55,6 @@ const MODEL = 'claude-haiku-4-5';
 const MAX_TOKENS = 600;
 
 export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8Array> {
-  const client = new Anthropic();
   const encoder = new TextEncoder();
 
   return new ReadableStream<Uint8Array>({
@@ -64,6 +63,12 @@ export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8A
         controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`));
       };
       try {
+        if (!process.env.ANTHROPIC_API_KEY) {
+          send({ error: 'CHAT_UNAVAILABLE' });
+          return;
+        }
+
+        const client = new Anthropic();
         const stream = client.messages.stream({
           model: MODEL,
           max_tokens: MAX_TOKENS,
@@ -86,8 +91,8 @@ export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8A
         }
         send({ done: true });
       } catch (err) {
-        const message = err instanceof Error ? err.message : String(err);
-        send({ error: message });
+        console.error('[chat] stream failed', err);
+        send({ error: 'CHAT_UNAVAILABLE' });
       } finally {
         controller.close();
       }

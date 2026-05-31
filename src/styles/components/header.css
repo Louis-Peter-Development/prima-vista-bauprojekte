@@ -11,19 +11,21 @@
   transition: background 200ms var(--pv-ease-out), border-color 200ms var(--pv-ease-out);
 }
 .pv-header__inner {
-  max-width: var(--pv-container);
+  max-width: 1760px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 clamp(28px, 3.4vw, 72px);
   height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: clamp(24px, 2vw, 44px);
 }
 .pv-logo {
   display: inline-flex;
   align-items: center;
   gap: 12px;
+  flex: 0 0 auto;
+  min-width: max-content;
 }
 .pv-logo img {
   height: 44px;
@@ -54,13 +56,20 @@
   white-space: nowrap;
 }
 .pv-nav {
-  display: contents;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(14px, 1.2vw, 28px);
 }
 .pv-nav__list {
   display: flex;
-  gap: 24px;
+  flex: 0 1 auto;
+  min-width: 0;
+  gap: clamp(16px, 1.35vw, 28px);
   list-style: none;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
 }
 .pv-nav__list a {

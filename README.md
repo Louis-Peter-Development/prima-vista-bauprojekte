@@ -10,6 +10,7 @@ Built as a React SPA with a cream-and-copper aesthetic, Cormorant Garamond + Man
 - **Kalkulator:** Interactive cost calculator for renovations and heating methods.
 - **Blitz-Angebot:** Quick offer form with email notifications.
 - **AI Chat Assistant:** Integrated AI chat using the Anthropic API to answer customer queries.
+- **Magazin + Admin:** Serverless blog with public articles, likes, comments, and an authenticated TipTap authoring area.
 - **Serverless API:** Email delivery via Resend and AI chat endpoints powered by Netlify Functions.
 - **Custom Dev Server:** Vite dev server is configured with custom middleware to mock serverless endpoints (`/api/chat`, `/api/contact`, `/api/blitz`) locally.
 
@@ -20,6 +21,8 @@ Built as a React SPA with a cream-and-copper aesthetic, Cormorant Garamond + Man
 - [React Router 6](https://reactrouter.com/) — client-side routing
 - [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-typescript) — AI chat capabilities
 - [Resend](https://resend.com/) — email delivery
+- [MongoDB Atlas](https://www.mongodb.com/atlas) — blog storage
+- [TipTap](https://tiptap.dev/) — admin rich-text editor
 - [Netlify Functions](https://docs.netlify.com/functions/overview/) — serverless backend
 
 ## Scripts
@@ -30,6 +33,8 @@ npm run dev        # start dev server at http://localhost:5173 (includes custom 
 npm run build      # type-check + production build to dist/
 npm run preview    # preview the production build
 npm run typecheck  # tsc --noEmit
+npm run seed:admin # create the first admin user from env vars
+npm run netlify:dev # run Vite through Netlify's local Functions runtime
 ```
 
 ## Environment Variables
@@ -41,7 +46,28 @@ ANTHROPIC_API_KEY=your_anthropic_api_key
 RESEND_API_KEY=your_resend_api_key
 MAIL_FROM=onboarding@resend.dev
 MAIL_TO_OFFICE=your_email@example.com
+MONGODB_URI=mongodb+srv://...
+MONGODB_DB=prima_vista
+JWT_SECRET=long-random-secret
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=strong-password-used-only-for-seeding
+VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
+ADMIN_GOOGLE_EMAIL=admin@example.com
 ```
+
+## Blog admin
+
+1. Create a free MongoDB Atlas M0 cluster and add `MONGODB_URI`, `MONGODB_DB`, and `JWT_SECRET` to Netlify environment variables.
+2. Put `ADMIN_EMAIL` and `ADMIN_PASSWORD` in your local `.env` or pass them inline for one run.
+3. Run `npm run seed:admin` to create the first admin user.
+4. Open `/admin/login` and author posts from `/admin/blog`.
+
+There is no public signup route. Admin users are created manually through the seed script.
+
+For Google admin login, create a Google OAuth Web Client, add your site origins,
+then set `VITE_GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_ID`, and `ADMIN_GOOGLE_EMAIL`.
+Only that exact email is allowed to receive an admin session.
 
 ## Project structure
 

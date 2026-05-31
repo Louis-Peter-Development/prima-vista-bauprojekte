@@ -49,6 +49,91 @@ function sendJson(res: ServerResponse, status: number, body: unknown) {
   res.end(JSON.stringify(body));
 }
 
+function readCookie(header: string | undefined, name: string) {
+  if (!header) return undefined;
+  return header
+    .split(';')
+    .map((part) => part.trim())
+    .find((part) => part.startsWith(`${name}=`))
+    ?.slice(name.length + 1);
+}
+
+async function toWebRequest(req: IncomingMessage): Promise<Request> {
+  const host = req.headers.host ?? 'localhost:5173';
+  const protocol = host.includes('localhost') || host.startsWith('127.0.0.1') ? 'http' : 'https';
+  const url = `${protocol}://${host}${req.url ?? '/'}`;
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(req.headers)) {
+    if (Array.isArray(value)) headers.set(key, value.join(', '));
+    else if (value) headers.set(key, value);
+  }
+
+  if (req.method === 'GET' || req.method === 'HEAD') {
+    return new Request(url, { method: req.method, headers });
+  }
+
+  const chunks: Buffer[] = [];
+  for await (const c of req as AsyncIterable<Buffer>) chunks.push(c);
+  return new Request(url, {
+    method: req.method,
+    headers,
+    body: Buffer.concat(chunks),
+  });
+}
+
+async function sendWebResponse(res: ServerResponse, webResponse: Response) {
+  res.statusCode = webResponse.status;
+  webResponse.headers.forEach((value, key) => {
+    res.setHeader(key, value);
+  });
+  const buffer = Buffer.from(await webResponse.arrayBuffer());
+  res.end(buffer);
+}
+
+function blogDevPlugin(): Plugin {
+  const routes = [
+    { pattern: /^\/api\/posts$/, module: '/netlify/functions/posts.ts', params: () => ({}) },
+    { pattern: /^\/api\/posts\/([^/?#]+)$/, module: '/netlify/functions/posts.ts', params: (m: RegExpMatchArray) => ({ slug: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/comments\/([^/?#]+)$/, module: '/netlify/functions/comments.ts', params: (m: RegExpMatchArray) => ({ slug: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/likes\/([^/?#]+)$/, module: '/netlify/functions/likes.ts', params: (m: RegExpMatchArray) => ({ slug: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/views\/([^/?#]+)$/, module: '/netlify/functions/views.ts', params: (m: RegExpMatchArray) => ({ slug: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/auth\/([^/?#]+)$/, module: '/netlify/functions/auth.ts', params: (m: RegExpMatchArray) => ({ action: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/uploads$/, module: '/netlify/functions/uploads.ts', params: () => ({}) },
+    { pattern: /^\/api\/uploads\/([^/?#]+)$/, module: '/netlify/functions/uploads.ts', params: (m: RegExpMatchArray) => ({ key: decodeURIComponent(m[1]) }) },
+  ];
+
+  return {
+    name: 'pv-blog-dev',
+    configureServer(server) {
+      server.middlewares.use(async (req, res, next) => {
+        const pathname = new URL(req.url ?? '/', 'http://localhost').pathname;
+        const route = routes.find((entry) => pathname.match(entry.pattern));
+        if (!route) return next();
+
+        try {
+          process.env.NETLIFY_DEV = 'true';
+          const match = pathname.match(route.pattern);
+          if (!match) return next();
+          const mod = await server.ssrLoadModule(route.module);
+          const request = await toWebRequest(req);
+          const context = {
+            params: route.params(match),
+            cookies: {
+              get: (name: string) => readCookie(req.headers.cookie, name),
+            },
+          };
+          const response = await mod.default(request, context);
+          await sendWebResponse(res, response);
+        } catch (err) {
+          const message = err instanceof Error ? err.message : String(err);
+          console.error('[blog-dev]', message);
+          sendJson(res, 500, { error: message });
+        }
+      });
+    },
+  };
+}
+
 /**
  * Dev-only middleware that mirrors the /api/contact and /api/blitz Netlify
  * functions so the forms work against `npm run dev`. The real prod path is
@@ -86,7 +171,7 @@ function mailDevPlugin(): Plugin {
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE'] as const) {
+  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE', 'MONGODB_URI', 'MONGODB_DB', 'JWT_SECRET', 'GOOGLE_CLIENT_ID', 'ADMIN_GOOGLE_EMAIL'] as const) {
     if (env[key]) process.env[key] = env[key];
   }
   return {
@@ -94,6 +179,7 @@ export default defineConfig(({ mode }) => {
       react(),
       chatDevPlugin(),
       mailDevPlugin(),
+      blogDevPlugin(),
       VitePWA({
         registerType: 'autoUpdate',
         injectRegister: 'auto',

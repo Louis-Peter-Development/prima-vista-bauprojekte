@@ -584,8 +584,7 @@ export default function Chat() {
         }
       } catch (err) {
         if ((err as Error).name === 'AbortError') return;
-        const msg = err instanceof Error ? err.message : String(err);
-        setError(msg);
+        setError('Der Bau-Concierge ist lokal noch nicht konfiguriert.');
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantMsg.id && m.content === ''

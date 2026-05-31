@@ -25,6 +25,8 @@ const Zaeune = lazy(() => import('./pages/Zaeune'));
 const KomplettPakete = lazy(() => import('./pages/KomplettPakete'));
 const Projekte = lazy(() => import('./pages/Projekte'));
 const ProjektDetail = lazy(() => import('./pages/ProjektDetail'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Kontakt = lazy(() => import('./pages/Kontakt'));
 const BlitzAngebot = lazy(() => import('./pages/BlitzAngebot'));
 const Kalkulator = lazy(() => import('./pages/Kalkulator'));
@@ -41,6 +43,9 @@ const Pelletofen = lazy(() => import('./pages/Pelletofen'));
 const Saunaofen = lazy(() => import('./pages/Saunaofen'));
 const Impressum = lazy(() => import('./pages/Impressum'));
 const Datenschutz = lazy(() => import('./pages/Datenschutz'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const AdminBlog = lazy(() => import('./pages/AdminBlog'));
+const AdminEditor = lazy(() => import('./pages/AdminEditor'));
 
 export default function App() {
   return (
@@ -71,6 +76,8 @@ export default function App() {
           <Route path="/komplett-pakete" element={<KomplettPakete />} />
           <Route path="/projekte" element={<Projekte />} />
           <Route path="/projekte/:slug" element={<ProjektDetail />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/blitz-angebot" element={<BlitzAngebot />} />
           <Route path="/kalkulator" element={<Kalkulator />} />
@@ -87,6 +94,10 @@ export default function App() {
           <Route path="/saunaofen" element={<Saunaofen />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin/blog" element={<AdminBlog />} />
+          <Route path="/admin/blog/new" element={<AdminEditor />} />
+          <Route path="/admin/blog/:slug" element={<AdminEditor />} />
         </Route>
       </Routes>
     </Suspense>

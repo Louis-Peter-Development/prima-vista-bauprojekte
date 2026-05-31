@@ -104,7 +104,7 @@ export const GARTEN_VARIANTS: GartenVariant[] = [
     title: 'Pavillon Montage',
     lead: 'Sitzplatz',
     detail: 'Pavillon mit Fundament, Tragwerk, Dach und Befestigungen für einen geschützten Außenbereich montieren.',
-    image: '/assets/img/proj-lobby-tree-wide.webp',
+    image: '/assets/img/photo-altbausanierung.webp',
     netBase: 9800,
   },
   {

@@ -40,7 +40,7 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
   zaun: '/assets/img/proj-concrete-sofa-tall.webp',
   garten: '/assets/img/proj-moroccan-corner.webp',
   barrierefreiheit: '/assets/img/proj-bath-stone.webp',
-  fenster: '/assets/img/proj-lobby-tree-wide.webp',
+  fenster: '/assets/img/photo-altbausanierung.webp',
   thermen: '/assets/img/proj-floor-oak.webp',
 };
 

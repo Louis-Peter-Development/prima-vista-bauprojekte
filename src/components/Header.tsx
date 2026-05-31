@@ -10,6 +10,7 @@ const NAV: NavItem[] = [
   { to: '/gewerke', label: 'Gewerke', activeOn: ['/badsanierung', '/kuechen-moebelbau', '/boeden-belaege', '/elektroinstallation', '/trockenbau', '/maler-lackierer', '/fassadensanierung', '/abdichtung-keller', '/dachsanierung', '/treppen-gelaender', '/garten-aussenanlagen', '/barrierefreiheit', '/fenstertechnik', '/rohbau-abbruch', '/tueren-zargen', '/sanitaerinstallation', '/zaeune'] },
   { to: '/heizmethoden', label: 'Heizmethoden', activeOn: ['/heizkoerper', '/heizstraenge', '/fussbodenheizung', '/waermepumpe', '/gas-heizung', '/pelletofen', '/saunaofen'] },
   { to: '/projekte', label: 'Projekte' },
+  { to: '/blog', label: 'Magazin' },
   { to: '/kalkulator', label: 'Kalkulator' },
 ];
 
