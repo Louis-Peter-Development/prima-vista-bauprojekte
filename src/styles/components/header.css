@@ -60,7 +60,17 @@
   flex: 1 1 auto;
   min-width: 0;
   align-items: center;
-  justify-content: flex-end;
+  /* Fill the space between the logo and the actions group and center the
+     links + theme toggle within it, so the nav sits midway between the logo
+     and the Blitz-Angebot button. */
+  justify-content: center;
+  gap: clamp(14px, 1.2vw, 28px);
+}
+
+.pv-header__actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
   gap: clamp(14px, 1.2vw, 28px);
 }
 .pv-nav__list {

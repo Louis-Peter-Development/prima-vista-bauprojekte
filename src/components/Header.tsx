@@ -104,6 +104,8 @@ export default function Header() {
                 <span className="pv-theme-toggle__knob" />
               </span>
             </button>
+          </nav>
+          <div className="pv-header__actions">
             <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
               Blitz-Angebot <span className="arrow">&gt;</span>
             </Link>
@@ -117,7 +119,7 @@ export default function Header() {
             >
               <span></span><span></span><span></span>
             </button>
-          </nav>
+          </div>
         </div>
       </header>
 
