@@ -40,7 +40,7 @@ export default function Projekte() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-moroccan-dining-wide.webp"
+        backgroundImage="/assets/img/proj-concrete-sofa-tall.webp"
         crumbNumber="04"
         crumbLabel="Projekte · Werkschau"
         title={<>Räume aus<br />der <em>Werkstatt.</em></>}
