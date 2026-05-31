@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
@@ -43,6 +43,23 @@ export default function Blog() {
   const total = posts.length;
   const lead = posts[0];
   const rest = posts.slice(1);
+
+  // Stable archive numbers: each post is numbered by chronological publish
+  // order (oldest = №01, newest = highest), so a given post keeps its number
+  // as the archive grows or is reordered — unlike a list-position counter.
+  const archiveNumbers = useMemo(() => {
+    const map = new Map<string, number>();
+    posts
+      .slice()
+      .sort(
+        (a, b) =>
+          new Date(a.publishedAt ?? a.createdAt).getTime() -
+          new Date(b.publishedAt ?? b.createdAt).getTime(),
+      )
+      .forEach((post, index) => map.set(post.id, index + 1));
+    return map;
+  }, [posts]);
+  const issueOf = (post: BlogPost) => archiveNumbers.get(post.id) ?? 0;
 
   return (
     <section className="mag" aria-busy={loading}>
@@ -128,7 +145,7 @@ export default function Blog() {
             </span>
             <span className="mag-lead__body">
               <span className="mag-lead__kicker">
-                <span className="num">№ {pad(total)}</span> · {lead.readingTime} Min. Lesezeit
+                <span className="num">№ {pad(issueOf(lead))}</span> · {lead.readingTime} Min. Lesezeit
               </span>
               <h2 className="mag-lead__title">{lead.title}</h2>
               <p className="mag-lead__excerpt">{lead.excerpt}</p>
@@ -155,10 +172,10 @@ export default function Blog() {
             </div>
 
             <div className="mag-grid">
-              {rest.map((post, index) => (
+              {rest.map((post) => (
                 <Link className="mag-card" to={`/blog/${post.slug}`} key={post.id}>
                   <span className="mag-card__media">
-                    <span className="mag-card__num">№ {pad(total - 1 - index)}</span>
+                    <span className="mag-card__num">№ {pad(issueOf(post))}</span>
                     {post.coverImageUrl ? (
                       <img src={post.coverImageUrl} alt="" loading="lazy" />
                     ) : (
