@@ -49,7 +49,139 @@
 .mag__inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 72px 48px 0;
+  padding: 56px 48px 0;
+}
+
+/* ---------- Masthead / nameplate (image-backed hero) ----------
+   Always-dark hero: a background photo + scrim, with the editorial
+   nameplate content over it (light text, pinned so it holds in both themes). */
+.mag-masthead {
+  position: relative;
+  background: #141312;
+  color: var(--pv-bone);
+  overflow: hidden;
+}
+.mag-masthead__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .35;
+  z-index: 0;
+}
+.mag-masthead::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(20, 19, 18, .5) 0%, rgba(20, 19, 18, .3) 45%, rgba(20, 19, 18, .82) 100%);
+}
+.mag-masthead__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 52px 48px 60px;
+}
+
+.mag-masthead__rule {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+  border-top: 1.5px solid rgba(236, 229, 223, .5);
+  border-bottom: 1px solid rgba(236, 229, 223, .16);
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 223, .72);
+}
+.mag-masthead__rule .num {
+  font-family: var(--pv-font-mono);
+  letter-spacing: .14em;
+  color: var(--pv-copper-bright);
+}
+
+.mag-masthead__plate {
+  text-align: center;
+  padding: 40px 0 30px;
+}
+.mag-masthead__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--pv-copper-bright);
+  margin-bottom: 18px;
+}
+.mag-masthead__eyebrow::before,
+.mag-masthead__eyebrow::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: var(--pv-red);
+}
+.mag-masthead__name {
+  margin: 0;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(72px, 13vw, 188px);
+  line-height: .84;
+  letter-spacing: -.02em;
+  color: #fff;
+}
+.mag-masthead__sub {
+  max-width: 640px;
+  margin: 26px auto 0;
+  font-family: var(--pv-font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(236, 229, 223, .82);
+  text-wrap: balance;
+}
+
+.mag-masthead__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin-top: 30px;
+  border-top: 1px solid rgba(236, 229, 223, .16);
+  border-bottom: 1.5px solid rgba(236, 229, 223, .5);
+}
+.mag-masthead__meta div {
+  flex: 1 1 0;
+  min-width: 150px;
+  padding: 16px 22px;
+  text-align: left;
+}
+.mag-masthead__meta div + div {
+  border-left: 1px solid rgba(236, 229, 223, .16);
+}
+.mag-masthead__meta dt {
+  font-family: var(--pv-font-display);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 223, .6);
+}
+.mag-masthead__meta dd {
+  margin: 6px 0 0;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-size: 21px;
+  line-height: 1.1;
+  color: var(--pv-bone);
 }
 
 /* ---------- Lead story ---------- */
@@ -1307,7 +1439,11 @@
 }
 
 @media (max-width: 760px) {
-  .mag__inner { padding: 48px 24px 0; }
+  .mag__inner { padding: 40px 24px 0; }
+  .mag-masthead__inner { padding: 36px 24px 44px; }
+  .mag-masthead__rule { flex-direction: column; gap: 6px; text-align: center; }
+  .mag-masthead__meta { flex-direction: column; }
+  .mag-masthead__meta div + div { border-left: 0; border-top: 1px solid rgba(236, 229, 223, .16); }
   .mag-grid { grid-template-columns: 1fr; }
   .mag-card,
   .mag-card:nth-child(1),
