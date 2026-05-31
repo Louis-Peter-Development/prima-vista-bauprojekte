@@ -108,7 +108,27 @@ export async function connectDb() {
 
   if (!cache.promise) {
     mongoose.set('bufferCommands', false);
-    cache.promise = mongoose.connect(uri, dbName ? { dbName } : {});
+    // Without an 'error' listener, a connection error (e.g. Atlas IP not
+    // whitelisted) is re-thrown by the EventEmitter as an uncaught exception,
+    // crashing the function with a raw 502 before our handlers' try/catch can
+    // turn it into a clean JSON error. Register one so the failure stays catchable.
+    mongoose.connection.removeAllListeners('error');
+    mongoose.connection.on('error', (err) => {
+      console.error('[db] connection error', err);
+    });
+    cache.promise = mongoose
+      .connect(uri, {
+        ...(dbName ? { dbName } : {}),
+        // Fail fast (well under Netlify's function limit) instead of hanging
+        // ~30s on an unreachable cluster and timing out as a 502.
+        serverSelectionTimeoutMS: 8000,
+      })
+      // Don't cache a rejected promise: a failed connect would otherwise poison
+      // the warm container forever. Clear it so the next request can retry.
+      .catch((err) => {
+        cache.promise = null;
+        throw err;
+      });
   }
 
   cache.conn = await cache.promise;
