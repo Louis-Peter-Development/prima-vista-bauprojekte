@@ -1480,3 +1480,27 @@
 @media (prefers-reduced-motion: reduce) {
   .sk-shimmer::after { animation: none; }
 }
+
+/* ============================================================
+   MAGAZINE GRID — center an incomplete final row
+   6-col grid: first two cards span 3 (2-up features), the rest span 2
+   (3-up). When the trailing 3-up row isn't full — or only one card
+   follows the lead — center the leftover card(s) so they don't sit
+   left-aligned with an empty gap on the right. Modifier classes are
+   set in Blog.tsx from the post count. Higher specificity (extra
+   class) lets these win over the base span rules.
+   ============================================================ */
+@media (min-width: 1025px) {
+  /* a lone card (only one post after the lead) → centered feature */
+  .mag-grid--solo > .mag-card { grid-column: 2 / span 4; }
+  /* trailing single small card → centered (cols 3–4 of 6) */
+  .mag-grid--tail-1 > .mag-card:last-child { grid-column: 3 / span 2; }
+  /* trailing two small cards → centered pair (cols 2–3 + 4–5) */
+  .mag-grid--tail-2 > .mag-card:nth-last-child(2) { grid-column: 2 / span 2; }
+  .mag-grid--tail-2 > .mag-card:last-child { grid-column: 4 / span 2; }
+}
+
+/* Tablet (4-col, 2-up): center a lone trailing card */
+@media (min-width: 761px) and (max-width: 1024px) {
+  .mag-grid--odd > .mag-card:last-child { grid-column: 2 / span 2; }
+}

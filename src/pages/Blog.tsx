@@ -61,6 +61,19 @@ export default function Blog() {
   }, [posts]);
   const issueOf = (post: BlogPost) => archiveNumbers.get(post.id) ?? 0;
 
+  // The grid is 6 columns: the first two cards span 3 (2-up features), the
+  // rest span 2 (3-up). Center an incomplete final row instead of leaving a
+  // right-hand gap — and center a lone card when only one follows the lead.
+  const gridClassName = (() => {
+    const n = rest.length;
+    const cls = ['mag-grid'];
+    if (n === 1) cls.push('mag-grid--solo');
+    else if (n > 2 && (n - 2) % 3 === 1) cls.push('mag-grid--tail-1');
+    else if (n > 2 && (n - 2) % 3 === 2) cls.push('mag-grid--tail-2');
+    if (n % 2 === 1) cls.push('mag-grid--odd');
+    return cls.join(' ');
+  })();
+
   return (
     <section className="mag" aria-busy={loading}>
       <div className="mag__inner">
@@ -171,7 +184,7 @@ export default function Blog() {
               </span>
             </div>
 
-            <div className="mag-grid">
+            <div className={gridClassName}>
               {rest.map((post) => (
                 <Link className="mag-card" to={`/blog/${post.slug}`} key={post.id}>
                   <span className="mag-card__media">
