@@ -19,6 +19,9 @@ export default function AdminBlog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  // Gate the dashboard behind a confirmed admin session so we never flash the
+  // logged-in UI before the auth check resolves (and redirects) for visitors.
+  const [authorized, setAuthorized] = useState(false);
 
   const loadPosts = () => {
     setLoading(true);
@@ -31,13 +34,14 @@ export default function AdminBlog() {
       })
       .then((data) => {
         if (!data.isAdmin) {
-          navigate('/admin/login');
+          navigate('/admin/login', { replace: true });
           return;
         }
+        setAuthorized(true);
         setPosts(data.posts);
       })
       .catch((err: unknown) => {
-        if (err instanceof Error && err.message === 'unauthorized') navigate('/admin/login');
+        if (err instanceof Error && err.message === 'unauthorized') navigate('/admin/login', { replace: true });
         else setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
       })
       .finally(() => {
@@ -66,6 +70,18 @@ export default function AdminBlog() {
     });
     if (res.ok) loadPosts();
   };
+
+  // Until the session is confirmed, show a neutral check screen — not the
+  // dashboard — so unauthenticated visitors don't briefly see admin content.
+  if (!authorized) {
+    return (
+      <section className="blog-admin-login">
+        <p className="blog-state" role="status">
+          {error || 'Anmeldung wird geprüft …'}
+        </p>
+      </section>
+    );
+  }
 
   const published = posts.filter((post) => post.status === 'published').length;
   const drafts = posts.length - published;

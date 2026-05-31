@@ -18,14 +18,18 @@ export default function AdminEditor() {
   const [message, setMessage] = useState('');
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
+  // Gate the editor behind a confirmed session so visitors never flash the
+  // admin UI before the auth check resolves and redirects them to login.
+  const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
     fetch('/api/auth/session')
       .then((res) => res.json() as Promise<{ isAdmin: boolean }>)
       .then((session) => {
-        if (!session.isAdmin) navigate('/admin/login');
+        if (session.isAdmin) setAuthorized(true);
+        else navigate('/admin/login', { replace: true });
       })
-      .catch(() => navigate('/admin/login'));
+      .catch(() => navigate('/admin/login', { replace: true }));
   }, [navigate]);
 
   useEffect(() => {
@@ -94,6 +98,14 @@ export default function AdminEditor() {
       event.target.value = '';
     }
   };
+
+  if (!authorized) {
+    return (
+      <section className="blog-admin-login">
+        <p className="blog-state" role="status">Anmeldung wird geprüft …</p>
+      </section>
+    );
+  }
 
   return (
     <section className="blog-admin blog-admin--editor">
