@@ -88,33 +88,35 @@ export default function Blog() {
           </span>
         </div>
 
-        <div className="mag-masthead__plate">
-          <span className="mag-masthead__eyebrow">Das Magazin</span>
-          <h1 className="mag-masthead__name">Magazin</h1>
-          <p className="mag-masthead__sub">
-            Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf
-            und Handwerk rund um Sanierung, Ausbau und Renovierung.
-          </p>
-        </div>
+        <div className="mag-masthead__foot">
+          <div className="mag-masthead__plate">
+            <span className="mag-masthead__eyebrow">Das Magazin</span>
+            <h1 className="mag-masthead__name">Magazin</h1>
+            <p className="mag-masthead__sub">
+              Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf
+              und Handwerk rund um Sanierung, Ausbau und Renovierung.
+            </p>
+          </div>
 
-        <dl className="mag-masthead__meta">
-          <div>
-            <dt>Format</dt>
-            <dd>Ratgeber &amp; Einblicke</dd>
-          </div>
-          <div>
-            <dt>Fokus</dt>
-            <dd>Wohnsitz · Gewerbe · Gastro</dd>
-          </div>
-          <div>
-            <dt>Region</dt>
-            <dd>Frankfurt · Luzern</dd>
-          </div>
-          <div>
-            <dt>Archiv</dt>
-            <dd>{total} {total === 1 ? 'Beitrag' : 'Beiträge'}</dd>
-          </div>
-        </dl>
+          <dl className="mag-masthead__meta">
+            <div>
+              <dt>Format</dt>
+              <dd>Ratgeber &amp; Einblicke</dd>
+            </div>
+            <div>
+              <dt>Fokus</dt>
+              <dd>Wohnsitz · Gewerbe · Gastro</dd>
+            </div>
+            <div>
+              <dt>Region</dt>
+              <dd>Frankfurt · Luzern</dd>
+            </div>
+            <div>
+              <dt>Archiv</dt>
+              <dd>{total} {total === 1 ? 'Beitrag' : 'Beiträge'}</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </header>
     <section className="mag" aria-busy={loading}>

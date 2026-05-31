@@ -82,7 +82,20 @@
   z-index: 2;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 52px 48px 60px;
+  min-height: calc(100dvh - var(--pv-header-height));
+  display: flex;
+  flex-direction: column;
+  padding: 40px 48px 56px;
+}
+
+/* Rule pinned to the top; the foot (nameplate + meta) sits at the bottom,
+   nameplate bottom-left and meta bottom-right — mirroring the PageIntro hero. */
+.mag-masthead__foot {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: end;
 }
 
 .mag-masthead__rule {
@@ -107,8 +120,7 @@
 }
 
 .mag-masthead__plate {
-  text-align: center;
-  padding: 40px 0 30px;
+  text-align: left;
 }
 .mag-masthead__eyebrow {
   display: inline-flex;
@@ -134,14 +146,14 @@
   font-family: var(--pv-font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(72px, 13vw, 188px);
-  line-height: .84;
+  font-size: clamp(60px, 7.5vw, 128px);
+  line-height: .9;
   letter-spacing: -.02em;
   color: #fff;
 }
 .mag-masthead__sub {
-  max-width: 640px;
-  margin: 26px auto 0;
+  max-width: 48ch;
+  margin: 22px 0 0;
   font-family: var(--pv-font-body);
   font-size: 17px;
   line-height: 1.7;
@@ -150,22 +162,17 @@
 }
 
 .mag-masthead__meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0;
-  margin-top: 30px;
-  border-top: 1px solid rgba(236, 229, 223, .16);
-  border-bottom: 1.5px solid rgba(236, 229, 223, .5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(236, 229, 223, .5);
 }
 .mag-masthead__meta div {
-  flex: 1 1 0;
-  min-width: 150px;
-  padding: 16px 22px;
+  min-width: 0;
+  padding: 0;
   text-align: left;
-}
-.mag-masthead__meta div + div {
-  border-left: 1px solid rgba(236, 229, 223, .16);
 }
 .mag-masthead__meta dt {
   font-family: var(--pv-font-display);
@@ -1440,10 +1447,9 @@
 
 @media (max-width: 760px) {
   .mag__inner { padding: 40px 24px 0; }
-  .mag-masthead__inner { padding: 36px 24px 44px; }
+  .mag-masthead__inner { padding: 28px 24px 40px; }
   .mag-masthead__rule { flex-direction: column; gap: 6px; text-align: center; }
-  .mag-masthead__meta { flex-direction: column; }
-  .mag-masthead__meta div + div { border-left: 0; border-top: 1px solid rgba(236, 229, 223, .16); }
+  .mag-masthead__foot { grid-template-columns: 1fr; gap: 32px; }
   .mag-grid { grid-template-columns: 1fr; }
   .mag-card,
   .mag-card:nth-child(1),
