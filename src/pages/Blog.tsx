@@ -17,6 +17,10 @@ export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const postCountClass =
+    !loading && !error && posts.length > 0 && posts.length < 3
+      ? ` blog-list__grid--count-${posts.length}`
+      : '';
 
   useEffect(() => {
     let cancelled = false;
@@ -84,7 +88,7 @@ export default function Blog() {
             <p className="blog-state">Noch keine veröffentlichten Beiträge.</p>
           )}
 
-          <div className="blog-list__grid">
+          <div className={`blog-list__grid${postCountClass}`}>
             {posts.map((post) => (
               <Link className="blog-card" to={`/blog/${post.slug}`} key={post.id}>
                 <span className="blog-card__media">
