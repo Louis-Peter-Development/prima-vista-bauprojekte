@@ -80,7 +80,7 @@ export default function Blog() {
     <header className="mag-masthead">
       <img className="mag-masthead__bg" src="/assets/img/photo-altbausanierung.webp" alt="" />
       <div className="mag-masthead__inner">
-        <div className="mag-masthead__rule">
+        <div className="mag-masthead__rule animate-in">
           <span>Prima Vista Bauprojekte</span>
           <span>
             <span className="num">Ausgabe №{total > 0 ? pad(total) : '—'}</span>
@@ -89,7 +89,7 @@ export default function Blog() {
         </div>
 
         <div className="mag-masthead__foot">
-          <div className="mag-masthead__plate">
+          <div className="mag-masthead__plate animate-in" data-delay="1">
             <span className="mag-masthead__eyebrow">Das Magazin</span>
             <h1 className="mag-masthead__name">Magazin</h1>
             <p className="mag-masthead__sub">
@@ -98,7 +98,7 @@ export default function Blog() {
             </p>
           </div>
 
-          <dl className="mag-masthead__meta">
+          <dl className="mag-masthead__meta animate-in" data-delay="2">
             <div>
               <dt>Format</dt>
               <dd>Ratgeber &amp; Einblicke</dd>
