@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
+
+type StatusFilter = 'all' | 'published' | 'draft';
+type SortKey = 'order' | 'newest' | 'views' | 'likes';
 
 function formatDate(value: string | null) {
   if (!value) return 'Entwurf';
@@ -13,6 +16,9 @@ function formatDate(value: string | null) {
   }).format(new Date(value));
 }
 
+const numberFormat = new Intl.NumberFormat('de-DE');
+const fmtNum = (n: number) => numberFormat.format(n);
+
 export default function AdminBlog() {
   usePageTitle('Admin Magazin');
   const navigate = useNavigate();
@@ -22,6 +28,11 @@ export default function AdminBlog() {
   // Gate the dashboard behind a confirmed admin session so we never flash the
   // logged-in UI before the auth check resolves (and redirects) for visitors.
   const [authorized, setAuthorized] = useState(false);
+
+  // Client-side board controls.
+  const [filter, setFilter] = useState<StatusFilter>('all');
+  const [query, setQuery] = useState('');
+  const [sort, setSort] = useState<SortKey>('order');
 
   const loadPosts = () => {
     setLoading(true);
@@ -71,6 +82,33 @@ export default function AdminBlog() {
     if (res.ok) loadPosts();
   };
 
+  const published = posts.filter((post) => post.status === 'published').length;
+  const drafts = posts.length - published;
+
+  // Manual reorder is only coherent in the natural "Reihenfolge" order with no
+  // filter or search narrowing the list.
+  const canReorder = sort === 'order' && filter === 'all' && !query.trim();
+
+  const visiblePosts = useMemo(() => {
+    let list = posts.slice();
+    if (filter !== 'all') list = list.filter((post) => post.status === filter);
+    const q = query.trim().toLowerCase();
+    if (q) list = list.filter((post) => post.title.toLowerCase().includes(q));
+    if (sort === 'newest') {
+      list.sort(
+        (a, b) =>
+          (b.publishedAt ? +new Date(b.publishedAt) : Infinity) -
+          (a.publishedAt ? +new Date(a.publishedAt) : Infinity),
+      );
+    } else if (sort === 'views') {
+      list.sort((a, b) => b.views - a.views);
+    } else if (sort === 'likes') {
+      list.sort((a, b) => b.likes - a.likes);
+    }
+    // 'order' keeps the server's sortOrder (the array is returned pre-sorted).
+    return list;
+  }, [posts, filter, query, sort]);
+
   // Until the session is confirmed, show a neutral check screen — not the
   // dashboard — so unauthenticated visitors don't briefly see admin content.
   if (!authorized) {
@@ -83,10 +121,14 @@ export default function AdminBlog() {
     );
   }
 
-  const published = posts.filter((post) => post.status === 'published').length;
-  const drafts = posts.length - published;
   const views = posts.reduce((sum, post) => sum + post.views, 0);
   const likes = posts.reduce((sum, post) => sum + post.likes, 0);
+  const total = posts.length;
+
+  const boardCount =
+    visiblePosts.length === total
+      ? `${total} ${total === 1 ? 'Eintrag' : 'Einträge'} im Magazin.`
+      : `${visiblePosts.length} von ${total} Einträgen`;
 
   return (
     <section className="blog-admin">
@@ -111,7 +153,7 @@ export default function AdminBlog() {
       <div className="blog-admin-stats" aria-label="Magazin Übersicht">
         <div>
           <span>Beiträge</span>
-          <strong>{posts.length}</strong>
+          <strong>{total}</strong>
         </div>
         <div>
           <span>Veröffentlicht</span>
@@ -123,18 +165,7 @@ export default function AdminBlog() {
         </div>
         <div>
           <span>Views / Likes</span>
-          <strong>{views} / {likes}</strong>
-        </div>
-      </div>
-
-      <div className="blog-admin-help">
-        <div>
-          <h2>Schnelle Themen</h2>
-          <p>Badsanierung, Kostenrahmen, Altbau, Heizung, Ablauf, Materialwahl.</p>
-        </div>
-        <div>
-          <h2>Veröffentlichung</h2>
-          <p>Entwürfe bleiben privat. Nur veröffentlichte Beiträge erscheinen auf /blog.</p>
+          <strong>{fmtNum(views)} / {fmtNum(likes)}</strong>
         </div>
       </div>
 
@@ -142,14 +173,78 @@ export default function AdminBlog() {
         <div className="blog-admin-board__head">
           <div>
             <h2>Beiträge</h2>
-            <p>{loading ? 'Wird geladen.' : `${posts.length} Einträge im Magazin.`}</p>
+            <p>{loading ? 'Wird geladen.' : boardCount}</p>
           </div>
           <Link className="blog-admin-board__mini-link" to="/admin/blog/new">
             Beitrag anlegen
           </Link>
         </div>
 
-        {!loading && posts.length === 0 && !error && (
+        {total > 0 && (
+          <div className="admin-toolbar">
+            <div className="admin-toolbar__left">
+              <div className="admin-filter" role="group" aria-label="Nach Status filtern">
+                <button
+                  type="button"
+                  className={filter === 'all' ? 'is-active' : ''}
+                  onClick={() => setFilter('all')}
+                >
+                  Alle <span className="count">{total}</span>
+                </button>
+                <button
+                  type="button"
+                  className={filter === 'published' ? 'is-active' : ''}
+                  onClick={() => setFilter('published')}
+                >
+                  Veröffentlicht <span className="count">{published}</span>
+                </button>
+                <button
+                  type="button"
+                  className={filter === 'draft' ? 'is-active' : ''}
+                  onClick={() => setFilter('draft')}
+                >
+                  Entwürfe <span className="count">{drafts}</span>
+                </button>
+              </div>
+            </div>
+            <div className="admin-toolbar__right">
+              <div className="admin-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="7" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+                <input
+                  type="search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Titel suchen…"
+                  aria-label="Beiträge nach Titel suchen"
+                />
+              </div>
+              <label className="admin-sort">
+                <span>Sortieren</span>
+                <select
+                  value={sort}
+                  onChange={(event) => setSort(event.target.value as SortKey)}
+                  aria-label="Beiträge sortieren"
+                >
+                  <option value="order">Reihenfolge</option>
+                  <option value="newest">Neueste zuerst</option>
+                  <option value="views">Meiste Views</option>
+                  <option value="likes">Meiste Likes</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        )}
+
+        {sort === 'order' && !canReorder && total > 0 && (
+          <p className="admin-orderhint">
+            Manuelle Reihenfolge ist nur in der Sortierung „Reihenfolge" und ohne Filter/Suche verfügbar.
+          </p>
+        )}
+
+        {!loading && total === 0 && !error && (
           <div className="blog-admin-empty">
             <img src="/assets/img/photo-altbausanierung.webp" alt="" loading="lazy" />
             <div>
@@ -164,10 +259,17 @@ export default function AdminBlog() {
           </div>
         )}
 
-        {loading && <p className="blog-state">Beiträge werden geladen.</p>}
+        {loading && <p className="blog-state" style={{ padding: '28px' }}>Beiträge werden geladen.</p>}
+
+        {!loading && total > 0 && visiblePosts.length === 0 && (
+          <div className="admin-noresults">
+            <h3>Keine Beiträge gefunden.</h3>
+            <p>Passen Sie Suche oder Filter an, um weitere Einträge zu sehen.</p>
+          </div>
+        )}
 
         <div className="blog-admin-table">
-          {posts.map((post, index) => (
+          {visiblePosts.map((post, index) => (
             <article className="blog-admin-row" key={post.id}>
               <div className="blog-admin-row__media">
                 {post.coverImageUrl ? <img src={post.coverImageUrl} alt="" loading="lazy" /> : <span />}
@@ -177,14 +279,16 @@ export default function AdminBlog() {
                   {post.status === 'published' ? 'Veröffentlicht' : 'Entwurf'}
                 </span>
                 <strong>{post.title}</strong>
-                <span>{formatDate(post.publishedAt)} · {post.readingTime} Min. · {post.views} Views · {post.likes} Likes</span>
+                <span>{formatDate(post.publishedAt)} · {post.readingTime} Min. · {fmtNum(post.views)} Views · {fmtNum(post.likes)} Likes</span>
                 {post.excerpt && <p>{post.excerpt}</p>}
               </div>
               <div className="blog-admin-row__actions">
-                <div className="blog-admin-row__move" aria-label="Beitrag verschieben">
-                  <button className="btn btn--light" type="button" disabled={index === 0} onClick={() => move(post, 'up')}>Hoch</button>
-                  <button className="btn btn--light" type="button" disabled={index === posts.length - 1} onClick={() => move(post, 'down')}>Runter</button>
-                </div>
+                {canReorder && (
+                  <div className="blog-admin-row__move" aria-label="Beitrag verschieben">
+                    <button className="btn btn--light" type="button" disabled={index === 0} onClick={() => move(post, 'up')}>Hoch</button>
+                    <button className="btn btn--light" type="button" disabled={index === visiblePosts.length - 1} onClick={() => move(post, 'down')}>Runter</button>
+                  </div>
+                )}
                 {post.status === 'published' && (
                   <Link className="btn btn--light" to={`/blog/${post.slug}`}>Ansehen</Link>
                 )}
@@ -195,7 +299,6 @@ export default function AdminBlog() {
           ))}
         </div>
       </div>
-
     </section>
   );
 }

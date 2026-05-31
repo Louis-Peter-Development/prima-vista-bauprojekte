@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ArticleRenderer from '../components/blog/ArticleRenderer';
+import CoverImage from '../components/blog/CoverImage';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogComment, BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
@@ -149,7 +150,7 @@ export default function BlogDetail() {
   return (
     <article className="blog-article">
       <header className="blog-article__hero">
-        {post.coverImageUrl && <img src={post.coverImageUrl} alt="" />}
+        <CoverImage src={post.coverImageUrl} fallback={null} />
         <div className="blog-article__hero-inner">
           <Link className="blog-back" to="/blog">Magazin</Link>
           <h1>{post.title}</h1>
@@ -163,7 +164,9 @@ export default function BlogDetail() {
       </header>
 
       <section className="blog-article__main">
-        <ArticleRenderer content={post.body} />
+        <div className="blog-article__body">
+          <ArticleRenderer content={post.body} />
+        </div>
 
         <div className="blog-article__tools">
           <button type="button" className="btn btn--light" disabled={liked} onClick={likePost}>
@@ -208,7 +211,7 @@ export default function BlogDetail() {
               {morePosts.map((item) => (
                 <Link className="blog-more-card" to={`/blog/${item.slug}`} key={item.id}>
                   <span className="blog-card__media">
-                    {item.coverImageUrl ? <img src={item.coverImageUrl} alt="" /> : <span className="blog-card__placeholder" />}
+                    <CoverImage src={item.coverImageUrl} />
                   </span>
                   <span className="blog-more-card__body">
                     <span className="blog-card__meta">{formatDate(item.publishedAt)} · {item.readingTime} Min.</span>
