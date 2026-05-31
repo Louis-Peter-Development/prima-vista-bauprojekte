@@ -55,9 +55,30 @@ export default function Blog() {
         ]}
       />
 
-      <section className="blog-list">
+      <section className="blog-list" aria-busy={loading}>
         <div className="blog-list__inner">
-          {loading && <p className="blog-state">Beiträge werden geladen.</p>}
+          {loading && (
+            <>
+              <p className="blog-state blog-state--sr" role="status">
+                Beiträge werden geladen.
+              </p>
+              <div className="blog-list__grid" aria-hidden="true">
+                {Array.from({ length: 6 }).map((_, index) => (
+                  <div className="blog-card blog-card--skeleton" key={index}>
+                    <span className="blog-card__media sk-shimmer" />
+                    <span className="blog-card__body">
+                      <span className="sk-line sk-line--meta sk-shimmer" />
+                      <span className="sk-line sk-line--title sk-shimmer" />
+                      <span className="sk-line sk-line--title sk-line--short sk-shimmer" />
+                      <span className="sk-line sk-line--text sk-shimmer" />
+                      <span className="sk-line sk-line--text sk-shimmer" />
+                      <span className="sk-line sk-line--text sk-line--short sk-shimmer" />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
           {error && <p className="blog-state blog-state--error">{error}</p>}
           {!loading && !error && posts.length === 0 && (
             <p className="blog-state">Noch keine veröffentlichten Beiträge.</p>
