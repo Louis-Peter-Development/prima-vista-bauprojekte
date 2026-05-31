@@ -57,8 +57,8 @@
    nameplate content over it (light text, pinned so it holds in both themes). */
 .mag-masthead {
   position: relative;
-  background: #141312;
-  color: var(--pv-bone);
+  background: var(--pv-cream);
+  color: var(--mag-text);
   overflow: hidden;
 }
 .mag-masthead__bg {
@@ -67,15 +67,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .35;
+  transform: scale(1.04);
   z-index: 0;
 }
+/* Cream wash that fades the photo into the page — the same treatment as the
+   PageIntro hero. theme.css-style dark gradient supplied below for dark mode. */
 .mag-masthead::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(20, 19, 18, .5) 0%, rgba(20, 19, 18, .3) 45%, rgba(20, 19, 18, .82) 100%);
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+    rgba(232, 223, 223, 0.45) 0%,
+    rgba(232, 223, 223, 0.78) 50%,
+    rgba(232, 223, 223, 0.95) 100%);
+}
+[data-theme='dark'] .mag-masthead::after {
+  background: linear-gradient(to bottom,
+    rgba(17, 16, 15, .34) 0%,
+    rgba(17, 16, 15, .68) 48%,
+    rgba(17, 16, 15, .94) 100%);
 }
 .mag-masthead__inner {
   position: relative;
@@ -104,19 +116,19 @@
   justify-content: space-between;
   gap: 24px;
   padding: 14px 0;
-  border-top: 1.5px solid rgba(236, 229, 223, .5);
-  border-bottom: 1px solid rgba(236, 229, 223, .16);
+  border-top: 1.5px solid var(--mag-ink);
+  border-bottom: 1px solid var(--mag-rule);
   font-family: var(--pv-font-display);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(236, 229, 223, .72);
+  color: var(--mag-muted);
 }
 .mag-masthead__rule .num {
   font-family: var(--pv-font-mono);
   letter-spacing: .14em;
-  color: var(--pv-copper-bright);
+  color: var(--mag-accent);
 }
 
 .mag-masthead__plate {
@@ -131,7 +143,7 @@
   font-weight: 600;
   letter-spacing: .28em;
   text-transform: uppercase;
-  color: var(--pv-copper-bright);
+  color: var(--mag-accent);
   margin-bottom: 18px;
 }
 .mag-masthead__eyebrow::before,
@@ -149,7 +161,7 @@
   font-size: clamp(60px, 7.5vw, 128px);
   line-height: .9;
   letter-spacing: -.02em;
-  color: #fff;
+  color: var(--mag-ink);
 }
 .mag-masthead__sub {
   max-width: 48ch;
@@ -157,7 +169,7 @@
   font-family: var(--pv-font-body);
   font-size: 17px;
   line-height: 1.7;
-  color: rgba(236, 229, 223, .82);
+  color: var(--mag-muted);
   text-wrap: balance;
 }
 
@@ -167,7 +179,7 @@
   gap: 20px 28px;
   margin: 0;
   padding-top: 22px;
-  border-top: 1px solid rgba(236, 229, 223, .5);
+  border-top: 1px solid var(--mag-rule);
 }
 .mag-masthead__meta div {
   min-width: 0;
@@ -180,7 +192,7 @@
   font-weight: 700;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(236, 229, 223, .6);
+  color: var(--mag-faint);
 }
 .mag-masthead__meta dd {
   margin: 6px 0 0;
@@ -188,7 +200,7 @@
   font-style: italic;
   font-size: 21px;
   line-height: 1.1;
-  color: var(--pv-bone);
+  color: var(--mag-ink);
 }
 
 /* ---------- Lead story ---------- */
