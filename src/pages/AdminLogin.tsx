@@ -152,34 +152,79 @@ export default function AdminLogin() {
   };
 
   return (
-    <section className="blog-admin-login">
-      <form className="blog-admin-panel" onSubmit={submit}>
-        <span className="pv-eyebrow">Admin</span>
-        <h1>Magazin-Login</h1>
-        <input type="email" name="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="E-Mail" required />
-        <input type="password" name="password" autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Passwort" required />
-        <button className="btn btn--solid" type="submit">Einloggen</button>
-        {(checkingSession || googleClientId) && (
-          <>
-            <span className="blog-admin-panel__divider">oder</span>
-            {googleClientId ? (
-              <div className="pv-google" ref={googleWrapRef}>
-                <span className="btn btn--light pv-google__face" aria-hidden="true">
+    <section className="login">
+      <div className="login__stage">
+        <img className="login__bg" src="/assets/img/proj-concrete-sofa-tall.webp" alt="" />
+        <div className="login__pitch">
+          <span className="pv-eyebrow">Magazin · Redaktion</span>
+          <h2>Das Magazin hinter den Projekten.</h2>
+          <p>
+            Melden Sie sich an, um Beiträge zu planen, zu schreiben und zu
+            veröffentlichen — vom Altbau-Ratgeber bis zur Projektgeschichte.
+          </p>
+        </div>
+      </div>
+
+      <div className="login__panel">
+        <form className="login__form" onSubmit={submit}>
+          <span className="pv-eyebrow">Admin</span>
+          <h1>Magazin-Login</h1>
+
+          <div className="login__field">
+            <label htmlFor="login-email">E-Mail</label>
+            <input
+              id="login-email"
+              type="email"
+              name="email"
+              autoComplete="username"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              placeholder="redaktion@prima-vista.de"
+              required
+            />
+          </div>
+
+          <div className="login__field">
+            <label htmlFor="login-password">Passwort</label>
+            <input
+              id="login-password"
+              type="password"
+              name="password"
+              autoComplete="current-password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <button className="btn btn--solid" type="submit">Einloggen</button>
+
+          {(checkingSession || googleClientId) && (
+            <>
+              <span className="login__divider">oder</span>
+              {googleClientId ? (
+                <div className="pv-google" ref={googleWrapRef}>
+                  <span className="login__google pv-google__face" aria-hidden="true">
+                    <GoogleG />
+                    Mit Google anmelden
+                  </span>
+                  <div className="pv-google__gsi" ref={googleButtonRef} />
+                </div>
+              ) : (
+                <span className="login__google pv-google__face pv-google__face--pending" aria-hidden="true">
                   <GoogleG />
-                  Mit Google anmelden
+                  Google wird geprüft …
                 </span>
-                <div className="pv-google__gsi" ref={googleButtonRef} />
-              </div>
-            ) : (
-              <span className="btn btn--light pv-google__face pv-google__face--pending" aria-hidden="true">
-                <GoogleG />
-                Google wird geprüft …
-              </span>
-            )}
-          </>
-        )}
-        {error && <p className="blog-state blog-state--error">{error}</p>}
-      </form>
+              )}
+            </>
+          )}
+
+          {error && <p className="blog-state blog-state--error">{error}</p>}
+
+          <p className="login__note">Zugang nur für die Redaktion.</p>
+        </form>
+      </div>
     </section>
   );
 }

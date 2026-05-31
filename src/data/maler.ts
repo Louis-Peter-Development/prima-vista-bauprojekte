@@ -63,7 +63,7 @@ export const MALER_VARIANTS: MalerVariant[] = [
     title: 'Decken-Lackierung',
     lead: 'Holzdecken',
     detail: 'Holzdecken anschleifen, vorbereiten, grundieren und deckend oder lasierend neu lackieren.',
-    image: '/assets/img/proj-lobby-tree.webp',
+    image: '/assets/img/proj-paint-swatches.webp',
     netBase: 6400,
   },
   {

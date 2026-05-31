@@ -77,7 +77,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     height: 1125,
   },
   {
-    src: '/assets/img/proj-lobby-tree.webp',
+    src: '/assets/img/proj-spa-corridor.webp',
     title: 'Lobby — Office · Frankfurt · 2026',
     year: '2026',
     alt: 'Lobby Office Frankfurt',

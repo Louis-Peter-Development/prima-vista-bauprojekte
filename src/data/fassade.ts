@@ -81,7 +81,7 @@ export const FASSADE_VARIANTS: FassadeVariant[] = [
     title: 'Plattenverkleidung',
     lead: 'Fassadenplatten',
     detail: 'Moderne Fassadenplatten inklusive Unterkonstruktion, Hinterlüftung und objektbezogener Detailplanung.',
-    image: '/assets/img/proj-lobby-tree.webp',
+    image: '/assets/img/photo-haus-exterior.webp',
     netBase: 23800,
   },
   {
