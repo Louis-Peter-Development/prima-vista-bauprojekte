@@ -154,7 +154,7 @@ export default function AdminLogin() {
   return (
     <section className="login">
       <div className="login__stage">
-        <img className="login__bg" src="/assets/img/proj-lobby-tree.webp" alt="" />
+        <img className="login__bg" src="/assets/img/proj-concrete-sofa-tall.webp" alt="" />
         <div className="login__pitch">
           <span className="pv-eyebrow">Magazin · Redaktion</span>
           <h2>Das Magazin hinter den Projekten.</h2>

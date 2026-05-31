@@ -22,7 +22,7 @@ export const TUEREN_VARIANTS: TuerenVariant[] = [
     title: 'Türen-Paket komplett',
     lead: 'Innen & Außen',
     detail: 'Innentüren, Haustür und Nebeneingänge inklusive Zargen, Beschlägen und Demontage als koordiniertes Gewerke-Paket.',
-    image: '/assets/img/proj-lobby-tree.webp',
+    image: '/assets/img/proj-floor-oak.webp',
     netBase: 14800,
   },
   {

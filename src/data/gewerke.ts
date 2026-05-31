@@ -36,7 +36,7 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
   trockenbau: '/assets/img/proj-concrete-corner.webp',
   sanitaer: '/assets/img/proj-spa-tub.webp',
   rohbau: '/assets/img/photo-parkett-rohbau.webp',
-  tueren: '/assets/img/proj-lobby-tree.webp',
+  tueren: '/assets/img/photo-haus-exterior.webp',
   zaun: '/assets/img/proj-concrete-sofa-tall.webp',
   garten: '/assets/img/proj-moroccan-corner.webp',
   barrierefreiheit: '/assets/img/proj-bath-stone.webp',

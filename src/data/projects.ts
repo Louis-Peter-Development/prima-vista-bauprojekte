@@ -173,7 +173,7 @@ export const PROJECTS: Project[] = [
         'Die Bodengestaltung kombiniert großformatige Feinsteinzeugplatten mit eingelassenen Metallstreifen — ein visuelles Leitsystem, das Besucher intuitiv zum Empfang führt.',
       ],
       gewerke: ['Trockenbau', 'Bodenbelag', 'Elektro', 'Maler', 'Möbelbau', 'Bepflanzung'],
-      gallery: ['/assets/img/photo-altbausanierung.webp', '/assets/img/proj-lobby-tree.webp'],
+      gallery: ['/assets/img/photo-altbausanierung.webp', '/assets/img/proj-spa-corridor.webp'],
     },
   },
   {
@@ -338,9 +338,9 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    num: '№ 145b', slug: 'lobby-garden', title: 'Lobby Garden · Frankfurt · 2026', ttl: 'Lobby Garden', meta: 'Commercial · Frankfurt · 2026', src: '/assets/img/proj-lobby-tree.webp', size: 'wide', tags: ['commercial'],
+    num: '№ 145b', slug: 'lobby-garden', title: 'Lobby Garden · Frankfurt · 2026', ttl: 'Lobby Garden', meta: 'Commercial · Frankfurt · 2026', src: '/assets/img/proj-concrete-sofa-tall.webp', size: 'wide', tags: ['commercial'],
     detail: {
-      heroImg: '/assets/img/proj-lobby-tree.webp',
+      heroImg: '/assets/img/proj-concrete-sofa-tall.webp',
       headline: 'Lobby Garden',
       location: 'Frankfurt-Innenstadt',
       year: '2026',
@@ -352,7 +352,7 @@ export const PROJECTS: Project[] = [
         'Bewässerung und Drainage wurden unter dem Bodenbelag versteckt, das Licht über einen automatisierten Tageslichtzyklus gesteuert.',
       ],
       gewerke: ['Bepflanzung', 'Sanitär', 'Elektro', 'Bodenbelag', 'Möbelbau'],
-      gallery: ['/assets/img/proj-lobby-tree.webp', '/assets/img/photo-altbausanierung.webp'],
+      gallery: ['/assets/img/proj-concrete-sofa-tall.webp', '/assets/img/photo-altbausanierung.webp'],
     },
   },
   {
