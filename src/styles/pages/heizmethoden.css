@@ -173,3 +173,15 @@
 @media (max-width: 540px) {
   .heiz__grid { grid-template-columns: 1fr; gap: 18px; }
 }
+
+/* Center a lone card left in the final row instead of leaving it left-aligned. */
+@media (min-width: 881px) and (max-width: 1180px) {
+  .heiz__grid > .heiz-card:last-child:nth-child(3n + 1) { grid-column: 2; }
+}
+@media (min-width: 541px) and (max-width: 880px) {
+  .heiz__grid > .heiz-card:last-child:nth-child(2n + 1) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 12px);
+  }
+}
