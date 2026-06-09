@@ -12,7 +12,7 @@ export default function AbdichtungKeller() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/proj-spa-corridor.webp"
+        backgroundImage="/assets/img/leistungen/abdichtung-keller-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Abdichtung & Keller"
         title={<>Abdichtung<br /><em>kalkulieren.</em></>}

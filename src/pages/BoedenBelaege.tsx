@@ -12,7 +12,7 @@ export default function BoedenBelaege() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/proj-floor-oak.webp"
+        backgroundImage="/assets/img/leistungen/boeden-belaege-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Böden & Beläge"
         title={<>Böden &<br /><em>Beläge kalkulieren.</em></>}

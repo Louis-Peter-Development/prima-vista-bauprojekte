@@ -54,9 +54,11 @@ docs/iStock-*
 docs/**/*.jpeg
 docs/**/*.jpg
 docs/**/*.png
+docs/**/*.heic
+docs/**/*.HEIC
 docs/**/*.mp4
+docs/Leistungen/
 docs/zoi restaurant/
 
 # Scraped site snapshots (one-time exports, not used by the build)
 docs/*.html
-
