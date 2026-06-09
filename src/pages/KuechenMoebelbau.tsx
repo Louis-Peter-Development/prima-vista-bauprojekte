@@ -12,7 +12,7 @@ export default function KuechenMoebelbau() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-kitchen-oak.webp"
+        backgroundImage="/assets/img/leistungen/kuechen-moebelbau-02.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Küchen & Möbelbau"
         title={<>Küchen &<br /><em>Möbelbau kalkulieren.</em></>}

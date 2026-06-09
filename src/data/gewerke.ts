@@ -23,25 +23,25 @@ export type FeaturedTrade = {
 };
 
 export const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/proj-bath-double.webp',
-  kueche: '/assets/img/proj-kitchen-oak.webp',
+  bad: '/assets/img/leistungen/badsanierung-05.webp',
+  kueche: '/assets/img/leistungen/kuechen-moebelbau-02.webp',
   fassade: '/assets/img/photo-haus-exterior.webp',
-  dach: '/assets/img/photo-altbausanierung.webp',
+  dach: '/assets/img/leistungen/dachsanierung-01.webp',
   elektro: '/assets/img/photo-office-light.webp',
-  boden: '/assets/img/photo-parkett-altbau.webp',
-  treppen: '/assets/img/proj-stairs-concrete.webp',
-  heizung: '/assets/img/proj-floor-oak.webp',
-  abdichtung: '/assets/img/proj-spa-corridor.webp',
-  maler: '/assets/img/proj-paint-swatches.webp',
-  trockenbau: '/assets/img/proj-concrete-corner.webp',
-  sanitaer: '/assets/img/proj-spa-tub.webp',
-  rohbau: '/assets/img/photo-parkett-rohbau.webp',
+  boden: '/assets/img/leistungen/boeden-belaege-11.webp',
+  treppen: '/assets/img/photo-parkett-rohbau.webp',
+  heizung: '/assets/img/photo-haus-exterior.webp',
+  abdichtung: '/assets/img/leistungen/abdichtung-keller-01.webp',
+  maler: '/assets/img/leistungen/gewerke-01.webp',
+  trockenbau: '/assets/img/leistungen/gewerke-01.webp',
+  sanitaer: '/assets/img/proj-concrete-corner.webp',
+  rohbau: '/assets/img/photo-altbausanierung.webp',
   tueren: '/assets/img/photo-haus-exterior.webp',
-  zaun: '/assets/img/proj-concrete-sofa-tall.webp',
-  garten: '/assets/img/proj-moroccan-corner.webp',
-  barrierefreiheit: '/assets/img/proj-bath-stone.webp',
+  zaun: '/assets/img/photo-haus-exterior.webp',
+  garten: '/assets/img/photo-haus-exterior.webp',
+  barrierefreiheit: '/assets/img/leistungen/badsanierung-06.webp',
   fenster: '/assets/img/photo-altbausanierung.webp',
-  thermen: '/assets/img/proj-floor-oak.webp',
+  thermen: '/assets/img/photo-haus-exterior.webp',
 };
 
 export const TRADES: TradeRow[] = [
@@ -68,7 +68,7 @@ export const TRADES: TradeRow[] = [
 
 export const FEATURED_TRADES: FeaturedTrade[] = [
   {
-    src: '/assets/img/photo-bad-prima-vista.webp',
+    src: '/assets/img/leistungen/badsanierung-05.webp',
     title: 'Badezimmer — Sanitär & Fliesen',
     count: '01 — 142 Projekte',
     heading: ['Bäder &', 'Sanitär'],
@@ -77,7 +77,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     detailTo: '/badsanierung',
   },
   {
-    src: '/assets/img/proj-kitchen-oak.webp',
+    src: '/assets/img/leistungen/kuechen-moebelbau-02.webp',
     title: 'Küchen & Möbelbau',
     count: '02 — 98 Projekte',
     heading: ['Küchen &', 'Möbelbau'],
@@ -86,7 +86,7 @@ export const FEATURED_TRADES: FeaturedTrade[] = [
     detailTo: '/kuechen-moebelbau',
   },
   {
-    src: '/assets/img/photo-parkett-altbau.webp',
+    src: '/assets/img/leistungen/boeden-belaege-11.webp',
     title: 'Bodenbeläge',
     count: '03 — 187 Projekte',
     heading: ['Böden &', 'Beläge'],
