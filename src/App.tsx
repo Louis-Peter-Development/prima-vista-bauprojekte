@@ -47,6 +47,7 @@ const Datenschutz = lazy(() => import('./pages/Datenschutz'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
 const AdminBlog = lazy(() => import('./pages/AdminBlog'));
 const AdminEditor = lazy(() => import('./pages/AdminEditor'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 function RouteFallback() {
   const { pathname } = useLocation();
@@ -165,6 +166,7 @@ export default function App() {
           <Route path="/admin/blog" element={<AdminBlog />} />
           <Route path="/admin/blog/new" element={<AdminEditor />} />
           <Route path="/admin/blog/:slug" element={<AdminEditor />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>
