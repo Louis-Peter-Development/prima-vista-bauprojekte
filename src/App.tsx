@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './components/Layout';
 import './styles/components/route-loading.css';
 
@@ -117,58 +118,60 @@ function RouteFallback() {
 
 export default function App() {
   return (
-    <Suspense fallback={<RouteFallback />}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/gewerke" element={<Gewerke />} />
-          <Route path="/badsanierung" element={<Badsanierung />} />
-          <Route path="/badsanierung-gaeste-wc" element={<Badsanierung />} />
-          <Route path="/kuechen-moebelbau" element={<KuechenMoebelbau />} />
-          <Route path="/boeden-belaege" element={<BoedenBelaege />} />
-          <Route path="/elektroinstallation" element={<Elektroinstallation />} />
-          <Route path="/trockenbau" element={<Trockenbau />} />
-          <Route path="/maler-lackierer" element={<MalerLackierer />} />
-          <Route path="/fassadensanierung" element={<Fassadensanierung />} />
-          <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
+    <ErrorBoundary>
+      <Suspense fallback={<RouteFallback />}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/gewerke" element={<Gewerke />} />
+            <Route path="/badsanierung" element={<Badsanierung />} />
+            <Route path="/badsanierung-gaeste-wc" element={<Badsanierung />} />
+            <Route path="/kuechen-moebelbau" element={<KuechenMoebelbau />} />
+            <Route path="/boeden-belaege" element={<BoedenBelaege />} />
+            <Route path="/elektroinstallation" element={<Elektroinstallation />} />
+            <Route path="/trockenbau" element={<Trockenbau />} />
+            <Route path="/maler-lackierer" element={<MalerLackierer />} />
+            <Route path="/fassadensanierung" element={<Fassadensanierung />} />
+            <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
 
-          <Route path="/dachsanierung" element={<Dachsanierung />} />
-          <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
-          <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />
-          <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
-          <Route path="/fenstertechnik" element={<Fenstertechnik />} />
-          <Route path="/rohbau-abbruch" element={<RohbauAbbruch />} />
-          <Route path="/tueren-zargen" element={<TuerenZargen />} />
-          <Route path="/sanitaerinstallation" element={<Sanitaerinstallation />} />
-          <Route path="/zaeune" element={<Zaeune />} />
-          <Route path="/komplett-pakete" element={<KomplettPakete />} />
-          <Route path="/projekte" element={<Projekte />} />
-          <Route path="/projekte/:slug" element={<ProjektDetail />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogDetail />} />
-          <Route path="/kontakt" element={<Kontakt />} />
-          <Route path="/blitz-angebot" element={<BlitzAngebot />} />
-          <Route path="/kalkulator" element={<Kalkulator />} />
-          <Route path="/haus-sanierung" element={<HausSanierung />} />
-          <Route path="/wohnung-sanierung" element={<WohnungSanierung />} />
-          <Route path="/gastronomie-ausbau" element={<GastronomieAusbau />} />
-          <Route path="/heizmethoden" element={<Heizmethoden />} />
-          <Route path="/heizkoerper" element={<Heizkoerper />} />
-          <Route path="/heizstraenge" element={<Heizstraenge />} />
-          <Route path="/fussbodenheizung" element={<Fussbodenheizung />} />
-          <Route path="/waermepumpe" element={<Waermepumpe />} />
-          <Route path="/gas-heizung" element={<GasHeizung />} />
-          <Route path="/pelletofen" element={<Pelletofen />} />
-          <Route path="/saunaofen" element={<Saunaofen />} />
-          <Route path="/impressum" element={<Impressum />} />
-          <Route path="/datenschutz" element={<Datenschutz />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-          <Route path="/admin/blog" element={<AdminBlog />} />
-          <Route path="/admin/blog/new" element={<AdminEditor />} />
-          <Route path="/admin/blog/:slug" element={<AdminEditor />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </Suspense>
+            <Route path="/dachsanierung" element={<Dachsanierung />} />
+            <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
+            <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />
+            <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
+            <Route path="/fenstertechnik" element={<Fenstertechnik />} />
+            <Route path="/rohbau-abbruch" element={<RohbauAbbruch />} />
+            <Route path="/tueren-zargen" element={<TuerenZargen />} />
+            <Route path="/sanitaerinstallation" element={<Sanitaerinstallation />} />
+            <Route path="/zaeune" element={<Zaeune />} />
+            <Route path="/komplett-pakete" element={<KomplettPakete />} />
+            <Route path="/projekte" element={<Projekte />} />
+            <Route path="/projekte/:slug" element={<ProjektDetail />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
+            <Route path="/kontakt" element={<Kontakt />} />
+            <Route path="/blitz-angebot" element={<BlitzAngebot />} />
+            <Route path="/kalkulator" element={<Kalkulator />} />
+            <Route path="/haus-sanierung" element={<HausSanierung />} />
+            <Route path="/wohnung-sanierung" element={<WohnungSanierung />} />
+            <Route path="/gastronomie-ausbau" element={<GastronomieAusbau />} />
+            <Route path="/heizmethoden" element={<Heizmethoden />} />
+            <Route path="/heizkoerper" element={<Heizkoerper />} />
+            <Route path="/heizstraenge" element={<Heizstraenge />} />
+            <Route path="/fussbodenheizung" element={<Fussbodenheizung />} />
+            <Route path="/waermepumpe" element={<Waermepumpe />} />
+            <Route path="/gas-heizung" element={<GasHeizung />} />
+            <Route path="/pelletofen" element={<Pelletofen />} />
+            <Route path="/saunaofen" element={<Saunaofen />} />
+            <Route path="/impressum" element={<Impressum />} />
+            <Route path="/datenschutz" element={<Datenschutz />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/blog" element={<AdminBlog />} />
+            <Route path="/admin/blog/new" element={<AdminEditor />} />
+            <Route path="/admin/blog/:slug" element={<AdminEditor />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
