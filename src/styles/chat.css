@@ -797,8 +797,9 @@ body.pv-chat-open {
   }
 }
 
-/* Chat is desktop-only — hide launcher and panel on mobile. */
-@media (max-width: 880px) {
+/* Chat is desktop-only. Tablets can be wide but still touch-first, so keep the
+   launcher/panel out of iPad layouts where it competes with the mobile header. */
+@media (max-width: 1080px), (hover: none) and (pointer: coarse) {
   .pv-chat-launcher,
   .pv-chat-panel {
     display: none !important;

@@ -11,6 +11,9 @@ function autoTag() {
   const main = document.querySelector('main');
   if (!main) return;
 
+  const shouldSkip = (el: Element): boolean =>
+    Boolean(el.closest('.hero__bg-slideshow, .pv-mobile-menu, .pv-lightbox, .route-loading'));
+
   const hasRevealAncestor = (el: Element): boolean => {
     let cur: Element | null = el.parentElement;
     while (cur && cur !== main) {
@@ -25,18 +28,21 @@ function autoTag() {
 
   // Headings: fade-up
   main.querySelectorAll<HTMLElement>('h1, h2, h3').forEach((el) => {
+    if (shouldSkip(el)) return;
     if (isReveal(el) || hasRevealAncestor(el)) return;
     el.classList.add('reveal');
   });
 
   // Paragraphs: fade-up (only direct children of section/main/article to avoid noise inside nested cards)
   main.querySelectorAll<HTMLElement>('section > p, main > p, article > p').forEach((el) => {
+    if (shouldSkip(el)) return;
     if (isReveal(el) || hasRevealAncestor(el)) return;
     el.classList.add('reveal');
   });
 
   // Images & figures: scale-in
   main.querySelectorAll<HTMLElement>('img, figure, picture').forEach((el) => {
+    if (shouldSkip(el)) return;
     if (isReveal(el) || hasRevealAncestor(el)) return;
     el.classList.add('reveal', 'reveal--scale');
   });
@@ -47,6 +53,7 @@ function autoTag() {
     '.stat', '.faq__item', '.tile', '.feature', '.benefit',
   ].join(',');
   main.querySelectorAll<HTMLElement>(cardSelectors).forEach((el) => {
+    if (shouldSkip(el)) return;
     if (isReveal(el) || hasRevealAncestor(el)) return;
     el.classList.add('reveal', 'reveal--scale');
   });
@@ -57,6 +64,7 @@ function autoTag() {
     '.stats__grid', '.faq__list', '.proj-grid', '.cards', '.tiles',
   ].join(',');
   main.querySelectorAll<HTMLElement>(groupSelectors).forEach((el) => {
+    if (shouldSkip(el)) return;
     if (isReveal(el) || hasRevealAncestor(el)) return;
     el.classList.add('reveal-group');
   });

@@ -95,7 +95,7 @@
   z-index: 2;
   max-width: 1320px;
   margin: 0 auto;
-  min-height: calc(100dvh - var(--pv-header-height));
+  min-height: calc(100svh - var(--pv-header-height));
   display: flex;
   flex-direction: column;
   padding: 40px 48px 56px;
@@ -533,7 +533,7 @@
 
 .blog-article__hero {
   position: relative;
-  min-height: calc(82dvh - var(--pv-header-height));
+  min-height: calc(82svh - var(--pv-header-height));
   display: flex;
   align-items: flex-end;
   /* Always-dark hero (image + gradient sit on top). Pinned to a literal dark
@@ -795,7 +795,7 @@
 .blog-admin {
   max-width: 1320px;
   margin: 0 auto;
-  min-height: calc(100dvh - var(--pv-header-height));
+  min-height: calc(100svh - var(--pv-header-height));
   padding: 64px 48px 96px;
 }
 .blog-admin--editor { max-width: 920px; }
@@ -1201,7 +1201,7 @@
 
 /* ---------- Login ---------- */
 .blog-admin-login {
-  min-height: calc(100dvh - var(--pv-header-height));
+  min-height: calc(100svh - var(--pv-header-height));
   display: grid;
   place-items: center;
   padding: 64px 24px;
@@ -1277,7 +1277,7 @@
 .login {
   display: grid;
   grid-template-columns: 1.05fr .95fr;
-  min-height: calc(100dvh - var(--pv-header-height));
+  min-height: calc(100svh - var(--pv-header-height));
   background: var(--mag-paper);
 }
 
@@ -1668,7 +1668,7 @@
 
 /* Article (single post) skeleton — mirrors the hero + body layout. */
 .blog-article__hero.blog-article__hero--skeleton {
-  min-height: calc(82dvh - var(--pv-header-height));
+  min-height: calc(82svh - var(--pv-header-height));
   background: #141312;
   color: var(--pv-bone);
 }

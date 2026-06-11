@@ -10,7 +10,7 @@ import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
 
-const DESKTOP_MEDIA = '(min-width: 881px)';
+const DESKTOP_MEDIA = '(min-width: 1081px) and (hover: hover) and (pointer: fine)';
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(() =>
