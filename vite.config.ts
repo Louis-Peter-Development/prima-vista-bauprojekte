@@ -263,6 +263,6 @@ export default defineConfig(({ mode }) => {
         },
       }),
     ],
-    server: { host: true, port: Number(process.env.PORT) || 5173, strictPort: !!process.env.PORT, open: !process.env.PORT },
+    server: { host: true, port: Number(process.env.PORT) || 5177, strictPort: true, open: !process.env.PORT },
   };
 });

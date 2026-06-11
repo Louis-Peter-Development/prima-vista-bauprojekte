@@ -494,7 +494,7 @@
 .renocalc-live__sticky {
   position: sticky;
   top: calc(var(--pv-header-height) + 24px);
-  max-height: calc(100vh - var(--pv-header-height) - 48px);
+  max-height: calc(100svh - var(--pv-header-height) - 48px);
   overflow-y: auto;
   display: flex;
   flex-direction: column;

@@ -1,11 +1,19 @@
 import type { Config, Context } from '@netlify/functions';
 import { connectDb } from './_shared/db';
 import { json, methodNotAllowed } from './_shared/http';
+import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
 
 export default async (req: Request, context: Context) => {
   if (req.method !== 'POST') return methodNotAllowed(['POST']);
   const slug = context.params.slug;
   if (!slug) return json({ error: 'Missing slug' }, { status: 400 });
+
+  const rateLimit = checkRateLimit(req, {
+    key: `likes:${slug}`,
+    limit: 10,
+    windowMs: 60 * 1000,
+  });
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
 
   try {
     const { Post } = await connectDb();

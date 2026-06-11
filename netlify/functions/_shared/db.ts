@@ -45,7 +45,6 @@ type Cache = {
 };
 
 declare global {
-  // eslint-disable-next-line no-var
   var __pvMongoose: Cache | undefined;
 }
 

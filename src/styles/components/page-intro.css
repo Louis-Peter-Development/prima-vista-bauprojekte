@@ -5,8 +5,9 @@
   border-bottom: 1px solid rgba(26, 26, 26, .08);
   /* Fill the viewport below the sticky header at every breakpoint.
      --pv-header-height tracks the responsive header (88/80/72px); the
-     extra 1px accounts for the header's bottom border. */
-  min-height: calc(100dvh - var(--pv-header-height) - 1px);
+     extra 1px accounts for the header's bottom border. Use svh so iPad
+     browser chrome changes do not resize the section while scrolling. */
+  min-height: calc(100svh - var(--pv-header-height) - 1px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

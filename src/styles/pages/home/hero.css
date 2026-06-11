@@ -2,10 +2,10 @@
 .hero {
   box-sizing: border-box;
   background: var(--pv-cream);
-  padding: 48px 0 clamp(64px, 7vh, 96px);
+  padding: 48px 0 clamp(64px, 7svh, 96px);
   overflow: hidden;
   position: relative;
-  min-height: calc(100dvh - 89px);
+  min-height: calc(100svh - var(--pv-header-height) - 1px);
   display: flex;
   flex-direction: column;
 }
@@ -90,7 +90,7 @@
   font-family: var(--pv-font-serif);
   font-style: normal;
   font-weight: 500;
-  font-size: clamp(72px, min(11.5vw, 16vh), 190px);
+  font-size: clamp(72px, min(11.5vw, 16svh), 190px);
   line-height: 0.92;
   letter-spacing: -0.022em;
   color: var(--pv-copper);
@@ -121,7 +121,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 56px;
   align-items: end;
-  padding: clamp(16px, 2.4vh, 28px) 0 0;
+  padding: clamp(16px, 2.4svh, 28px) 0 0;
   margin-bottom: 0;
 }
 .hero__meta-num {
@@ -229,7 +229,7 @@
 /* Hero photo band */
 .hero__photo {
   position: relative;
-  height: 64vh;
+  height: 64svh;
   min-height: 480px;
   max-height: 720px;
   margin-top: 48px;

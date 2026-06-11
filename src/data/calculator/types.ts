@@ -34,7 +34,7 @@ export type RenovationProduct = {
   
   // Scaling system
   scalable: boolean;
-  formula?: string; // Evaluated at runtime with CalculatorContext
+  formula?: string; // Parsed as safe arithmetic with CalculatorContext variables
   
   // Computed runtime value
   quantity: number;

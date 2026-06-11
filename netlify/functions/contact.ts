@@ -1,4 +1,6 @@
 import { sendKontaktEmails, type KontaktPayload } from '../../server/mail.js';
+import { json, methodNotAllowed } from './_shared/http';
+import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -6,8 +8,9 @@ function asString(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
 }
 
-function validate(body: unknown): KontaktPayload | { error: string } {
+export function validateKontaktPayload(body: unknown): KontaktPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
+  if (hasSpamTrap(body)) return { error: 'Spam detected' };
   const b = body as Record<string, unknown>;
   const payload: KontaktPayload = {
     vorname: asString(b.vorname),
@@ -28,38 +31,33 @@ function validate(body: unknown): KontaktPayload | { error: string } {
 }
 
 export default async (req: Request) => {
-  if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+  if (req.method !== 'POST') return methodNotAllowed(['POST']);
+
+  const rateLimit = checkRateLimit(req, {
+    key: 'contact',
+    limit: 3,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
 
   let body: unknown;
   try {
     body = await req.json();
   } catch {
-    return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
-      status: 400,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const result = validate(body);
+  const result = validateKontaktPayload(body);
   if ('error' in result) {
-    return new Response(JSON.stringify(result), {
-      status: 400,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json(result, { status: 400 });
   }
 
   try {
     await sendKontaktEmails(result);
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ ok: true });
   } catch (err) {
     console.error('[contact] send failed', err);
-    return new Response(JSON.stringify({ error: 'Send failed' }), {
-      status: 502,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ error: 'Send failed' }, { status: 502 });
   }
 };
 

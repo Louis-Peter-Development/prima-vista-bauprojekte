@@ -9,8 +9,10 @@ import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
+import { getRouteMeta } from '../data/routeMeta';
+import { setPageMeta } from '../utils/metadata';
 
-const DESKTOP_MEDIA = '(min-width: 881px)';
+const DESKTOP_MEDIA = '(min-width: 1081px) and (hover: hover) and (pointer: fine)';
 
 function useIsDesktop() {
   const [isDesktop, setIsDesktop] = useState(() =>
@@ -232,11 +234,23 @@ function ScrollToTop() {
   return null;
 }
 
+function RouteMetadata() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const meta = getRouteMeta(pathname);
+    setPageMeta({ ...meta, pathname });
+  }, [pathname]);
+
+  return null;
+}
+
 export default function Layout() {
   useReveal();
   const isDesktop = useIsDesktop();
   return (
     <LightboxProvider>
+      <RouteMetadata />
       <ScrollToTop />
       <Header />
       <main>

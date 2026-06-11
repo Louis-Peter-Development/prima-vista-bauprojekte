@@ -2,6 +2,7 @@ import type { Config, Context } from '@netlify/functions';
 import { connectDb } from './_shared/db';
 import { sanitizePlainText } from './_shared/content';
 import { asString, json, methodNotAllowed, readJson } from './_shared/http';
+import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
 function serialize(comment: {
   _id?: unknown;
@@ -26,15 +27,28 @@ async function listComments(slug: string) {
   return json({ comments: comments.map(serialize) });
 }
 
-async function createComment(req: Request, slug: string) {
-  const body = await readJson(req);
-  if (!body || typeof body !== 'object') return json({ error: 'Invalid body' }, { status: 400 });
-
+export function validateCommentPayload(body: unknown): { name: string; body: string } | { error: string } {
+  if (!body || typeof body !== 'object') return { error: 'Invalid body' };
+  if (hasSpamTrap(body)) return { error: 'Spam detected' };
   const record = body as Record<string, unknown>;
   const name = sanitizePlainText(asString(record.name), 80);
   const commentBody = sanitizePlainText(asString(record.body), 1200);
-  if (!name) return json({ error: 'name is required' }, { status: 400 });
-  if (!commentBody) return json({ error: 'body is required' }, { status: 400 });
+  if (!name) return { error: 'name is required' };
+  if (!commentBody) return { error: 'body is required' };
+  return { name, body: commentBody };
+}
+
+async function createComment(req: Request, slug: string) {
+  const rateLimit = checkRateLimit(req, {
+    key: `comments:${slug}`,
+    limit: 5,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
+
+  const body = await readJson(req);
+  const payload = validateCommentPayload(body);
+  if ('error' in payload) return json(payload, { status: 400 });
 
   const { Post, Comment } = await connectDb();
   const post = await Post.findOne({ slug, status: 'published' }).select('_id').lean();
@@ -42,8 +56,8 @@ async function createComment(req: Request, slug: string) {
 
   const comment = await Comment.create({
     postSlug: slug,
-    name,
-    body: commentBody,
+    name: payload.name,
+    body: payload.body,
     approved: true,
   });
 

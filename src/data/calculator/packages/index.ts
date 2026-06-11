@@ -8,15 +8,10 @@ const FILES: ReadonlyArray<FileEntry> = [
   { loader: () => import('./blitz-haus-2'), entries: [['2e-d', 'packageBlitzHaus2']] },
   { loader: () => import('./blitz-haus-3'), entries: [['1e', 'packageBlitzHaus3']] },
   { loader: () => import('./blitz-haus-4'), entries: [['2e', 'packageBlitzHaus4']] },
-  {
-    loader: () => import('./wohnung'),
-    entries: [
-      ['studio', 'packageWohnungStudio'],
-      ['2zi', 'packageWohnung2zi'],
-      ['3zi', 'packageWohnung3zi'],
-      ['maisonette', 'packageWohnungMaisonette'],
-    ],
-  },
+  { loader: () => import('./wohnung-studio'), entries: [['studio', 'packageWohnungStudio']] },
+  { loader: () => import('./wohnung-2zi'), entries: [['2zi', 'packageWohnung2zi']] },
+  { loader: () => import('./wohnung-3zi'), entries: [['3zi', 'packageWohnung3zi']] },
+  { loader: () => import('./wohnung-maisonette'), entries: [['maisonette', 'packageWohnungMaisonette']] },
   {
     loader: () => import('./abdichtung'),
     entries: [
@@ -26,18 +21,13 @@ const FILES: ReadonlyArray<FileEntry> = [
       ['abdichtungKeller', 'packageAbdichtungKeller'],
     ],
   },
-  {
-    loader: () => import('./badsanierung'),
-    entries: [
-      ['badGaeste', 'packageBadGaeste'],
-      ['badKomplett', 'packageBadKomplett'],
-      ['badWanne', 'packageBadWanne'],
-      ['badDusche', 'packageBadDusche'],
-      ['badWhirlpool', 'packageBadWhirlpool'],
-      ['badWhirlpoolDusche', 'packageBadWhirlpoolDusche'],
-      ['badBarrierefrei', 'packageBadBarrierefrei'],
-    ],
-  },
+  { loader: () => import('./badsanierung-gaeste'), entries: [['badGaeste', 'packageBadGaeste']] },
+  { loader: () => import('./badsanierung-komplett'), entries: [['badKomplett', 'packageBadKomplett']] },
+  { loader: () => import('./badsanierung-wanne'), entries: [['badWanne', 'packageBadWanne']] },
+  { loader: () => import('./badsanierung-dusche'), entries: [['badDusche', 'packageBadDusche']] },
+  { loader: () => import('./badsanierung-whirlpool'), entries: [['badWhirlpool', 'packageBadWhirlpool']] },
+  { loader: () => import('./badsanierung-whirlpool-dusche'), entries: [['badWhirlpoolDusche', 'packageBadWhirlpoolDusche']] },
+  { loader: () => import('./badsanierung-barrierefrei'), entries: [['badBarrierefrei', 'packageBadBarrierefrei']] },
   {
     loader: () => import('./barrierefrei'),
     entries: [

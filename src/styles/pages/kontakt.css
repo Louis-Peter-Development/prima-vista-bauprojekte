@@ -793,7 +793,7 @@
 }
 .faq__item.is-open .faq__a { max-height: 320px; }
 
-.kontakt--blitz { padding-bottom: 160px; min-height: 100dvh; }
+.kontakt--blitz { padding-bottom: 160px; min-height: 100svh; }
 
 @media (max-width: 880px) {
   .kontakt__inner, .kontakt__offices, .faq__inner { grid-template-columns: 1fr; gap: 32px; }

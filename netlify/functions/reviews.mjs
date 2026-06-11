@@ -24,7 +24,7 @@ async function getGoogleReviews(apiKey, placeId) {
   };
 }
 
-export default async (req) => {
+export default async (_req) => {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID;
   if (!apiKey || !placeId) {
