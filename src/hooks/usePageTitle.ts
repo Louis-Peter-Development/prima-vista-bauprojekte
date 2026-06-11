@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-
-const SUFFIX = 'Prima Vista Bauprojekte';
+import { setPageMeta } from '../utils/metadata';
 
 export function usePageTitle(title: string) {
   useEffect(() => {
-    document.title = title ? `${title} | ${SUFFIX}` : SUFFIX;
+    setPageMeta({ title });
   }, [title]);
 }

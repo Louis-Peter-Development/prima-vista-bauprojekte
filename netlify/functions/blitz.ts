@@ -1,4 +1,6 @@
 import { sendBlitzEmails, type BlitzPayload } from '../../server/mail.js';
+import { json, methodNotAllowed } from './_shared/http';
+import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -10,8 +12,9 @@ function asStringArray(v: unknown): string[] {
   return Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 }
 
-function validate(body: unknown): BlitzPayload | { error: string } {
+export function validateBlitzPayload(body: unknown): BlitzPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
+  if (hasSpamTrap(body)) return { error: 'Spam detected' };
   const b = body as Record<string, unknown>;
   const payload: BlitzPayload = {
     art: asString(b.art),
@@ -34,38 +37,33 @@ function validate(body: unknown): BlitzPayload | { error: string } {
 }
 
 export default async (req: Request) => {
-  if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+  if (req.method !== 'POST') return methodNotAllowed(['POST']);
+
+  const rateLimit = checkRateLimit(req, {
+    key: 'blitz',
+    limit: 3,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
 
   let body: unknown;
   try {
     body = await req.json();
   } catch {
-    return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
-      status: 400,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const result = validate(body);
+  const result = validateBlitzPayload(body);
   if ('error' in result) {
-    return new Response(JSON.stringify(result), {
-      status: 400,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json(result, { status: 400 });
   }
 
   try {
     await sendBlitzEmails(result);
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ ok: true });
   } catch (err) {
     console.error('[blitz] send failed', err);
-    return new Response(JSON.stringify({ error: 'Send failed' }), {
-      status: 502,
-      headers: { 'content-type': 'application/json' },
-    });
+    return json({ error: 'Send failed' }, { status: 502 });
   }
 };
 

@@ -11,14 +11,14 @@ Built as a React SPA with a cream-and-copper aesthetic, Cormorant Garamond + Man
 - **Blitz-Angebot:** Quick offer form with email notifications.
 - **AI Chat Assistant:** Integrated AI chat using the Anthropic API to answer customer queries.
 - **Magazin + Admin:** Serverless blog with public articles, likes, comments, and an authenticated TipTap authoring area.
-- **Serverless API:** Email delivery via Resend and AI chat endpoints powered by Netlify Functions.
+- **Serverless API:** Email delivery via Resend and AI chat endpoints powered by Netlify Functions, with basic public endpoint rate limits and spam traps.
 - **Custom Dev Server:** Vite dev server is configured with custom middleware to mock serverless endpoints (`/api/chat`, `/api/contact`, `/api/blitz`) locally.
 
 ## Stack
 
-- [Vite 5](https://vitejs.dev/) — dev server & build
+- [Vite 6](https://vite.dev/) — dev server & build
 - [React 18](https://react.dev/) + TypeScript
-- [React Router 6](https://reactrouter.com/) — client-side routing
+- [React Router 7](https://reactrouter.com/) — client-side routing
 - [Anthropic SDK](https://github.com/anthropics/anthropic-sdk-typescript) — AI chat capabilities
 - [Resend](https://resend.com/) — email delivery
 - [MongoDB Atlas](https://www.mongodb.com/atlas) — blog storage
@@ -33,6 +33,9 @@ npm run dev        # start dev server at http://localhost:5173 (includes custom 
 npm run build      # type-check + production build to dist/
 npm run preview    # preview the production build
 npm run typecheck  # tsc --noEmit
+npm run lint       # ESLint for TS/React/Netlify code
+npm run test:run   # run Vitest tests once
+npm run audit:calculator-data # report calculator package size hotspots
 npm run seed:admin # create the first admin user from env vars
 npm run netlify:dev # run Vite through Netlify's local Functions runtime
 ```
@@ -95,6 +98,9 @@ src/
 - Design tokens live in `src/styles/tokens.css` as CSS custom properties (`--pv-*`). Global components in `src/styles/global.css`; per-page sections in `src/styles/pages/`.
 - Images and fonts ship via `public/assets/`.
 - The Vite config (`vite.config.ts`) includes custom plugins (`chatDevPlugin`, `mailDevPlugin`) that proxy API requests locally by dynamically loading `server/chat.ts` and `server/mail.ts` so you don't need a separate backend server during development.
+- SEO route metadata lives in `src/data/routeMeta.ts`; `public/sitemap.xml` should be updated when public routes are added or removed.
+- Large calculator package data is lazy-loaded from `src/data/calculator/packages/`. Keep variants split by package where possible and use `npm run audit:calculator-data` to catch growth.
+- Pull requests and pushes to `development` or `main` run CI via `.github/workflows/ci.yml`.
 
 ## Legacy reference
 

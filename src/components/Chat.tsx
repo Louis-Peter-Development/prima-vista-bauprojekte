@@ -13,7 +13,7 @@ const INTERNAL_PATHS = [
   '/datenschutz',
 ] as const;
 
-const ESCAPED_PATHS = INTERNAL_PATHS.map((p) => p.replace(/[/\-]/g, '\\$&')).join('|');
+const ESCAPED_PATHS = INTERNAL_PATHS.map((p) => p.replace(/[/-]/g, '\\$&')).join('|');
 const PATH_RE = new RegExp(
   `(\\*\\*[^*]+\\*\\*|\\((${ESCAPED_PATHS})\\)|(?<![\\w/])(${ESCAPED_PATHS})(?![\\w]))`,
   'g',

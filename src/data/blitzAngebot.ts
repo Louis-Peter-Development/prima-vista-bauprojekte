@@ -262,5 +262,5 @@ export function formatRowQuantity(quantity: number, unit: string): string {
   const num = Number.isInteger(quantity)
     ? quantity.toLocaleString('de-DE')
     : quantity.toLocaleString('de-DE', { maximumFractionDigits: 2 });
-  return `${num} ${unit}`;
+  return `${num}\u00a0${unit}`;
 }

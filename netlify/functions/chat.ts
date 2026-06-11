@@ -1,11 +1,20 @@
 import { createChatStream, type ChatMessage } from '../../server/chat.js';
+import { methodNotAllowed } from './_shared/http';
+import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
 
 type Body = { messages?: ChatMessage[] };
 
 export default async (req: Request) => {
   if (req.method !== 'POST') {
-    return new Response('Method not allowed', { status: 405 });
+    return methodNotAllowed(['POST']);
   }
+
+  const rateLimit = checkRateLimit(req, {
+    key: 'chat',
+    limit: 12,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
 
   let body: Body;
   try {

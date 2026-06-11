@@ -80,21 +80,132 @@ export function clampQuantity(value: number, min: number): number {
   return Math.max(min, value);
 }
 
+type FormulaToken =
+  | { type: 'number'; value: number }
+  | { type: 'identifier'; value: keyof CalculatorContext }
+  | { type: 'operator'; value: '+' | '-' | '*' | '/' }
+  | { type: 'paren'; value: '(' | ')' };
+
+function tokenizeFormula(formula: string): FormulaToken[] | null {
+  const tokens: FormulaToken[] = [];
+  let index = 0;
+
+  while (index < formula.length) {
+    const char = formula[index];
+    if (/\s/.test(char)) {
+      index += 1;
+      continue;
+    }
+
+    const rest = formula.slice(index);
+    const numberMatch = /^\d+(?:\.\d+)?/.exec(rest);
+    if (numberMatch) {
+      tokens.push({ type: 'number', value: Number(numberMatch[0]) });
+      index += numberMatch[0].length;
+      continue;
+    }
+
+    if (rest.startsWith('livingArea')) {
+      tokens.push({ type: 'identifier', value: 'livingArea' });
+      index += 'livingArea'.length;
+      continue;
+    }
+
+    if (rest.startsWith('floorCount')) {
+      tokens.push({ type: 'identifier', value: 'floorCount' });
+      index += 'floorCount'.length;
+      continue;
+    }
+
+    if (char === '+' || char === '-' || char === '*' || char === '/') {
+      tokens.push({ type: 'operator', value: char });
+      index += 1;
+      continue;
+    }
+
+    if (char === '(' || char === ')') {
+      tokens.push({ type: 'paren', value: char });
+      index += 1;
+      continue;
+    }
+
+    return null;
+  }
+
+  return tokens;
+}
+
+export function evaluateQuantityFormula(formula: string, context: CalculatorContext): number | null {
+  const tokens = tokenizeFormula(formula);
+  if (!tokens) return null;
+  let index = 0;
+
+  const peek = () => tokens[index];
+  const consume = () => tokens[index++];
+
+  const parseFactor = (): number | null => {
+    const token = consume();
+    if (!token) return null;
+
+    if (token.type === 'operator' && (token.value === '+' || token.value === '-')) {
+      const value = parseFactor();
+      if (value === null) return null;
+      return token.value === '-' ? -value : value;
+    }
+
+    if (token.type === 'number') return token.value;
+    if (token.type === 'identifier') return context[token.value];
+
+    if (token.type === 'paren' && token.value === '(') {
+      const value = parseExpression();
+      const closing = consume();
+      if (!closing || closing.type !== 'paren' || closing.value !== ')') return null;
+      return value;
+    }
+
+    return null;
+  };
+
+  const parseTerm = (): number | null => {
+    let value = parseFactor();
+    if (value === null) return null;
+
+    while (peek()?.type === 'operator' && (peek().value === '*' || peek().value === '/')) {
+      const operator = consume() as Extract<FormulaToken, { type: 'operator' }>;
+      const right = parseFactor();
+      if (right === null) return null;
+      value = operator.value === '*' ? value * right : value / right;
+    }
+
+    return value;
+  };
+
+  function parseExpression(): number | null {
+    let value = parseTerm();
+    if (value === null) return null;
+
+    while (peek()?.type === 'operator' && (peek().value === '+' || peek().value === '-')) {
+      const operator = consume() as Extract<FormulaToken, { type: 'operator' }>;
+      const right = parseTerm();
+      if (right === null) return null;
+      value = operator.value === '+' ? value + right : value - right;
+    }
+
+    return value;
+  }
+
+  const result = parseExpression();
+  if (result === null || index !== tokens.length || !Number.isFinite(result)) return null;
+  return result;
+}
+
 export function computeQuantity(product: RenovationProduct, context: CalculatorContext): number {
   if (!product.scalable || !product.formula) return product.baseQuantity;
-  
-  try {
-    const expression = product.formula
-      .replace(/livingArea/g, String(context.livingArea))
-      .replace(/floorCount/g, String(context.floorCount));
-      
-    // eslint-disable-next-line no-new-func
-    const raw = new Function(`return ${expression}`)();
-    const stepped = Math.round(raw / product.quantityStep) * product.quantityStep;
-    return clampQuantity(stepped, product.minQuantity);
-  } catch {
-    return product.baseQuantity;
-  }
+
+  const raw = evaluateQuantityFormula(product.formula, context);
+  if (raw === null) return product.baseQuantity;
+  const stepped = Math.round(raw / product.quantityStep) * product.quantityStep;
+  return clampQuantity(stepped, product.minQuantity);
 }
 
 export function formatEuro(value: number): string {
