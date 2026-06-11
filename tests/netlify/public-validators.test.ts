@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { validateBlitzPayload } from './blitz';
-import { validateCommentPayload } from './comments';
-import { validateKontaktPayload } from './contact';
+import { validateBlitzPayload } from '../../netlify/functions/blitz';
+import { validateCommentPayload } from '../../netlify/functions/comments';
+import { validateKontaktPayload } from '../../netlify/functions/contact';
 
 describe('public endpoint validators', () => {
   it('accepts a valid contact payload and rejects spam traps', () => {

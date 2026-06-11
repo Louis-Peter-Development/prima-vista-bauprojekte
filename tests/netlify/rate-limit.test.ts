@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { checkRateLimit, getClientIp, hasSpamTrap } from './rate-limit';
+import { checkRateLimit, getClientIp, hasSpamTrap } from '../../netlify/functions/_shared/rate-limit';
 
 describe('rate limit helpers', () => {
   beforeEach(() => {
