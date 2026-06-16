@@ -182,7 +182,8 @@
 }
 
 :root[data-theme='dark'] .hero__bg-slide img,
-:root[data-theme='dark'] .page-intro::before {
+:root[data-theme='dark'] .page-intro::before,
+:root[data-theme='dark'] .page-intro__slideshow img {
   filter: brightness(.78) saturate(.9) contrast(1.04);
 }
 

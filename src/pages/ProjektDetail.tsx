@@ -83,7 +83,7 @@ export default function ProjektDetail() {
 
       {/* Feature film — shown prominently right after the hero/facts */}
       {detail.featuredVideo && (
-        <ProjectFeatureVideo video={detail.featuredVideo} headline={detail.headline} />
+        <ProjectFeatureVideo video={detail.featuredVideo} headline={detail.headline} poster={detail.heroImg} />
       )}
 
       {/* Description */}
@@ -115,7 +115,7 @@ export default function ProjektDetail() {
 
       {/* Videos — Rundgang */}
       {detail.videos && detail.videos.length > 0 && (
-        <ProjectVideos videos={detail.videos} headline={detail.headline} />
+        <ProjectVideos videos={detail.videos} headline={detail.headline} poster={detail.heroImg} />
       )}
 
       {/* Gallery */}

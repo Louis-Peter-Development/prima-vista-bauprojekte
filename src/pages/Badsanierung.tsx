@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import BadsanierungConfigurator from '../components/gewerke/BadsanierungConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -24,6 +25,8 @@ export default function Badsanierung() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="badsanierung" />
 
       <section className="kalkulator">
         <BadsanierungConfigurator />

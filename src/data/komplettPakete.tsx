@@ -16,6 +16,7 @@ export type Package = {
   ctaLabel: string;
   ctaDark?: boolean;
   detailTo?: string;
+  detailCtaLabel?: string;
 };
 
 export const PACKAGES: Package[] = [
@@ -69,14 +70,31 @@ export const PACKAGES: Package[] = [
     ctaLabel: 'Konzept buchen',
     ctaDark: true,
   },
+  {
+    num: '04',
+    variant: 'paper',
+    reverse: true,
+    photo: '/assets/img/photo-office-light.webp',
+    alt: 'Büro-Ausbau',
+    eyebrow: 'Komplettpaket · Büro',
+    detailTo: '/buero-ausbau',
+    detailCtaLabel: 'Büro kalkulieren',
+    title: <>Büro-<br /><em>Ausbau.</em></>,
+    lede: 'Büroflächen, Praxen und Arbeitswelten — von Empfang und Besprechungsräumen bis Teeküche, Akustik und Beleuchtung. Wir koordinieren Ausbau, Technik und Oberflächen aus einer Hand.',
+    priceLabel: 'Festpreis ab',
+    priceVal: '€ 790 / m²',
+    priceFrom: 'abhängig von Fläche & Standard',
+    includes: ['Flächenplanung & Bauleitung', 'Trockenbau & Akustik', 'Elektro, Netzwerk & Licht', 'Bodenbeläge', 'Malerarbeiten', 'Teeküche & Einbauten', 'Brandschutz & Fluchtwege', 'Übergabe bezugsfertig'],
+    ctaLabel: 'Büroprojekt anfragen',
+  },
 ];
 
-export const COMPARE_ROWS: Array<{ feature: string; haus: ReactNode; wohnung: ReactNode; gastro: ReactNode }> = [
-  { feature: 'Bauzeit (Median)', haus: <span className="num">22 Wochen</span>, wohnung: <span className="num">8 Wochen</span>, gastro: <span className="num">14 Wochen</span> },
-  { feature: 'Investition (ab)', haus: <span className="num">€ 1.480 / m²</span>, wohnung: <span className="num">€ 980 / m²</span>, gastro: <span className="num">Individuell</span> },
-  { feature: 'Geeignet für Selbstbewohner', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span> },
-  { feature: 'Während Bewohnung möglich', haus: <span className="compare__no">teils</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span> },
-  { feature: 'Behörden & Genehmigungen', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span> },
-  { feature: 'Festpreisgarantie', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span> },
-  { feature: '5 Jahre Werksgewähr', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span> },
+export const COMPARE_ROWS: Array<{ feature: string; haus: ReactNode; wohnung: ReactNode; gastro: ReactNode; buero: ReactNode }> = [
+  { feature: 'Bauzeit (Median)', haus: <span className="num">22 Wochen</span>, wohnung: <span className="num">8 Wochen</span>, gastro: <span className="num">14 Wochen</span>, buero: <span className="num">10 Wochen</span> },
+  { feature: 'Investition (ab)', haus: <span className="num">€ 1.480 / m²</span>, wohnung: <span className="num">€ 980 / m²</span>, gastro: <span className="num">Individuell</span>, buero: <span className="num">€ 790 / m²</span> },
+  { feature: 'Geeignet für Selbstbewohner', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span>, buero: <span className="compare__no">—</span> },
+  { feature: 'Während Bewohnung möglich', haus: <span className="compare__no">teils</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span>, buero: <span className="compare__no">teils</span> },
+  { feature: 'Behörden & Genehmigungen', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
+  { feature: 'Festpreisgarantie', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
+  { feature: '5 Jahre Werksgewähr', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
 ];

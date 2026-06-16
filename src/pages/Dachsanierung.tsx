@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import DachConfigurator from '../components/gewerke/DachConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -24,6 +25,8 @@ export default function Dachsanierung() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="dach" />
 
       <section className="kalkulator">
         <DachConfigurator />

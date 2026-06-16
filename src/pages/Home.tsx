@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import Counter from '../components/Counter';
 import FeaturedProjects from '../components/home/FeaturedProjects';
 import GoogleReviews from '../components/home/GoogleReviews';
+import HomeAboutVideo from '../components/home/HomeAboutVideo';
 import HomeHero from '../components/home/HomeHero';
+import HomeHeroPhotos from '../components/home/HomeHeroPhotos';
 import HomeMarquee from '../components/home/HomeMarquee';
 import HomeKalkulatorLive from '../components/home/HomeKalkulatorLive';
 import HomeBlitzLive from '../components/home/HomeBlitzLive';
@@ -17,6 +19,7 @@ export default function Home() {
     <>
       <HomeHero />
       <HomeMarquee />
+      <HomeHeroPhotos />
 
       {/* PROMISE */}
       <section className="promise">
@@ -243,7 +246,7 @@ export default function Home() {
         <div className="heating__grid">
           <Link className="heat-card reveal" to="/waermepumpe">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-stairs-concrete.webp" alt="Luftwärmepumpe" width="1500" height="2000" loading="lazy" />
+              <img src="/assets/img/leistungen/waermepumpe-01.webp" alt="Luftwärmepumpe" width="1536" height="1024" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 01</span>
@@ -254,7 +257,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="1" to="/heizstraenge">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-floor-oak.webp" alt="Heizungsstränge" width="1500" height="1875" loading="lazy" />
+              <img src="/assets/img/leistungen/wasserinstallation-04.webp" alt="Heizungsstränge" width="900" height="1600" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 02</span>
@@ -265,7 +268,7 @@ export default function Home() {
           </Link>
           <Link className="heat-card reveal" data-delay="2" to="/heizkoerper">
             <div className="heat-card__photo">
-              <img src="/assets/img/proj-spa-corridor.webp" alt="Heizkörper" width="1500" height="1125" loading="lazy" />
+              <img src="/assets/img/leistungen/heizkoerper-01.webp" alt="Heizkörper" width="700" height="700" loading="lazy" />
             </div>
             <div className="heat-card__body">
               <span className="heat-card__num">№ 03</span>
@@ -310,6 +313,7 @@ export default function Home() {
               <span className="founders__sig-name">Daniel &amp; Monica</span>
               <span className="founders__sig-role">Gründer &amp; Bauleitung</span>
             </div>
+            <HomeAboutVideo />
           </div>
         </div>
       </section>

@@ -5,9 +5,9 @@
   border-top: 1px solid rgba(20, 19, 18, .06);
 }
 .trades-preview__head {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto 64px;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 48px;
@@ -33,9 +33,9 @@
   max-width: 420px;
 }
 .trades-preview__grid {
-  max-width: 1480px;
+  max-width: var(--pv-shell);
   margin: 0 auto 56px;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -123,9 +123,9 @@
   color: var(--pv-copper);
 }
 .trades-preview__more {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: flex;
   justify-content: center;
 }

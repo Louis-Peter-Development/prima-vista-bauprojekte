@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import GartenConfigurator from '../components/gewerke/GartenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function GartenAussenanlagen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.webp"
+        backgroundImage="/assets/img/leistungen/garten-aussenanlagen-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Garten & Außenanlagen"
         title={<>Garten &<br /><em>Außenanlagen kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function GartenAussenanlagen() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="garten" />
 
       <section className="kalkulator">
         <GartenConfigurator />

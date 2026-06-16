@@ -20,6 +20,7 @@ export default function PackageCompare() {
             <div className="compare__cell compare__cell--head">Haus</div>
             <div className="compare__cell compare__cell--head" style={{ color: 'var(--pv-copper)' }}>Wohnung</div>
             <div className="compare__cell compare__cell--head">Gastro</div>
+            <div className="compare__cell compare__cell--head">Büro</div>
           </div>
           {COMPARE_ROWS.map((row) => (
             <div key={row.feature} className="compare__row">
@@ -27,6 +28,7 @@ export default function PackageCompare() {
               <div className="compare__cell" data-label="Haus">{row.haus}</div>
               <div className="compare__cell compare__highlight" data-label="Wohnung">{row.wohnung}</div>
               <div className="compare__cell" data-label="Gastro">{row.gastro}</div>
+              <div className="compare__cell" data-label="Büro">{row.buero}</div>
             </div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import SaunaofenCalculator from '../components/saunaofen/SaunaofenCalculator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -22,6 +23,8 @@ export default function Saunaofen() {
           { label: 'Optionen', value: 'Kamin & Regal' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="saunaofen" />
 
       <SaunaofenCalculator />
 

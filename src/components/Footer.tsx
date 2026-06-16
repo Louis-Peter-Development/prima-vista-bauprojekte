@@ -27,25 +27,17 @@ export default function Footer() {
             <p className="pv-footer__brand-blurb">
               Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.
             </p>
-            <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
-              <Link className="pv-footer__contact-icon pv-footer__contact-icon--photo" to="/#ueber-uns" title="Über uns — Daniel & Monica" style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none', overflow: 'hidden'
-              }}>
-                <img src="/assets/img/founders-avatar.webp" alt="Daniel und Monica" width="256" height="256" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+            <div className="pv-footer__socials">
+              <Link className="pv-footer__contact-icon pv-footer__contact-icon--brand" to="/#ueber-uns" title="Über uns">
+                <img src="/assets/img/logo.png" alt="" width="1085" height="1051" loading="lazy" />
               </Link>
-              <a className="pv-footer__contact-icon" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer" title="Instagram" style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
-              }}>
+              <a className="pv-footer__contact-icon" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer" title="Instagram">
                 <InstagramIcon />
               </a>
-              <a className="pv-footer__contact-icon" href="https://www.facebook.com/profile.php?id=61584837772416" target="_blank" rel="noopener noreferrer" title="Facebook" style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
-              }}>
+              <a className="pv-footer__contact-icon" href="https://www.facebook.com/profile.php?id=61584837772416" target="_blank" rel="noopener noreferrer" title="Facebook">
                 <FacebookIcon />
               </a>
-              <a className="pv-footer__contact-icon" href="https://www.youtube.com/@PrimaVistaBauprojekte" target="_blank" rel="noopener noreferrer" title="YouTube" style={{
-                display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.2)', color: 'inherit', textDecoration: 'none'
-              }}>
+              <a className="pv-footer__contact-icon" href="https://www.youtube.com/@PrimaVistaBauprojekte" target="_blank" rel="noopener noreferrer" title="YouTube">
                 <YoutubeIcon />
               </a>
             </div>

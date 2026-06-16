@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import HeizkoerperCalculator from '../components/heizkoerper/HeizkoerperCalculator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -10,7 +11,7 @@ export default function Heizkoerper() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
+        backgroundImage="/assets/img/leistungen/heizkoerper-01.webp"
         crumbNumber="10"
         crumbLabel="Heizkörper · Kostenrechner"
         title={<>Heizkörper<br /><em>kalkulieren.</em></>}
@@ -22,6 +23,8 @@ export default function Heizkoerper() {
           { label: 'Termin', value: 'Aufmaß vor Ort' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="heizkoerper" />
 
       <HeizkoerperCalculator />
 

@@ -31,9 +31,9 @@
   pointer-events: none;
 }
 .kontakt__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 88px;
@@ -716,9 +716,9 @@
   padding: 140px 0;
 }
 .faq__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
   gap: 80px;
@@ -805,7 +805,7 @@
 @media (max-width: 600px) {
   .kontakt { padding: 64px 0 88px; }
   .kontakt--blitz { padding-bottom: 96px; }
-  .kontakt__inner { padding: 0 20px; gap: 48px; }
+  .kontakt__inner { padding: 0 var(--pv-shell-gutter); gap: 48px; }
   .kontakt__intro h1,
   .kontakt__intro h2 { font-size: clamp(40px, 11vw, 56px); }
   .kontakt__intro p { margin-bottom: 32px; font-size: 16px; }
@@ -834,7 +834,7 @@
   .form-actions .btn { justify-content: center; }
 
   .faq { padding: 80px 0 96px; }
-  .faq__inner { padding: 0 20px; gap: 32px; }
+  .faq__inner { padding: 0 var(--pv-shell-gutter); gap: 32px; }
   .faq h2 { font-size: clamp(32px, 9vw, 44px); }
   .faq__q { font-size: 16px; padding: 20px 0; gap: 16px; }
   .faq__a-inner { padding: 0 0 24px; }

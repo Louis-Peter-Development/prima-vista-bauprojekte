@@ -8,9 +8,9 @@
   scroll-margin-top: 88px;
 }
 .founders__inner {
-  max-width: 1480px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 96px;
@@ -78,4 +78,85 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--pv-text-on-dark-muted);
+}
+.founders-video {
+  width: min(100%, 560px);
+  margin-top: 40px;
+}
+.founders-video__notice {
+  margin: 0 0 14px;
+  max-width: 560px;
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--pv-text-on-dark-muted);
+}
+.founders-video__notice-btn {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--pv-copper-bright);
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.founders-video__notice-btn:hover {
+  color: var(--pv-bone);
+}
+.founders-video__frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(236, 229, 223, .16);
+  background: var(--pv-ink-1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
+}
+.founders-video__frame--facade {
+  padding: 0;
+  cursor: pointer;
+}
+.founders-video__frame img,
+.founders-video__frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+.founders-video__frame img {
+  object-fit: cover;
+  transition: transform .5s ease, filter .5s ease;
+}
+.founders-video__frame--facade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 12, 11, .08), rgba(14, 12, 11, .38));
+}
+.founders-video__frame--facade:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.06);
+}
+.founders-video__play {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+.founders-video__play svg {
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, .42));
+}
+.founders-video__play-bg {
+  fill: rgba(178, 132, 83, .96);
+  transition: fill .25s ease;
+}
+.founders-video__frame--facade:hover .founders-video__play-bg {
+  fill: var(--pv-copper-bright);
+}
+.founders-video__play-icon {
+  fill: var(--pv-bone);
 }

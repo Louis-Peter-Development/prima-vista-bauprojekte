@@ -31,10 +31,10 @@
 }
 
 .not-found__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   min-height: calc(100svh - var(--pv-header-height));
   margin: 0 auto;
-  padding: 132px 48px 112px;
+  padding: 132px var(--pv-shell-gutter) 112px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: 72px;
@@ -133,7 +133,7 @@
   .not-found__inner {
     grid-template-columns: 1fr;
     gap: 48px;
-    padding: 104px 32px 88px;
+    padding: 104px var(--pv-shell-gutter) 88px;
   }
 
   .not-found__panel {
@@ -143,7 +143,7 @@
 
 @media (max-width: 600px) {
   .not-found__inner {
-    padding: 88px 20px 72px;
+    padding: 88px var(--pv-shell-gutter) 72px;
   }
 
   .not-found h1 {

@@ -14,8 +14,8 @@ export default function KomplettPakete() {
         backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="02"
         crumbLabel="Komplett-Pakete"
-        title={<>Drei Wege<br />zum fertigen<br /><em>Raum.</em></>}
-        lede="Verwandeln Sie Ihr Zuhause in Ihren Traumort: sorgenfreie Komplett­sanierung für Haus, Wohnung und Gastronomie — Bauleitung und alle Materialien inklusive."
+        title={<>Vier Wege<br />zum fertigen<br /><em>Raum.</em></>}
+        lede="Verwandeln Sie Räume in starke Orte: sorgenfreie Komplett­sanierung für Haus, Wohnung, Gastronomie und Büro — Bauleitung und alle Materialien inklusive."
         meta={[
           { label: 'Festpreisgarantie', value: 'Schriftlich, vor Beginn' },
           { label: 'Bauzeit', value: '6–32 Wochen' },

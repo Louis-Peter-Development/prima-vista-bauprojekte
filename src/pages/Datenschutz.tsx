@@ -156,6 +156,16 @@ const PRIVACY_SECTIONS = [
         <p>
           Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten Web Fonts. Die im Projekt eingebundenen Schriftarten werden lokal bereitgestellt, soweit dies technisch möglich ist. Dadurch wird beim Aufruf der Seite keine Verbindung zu Servern von Google Fonts hergestellt.
         </p>
+        <h3>Eingebettete YouTube-Videos</h3>
+        <p>
+          Auf einzelnen Seiten können Videos des Dienstes YouTube eingebettet sein. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Die Videos werden erst geladen, wenn Sie über den Cookie-Hinweis in optionale Dienste eingewilligt haben.
+        </p>
+        <p>
+          Wir nutzen, soweit technisch möglich, die datenschutzfreundlichere Einbettung über youtube-nocookie.com. Beim Abspielen kann dennoch eine Verbindung zu Servern von YouTube bzw. Google hergestellt werden; dabei können insbesondere Ihre IP-Adresse, technische Geräteinformationen und Informationen zum angesehenen Video verarbeitet werden. Rechtsgrundlage ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO; Sie können sie jederzeit mit Wirkung für die Zukunft widerrufen.
+        </p>
+        <p>
+          Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
+        </p>
       </>
     ),
   },

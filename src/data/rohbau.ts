@@ -22,7 +22,7 @@ export const ROHBAU_VARIANTS: RohbauVariant[] = [
     title: 'Rohbau komplett',
     lead: 'Gewerke-Paket',
     detail: 'Abbruch, Erdarbeiten, Fundament, Mauerwerk, Decken und Verputzen koordiniert aus einer Hand inklusive Baustelleneinrichtung.',
-    image: '/assets/img/photo-parkett-rohbau.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
     netBase: 84500,
   },
   {
@@ -31,7 +31,7 @@ export const ROHBAU_VARIANTS: RohbauVariant[] = [
     title: 'Abbruch & Rückbau',
     lead: 'Entkernung',
     detail: 'Komplett- oder Teilrückbau, Entkernung, Schadstoffbeprobung, Bauschuttsortierung und Containerlogistik.',
-    image: '/assets/img/photo-altbausanierung.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-02.webp',
     netBase: 18600,
   },
   {
@@ -40,7 +40,7 @@ export const ROHBAU_VARIANTS: RohbauVariant[] = [
     title: 'Fundament & Bodenplatte',
     lead: 'Gründung',
     detail: 'Streifen-, Platten- oder Punktfundament inklusive Schalung, Bewehrung, Beton und Frostschürze.',
-    image: '/assets/img/proj-concrete-corner.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
     netBase: 26400,
   },
   {
@@ -49,7 +49,7 @@ export const ROHBAU_VARIANTS: RohbauVariant[] = [
     title: 'Mauerwerk & Wände',
     lead: 'Aufgehende Konstruktion',
     detail: 'Tragende und nichttragende Wände aus Kalksandstein, Poroton oder Beton inklusive Stürze und Ringanker.',
-    image: '/assets/img/photo-haus-exterior.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-02.webp',
     netBase: 22800,
   },
   {
@@ -58,7 +58,7 @@ export const ROHBAU_VARIANTS: RohbauVariant[] = [
     title: 'Geschossdecken',
     lead: 'Decken & Treppen',
     detail: 'Filigran-, Ortbeton- oder Holzbalkendecke inklusive Bewehrung, Aussparungen und Treppenanschlüssen.',
-    image: '/assets/img/proj-concrete-sofa.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
     netBase: 19400,
   },
 ];

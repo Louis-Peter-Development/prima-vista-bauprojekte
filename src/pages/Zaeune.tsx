@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import ZaeuneConfigurator from '../components/gewerke/ZaeuneConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Zaeune() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.webp"
+        backgroundImage="/assets/img/leistungen/zaeune-tore-01.webp"
         crumbNumber="25"
         crumbLabel="Gewerke · Zäune"
         title={<>Zäune<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Zaeune() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="zaeune" />
 
       <section className="kalkulator">
         <ZaeuneConfigurator />

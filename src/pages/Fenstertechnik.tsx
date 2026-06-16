@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import FensterConfigurator from '../components/gewerke/FensterConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Fenstertechnik() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-office-light.webp"
+        backgroundImage="/assets/img/leistungen/fenstertechnik-02.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Fenstertechnik"
         title={<>Fenstertechnik<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Fenstertechnik() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="fenster" />
 
       <section className="kalkulator">
         <FensterConfigurator />

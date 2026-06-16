@@ -1,7 +1,7 @@
 /* ----- Responsive trim (basic) ----- */
 @media (max-width: 1500px) {
+  :root { --pv-shell-gutter: 32px; }
   .pv-header__inner {
-    padding: 0 32px;
     gap: 20px;
   }
   .pv-logo img { height: 40px; }
@@ -31,10 +31,12 @@
 }
 
 @media (max-width: 1280px) {
-  :root { --pv-header-height: 80px; }
+  :root {
+    --pv-header-height: 80px;
+    --pv-shell-gutter: 24px;
+  }
   .pv-header__inner {
     height: 80px;
-    padding: 0 24px;
     gap: 16px;
   }
   .pv-logo { gap: 10px; }
@@ -71,8 +73,8 @@
   .pv-mobile-menu { top: 80px; }
 }
 @media (max-width: 1120px) {
+  :root { --pv-shell-gutter: 16px; }
   .pv-header__inner {
-    padding: 0 16px;
     gap: 12px;
   }
   .pv-logo { gap: 8px; }
@@ -110,16 +112,17 @@
   .pv-nav__list,
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }
+  .pv-social-rail,
+  .pv-booking-float { display: none; }
 }
-/* Hide the fixed social rail until the viewport is wide enough to have a real
-   side gutter beside the 1280px content container. Below this, the rail would
-   sit on top of headline text and project cards. */
-@media (max-width: 1380px) {
-  .pv-social-rail { display: none; }
+/* Keep the side rails available on desktop without letting them overlap
+   content: cap the shared shell so a real gutter always remains beside it for
+   the fixed left/right rails (which sit ~44px in from each edge). */
+@media (max-width: 2120px) and (min-width: 1081px) {
+  :root { --pv-shell: min(1680px, 100vw - 140px); }
 }
 @media (max-width: 880px) {
   .pv-footer { padding: 64px 0 28px; }
-  .pv-footer__inner { padding: 0 24px; }
   .pv-footer__bottom { flex-wrap: wrap; gap: 12px 24px; }
   .pv-footer__legal { flex-wrap: wrap; gap: 14px 20px; }
   /* Keep the desktop 4-column row down to ~800px — just tighten the gap so it fits. */
@@ -142,8 +145,11 @@
   .pv-footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 600px) {
-  :root { --pv-header-height: 72px; }
-  .pv-header__inner { padding: 0 20px; height: 72px; }
+  :root {
+    --pv-header-height: 72px;
+    --pv-shell-gutter: 20px;
+  }
+  .pv-header__inner { height: 72px; }
   .pv-mobile-menu { top: 72px; }
   .pv-logo img { height: 36px; }
   .pv-logo__name { font-size: 14px; letter-spacing: 0.18em; }

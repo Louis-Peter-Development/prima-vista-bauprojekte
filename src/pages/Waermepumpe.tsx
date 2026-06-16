@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import WaermepumpeCalculator from '../components/waermepumpe/WaermepumpeCalculator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -10,7 +11,7 @@ export default function Waermepumpe() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.webp"
+        backgroundImage="/assets/img/leistungen/waermepumpe-01.webp"
         crumbNumber="13"
         crumbLabel="Wärmepumpe · Kostenrechner"
         title={<>Wärmepumpe<br /><em>kalkulieren.</em></>}
@@ -22,6 +23,8 @@ export default function Waermepumpe() {
           { label: 'Optionen', value: 'Tank & Fundament' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="waermepumpe" />
 
       <WaermepumpeCalculator />
 

@@ -35,6 +35,7 @@ const Kalkulator = lazy(() => import('./pages/Kalkulator'));
 const HausSanierung = lazy(() => import('./pages/HausSanierung'));
 const WohnungSanierung = lazy(() => import('./pages/WohnungSanierung'));
 const GastronomieAusbau = lazy(() => import('./pages/GastronomieAusbau'));
+const BueroAusbau = lazy(() => import('./pages/BueroAusbau'));
 const Heizmethoden = lazy(() => import('./pages/Heizmethoden'));
 const Heizkoerper = lazy(() => import('./pages/Heizkoerper'));
 const Heizstraenge = lazy(() => import('./pages/Heizstraenge'));
@@ -154,6 +155,7 @@ export default function App() {
             <Route path="/haus-sanierung" element={<HausSanierung />} />
             <Route path="/wohnung-sanierung" element={<WohnungSanierung />} />
             <Route path="/gastronomie-ausbau" element={<GastronomieAusbau />} />
+            <Route path="/buero-ausbau" element={<BueroAusbau />} />
             <Route path="/heizmethoden" element={<Heizmethoden />} />
             <Route path="/heizkoerper" element={<Heizkoerper />} />
             <Route path="/heizstraenge" element={<Heizstraenge />} />

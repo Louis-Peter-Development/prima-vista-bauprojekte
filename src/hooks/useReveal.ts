@@ -12,7 +12,7 @@ function autoTag() {
   if (!main) return;
 
   const shouldSkip = (el: Element): boolean =>
-    Boolean(el.closest('.hero__bg-slideshow, .pv-mobile-menu, .pv-lightbox, .route-loading'));
+    Boolean(el.closest('.hero__bg-slideshow, .page-intro__slideshow, .pv-mobile-menu, .pv-lightbox, .route-loading'));
 
   const hasRevealAncestor = (el: Element): boolean => {
     let cur: Element | null = el.parentElement;

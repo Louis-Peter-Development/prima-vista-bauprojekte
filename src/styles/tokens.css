@@ -189,6 +189,8 @@
   /* Layout */
   --pv-container:        1280px;
   --pv-container-narrow:  960px;
+  --pv-shell:           1760px;
+  --pv-shell-gutter: clamp(28px, 3.4vw, 72px);
   --pv-header-height:      88px;
   --pv-gutter:           48px;
 }

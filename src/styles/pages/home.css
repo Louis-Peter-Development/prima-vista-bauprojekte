@@ -3,6 +3,7 @@
 
 @import './home/hero.css';
 @import './home/marquee.css';
+@import './home/hero-photos.css';
 @import './home/promise.css';
 @import './home/packages.css';
 @import './home/trades-preview.css';

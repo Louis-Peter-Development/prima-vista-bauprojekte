@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import KuechenConfigurator from '../components/gewerke/KuechenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -24,6 +25,8 @@ export default function KuechenMoebelbau() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="kueche" />
 
       <section className="kalkulator">
         <KuechenConfigurator />

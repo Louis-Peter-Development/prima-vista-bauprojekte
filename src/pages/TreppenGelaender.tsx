@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import TreppenConfigurator from '../components/gewerke/TreppenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function TreppenGelaender() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-stairs-concrete.webp"
+        backgroundImage="/assets/img/leistungen/treppen-gelaender-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Treppen & Geländer"
         title={<>Treppen &<br /><em>Geländer kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function TreppenGelaender() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="treppen" />
 
       <section className="kalkulator">
         <TreppenConfigurator />

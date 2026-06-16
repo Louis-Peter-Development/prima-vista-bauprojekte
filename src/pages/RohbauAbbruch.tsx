@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import RohbauConfigurator from '../components/gewerke/RohbauConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function RohbauAbbruch() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-parkett-rohbau.webp"
+        backgroundImage="/assets/img/leistungen/rohbau-trockenbau-01.webp"
         crumbNumber="23"
         crumbLabel="Gewerke · Rohbau & Abbruch"
         title={<>Rohbau<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function RohbauAbbruch() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="rohbau" />
 
       <section className="kalkulator">
         <RohbauConfigurator />

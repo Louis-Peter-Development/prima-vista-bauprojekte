@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import AbdichtungKellerConfigurator from '../components/gewerke/AbdichtungKellerConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -24,6 +25,8 @@ export default function AbdichtungKeller() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="abdichtung" />
 
       <section className="kalkulator">
         <AbdichtungKellerConfigurator />

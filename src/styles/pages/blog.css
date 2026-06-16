@@ -47,9 +47,9 @@
 }
 
 .mag__inner {
-  max-width: 1320px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 56px 48px 0;
+  padding: 56px var(--pv-shell-gutter) 0;
 }
 
 /* ---------- Masthead / nameplate (image-backed hero) ----------
@@ -93,12 +93,12 @@
 .mag-masthead__inner {
   position: relative;
   z-index: 2;
-  max-width: 1320px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
   min-height: calc(100svh - var(--pv-header-height));
   display: flex;
   flex-direction: column;
-  padding: 40px 48px 56px;
+  padding: 40px var(--pv-shell-gutter) 56px;
 }
 
 /* Rule pinned to the top; the foot (nameplate + meta) sits at the bottom,
@@ -521,9 +521,9 @@
   color: var(--mag-text);
 }
 .blog-shell__inner {
-  max-width: var(--pv-container-narrow);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 120px 48px;
+  padding: 120px var(--pv-shell-gutter);
   display: grid;
   gap: 24px;
   justify-items: start;
@@ -559,8 +559,8 @@
 .blog-article__hero-inner {
   position: relative;
   z-index: 1;
-  max-width: var(--pv-container-narrow);
-  padding: 120px 48px 72px;
+  max-width: var(--pv-shell);
+  padding: 120px var(--pv-shell-gutter) 72px;
   margin: 0 auto;
   width: 100%;
 }
@@ -610,7 +610,7 @@
 .blog-article__main {
   max-width: 760px;
   margin: 0 auto;
-  padding: 80px 48px 96px;
+  padding: 80px var(--pv-shell-gutter) 96px;
   background: var(--mag-paper);
 }
 .blog-article__body {
@@ -793,10 +793,10 @@
 }
 
 .blog-admin {
-  max-width: 1320px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
   min-height: calc(100svh - var(--pv-header-height));
-  padding: 64px 48px 96px;
+  padding: 64px var(--pv-shell-gutter) 96px;
 }
 .blog-admin--editor { max-width: 920px; }
 
@@ -1678,7 +1678,7 @@
 .sk-line--hero-title.sk-line--short { width: 56%; }
 .sk-line--hero-lede { width: 60%; max-width: 620px; height: 18px; margin-top: 26px; }
 .blog-article__hero--skeleton .blog-article__meta .sk-line--meta { width: 96px; height: 11px; }
-.blog-skeleton-body { display: grid; gap: 16px; max-width: 760px; margin: 0 auto; padding: 80px 48px 96px; }
+.blog-skeleton-body { display: grid; gap: 16px; max-width: 760px; margin: 0 auto; padding: 80px var(--pv-shell-gutter) 96px; }
 .blog-skeleton-body .sk-line { height: 16px; }
 .blog-skeleton-body .sk-line--short { width: 44%; margin-bottom: 20px; }
 

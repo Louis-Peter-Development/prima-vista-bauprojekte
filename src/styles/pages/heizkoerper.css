@@ -4,9 +4,9 @@
   padding: 96px 0 120px;
 }
 .hk-calc__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, .95fr) minmax(0, 1.1fr) minmax(360px, .85fr);
   gap: 28px;
@@ -491,7 +491,7 @@
     padding: 64px 0 96px;
   }
   .hk-calc__inner {
-    padding: 0 24px;
+    padding: 0 var(--pv-shell-gutter);
     grid-template-columns: 1fr;
   }
   .hk-product {

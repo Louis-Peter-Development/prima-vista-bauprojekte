@@ -5,7 +5,7 @@ import FeaturedTrades from '../components/gewerke/FeaturedTrades';
 import ProcessSection from '../components/gewerke/ProcessSection';
 import TradeIndex from '../components/gewerke/TradeIndex';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
-import { FEATURED_TRADES, TRADES, type TradeRow } from '../data/gewerke';
+import { FEATURED_TRADES, PREVIEW_IMAGES, TRADES, type TradeRow } from '../data/gewerke';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/gewerke.css';
 
@@ -15,11 +15,21 @@ export default function Gewerke() {
   const [active, setActive] = useState<TradeRow>(TRADES[0]);
 
   const featuredItems: LightboxItem[] = FEATURED_TRADES.map((f) => ({ src: f.src, title: f.title }));
+  const heroImages = [
+    PREVIEW_IMAGES.bad,
+    PREVIEW_IMAGES.kueche,
+    PREVIEW_IMAGES.rohbau,
+    PREVIEW_IMAGES.trockenbau,
+    PREVIEW_IMAGES.fassade,
+    PREVIEW_IMAGES.treppen,
+    PREVIEW_IMAGES.garten,
+  ];
 
   return (
     <>
       <PageIntro
         backgroundImage="/assets/img/leistungen/badsanierung-05.webp"
+        backgroundImages={heroImages}
         crumbNumber="03"
         crumbLabel="Gewerke · Bauleistungen"
         title={<>Neunzehn<br />Gewerke,<br /><em>eine Hand.</em></>}
