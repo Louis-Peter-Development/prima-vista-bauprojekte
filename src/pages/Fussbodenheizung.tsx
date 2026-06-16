@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import FussbodenheizungCalculator from '../components/fussbodenheizung/FussbodenheizungCalculator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -10,7 +11,7 @@ export default function Fussbodenheizung() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-floor-oak.webp"
+        backgroundImage="/assets/img/leistungen/fussbodenheizung-01.webp"
         crumbNumber="12"
         crumbLabel="Fußbodenheizung · Kostenrechner"
         title={<>Fußbodenheizung<br /><em>kalkulieren.</em></>}
@@ -22,6 +23,8 @@ export default function Fussbodenheizung() {
           { label: 'Option', value: 'Elektro-System' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="fussbodenheizung" />
 
       <FussbodenheizungCalculator />
 

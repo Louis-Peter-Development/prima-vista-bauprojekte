@@ -7,7 +7,7 @@
 .testimonial__inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }
 .testimonial .quote-mark {
   font-family: var(--pv-font-serif);

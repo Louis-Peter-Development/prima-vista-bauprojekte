@@ -1,5 +1,5 @@
 export type BlitzFormState = {
-  art: 'haus' | 'wohnung' | 'gastro' | 'anderes';
+  art: 'haus' | 'wohnung' | 'gastro' | 'buero' | 'anderes';
   gewerke: string[];
   groesse: string;
   starttermin: string;
@@ -24,6 +24,7 @@ export const BLITZ_ART_OPTIONS: Array<{ value: BlitzFormState['art']; label: str
   { value: 'haus', label: 'Haus' },
   { value: 'wohnung', label: 'Wohnung' },
   { value: 'gastro', label: 'Gastronomie' },
+  { value: 'buero', label: 'Büro' },
   { value: 'anderes', label: 'Anderes' },
 ];
 
@@ -144,6 +145,14 @@ const KALKULATOR_TO_BLITZ_GEWERKE: Record<string, string> = {
   // Gastronomie
   lueftung: 'Heizung / Energie',
   kuehlung: 'Heizung / Energie',
+  // Büro
+  akustik: 'Wände & Maler',
+  netzwerk: 'Elektrik',
+  licht: 'Elektrik',
+  teekueche: 'Küche',
+  brandschutz: 'Elektrik',
+  moebel: 'Küche',
+  klima: 'Heizung / Energie',
 };
 
 /** Pick the unique set of Blitz-gewerke labels matching the kalkulator picks. */

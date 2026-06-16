@@ -6,9 +6,11 @@ export type ProjectVideo = { id: string; label?: string };
 type ProjectVideosProps = {
   videos: ProjectVideo[];
   headline: string;
+  /** Self-hosted poster shown before consent so no request reaches Google/YouTube. */
+  poster: string;
 };
 
-export default function ProjectVideos({ videos, headline }: ProjectVideosProps) {
+export default function ProjectVideos({ videos, headline, poster }: ProjectVideosProps) {
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState<Set<string>>(() => new Set());
@@ -66,11 +68,12 @@ export default function ProjectVideos({ videos, headline }: ProjectVideosProps) 
               >
                 <img
                   className="pd-video__poster"
-                  src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                  src={consented ? `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg` : poster}
                   alt=""
                   width={480}
                   height={360}
                   loading="lazy"
+                  decoding="async"
                 />
                 <span className="pd-video__play" aria-hidden="true">
                   <svg viewBox="0 0 68 48" width="68" height="48">

@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import MalerConfigurator from '../components/gewerke/MalerConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function MalerLackierer() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-paint-swatches.webp"
+        backgroundImage="/assets/img/leistungen/maler-lackierer-03.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Maler & Lackierer"
         title={<>Maler &<br /><em>Lackierer kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function MalerLackierer() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="maler" />
 
       <section className="kalkulator">
         <MalerConfigurator />

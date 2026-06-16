@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import ElektroConfigurator from '../components/gewerke/ElektroConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Elektroinstallation() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-office-light.webp"
+        backgroundImage="/assets/img/leistungen/elektroinstallation-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Elektroinstallation"
         title={<>Elektroinstallation<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Elektroinstallation() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="elektro" />
 
       <section className="kalkulator">
         <ElektroConfigurator />

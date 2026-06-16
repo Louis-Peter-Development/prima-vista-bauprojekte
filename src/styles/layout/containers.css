@@ -1,16 +1,16 @@
 /* ----- Container helpers ----- */
 .container {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }
 .container--wide {
-  max-width: 1480px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }
 .container--narrow {
   max-width: var(--pv-container-narrow);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }

@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import WasserConfigurator from '../components/gewerke/WasserConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Sanitaerinstallation() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
+        backgroundImage="/assets/img/leistungen/wasserinstallation-04.webp"
         crumbNumber="05"
         crumbLabel="Gewerke · Wasser & Sanitär"
         title={<>Wasser<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Sanitaerinstallation() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="wasser" />
 
       <section className="kalkulator">
         <WasserConfigurator />

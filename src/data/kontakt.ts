@@ -3,7 +3,7 @@ export type ContactFormState = {
   nachname: string;
   email: string;
   tel: string;
-  art: 'haus' | 'wohnung' | 'gastro' | 'einzel' | 'andere';
+  art: 'haus' | 'wohnung' | 'gastro' | 'buero' | 'einzel' | 'andere';
   region: string;
   budget: string;
   msg: string;
@@ -34,6 +34,7 @@ export const CONTACT_ART_OPTIONS: Array<{ value: ContactFormState['art']; label:
   { value: 'haus', label: 'Haus-Sanierung' },
   { value: 'wohnung', label: 'Wohnung' },
   { value: 'gastro', label: 'Gastronomie' },
+  { value: 'buero', label: 'Büro' },
   { value: 'einzel', label: 'Einzelgewerk' },
   { value: 'andere', label: 'Andere' },
 ];
@@ -43,6 +44,7 @@ function inferContactArt(label: string): ContactFormState['art'] {
 
   if (normalized.includes('wohnung')) return 'wohnung';
   if (normalized.includes('gastro') || normalized.includes('gastronomie')) return 'gastro';
+  if (normalized.includes('büro') || normalized.includes('buero') || normalized.includes('office')) return 'buero';
   if (normalized.includes('komplett') || normalized.includes('haus')) return 'haus';
   if (
     normalized.includes('anfragen')

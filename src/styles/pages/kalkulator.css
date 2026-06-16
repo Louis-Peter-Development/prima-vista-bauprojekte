@@ -11,9 +11,9 @@
   position: relative;
 }
 .kalkulator__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: 56px;
@@ -793,9 +793,9 @@
   justify-self: end;
 }
 .kalk-loading {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 48px;
+  padding: 48px var(--pv-shell-gutter);
   font-family: var(--pv-font-mono);
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -821,7 +821,7 @@
 @media (max-width: 768px) {
   .kalk-intro { padding-bottom: 56px; }
   .kalkulator { padding: 56px 0 96px; }
-  .kalkulator__inner { padding: 0 20px; }
+  .kalkulator__inner { padding: 0 var(--pv-shell-gutter); }
   .kalk-board { gap: 20px; }
   .kalk-board__field { padding: 24px 22px 28px; }
   .kalk-board__field-head {

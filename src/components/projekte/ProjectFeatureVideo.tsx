@@ -5,9 +5,11 @@ import type { ProjectVideo } from './ProjectVideos';
 type ProjectFeatureVideoProps = {
   video: ProjectVideo;
   headline: string;
+  /** Self-hosted poster shown before consent so no request reaches Google/YouTube. */
+  poster: string;
 };
 
-export default function ProjectFeatureVideo({ video, headline }: ProjectFeatureVideoProps) {
+export default function ProjectFeatureVideo({ video, headline, poster }: ProjectFeatureVideoProps) {
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
@@ -52,18 +54,23 @@ export default function ProjectFeatureVideo({ video, headline }: ProjectFeatureV
           >
             <img
               className="pd-video__poster"
-              src={`https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`}
-              onError={(e) => {
-                const img = e.currentTarget;
-                if (!img.dataset.fallback) {
-                  img.dataset.fallback = '1';
-                  img.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
-                }
-              }}
+              src={consented ? `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg` : poster}
+              onError={
+                consented
+                  ? (e) => {
+                      const img = e.currentTarget;
+                      if (!img.dataset.fallback) {
+                        img.dataset.fallback = '1';
+                        img.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
+                      }
+                    }
+                  : undefined
+              }
               alt=""
               width={1280}
               height={720}
               loading="lazy"
+              decoding="async"
             />
             <span className="pd-video__play" aria-hidden="true">
               <svg viewBox="0 0 68 48" width="92" height="64">

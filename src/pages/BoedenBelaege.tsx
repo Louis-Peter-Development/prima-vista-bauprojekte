@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import BoedenConfigurator from '../components/gewerke/BoedenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -24,6 +25,8 @@ export default function BoedenBelaege() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="boeden" />
 
       <section className="kalkulator">
         <BoedenConfigurator />

@@ -4,9 +4,9 @@
   padding: 96px 0 120px;
 }
 .heiz__inner {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }
 .heiz__head {
   display: grid;
@@ -164,7 +164,7 @@
 }
 @media (max-width: 880px) {
   .heiz { padding: 64px 0 96px; }
-  .heiz__inner { padding: 0 24px; }
+  .heiz__inner { padding: 0 var(--pv-shell-gutter); }
   .heiz__head { grid-template-columns: 1fr; gap: 24px; margin-bottom: 48px; }
   .heiz__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .heiz__foot { grid-template-columns: 1fr; gap: 24px; }

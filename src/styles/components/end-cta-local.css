@@ -4,7 +4,7 @@
   padding: 120px 0;
   text-align: center;
 }
-.end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+.end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 var(--pv-shell-gutter); }
 .end-cta-local h2 {
   font-family: var(--pv-font-serif);
   font-style: italic;
@@ -22,7 +22,7 @@
   }
   .end-cta-local__inner {
     max-width: none;
-    padding: 0 20px;
+    padding: 0 var(--pv-shell-gutter);
   }
   .end-cta-local h2 {
     font-size: 40px;

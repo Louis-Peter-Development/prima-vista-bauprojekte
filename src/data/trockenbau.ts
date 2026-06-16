@@ -23,7 +23,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Alles zu Trockenbau',
     lead: 'Innenausbau',
     detail: 'Decken, Wände, Verkleidungen, Anschlüsse, Spachtelung und Übergänge als koordinierter Innenausbau.',
-    image: '/assets/img/photo-parkett-rohbau.webp',
+    image: '/assets/img/leistungen/trockenbau-decke-02.webp',
     netBase: 18200,
   },
   {
@@ -32,7 +32,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Decken abhängen',
     lead: 'Deckensystem',
     detail: 'Abgehängte GK-Decken mit Unterkonstruktion, Plattenlage, Revisionsöffnungen und sauberem Wandanschluss.',
-    image: '/assets/img/photo-office-light.webp',
+    image: '/assets/img/leistungen/trockenbau-decke-02.webp',
     netBase: 9200,
   },
   {
@@ -41,7 +41,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Wände stellen',
     lead: 'Raumteilung',
     detail: 'Trockenbauwände mit Metallständerwerk, Beplankung, Dämmung nach Bedarf und vorbereiteter Oberfläche.',
-    image: '/assets/img/photo-parkett-rohbau.webp',
+    image: '/assets/img/leistungen/trockenbau-waende-01.webp',
     netBase: 10400,
   },
   {
@@ -50,7 +50,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Wände verkleiden',
     lead: 'Verkleidung',
     detail: 'Bestehende Wände verkleiden, Installationen führen, Ebenheit herstellen und gespachtelt übergeben.',
-    image: '/assets/img/photo-altbausanierung.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-02.webp',
     netBase: 8600,
   },
   {
@@ -59,7 +59,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Estrich verlegen',
     lead: 'Bodenaufbau',
     detail: 'Estrich- oder Trockenestrichaufbau mit Randdämmung, Ausgleich und belegreifer Oberfläche.',
-    image: '/assets/img/proj-stairs-concrete.webp',
+    image: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
     netBase: 11800,
   },
   {
@@ -68,7 +68,7 @@ export const TROCKENBAU_VARIANTS: TrockenbauVariant[] = [
     title: 'Dachschrägen verkleiden',
     lead: 'Dachraum',
     detail: 'Dachschrägen mit Unterkonstruktion, Dämmanschluss, GK-Beplankung und sauberer Spachtelung verkleiden.',
-    image: '/assets/img/photo-altbausanierung.webp',
+    image: '/assets/img/leistungen/trockenbau-decke-01.webp',
     netBase: 12600,
   },
 ];

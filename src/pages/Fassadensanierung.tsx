@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import FassadeConfigurator from '../components/gewerke/FassadeConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Fassadensanierung() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.webp"
+        backgroundImage="/assets/img/leistungen/fassadensanierung-01.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Fassaden & Dämmung"
         title={<>Fassaden &<br /><em>Dämmung kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Fassadensanierung() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="fassade" />
 
       <section className="kalkulator">
         <FassadeConfigurator />

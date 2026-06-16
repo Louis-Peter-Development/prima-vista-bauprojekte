@@ -69,6 +69,10 @@
   .kenburns { animation: none; }
   .page-intro::before,
   .mag-masthead__bg { animation: none; opacity: 1; }
+  .page-intro__slideshow img {
+    transition: none;
+    transform: scale(1.04);
+  }
 }
 
 /* Time-based load animations (for above-the-fold content) */

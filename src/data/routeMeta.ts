@@ -88,7 +88,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
   '/komplett-pakete': {
     title: 'Komplett-Pakete für Sanierung & Bau',
-    description: 'Komplettpakete für Haus, Wohnung und Gewerbe mit koordinierten Gewerken und transparentem Kostenrahmen.',
+    description: 'Komplettpakete für Haus, Wohnung, Gastronomie und Büro mit koordinierten Gewerken und transparentem Kostenrahmen.',
   },
   '/projekte': {
     title: 'Projekte & Referenzen',
@@ -121,6 +121,10 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   '/gastronomie-ausbau': {
     title: 'Gastronomie-Ausbau kalkulieren',
     description: 'Ausbau für Restaurants, Bars, Cafés und Gastronomieflächen mit Gewerken und Richtpreisen kalkulieren.',
+  },
+  '/buero-ausbau': {
+    title: 'Büro-Ausbau kalkulieren',
+    description: 'Büroflächen, Praxen und Arbeitswelten mit Ausbaugrad, Fläche, Gewerken und Richtpreisen kalkulieren.',
   },
   '/heizmethoden': {
     title: 'Moderne Heizmethoden - Wärmepumpe, Gas, Pellet & mehr',

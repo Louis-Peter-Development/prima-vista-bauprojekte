@@ -11,9 +11,9 @@
   transition: background 200ms var(--pv-ease-out), border-color 200ms var(--pv-ease-out);
 }
 .pv-header__inner {
-  max-width: 1760px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 clamp(28px, 3.4vw, 72px);
+  padding: 0 var(--pv-shell-gutter);
   height: 88px;
   display: flex;
   align-items: center;

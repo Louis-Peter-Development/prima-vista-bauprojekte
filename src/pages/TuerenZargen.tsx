@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import TuerenConfigurator from '../components/gewerke/TuerenConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function TuerenZargen() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-haus-exterior.webp"
+        backgroundImage="/assets/img/leistungen/tueren-zargen-01.webp"
         crumbNumber="24"
         crumbLabel="Gewerke · Türen & Zargen"
         title={<>Türen<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function TuerenZargen() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="tueren" />
 
       <section className="kalkulator">
         <TuerenConfigurator />

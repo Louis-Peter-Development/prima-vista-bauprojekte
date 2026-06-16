@@ -15,6 +15,7 @@
 @import './utilities/motion.css';
 @import './layout/containers.css';
 @import './components/page-intro.css';
+@import './components/gewerk-photo-showcase.css';
 @import './components/lightbox.css';
 @import './components/end-cta-local.css';
 @import './base/responsive.css';

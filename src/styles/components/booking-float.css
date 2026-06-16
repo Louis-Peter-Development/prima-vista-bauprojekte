@@ -86,8 +86,8 @@
   }
 }
 
-/* Mirror the social rail's hide-on-narrow rule so we don't collide with
-   the content container or the bottom-right chat launcher. */
-@media (max-width: 1380px) {
-  .pv-booking-float { display: none; }
+@media (max-width: 2120px) and (min-width: 1081px) {
+  .pv-booking-float {
+    right: 8px;
+  }
 }

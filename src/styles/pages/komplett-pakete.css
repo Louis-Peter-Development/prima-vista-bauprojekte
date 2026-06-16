@@ -9,9 +9,9 @@
 .pkg-detail--ink { background: var(--pv-ink-1); color: var(--pv-bone); border-bottom-color: rgba(236, 229, 223, .15); }
 
 .pkg-detail__inner {
-  max-width: 1480px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: 80px;
@@ -168,9 +168,9 @@
   padding: 140px 0;
 }
 .compare__head {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto 64px;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   text-align: center;
 }
 .compare__head h2 {
@@ -192,16 +192,16 @@
   margin: 0 auto;
 }
 .compare__table {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   overflow-x: auto;
 }
 .compare__grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: minmax(210px, 1.35fr) repeat(4, minmax(150px, 1fr));
   border-top: 1px solid rgba(26, 26, 26, .15);
-  min-width: 720px;
+  min-width: 960px;
 }
 .compare__row {
   display: contents;
@@ -266,7 +266,7 @@
   color: var(--pv-bone);
   max-width: 1000px;
   margin: 0 auto 40px;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
 }
 .pkg-quote blockquote em { color: var(--pv-copper-bright); }
 .pkg-quote .attr {
@@ -285,7 +285,7 @@
   padding: 120px 0;
   text-align: center;
 }
-.end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 48px; }
+.end-cta-local__inner { max-width: 720px; margin: 0 auto; padding: 0 var(--pv-shell-gutter); }
 .end-cta-local h2 {
   font-family: var(--pv-font-serif);
   font-style: italic;
@@ -316,8 +316,8 @@
   .compare__head,
   .compare__table,
   .end-cta-local__inner {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: var(--pv-shell-gutter);
+    padding-right: var(--pv-shell-gutter);
   }
 
   .pkg-detail__inner,
@@ -452,14 +452,14 @@
   }
 
   .pkg-quote blockquote {
-    padding: 0 20px;
+    padding: 0 var(--pv-shell-gutter);
     font-size: 32px;
     line-height: 1.2;
     letter-spacing: 0;
     margin-bottom: 32px;
   }
   .pkg-quote .attr {
-    padding: 0 20px;
+    padding: 0 var(--pv-shell-gutter);
     font-size: 10px;
     letter-spacing: 0.16em;
     line-height: 1.6;

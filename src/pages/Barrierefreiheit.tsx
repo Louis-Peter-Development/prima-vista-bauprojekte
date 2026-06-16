@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import BarrierefreiesBadConfigurator from '../components/gewerke/BarrierefreiesBadConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Barrierefreiheit() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-bad-prima-vista.webp"
+        backgroundImage="/assets/img/leistungen/badsanierung-06.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Barrierefreiheit"
         title={<>Barrierefreiheit<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Barrierefreiheit() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="barrierefreiheit" />
 
       <section className="kalkulator">
         <BarrierefreiesBadConfigurator />

@@ -1,4 +1,5 @@
 import PageIntro from '../components/common/PageIntro';
+import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import TrockenbauConfigurator from '../components/gewerke/TrockenbauConfigurator';
 import { usePageTitle } from '../hooks/usePageTitle';
@@ -12,7 +13,7 @@ export default function Trockenbau() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-parkett-rohbau.webp"
+        backgroundImage="/assets/img/leistungen/trockenbau-decke-02.webp"
         crumbNumber="03"
         crumbLabel="Gewerke · Trockenbau"
         title={<>Trockenbau<br /><em>kalkulieren.</em></>}
@@ -24,6 +25,8 @@ export default function Trockenbau() {
           { label: 'Angebot', value: 'Festpreisfähig' },
         ]}
       />
+
+      <GewerkPhotoShowcase photoSet="trockenbau" />
 
       <section className="kalkulator">
         <TrockenbauConfigurator />

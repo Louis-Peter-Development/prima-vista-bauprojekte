@@ -6,7 +6,8 @@
 
 @media (max-width: 1400px) and (min-width: 881px) {
   .hero__inner {
-    padding-left: 96px;
+    padding-left: var(--pv-shell-gutter);
+    padding-right: var(--pv-shell-gutter);
   }
 }
 
@@ -16,8 +17,8 @@
     min-height: calc(100svh - 80px);
   }
   .hero__inner {
-    padding-left: 56px;
-    padding-right: 56px;
+    padding-left: var(--pv-shell-gutter);
+    padding-right: var(--pv-shell-gutter);
   }
   .hero__inner::before {
     width: min(760px, 70vw);
@@ -60,8 +61,8 @@
     min-height: calc(100svh - 80px);
   }
   .hero__inner {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: var(--pv-shell-gutter);
+    padding-right: var(--pv-shell-gutter);
   }
   .hero__inner::before {
     inset: -18px 0 -18px 0;
@@ -105,6 +106,12 @@
     font-size: 16px;
     line-height: 1.58;
   }
+  .home-hero-photos__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .home-hero-photos__tile {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 @media (max-width: 880px) {
@@ -129,7 +136,7 @@
       linear-gradient(90deg, rgba(232, 223, 223, .96) 0%, rgba(232, 223, 223, .82) 64%, rgba(232, 223, 223, .54) 100%),
       linear-gradient(to top, rgba(232, 223, 223, .76) 0%, rgba(232, 223, 223, .68) 48%, rgba(232, 223, 223, .9) 100%);
   }
-  .hero__inner { padding: 0 20px; }
+  .hero__inner { padding: 0 var(--pv-shell-gutter); }
   .hero__inner::before {
     inset: -18px 0 -18px 0;
     width: auto;
@@ -174,6 +181,23 @@
   .hero__cta { align-items: stretch; }
   .hero__cta small { font-size: 10px; letter-spacing: 0.18em; }
   .hero__cta .btn { justify-content: center; width: 100%; }
+  .home-hero-photos {
+    padding: 24px 0 64px;
+  }
+  .home-hero-photos__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .home-hero-photos__tile {
+    aspect-ratio: 4 / 3;
+  }
+  .home-hero-photos__tile span {
+    left: 10px;
+    right: 10px;
+    bottom: 9px;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+  }
 
   .marquee { padding: 16px 0; }
   .marquee__track { gap: 36px; }
@@ -210,7 +234,7 @@
   .kalk__inner,
   .blitz-home__inner,
   .testimonial__inner,
-  .end-cta__inner { padding-left: 20px; padding-right: 20px; }
+  .end-cta__inner { padding-left: var(--pv-shell-gutter); padding-right: var(--pv-shell-gutter); }
 
   .blitz-home__head h2 { font-size: 40px; letter-spacing: 0; }
   .blitz-home__doc-paper { padding: 28px 24px 24px; }
@@ -298,6 +322,8 @@
     flex-direction: column;
     gap: 8px;
   }
+  .founders-video { margin-top: 32px; }
+  .founders-video__notice { font-size: 12px; }
 
   .heating__head { margin-bottom: 40px; }
   .heating__head .eyebrow { margin-bottom: 18px; justify-content: center; }

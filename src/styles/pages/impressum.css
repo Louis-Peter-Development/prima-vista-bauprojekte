@@ -10,9 +10,9 @@
 }
 
 .impressum-page__grid {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
   gap: 72px;
@@ -125,7 +125,7 @@
 
 @media (max-width: 600px) {
   .impressum-page__grid {
-    padding: 0 20px;
+    padding: 0 var(--pv-shell-gutter);
   }
 
   .impressum-page__summary,

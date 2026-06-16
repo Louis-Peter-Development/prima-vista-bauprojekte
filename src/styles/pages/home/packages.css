@@ -4,9 +4,9 @@
   padding: 140px 0 160px;
 }
 .packages__head {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto 80px;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 48px;
@@ -32,9 +32,9 @@
   max-width: 420px;
 }
 .packages__grid {
-  max-width: 1480px;
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;

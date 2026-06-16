@@ -10,7 +10,7 @@ export default function Heizstraenge() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/photo-parkett-rohbau.webp"
+        backgroundImage="/assets/img/leistungen/wasserinstallation-02.webp"
         crumbNumber="11"
         crumbLabel="Heizung & Sanitär · Kostenrechner"
         title={<>Heizstränge<br /><em>kalkulieren.</em></>}

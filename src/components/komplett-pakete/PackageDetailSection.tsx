@@ -50,7 +50,7 @@ export default function PackageDetailSection({ pkg }: PackageDetailSectionProps)
         </Link>
         {pkg.detailTo && (
           <Link className="btn btn--solid pkg-detail__cta-secondary" to={pkg.detailTo}>
-            Sanierung kalkulieren <span className="arrow">&gt;</span>
+            {pkg.detailCtaLabel ?? 'Sanierung kalkulieren'} <span className="arrow">&gt;</span>
           </Link>
         )}
       </div>

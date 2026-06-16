@@ -23,7 +23,7 @@ export const KATEGORIEN: KategorieDef[] = [
     key: 'pakete',
     num: '01',
     label: 'Komplett-Pakete',
-    description: 'Schlüsselfertige Sanierung — Haus oder Wohnung',
+    description: 'Schlüsselfertige Sanierung — Wohnen, Gastro oder Büro',
     leaves: [
       {
         key: 'haus',
@@ -45,6 +45,13 @@ export const KATEGORIEN: KategorieDef[] = [
         lead: 'Restaurant, Café, Bar oder Club',
         photo: '/assets/img/photo-parkett-altbau.webp',
         Component: lazy(() => import('../components/kalkulator/embeds/GastronomieAusbauEmbed')),
+      },
+      {
+        key: 'buero',
+        label: 'Büro-Ausbau',
+        lead: 'Office, Praxis, Open Space',
+        photo: '/assets/img/photo-office-light.webp',
+        Component: lazy(() => import('../components/kalkulator/embeds/BueroAusbauEmbed')),
       },
     ],
   },

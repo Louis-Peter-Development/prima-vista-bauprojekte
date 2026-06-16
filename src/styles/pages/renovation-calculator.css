@@ -1,7 +1,7 @@
 .renocalc {
-  max-width: var(--pv-container);
+  max-width: var(--pv-shell);
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   display: flex;
   flex-direction: column;
   color: var(--pv-ink);
@@ -650,7 +650,7 @@
 
 @media (max-width: 760px) {
   .renocalc {
-    padding: 0 20px;
+    padding: 0 var(--pv-shell-gutter);
   }
 
   .renocalc__toolbar,

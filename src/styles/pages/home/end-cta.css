@@ -16,7 +16,7 @@
 .end-cta__inner {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 var(--pv-shell-gutter);
   position: relative;
   z-index: 1;
 }
