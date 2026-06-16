@@ -52,6 +52,10 @@
         "workbox-window": "^7.4.1"
     },
     "overrides": {
-        "esbuild": "^0.28.1"
+        "esbuild": "^0.28.1",
+        "@opentelemetry/core": "^2.8.0",
+        "@opentelemetry/resources": "^2.8.0",
+        "@opentelemetry/sdk-trace-base": "^2.8.0",
+        "@opentelemetry/sdk-trace-node": "^2.8.0"
     }
 }
