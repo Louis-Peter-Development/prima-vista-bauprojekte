@@ -339,10 +339,10 @@ function Avatar() {
   return (
     <span className="pv-chat-avatar" aria-hidden="true">
       <img
-        src="/assets/img/founders-avatar.webp"
+        src="/assets/img/logo.png"
         alt=""
-        width="256"
-        height="256"
+        width="1085"
+        height="1051"
         loading="lazy"
       />
     </span>
@@ -621,12 +621,26 @@ export default function Chat() {
       {!open && (
         <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}${shouldAvoidLauncher ? ' is-avoiding' : ''}`} aria-hidden={!canShowLauncher}>
           {canShowPreview && !previewDismissed && (
-            <div className="pv-chat-preview">
+            <div
+              role="button"
+              tabIndex={0}
+              className="pv-chat-preview"
+              aria-label="Bau-Concierge öffnen"
+              onClick={() => setOpen(true)}
+              onKeyDown={(event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                setOpen(true);
+              }}
+            >
               <button
                 type="button"
                 className="pv-chat-preview__close"
                 aria-label="Hinweis schließen"
-                onClick={() => setPreviewDismissed(true)}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setPreviewDismissed(true);
+                }}
               >
                 <CloseIcon />
               </button>
