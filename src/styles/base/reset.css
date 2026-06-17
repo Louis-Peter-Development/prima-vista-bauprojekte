@@ -1,5 +1,8 @@
 /* ----- Reset & globals ----- */
 *, *::before, *::after { box-sizing: border-box; }
+/* Safety net: a stray over-wide element clips instead of making the whole page
+   horizontally scrollable. overflow-x:clip (not hidden) keeps position:sticky working. */
+html { overflow-x: clip; }
 html, body { margin: 0; padding: 0; }
 body {
   background: var(--pv-cream);
@@ -10,6 +13,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  /* Long German compounds / URLs break rather than overflow their container. */
+  overflow-wrap: break-word;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
