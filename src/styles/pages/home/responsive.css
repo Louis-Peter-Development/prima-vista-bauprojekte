@@ -1,4 +1,5 @@
 @media (max-width: 1080px) {
+  .packages__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trades-preview__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trade-chip:nth-child(4n) { border-right: 1px solid rgba(20, 19, 18, .12); }
   .trade-chip:nth-child(2n) { border-right: none; }
