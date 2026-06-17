@@ -1,8 +1,38 @@
 /* ---- Hero end photo band ---- */
 .home-hero-photos {
   background: var(--pv-cream);
-  padding: clamp(32px, 4vw, 64px) 0 clamp(40px, 5vw, 80px);
+  padding: clamp(72px, 8vw, 132px) 0 clamp(12px, 1.5vw, 24px);
   overflow: hidden;
+}
+.home-hero-photos__head {
+  max-width: var(--pv-shell);
+  margin: 0 auto clamp(26px, 3vw, 46px);
+  padding: 0 var(--pv-shell-gutter);
+}
+.home-hero-photos__head .eyebrow {
+  margin: 0;
+}
+.home-hero-photos__head h2 {
+  margin: 14px 0 0;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(32px, 4.4vw, 60px);
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--pv-ink);
+}
+.home-hero-photos__head h2 em {
+  color: var(--pv-copper);
+  font-style: italic;
+}
+.home-hero-photos__head p {
+  margin: 14px 0 0;
+  max-width: 54ch;
+  font-family: var(--pv-font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--pv-text-on-light-muted);
 }
 .home-hero-photos__grid {
   list-style: none;
@@ -82,6 +112,19 @@
 .home-hero-photos__link:focus-visible {
   outline: 2px solid var(--pv-bone);
   outline-offset: -4px;
+}
+
+/* Lighten the caption scrim on small mobile tiles so the photo reads clearly
+   (the tighter, stronger label shadow keeps the caption legible). Applies in
+   both themes — the scrim is a fixed dark gradient, not theme-dependent. */
+@media (max-width: 600px) {
+  .home-hero-photos__link::after {
+    height: 44%;
+    background: linear-gradient(to top, rgba(13, 12, 11, .5), rgba(13, 12, 11, 0));
+  }
+  .home-hero-photos__label {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .82), 0 0 3px rgba(0, 0, 0, .55);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

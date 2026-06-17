@@ -37,7 +37,12 @@ const HERO_END_PHOTOS = [
 
 export default function HomeHeroPhotos() {
   return (
-    <section className="home-hero-photos" aria-label="Projektfotos">
+    <section className="home-hero-photos" aria-label="Einblicke in unsere Projekte">
+      <div className="home-hero-photos__head reveal">
+        <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Einblicke</div>
+        <h2>Vom Rohbau bis zur <em>Übergabe</em>.</h2>
+        <p>Ausschnitte aus Projekten, die wir aus einer Hand umgesetzt haben.</p>
+      </div>
       <ul className="home-hero-photos__grid">
         {HERO_END_PHOTOS.map((photo) => (
           <li className="home-hero-photos__tile" key={photo.src}>
