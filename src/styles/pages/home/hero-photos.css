@@ -1,7 +1,7 @@
 /* ---- Hero end photo band ---- */
 .home-hero-photos {
   background: var(--pv-cream);
-  padding: clamp(72px, 8vw, 132px) 0 clamp(40px, 5vw, 80px);
+  padding: clamp(72px, 8vw, 132px) 0 clamp(12px, 1.5vw, 24px);
   overflow: hidden;
 }
 .home-hero-photos__head {
