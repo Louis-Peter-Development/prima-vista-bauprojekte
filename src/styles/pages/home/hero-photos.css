@@ -114,6 +114,19 @@
   outline-offset: -4px;
 }
 
+/* Lighten the caption scrim on small mobile tiles so the photo reads clearly
+   (the tighter, stronger label shadow keeps the caption legible). Applies in
+   both themes — the scrim is a fixed dark gradient, not theme-dependent. */
+@media (max-width: 600px) {
+  .home-hero-photos__link::after {
+    height: 44%;
+    background: linear-gradient(to top, rgba(13, 12, 11, .5), rgba(13, 12, 11, 0));
+  }
+  .home-hero-photos__label {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .82), 0 0 3px rgba(0, 0, 0, .55);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home-hero-photos__tile,
   .home-hero-photos__link img,
