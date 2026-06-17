@@ -585,7 +585,7 @@
   font-family: var(--pv-font-serif);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(48px, 8vw, 108px);
+  font-size: clamp(34px, 8vw, 108px);
   line-height: .94;
 }
 .blog-article__hero p {
@@ -638,8 +638,8 @@
   line-height: 1.05;
   color: var(--mag-ink);
 }
-.blog-article__body h2 { font-size: 40px; margin-top: 52px; }
-.blog-article__body h3 { font-size: 29px; margin-top: 40px; }
+.blog-article__body h2 { font-size: clamp(28px, 6vw, 40px); margin-top: 52px; }
+.blog-article__body h3 { font-size: clamp(22px, 4.5vw, 29px); margin-top: 40px; }
 .blog-article__body blockquote {
   margin: 44px 0;
   padding: 6px 0 6px 30px;
@@ -1708,4 +1708,21 @@
 /* Tablet (4-col, 2-up): center a lone trailing card */
 @media (min-width: 761px) and (max-width: 1024px) {
   .mag-grid--odd > .mag-card:last-child { grid-column: 2 / span 2; }
+}
+
+/* ---- Mobile responsive fixes (admin + editor + cards) ---- */
+@media (max-width: 600px) {
+  /* Admin status filter: let the three segments share the full row instead of
+     overflowing as a rigid inline-flex. */
+  .admin-toolbar__left,
+  .admin-toolbar__right { width: 100%; }
+  .admin-filter { display: flex; width: 100%; }
+  .admin-filter button { flex: 1; justify-content: center; padding: 9px 8px; }
+  /* TipTap editor: tighter padding, 16px font (no iOS zoom), break long URLs. */
+  .blog-editor__surface { padding: 18px; font-size: 16px; overflow-wrap: anywhere; }
+  /* Long unbroken titles never push the row wider than the screen. */
+  .blog-admin-row strong,
+  .blog-admin-row__main p { overflow-wrap: anywhere; }
+  /* Related-post cards: smaller thumb so the title isn't crushed. */
+  .blog-more-card { grid-template-columns: 96px minmax(0, 1fr); }
 }

@@ -68,3 +68,14 @@
 .pv-lightbox__nav--prev { left: 24px; right: auto; }
 .pv-lightbox__nav--next { right: 24px; }
 .pv-lightbox__nav:hover { color: var(--pv-copper-bright); border-color: var(--pv-copper-bright); }
+
+@media (max-width: 600px) {
+  /* Give the image the full width and move the prev/next controls into the
+     bottom bar so they no longer overlap the photo. */
+  .pv-lightbox { padding: 64px 12px 76px; }
+  .pv-lightbox__nav { top: auto; bottom: 16px; transform: none; width: 40px; height: 40px; }
+  .pv-lightbox__nav--prev { left: 16px; }
+  .pv-lightbox__nav--next { right: 16px; }
+  .pv-lightbox__caption { bottom: 64px; padding: 0 64px; font-size: 11px; letter-spacing: 0.14em; }
+  .pv-lightbox__caption .index { margin-right: 8px; }
+}

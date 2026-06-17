@@ -303,6 +303,28 @@
   .pkg-detail__photo-num { font-size: 120px; }
 }
 
+/* Stack the 5-column comparison table on tablet too — it doesn't fit < 980px
+   and would otherwise force horizontal scrolling. */
+@media (min-width: 601px) and (max-width: 980px) {
+  .compare__table { overflow-x: visible; }
+  .compare__grid { display: block; min-width: 0; }
+  .compare__row { display: grid; grid-template-columns: 1fr; padding: 20px 0; border-bottom: 1px solid rgba(26, 26, 26, .12); }
+  .compare__row:first-child { display: none; }
+  .compare__cell { border-bottom: 0; padding: 8px 0; font-size: 14px; }
+  .compare__row .compare__cell:not(.compare__cell--first) { justify-content: space-between; gap: 18px; }
+  .compare__row .compare__cell:not(.compare__cell--first)::before {
+    content: attr(data-label);
+    font-family: var(--pv-font-display);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--pv-text-on-light-muted);
+  }
+  .compare__cell--first { font-size: 10px; letter-spacing: 0.16em; padding-bottom: 14px; }
+  .compare__highlight { background: transparent; }
+}
+
 @media (max-width: 600px) {
   .pkg-detail,
   .compare,

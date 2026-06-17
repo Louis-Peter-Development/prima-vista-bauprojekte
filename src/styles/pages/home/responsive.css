@@ -107,15 +107,22 @@
     line-height: 1.58;
   }
   .home-hero-photos__grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .home-hero-photos__tile {
     aspect-ratio: 4 / 3;
   }
+  /* Tablet: collapse cramped multi-column blocks before the 880px stack. */
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+  .kalk__inner, .blitz-home__inner { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .blitz-home__inner > .blitz-home__head { order: -1; }
+  .blitz-home__doc { padding: 0 0 24px; }
+  .blitz-home__doc-paper { transform: rotate(0); }
+  .hero__meta > div:nth-child(2) { display: none; }
 }
 
 @media (max-width: 880px) {
-  .hero__meta, .promise__inner, .packages__head, .stats__intro, .featured__head, .founders__inner, .trades-preview__head, .kalk__inner, .blitz-home__inner { grid-template-columns: 1fr; gap: 32px; }
+  .hero__meta, .promise__inner, .packages__head, .stats__intro, .featured__head, .founders__inner, .trades-preview__head, .kalk__inner, .blitz-home__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .blitz-home__inner > .blitz-home__head { order: -1; }
   .blitz-home__doc { padding: 12px 12px 24px 0; }
   .blitz-home__doc-paper { transform: rotate(0); }
@@ -239,6 +246,7 @@
   .blitz-home__head h2 { font-size: 40px; letter-spacing: 0; }
   .blitz-home__doc-paper { padding: 28px 24px 24px; }
   .blitz-home__doc-rows li { grid-template-columns: 96px 1fr; }
+  .blitz-home__doc-sig { flex-direction: column; gap: 6px; }
 
   .kalk__head h2 { font-size: 40px; letter-spacing: 0; }
   .kalk__card { padding: 24px; }
