@@ -47,8 +47,8 @@ To run the dev server with full functionality (Chat, Email), you need to set up 
 ```env
 ANTHROPIC_API_KEY=your_anthropic_api_key
 RESEND_API_KEY=your_resend_api_key
-MAIL_FROM=onboarding@resend.dev
-MAIL_TO_OFFICE=your_email@example.com
+MAIL_FROM=Prima Vista Bauprojekte <noreply@primavista-bauprojekte.com>
+MAIL_TO_OFFICE=office@primavista-bauprojekte.com
 MONGODB_URI=mongodb+srv://...
 MONGODB_DB=prima_vista
 JWT_SECRET=long-random-secret
