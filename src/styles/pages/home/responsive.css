@@ -154,8 +154,8 @@
   .hero__topline > span:nth-child(2) { display: none; }
   :root[data-theme='dark'] .hero__bg-overlay {
     background:
-      linear-gradient(90deg, rgba(12, 11, 10, .88) 0%, rgba(12, 11, 10, .62) 62%, rgba(12, 11, 10, .82) 100%),
-      linear-gradient(to top, rgba(12, 11, 10, .86) 0%, rgba(12, 11, 10, .34) 48%, rgba(12, 11, 10, .72) 100%);
+      linear-gradient(90deg, rgba(12, 11, 10, .66) 0%, rgba(12, 11, 10, .44) 62%, rgba(12, 11, 10, .6) 100%),
+      linear-gradient(to top, rgba(12, 11, 10, .6) 0%, rgba(12, 11, 10, .28) 48%, rgba(12, 11, 10, .58) 100%);
   }
   :root[data-theme='dark'] .hero__inner::before {
     background: linear-gradient(90deg, rgba(17, 16, 15, .68) 0%, rgba(17, 16, 15, .38) 100%);
