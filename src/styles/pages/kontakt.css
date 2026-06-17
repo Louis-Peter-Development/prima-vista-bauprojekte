@@ -100,6 +100,7 @@
   font-style: italic;
   font-weight: 500;
   font-size: 22px;
+  overflow-wrap: anywhere;
   color: var(--pv-bone);
   margin: 0;
   line-height: 1.2;
@@ -811,7 +812,7 @@
   .kontakt__intro p { margin-bottom: 32px; font-size: 16px; }
   .kontakt__channels { margin-bottom: 40px; gap: 20px; }
   .kontakt__channel { padding: 16px 0; gap: 14px; }
-  .kontakt__channel-val { font-size: 18px; }
+  .kontakt__channel-val { font-size: 16px; }
   .kontakt__offices { gap: 24px; }
   .kontakt__media { margin-top: 32px; aspect-ratio: 4 / 3.1; }
   .kontakt__media figcaption {

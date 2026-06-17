@@ -165,6 +165,10 @@ body .eyebrow + h3 { margin-top: 24px; }
     max-width: 100%;
   }
   .page-intro .meta-list {
-    gap: 16px 22px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .page-intro .meta-list li span {
+    overflow-wrap: anywhere;
   }
 }

@@ -57,12 +57,12 @@ export default function Home() {
           <div className="reveal">
             <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Komplett-Pakete</div>
             <h2>
-              Drei Wege zum<br />
+              Vier Wege zum<br />
               fertigen <em>Raum.</em>
             </h2>
           </div>
           <p className="reveal" data-delay="1">
-            Ob Einzimmer-Refresh oder Generalsanierung: jedes Paket bündelt Planung, Bauleitung und alle Gewerke — mit klarem Preis und festem Endtermin.
+            Ob Einzimmer-Refresh, Büroausbau oder Generalsanierung: jedes Paket bündelt Planung, Bauleitung und alle Gewerke — mit klarem Preis und festem Endtermin.
           </p>
         </div>
         <div className="packages__grid">
@@ -84,12 +84,21 @@ export default function Home() {
               <span className="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
           </Link>
-          <Link className="pkg-card reveal" data-delay="3" to="/komplett-pakete">
+          <Link className="pkg-card reveal" data-delay="3" to="/gastronomie-ausbau">
             <img src="/assets/img/proj-moroccan-corner-thumb.webp" alt="Gastronomie-Ausbau" width="800" height="374" loading="lazy" />
             <div className="pkg-card__body">
               <span className="pkg-card__num">№ 03 — Konzept</span>
               <h3 className="pkg-card__title">Gastronomie-<br />Ausbau</h3>
               <p className="pkg-card__desc">Restaurants, Bars, Hotels: von der Konzeptphase bis zur Eröffnung — schlüsselfertig.</p>
+              <span className="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
+            </div>
+          </Link>
+          <Link className="pkg-card reveal" data-delay="4" to="/buero-ausbau">
+            <img src="/assets/img/photo-office-light.webp" alt="Büro-Ausbau" width="1600" height="1200" loading="lazy" />
+            <div className="pkg-card__body">
+              <span className="pkg-card__num">№ 04 — Büro</span>
+              <h3 className="pkg-card__title">Büro-<br />Ausbau</h3>
+              <p className="pkg-card__desc">Büroflächen, Praxen und Arbeitswelten — bezugsfertig mit Technik, Akustik und Oberflächen.</p>
               <span className="pkg-card__more">Mehr erfahren <span>&gt;</span></span>
             </div>
           </Link>

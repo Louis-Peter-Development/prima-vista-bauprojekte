@@ -645,6 +645,10 @@
 
   .renocalc-live__sticky {
     position: static;
+    /* No longer sticky → drop the viewport height cap and inner scroll so the
+       panel (and its CTA) flows with the page instead of becoming a scroll-trap. */
+    max-height: none;
+    overflow-y: visible;
   }
 }
 

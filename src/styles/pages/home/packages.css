@@ -36,7 +36,7 @@
   margin: 0 auto;
   padding: 0 var(--pv-shell-gutter);
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
 }
 .pkg-card {
