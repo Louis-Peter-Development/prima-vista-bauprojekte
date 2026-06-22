@@ -109,10 +109,13 @@ const PRIVACY_SECTIONS = [
       <>
         <h3>Google Analytics</h3>
         <p>
-          Diese Website kann Google Analytics einsetzen, um die Nutzung der Website zu analysieren und unser Angebot zu verbessern. Google Analytics verwendet Technologien, die eine Wiedererkennung der Nutzerinnen und Nutzer zum Zwecke der Analyse des Nutzerverhaltens ermöglichen können.
+          Diese Website setzt Google Analytics ein, sofern Sie optionale Analyse-Dienste im Cookie-Hinweis akzeptieren. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Wir nutzen Google Analytics, um Seitenaufrufe und die Nutzung der Website auszuwerten und unser Angebot zu verbessern.
         </p>
         <p>
-          Soweit Google Analytics eingesetzt wird, erfolgt die Verarbeitung einwilligungspflichtiger Daten nur auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit widerrufbar.
+          Google Analytics kann Cookies wie „_ga“ verwenden und technische Daten wie Geräte- und Browserinformationen, gekürzte IP-Adressen, aufgerufene Seiten, Referrer und Zeitpunkte der Nutzung verarbeiten. Die Verarbeitung einwilligungspflichtiger Daten erfolgt nur auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO; die Einwilligung ist jederzeit mit Wirkung für die Zukunft widerrufbar.
+        </p>
+        <p>
+          Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
         </p>
       </>
     ),
