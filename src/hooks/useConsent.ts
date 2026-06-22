@@ -34,6 +34,13 @@ export function hasYouTubeConsent(consent: ConsentPayload | null): boolean {
   return consent.youtube === true || consent.choice === 'all';
 }
 
+/** True once the user has accepted analytics cookies/tracking. */
+export function hasAnalyticsConsent(consent: ConsentPayload | null): boolean {
+  if (!consent) return false;
+  // Tolerate older stored payloads that predate the `analytics` flag.
+  return consent.analytics === true || consent.choice === 'all';
+}
+
 /** Re-open the cookie banner so the user can grant consent. */
 export function openConsentBanner() {
   if (typeof window === 'undefined') return;

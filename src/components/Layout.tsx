@@ -9,8 +9,14 @@ import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
+import { hasAnalyticsConsent, useConsent } from '../hooks/useConsent';
 import { getRouteMeta } from '../data/routeMeta';
 import { setPageMeta } from '../utils/metadata';
+import {
+  hasGoogleAnalyticsConfig,
+  trackGoogleAnalyticsPageView,
+  updateGoogleAnalyticsConsent,
+} from '../utils/googleAnalytics';
 
 const DESKTOP_MEDIA = '(min-width: 1081px) and (hover: hover) and (pointer: fine)';
 
@@ -245,12 +251,36 @@ function RouteMetadata() {
   return null;
 }
 
+function GoogleAnalyticsTracker() {
+  const consent = useConsent();
+  const location = useLocation();
+  const hasTrackedPath = useRef('');
+  const analyticsAllowed = hasAnalyticsConsent(consent);
+  const pagePath = `${location.pathname}${location.search}${location.hash}`;
+
+  useEffect(() => {
+    if (!hasGoogleAnalyticsConfig()) return;
+    updateGoogleAnalyticsConsent(analyticsAllowed);
+  }, [analyticsAllowed]);
+
+  useEffect(() => {
+    if (!hasGoogleAnalyticsConfig() || !analyticsAllowed) return;
+    if (hasTrackedPath.current === pagePath) return;
+
+    hasTrackedPath.current = pagePath;
+    void trackGoogleAnalyticsPageView(pagePath);
+  }, [analyticsAllowed, pagePath]);
+
+  return null;
+}
+
 export default function Layout() {
   useReveal();
   const isDesktop = useIsDesktop();
   return (
     <LightboxProvider>
       <RouteMetadata />
+      <GoogleAnalyticsTracker />
       <ScrollToTop />
       <Header />
       <main>
