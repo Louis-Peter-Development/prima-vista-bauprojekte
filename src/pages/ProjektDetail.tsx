@@ -47,6 +47,13 @@ export default function ProjektDetail() {
           <Link className="pd-hero__back" to="/projekte" state={{ targetId: projectAnchorId(project.src) }}>
             ← Alle Projekte
           </Link>
+          <Link className="pd-hero__brand" to="/" aria-label="Prima Vista — Startseite">
+            <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
+            <span>
+              <strong>Prima Vista</strong>
+              <small>Bauprojekte</small>
+            </span>
+          </Link>
           <div className="pd-hero__text">
             <span className="pd-hero__num">{project.num}</span>
             <h1 className="pd-hero__headline">{detail.headline}</h1>
