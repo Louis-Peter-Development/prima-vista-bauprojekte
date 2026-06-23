@@ -1,0 +1,200 @@
+.calculator-pdf {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  --calculator-pdf-trigger-color: var(--pv-text-on-dark);
+  --calculator-pdf-trigger-border: rgba(236, 229, 223, .42);
+  --calculator-pdf-trigger-open-bg: var(--pv-cream-paper);
+  --calculator-pdf-trigger-open-border: var(--pv-cream-paper);
+  --calculator-pdf-trigger-open-color: var(--pv-text-on-light);
+  --calculator-pdf-panel-bg: var(--pv-cream-paper);
+  --calculator-pdf-panel-text: var(--pv-text-on-light);
+  --calculator-pdf-panel-muted: var(--pv-text-on-light-muted);
+  --calculator-pdf-panel-border: rgba(20, 19, 18, .14);
+  --calculator-pdf-control-bg: rgba(255, 255, 255, .28);
+  --calculator-pdf-control-border: rgba(20, 19, 18, .34);
+  --calculator-pdf-placeholder: rgba(20, 19, 18, .54);
+  --calculator-pdf-focus: rgba(130, 97, 64, .38);
+  --calculator-pdf-submit-hover-bg: var(--pv-text-on-light);
+  --calculator-pdf-submit-hover-color: var(--pv-cream-paper);
+  --calculator-pdf-shadow: 0 18px 38px -24px rgba(0, 0, 0, .5);
+}
+
+.calculator-pdf__trigger,
+.calculator-pdf__submit {
+  width: 100%;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid var(--calculator-pdf-trigger-border);
+  background: transparent;
+  color: var(--calculator-pdf-trigger-color);
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms var(--pv-ease-out), color 160ms var(--pv-ease-out), border-color 160ms var(--pv-ease-out);
+}
+
+.calculator-pdf__trigger svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+
+.calculator-pdf__trigger:hover:not(:disabled),
+.calculator-pdf__trigger[aria-expanded="true"] {
+  background: var(--calculator-pdf-trigger-open-bg);
+  border-color: var(--calculator-pdf-trigger-open-border);
+  color: var(--calculator-pdf-trigger-open-color);
+}
+
+.calculator-pdf__trigger:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.calculator-pdf__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  background: var(--calculator-pdf-panel-bg);
+  border: 1px solid var(--calculator-pdf-panel-border);
+  color: var(--calculator-pdf-panel-text);
+  box-shadow: var(--calculator-pdf-shadow);
+}
+
+.calculator-pdf__label {
+  font-family: var(--pv-font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .03em;
+  color: var(--calculator-pdf-panel-text);
+}
+
+.calculator-pdf__panel input[type="email"] {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--calculator-pdf-control-border);
+  background: var(--calculator-pdf-control-bg);
+  color: var(--calculator-pdf-panel-text);
+  padding: 0 14px;
+  font-family: var(--pv-font-body);
+  font-size: 15px;
+}
+
+.calculator-pdf__panel input[type="email"]::placeholder {
+  color: var(--calculator-pdf-placeholder);
+}
+
+.calculator-pdf__panel input[type="email"]:focus,
+.calculator-pdf__check input:focus + span {
+  outline: 2px solid var(--calculator-pdf-focus);
+  outline-offset: 2px;
+}
+
+.calculator-pdf__check {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  cursor: pointer;
+}
+
+.calculator-pdf__check input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.calculator-pdf__check span {
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border: 2px solid var(--calculator-pdf-control-border);
+  background: var(--calculator-pdf-control-bg);
+  position: relative;
+}
+
+.calculator-pdf__check input:checked + span {
+  background: var(--pv-copper);
+  border-color: var(--pv-copper);
+}
+
+.calculator-pdf__check input:checked + span::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--calculator-pdf-panel-text);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.calculator-pdf__check em {
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.35;
+  color: var(--calculator-pdf-panel-text);
+}
+
+.calculator-pdf__submit {
+  border-color: var(--calculator-pdf-panel-text);
+  color: var(--calculator-pdf-panel-text);
+  background: transparent;
+}
+
+.calculator-pdf__submit:hover:not(:disabled) {
+  background: var(--calculator-pdf-submit-hover-bg);
+  color: var(--calculator-pdf-submit-hover-color);
+}
+
+.calculator-pdf__submit:disabled {
+  opacity: .55;
+  cursor: wait;
+}
+
+.calculator-pdf .calculator-pdf__message {
+  margin: 0;
+  padding-top: 0;
+  border-top: 0;
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.calculator-pdf .calculator-pdf__message--sent {
+  color: #4d7f4a;
+}
+
+.calculator-pdf .calculator-pdf__message--error {
+  color: var(--pv-red);
+}
+
+:root[data-theme='dark'] .calculator-pdf {
+  --calculator-pdf-trigger-color: var(--pv-bone);
+  --calculator-pdf-trigger-border: rgba(241, 233, 226, .26);
+  --calculator-pdf-trigger-open-bg: rgba(216, 173, 124, .11);
+  --calculator-pdf-trigger-open-border: rgba(216, 173, 124, .72);
+  --calculator-pdf-trigger-open-color: var(--pv-bone);
+  --calculator-pdf-panel-bg: var(--pv-ink-2);
+  --calculator-pdf-panel-text: var(--pv-bone);
+  --calculator-pdf-panel-muted: var(--pv-text-on-dark-muted);
+  --calculator-pdf-panel-border: rgba(241, 233, 226, .16);
+  --calculator-pdf-control-bg: rgba(17, 16, 15, .68);
+  --calculator-pdf-control-border: rgba(241, 233, 226, .28);
+  --calculator-pdf-placeholder: rgba(241, 233, 226, .54);
+  --calculator-pdf-focus: rgba(216, 173, 124, .48);
+  --calculator-pdf-submit-hover-bg: var(--pv-copper-bright);
+  --calculator-pdf-submit-hover-color: var(--pv-ink-1);
+  --calculator-pdf-shadow: 0 20px 44px -24px rgba(0, 0, 0, .86);
+}

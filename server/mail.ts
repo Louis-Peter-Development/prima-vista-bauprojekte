@@ -6,6 +6,7 @@
  */
 
 import { Resend } from 'resend';
+import { buildCalculatorPdf, type CalculatorPdfPayload } from './calculatorPdf.js';
 
 const FROM = process.env.MAIL_FROM ?? 'Prima Vista Bauprojekte <noreply@primavista-bauprojekte.com>';
 const TO_OFFICE = process.env.MAIL_TO_OFFICE ?? 'office@primavista-bauprojekte.com';
@@ -568,6 +569,67 @@ function blitzConfirmText(p: BlitzPayload): string {
   ].join('\n');
 }
 
+function calculatorPdfHtml(p: CalculatorPdfPayload): string {
+  const body = `
+${bodyParagraph(
+  `Anbei erhalten Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}. Die Werte sind eine Vorab-Schätzung auf Basis Ihrer aktuellen Auswahl.`,
+)}
+${calculatorDetailsHtml({
+  art: p.kalkulator.kind,
+  artLabel: p.kalkulator.kindLabel,
+  groesse: String(p.kalkulator.area),
+  starttermin: '',
+  starterminLabel: '',
+  gewerke: [],
+  msg: '',
+  kalkulator: p.kalkulator,
+  name: 'PDF-Empfänger',
+  email: p.email,
+  tel: '',
+}, {
+  includeRows: false,
+  heading: 'Zusammenfassung',
+})}
+${steps([
+  'Sie können die PDF intern weiterleiten oder für Ihre Projektplanung speichern.',
+  'Für ein verbindliches Angebot prüfen wir Aufmaß, Bestand und Materialauswahl.',
+  'Antworten Sie direkt auf diese E-Mail, wenn wir die Schätzung verfeinern sollen.',
+])}
+${bodyParagraph(`Mit freundlichen Grüßen,\nDaniel & Monica Irimia · Prima Vista Bauprojekte`)}`;
+
+  return shell('Ihre PDF-Aufstellung ist da.', 'Kalkulator · PDF-Aufstellung', body);
+}
+
+function calculatorPdfText(p: CalculatorPdfPayload): string {
+  return [
+    `Ihre PDF-Aufstellung ist da.`,
+    ``,
+    `Anbei erhalten Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}.`,
+    `Die Werte sind eine Vorab-Schätzung auf Basis Ihrer aktuellen Auswahl.`,
+    ``,
+    calculatorDetailsText({
+      art: p.kalkulator.kind,
+      artLabel: p.kalkulator.kindLabel,
+      groesse: String(p.kalkulator.area),
+      starttermin: '',
+      starterminLabel: '',
+      gewerke: [],
+      msg: '',
+      kalkulator: p.kalkulator,
+      name: 'PDF-Empfänger',
+      email: p.email,
+      tel: '',
+    }, {
+      includeRows: false,
+      heading: 'Zusammenfassung',
+    }),
+    ``,
+    `Mit freundlichen Grüßen,`,
+    `Daniel & Monica Irimia`,
+    `Prima Vista Bauprojekte`,
+  ].join('\n');
+}
+
 // ----- Public API -----
 
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
@@ -610,4 +672,28 @@ export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
     html: blitzConfirmHtml(payload),
     text: blitzConfirmText(payload),
   }), 'Blitz confirmation');
+}
+
+export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Promise<void> {
+  const resend = getResend();
+  const pdf = await buildCalculatorPdf(payload);
+  const slug = cleanCalculatorLabel(payload.kalkulator.kindLabel)
+    .toLocaleLowerCase('de-DE')
+    .replace(/[^a-z0-9äöüß]+/gi, '-')
+    .replace(/^-+|-+$/g, '')
+    || 'kalkulator';
+
+  ensureEmailSent(await resend.emails.send({
+    from: FROM,
+    to: payload.email,
+    bcc: TO_OFFICE,
+    replyTo: TO_OFFICE,
+    subject: `Ihre PDF-Aufstellung · ${payload.kalkulator.kindLabel}`,
+    html: calculatorPdfHtml(payload),
+    text: calculatorPdfText(payload),
+    attachments: [{
+      filename: `prima-vista-${slug}.pdf`,
+      content: pdf,
+    }],
+  }), 'Calculator PDF');
 }

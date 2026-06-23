@@ -39,10 +39,11 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 28px;
 }
 .heiz-card {
+  grid-column: span 2;
   display: flex;
   flex-direction: column;
   background: var(--pv-white);
@@ -135,6 +136,17 @@
   font-weight: 400;
 }
 
+/* Keep a three-card final row centered under the four-card opening row. */
+.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) {
+  grid-column: 2 / span 2;
+}
+.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card {
+  grid-column: 4 / span 2;
+}
+.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card + .heiz-card {
+  grid-column: 6 / span 2;
+}
+
 /* Foot CTA row */
 .heiz__foot {
   margin-top: 80px;
@@ -161,6 +173,7 @@
 /* Responsive */
 @media (max-width: 1180px) {
   .heiz__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .heiz-card { grid-column: auto; }
 }
 @media (max-width: 880px) {
   .heiz { padding: 64px 0 96px; }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BUERO_GEWERKE, formatTsd } from '../../data/bueroAusbau';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
+import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 
 type Props = {
   hasPicks: boolean;
@@ -30,6 +31,7 @@ export default function BueroAusbauResult({
     ? {
         kind: 'pakete',
         kindLabel,
+        scopeLabel: 'Fläche',
         area,
         picks: pickedGewerke.map((gewerk) => ({
           key: gewerk.key,
@@ -103,6 +105,7 @@ export default function BueroAusbauResult({
         </p>
 
         <div className="kalk-result__actions">
+          <CalculatorPdfSender handoff={handoff} disabled={!hasPicks} />
           <Link
             className="btn btn--solid"
             to="/blitz-angebot"

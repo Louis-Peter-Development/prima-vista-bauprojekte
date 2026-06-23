@@ -13,6 +13,7 @@ import { formatEuro } from '../../data/calculator/engine';
 import type { RenovationProduct, RenovationProductAlternative } from '../../data/calculator/types';
 import { inferTradeFromSku, type BlitzFormState, type KalkulatorHandoff } from '../../data/blitzAngebot';
 import { useRenovationCalculator } from '../../hooks/useRenovationCalculator';
+import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 import '../../styles/pages/renovation-calculator.css';
 
 type Props = {
@@ -449,6 +450,8 @@ export default function RenovationCalculator({
             </div>
 
             <p>Vorab-Schätzung auf Basis der ausgewählten Positionen. Verbindliche Preise nach Aufmaß, Prüfung und Materialbemusterung.</p>
+
+            <CalculatorPdfSender handoff={handoff} />
 
             <Link className="btn btn--solid" to="/blitz-angebot" state={{ kalkulator: handoff }}>
               Als Angebot anfragen <span className="arrow">&gt;</span>

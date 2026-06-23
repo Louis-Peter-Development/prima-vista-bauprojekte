@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { buildCalculatorPdf, type CalculatorPdfPayload } from '../../server/calculatorPdf';
 import { validateBlitzPayload } from '../../netlify/functions/blitz';
+import { validateCalculatorPdfPayload } from '../../netlify/functions/calculator-pdf';
 import { validateCommentPayload } from '../../netlify/functions/comments';
 import { validateKontaktPayload } from '../../netlify/functions/contact';
 
@@ -99,6 +101,86 @@ describe('public endpoint validators', () => {
       art: 'pakete',
       starttermin: 'sofort',
     })).toEqual({ error: 'groesse is required' });
+  });
+
+  it('accepts calculator PDF requests and requires consent', () => {
+    const valid = validateCalculatorPdfPayload({
+      email: 'ada@example.com',
+      consent: true,
+      kalkulator: {
+        kind: 'gewerke',
+        kindLabel: 'Bad mit Wanne',
+        scopeLabel: 'Wohnfläche in qm',
+        area: 6,
+        totalMin: 14000,
+        totalMax: 18000,
+        totalMid: 16000,
+        perM2: 2596,
+        picks: [{
+          key: 'wasser',
+          label: 'Wasserinstallation & Sanitär',
+          subtotal: 3000,
+          tradeKey: 'wasserinstallation',
+          tradeLabel: 'Wasserinstallation & Sanitär',
+          rows: [{
+            label: 'Vorsatz-Element | Montage',
+            quantity: 2,
+            unit: 'Stk',
+            unitPrice: 279,
+            subtotal: 558,
+          }],
+        }],
+      },
+    });
+
+    expect('error' in valid).toBe(false);
+    expect(valid).toMatchObject({
+      email: 'ada@example.com',
+      kalkulator: {
+        kindLabel: 'Bad mit Wanne',
+        scopeLabel: 'Wohnfläche in qm',
+        picks: [{ rows: [{ label: 'Vorsatz-Element | Montage' }] }],
+      },
+    });
+    expect(validateCalculatorPdfPayload({ ...valid, consent: false })).toEqual({
+      error: 'consent is required',
+    });
+  });
+
+  it('builds a real PDF attachment for calculator requests', async () => {
+    const payload: CalculatorPdfPayload = {
+      email: 'ada@example.com',
+      consent: true,
+      kalkulator: {
+        kind: 'gewerke',
+        kindLabel: 'Bad mit Wanne',
+        scopeLabel: 'Wohnfläche in qm',
+        area: 6,
+        totalMin: 14000,
+        totalMax: 18000,
+        totalMid: 16000,
+        perM2: 2596,
+        picks: [{
+          key: 'wasser',
+          label: 'Wasserinstallation & Sanitär',
+          subtotal: 3000,
+          tradeKey: 'wasserinstallation',
+          tradeLabel: 'Wasserinstallation & Sanitär',
+          rows: [{
+            label: 'Vorsatz-Element | Montage',
+            quantity: 2,
+            unit: 'Stk',
+            unitPrice: 279,
+            subtotal: 558,
+          }],
+        }],
+      },
+    };
+
+    const pdf = await buildCalculatorPdf(payload);
+
+    expect(pdf.subarray(0, 5).toString('utf8')).toBe('%PDF-');
+    expect(pdf.length).toBeGreaterThan(1000);
   });
 
   it('sanitizes comments and rejects empty/spam values', () => {
