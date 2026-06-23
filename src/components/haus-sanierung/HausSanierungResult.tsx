@@ -28,7 +28,7 @@ export default function HausSanierungResult({
   const pickedGewerke = HAUS_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
-        kind: 'haus',
+        kind: 'pakete',
         kindLabel,
         area,
         picks: pickedGewerke.map((g) => ({

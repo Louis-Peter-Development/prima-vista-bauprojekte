@@ -3,17 +3,17 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import ZaeuneBoard, { type ZaeuneType } from './ZaeuneBoard';
 
 const DEFAULT_SCOPE: Record<ZaeuneType, number> = {
-  zaeuneAluminium: 20,
-  zaeuneHolz: 20,
-  zaeuneGlas: 20,
-  zaeuneMetall: 20,
-  zaeuneDoppelstab: 20,
-  zaeuneGabionen: 20,
-  zaeuneSichtschutz: 20,
-  zaeuneMaschendraht: 20,
-  zaeuneSteck: 20,
-  zaeuneVorgarten: 20,
-  zaeuneSichtschutzstreifen: 20
+  zaeuneAluminium: 10,
+  zaeuneHolz: 10,
+  zaeuneGlas: 10,
+  zaeuneMetall: 10,
+  zaeuneDoppelstab: 10,
+  zaeuneGabionen: 10,
+  zaeuneSichtschutz: 10,
+  zaeuneMaschendraht: 10,
+  zaeuneSteck: 10,
+  zaeuneVorgarten: 10,
+  zaeuneSichtschutzstreifen: 10
 };
 
 const LABELS: Record<ZaeuneType, string> = {

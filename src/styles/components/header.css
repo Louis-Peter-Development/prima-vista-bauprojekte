@@ -6,8 +6,8 @@
      creates a stacking context, so the mobile menu nested inside the header
      can only render above the cookie when the header itself does. */
   z-index: 100;
-  background: var(--pv-white);
-  border-bottom: 1px solid rgba(26, 26, 26, .08);
+  background: var(--pv-cream-paper);
+  border-bottom: 1px solid rgba(20, 19, 18, .10);
   transition: background 200ms var(--pv-ease-out), border-color 200ms var(--pv-ease-out);
 }
 .pv-header__inner {

@@ -1,28 +1,25 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import RenovationCalculator from '../renovation-calculator/RenovationCalculator';
 import BadsanierungBoard, { type BadsanierungType } from './BadsanierungBoard';
 
+const DEFAULT_AREA: Record<BadsanierungType, number> = {
+  badGaeste: 3,
+  badDusche: 5,
+  badWanne: 5,
+  badKomplett: 8,
+  badWhirlpool: 8,
+  badWhirlpoolDusche: 8,
+  badBarrierefrei: 8,
+};
+
 export default function BadsanierungConfigurator() {
   const [activeType, setActiveType] = useState<BadsanierungType>('badDusche');
-  const [area, setArea] = useState<number>(6);
+  const [area, setArea] = useState<number>(DEFAULT_AREA.badDusche);
 
-  useEffect(() => {
-    switch (activeType) {
-      case 'badGaeste':
-        setArea(3);
-        break;
-      case 'badDusche':
-      case 'badWanne':
-        setArea(6);
-        break;
-      case 'badKomplett':
-      case 'badWhirlpool':
-      case 'badWhirlpoolDusche':
-      case 'badBarrierefrei':
-        setArea(10);
-        break;
-    }
-  }, [activeType]);
+  function handleTypeChange(type: BadsanierungType) {
+    setActiveType(type);
+    setArea(DEFAULT_AREA[type]);
+  }
 
   const getLabel = (type: BadsanierungType) => {
     switch (type) {
@@ -41,7 +38,7 @@ export default function BadsanierungConfigurator() {
     <div className="kalkulator__inner kalkulator__inner--stack">
       <BadsanierungBoard
         activeType={activeType}
-        onTypeChange={setActiveType}
+        onTypeChange={handleTypeChange}
       />
       <RenovationCalculator
         packageId={activeType}

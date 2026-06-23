@@ -19,21 +19,44 @@ type ProjectGalleryProps = {
   onOpen: (items: LightboxItem[], index: number) => void;
 };
 
+const projectLayoutSequence = ['feature', 'stack', 'stack', 'third', 'third', 'third', 'half', 'half'] as const;
+type ProjectLayout = (typeof projectLayoutSequence)[number];
+
+function layoutForVisibleIndex(index: number): ProjectLayout {
+  if (index < projectLayoutSequence.length) return projectLayoutSequence[index];
+  const repeat = ['third', 'third', 'third', 'half', 'half'] as const;
+  return repeat[(index - projectLayoutSequence.length) % repeat.length];
+}
+
 export default function ProjectGallery({
   visible,
   lightboxItems,
   getIndex,
   onOpen,
 }: ProjectGalleryProps) {
+  const totalVisible = visible.filter((project) => project.match).length;
+  const projects = visible.map(({ p, match }, index) => {
+    if (!match) return { p, match, layout: undefined, align: undefined };
+    const visibleIndex = visible.slice(0, index).filter((project) => project.match).length;
+    const layout = layoutForVisibleIndex(visibleIndex);
+    const previousLayout = visibleIndex > 0 ? layoutForVisibleIndex(visibleIndex - 1) : undefined;
+    const align = layout === 'half' && visibleIndex === totalVisible - 1 && previousLayout !== 'half'
+      ? 'center'
+      : undefined;
+    return { p, match, layout, align };
+  });
+
   return (
     <section className="gallery">
       <div className="gallery__grid">
-        {visible.map(({ p, match }) => (
+        {projects.map(({ p, match, layout, align }) => (
           <div
             key={p.num}
             id={projectAnchorId(p.src)}
             className={`g-card reveal reveal--scale${match ? '' : ' is-hidden'}`}
             data-size={p.size}
+            data-layout={layout}
+            data-align={align}
             data-delay={p.revealDelay}
           >
             <a

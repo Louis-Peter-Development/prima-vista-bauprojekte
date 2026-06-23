@@ -3,15 +3,15 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import RohbauBoard, { type RohbauType } from './RohbauBoard';
 
 const DEFAULT_SCOPE: Record<RohbauType, number> = {
-  rohbauAlles: 100,
-  rohbauAbbruch: 100,
-  rohbauEstrich: 100,
+  rohbauAlles: 20,
+  rohbauAbbruch: 20,
+  rohbauEstrich: 20,
   rohbauStahltraeger: 1,
-  rohbauVerputzen: 100,
+  rohbauVerputzen: 20,
   rohbauLichtschaechte: 1,
   rohbauSchornstein: 1,
-  rohbauMauerwerk: 100,
-  rohbauPflastern: 100
+  rohbauMauerwerk: 20,
+  rohbauPflastern: 20
 };
 
 const LABELS: Record<RohbauType, string> = {

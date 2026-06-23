@@ -30,10 +30,10 @@ export const GASTRONOMIE_TYPES: GastronomieTypeOption[] = [
 ];
 
 export const AREA_OPTIONS: AreaOption[] = [
+  { value: 60, label: '60 m²' },
   { value: 100, label: '100 m²' },
   { value: 200, label: '200 m²' },
-  { value: 300, label: '300 m²' },
-  { value: 500, label: '500 m²' },
+  { value: 350, label: '350 m²' },
 ];
 
 export const GASTRONOMIE_GEWERKE: GastronomieGewerk[] = [

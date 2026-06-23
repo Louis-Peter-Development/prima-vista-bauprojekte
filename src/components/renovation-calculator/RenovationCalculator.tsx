@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState, type ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ChevronDownIcon,
@@ -11,8 +11,9 @@ import {
 } from '../icons';
 import { formatEuro } from '../../data/calculator/engine';
 import type { RenovationProduct, RenovationProductAlternative } from '../../data/calculator/types';
-import { inferTradeFromSku, type KalkulatorHandoff } from '../../data/blitzAngebot';
+import { inferTradeFromSku, type BlitzFormState, type KalkulatorHandoff } from '../../data/blitzAngebot';
 import { useRenovationCalculator } from '../../hooks/useRenovationCalculator';
+import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 import '../../styles/pages/renovation-calculator.css';
 
 type Props = {
@@ -20,6 +21,7 @@ type Props = {
   embedded?: boolean;
   livingArea?: number;
   onLivingAreaChange?: (value: number) => void;
+  minimumArea?: number;
   kindLabel?: string;
   customAreaLabel?: string;
 };
@@ -37,6 +39,23 @@ const BLITZ_CATEGORY_KEYS: Record<string, string> = {
   kitchen: 'kueche',
   'facade-outdoor': 'fassade',
 };
+
+const PACKAGE_CALCULATOR_IDS = new Set([
+  '1e',
+  '1e-d',
+  '2e',
+  '2e-d',
+  'studio',
+  '2zi',
+  '3zi',
+  'maisonette',
+]);
+
+function inferBlitzArt(packageId: string): BlitzFormState['art'] {
+  if (PACKAGE_CALCULATOR_IDS.has(packageId)) return 'pakete';
+  if (packageId.startsWith('heizmethoden')) return 'heizung';
+  return 'gewerke';
+}
 
 function rowTotal(row: RenovationProduct): number {
   return row.quantity * row.basePrice;
@@ -60,16 +79,23 @@ function decimalPlaces(value: number): number {
   return decimals.length;
 }
 
+function normalizeNumberInputValue(value: string): string {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? String(parsed) : '0';
+}
+
 export default function RenovationCalculator({
   packageId = '1e',
   embedded,
   livingArea,
   onLivingAreaChange,
+  minimumArea,
   kindLabel = '1 Etage ohne Dach',
   customAreaLabel,
 }: Props = {}) {
-  const { state, rowsByCategory, totals, minArea, dispatch } = useRenovationCalculator(packageId);
+  const { state, rowsByCategory, totals, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
+  const areaMinimum = Math.max(0, minimumArea ?? 0);
 
   const livingAreaForEffect = state.status === 'ready' ? state.livingArea : null;
   useEffect(() => {
@@ -114,8 +140,9 @@ export default function RenovationCalculator({
   const handoffArea = state.status === 'ready' ? state.livingArea : 0;
   const handoff = useMemo<KalkulatorHandoff>(() => {
     return {
-      kind: 'haus',
+      kind: inferBlitzArt(packageId),
       kindLabel,
+      scopeLabel: customAreaLabel || 'Wohnfläche in qm',
       area: handoffArea,
       picks: categoryBreakdown.map((category) => ({
         key: category.key,
@@ -130,29 +157,34 @@ export default function RenovationCalculator({
       totalMid: totals.net,
       perM2: totals.perM2,
     };
-  }, [categoryBreakdown, kindLabel, handoffArea, totals.net, totals.perM2]);
+  }, [categoryBreakdown, customAreaLabel, kindLabel, handoffArea, packageId, totals.net, totals.perM2]);
 
   function replaceRow(rowId: string, alternativeId: string) {
     if (state.status !== 'ready') return;
     const row = state.rows.find((item) => item.id === rowId);
+    if (!row?.canReplace) return;
     const alternative = row?.alternatives.find((item) => item.id === alternativeId);
     if (!alternative) return;
     dispatch({ type: 'replaceRow', id: rowId, alternative });
     setReplaceRowId(null);
   }
 
-  function onAreaChange(value: string) {
-    const next = Number(value);
-    const nextArea = Number.isFinite(next) ? next : 0;
+  function onAreaChange(event: ChangeEvent<HTMLInputElement>) {
+    const normalizedValue = normalizeNumberInputValue(event.currentTarget.value);
+    if (event.currentTarget.value !== normalizedValue) {
+      event.currentTarget.value = normalizedValue;
+    }
+
+    const nextArea = Number(normalizedValue);
     dispatch({ type: 'setArea', value: nextArea });
     onLivingAreaChange?.(nextArea);
   }
 
   function onAreaBlur() {
     if (state.status !== 'ready') return;
-    if (state.livingArea < minArea) {
-      dispatch({ type: 'setArea', value: minArea });
-      onLivingAreaChange?.(minArea);
+    if (state.livingArea < areaMinimum) {
+      dispatch({ type: 'setArea', value: areaMinimum });
+      onLivingAreaChange?.(areaMinimum);
     }
   }
 
@@ -189,10 +221,10 @@ export default function RenovationCalculator({
               <input
                 id="renocalc-area"
                 type="number"
-                min={minArea}
+                min={areaMinimum}
                 step="1"
                 value={state.livingArea}
-                onChange={(event) => onAreaChange(event.target.value)}
+                onChange={onAreaChange}
                 onBlur={onAreaBlur}
               />
             </div>
@@ -303,7 +335,7 @@ export default function RenovationCalculator({
                                     <button
                                       type="button"
                                       onClick={() => stepRowQuantity(row, -1)}
-                                      disabled={row.quantity <= row.minQuantity}
+                                      disabled={row.quantity <= 0}
                                       title="Menge verringern"
                                       aria-label={`Menge ${row.title} verringern`}
                                     >
@@ -311,7 +343,7 @@ export default function RenovationCalculator({
                                     </button>
                                     <input
                                       type="number"
-                                      min={row.minQuantity}
+                                      min={0}
                                       step={row.quantityStep}
                                       value={row.quantity}
                                       onChange={(event) => dispatch({
@@ -336,13 +368,31 @@ export default function RenovationCalculator({
                                 <td data-label="Gesamt">{formatEuro(rowTotal(row))}</td>
                                 <td data-label="Aktionen">
                                   <div className="renocalc-actions">
-                                    <button type="button" onClick={() => setReplaceRowId(replaceRowId === row.id ? null : row.id)} title="Produkt tauschen" aria-label="Produkt tauschen">
+                                    <button
+                                      type="button"
+                                      onClick={() => setReplaceRowId(replaceRowId === row.id ? null : row.id)}
+                                      title={row.canReplace && row.alternatives.length > 0 ? 'Produkt tauschen' : 'Produkt kann nicht getauscht werden'}
+                                      aria-label={row.canReplace && row.alternatives.length > 0 ? 'Produkt tauschen' : 'Produkt kann nicht getauscht werden'}
+                                      disabled={!row.canReplace || row.alternatives.length === 0}
+                                    >
                                       <SwapIcon aria-hidden="true" />
                                     </button>
-                                    <button type="button" onClick={() => dispatch({ type: 'duplicateRow', id: row.id })} title="Produkt duplizieren" aria-label="Produkt duplizieren">
+                                    <button
+                                      type="button"
+                                      onClick={() => dispatch({ type: 'duplicateRow', id: row.id })}
+                                      title={row.canDuplicate ? 'Produkt duplizieren' : 'Produkt kann nicht dupliziert werden'}
+                                      aria-label={row.canDuplicate ? 'Produkt duplizieren' : 'Produkt kann nicht dupliziert werden'}
+                                      disabled={!row.canDuplicate}
+                                    >
                                       <CopyIcon aria-hidden="true" />
                                     </button>
-                                    <button type="button" onClick={() => dispatch({ type: 'removeRow', id: row.id })} title="Produkt entfernen" aria-label="Produkt entfernen">
+                                    <button
+                                      type="button"
+                                      onClick={() => dispatch({ type: 'removeRow', id: row.id })}
+                                      title={row.canRemove ? 'Produkt entfernen' : 'Produkt kann nicht entfernt werden'}
+                                      aria-label={row.canRemove ? 'Produkt entfernen' : 'Produkt kann nicht entfernt werden'}
+                                      disabled={!row.canRemove}
+                                    >
                                       <TrashIcon aria-hidden="true" />
                                     </button>
                                   </div>
@@ -400,6 +450,8 @@ export default function RenovationCalculator({
             </div>
 
             <p>Vorab-Schätzung auf Basis der ausgewählten Positionen. Verbindliche Preise nach Aufmaß, Prüfung und Materialbemusterung.</p>
+
+            <CalculatorPdfSender handoff={handoff} />
 
             <Link className="btn btn--solid" to="/blitz-angebot" state={{ kalkulator: handoff }}>
               Als Angebot anfragen <span className="arrow">&gt;</span>

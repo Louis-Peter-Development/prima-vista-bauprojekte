@@ -2,9 +2,21 @@ import { useState } from 'react';
 import RenovationCalculator from '../renovation-calculator/RenovationCalculator';
 import AbdichtungKellerBoard, { type AbdichtungType } from './AbdichtungKellerBoard';
 
+const DEFAULT_AREA: Record<AbdichtungType, number> = {
+  abdichtung: 30,
+  abdichtungHorizontal: 15,
+  abdichtungPerimeter: 15,
+  abdichtungKeller: 25,
+};
+
 export default function AbdichtungKellerConfigurator() {
   const [activeType, setActiveType] = useState<AbdichtungType>('abdichtungHorizontal');
-  const [area, setArea] = useState<number>(100);
+  const [area, setArea] = useState<number>(DEFAULT_AREA.abdichtungHorizontal);
+
+  function handleTypeChange(type: AbdichtungType) {
+    setActiveType(type);
+    setArea(DEFAULT_AREA[type]);
+  }
 
   const getLabel = (type: AbdichtungType) => {
     switch (type) {
@@ -20,7 +32,7 @@ export default function AbdichtungKellerConfigurator() {
     <div className="kalkulator__inner kalkulator__inner--stack">
       <AbdichtungKellerBoard
         activeType={activeType}
-        onTypeChange={setActiveType}
+        onTypeChange={handleTypeChange}
       />
       <RenovationCalculator
         packageId={activeType}

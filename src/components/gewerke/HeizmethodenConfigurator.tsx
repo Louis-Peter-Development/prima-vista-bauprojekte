@@ -6,8 +6,8 @@ import '../../styles/pages/haus-sanierung.css';
 
 const DEFAULT_SCOPE: Record<HeizmethodenType, number> = {
   heizmethodenHeizkoerper: 1,
-  heizmethodenHeizstraenge: 50,
-  heizmethodenFussbodenheizung: 100,
+  heizmethodenHeizstraenge: 15,
+  heizmethodenFussbodenheizung: 25,
   heizmethodenWaermepumpe: 1,
   heizmethodenGasHeizung: 1,
   heizmethodenPelletofen: 1,

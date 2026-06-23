@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { GASTRONOMIE_GEWERKE, formatTsd } from '../../data/gastronomieAusbau';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
+import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 
 type Props = {
   hasPicks: boolean;
@@ -28,8 +29,9 @@ export default function GastronomieAusbauResult({
   const pickedGewerke = GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
-        kind: 'gastro',
+        kind: 'pakete',
         kindLabel,
+        scopeLabel: 'Fläche',
         area,
         picks: pickedGewerke.map((g) => ({
           key: g.key,
@@ -102,6 +104,7 @@ export default function GastronomieAusbauResult({
         </p>
 
         <div className="kalk-result__actions">
+          <CalculatorPdfSender handoff={handoff} disabled={!hasPicks} />
           <Link
             className="btn btn--solid"
             to="/blitz-angebot"

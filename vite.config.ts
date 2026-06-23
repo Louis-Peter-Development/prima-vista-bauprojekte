@@ -100,6 +100,7 @@ function blogDevPlugin(): Plugin {
     { pattern: /^\/api\/auth\/([^/?#]+)$/, module: '/netlify/functions/auth.ts', params: (m: RegExpMatchArray) => ({ action: decodeURIComponent(m[1]) }) },
     { pattern: /^\/api\/uploads$/, module: '/netlify/functions/uploads.ts', params: () => ({}) },
     { pattern: /^\/api\/uploads\/([^/?#]+)$/, module: '/netlify/functions/uploads.ts', params: (m: RegExpMatchArray) => ({ key: decodeURIComponent(m[1]) }) },
+    { pattern: /^\/api\/calculator-pdf$/, module: '/netlify/functions/calculator-pdf.ts', params: () => ({}) },
   ];
 
   return {

@@ -3,14 +3,14 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import ElektroBoard, { type ElektroType } from './ElektroBoard';
 
 const DEFAULT_SCOPE: Record<ElektroType, number> = {
-  elektroAlles: 5,
+  elektroAlles: 3,
   elektroNeuinstallation: 1,
   elektroSicherungskasten: 1,
-  elektroNetzwerk: 50,
+  elektroNetzwerk: 20,
   elektroEinzelinstallation: 1,
-  elektroLichttechnik: 3,
+  elektroLichttechnik: 2,
   elektroFreeHome: 1,
-  elektroRolladen: 3,
+  elektroRolladen: 1,
   elektroSprechanlagen: 1,
 };
 

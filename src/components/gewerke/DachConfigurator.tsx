@@ -2,9 +2,27 @@ import { useState } from 'react';
 import RenovationCalculator from '../renovation-calculator/RenovationCalculator';
 import DachBoard, { type DachVariantType } from './DachBoard';
 
+const DEFAULT_SCOPE: Record<DachVariantType, number> = {
+  dachAlles: 40,
+  dachNeubedachung: 40,
+  dachDachstuhl: 40,
+  dachInnenausbau: 30,
+  dachDaemmung: 40,
+  dachGauben: 1,
+  dachFenster: 1,
+  dachanhebung: 40,
+  flachdach: 30,
+  dachbodenDaemmung: 30,
+};
+
 export default function DachConfigurator() {
   const [activeType, setActiveType] = useState<DachVariantType>('dachAlles');
-  const [area, setArea] = useState<number>(120);
+  const [area, setArea] = useState<number>(DEFAULT_SCOPE.dachAlles);
+
+  function handleTypeChange(type: DachVariantType) {
+    setActiveType(type);
+    setArea(DEFAULT_SCOPE[type]);
+  }
 
   const getLabel = (type: DachVariantType) => {
     switch (type) {
@@ -37,7 +55,7 @@ export default function DachConfigurator() {
     <div className="kalkulator__inner kalkulator__inner--stack">
       <DachBoard
         activeType={activeType}
-        onTypeChange={setActiveType}
+        onTypeChange={handleTypeChange}
       />
       <RenovationCalculator
         packageId={activeType}

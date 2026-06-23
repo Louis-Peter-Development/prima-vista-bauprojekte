@@ -28,7 +28,7 @@ export default function WohnungSanierungResult({
   const pickedGewerke = WOHNUNG_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
-        kind: 'wohnung',
+        kind: 'pakete',
         kindLabel,
         area,
         picks: pickedGewerke.map((g) => ({

@@ -3,16 +3,16 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import FassadeBoard, { type FassadeType } from './FassadeBoard';
 
 const DEFAULT_SCOPE: Record<FassadeType, number> = {
-  fassadeAlles: 100,
-  fassadeDaemmung: 100,
-  fassadeAnstrich: 100,
-  fassadeHolzverkleidung: 100,
-  fassadeSockeldaemmung: 50,
-  fassadeKlinkerSteinriemchen: 100,
-  fassadePlattenverkleidung: 100,
-  fassadeNatursteinverkleidung: 100,
-  fassadeVorhangfassade: 100,
-  fassadeVerblendmauerwerk: 100
+  fassadeAlles: 40,
+  fassadeDaemmung: 40,
+  fassadeAnstrich: 40,
+  fassadeHolzverkleidung: 40,
+  fassadeSockeldaemmung: 20,
+  fassadeKlinkerSteinriemchen: 40,
+  fassadePlattenverkleidung: 40,
+  fassadeNatursteinverkleidung: 40,
+  fassadeVorhangfassade: 40,
+  fassadeVerblendmauerwerk: 40
 };
 
 const LABELS: Record<FassadeType, string> = {
