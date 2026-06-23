@@ -3,16 +3,16 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import MalerBoard, { type MalerType } from './MalerBoard';
 
 const DEFAULT_SCOPE: Record<MalerType, number> = {
-  malerAlles: 200,
-  malerAnstrich: 200,
-  malerGlaettenAnstrich: 200,
-  malerTapezieren: 200,
-  malerDeckenLackierung: 50,
+  malerAlles: 40,
+  malerAnstrich: 40,
+  malerGlaettenAnstrich: 40,
+  malerTapezieren: 40,
+  malerDeckenLackierung: 20,
   malerHeizkoerperLackierung: 1,
   malerFensterLackierung: 1,
   malerTuerenLackierung: 1,
   malerTreppenGelaenderLackierung: 1,
-  malerFassadenAnstrich: 100
+  malerFassadenAnstrich: 40
 };
 
 const LABELS: Record<MalerType, string> = {

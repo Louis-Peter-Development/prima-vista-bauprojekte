@@ -3,15 +3,15 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import KuechenBoard, { type KuechenType } from './KuechenBoard';
 
 const DEFAULT_SCOPE: Record<KuechenType, number> = {
-  kuecheAlles: 7,
-  kuecheKomplettkueche: 7,
+  kuecheAlles: 5,
+  kuecheKomplettkueche: 5,
   kuecheSingleMinikuechen: 3,
   kuecheBuerokueche: 5,
-  kuecheEinbaukueche: 7,
+  kuecheEinbaukueche: 5,
   kuecheKuechenzeile: 4,
   kuecheArbeitsplatteSpuele: 4,
   kuecheDunstabzugshaube: 1,
-  kuecheBodenDecken: 20,
+  kuecheBodenDecken: 10,
   kuecheElektroBeleuchtung: 1,
   kuecheWasserinstallation: 1
 };

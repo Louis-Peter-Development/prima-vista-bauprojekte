@@ -2,9 +2,8 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   BLITZ_ART_OPTIONS,
-  BLITZ_GEWERKE_OPTIONS,
+  BLITZ_SERVICE_GROUPS,
   INITIAL_BLITZ_FORM,
-  formatKalkulatorMessage,
   formatPickAmount,
   formatRowQuantity,
   groupPicksByTrade,
@@ -24,6 +23,43 @@ const STARTTERMIN_LABELS: Record<string, string> = {
   spaeter: 'Noch unklar / Nächstes Jahr',
 };
 
+function getScopeField(art: BlitzFormState['art']) {
+  switch (art) {
+    case 'pakete':
+      return {
+        label: 'Geschätzte Fläche (m²)',
+        placeholder: 'z. B. 120',
+        inputType: 'number',
+        required: true,
+        error: 'Bitte geben Sie die geschätzte Fläche an.',
+      };
+    case 'gewerke':
+      return {
+        label: 'Geschätzter Umfang (optional)',
+        placeholder: 'z. B. 80 m² Boden, 12 Türen, 3 Fenster',
+        inputType: 'text',
+        required: false,
+        error: '',
+      };
+    case 'heizung':
+      return {
+        label: 'Fläche / Anzahl (optional)',
+        placeholder: 'z. B. 120 m², 8 Heizkörper oder 1 Saunaofen',
+        inputType: 'text',
+        required: false,
+        error: '',
+      };
+    case 'anderes':
+      return {
+        label: 'Kurzer Umfang (optional)',
+        placeholder: 'z. B. Bad erweitern, Balkon abdichten',
+        inputType: 'text',
+        required: false,
+        error: '',
+      };
+  }
+}
+
 export default function BlitzForm() {
   const location = useLocation();
   const handoff = (location.state as LocationState)?.kalkulator ?? null;
@@ -34,9 +70,9 @@ export default function BlitzForm() {
       ...INITIAL_BLITZ_FORM,
       art: handoff.kind,
       groesse: String(handoff.area),
-      gewerke: mapKalkulatorPicksToBlitzGewerke(handoff.picks),
+      gewerke: mapKalkulatorPicksToBlitzGewerke(handoff.picks, handoff.kindLabel),
       // Leave msg empty: the kalkulator detail block is rendered read-only
-      // in step 4, and prepended to the user's note at submit time.
+      // in step 4 and sent as structured data at submit time.
       msg: '',
     };
   });
@@ -53,20 +89,40 @@ export default function BlitzForm() {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  // If we came in from the kalkulator, skip the object-type step
-  const [step, setStep] = useState(handoff ? 2 : 1);
-
-  const totalSteps = 5;
+  // If we came in from the kalkulator, skip category and service selection.
+  const [step, setStep] = useState(handoff ? 3 : 1);
+  const serviceGroups = BLITZ_SERVICE_GROUPS.filter((group) => group.key === form.art);
+  const currentScopeField = getScopeField(form.art);
+  const finalStep = 5;
+  const skipsDetailsStep = form.art === 'anderes';
+  const visibleTotalSteps = skipsDetailsStep ? 4 : 5;
+  const visibleStep = skipsDetailsStep && step > 3 ? step - 1 : step;
 
   // Auto-grow the Besonderheiten textarea so the full prefilled summary
   // (and anything the user adds) is visible without internal scrolling.
   const msgRef = useRef<HTMLTextAreaElement | null>(null);
+  const successRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const el = msgRef.current;
     if (!el || step !== 4) return;
     el.style.height = 'auto';
     el.style.height = `${el.scrollHeight}px`;
   }, [step, form.msg]);
+
+  useEffect(() => {
+    if (!sent) return;
+    const el = successRef.current;
+    if (!el) return;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    requestAnimationFrame(() => {
+      el.focus({ preventScroll: true });
+      el.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'center',
+        inline: 'nearest',
+      });
+    });
+  }, [sent]);
 
   function update<K extends keyof BlitzFormState>(key: K, value: BlitzFormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -78,18 +134,40 @@ export default function BlitzForm() {
     });
   }
 
-  function toggleGewerk(gewerk: string) {
-    if (form.gewerke.includes(gewerk)) {
-      update('gewerke', form.gewerke.filter(g => g !== gewerk));
-    } else {
-      update('gewerke', [...form.gewerke, gewerk]);
-    }
+  function selectArt(value: BlitzFormState['art']) {
+    setForm((prev) => ({
+      ...prev,
+      art: value,
+      groesse: prev.art === value ? prev.groesse : '',
+      gewerke: [],
+    }));
+    setErrors({});
+    setStep(2);
+  }
+
+  function selectServiceOption(option: string) {
+    update('gewerke', [option]);
+    setStep(3);
+  }
+
+  function toggleServiceOption(option: string) {
+    setForm((prev) => ({
+      ...prev,
+      gewerke: prev.gewerke.includes(option)
+        ? prev.gewerke.filter((item) => item !== option)
+        : [...prev.gewerke, option],
+    }));
+  }
+
+  function serviceOptionId(groupKey: string, index: number) {
+    return `blitz-g-${groupKey}-${index}`;
   }
 
   function onNext() {
-    if (step === 2) {
+    if (step === 3) {
       const nextErrors: BlitzErrors = {};
-      if (!form.groesse) nextErrors.groesse = 'Bitte geben Sie die geschätzte Fläche an.';
+      const scopeField = getScopeField(form.art);
+      if (scopeField.required && !form.groesse.trim()) nextErrors.groesse = scopeField.error;
       if (!form.starttermin) nextErrors.starttermin = 'Bitte wählen Sie einen Baubeginn.';
       if (Object.keys(nextErrors).length > 0) {
         setErrors(nextErrors);
@@ -102,16 +180,16 @@ export default function BlitzForm() {
       }
     }
     setErrors({});
-    setStep(s => Math.min(s + 1, totalSteps));
+    setStep((s) => (skipsDetailsStep && s === 3 ? finalStep : Math.min(s + 1, finalStep)));
   }
 
   function onBack() {
-    setStep(s => Math.max(s - 1, 1));
+    setStep((s) => (skipsDetailsStep && s === finalStep ? 3 : Math.max(s - 1, 1)));
   }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
-    if (step !== totalSteps || submitting) return;
+    if (step !== finalStep || submitting) return;
     setSubmitError(null);
     setSubmitting(true);
     try {
@@ -120,19 +198,20 @@ export default function BlitzForm() {
       const starterminLabel =
         STARTTERMIN_LABELS[form.starttermin] ?? form.starttermin;
       const userNote = form.msg.trim();
-      const kalkulatorBlock = handoff ? formatKalkulatorMessage(handoff) : '';
-      const fullMsg = [kalkulatorBlock, userNote].filter(Boolean).join('\n\n');
+      const scopeField = getScopeField(form.art);
+      const scopeValue = form.groesse.trim() || (scopeField.required ? form.groesse : 'Noch offen');
       const res = await fetch('/api/blitz', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           art: form.art,
           artLabel,
-          groesse: form.groesse,
+          groesse: scopeValue,
           starttermin: form.starttermin,
           starterminLabel,
           gewerke: form.gewerke,
-          msg: fullMsg,
+          msg: userNote,
+          kalkulator: handoff,
           name: form.name.trim(),
           email: form.email.trim(),
           tel: form.tel.trim(),
@@ -158,7 +237,12 @@ export default function BlitzForm() {
     const email = form.email.trim();
     const tel = form.tel.trim();
     return (
-      <div className="kontakt__form-wrap kontakt__form-wrap--success reveal reveal--right" data-delay="1">
+      <div
+        ref={successRef}
+        className="kontakt__form-wrap kontakt__form-wrap--success reveal reveal--right"
+        data-delay="1"
+        tabIndex={-1}
+      >
         <div className="kontakt__form-success">
           <div className="kontakt__form-eyebrow"><span className="rule-red"></span> Gesendet</div>
           <h3 className="kontakt__form-title">
@@ -171,7 +255,7 @@ export default function BlitzForm() {
             {tel && <> oder telefonisch unter <strong>{tel}</strong></>}.
           </p>
           <ol className="kontakt__form-success-steps">
-            <li><span className="num">01</span>Bauleitung prüft Fläche, Standort und gewünschte Gewerke.</li>
+            <li><span className="num">01</span>Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.</li>
             <li><span className="num">02</span>Sie erhalten eine schriftliche Vorab-Kostenschätzung.</li>
             <li><span className="num">03</span>Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.</li>
           </ol>
@@ -188,7 +272,7 @@ export default function BlitzForm() {
     <div className="kontakt__form-wrap reveal reveal--right" data-delay="1">
       <form onSubmit={onSubmit}>
           <div className="kontakt__form-eyebrow">
-            Schritt {step} von {totalSteps}
+            Schritt {visibleStep} von {visibleTotalSteps}
           </div>
 
           {submitError && (
@@ -211,12 +295,12 @@ export default function BlitzForm() {
           {step === 1 && (
             <div className="form-step fade-in">
               <div className="form-field">
-                <label>Um was für ein Objekt handelt es sich?</label>
+                <label>Welcher Bereich passt zu Ihrem Vorhaben?</label>
                 <div className="form-chips">
                   {BLITZ_ART_OPTIONS.map(({ value, label }) => (
                     <span key={value}>
-                      <input type="radio" name="blitz-art" id={`blitz-art-${value}`} checked={form.art === value} onChange={() => update('art', value)} />
-                      <label htmlFor={`blitz-art-${value}`}>{label}</label>
+                      <input type="radio" name="blitz-art" id={`blitz-art-${value}`} checked={form.art === value} onChange={() => selectArt(value)} />
+                      <label htmlFor={`blitz-art-${value}`} onClick={() => selectArt(value)}>{label}</label>
                     </span>
                   ))}
                 </div>
@@ -224,20 +308,20 @@ export default function BlitzForm() {
             </div>
           )}
 
-          {step === 2 && (
+          {step === 3 && (
             <div className="form-step fade-in">
               <div className="form-row">
                 <div className={`form-field${errors.groesse ? ' is-invalid' : ''}`}>
-                  <label htmlFor="groesse">Geschätzte Fläche (m²)</label>
+                  <label htmlFor="groesse">{currentScopeField.label}</label>
                   <input
                     id="groesse"
-                    type="number"
-                    placeholder="z. B. 120"
+                    type={currentScopeField.inputType}
+                    placeholder={currentScopeField.placeholder}
                     value={form.groesse}
                     onChange={(e) => update('groesse', e.target.value)}
                     aria-invalid={errors.groesse ? true : undefined}
                     aria-describedby={errors.groesse ? 'groesse-error' : undefined}
-                    required
+                    required={currentScopeField.required}
                   />
                   {errors.groesse && (
                     <span id="groesse-error" className="form-field__error" role="alert">
@@ -271,18 +355,56 @@ export default function BlitzForm() {
             </div>
           )}
 
-          {step === 3 && (
+          {step === 2 && (
             <div className="form-step fade-in">
               <div className="form-field">
-                <label>Welche Gewerke werden in etwa benötigt? (Mehrfachauswahl)</label>
-                <div className="form-chips">
-                  {BLITZ_GEWERKE_OPTIONS.map((g) => (
-                    <span key={g}>
-                      <input type="checkbox" id={`blitz-g-${g}`} checked={form.gewerke.includes(g)} onChange={() => toggleGewerk(g)} />
-                      <label htmlFor={`blitz-g-${g}`}>{g}</label>
-                    </span>
-                  ))}
-                </div>
+                <label>
+                  {form.art === 'gewerke'
+                    ? 'Welche Gewerke passen zu Ihrem Vorhaben? (Mehrfachauswahl)'
+                    : 'Welche Leistung oder welcher Detail-Rechner passt zu Ihrem Vorhaben?'}
+                </label>
+                {serviceGroups.length > 0 ? (
+                  <div className="form-choice-groups">
+                    {serviceGroups.map((group) => (
+                      <fieldset className="form-choice-group" key={group.key}>
+                        <legend>{group.label}</legend>
+                        <div className="form-chips">
+                          {group.options.map((option, index) => {
+                            const id = serviceOptionId(group.key, index);
+                            const isMultiSelect = group.key === 'gewerke';
+                            return (
+                              <span key={option}>
+                                <input
+                                  type={isMultiSelect ? 'checkbox' : 'radio'}
+                                  name={isMultiSelect ? undefined : `blitz-service-${group.key}`}
+                                  id={id}
+                                  checked={form.gewerke.includes(option)}
+                                  onChange={() => {
+                                    if (isMultiSelect) {
+                                      toggleServiceOption(option);
+                                      return;
+                                    }
+                                    selectServiceOption(option);
+                                  }}
+                                />
+                                  <label
+                                    htmlFor={id}
+                                    onClick={isMultiSelect ? undefined : () => selectServiceOption(option)}
+                                  >
+                                    {option}
+                                  </label>
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </fieldset>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="form-choice-note">
+                    Für Sonderwünsche ist keine Vorauswahl nötig. Beschreiben Sie Ihr Anliegen im nächsten Schritt kurz frei.
+                  </p>
+                )}
               </div>
             </div>
           )}
@@ -298,6 +420,13 @@ export default function BlitzForm() {
                     <span className="blitz-summary__meta">
                       {handoff.kindLabel} · {handoff.area}&nbsp;m²
                     </span>
+                  </div>
+                  <div className="blitz-summary__total">
+                    <span>
+                      <small>Gesamtkosten</small>
+                      Mittelwert der Vorab-Schätzung
+                    </span>
+                    <strong>{formatPickAmount(handoff.totalMid)}</strong>
                   </div>
                   <div className="blitz-summary__toolbar">
                     <span className="blitz-summary__count">
@@ -429,7 +558,7 @@ export default function BlitzForm() {
                   Zurück
                 </button>
               )}
-              {step < totalSteps ? (
+              {step < finalStep ? (
                 <button type="button" className="btn btn--solid" onClick={onNext}>
                   Weiter <span className="arrow">&gt;</span>
                 </button>

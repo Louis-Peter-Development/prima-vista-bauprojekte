@@ -28,10 +28,10 @@ export const BUERO_TYPES: BueroTypeOption[] = [
 ];
 
 export const AREA_OPTIONS: AreaOption[] = [
+  { value: 50, label: '50 m²' },
   { value: 80, label: '80 m²' },
   { value: 150, label: '150 m²' },
   { value: 300, label: '300 m²' },
-  { value: 600, label: '600 m²' },
 ];
 
 export const BUERO_GEWERKE: BueroGewerk[] = [

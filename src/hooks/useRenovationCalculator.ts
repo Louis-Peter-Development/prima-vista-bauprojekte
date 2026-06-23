@@ -4,7 +4,7 @@ import {
   getCachedRenovationPackage,
   loadRenovationPackage,
 } from '../data/calculator/packages';
-import { computeQuantity, clampQuantity } from '../data/calculator/engine';
+import { clampQuantity, evaluateQuantityFormula } from '../data/calculator/engine';
 import type {
   RenovationCategory,
   RenovationPackage,
@@ -28,6 +28,7 @@ type ReadyState = {
   livingArea: number;
   floorCount: number;
   rows: RenovationProduct[];
+  manualQuantities: Record<string, boolean>;
   collapsed: Record<string, boolean>;
 };
 
@@ -52,12 +53,13 @@ type RenovationCalculatorAction =
   | { type: 'reset' };
 
 type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapsed'>> & {
+  manualQuantities?: Record<string, boolean>;
   dataVersion?: string;
   dataSignature?: string;
 };
 
-const STORAGE_VERSION = 'v4';
-const BOSSMANN_STORAGE_VERSION = 'v5';
+const STORAGE_VERSION = 'v6';
+const BOSSMANN_STORAGE_VERSION = 'v7';
 const BOSSMANN_DATA_VERSION = 'bossmann-v2';
 const BOSSMANN_PACKAGE_IDS = new Set([
   '1e', '1e-d', '2e', '2e-d',           // house variants
@@ -100,8 +102,59 @@ function buildInitialState(pkg: RenovationPackage): ReadyState {
     livingArea: pkg.defaultArea,
     floorCount: pkg.defaultFloorCount,
     rows,
+    manualQuantities: {},
     collapsed,
   };
+}
+
+function decimalPlaces(value: number): number {
+  const [, decimals = ''] = String(value).split('.');
+  return decimals.length;
+}
+
+function roundQuantityToStep(value: number, step: number): number {
+  const safeStep = step > 0 ? step : 1;
+  const precision = Math.max(decimalPlaces(safeStep), decimalPlaces(value));
+  return Number((Math.round(value / safeStep) * safeStep).toFixed(precision));
+}
+
+function clampLineQuantity(value: number, min: number): number {
+  if (!Number.isFinite(value)) return 0;
+  if (value <= 0) return 0;
+  return clampQuantity(value, min);
+}
+
+function computeAutomaticQuantity(row: RenovationProduct, livingArea: number, floorCount: number, scaleBase: number): number {
+  if (row.scalable && row.formula) {
+    const raw = evaluateQuantityFormula(row.formula, { livingArea, floorCount });
+    if (raw === null) return row.baseQuantity;
+    return Math.max(0, roundQuantityToStep(raw, row.quantityStep));
+  }
+
+  const scaled = row.baseQuantity * (livingArea / scaleBase);
+  return Math.max(0, roundQuantityToStep(scaled, row.quantityStep));
+}
+
+export function recalculateRowsForArea(
+  rows: RenovationProduct[],
+  livingArea: number,
+  floorCount: number,
+  packageDefaultArea: number,
+  manualQuantities: Record<string, boolean> = {},
+): RenovationProduct[] {
+  if (livingArea <= 0) {
+    return rows.map((row) => ({ ...row, quantity: 0 }));
+  }
+
+  const scaleBase = packageDefaultArea > 0 ? packageDefaultArea : 1;
+
+  return rows.map((row) => {
+    if (manualQuantities[row.id]) return row;
+    return {
+      ...row,
+      quantity: computeAutomaticQuantity(row, livingArea, floorCount, scaleBase),
+    };
+  });
 }
 
 function isValidRow(row: unknown): row is RenovationProduct {
@@ -137,11 +190,15 @@ function hydrateFromStorage(pkg: RenovationPackage): ReadyState {
     const collapsed = saved.collapsed && typeof saved.collapsed === 'object'
       ? { ...initial.collapsed, ...saved.collapsed }
       : initial.collapsed;
+    const manualQuantities = saved.manualQuantities && typeof saved.manualQuantities === 'object'
+      ? saved.manualQuantities
+      : initial.manualQuantities;
 
     return {
       ...initial,
       livingArea,
       rows,
+      manualQuantities,
       collapsed,
     };
   } catch {
@@ -165,13 +222,19 @@ function renovationReducer(
   switch (action.type) {
     case 'setArea': {
       const livingArea = Math.max(0, action.value);
+      const pkg = getCachedRenovationPackage(state.packageId);
+      const manualQuantities = livingArea <= 0 ? {} : state.manualQuantities;
       return {
         ...state,
         livingArea,
-        rows: state.rows.map((row) => ({
-          ...row,
-          quantity: computeQuantity(row, { livingArea, floorCount: state.floorCount }),
-        })),
+        manualQuantities,
+        rows: recalculateRowsForArea(
+          state.rows,
+          livingArea,
+          state.floorCount,
+          pkg?.defaultArea ?? RENOVATION_MIN_AREA,
+          manualQuantities,
+        ),
       };
     }
 
@@ -186,9 +249,13 @@ function renovationReducer(
     case 'updateQuantity':
       return {
         ...state,
+        manualQuantities: {
+          ...state.manualQuantities,
+          [action.id]: true,
+        },
         rows: state.rows.map((row) => (
           row.id === action.id
-            ? { ...row, quantity: clampQuantity(action.value, row.minQuantity) }
+            ? { ...row, quantity: clampLineQuantity(action.value, row.minQuantity) }
             : row
         )),
       };
@@ -198,6 +265,8 @@ function renovationReducer(
       if (index === -1) return state;
 
       const source = state.rows[index];
+      if (!source.canDuplicate) return state;
+
       const duplicate: RenovationProduct = {
         ...source,
         id: `${source.id}-copy-${Date.now()}`,
@@ -213,20 +282,28 @@ function renovationReducer(
           duplicate,
           ...state.rows.slice(index + 1),
         ],
+        manualQuantities: {
+          ...state.manualQuantities,
+          [duplicate.id]: true,
+        },
       };
     }
 
-    case 'removeRow':
+    case 'removeRow': {
+      const manualQuantities = { ...state.manualQuantities };
+      delete manualQuantities[action.id];
       return {
         ...state,
-        rows: state.rows.filter((row) => row.id !== action.id),
+        rows: state.rows.filter((row) => row.id !== action.id || !row.canRemove),
+        manualQuantities,
       };
+    }
 
     case 'replaceRow':
       return {
         ...state,
         rows: state.rows.map((row) => (
-          row.id === action.id
+          row.id === action.id && row.canReplace
             ? {
                 ...row,
                 title: action.alternative.title,
@@ -362,7 +439,7 @@ export function useRenovationCalculator(packageId: string = DEFAULT_PACKAGE_ID) 
     if (state.status !== 'ready') return RENOVATION_MIN_AREA;
     const pkg = getCachedRenovationPackage(state.packageId);
     const pkgDefault = pkg?.defaultArea ?? RENOVATION_MIN_AREA;
-    return Math.max(1, Math.min(state.livingArea, pkgDefault, RENOVATION_MIN_AREA));
+    return Math.max(1, Math.min(pkgDefault, RENOVATION_MIN_AREA));
   }, [state]);
 
   return {

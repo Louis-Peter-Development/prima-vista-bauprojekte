@@ -14,7 +14,7 @@ import '../styles/pages/haus-sanierung.css'; // Reusing layout styles
 export default function GastronomieAusbau() {
   usePageTitle('Gastronomie-Ausbau kalkulieren');
   const [gastronomieType, setGastronomieType] = useState<GastronomieType>('restaurant');
-  const [area, setArea] = useState<number>(200);
+  const [area, setArea] = useState<number>(60);
   const [picked, setPicked] = useState<string[]>([
     'lueftung',
     'kueche',

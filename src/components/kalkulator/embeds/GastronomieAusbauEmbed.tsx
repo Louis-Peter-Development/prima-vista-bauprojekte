@@ -6,7 +6,7 @@ import '../../../styles/pages/haus-sanierung.css';
 
 export default function GastronomieAusbauEmbed() {
   const [gastronomieType, setGastronomieType] = useState<GastronomieType>('restaurant');
-  const [area, setArea] = useState<number>(200);
+  const [area, setArea] = useState<number>(60);
   const [picked, setPicked] = useState<string[]>([
     'lueftung',
     'kueche',

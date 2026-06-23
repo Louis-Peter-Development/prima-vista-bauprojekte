@@ -1,5 +1,5 @@
 export type BlitzFormState = {
-  art: 'haus' | 'wohnung' | 'gastro' | 'buero' | 'anderes';
+  art: 'pakete' | 'gewerke' | 'heizung' | 'anderes';
   gewerke: string[];
   groesse: string;
   starttermin: string;
@@ -10,7 +10,7 @@ export type BlitzFormState = {
 };
 
 export const INITIAL_BLITZ_FORM: BlitzFormState = {
-  art: 'haus',
+  art: 'pakete',
   gewerke: [],
   groesse: '',
   starttermin: '',
@@ -21,23 +21,68 @@ export const INITIAL_BLITZ_FORM: BlitzFormState = {
 };
 
 export const BLITZ_ART_OPTIONS: Array<{ value: BlitzFormState['art']; label: string }> = [
-  { value: 'haus', label: 'Haus' },
-  { value: 'wohnung', label: 'Wohnung' },
-  { value: 'gastro', label: 'Gastronomie' },
-  { value: 'buero', label: 'Büro' },
+  { value: 'pakete', label: 'Komplett-Pakete' },
+  { value: 'gewerke', label: 'Gewerke' },
+  { value: 'heizung', label: 'Heizmethoden' },
   { value: 'anderes', label: 'Anderes' },
 ];
 
-export const BLITZ_GEWERKE_OPTIONS = [
-  'Komplettabriss / Rohbau',
-  'Bad & Sanitär',
-  'Küche',
-  'Böden & Parkett',
-  'Wände & Maler',
-  'Elektrik',
-  'Fassade / Dach',
-  'Heizung / Energie',
+export type BlitzServiceGroup = {
+  key: string;
+  label: string;
+  options: string[];
+};
+
+export const BLITZ_SERVICE_GROUPS: BlitzServiceGroup[] = [
+  {
+    key: 'pakete',
+    label: 'Komplett-Pakete',
+    options: [
+      'Haus-Sanierung',
+      'Wohnung-Sanierung',
+      'Gastronomie-Ausbau',
+      'Büro-Ausbau',
+    ],
+  },
+  {
+    key: 'gewerke',
+    label: 'Gewerke',
+    options: [
+      'Bäder & Sanitär',
+      'Küchen & Möbelbau',
+      'Böden & Beläge',
+      'Elektroinstallation',
+      'Sanitärinstallation',
+      'Trockenbau',
+      'Maler & Lackierer',
+      'Fassadensanierung',
+      'Dachsanierung',
+      'Abdichtung & Keller',
+      'Treppen & Geländer',
+      'Garten & Außenanlagen',
+      'Barrierefreiheit',
+      'Fenstertechnik',
+      'Rohbau & Abbruch',
+      'Türen & Zargen',
+      'Zäune & Tore',
+    ],
+  },
+  {
+    key: 'heizung',
+    label: 'Heizmethoden',
+    options: [
+      'Heizkörper',
+      'Heizstränge',
+      'Fußboden-Heizung',
+      'Luft-Wärmepumpe',
+      'Gas-Heizung',
+      'Pelletofen',
+      'Saunaofen',
+    ],
+  },
 ];
+
+export const BLITZ_GEWERKE_OPTIONS = BLITZ_SERVICE_GROUPS.flatMap((group) => group.options);
 
 /* ----- Handoff from Kalkulator → Blitz-Angebot ----- */
 
@@ -65,6 +110,7 @@ export type KalkulatorPick = {
 export type KalkulatorHandoff = {
   kind: BlitzFormState['art'];
   kindLabel: string;          // e.g. "2-Zimmer-Wohnung", "Restaurant"
+  scopeLabel?: string;
   area: number;
   picks: KalkulatorPick[];
   totalMin: number;
@@ -122,44 +168,95 @@ export function inferTradeFromSku(sku: string | undefined): { key: string; label
   return { key: prefix.toLowerCase(), label };
 }
 
-/** Map kalkulator gewerke keys → BLITZ_GEWERKE_OPTIONS labels. */
+/** Map kalkulator gewerke/trade keys → BLITZ_GEWERKE_OPTIONS labels. */
 const KALKULATOR_TO_BLITZ_GEWERKE: Record<string, string> = {
+  // Package-level choices
+  haus: 'Haus-Sanierung',
+  wohnung: 'Wohnung-Sanierung',
+  gastronomie: 'Gastronomie-Ausbau',
+  buero: 'Büro-Ausbau',
+
   // Haus / Wohnung
-  bad: 'Bad & Sanitär',
-  sanitaer: 'Bad & Sanitär',
-  sanitaerstraenge: 'Bad & Sanitär',
-  wasser: 'Bad & Sanitär',
-  kueche: 'Küche',
-  boeden: 'Böden & Parkett',
-  maler: 'Wände & Maler',
-  trockenbau: 'Wände & Maler',
-  elektro: 'Elektrik',
-  fassade: 'Fassade / Dach',
-  dach: 'Fassade / Dach',
-  fenster: 'Fassade / Dach',
-  rohbau: 'Komplettabriss / Rohbau',
-  abdichtung: 'Komplettabriss / Rohbau',
-  abbruch: 'Komplettabriss / Rohbau',
-  heizflaechen: 'Heizung / Energie',
-  thermen: 'Heizung / Energie',
+  bad: 'Bäder & Sanitär',
+  sanitaer: 'Sanitärinstallation',
+  sanitaerstraenge: 'Sanitärinstallation',
+  wasser: 'Sanitärinstallation',
+  kueche: 'Küchen & Möbelbau',
+  teekueche: 'Küchen & Möbelbau',
+  moebel: 'Küchen & Möbelbau',
+  boeden: 'Böden & Beläge',
+  boden: 'Böden & Beläge',
+  maler: 'Maler & Lackierer',
+  trockenbau: 'Trockenbau',
+  akustik: 'Trockenbau',
+  elektro: 'Elektroinstallation',
+  netzwerk: 'Elektroinstallation',
+  licht: 'Elektroinstallation',
+  brandschutz: 'Elektroinstallation',
+  fassade: 'Fassadensanierung',
+  dach: 'Dachsanierung',
+  fenster: 'Fenstertechnik',
+  tueren: 'Türen & Zargen',
+  rohbau: 'Rohbau & Abbruch',
+  abdichtung: 'Abdichtung & Keller',
+  abbruch: 'Rohbau & Abbruch',
+  heizflaechen: 'Heizkörper',
+  thermen: 'Luft-Wärmepumpe',
+  treppen: 'Treppen & Geländer',
+  garten: 'Garten & Außenanlagen',
+  barrierefreiheit: 'Barrierefreiheit',
+  zaeune: 'Zäune & Tore',
+  zaun: 'Zäune & Tore',
+
+  // SKU-derived trade keys
+  bade: 'Bäder & Sanitär',
+  gawc: 'Bäder & Sanitär',
+  bode: 'Böden & Beläge',
+  elek: 'Elektroinstallation',
+  wass: 'Sanitärinstallation',
+  kuec: 'Küchen & Möbelbau',
+  male: 'Maler & Lackierer',
+  troc: 'Trockenbau',
+  fass: 'Fassadensanierung',
+  fens: 'Fenstertechnik',
+  tuer: 'Türen & Zargen',
+  rohb: 'Rohbau & Abbruch',
+  abbd: 'Abdichtung & Keller',
+  gart: 'Garten & Außenanlagen',
+  trep: 'Treppen & Geländer',
+  tr: 'Treppen & Geländer',
+  pv: 'Luft-Wärmepumpe',
+  carp: 'Küchen & Möbelbau',
   // Gastronomie
-  lueftung: 'Heizung / Energie',
-  kuehlung: 'Heizung / Energie',
+  lueftung: 'Luft-Wärmepumpe',
+  kuehlung: 'Luft-Wärmepumpe',
   // Büro
-  akustik: 'Wände & Maler',
-  netzwerk: 'Elektrik',
-  licht: 'Elektrik',
-  teekueche: 'Küche',
-  brandschutz: 'Elektrik',
-  moebel: 'Küche',
-  klima: 'Heizung / Energie',
+  klima: 'Luft-Wärmepumpe',
 };
 
-/** Pick the unique set of Blitz-gewerke labels matching the kalkulator picks. */
-export function mapKalkulatorPicksToBlitzGewerke(picks: KalkulatorPick[]): string[] {
+function normalizeChoiceLabel(value: string): string {
+  return value.toLocaleLowerCase('de-DE').replace(/[^a-zäöüß0-9]+/g, '');
+}
+
+/** Pick the unique set of Blitz service labels matching the kalkulator picks. */
+export function mapKalkulatorPicksToBlitzGewerke(picks: KalkulatorPick[], kindLabel?: string): string[] {
   const set = new Set<string>();
+
+  if (kindLabel) {
+    const normalizedKind = normalizeChoiceLabel(kindLabel);
+    const exactKind = BLITZ_GEWERKE_OPTIONS.find((option) => {
+      const normalizedOption = normalizeChoiceLabel(option);
+      return normalizedOption === normalizedKind
+        || normalizedOption.includes(normalizedKind)
+        || normalizedKind.includes(normalizedOption);
+    });
+    if (exactKind) return [exactKind];
+  }
+
   for (const pick of picks) {
-    const mapped = KALKULATOR_TO_BLITZ_GEWERKE[pick.key];
+    const mapped = KALKULATOR_TO_BLITZ_GEWERKE[pick.key] ?? (
+      pick.tradeKey ? KALKULATOR_TO_BLITZ_GEWERKE[pick.tradeKey] : undefined
+    );
     if (mapped) set.add(mapped);
   }
   return Array.from(set);

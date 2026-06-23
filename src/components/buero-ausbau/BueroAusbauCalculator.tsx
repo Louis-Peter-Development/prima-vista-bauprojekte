@@ -23,7 +23,7 @@ type Props = {
 
 export default function BueroAusbauCalculator({ embedded }: Props) {
   const [bueroType, setBueroType] = useState<BueroType>('klassisch');
-  const [area, setArea] = useState<number>(150);
+  const [area, setArea] = useState<number>(50);
   const [picked, setPicked] = useState<string[]>(DEFAULT_PICKED);
 
   function toggle(key: string) {

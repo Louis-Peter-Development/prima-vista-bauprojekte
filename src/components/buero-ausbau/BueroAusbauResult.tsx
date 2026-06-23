@@ -28,7 +28,7 @@ export default function BueroAusbauResult({
   const pickedGewerke = BUERO_GEWERKE.filter((gewerk) => picked.includes(gewerk.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
-        kind: 'buero',
+        kind: 'pakete',
         kindLabel,
         area,
         picks: pickedGewerke.map((gewerk) => ({

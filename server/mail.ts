@@ -20,6 +20,14 @@ function getResend(): Resend {
   return resendClient;
 }
 
+type ResendSendResult = Awaited<ReturnType<Resend['emails']['send']>>;
+
+function ensureEmailSent(result: ResendSendResult, context: string): void {
+  if (!result.error) return;
+  const detail = `${result.error.name}: ${result.error.message}`;
+  throw new Error(`Resend ${context} email failed (${detail})`);
+}
+
 const COLORS = {
   ink: '#1a1a1a',
   bg: '#f6f3ef',           // cream
@@ -51,9 +59,46 @@ export type BlitzPayload = {
   starterminLabel: string;
   gewerke: string[];
   msg: string;
+  kalkulator?: KalkulatorHandoff | null;
   name: string;
   email: string;
   tel: string;
+};
+
+export type KalkulatorRow = {
+  label: string;
+  quantity: number;
+  unit: string;
+  unitPrice: number;
+  subtotal: number;
+};
+
+export type KalkulatorPick = {
+  key: string;
+  label: string;
+  subtotal: number;
+  tradeKey?: string;
+  tradeLabel?: string;
+  rows?: KalkulatorRow[];
+};
+
+export type KalkulatorHandoff = {
+  kind: string;
+  kindLabel: string;
+  scopeLabel?: string;
+  area: number;
+  picks: KalkulatorPick[];
+  totalMin: number;
+  totalMax: number;
+  totalMid: number;
+  perM2: number;
+};
+
+type KalkulatorGroup = {
+  key: string;
+  label: string;
+  subtotal: number;
+  items: KalkulatorPick[];
 };
 
 // ----- Helpers -----
@@ -114,6 +159,209 @@ function row(label: string, value: string | undefined | null): string {
 
 function bodyParagraph(text: string): string {
   return `<p style="margin:0 0 16px 0;font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:1.6;color:${COLORS.ink};">${nl2br(text)}</p>`;
+}
+
+function sectionTitle(label: string, marginTop = 32): string {
+  return `<h2 style="margin:${marginTop}px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(label)}</h2>`;
+}
+
+function formatEuro(value: number): string {
+  if (!Number.isFinite(value)) return '—';
+  return value.toLocaleString('de-DE', {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+}
+
+function formatQuantity(quantity: number, unit: string): string {
+  if (!Number.isFinite(quantity)) return '—';
+  const amount = Number.isInteger(quantity)
+    ? quantity.toLocaleString('de-DE')
+    : quantity.toLocaleString('de-DE', { maximumFractionDigits: 2 });
+  return `${amount} ${unit || 'Stk.'}`.trim();
+}
+
+function cleanCalculatorLabel(label: string): string {
+  return label
+    .replace(/[🛠🔧]/gu, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s+\|/g, ' |')
+    .replace(/\|\s+/g, '| ')
+    .trim();
+}
+
+function blitzScopeLabel(p: BlitzPayload): string {
+  return p.art === 'pakete' ? 'Fläche' : 'Umfang';
+}
+
+function blitzScopeValue(p: BlitzPayload): string {
+  const value = p.groesse || 'Noch offen';
+  return p.art === 'pakete' ? `${value} m²` : value;
+}
+
+function calculatorScopeLabel(p: BlitzPayload): string {
+  return p.kalkulator?.scopeLabel || (p.art === 'pakete' ? 'Fläche' : 'Fläche / Umfang');
+}
+
+function calculatorScopeValue(p: BlitzPayload, handoff: KalkulatorHandoff): string {
+  if (!Number.isFinite(handoff.area)) return blitzScopeValue(p);
+  const label = calculatorScopeLabel(p).toLocaleLowerCase('de-DE');
+  const amount = handoff.area.toLocaleString('de-DE');
+  if (/laufmeter|zaunlänge/.test(label)) return `${amount} m`;
+  if (/qm|m²|fläche|wohnfläche|dachfläche|fassadenfläche/.test(label)) return `${amount} m²`;
+  return amount;
+}
+
+function groupCalculatorPicks(picks: KalkulatorPick[]): KalkulatorGroup[] {
+  const groups: KalkulatorGroup[] = [];
+  const byKey = new Map<string, KalkulatorGroup>();
+  let lastGroup: KalkulatorGroup | null = null;
+
+  function push(group: KalkulatorGroup, pick: KalkulatorPick) {
+    group.items.push(pick);
+    group.subtotal += pick.subtotal;
+    lastGroup = group;
+  }
+
+  for (const pick of picks) {
+    if (pick.tradeKey) {
+      let group = byKey.get(pick.tradeKey);
+      if (!group) {
+        group = {
+          key: pick.tradeKey,
+          label: pick.tradeLabel ?? pick.label,
+          subtotal: 0,
+          items: [],
+        };
+        byKey.set(pick.tradeKey, group);
+        groups.push(group);
+      }
+      push(group, pick);
+    } else if (lastGroup) {
+      push(lastGroup, pick);
+    } else {
+      const group: KalkulatorGroup = {
+        key: `_${pick.key}`,
+        label: pick.label,
+        subtotal: 0,
+        items: [],
+      };
+      groups.push(group);
+      push(group, pick);
+    }
+  }
+
+  return groups;
+}
+
+function calculatorSummaryHtml(p: BlitzPayload, handoff: KalkulatorHandoff): string {
+  const summaryRows = [
+    row('Objektart', handoff.kindLabel || p.artLabel),
+    row(calculatorScopeLabel(p), calculatorScopeValue(p, handoff)),
+    row('Vorab-Schätzung', `${formatEuro(handoff.totalMin)} – ${formatEuro(handoff.totalMax)}`),
+    row('Mittelwert', formatEuro(handoff.totalMid)),
+    handoff.perM2 > 0 ? row('Richtwert', `${formatEuro(handoff.perM2)} / m²`) : '',
+  ].join('');
+
+  return `
+<div style="margin:24px 0;padding:18px 20px;background:${COLORS.bg};border-left:3px solid ${COLORS.copper};">
+  <div style="font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:${COLORS.copper};margin-bottom:10px;">Aus dem Kalkulator übernommen</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${summaryRows}</table>
+</div>`;
+}
+
+function calculatorDetailsHtml(
+  p: BlitzPayload,
+  options: { includeRows: boolean; heading: string },
+): string {
+  const handoff = p.kalkulator;
+  if (!handoff) return '';
+
+  const groups = groupCalculatorPicks(handoff.picks);
+  const details = groups.map((group) => {
+    const groupHasNested = group.items.length > 1 || group.items[0]?.label !== group.label;
+    const items = group.items.map((item) => {
+      const itemRows = options.includeRows && item.rows && item.rows.length > 0
+        ? `<tr><td colspan="3" style="padding:0 0 10px 0;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid ${COLORS.rule};">
+            <tr>
+              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};">Position</th>
+              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:84px;">Menge</th>
+              <th align="right" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:90px;">Summe</th>
+            </tr>
+            ${item.rows.map((line) => `<tr>
+              <td style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(line.label))}</td>
+              <td style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit))}</td>
+              <td align="right" style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal))}</td>
+            </tr>`).join('')}
+          </table>
+        </td></tr>`
+        : '';
+
+      if (!groupHasNested && !options.includeRows) return '';
+
+      return `<tr>
+        <td style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:13px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(item.label))}</td>
+        <td style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};">${item.rows?.length ? `${item.rows.length} Positionen` : ''}</td>
+        <td align="right" style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:13px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(item.subtotal))}</td>
+      </tr>${itemRows}`;
+    }).join('');
+
+    const simpleRows = !groupHasNested && options.includeRows && group.items[0]?.rows
+      ? group.items[0].rows.map((line) => `<tr>
+          <td style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(line.label))}</td>
+          <td style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit))}</td>
+          <td align="right" style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal))}</td>
+        </tr>`).join('')
+      : items;
+
+    return `
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
+  <tr>
+    <td style="padding:12px 0;border-bottom:2px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;color:${COLORS.ink};">${escape(cleanCalculatorLabel(group.label))}</td>
+    <td align="right" colspan="2" style="padding:12px 0;border-bottom:2px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(group.subtotal))}</td>
+  </tr>
+  ${simpleRows}
+</table>`;
+  }).join('');
+
+  return `
+${sectionTitle(options.heading)}
+${calculatorSummaryHtml(p, handoff)}
+${details}`;
+}
+
+function calculatorDetailsText(p: BlitzPayload, options: { includeRows: boolean; heading: string }): string {
+  const handoff = p.kalkulator;
+  if (!handoff) return '';
+  const groups = groupCalculatorPicks(handoff.picks);
+  const lines = [
+    options.heading,
+    `Objektart: ${handoff.kindLabel || p.artLabel}`,
+    `${calculatorScopeLabel(p)}: ${calculatorScopeValue(p, handoff)}`,
+    `Vorab-Schätzung: ${formatEuro(handoff.totalMin)} – ${formatEuro(handoff.totalMax)}`,
+    `Mittelwert: ${formatEuro(handoff.totalMid)}`,
+    handoff.perM2 > 0 ? `Richtwert: ${formatEuro(handoff.perM2)} / m²` : '',
+    '',
+    'Gewählte Leistungen:',
+  ].filter(Boolean);
+
+  for (const group of groups) {
+    lines.push(`- ${cleanCalculatorLabel(group.label)}: ${formatEuro(group.subtotal)}`);
+    const groupHasNested = group.items.length > 1 || group.items[0]?.label !== group.label;
+    for (const item of group.items) {
+      if (groupHasNested) lines.push(`  - ${cleanCalculatorLabel(item.label)}: ${formatEuro(item.subtotal)}`);
+      if (options.includeRows && item.rows) {
+        for (const itemRow of item.rows) {
+          lines.push(`    · ${cleanCalculatorLabel(itemRow.label)} (${formatQuantity(itemRow.quantity, itemRow.unit)}): ${formatEuro(itemRow.subtotal)}`);
+        }
+      }
+    }
+  }
+
+  return lines.join('\n');
 }
 
 function steps(items: string[]): string {
@@ -218,15 +466,20 @@ function blitzOfficeHtml(p: BlitzPayload): string {
     row('E-Mail', p.email),
     row('Telefon', p.tel || ''),
     row('Objektart', p.artLabel),
-    row('Fläche', `${p.groesse} m²`),
+    row(blitzScopeLabel(p), blitzScopeValue(p)),
     row('Baubeginn', p.starterminLabel),
     row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
   ].join('');
+  const calculatorBlock = calculatorDetailsHtml(p, {
+    includeRows: true,
+    heading: 'Übernommene Kalkulation',
+  });
   const msgBlock = p.msg
-    ? `<h2 style="margin:32px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Besonderheiten / Kurzfassung</h2>${bodyParagraph(p.msg)}`
+    ? `${sectionTitle('Besonderheiten / Kundennotiz')}${bodyParagraph(p.msg)}`
     : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
+${calculatorBlock}
 ${msgBlock}
 <p style="margin:24px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.5;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">
 Antworten Sie innerhalb von 24 Stunden mit einer ersten Kostenschätzung. Reply geht direkt an ${escape(p.email)}.
@@ -242,10 +495,11 @@ function blitzOfficeText(p: BlitzPayload): string {
     `E-Mail: ${p.email}`,
     p.tel ? `Telefon: ${p.tel}` : '',
     `Objektart: ${p.artLabel}`,
-    `Fläche: ${p.groesse} m²`,
+    `${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
     `Baubeginn: ${p.starterminLabel}`,
     `Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
-    p.msg ? `\nBesonderheiten / Kurzfassung:\n${p.msg}` : '',
+    p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: true, heading: 'Übernommene Kalkulation' })}` : '',
+    p.msg ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
     ``,
     `— Antwort innerhalb von 24 Stunden zugesagt.`,
   ]
@@ -259,19 +513,28 @@ function blitzConfirmHtml(p: BlitzPayload): string {
   const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
   const echo = [
     row('Objektart', p.artLabel),
-    row('Fläche', `${p.groesse} m²`),
+    row(blitzScopeLabel(p), blitzScopeValue(p)),
     row('Baubeginn', p.starterminLabel),
     row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
   ].join('');
+  const calculatorBlock = calculatorDetailsHtml(p, {
+    includeRows: false,
+    heading: 'Ihre übernommene Kalkulation',
+  });
+  const noteBlock = p.msg
+    ? `${sectionTitle('Ihre Notiz')}${bodyParagraph(p.msg)}`
+    : '';
   const body = `
 ${bodyParagraph(
   `Ihre Blitz-Anfrage ist bei uns eingegangen. Wir werten Ihr Projekt aus und stellen Ihnen innerhalb von 24 Stunden eine erste Kostenschätzung zu — per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
 )}
 <h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Ihre Angaben</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${echo}</table>
+${calculatorBlock}
+${noteBlock}
 <h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">So geht es weiter</h2>
 ${steps([
-  'Bauleitung prüft Fläche, Standort und gewünschte Gewerke.',
+  'Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.',
   'Sie erhalten eine schriftliche Vorab-Kostenschätzung.',
   'Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.',
 ])}
@@ -288,12 +551,14 @@ function blitzConfirmText(p: BlitzPayload): string {
     ``,
     `Ihre Angaben:`,
     `· Objektart: ${p.artLabel}`,
-    `· Fläche: ${p.groesse} m²`,
+    `· ${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
     `· Baubeginn: ${p.starterminLabel}`,
     `· Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
+    p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: false, heading: 'Ihre übernommene Kalkulation' })}` : '',
+    p.msg ? `\nIhre Notiz:\n${p.msg}` : '',
     ``,
     `So geht es weiter:`,
-    `01  Bauleitung prüft Fläche, Standort und gewünschte Gewerke.`,
+    `01  Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.`,
     `02  Sie erhalten eine schriftliche Vorab-Kostenschätzung.`,
     `03  Auf Wunsch verfeinern wir das Angebot vor Ort.`,
     ``,
@@ -308,41 +573,41 @@ function blitzConfirmText(p: BlitzPayload): string {
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
   const resend = getResend();
   // Office notification — reply-to set to customer so the team can reply directly.
-  await resend.emails.send({
+  ensureEmailSent(await resend.emails.send({
     from: FROM,
     to: TO_OFFICE,
     replyTo: payload.email,
     subject: `Neue Anfrage · ${payload.vorname} ${payload.nachname}`,
     html: kontaktOfficeHtml(payload),
     text: kontaktOfficeText(payload),
-  });
+  }), 'Kontakt office');
   // Customer confirmation — reply-to set to office so the customer can write back.
-  await resend.emails.send({
+  ensureEmailSent(await resend.emails.send({
     from: FROM,
     to: payload.email,
     replyTo: TO_OFFICE,
     subject: `Vielen Dank für Ihre Anfrage — Prima Vista Bauprojekte`,
     html: kontaktConfirmHtml(payload),
     text: kontaktConfirmText(payload),
-  });
+  }), 'Kontakt confirmation');
 }
 
 export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
   const resend = getResend();
-  await resend.emails.send({
+  ensureEmailSent(await resend.emails.send({
     from: FROM,
     to: TO_OFFICE,
     replyTo: payload.email,
-    subject: `Blitz-Anfrage · ${payload.name} · ${payload.groesse} m² ${payload.artLabel}`,
+    subject: `Blitz-Anfrage · ${payload.name} · ${blitzScopeValue(payload)} ${payload.artLabel}`,
     html: blitzOfficeHtml(payload),
     text: blitzOfficeText(payload),
-  });
-  await resend.emails.send({
+  }), 'Blitz office');
+  ensureEmailSent(await resend.emails.send({
     from: FROM,
     to: payload.email,
     replyTo: TO_OFFICE,
     subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
     html: blitzConfirmHtml(payload),
     text: blitzConfirmText(payload),
-  });
+  }), 'Blitz confirmation');
 }

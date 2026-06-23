@@ -27,7 +27,7 @@ type Props = {
 
 export default function HausSanierungConfigurator({ embedded }: Props) {
   const [houseType, setHouseType] = useState<HouseType>(DETAILED_CALCULATOR_TYPES[0]);
-  const [area, setArea] = useState<number>(100);
+  const [area, setArea] = useState<number>(10);
   const [picked, setPicked] = useState<string[]>(DEFAULT_PICKED);
 
   const selectedType = HOUSE_TYPES.find((type) => type.value === houseType);

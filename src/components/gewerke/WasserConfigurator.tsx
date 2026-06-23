@@ -3,7 +3,7 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import WasserBoard, { type WasserType } from './WasserBoard';
 
 const DEFAULT_SCOPE: Record<WasserType, number> = {
-  wasserAlles: 8,
+  wasserAlles: 4,
   wasserBadezimmer: 1,
   wasserGaesteWc: 1,
   wasserKueche: 1,

@@ -14,10 +14,10 @@ export default function WohnungSanierungConfigurator({ embedded }: Props) {
   const [wohnungType, setWohnungType] = useState<WohnungType>('2zi');
   
   const defaultAreas: Record<WohnungType, number> = {
-    'studio': 50,
-    '2zi': 100,
-    '3zi': 150,
-    'maisonette': 150
+    'studio': 10,
+    '2zi': 10,
+    '3zi': 10,
+    'maisonette': 10
   };
   
   const [area, setArea] = useState<number>(defaultAreas['2zi']);
@@ -26,8 +26,7 @@ export default function WohnungSanierungConfigurator({ embedded }: Props) {
 
   function changeWohnungType(value: WohnungType) {
     setWohnungType(value);
-    // Automatically adjust the area to match the typical size of the new type
-    setArea(defaultAreas[value] || 100);
+    setArea(defaultAreas[value] || defaultAreas['2zi']);
   }
 
   return (

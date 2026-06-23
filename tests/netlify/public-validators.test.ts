@@ -24,12 +24,81 @@ describe('public endpoint validators', () => {
       name: 'Ada Lovelace',
       email: 'ada@example.com',
       tel: '+49 69 123',
+      art: 'pakete',
       groesse: '80 qm',
       starttermin: 'sofort',
       gewerke: ['bad', 'boden'],
     });
 
     expect('error' in result).toBe(false);
+  });
+
+  it('accepts and sanitizes structured calculator handoffs for quick offers', () => {
+    const result = validateBlitzPayload({
+      name: 'Ada Lovelace',
+      email: 'ada@example.com',
+      tel: '+49 69 123',
+      art: 'gewerke',
+      groesse: '6',
+      starttermin: 'sofort',
+      gewerke: ['Bäder & Sanitär'],
+      msg: 'Bitte mit rutschfesten Fliesen.',
+      kalkulator: {
+        kind: 'gewerke',
+        kindLabel: 'Bad mit Wanne',
+        area: 6,
+        totalMin: 14000,
+        totalMax: 18000,
+        totalMid: 16000,
+        perM2: 2596,
+        picks: [{
+          key: 'wasser',
+          label: 'Wasserinstallation & Sanitär',
+          subtotal: 3000,
+          tradeKey: 'wass',
+          tradeLabel: 'Wasserinstallation & Sanitär',
+          rows: [{
+            label: 'Vorsatz-Element | Montage',
+            quantity: 2,
+            unit: 'Stk',
+            unitPrice: 279,
+            subtotal: 558,
+          }],
+        }],
+      },
+    });
+
+    expect('error' in result).toBe(false);
+    expect(result).toMatchObject({
+      kalkulator: {
+        kindLabel: 'Bad mit Wanne',
+        picks: [{
+          label: 'Wasserinstallation & Sanitär',
+          rows: [{ label: 'Vorsatz-Element | Montage', quantity: 2 }],
+        }],
+      },
+    });
+  });
+
+  it('allows an open scope for quick-offer Gewerke but still requires package area', () => {
+    const gewerke = validateBlitzPayload({
+      name: 'Ada Lovelace',
+      email: 'ada@example.com',
+      tel: '+49 69 123',
+      art: 'gewerke',
+      starttermin: 'sofort',
+      gewerke: ['Bäder & Sanitär', 'Küchen & Möbelbau'],
+    });
+
+    expect(gewerke).toMatchObject({ groesse: 'Noch offen' });
+
+    expect(validateBlitzPayload({
+      name: 'Ada Lovelace',
+      email: 'ada@example.com',
+      tel: '+49 69 123',
+      art: 'pakete',
+      starttermin: 'sofort',
+    })).toEqual({ error: 'groesse is required' });
   });
 
   it('sanitizes comments and rejects empty/spam values', () => {

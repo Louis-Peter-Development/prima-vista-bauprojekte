@@ -307,6 +307,39 @@
   gap: 12px;
   margin-bottom: 10px;
 }
+.blitz-summary__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+.blitz-summary__total span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  color: var(--pv-text-on-light-muted);
+}
+.blitz-summary__total small {
+  font-family: var(--pv-font-display);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pv-copper);
+}
+.blitz-summary__total strong {
+  font-family: var(--pv-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--pv-ink);
+  white-space: nowrap;
+}
 .blitz-summary__count {
   font-family: var(--pv-font-body);
   font-size: 11px;
@@ -463,6 +496,12 @@
 }
 :root[data-theme='dark'] .blitz-summary__head {
   border-bottom-color: rgba(241, 233, 226, 0.12);
+}
+:root[data-theme='dark'] .blitz-summary__total {
+  border-bottom-color: rgba(241, 233, 226, 0.12);
+}
+:root[data-theme='dark'] .blitz-summary__total strong {
+  color: var(--pv-paper);
 }
 :root[data-theme='dark'] .blitz-summary__group {
   border-bottom-color: rgba(241, 233, 226, 0.10);
@@ -646,6 +685,45 @@
   background: var(--pv-ink);
   color: var(--pv-bone);
   border-color: var(--pv-ink);
+}
+
+.form-choice-groups {
+  display: grid;
+  gap: 18px;
+}
+
+.form-choice-group {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid rgba(26, 26, 26, .12);
+}
+
+.form-choice-group legend {
+  padding: 14px 12px 10px 0;
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-copper);
+}
+
+.form-choice-group .form-chips {
+  margin-bottom: 0;
+}
+
+.form-choice-group .form-chips label {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+}
+
+.form-choice-note {
+  max-width: 560px;
+  margin: 4px 0 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--pv-text-on-light-muted);
 }
 
 .form-check {

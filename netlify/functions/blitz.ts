@@ -12,6 +12,70 @@ function asStringArray(v: unknown): string[] {
   return Array.isArray(v) ? v.filter((x): x is string => typeof x === 'string') : [];
 }
 
+function asNumber(v: unknown): number {
+  if (typeof v === 'number' && Number.isFinite(v)) return v;
+  if (typeof v === 'string' && v.trim()) {
+    const value = Number(v.replace(',', '.'));
+    return Number.isFinite(value) ? value : 0;
+  }
+  return 0;
+}
+
+function asObject(v: unknown): Record<string, unknown> | null {
+  return v && typeof v === 'object' && !Array.isArray(v)
+    ? v as Record<string, unknown>
+    : null;
+}
+
+function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
+  const source = asObject(v);
+  if (!source) return undefined;
+
+  const picks = Array.isArray(source.picks)
+    ? source.picks.slice(0, 80).map((pickValue) => {
+      const pick = asObject(pickValue);
+      if (!pick) return null;
+      const rows = Array.isArray(pick.rows)
+        ? pick.rows.slice(0, 400).map((rowValue) => {
+          const item = asObject(rowValue);
+          if (!item) return null;
+          return {
+            label: asString(item.label),
+            quantity: asNumber(item.quantity),
+            unit: asString(item.unit),
+            unitPrice: asNumber(item.unitPrice),
+            subtotal: asNumber(item.subtotal),
+          };
+        }).filter((row): row is NonNullable<typeof row> => Boolean(row && row.label))
+        : undefined;
+
+      return {
+        key: asString(pick.key),
+        label: asString(pick.label),
+        subtotal: asNumber(pick.subtotal),
+        tradeKey: asString(pick.tradeKey) || undefined,
+        tradeLabel: asString(pick.tradeLabel) || undefined,
+        rows,
+      };
+    }).filter((pick): pick is NonNullable<typeof pick> => Boolean(pick && pick.label))
+    : [];
+
+  const kindLabel = asString(source.kindLabel);
+  if (!kindLabel && picks.length === 0) return undefined;
+
+  return {
+    kind: asString(source.kind),
+    kindLabel,
+    scopeLabel: asString(source.scopeLabel) || undefined,
+    area: asNumber(source.area),
+    picks,
+    totalMin: asNumber(source.totalMin),
+    totalMax: asNumber(source.totalMax),
+    totalMid: asNumber(source.totalMid),
+    perM2: asNumber(source.perM2),
+  };
+}
+
 export function validateBlitzPayload(body: unknown): BlitzPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
   if (hasSpamTrap(body)) return { error: 'Spam detected' };
@@ -24,6 +88,7 @@ export function validateBlitzPayload(body: unknown): BlitzPayload | { error: str
     starterminLabel: asString(b.starterminLabel) || asString(b.starttermin),
     gewerke: asStringArray(b.gewerke),
     msg: asString(b.msg),
+    kalkulator: sanitizeKalkulator(b.kalkulator),
     name: asString(b.name),
     email: asString(b.email),
     tel: asString(b.tel),
@@ -31,7 +96,9 @@ export function validateBlitzPayload(body: unknown): BlitzPayload | { error: str
   if (!payload.name) return { error: 'name is required' };
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };
   if (!payload.tel) return { error: 'tel is required' };
-  if (!payload.groesse) return { error: 'groesse is required' };
+  const optionalScope = ['gewerke', 'heizung', 'anderes'].includes(payload.art);
+  if (!payload.groesse && !optionalScope) return { error: 'groesse is required' };
+  if (!payload.groesse) payload.groesse = 'Noch offen';
   if (!payload.starttermin) return { error: 'starttermin is required' };
   return payload;
 }

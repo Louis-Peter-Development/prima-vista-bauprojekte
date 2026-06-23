@@ -28,7 +28,7 @@ export default function GastronomieAusbauResult({
   const pickedGewerke = GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
-        kind: 'gastro',
+        kind: 'pakete',
         kindLabel,
         area,
         picks: pickedGewerke.map((g) => ({

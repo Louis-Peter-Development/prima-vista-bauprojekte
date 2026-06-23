@@ -3,12 +3,12 @@ import RenovationCalculator from '../renovation-calculator/RenovationCalculator'
 import TrockenbauBoard, { type TrockenbauType } from './TrockenbauBoard';
 
 const DEFAULT_SCOPE: Record<TrockenbauType, number> = {
-  trockenbauAlles: 100,
-  trockenbauDecken: 100,
-  trockenbauWaendeStellen: 100,
-  trockenbauWaendeVerkleiden: 100,
-  trockenbauEstrich: 100,
-  trockenbauDachschraegen: 100
+  trockenbauAlles: 20,
+  trockenbauDecken: 20,
+  trockenbauWaendeStellen: 20,
+  trockenbauWaendeVerkleiden: 20,
+  trockenbauEstrich: 20,
+  trockenbauDachschraegen: 20
 };
 
 const LABELS: Record<TrockenbauType, string> = {

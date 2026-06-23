@@ -4,7 +4,7 @@ import BoedenBoard, { type BoedenGridType } from './BoedenBoard';
 
 export default function BoedenConfigurator() {
   const [activeType, setActiveType] = useState<BoedenGridType>('boedenParkettVerlegung');
-  const [area, setArea] = useState<number>(45);
+  const [area, setArea] = useState<number>(20);
 
   const getLabel = (type: BoedenGridType) => {
     switch (type) {
