@@ -572,26 +572,10 @@ function blitzConfirmText(p: BlitzPayload): string {
 function calculatorPdfHtml(p: CalculatorPdfPayload): string {
   const body = `
 ${bodyParagraph(
-  `Anbei erhalten Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}. Die Werte sind eine Vorab-Schätzung auf Basis Ihrer aktuellen Auswahl.`,
+  `Im Anhang finden Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}. Alle Summen, Positionen und Hinweise sind dort kompakt zusammengefasst.`,
 )}
-${calculatorDetailsHtml({
-  art: p.kalkulator.kind,
-  artLabel: p.kalkulator.kindLabel,
-  groesse: String(p.kalkulator.area),
-  starttermin: '',
-  starterminLabel: '',
-  gewerke: [],
-  msg: '',
-  kalkulator: p.kalkulator,
-  name: 'PDF-Empfänger',
-  email: p.email,
-  tel: '',
-}, {
-  includeRows: false,
-  heading: 'Zusammenfassung',
-})}
 ${steps([
-  'Sie können die PDF intern weiterleiten oder für Ihre Projektplanung speichern.',
+  'Öffnen Sie die PDF im Anhang für die vollständige Aufstellung.',
   'Für ein verbindliches Angebot prüfen wir Aufmaß, Bestand und Materialauswahl.',
   'Antworten Sie direkt auf diese E-Mail, wenn wir die Schätzung verfeinern sollen.',
 ])}
@@ -604,25 +588,13 @@ function calculatorPdfText(p: CalculatorPdfPayload): string {
   return [
     `Ihre PDF-Aufstellung ist da.`,
     ``,
-    `Anbei erhalten Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}.`,
-    `Die Werte sind eine Vorab-Schätzung auf Basis Ihrer aktuellen Auswahl.`,
+    `Im Anhang finden Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}.`,
+    `Alle Summen, Positionen und Hinweise sind dort kompakt zusammengefasst.`,
     ``,
-    calculatorDetailsText({
-      art: p.kalkulator.kind,
-      artLabel: p.kalkulator.kindLabel,
-      groesse: String(p.kalkulator.area),
-      starttermin: '',
-      starterminLabel: '',
-      gewerke: [],
-      msg: '',
-      kalkulator: p.kalkulator,
-      name: 'PDF-Empfänger',
-      email: p.email,
-      tel: '',
-    }, {
-      includeRows: false,
-      heading: 'Zusammenfassung',
-    }),
+    `So geht es weiter:`,
+    `01  Öffnen Sie die PDF im Anhang für die vollständige Aufstellung.`,
+    `02  Für ein verbindliches Angebot prüfen wir Aufmaß, Bestand und Materialauswahl.`,
+    `03  Antworten Sie direkt auf diese E-Mail, wenn wir die Schätzung verfeinern sollen.`,
     ``,
     `Mit freundlichen Grüßen,`,
     `Daniel & Monica Irimia`,
