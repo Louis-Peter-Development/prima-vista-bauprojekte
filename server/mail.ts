@@ -663,7 +663,11 @@ export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Pro
   const pdf = await buildCalculatorPdf(payload);
   const slug = cleanCalculatorLabel(payload.kalkulator.kindLabel)
     .toLocaleLowerCase('de-DE')
-    .replace(/[^a-z0-9äöüß]+/gi, '-')
+    .replace(/ä/g, 'ae')
+    .replace(/ö/g, 'oe')
+    .replace(/ü/g, 'ue')
+    .replace(/ß/g, 'ss')
+    .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
     || 'kalkulator';
 
