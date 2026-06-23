@@ -18,7 +18,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-bode-100-basis",
+              id: "pv-001-bode-100-basis",
               category: "section-01-holz-boden",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG-Boden | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-bode-100-1-op",
+              id: "pv-002-bode-100-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -93,7 +93,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-rohb-501-2-op",
+              id: "pv-003-rohb-501-2-op",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -116,7 +116,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-bode-100-2-op",
+              id: "pv-004-bode-100-2-op",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -139,7 +139,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-bode-100-op",
+              id: "pv-005-bode-100-op",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN | Parkett schleifen & lackieren",
@@ -177,7 +177,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-680700",
+              id: "pv-006-680700",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Egger Laminat Classic 31 Garrison Eiche natur EHL022 1292x192x7mm",
@@ -200,7 +200,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-763-00785",
+              id: "pv-007-763-00785",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Ziro Kork Korkboden natur KF | Harmony roh 5 mm | Kurzdiele",
@@ -223,7 +223,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-680767",
+              id: "pv-008-680767",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Egger Sockelleiste 2400x 17x 60mm !Z Leiste zu EHL022 L150",
@@ -246,7 +246,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-287221",
+              id: "pv-009-287221",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau",
@@ -269,7 +269,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-1098740",
+              id: "pv-010-1098740",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -307,7 +307,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-bode-400-basis",
+              id: "pv-011-bode-400-basis",
               category: "section-05-fliesen-boden",
               subcategory: "leistungen-materialien",
               title: "BODENFLIESEN | 🛠 Montage-Leistungspaket",
@@ -344,7 +344,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-1209835",
+              id: "pv-012-1209835",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: "*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834",
@@ -367,7 +367,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-662445",
+              id: "pv-013-662445",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: "V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS",
@@ -390,7 +390,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv867-00298",
+              id: "pv-014-uv867-00298",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -428,7 +428,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-bode-10001-basis",
+              id: "pv-015-bode-10001-basis",
               category: "section-07-teppich-boden",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG TEPPICH | 🛠 Montage-Leistungspaket",
@@ -465,7 +465,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-016-tepnafjtp2-310",
+              id: "pv-016-tepnafjtp2-310",
               category: "section-08-material",
               subcategory: "leistungen-materialien",
               title: "JOKAVLIES TITAN PLUS 200cm Atelier 2020",
@@ -503,7 +503,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-rohb-501-mat",
+              id: "pv-017-rohb-501-mat",
               category: "section-09-estrich-boden",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | Trocken-Platten |**Varianten**",
@@ -526,7 +526,7 @@ export const packageBoedenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-rohb-10004-basis",
+              id: "pv-018-rohb-10004-basis",
               category: "section-09-estrich-boden",
               subcategory: "leistungen-materialien",
               title: "SICHTBETON-ESTRICH-BODEN | 🛠 Montage-Leistungspaket",
@@ -563,7 +563,7 @@ export const packageBoedenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-019-rohb-501-2-op",
+              id: "pv-019-rohb-501-2-op",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -610,7 +610,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-100-basis",
+              id: "pv-001-bode-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG-Boden | 🛠 Montage-Leistungspaket",
@@ -647,7 +647,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-bode-100-1-op",
+              id: "pv-002-bode-100-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -685,7 +685,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-par1501534-e28a",
+              id: "pv-003-par1501534-e28a",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "JOKA Classic KINGSTON 435 SB / DS 3.5 mm Fertigparkett 3-S m",
@@ -708,7 +708,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-1265921",
+              id: "pv-004-1265921",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "RAW Sockelleiste MDF Cubus !Z weiß uni alle Dekore 2500x 16x 80 mm",
@@ -731,7 +731,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-287221",
+              id: "pv-005-287221",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau",
@@ -754,7 +754,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-1098740",
+              id: "pv-006-1098740",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -792,7 +792,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv816-00746",
+              id: "pv-007-uv816-00746",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -815,7 +815,7 @@ export const packageBoedenParkettVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-bode-100-2-op",
+              id: "pv-008-bode-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -862,7 +862,7 @@ export const packageBoedenParkettAufbereiten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-100-op",
+              id: "pv-001-bode-100-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN | Parkett schleifen & lackieren",
@@ -900,7 +900,7 @@ export const packageBoedenParkettAufbereiten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-bode-100-2-op",
+              id: "pv-002-bode-100-2-op",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -947,7 +947,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-100-basis",
+              id: "pv-001-bode-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG-Boden | 🛠 Montage-Leistungspaket",
@@ -984,7 +984,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-bode-100-1-op",
+              id: "pv-002-bode-100-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -1022,7 +1022,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-1105594",
+              id: "pv-003-1105594",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Egger Laminat Classic 31 Stangl Buche EBL002 1292x192x7mm",
@@ -1045,7 +1045,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-642888",
+              id: "pv-004-642888",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Egger Sockelleiste 2400x 17x 60mm Leiste zu EBL002 L131",
@@ -1068,7 +1068,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-287221",
+              id: "pv-005-287221",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau",
@@ -1091,7 +1091,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-1098740",
+              id: "pv-006-1098740",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -1129,7 +1129,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv816-00746",
+              id: "pv-007-uv816-00746",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -1152,7 +1152,7 @@ export const packageBoedenLaminatVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-bode-100-2-op",
+              id: "pv-008-bode-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -1199,7 +1199,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-400-basis",
+              id: "pv-001-bode-400-basis",
               category: "section-01-fliesen-boden",
               subcategory: "leistungen-materialien",
               title: "BODENFLIESEN | 🛠 Montage-Leistungspaket",
@@ -1236,7 +1236,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-1209835",
+              id: "pv-002-1209835",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834",
@@ -1259,7 +1259,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-662445",
+              id: "pv-003-662445",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS",
@@ -1282,7 +1282,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv867-00298",
+              id: "pv-004-uv867-00298",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -1320,7 +1320,7 @@ export const packageBoedenFliesenVerlegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-bode-100-2-op",
+              id: "pv-005-bode-100-2-op",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -1367,7 +1367,7 @@ export const packageBoedenSockelleisten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-10002-basis",
+              id: "pv-001-bode-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SOCKELLEISTEN\n | 🛠 Montage-Leistungspaket",
@@ -1413,7 +1413,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-201-op",
+              id: "pv-001-bode-201-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERKLEBTE BODENVERLEGUNG  | 🛠 Montage-Leistungspaket",
@@ -1451,7 +1451,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-bode-100-1-op",
+              id: "pv-002-bode-100-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -1489,7 +1489,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-763-00785",
+              id: "pv-003-763-00785",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Ziro Kork Korkboden natur KF | Harmony roh 5 mm | Kurzdiele",
@@ -1512,7 +1512,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-1098740",
+              id: "pv-004-1098740",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -1550,7 +1550,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-uv816-00746",
+              id: "pv-005-uv816-00746",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -1573,7 +1573,7 @@ export const packageBoedenKorkboden: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-bode-100-2-op",
+              id: "pv-006-bode-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -1620,7 +1620,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-201-op",
+              id: "pv-001-bode-201-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERKLEBTE BODENVERLEGUNG  | 🛠 Montage-Leistungspaket",
@@ -1658,7 +1658,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-bode-100-1-op",
+              id: "pv-002-bode-100-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -1696,7 +1696,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-lvtdes230-4254",
+              id: "pv-003-lvtdes230-4254",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "DESIGN 230 HDF 9,6mm/32er JOKA Classic Designböden230 HDF!",
@@ -1734,7 +1734,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-763-10094",
+              id: "pv-004-763-10094",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ziro Lino-klick Linoleumboden HDF | 620x450x10 mm | Velluto Kurzdiele",
@@ -1772,7 +1772,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-1098740",
+              id: "pv-005-1098740",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -1810,7 +1810,7 @@ export const packageBoedenVinyl: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-uv816-00746",
+              id: "pv-006-uv816-00746",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -1833,7 +1833,7 @@ export const packageBoedenVinyl: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-bode-100-2-op",
+              id: "pv-007-bode-100-2-op",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -1880,7 +1880,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10222",
+              id: "pv-001-mon-10222",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -1903,7 +1903,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-501-1-op",
+              id: "pv-002-rohb-501-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -1941,7 +1941,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv204-000321",
+              id: "pv-003-uv204-000321",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm",
@@ -1979,7 +1979,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-204-00071",
+              id: "pv-004-204-00071",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Kleber - 1 kg Flasche",
@@ -2002,7 +2002,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-204-00073",
+              id: "pv-005-204-00073",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück",
@@ -2040,7 +2040,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-rohb-501-2-op",
+              id: "pv-006-rohb-501-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -2063,7 +2063,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-204-85",
+              id: "pv-007-204-85",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wabenschüttung - 15 Liter Sack",
@@ -2086,7 +2086,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-204-00088",
+              id: "pv-008-204-00088",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wärmedämmschüttung - 100 Liter Sack",
@@ -2109,7 +2109,7 @@ export const packageBoedenEstrichplatten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-204-00086",
+              id: "pv-009-204-00086",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm",
@@ -2156,7 +2156,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-100-2-op",
+              id: "pv-001-bode-100-2-op",
               category: "section-01-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "BODE-100-2-OP",
@@ -2179,7 +2179,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-501-mat",
+              id: "pv-002-rohb-501-mat",
               category: "section-01-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHB-501-MAT",
@@ -2202,7 +2202,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-501-1-op",
+              id: "pv-003-rohb-501-1-op",
               category: "section-01-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHB-501-1-OP",
@@ -2240,7 +2240,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-rohb-501-2-op",
+              id: "pv-004-rohb-501-2-op",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHB-501-2-OP",
@@ -2263,7 +2263,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-bode-701-mat",
+              id: "pv-005-bode-701-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "BODE-701-MAT",
@@ -2286,7 +2286,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-v520-00029",
+              id: "pv-006-v520-00029",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "v520-00029",
@@ -2309,7 +2309,7 @@ export const packageBoedenSichtestrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-bode-100-1-op",
+              id: "pv-007-bode-100-1-op",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "BODE-100-1-OP",
@@ -2356,7 +2356,7 @@ export const packageBoedenTeppich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-10001-basis",
+              id: "pv-001-bode-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG TEPPICH | 🛠 Montage-Leistungspaket",
@@ -2393,7 +2393,7 @@ export const packageBoedenTeppich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-tepnafjtp2-310",
+              id: "pv-002-tepnafjtp2-310",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JOKAVLIES TITAN PLUS 200cm Atelier 2020",
@@ -2416,7 +2416,7 @@ export const packageBoedenTeppich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-1098740",
+              id: "pv-003-1098740",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -2454,7 +2454,7 @@ export const packageBoedenTeppich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-bode-100-1-op",
+              id: "pv-004-bode-100-1-op",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -2492,7 +2492,7 @@ export const packageBoedenTeppich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-uv816-00746",
+              id: "pv-005-uv816-00746",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -2515,7 +2515,7 @@ export const packageBoedenTeppich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-bode-100-2-op",
+              id: "pv-006-bode-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",

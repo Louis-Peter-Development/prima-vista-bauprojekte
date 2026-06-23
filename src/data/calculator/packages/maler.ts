@@ -18,7 +18,7 @@ export const packageMalerAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-male-100-basis",
+              id: "pv-001-male-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -40,7 +40,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-male-101-mat",
+              id: "pv-002-male-101-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket",
@@ -63,7 +63,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-201-mat",
+              id: "pv-003-male-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -101,7 +101,7 @@ export const packageMalerAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-male-101-1-zu",
+              id: "pv-004-male-101-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -124,7 +124,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-male-101-2-zu",
+              id: "pv-005-male-101-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TAPETEN |🛠 Demontage & Entsorgung",
@@ -162,7 +162,7 @@ export const packageMalerAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-male-301-1-mat",
+              id: "pv-006-male-301-1-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ZIMMERTÜREN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -185,7 +185,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-male-301-2-mat",
+              id: "pv-007-male-301-2-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FENSTER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -208,7 +208,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-male-301-3-mat",
+              id: "pv-008-male-301-3-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -231,7 +231,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-male-301-4-mat",
+              id: "pv-009-male-301-4-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOLZDECKEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -254,7 +254,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-male-301-5-mat",
+              id: "pv-010-male-301-5-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -277,7 +277,7 @@ export const packageMalerAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-male-301-6-mat",
+              id: "pv-011-male-301-6-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -324,7 +324,7 @@ export const packageMalerAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-100-basis",
+              id: "pv-001-male-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -346,7 +346,7 @@ export const packageMalerAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-male-201-mat",
+              id: "pv-002-male-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -384,7 +384,7 @@ export const packageMalerAnstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-male-101-1-zu",
+              id: "pv-003-male-101-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -431,7 +431,7 @@ export const packageMalerGlaettenAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-100-basis",
+              id: "pv-001-male-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -453,7 +453,7 @@ export const packageMalerGlaettenAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-male-101-mat",
+              id: "pv-002-male-101-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket",
@@ -476,7 +476,7 @@ export const packageMalerGlaettenAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-201-mat",
+              id: "pv-003-male-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -514,7 +514,7 @@ export const packageMalerGlaettenAnstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-male-101-2-zu",
+              id: "pv-004-male-101-2-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TAPETEN |🛠 Demontage & Entsorgung",
@@ -537,7 +537,7 @@ export const packageMalerGlaettenAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-male-101-1-zu",
+              id: "pv-005-male-101-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -584,7 +584,7 @@ export const packageMalerTapezieren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-100-basis",
+              id: "pv-001-male-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -606,7 +606,7 @@ export const packageMalerTapezieren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-male-101-2-mat",
+              id: "pv-002-male-101-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Tapezieren der Wände & Decken",
@@ -629,7 +629,7 @@ export const packageMalerTapezieren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-201-mat",
+              id: "pv-003-male-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -667,7 +667,7 @@ export const packageMalerTapezieren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-male-101-2-zu",
+              id: "pv-004-male-101-2-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TAPETEN |🛠 Demontage & Entsorgung",
@@ -690,7 +690,7 @@ export const packageMalerTapezieren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-male-101-1-zu",
+              id: "pv-005-male-101-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -737,7 +737,7 @@ export const packageMalerDeckenLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-4-mat",
+              id: "pv-001-male-301-4-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZDECKEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -784,7 +784,7 @@ export const packageMalerHeizkoerperLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-3-mat",
+              id: "pv-001-male-301-3-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -831,7 +831,7 @@ export const packageMalerFensterLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-2-mat",
+              id: "pv-001-male-301-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -878,7 +878,7 @@ export const packageMalerTuerenLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-1-mat",
+              id: "pv-001-male-301-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ZIMMERTÜREN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -925,7 +925,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-5-mat",
+              id: "pv-001-male-301-5-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -948,7 +948,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-trep-201-3-zu",
+              id: "pv-002-trep-201-3-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage",
@@ -971,7 +971,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-301-6-mat",
+              id: "pv-003-male-301-6-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -1009,7 +1009,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-trep-202-1-zu",
+              id: "pv-004-trep-202-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -1032,7 +1032,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-203-1-zu",
+              id: "pv-005-trep-203-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -1055,7 +1055,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-tr-uv-11824",
+              id: "pv-006-tr-uv-11824",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Treppenstufe Modell Samos",
@@ -1078,7 +1078,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-tr-uv-11819",
+              id: "pv-007-tr-uv-11819",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Setzstufen aus Massivholz",
@@ -1116,7 +1116,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-mon-10077",
+              id: "pv-008-mon-10077",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -1139,7 +1139,7 @@ export const packageMalerTreppenGelaenderLackierung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-144-12646",
+              id: "pv-009-144-12646",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",
@@ -1186,7 +1186,7 @@ export const packageMalerFassadenAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-200-basis",
+              id: "pv-001-fass-200-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Anstrich | 🛠 Montage-Leistungspaket",
@@ -1223,7 +1223,7 @@ export const packageMalerFassadenAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv868-00943",
+              id: "pv-002-uv868-00943",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.ton 410 AquaBalance Silikatfarbe aussen",
@@ -1261,7 +1261,7 @@ export const packageMalerFassadenAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fass-100-2-zu",
+              id: "pv-003-fass-100-2-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
@@ -1299,7 +1299,7 @@ export const packageMalerFassadenAnstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-fass-100-2-op",
+              id: "pv-004-fass-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-FARBE | abkratzen",
@@ -1322,7 +1322,7 @@ export const packageMalerFassadenAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fass-100-au",
+              id: "pv-005-fass-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FASSADE |**Varianten**",

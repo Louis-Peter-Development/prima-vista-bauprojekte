@@ -18,7 +18,7 @@ export const packageAbdichtungAlles: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-abbd-101-1-mat",
+              id: "pv-001-abbd-101-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
@@ -56,7 +56,7 @@ export const packageAbdichtungAlles: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv868-00421",
+              id: "pv-002-uv868-00421",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
@@ -94,7 +94,7 @@ export const packageAbdichtungAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-abbd-101-2-mat",
+              id: "pv-003-abbd-101-2-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HORIZONTAL | Abdichtung des Kellergeschosses",
@@ -117,7 +117,7 @@ export const packageAbdichtungAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-abbd-101-3-mat",
+              id: "pv-004-abbd-101-3-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DICHTSYSTEM | Anti Feuchtigkeit",
@@ -164,7 +164,7 @@ export const packageAbdichtungHorizontal: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-abbd-101-2-mat",
+              id: "pv-001-abbd-101-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HORIZONTAL | Abdichtung des Kellergeschosses",
@@ -211,7 +211,7 @@ export const packageAbdichtungPerimeter: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-abbd-101-1-mat",
+              id: "pv-001-abbd-101-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
@@ -249,7 +249,7 @@ export const packageAbdichtungPerimeter: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv868-00421",
+              id: "pv-002-uv868-00421",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
@@ -296,7 +296,7 @@ export const packageAbdichtungKeller: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-abbd-101-3-mat",
+              id: "pv-001-abbd-101-3-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DICHTSYSTEM | Anti Feuchtigkeit",

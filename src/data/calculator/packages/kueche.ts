@@ -18,7 +18,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-neu-000053",
+              id: "pv-002-neu-000053",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen",
@@ -93,7 +93,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-670036575447",
+              id: "pv-003-670036575447",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche München 430 cm in Weiß komplett - online kaufen",
@@ -131,7 +131,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-670036573313",
+              id: "pv-009-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -154,7 +154,7 @@ export const packageKuecheAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-3372-953-044",
+              id: "pv-010-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -192,7 +192,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-wass-300-basis",
+              id: "pv-011-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -230,7 +230,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-301-1-zu",
+              id: "pv-012-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -253,7 +253,7 @@ export const packageKuecheAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-elek-201-2-zu",
+              id: "pv-013-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -291,7 +291,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-elek-302-mat",
+              id: "pv-014-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -314,7 +314,7 @@ export const packageKuecheAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-elek-301-mat",
+              id: "pv-015-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -337,7 +337,7 @@ export const packageKuecheAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-elek-201-2-zu",
+              id: "pv-016-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -375,7 +375,7 @@ export const packageKuecheAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-elek-101-2-mat",
+              id: "pv-017-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -422,7 +422,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -459,7 +459,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-neu-000053",
+              id: "pv-002-neu-000053",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen",
@@ -497,7 +497,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-670036575447",
+              id: "pv-003-670036575447",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche München 430 cm in Weiß komplett - online kaufen",
@@ -535,7 +535,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-670036573313",
+              id: "pv-004-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -558,7 +558,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-3372-953-044",
+              id: "pv-005-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -596,7 +596,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-wass-300-basis",
+              id: "pv-006-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -634,7 +634,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-elek-301-1-zu",
+              id: "pv-007-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -657,7 +657,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-201-2-zu",
+              id: "pv-008-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -695,7 +695,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-elek-302-mat",
+              id: "pv-009-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -718,7 +718,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-301-mat",
+              id: "pv-010-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -741,7 +741,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-201-2-zu",
+              id: "pv-011-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -779,7 +779,7 @@ export const packageKuecheKomplettkueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-101-2-mat",
+              id: "pv-012-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -826,7 +826,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -863,7 +863,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-36961744486550",
+              id: "pv-002-36961744486550",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Singleküche Eschweiler 225 cm Weiß matt Beton Schiefergrau komplett mit Kochfeld",
@@ -901,7 +901,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-37029889638550",
+              id: "pv-003-37029889638550",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Teeküche Iserlohn 165 cm Weiß matt Eiche Sierra --",
@@ -939,7 +939,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-670036573313",
+              id: "pv-004-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -962,7 +962,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-3372-953-044",
+              id: "pv-005-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -1000,7 +1000,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-wass-300-basis",
+              id: "pv-006-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -1038,7 +1038,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-elek-301-1-zu",
+              id: "pv-007-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -1061,7 +1061,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-201-2-zu",
+              id: "pv-008-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1099,7 +1099,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-elek-302-mat",
+              id: "pv-009-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -1122,7 +1122,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-301-mat",
+              id: "pv-010-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -1145,7 +1145,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-201-2-zu",
+              id: "pv-011-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1183,7 +1183,7 @@ export const packageKuecheSingleMinikuechen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-101-2-mat",
+              id: "pv-012-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -1230,7 +1230,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -1267,7 +1267,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-37121822720150",
+              id: "pv-002-37121822720150",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Miniküche Gera 150 cm Weiß matt Beton Schiefergrau Büroküche",
@@ -1305,7 +1305,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-37021554376854",
+              id: "pv-003-37021554376854",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Büroküche Düren 210 cm Alpinweiß matt Beton Schiefergrau",
@@ -1343,7 +1343,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-670036573313",
+              id: "pv-004-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -1366,7 +1366,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-3372-953-044",
+              id: "pv-005-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -1404,7 +1404,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-wass-300-basis",
+              id: "pv-006-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -1442,7 +1442,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-elek-301-1-zu",
+              id: "pv-007-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -1465,7 +1465,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-201-2-zu",
+              id: "pv-008-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1503,7 +1503,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-elek-302-mat",
+              id: "pv-009-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -1526,7 +1526,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-301-mat",
+              id: "pv-010-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -1549,7 +1549,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-201-2-zu",
+              id: "pv-011-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1587,7 +1587,7 @@ export const packageKuecheBuerokueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-101-2-mat",
+              id: "pv-012-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -1634,7 +1634,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -1671,7 +1671,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-37392617767062",
+              id: "pv-002-37392617767062",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Küche Nordhorn 315 cm Alpinweiß matt günstige Küche Eiche Sierra komplette Einbauküche",
@@ -1709,7 +1709,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-37296593043606",
+              id: "pv-003-37296593043606",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Küchenzeile Braunschweig 345 cm weiß Beton Einbauküche --",
@@ -1747,7 +1747,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-670036573313",
+              id: "pv-004-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -1770,7 +1770,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-3372-953-044",
+              id: "pv-005-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -1808,7 +1808,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-wass-300-basis",
+              id: "pv-006-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -1846,7 +1846,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-elek-301-1-zu",
+              id: "pv-007-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -1869,7 +1869,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-201-2-zu",
+              id: "pv-008-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1907,7 +1907,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-elek-302-mat",
+              id: "pv-009-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -1930,7 +1930,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-301-mat",
+              id: "pv-010-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -1953,7 +1953,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-201-2-zu",
+              id: "pv-011-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1991,7 +1991,7 @@ export const packageKuecheEinbaukueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-101-2-mat",
+              id: "pv-012-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -2038,7 +2038,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10001-basis",
+              id: "pv-001-kuec-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -2075,7 +2075,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-37263489892502",
+              id: "pv-002-37263489892502",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Küchenzeile Bamberg 225 cm Weiß mit Preisen Eiche Sierra Teeküche",
@@ -2113,7 +2113,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-37273858605206",
+              id: "pv-003-37273858605206",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Küchenzeile Ingolstadt 225 cm Alpinweiß matt Online Kaufen Beton Schiefergrau __",
@@ -2151,7 +2151,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-670036573313",
+              id: "pv-004-670036573313",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -2174,7 +2174,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-3372-953-044",
+              id: "pv-005-3372-953-044",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -2212,7 +2212,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-wass-300-basis",
+              id: "pv-006-wass-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -2250,7 +2250,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-elek-301-1-zu",
+              id: "pv-007-elek-301-1-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -2273,7 +2273,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-201-2-zu",
+              id: "pv-008-elek-201-2-zu",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -2311,7 +2311,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-elek-302-mat",
+              id: "pv-009-elek-302-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -2334,7 +2334,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-301-mat",
+              id: "pv-010-elek-301-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -2357,7 +2357,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-201-2-zu",
+              id: "pv-011-elek-201-2-zu",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -2395,7 +2395,7 @@ export const packageKuecheKuechenzeile: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-101-2-mat",
+              id: "pv-012-elek-101-2-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -2442,7 +2442,7 @@ export const packageKuecheArbeitsplatteSpuele: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10002-basis",
+              id: "pv-001-kuec-10002-basis",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "KÜCHENARBEITSPLATTE | 🛠 Montage-Leistungspaket",
@@ -2479,7 +2479,7 @@ export const packageKuecheArbeitsplatteSpuele: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -2526,7 +2526,7 @@ export const packageKuecheDunstabzugshaube: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-kuec-10006-basis",
+              id: "pv-001-kuec-10006-basis",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "DUNSTABZUGSHAUBE\n | 🛠 Montage-Leistungspaket",
@@ -2563,7 +2563,7 @@ export const packageKuecheDunstabzugshaube: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -2610,7 +2610,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-bode-400-basis",
+              id: "pv-001-bode-400-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BODENFLIESEN | 🛠 Montage-Leistungspaket",
@@ -2647,7 +2647,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-1209835",
+              id: "pv-002-1209835",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834",
@@ -2670,7 +2670,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-662445",
+              id: "pv-003-662445",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS",
@@ -2693,7 +2693,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv867-00298",
+              id: "pv-004-uv867-00298",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -2731,7 +2731,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-bode-201-op",
+              id: "pv-005-bode-201-op",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERKLEBTE BODENVERLEGUNG  | 🛠 Montage-Leistungspaket",
@@ -2754,7 +2754,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-bode-100-1-op",
+              id: "pv-006-bode-100-1-op",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -2792,7 +2792,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-lvtdes230-4254",
+              id: "pv-007-lvtdes230-4254",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "DESIGN 230 HDF 9,6mm/32er JOKA Classic Designböden230 HDF!",
@@ -2815,7 +2815,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-1098740",
+              id: "pv-008-1098740",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -2853,7 +2853,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-uv816-00746",
+              id: "pv-009-uv816-00746",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -2876,7 +2876,7 @@ export const packageKuecheBodenDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-bode-100-2-op",
+              id: "pv-010-bode-100-2-op",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -2923,7 +2923,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-201-2-zu",
+              id: "pv-001-elek-201-2-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -2946,7 +2946,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-elek-301-1-zu",
+              id: "pv-002-elek-301-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -2984,7 +2984,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-elek-302-mat",
+              id: "pv-003-elek-302-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -3007,7 +3007,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-elek-301-mat",
+              id: "pv-004-elek-301-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -3045,7 +3045,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-elek-10002-basis",
+              id: "pv-005-elek-10002-basis",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -3067,7 +3067,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-lht-1005368",
+              id: "pv-006-lht-1005368",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: " SLV NUMINOS® MOVE S Einbaustrahler weiß 40°",
@@ -3105,7 +3105,7 @@ export const packageKuecheElektroBeleuchtung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-elek-101-2-mat",
+              id: "pv-007-elek-101-2-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -3152,7 +3152,7 @@ export const packageKuecheWasserinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-300-basis",
+              id: "pv-001-wass-300-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -3190,7 +3190,7 @@ export const packageKuecheWasserinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-bade-503-mon",
+              id: "pv-002-bade-503-mon",
               category: "section-02-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ARMATUR | 🛠 Montage",
@@ -3213,7 +3213,7 @@ export const packageKuecheWasserinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-grandisehdm6",
+              id: "pv-003-grandisehdm6",
               category: "section-02-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Küchen-EHM Grandis E HD-M Infrarot Batteriebetrieb 6V chrom Schell",
@@ -3251,7 +3251,7 @@ export const packageKuecheWasserinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-tr3500to5t",
+              id: "pv-004-tr3500to5t",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "BOSCH Kleinspeicher TR3500TO 5 T 435x270x240 2,2kW 5l Druck/Tropfstopp",

@@ -18,7 +18,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-200-basis",
+              id: "pv-001-wass-200-basis",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-101-mon",
+              id: "pv-002-wass-101-mon",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -79,7 +79,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-cvis3wt112",
+              id: "pv-003-cvis3wt112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -102,7 +102,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-dfix320wc112",
+              id: "pv-004-dfix320wc112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -125,7 +125,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-sigma30wech",
+              id: "pv-005-sigma30wech",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -163,7 +163,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-wass-100-au",
+              id: "pv-006-wass-100-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -201,7 +201,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-heiz-101-mon",
+              id: "pv-007-heiz-101-mon",
               category: "section-04-heizkorper-basis-haus",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -238,7 +238,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-heiz-301-mat",
+              id: "pv-008-heiz-301-mat",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -261,7 +261,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-vede218b",
+              id: "pv-009-vede218b",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss",
@@ -284,7 +284,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-heiz-201-1-op",
+              id: "pv-010-heiz-201-1-op",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER |🛠 Demontage & Entsorgung ",
@@ -321,7 +321,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv835-10017",
+              id: "pv-011-uv835-10017",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -359,7 +359,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-012-gawc-100-basis",
+              id: "pv-012-gawc-100-basis",
               category: "section-07-fliesen-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -397,7 +397,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-uv816-00746",
+              id: "pv-013-uv816-00746",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -435,7 +435,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-014-1168296",
+              id: "pv-014-1168296",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -458,7 +458,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-1176157",
+              id: "pv-015-1176157",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -481,7 +481,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-1054265",
+              id: "pv-016-1054265",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -504,7 +504,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-uv867-00298",
+              id: "pv-017-uv867-00298",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -527,7 +527,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-uv519-00256",
+              id: "pv-018-uv519-00256",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -550,7 +550,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-uv519-00143",
+              id: "pv-019-uv519-00143",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -573,7 +573,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-uv608-6903",
+              id: "pv-020-uv608-6903",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -611,7 +611,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-021-gawc-500-basis",
+              id: "pv-021-gawc-500-basis",
               category: "section-10-sanitar-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -649,7 +649,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-022-dewwc",
+              id: "pv-022-dewwc",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC derby sichtbare Befestigung weiss VIGOUR",
@@ -672,7 +672,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-desias",
+              id: "pv-023-desias",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz derby Edelstahlscharnier abnehmbar mit Absenkautomatik weiss VIG.",
@@ -695,7 +695,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-desp45ohp",
+              id: "pv-024-desp45ohp",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Handwaschb.derby style plus 45x35cm ohne HL mit ÜL weiss PflegePLUS VIGOUR",
@@ -718,7 +718,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-025-des",
+              id: "pv-025-des",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-Waschtischbatterie derby style mit Ablaufgarnitur verchromt VIGOUR",
@@ -756,7 +756,7 @@ export const packageBadGaeste: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-026-strahyr",
+              id: "pv-026-strahyr",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke",
@@ -779,7 +779,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-santralabh18",
+              id: "pv-027-santralabh18",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt",
@@ -802,7 +802,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-codessp50",
+              id: "pv-028-codessp50",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti",
@@ -825,7 +825,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-cwsssppas",
+              id: "pv-029-cwsssppas",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss",
@@ -848,7 +848,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-hewiksiw448",
+              id: "pv-030-hewiksiw448",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung",
@@ -871,7 +871,7 @@ export const packageBadGaeste: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-031-hewiwig600",
+              id: "pv-031-hewiwig600",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Winkelgriff Hewi 600x300mm reinweiss",

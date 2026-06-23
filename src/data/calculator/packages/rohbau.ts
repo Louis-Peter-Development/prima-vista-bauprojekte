@@ -18,7 +18,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-rohb-101-1-zu",
+              id: "pv-001-rohb-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-101-1-mat",
+              id: "pv-002-rohb-101-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket",
@@ -64,7 +64,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-101-2-mat",
+              id: "pv-003-rohb-101-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (17-35 cm) | 🛠 Demontage-Leistungspaket",
@@ -87,7 +87,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-rohb-100-au",
+              id: "pv-004-rohb-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu ROHBAU |**Varianten**",
@@ -125,7 +125,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-rohb-401-mat",
+              id: "pv-005-rohb-401-mat",
               category: "section-02-verputze-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WANDPUTZ-GIPS | 🛠 Montage-Leistungspaket",
@@ -148,7 +148,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-rohb-401-1-op",
+              id: "pv-006-rohb-401-1-op",
               category: "section-02-verputze-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ALT-PUTZ |🛠 Demontage & Entsorgung",
@@ -186,7 +186,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-rohb-201-mat",
+              id: "pv-007-rohb-201-mat",
               category: "section-03-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**",
@@ -209,7 +209,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-rohb-201-1-zu",
+              id: "pv-008-rohb-201-1-zu",
               category: "section-03-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage",
@@ -247,7 +247,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-rohb-10003-basis",
+              id: "pv-009-rohb-10003-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GARTENMAUERN | 🛠 Montage-Leistungspaket",
@@ -269,7 +269,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv229-00499",
+              id: "pv-010-uv229-00499",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Spaltino Mauerblock - Gelbsand-Melange ohne Fase",
@@ -292,7 +292,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv633-00009",
+              id: "pv-011-uv633-00009",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
@@ -315,7 +315,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv31-00018",
+              id: "pv-012-uv31-00018",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
@@ -353,7 +353,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-mon-10222",
+              id: "pv-013-mon-10222",
               category: "section-05-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -376,7 +376,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-rohb-501-1-op",
+              id: "pv-014-rohb-501-1-op",
               category: "section-05-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -399,7 +399,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-uv298-373",
+              id: "pv-015-uv298-373",
               category: "section-05-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Holcim ECOPact - klimafreundlicher Transportbeton für Außenbauteile - C25/30 XC4 XF1 XA1 F3 L",
@@ -422,7 +422,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-uv50-00011",
+              id: "pv-016-uv50-00011",
               category: "section-05-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Bekaert Armanet-D Distanet Armierungsgitter Maschenweite 19,0x19,0x1,0 mm - 2 m Tafel",
@@ -445,7 +445,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-uv21-117",
+              id: "pv-017-uv21-117",
               category: "section-05-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ALUJET Jetfoam Dämmbahn RS grn | 8 mm, Rolle á 50 m",
@@ -483,7 +483,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-mon-10222",
+              id: "pv-018-mon-10222",
               category: "section-06-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -506,7 +506,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-rohb-501-1-op",
+              id: "pv-019-rohb-501-1-op",
               category: "section-06-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -529,7 +529,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-uv204-000321",
+              id: "pv-020-uv204-000321",
               category: "section-06-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm",
@@ -552,7 +552,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-204-00071",
+              id: "pv-021-204-00071",
               category: "section-06-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Kleber - 1 kg Flasche",
@@ -575,7 +575,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-204-00073",
+              id: "pv-022-204-00073",
               category: "section-06-estrich-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück",
@@ -613,7 +613,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-023-rohb-501-2-op",
+              id: "pv-023-rohb-501-2-op",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -636,7 +636,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-204-85",
+              id: "pv-024-204-85",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wabenschüttung - 15 Liter Sack",
@@ -659,7 +659,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-025-204-00088",
+              id: "pv-025-204-00088",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wärmedämmschüttung - 100 Liter Sack",
@@ -682,7 +682,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-204-00086",
+              id: "pv-026-204-00086",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm",
@@ -705,7 +705,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-021-187",
+              id: "pv-027-021-187",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m",
@@ -743,7 +743,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-rohb-401-zu",
+              id: "pv-028-rohb-401-zu",
               category: "section-08-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERPUTZEN DES DURCHGANGS | 🛠 Zusatz-Montage",
@@ -781,7 +781,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-029-rohb-10002-basis",
+              id: "pv-029-rohb-10002-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHÄCHTE | 🛠 Montage-Leistungspaket",
@@ -803,7 +803,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-uv4-11523",
+              id: "pv-030-uv4-11523",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm Kunststofflichtschacht Set 600 mm Tiefe",
@@ -841,7 +841,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-uv454-40086",
+              id: "pv-031-uv454-40086",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "MEA GFK-Lichtschacht MEAMULTINORM begehbar+PKW-befahrbar",
@@ -864,7 +864,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-032-uv454-40001",
+              id: "pv-032-uv454-40001",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "MEA GFK-Lichtschacht MEAMAX mit runder Entwässerungsöffnung",
@@ -887,7 +887,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-033-uv4-10979",
+              id: "pv-033-uv4-10979",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement 4-seitig geschlossen für Kunststofflichtschächte mit 400 mm Tiefe",
@@ -910,7 +910,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-034-uv4-10983",
+              id: "pv-034-uv4-10983",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement fixe Bauhöhe 275 mm für Kunststofflichtschächte",
@@ -933,7 +933,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-035-uv4-11005",
+              id: "pv-035-uv4-11005",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement Set höhenverstellbar 30-300 mm für Kunststofflichtschächte mit 800 mm Tiefe",
@@ -956,7 +956,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-036-uv4-11036",
+              id: "pv-036-uv4-11036",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN",
@@ -979,7 +979,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-037-uv4-11051",
+              id: "pv-037-uv4-11051",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte",
@@ -1017,7 +1017,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-038-fass-10012",
+              id: "pv-038-fass-10012",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERBLENDMAUERWERK | 🛠 Montage",
@@ -1039,7 +1039,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-039-744-10030",
+              id: "pv-039-744-10030",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt",
@@ -1062,7 +1062,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-040-uv633-00009",
+              id: "pv-040-uv633-00009",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
@@ -1085,7 +1085,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-041-rohb-10003-basis",
+              id: "pv-041-rohb-10003-basis",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GARTENMAUERN | 🛠 Montage-Leistungspaket",
@@ -1122,7 +1122,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-042-uv229-00499",
+              id: "pv-042-uv229-00499",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Spaltino Mauerblock - Gelbsand-Melange ohne Fase",
@@ -1145,7 +1145,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-043-uv633-00009",
+              id: "pv-043-uv633-00009",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
@@ -1168,7 +1168,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-044-uv31-00018",
+              id: "pv-044-uv31-00018",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
@@ -1206,7 +1206,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-045-heiz-10006-basis",
+              id: "pv-045-heiz-10006-basis",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "SCHORNSTEIN | 🛠 Montage-Leistungspaket",
@@ -1228,7 +1228,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-046-743-13964",
+              id: "pv-046-743-13964",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec FF 14 LW Fertigfuss inkl. Grundbausatz Zuschlag, HAN.: 34765462",
@@ -1251,7 +1251,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-047-743-1018",
+              id: "pv-047-743-1018",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger ISSr 14 P Kamtec Kaminsystem 1 stgm, HAN.: 34865102",
@@ -1274,7 +1274,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-048-743-10059",
+              id: "pv-048-743-10059",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Mantelstein einzügig Planziegel ZMS 14, HAN.: 30054001",
@@ -1297,7 +1297,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-049-743-10109",
+              id: "pv-049-743-10109",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Muffenrohr, HAN.: 34859212",
@@ -1320,7 +1320,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-050-743-10175",
+              id: "pv-050-743-10175",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Rauchrohrstutzen, HAN.: 30053404",
@@ -1343,7 +1343,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-051-743-10122",
+              id: "pv-051-743-10122",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Sparrenhalterung, HAN.: 30054510",
@@ -1381,7 +1381,7 @@ export const packageRohbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-052-743-1204",
+              id: "pv-052-743-1204",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -1404,7 +1404,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-053-743-10076",
+              id: "pv-053-743-10076",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -1427,7 +1427,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-054-743-10042",
+              id: "pv-054-743-10042",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -1450,7 +1450,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-055-743-10068",
+              id: "pv-055-743-10068",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -1473,7 +1473,7 @@ export const packageRohbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-056-ents-101-mat",
+              id: "pv-056-ents-101-mat",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",
@@ -1520,7 +1520,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-101-1-zu",
+              id: "pv-001-rohb-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket",
@@ -1543,7 +1543,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-101-1-mat",
+              id: "pv-002-rohb-101-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket",
@@ -1566,7 +1566,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-101-2-mat",
+              id: "pv-003-rohb-101-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (17-35 cm) | 🛠 Demontage-Leistungspaket",
@@ -1604,7 +1604,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-rohb-201-mat",
+              id: "pv-004-rohb-201-mat",
               category: "section-02-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**",
@@ -1627,7 +1627,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-rohb-201-1-zu",
+              id: "pv-005-rohb-201-1-zu",
               category: "section-02-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage",
@@ -1665,7 +1665,7 @@ export const packageRohbauAbbruch: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-rohb-100-au",
+              id: "pv-006-rohb-100-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu ROHBAU |**Varianten**",
@@ -1712,7 +1712,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10222",
+              id: "pv-001-mon-10222",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -1735,7 +1735,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-501-1-op",
+              id: "pv-002-rohb-501-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -1773,7 +1773,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv298-373",
+              id: "pv-003-uv298-373",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Holcim ECOPact - klimafreundlicher Transportbeton für Außenbauteile - C25/30 XC4 XF1 XA1 F3 L",
@@ -1796,7 +1796,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv50-00011",
+              id: "pv-004-uv50-00011",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Bekaert Armanet-D Distanet Armierungsgitter Maschenweite 19,0x19,0x1,0 mm - 2 m Tafel",
@@ -1819,7 +1819,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv21-117",
+              id: "pv-005-uv21-117",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "ALUJET Jetfoam Dämmbahn RS grn | 8 mm, Rolle á 50 m",
@@ -1857,7 +1857,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-mon-10222",
+              id: "pv-006-mon-10222",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -1880,7 +1880,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-rohb-501-1-op",
+              id: "pv-007-rohb-501-1-op",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -1918,7 +1918,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-uv204-000321",
+              id: "pv-008-uv204-000321",
               category: "section-04-material",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm",
@@ -1956,7 +1956,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-204-00071",
+              id: "pv-009-204-00071",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Kleber - 1 kg Flasche",
@@ -1979,7 +1979,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-204-00073",
+              id: "pv-010-204-00073",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück",
@@ -2017,7 +2017,7 @@ export const packageRohbauEstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-rohb-501-2-op",
+              id: "pv-011-rohb-501-2-op",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -2040,7 +2040,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-204-85",
+              id: "pv-012-204-85",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wabenschüttung - 15 Liter Sack",
@@ -2063,7 +2063,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-204-00088",
+              id: "pv-013-204-00088",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wärmedämmschüttung - 100 Liter Sack",
@@ -2086,7 +2086,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-204-00086",
+              id: "pv-014-204-00086",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm",
@@ -2109,7 +2109,7 @@ export const packageRohbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-021-187",
+              id: "pv-015-021-187",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALUJET Floorjet Speed Abdichtungsbahn 1500 mm x 50 m",
@@ -2156,7 +2156,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-201-mat",
+              id: "pv-001-rohb-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**",
@@ -2179,7 +2179,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-201-1-zu",
+              id: "pv-002-rohb-201-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage",
@@ -2202,7 +2202,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-100-au",
+              id: "pv-003-rohb-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu ROHBAU |**Varianten**",
@@ -2240,7 +2240,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-rohb-101-1-zu",
+              id: "pv-004-rohb-101-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket",
@@ -2263,7 +2263,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-rohb-101-1-mat",
+              id: "pv-005-rohb-101-1-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket",
@@ -2286,7 +2286,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-rohb-101-2-mat",
+              id: "pv-006-rohb-101-2-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (17-35 cm) | 🛠 Demontage-Leistungspaket",
@@ -2324,7 +2324,7 @@ export const packageRohbauStahltraeger: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-ents-101-mat",
+              id: "pv-007-ents-101-mat",
               category: "section-03-abbruch-basis-haus",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",
@@ -2371,7 +2371,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-401-mat",
+              id: "pv-001-rohb-401-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WANDPUTZ-GIPS | 🛠 Montage-Leistungspaket",
@@ -2394,7 +2394,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-401-1-op",
+              id: "pv-002-rohb-401-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-PUTZ |🛠 Demontage & Entsorgung",
@@ -2417,7 +2417,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-401-zu",
+              id: "pv-003-rohb-401-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERPUTZEN DES DURCHGANGS | 🛠 Zusatz-Montage",
@@ -2455,7 +2455,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-uv50-00004",
+              id: "pv-004-uv50-00004",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Bekaert Armanet Putzarmierungsgitter Maschenweite 12,7x12,7x1,0 mm - 25 m Rolle",
@@ -2478,7 +2478,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv545-00450",
+              id: "pv-005-uv545-00450",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Protektor Nr.: 1044Z Kantenprofil 135° für den Innen- und Außenputz",
@@ -2501,7 +2501,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv545-00534",
+              id: "pv-006-uv545-00534",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Protektor Nr.: 1005 Kantenprofil für den Innenputz",
@@ -2524,7 +2524,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv121-2119",
+              id: "pv-007-uv121-2119",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Claytec YOSIMA Lehm-Designputz SCRO 1.0 - siena-braun",
@@ -2562,7 +2562,7 @@ export const packageRohbauVerputzen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-ents-101-mat",
+              id: "pv-008-ents-101-mat",
               category: "section-03-container-entsorgung-basis-haus",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",
@@ -2609,7 +2609,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-10002-basis",
+              id: "pv-001-rohb-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHÄCHTE | 🛠 Montage-Leistungspaket",
@@ -2646,7 +2646,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv4-11523",
+              id: "pv-002-uv4-11523",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "ACO Therm Kunststofflichtschacht Set 600 mm Tiefe",
@@ -2684,7 +2684,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv454-40086",
+              id: "pv-003-uv454-40086",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "MEA GFK-Lichtschacht MEAMULTINORM begehbar+PKW-befahrbar",
@@ -2707,7 +2707,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv454-40001",
+              id: "pv-004-uv454-40001",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "MEA GFK-Lichtschacht MEAMAX mit runder Entwässerungsöffnung",
@@ -2730,7 +2730,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv4-10979",
+              id: "pv-005-uv4-10979",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement 4-seitig geschlossen für Kunststofflichtschächte mit 400 mm Tiefe",
@@ -2753,7 +2753,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv4-10983",
+              id: "pv-006-uv4-10983",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement fixe Bauhöhe 275 mm für Kunststofflichtschächte",
@@ -2776,7 +2776,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv4-11005",
+              id: "pv-007-uv4-11005",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Aufstockelement Set höhenverstellbar 30-300 mm für Kunststofflichtschächte mit 800 mm Tiefe",
@@ -2814,7 +2814,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-uv4-11036",
+              id: "pv-008-uv4-11036",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Längsstabrost für Lüftungskasten Edelstahl für Kunststofflichtschächte begehbar 1,5 kN",
@@ -2837,7 +2837,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv4-11051",
+              id: "pv-009-uv4-11051",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Lichtschachtabdeckung mit Lüftungsgitter für Kunststofflichtschächte",
@@ -2860,7 +2860,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv4-11579",
+              id: "pv-010-uv4-11579",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Vario Designabdeckung mit Längsprofilrost und Einfassungsrahmen Silber für Kunststofflichtschächte",
@@ -2883,7 +2883,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv4-11605",
+              id: "pv-011-uv4-11605",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Vario Designabdeckung Teilglas mit Maschenrost und Einfassungsrahmen Anthrazit für Kunststofflichtschächte",
@@ -2906,7 +2906,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv4-11617",
+              id: "pv-012-uv4-11617",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Vario Designabdeckung Vollglas mit Einfassungsrahmen Anthrazit für Kunststofflichtschächte",
@@ -2944,7 +2944,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-uv4-110991",
+              id: "pv-013-uv4-110991",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rückwand für Kunststofflichtschächte mit 600 mm Tiefe",
@@ -2967,7 +2967,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv4-11112",
+              id: "pv-014-uv4-11112",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm® Block Erhöhungselement für Therm Block Standardmontage für Kunststofflichtschächte 1230x650 mm",
@@ -2990,7 +2990,7 @@ export const packageRohbauLichtschaechte: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-uv4-11133",
+              id: "pv-015-uv4-11133",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm® Block Leibungselement Set für Therm Block Set 1000x1000 mm für Kunststofflichtschächte",
@@ -3037,7 +3037,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-10006-basis",
+              id: "pv-001-heiz-10006-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SCHORNSTEIN | 🛠 Montage-Leistungspaket",
@@ -3074,7 +3074,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-743-13964",
+              id: "pv-002-743-13964",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec FF 14 LW Fertigfuss inkl. Grundbausatz Zuschlag, HAN.: 34765462",
@@ -3097,7 +3097,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-743-1018",
+              id: "pv-003-743-1018",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wienerberger ISSr 14 P Kamtec Kaminsystem 1 stgm, HAN.: 34865102",
@@ -3120,7 +3120,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-743-10059",
+              id: "pv-004-743-10059",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Mantelstein einzügig Planziegel ZMS 14, HAN.: 30054001",
@@ -3143,7 +3143,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-743-10109",
+              id: "pv-005-743-10109",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Muffenrohr, HAN.: 34859212",
@@ -3166,7 +3166,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-743-10175",
+              id: "pv-006-743-10175",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Rauchrohrstutzen, HAN.: 30053404",
@@ -3204,7 +3204,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-743-10122",
+              id: "pv-007-743-10122",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Sparrenhalterung, HAN.: 30054510",
@@ -3242,7 +3242,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-743-1204",
+              id: "pv-008-743-1204",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -3265,7 +3265,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-743-10076",
+              id: "pv-009-743-10076",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -3288,7 +3288,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-743-10042",
+              id: "pv-010-743-10042",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -3311,7 +3311,7 @@ export const packageRohbauSchornstein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-743-10068",
+              id: "pv-011-743-10068",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -3358,7 +3358,7 @@ export const packageRohbauMauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10012",
+              id: "pv-001-fass-10012",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERBLENDMAUERWERK | 🛠 Montage",
@@ -3395,7 +3395,7 @@ export const packageRohbauMauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-744-10030",
+              id: "pv-002-744-10030",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt",
@@ -3418,7 +3418,7 @@ export const packageRohbauMauerwerk: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv633-00009",
+              id: "pv-003-uv633-00009",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
@@ -3456,7 +3456,7 @@ export const packageRohbauMauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-uv31-00018",
+              id: "pv-004-uv31-00018",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
@@ -3503,7 +3503,7 @@ export const packageRohbauPflastern: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10008-basis",
+              id: "pv-001-gart-10008-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PFLASTERN MIT STEINE | 🛠 Montage-Leistungspaket",
@@ -3540,7 +3540,7 @@ export const packageRohbauPflastern: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv881-01020",
+              id: "pv-002-uv881-01020",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Diephaus Pflasterstein Lineo Quarzit PE2",
@@ -3578,7 +3578,7 @@ export const packageRohbauPflastern: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv881-01018",
+              id: "pv-003-uv881-01018",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Diephaus Pflasterstein Lineo Muschelkalk PE2",

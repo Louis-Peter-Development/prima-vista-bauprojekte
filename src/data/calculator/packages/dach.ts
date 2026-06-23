@@ -18,7 +18,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-dach-100-basis",
+              id: "pv-001-dach-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "NEUBEDACHUNG | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-dach-101-1-zu",
+              id: "pv-002-dach-101-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ZIEGEL |🛠 Demontage & Entsorgung",
@@ -78,7 +78,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dach-101-2-zu",
+              id: "pv-003-dach-101-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
@@ -101,7 +101,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-dach-101-3-zu",
+              id: "pv-004-dach-101-3-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "RINNE & FALLROHR | 🛠 Zusatz-Montage",
@@ -139,7 +139,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-1007285",
+              id: "pv-005-1007285",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Erlus E 58 S Flachdachpfanne Engobe in kupferbraun",
@@ -177,7 +177,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-dach-100-au",
+              id: "pv-006-dach-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu NEUBEDACHUNG |**Varianten**",
@@ -215,7 +215,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-dach-602-mon",
+              id: "pv-007-dach-602-mon",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -237,7 +237,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv24-00017",
+              id: "pv-008-uv24-00017",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Bauder PIR SF Steildachwärmedämmelement WLS 023 - Nut & Feder - 1800 x 1200 mm",
@@ -260,7 +260,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-688152",
+              id: "pv-009-688152",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -282,7 +282,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv569-00014",
+              id: "pv-010-uv569-00014",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -320,7 +320,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-dach-500-basis",
+              id: "pv-011-dach-500-basis",
               category: "section-06-dachfenster-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -357,7 +357,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-uv702-1369",
+              id: "pv-012-uv702-1369",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -380,7 +380,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv704-91870",
+              id: "pv-013-uv704-91870",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -418,7 +418,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-dach-201-mat",
+              id: "pv-014-dach-201-mat",
               category: "section-08-gauben-dach-basis-haus",
               subcategory: "leistungen-materialien",
               title: "SCHLEPPE-GAUBE | 🛠 Montage-Leistungspaket",
@@ -456,7 +456,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-dach-301-mat",
+              id: "pv-015-dach-301-mat",
               category: "section-09-dachstuhl-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DACHSTUHL Satteldach | 🛠 Montage-Leistungspaket",
@@ -478,7 +478,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-dach-301-1-zu",
+              id: "pv-016-dach-301-1-zu",
               category: "section-09-dachstuhl-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ALT-DACHSTUHL |🛠 Demontage & Entsorgung",
@@ -516,7 +516,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-dach-600-basis",
+              id: "pv-017-dach-600-basis",
               category: "section-10-innenausbau-dach-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -553,7 +553,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-dach-601-1-zu",
+              id: "pv-018-dach-601-1-zu",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -576,7 +576,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-dach-600-2-op",
+              id: "pv-019-dach-600-2-op",
               category: "section-11-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -614,7 +614,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-556617",
+              id: "pv-020-556617",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -637,7 +637,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-1010766",
+              id: "pv-021-1010766",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -660,7 +660,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-609625",
+              id: "pv-022-609625",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -682,7 +682,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-1010361",
+              id: "pv-023-1010361",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -705,7 +705,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-uv383-00605",
+              id: "pv-024-uv383-00605",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -743,7 +743,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-dach-600-au",
+              id: "pv-025-dach-600-au",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -766,7 +766,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-517-01445",
+              id: "pv-026-517-01445",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -789,7 +789,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-517-02194",
+              id: "pv-027-517-02194",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -827,7 +827,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-dach-602-mon",
+              id: "pv-028-dach-602-mon",
               category: "section-14-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -849,7 +849,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-688152",
+              id: "pv-029-688152",
               category: "section-14-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -871,7 +871,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-uv569-00014",
+              id: "pv-030-uv569-00014",
               category: "section-14-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -909,7 +909,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-mon-10255",
+              id: "pv-031-mon-10255",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -932,7 +932,7 @@ export const packageDachAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-032-uv729-20050",
+              id: "pv-032-uv729-20050",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -970,7 +970,7 @@ export const packageDachAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-033-uv577-149",
+              id: "pv-033-uv577-149",
               category: "section-16-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Roto Bodentreppe Designo Passivhaus KH 29 - U-Wert 0,63",
@@ -1017,7 +1017,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-100-basis",
+              id: "pv-001-dach-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "NEUBEDACHUNG | 🛠 Montage-Leistungspaket",
@@ -1054,7 +1054,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-dach-101-1-zu",
+              id: "pv-002-dach-101-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ZIEGEL |🛠 Demontage & Entsorgung",
@@ -1077,7 +1077,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dach-101-2-zu",
+              id: "pv-003-dach-101-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
@@ -1100,7 +1100,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-dach-101-3-zu",
+              id: "pv-004-dach-101-3-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "RINNE & FALLROHR | 🛠 Zusatz-Montage",
@@ -1138,7 +1138,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-1007285",
+              id: "pv-005-1007285",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Erlus E 58 S Flachdachpfanne Engobe in kupferbraun",
@@ -1176,7 +1176,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-dach-100-au",
+              id: "pv-006-dach-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu NEUBEDACHUNG |**Varianten**",
@@ -1214,7 +1214,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-dach-602-mon",
+              id: "pv-007-dach-602-mon",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -1236,7 +1236,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv24-00017",
+              id: "pv-008-uv24-00017",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Bauder PIR SF Steildachwärmedämmelement WLS 023 - Nut & Feder - 1800 x 1200 mm",
@@ -1259,7 +1259,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-688152",
+              id: "pv-009-688152",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -1281,7 +1281,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv569-00014",
+              id: "pv-010-uv569-00014",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -1319,7 +1319,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-dach-500-basis",
+              id: "pv-011-dach-500-basis",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -1341,7 +1341,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv702-1369",
+              id: "pv-012-uv702-1369",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -1364,7 +1364,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv704-91870",
+              id: "pv-013-uv704-91870",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -1402,7 +1402,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-dach-201-mat",
+              id: "pv-014-dach-201-mat",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SCHLEPPE-GAUBE | 🛠 Montage-Leistungspaket",
@@ -1440,7 +1440,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-dach-301-mat",
+              id: "pv-015-dach-301-mat",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHSTUHL Satteldach | 🛠 Montage-Leistungspaket",
@@ -1462,7 +1462,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-dach-301-1-zu",
+              id: "pv-016-dach-301-1-zu",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DACHSTUHL |🛠 Demontage & Entsorgung",
@@ -1500,7 +1500,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-dach-600-basis",
+              id: "pv-017-dach-600-basis",
               category: "section-09-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -1537,7 +1537,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-dach-601-1-zu",
+              id: "pv-018-dach-601-1-zu",
               category: "section-10-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -1560,7 +1560,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-dach-600-2-op",
+              id: "pv-019-dach-600-2-op",
               category: "section-10-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -1598,7 +1598,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-556617",
+              id: "pv-020-556617",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -1621,7 +1621,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-1010766",
+              id: "pv-021-1010766",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -1644,7 +1644,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-609625",
+              id: "pv-022-609625",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -1666,7 +1666,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-1010361",
+              id: "pv-023-1010361",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -1689,7 +1689,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-uv383-00605",
+              id: "pv-024-uv383-00605",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -1727,7 +1727,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-dach-600-au",
+              id: "pv-025-dach-600-au",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -1750,7 +1750,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-517-01445",
+              id: "pv-026-517-01445",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -1773,7 +1773,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-517-02194",
+              id: "pv-027-517-02194",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -1811,7 +1811,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-dach-602-mon",
+              id: "pv-028-dach-602-mon",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -1833,7 +1833,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-688152",
+              id: "pv-029-688152",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -1855,7 +1855,7 @@ export const packageDachDachNeubedachung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-uv569-00014",
+              id: "pv-030-uv569-00014",
               category: "section-13-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -1902,7 +1902,7 @@ export const packageDachDachDachstuhl: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-301-mat",
+              id: "pv-001-dach-301-mat",
               category: "section-01-dachstuhl-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DACHSTUHL Satteldach | 🛠 Montage-Leistungspaket",
@@ -1939,7 +1939,7 @@ export const packageDachDachDachstuhl: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-dach-301-1-zu",
+              id: "pv-002-dach-301-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DACHSTUHL |🛠 Demontage & Entsorgung",
@@ -1962,7 +1962,7 @@ export const packageDachDachDachstuhl: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-ents-101-mat",
+              id: "pv-003-ents-101-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",
@@ -2009,7 +2009,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-602-mon",
+              id: "pv-001-dach-602-mon",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -2046,7 +2046,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-dach-600-2-op",
+              id: "pv-002-dach-600-2-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -2084,7 +2084,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-609625",
+              id: "pv-003-609625",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -2106,7 +2106,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-1010361",
+              id: "pv-004-1010361",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -2144,7 +2144,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-688152",
+              id: "pv-005-688152",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -2166,7 +2166,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv569-00014",
+              id: "pv-006-uv569-00014",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -2189,7 +2189,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv383-00605",
+              id: "pv-007-uv383-00605",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -2227,7 +2227,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-dach-500-basis",
+              id: "pv-008-dach-500-basis",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -2249,7 +2249,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv702-1369",
+              id: "pv-009-uv702-1369",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -2272,7 +2272,7 @@ export const packageDachDachDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv704-91870",
+              id: "pv-010-uv704-91870",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -2319,7 +2319,7 @@ export const packageDachDachGauben: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-201-mat",
+              id: "pv-001-dach-201-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SCHLEPPE-GAUBE | 🛠 Montage-Leistungspaket",
@@ -2366,7 +2366,7 @@ export const packageDachDachFenster: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-500-basis",
+              id: "pv-001-dach-500-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -2403,7 +2403,7 @@ export const packageDachDachFenster: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv702-1369",
+              id: "pv-002-uv702-1369",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -2441,7 +2441,7 @@ export const packageDachDachFenster: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv704-91870",
+              id: "pv-003-uv704-91870",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -2488,7 +2488,7 @@ export const packageDachDachanhebung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-400-basis",
+              id: "pv-001-dach-400-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHSTUHL hydraulisch anheben | 🛠 Montage-Leistungspaket",
@@ -2534,7 +2534,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-600-basis",
+              id: "pv-001-dach-600-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -2571,7 +2571,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-dach-601-1-zu",
+              id: "pv-002-dach-601-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -2594,7 +2594,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dach-600-2-op",
+              id: "pv-003-dach-600-2-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -2632,7 +2632,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-556617",
+              id: "pv-004-556617",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -2655,7 +2655,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-1010766",
+              id: "pv-005-1010766",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -2678,7 +2678,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-609625",
+              id: "pv-006-609625",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -2700,7 +2700,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-1010361",
+              id: "pv-007-1010361",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -2738,7 +2738,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-dach-600-au",
+              id: "pv-008-dach-600-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -2761,7 +2761,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-517-01445",
+              id: "pv-009-517-01445",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -2784,7 +2784,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-517-02194",
+              id: "pv-010-517-02194",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -2822,7 +2822,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-dach-602-mon",
+              id: "pv-011-dach-602-mon",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -2844,7 +2844,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-688152",
+              id: "pv-012-688152",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -2866,7 +2866,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv569-00014",
+              id: "pv-013-uv569-00014",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -2889,7 +2889,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv383-00605",
+              id: "pv-014-uv383-00605",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -2927,7 +2927,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-dach-500-basis",
+              id: "pv-015-dach-500-basis",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -2949,7 +2949,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-uv702-1369",
+              id: "pv-016-uv702-1369",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -2972,7 +2972,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-uv704-91870",
+              id: "pv-017-uv704-91870",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -3010,7 +3010,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-mon-10255",
+              id: "pv-018-mon-10255",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -3033,7 +3033,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-uv729-20050",
+              id: "pv-019-uv729-20050",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -3071,7 +3071,7 @@ export const packageDachDachInnenausbau: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-uv577-149",
+              id: "pv-020-uv577-149",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Roto Bodentreppe Designo Passivhaus KH 29 - U-Wert 0,63",
@@ -3118,7 +3118,7 @@ export const packageFlachdach: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-10001-basis",
+              id: "pv-001-dach-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FLACHDACH-BESCHICHTUNG | 🛠 Montage-Leistungspaket",
@@ -3155,7 +3155,7 @@ export const packageFlachdach: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv276-000001",
+              id: "pv-002-uv276-000001",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Dachprotect EPDM Dachbahn schwarz Dicke 1,2 mm - Zuschnitt",
@@ -3193,7 +3193,7 @@ export const packageFlachdach: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-dach-602-mon",
+              id: "pv-003-dach-602-mon",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -3215,7 +3215,7 @@ export const packageFlachdach: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv569-00327",
+              id: "pv-004-uv569-00327",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Durock 037, Flachdachdämmung 1000x600 mm",
@@ -3253,7 +3253,7 @@ export const packageFlachdach: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-uv702-2522",
+              id: "pv-005-uv702-2522",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VELUX RWA CSP Flachdach-Fenster Basis-Element 1073Q",
@@ -3300,7 +3300,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-10002-basis",
+              id: "pv-001-dach-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACH-BODENDÄMMUNG | 🛠 Montage-Leistungspaket",
@@ -3337,7 +3337,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-688151",
+              id: "pv-002-688151",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 100 1500x 500x 100 mm EPS 032 DEO",
@@ -3374,7 +3374,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-155-01001",
+              id: "pv-003-155-01001",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Dörken DELTA DAWI GP Luft- und Dampfsperre - 4 x 25 Meter",
@@ -3412,7 +3412,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-mon-10255",
+              id: "pv-004-mon-10255",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -3435,7 +3435,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv729-20050",
+              id: "pv-005-uv729-20050",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -3473,7 +3473,7 @@ export const packageDachbodenDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-uv577-149",
+              id: "pv-006-uv577-149",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Roto Bodentreppe Designo Passivhaus KH 29 - U-Wert 0,63",

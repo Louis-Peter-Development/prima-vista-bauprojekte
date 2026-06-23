@@ -18,7 +18,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-heiz-100-basis",
+              id: "pv-001-heiz-100-basis",
               category: "section-01-bodenheizung-basis-haus",
               subcategory: "leistungen-materialien",
               title: "BODENHEIZUNG | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-rohb-501-mat",
+              id: "pv-002-rohb-501-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | Trocken-Platten |**Varianten**",
@@ -78,7 +78,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-501-1-op",
+              id: "pv-003-rohb-501-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -116,7 +116,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-mon-10158",
+              id: "pv-004-mon-10158",
               category: "section-03-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -139,7 +139,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv722-00108",
+              id: "pv-005-uv722-00108",
               category: "section-03-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",
@@ -177,7 +177,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-heiz-101-mon",
+              id: "pv-006-heiz-101-mon",
               category: "section-04-heizkorper",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -214,7 +214,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-pt6333080",
+              id: "pv-007-pt6333080",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012",
@@ -252,7 +252,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-uv835-10017",
+              id: "pv-008-uv835-10017",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -275,7 +275,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv835-1083",
+              id: "pv-009-uv835-1083",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -313,7 +313,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-heiz-301-mat",
+              id: "pv-010-heiz-301-mat",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -336,7 +336,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-heiz-301-3-mat",
+              id: "pv-011-heiz-301-3-mat",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-HEIZSTRÄNGE |  Neuinstallation (Aufputz Pro M)",
@@ -359,7 +359,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-heiz-301-2-mat",
+              id: "pv-012-heiz-301-2-mat",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "UP-HEIZSTRÄNGE |  Neuinstallation (Unterputz, Pro M)",
@@ -397,7 +397,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-mon-10158",
+              id: "pv-013-mon-10158",
               category: "section-08-heizkorper",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -435,7 +435,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-uv835-1083",
+              id: "pv-014-uv835-1083",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -473,7 +473,7 @@ export const packageHeizmethodenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-uv835-981",
+              id: "pv-015-uv835-981",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Handtuchwärmer C3 Typ 1 - Chrom",
@@ -520,7 +520,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-101-mon",
+              id: "pv-001-heiz-101-mon",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -557,7 +557,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-pt6333080",
+              id: "pv-002-pt6333080",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012",
@@ -595,7 +595,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv835-10017",
+              id: "pv-003-uv835-10017",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -618,7 +618,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv835-1083",
+              id: "pv-004-uv835-1083",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -656,7 +656,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-heiz-301-mat",
+              id: "pv-005-heiz-301-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -679,7 +679,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-heiz-301-3-mat",
+              id: "pv-006-heiz-301-3-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-HEIZSTRÄNGE |  Neuinstallation (Aufputz Pro M)",
@@ -702,7 +702,7 @@ export const packageHeizmethodenHeizkoerper: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-heiz-301-2-mat",
+              id: "pv-007-heiz-301-2-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "UP-HEIZSTRÄNGE |  Neuinstallation (Unterputz, Pro M)",
@@ -749,7 +749,7 @@ export const packageHeizmethodenHeizstraenge: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-301-3-mat",
+              id: "pv-001-heiz-301-3-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AP-HEIZSTRÄNGE |  Neuinstallation (Aufputz Pro M)",
@@ -787,7 +787,7 @@ export const packageHeizmethodenHeizstraenge: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-heiz-301-2-mat",
+              id: "pv-002-heiz-301-2-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "UP-HEIZSTRÄNGE |  Neuinstallation (Unterputz, Pro M)",
@@ -810,7 +810,7 @@ export const packageHeizmethodenHeizstraenge: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-heiz-301-mat",
+              id: "pv-003-heiz-301-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -857,7 +857,7 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-100-basis",
+              id: "pv-001-heiz-100-basis",
               category: "section-01-bodenheizung-basis-haus",
               subcategory: "leistungen-materialien",
               title: "BODENHEIZUNG | 🛠 Montage-Leistungspaket",
@@ -894,7 +894,7 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-rohb-501-mat",
+              id: "pv-002-rohb-501-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | Trocken-Platten |**Varianten**",
@@ -917,7 +917,7 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-501-1-op",
+              id: "pv-003-rohb-501-1-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -955,7 +955,7 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-mon-10158",
+              id: "pv-004-mon-10158",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -978,7 +978,7 @@ export const packageHeizmethodenFussbodenheizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv722-00108",
+              id: "pv-005-uv722-00108",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",
@@ -1025,7 +1025,7 @@ export const packageHeizmethodenWaermepumpe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-400-basis",
+              id: "pv-001-heiz-400-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄRMEPUMPEN | 🛠 Montage-Leistungspaket",
@@ -1062,7 +1062,7 @@ export const packageHeizmethodenWaermepumpe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-heiz-411-4-mat",
+              id: "pv-002-heiz-411-4-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "12 KW - LG WÄRMEPUMPEN im Paket - TM187/123",
@@ -1084,7 +1084,7 @@ export const packageHeizmethodenWaermepumpe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-heiz-411-zu",
+              id: "pv-003-heiz-411-zu",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "LG-ZUBEHÖR-SET - für LG Wärmepumpen",
@@ -1122,7 +1122,7 @@ export const packageHeizmethodenWaermepumpe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-heiz-431-1-zu",
+              id: "pv-004-heiz-431-1-zu",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -1145,7 +1145,7 @@ export const packageHeizmethodenWaermepumpe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-heiz-401-basis",
+              id: "pv-005-heiz-401-basis",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FUNDAMENT | für Therme & Wärmepumpe",
@@ -1192,7 +1192,7 @@ export const packageHeizmethodenGasHeizung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-401-3-mat",
+              id: "pv-001-heiz-401-3-mat",
               category: "section-01-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Gas-Brennwert-Kessel 20 Kw (für Haus)",
@@ -1215,7 +1215,7 @@ export const packageHeizmethodenGasHeizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-heiz-403-13-mat",
+              id: "pv-002-heiz-403-13-mat",
               category: "section-01-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Gas-Kombitherme 20-24 Kw (für Wohnung)",
@@ -1253,7 +1253,7 @@ export const packageHeizmethodenGasHeizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-heiz-401-basis",
+              id: "pv-003-heiz-401-basis",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FUNDAMENT | für Therme & Wärmepumpe",
@@ -1276,7 +1276,7 @@ export const packageHeizmethodenGasHeizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-heiz-431-1-zu",
+              id: "pv-004-heiz-431-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -1323,7 +1323,7 @@ export const packageHeizmethodenOelHeizung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-402-2-mat",
+              id: "pv-001-heiz-402-2-mat",
               category: "section-01-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Öl-Brennwert-Kessel 24 Kw (für Haus)",
@@ -1361,7 +1361,7 @@ export const packageHeizmethodenOelHeizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-heiz-401-basis",
+              id: "pv-002-heiz-401-basis",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FUNDAMENT | für Therme & Wärmepumpe",
@@ -1384,7 +1384,7 @@ export const packageHeizmethodenOelHeizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-heiz-431-1-zu",
+              id: "pv-003-heiz-431-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -1431,7 +1431,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-10014-basis",
+              id: "pv-001-heiz-10014-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PELLETTHEIZUNG | 🛠 Montage-Leistungspaket",
@@ -1469,7 +1469,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-heiz-405-mat",
+              id: "pv-002-heiz-405-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "PELLETTHEIZUNG | Vitoligno 300 - 12kW |**Varianten**",
@@ -1507,7 +1507,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-743-1204",
+              id: "pv-003-743-1204",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -1530,7 +1530,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-743-10076",
+              id: "pv-004-743-10076",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -1553,7 +1553,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-743-10042",
+              id: "pv-005-743-10042",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -1576,7 +1576,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-743-10068",
+              id: "pv-006-743-10068",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -1614,7 +1614,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-heiz-431-1-zu",
+              id: "pv-007-heiz-431-1-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -1637,7 +1637,7 @@ export const packageHeizmethodenPelletofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-725-76",
+              id: "pv-008-725-76",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weber Holzpelletgrill SmokeFire EX4 GBS 61x45cm - Schwarz",
@@ -1684,7 +1684,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-10005-basis",
+              id: "pv-001-heiz-10005-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KAMIN\n | 🛠 Montage-Leistungspaket",
@@ -1721,7 +1721,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -1759,7 +1759,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-743-1204",
+              id: "pv-003-743-1204",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -1782,7 +1782,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-743-10076",
+              id: "pv-004-743-10076",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -1805,7 +1805,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-743-10042",
+              id: "pv-005-743-10042",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -1828,7 +1828,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-743-10068",
+              id: "pv-006-743-10068",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -1866,7 +1866,7 @@ export const packageHeizmethodenThermenOefen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv307-112",
+              id: "pv-007-uv307-112",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "EcoStar Kaminholzregal Trend",
@@ -1913,7 +1913,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-heiz-401-3-mat",
+              id: "pv-001-heiz-401-3-mat",
               category: "section-01-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Gas-Brennwert-Kessel 20 Kw (für Haus)",
@@ -1936,7 +1936,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-heiz-403-13-mat",
+              id: "pv-002-heiz-403-13-mat",
               category: "section-01-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Gas-Kombitherme 20-24 Kw (für Wohnung)",
@@ -1974,7 +1974,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-heiz-402-2-mat",
+              id: "pv-003-heiz-402-2-mat",
               category: "section-02-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Öl-Brennwert-Kessel 24 Kw (für Haus)",
@@ -2012,7 +2012,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-heiz-400-basis",
+              id: "pv-004-heiz-400-basis",
               category: "section-03-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WÄRMEPUMPEN | 🛠 Montage-Leistungspaket",
@@ -2034,7 +2034,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-heiz-411-4-mat",
+              id: "pv-005-heiz-411-4-mat",
               category: "section-03-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "12 KW - LG WÄRMEPUMPEN im Paket - TM187/123",
@@ -2056,7 +2056,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-heiz-411-zu",
+              id: "pv-006-heiz-411-zu",
               category: "section-03-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "LG-ZUBEHÖR-SET - für LG Wärmepumpen",
@@ -2094,7 +2094,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-heiz-431-1-zu",
+              id: "pv-007-heiz-431-1-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -2117,7 +2117,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-heiz-401-basis",
+              id: "pv-008-heiz-401-basis",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FUNDAMENT | für Therme & Wärmepumpe",
@@ -2155,7 +2155,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-mon-10158",
+              id: "pv-009-mon-10158",
               category: "section-05-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -2178,7 +2178,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv835-1083",
+              id: "pv-010-uv835-1083",
               category: "section-05-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -2216,7 +2216,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv835-981",
+              id: "pv-011-uv835-981",
               category: "section-06-heizkorper",
               subcategory: "leistungen-materialien",
               title: "Ximax Handtuchwärmer C3 Typ 1 - Chrom",
@@ -2254,7 +2254,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-mon-10158",
+              id: "pv-012-mon-10158",
               category: "section-07-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -2277,7 +2277,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv722-00108",
+              id: "pv-013-uv722-00108",
               category: "section-07-flachenheizsystem",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",
@@ -2315,7 +2315,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-heiz-405-2-mat",
+              id: "pv-014-heiz-405-2-mat",
               category: "section-08-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Pellet Silo Geobox 21 Inkl. Befüllstutzen",
@@ -2338,7 +2338,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-mat-anfrage",
+              id: "pv-015-mat-anfrage",
               category: "section-08-thermen-warmepumpen-basis-haus",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -2376,7 +2376,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-016-743-1204",
+              id: "pv-016-743-1204",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -2399,7 +2399,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-743-10076",
+              id: "pv-017-743-10076",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -2422,7 +2422,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-743-10042",
+              id: "pv-018-743-10042",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -2445,7 +2445,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-743-10068",
+              id: "pv-019-743-10068",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -2483,7 +2483,7 @@ export const packageHeizmethodenThermenAlle: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-uv307-112",
+              id: "pv-020-uv307-112",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "EcoStar Kaminholzregal Trend",
@@ -2530,7 +2530,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-heiz-10005-basis",
+              id: "pv-001-heiz-10005-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KAMIN\n | 🛠 Montage-Leistungspaket",
@@ -2567,7 +2567,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -2605,7 +2605,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-743-1204",
+              id: "pv-003-743-1204",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger LAS 1216 LW Kamtec Kaminsystem 1 stgm, HAN.: 34765146",
@@ -2628,7 +2628,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-743-10076",
+              id: "pv-004-743-10076",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Abströmkopf ASK 120, HAN.: 30056461",
@@ -2651,7 +2651,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-743-10042",
+              id: "pv-005-743-10042",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec Krag und Abdeckplatte KP/AP-U 20 W für Untermauerung einzügig, HAN.: 34765655",
@@ -2674,7 +2674,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-743-10068",
+              id: "pv-006-743-10068",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Wienerberger Kamtec ISSr Fugenkleber, HAN.: 30054461",
@@ -2712,7 +2712,7 @@ export const packageHeizmethodenKaminofen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv307-112",
+              id: "pv-007-uv307-112",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "EcoStar Kaminholzregal Trend",
@@ -3026,7 +3026,7 @@ export const packageHeizmethodenDurchlauferhitzer: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10157",
+              id: "pv-001-mon-10157",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DURCHLAUFERHITZER|HOME| 🛠 Montage",
@@ -3064,7 +3064,7 @@ export const packageHeizmethodenDurchlauferhitzer: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-vede218b",
+              id: "pv-002-vede218b",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss",
@@ -3102,7 +3102,7 @@ export const packageHeizmethodenDurchlauferhitzer: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mon-10159",
+              id: "pv-003-mon-10159",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SPEICHER | 🛠 Montage",
@@ -3125,7 +3125,7 @@ export const packageHeizmethodenDurchlauferhitzer: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-veh107upl",
+              id: "pv-004-veh107upl",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Vaillant Speicher eloSTOR VEH 10/7 U plus, 10 Liter Untertisch, druckfest",
@@ -3172,7 +3172,7 @@ export const packageHeizmethodenWarmwasserspeicher: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10159",
+              id: "pv-001-mon-10159",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SPEICHER | 🛠 Montage",
@@ -3210,7 +3210,7 @@ export const packageHeizmethodenWarmwasserspeicher: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-veh107upl",
+              id: "pv-002-veh107upl",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Vaillant Speicher eloSTOR VEH 10/7 U plus, 10 Liter Untertisch, druckfest",
@@ -3248,7 +3248,7 @@ export const packageHeizmethodenWarmwasserspeicher: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mon-10157",
+              id: "pv-003-mon-10157",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHLAUFERHITZER|HOME| 🛠 Montage",
@@ -3271,7 +3271,7 @@ export const packageHeizmethodenWarmwasserspeicher: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-vede218b",
+              id: "pv-004-vede218b",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Durchlauferhitzer Vaillant VED E 21/8 B 21KW elektronisch gesteuert weiss",
@@ -3318,7 +3318,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10158",
+              id: "pv-001-mon-10158",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -3356,7 +3356,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv835-1083",
+              id: "pv-002-uv835-1083",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -3394,7 +3394,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv835-981",
+              id: "pv-003-uv835-981",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Handtuchwärmer C3 Typ 1 - Chrom",
@@ -3432,7 +3432,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-mon-10158",
+              id: "pv-004-mon-10158",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -3455,7 +3455,7 @@ export const packageHeizmethodenElektroHeizung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv722-00108",
+              id: "pv-005-uv722-00108",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",

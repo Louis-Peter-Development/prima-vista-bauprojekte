@@ -18,7 +18,7 @@ export const packageWasserAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-wass-100-basis",
+              id: "pv-001-wass-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-200-basis",
+              id: "pv-002-wass-200-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket",
@@ -64,7 +64,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-wass-300-basis",
+              id: "pv-003-wass-300-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -87,7 +87,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-wass-400-basis",
+              id: "pv-004-wass-400-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLLATION KELLER | 🛠 Montage-Leistungspaket",
@@ -110,7 +110,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-wass-501-mat",
+              id: "pv-005-wass-501-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HAUPTSTRANG (Trink- & Abwasser  & Zirkul.) | 🛠 Montage-Leistungspaket",
@@ -148,7 +148,7 @@ export const packageWasserAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-wass-105-zu",
+              id: "pv-006-wass-105-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -171,7 +171,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-wass-101-mon",
+              id: "pv-007-wass-101-mon",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -209,7 +209,7 @@ export const packageWasserAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-cvis3wt112",
+              id: "pv-008-cvis3wt112",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -232,7 +232,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-dfix320wc112",
+              id: "pv-009-dfix320wc112",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -255,7 +255,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-sigma30wech",
+              id: "pv-010-sigma30wech",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -293,7 +293,7 @@ export const packageWasserAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-563-01504",
+              id: "pv-011-563-01504",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasser-Entnahmearmatur für TwinCover",
@@ -316,7 +316,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-007-00208",
+              id: "pv-012-007-00208",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Haus und Garten Professional vollautomatische Regenwasserzentrale mit Pumpe",
@@ -339,7 +339,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-007-00206",
+              id: "pv-013-007-00206",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Garten Plus Klarwasserpumpe, schwimmende Ansaugung 1m",
@@ -362,7 +362,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv7-00036",
+              id: "pv-014-uv7-00036",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Gartenanlage Plus Einbau stehend",
@@ -385,7 +385,7 @@ export const packageWasserAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-uv7-00277",
+              id: "pv-015-uv7-00277",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Regenwassertzisterne für Regenwassernutzung",
@@ -432,7 +432,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-100-basis",
+              id: "pv-001-wass-100-basis",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket",
@@ -455,7 +455,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-105-zu",
+              id: "pv-002-wass-105-zu",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -478,7 +478,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-wass-101-mon",
+              id: "pv-003-wass-101-mon",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -516,7 +516,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-cvis3wt112",
+              id: "pv-004-cvis3wt112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -539,7 +539,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-dfix320wc112",
+              id: "pv-005-dfix320wc112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -562,7 +562,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-sigma30wech",
+              id: "pv-006-sigma30wech",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -600,7 +600,7 @@ export const packageWasserBadezimmer: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-wass-100-au",
+              id: "pv-007-wass-100-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -647,7 +647,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-200-basis",
+              id: "pv-001-wass-200-basis",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket",
@@ -670,7 +670,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-105-zu",
+              id: "pv-002-wass-105-zu",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -693,7 +693,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-wass-101-mon",
+              id: "pv-003-wass-101-mon",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -731,7 +731,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-cvis3wt112",
+              id: "pv-004-cvis3wt112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -754,7 +754,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-dfix320wc112",
+              id: "pv-005-dfix320wc112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -777,7 +777,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-sigma30wech",
+              id: "pv-006-sigma30wech",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -815,7 +815,7 @@ export const packageWasserGaesteWc: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-wass-100-au",
+              id: "pv-007-wass-100-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -862,7 +862,7 @@ export const packageWasserKueche: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-300-basis",
+              id: "pv-001-wass-300-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -900,7 +900,7 @@ export const packageWasserKueche: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-wass-102-1-mat",
+              id: "pv-002-wass-102-1-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WASSERZÄHLER | Unterputz-Block",
@@ -923,7 +923,7 @@ export const packageWasserKueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-wass-102-2-mat",
+              id: "pv-003-wass-102-2-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WASSERZÄHER | Kalt-oder Warm (Aufputz)",
@@ -946,7 +946,7 @@ export const packageWasserKueche: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-wass-102-1-mat",
+              id: "pv-004-wass-102-1-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WASSERZÄHLER | Unterputz-Block",
@@ -993,7 +993,7 @@ export const packageWasserWaschmaschine: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-105-zu",
+              id: "pv-001-wass-105-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -1040,7 +1040,7 @@ export const packageWasserKeller: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-400-basis",
+              id: "pv-001-wass-400-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLLATION KELLER | 🛠 Montage-Leistungspaket",
@@ -1078,7 +1078,7 @@ export const packageWasserKeller: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-wass-100-au",
+              id: "pv-002-wass-100-au",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -1125,7 +1125,7 @@ export const packageWasserGarten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-607-1-mat",
+              id: "pv-001-wass-607-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARTEN-ANSCHLUSS |  inkl. frostsicheren Außenwasserhahn",
@@ -1163,7 +1163,7 @@ export const packageWasserGarten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-563-01504",
+              id: "pv-002-563-01504",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasser-Entnahmearmatur für TwinCover",
@@ -1186,7 +1186,7 @@ export const packageWasserGarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-007-00208",
+              id: "pv-003-007-00208",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Haus und Garten Professional vollautomatische Regenwasserzentrale mit Pumpe",
@@ -1209,7 +1209,7 @@ export const packageWasserGarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-007-00206",
+              id: "pv-004-007-00206",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Garten Plus Klarwasserpumpe, schwimmende Ansaugung 1m",
@@ -1232,7 +1232,7 @@ export const packageWasserGarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv7-00036",
+              id: "pv-005-uv7-00036",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Gartenanlage Plus Einbau stehend",
@@ -1255,7 +1255,7 @@ export const packageWasserGarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv7-00277",
+              id: "pv-006-uv7-00277",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Regenwassertzisterne für Regenwassernutzung",
@@ -1293,7 +1293,7 @@ export const packageWasserGarten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-mon-100-stk",
+              id: "pv-007-mon-100-stk",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "MONTAGE | 🛠 Montage 100",
@@ -1316,7 +1316,7 @@ export const packageWasserGarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv563-01018",
+              id: "pv-008-uv563-01018",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "Rewatec NEO Gartenanlage Basic",
@@ -1354,7 +1354,7 @@ export const packageWasserGarten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-563-01344",
+              id: "pv-009-563-01344",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041",
@@ -1392,7 +1392,7 @@ export const packageWasserGarten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-563-01505",
+              id: "pv-010-563-01505",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserverteiler RainStar - extern - ebenerdiger Einbau - begehbar",
@@ -1439,7 +1439,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-101-mon",
+              id: "pv-001-wass-101-mon",
               category: "section-01-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -1477,7 +1477,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-cvis3wt112",
+              id: "pv-002-cvis3wt112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -1500,7 +1500,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dfix320wc112",
+              id: "pv-003-dfix320wc112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -1523,7 +1523,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-sigma30wech",
+              id: "pv-004-sigma30wech",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -1546,7 +1546,7 @@ export const packageWasserSpuelkasten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-wass-101-mat",
+              id: "pv-005-wass-101-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "SPÜLKASTEN | Unterputz für Hänge-WC |**Varianten**",
@@ -1593,7 +1593,7 @@ export const packageWasserHauptstrang: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-501-mat",
+              id: "pv-001-wass-501-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HAUPTSTRANG (Trink- & Abwasser  & Zirkul.) | 🛠 Montage-Leistungspaket",
@@ -1616,7 +1616,7 @@ export const packageWasserHauptstrang: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-100-au",
+              id: "pv-002-wass-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",

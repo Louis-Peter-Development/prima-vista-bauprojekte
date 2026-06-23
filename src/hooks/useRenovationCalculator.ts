@@ -59,20 +59,20 @@ type PersistedState = Partial<Pick<ReadyState, 'livingArea' | 'rows' | 'collapse
 };
 
 const STORAGE_VERSION = 'v6';
-const BOSSMANN_STORAGE_VERSION = 'v7';
-const BOSSMANN_DATA_VERSION = 'bossmann-v2';
-const BOSSMANN_PACKAGE_IDS = new Set([
+const PRIMA_VISTA_STORAGE_VERSION = 'v7';
+const PRIMA_VISTA_DATA_VERSION = 'pv-v2';
+const PRIMA_VISTA_PACKAGE_IDS = new Set([
   '1e', '1e-d', '2e', '2e-d',           // house variants
   'studio', '2zi', '3zi', 'maisonette', // wohnung variants
 ]);
 
 const getStorageKey = (packageId: string) => {
-  const version = BOSSMANN_PACKAGE_IDS.has(packageId) ? BOSSMANN_STORAGE_VERSION : STORAGE_VERSION;
+  const version = PRIMA_VISTA_PACKAGE_IDS.has(packageId) ? PRIMA_VISTA_STORAGE_VERSION : STORAGE_VERSION;
   return `prima-vista-renovation-calculator-modular-${version}-${packageId}`;
 };
 
 const getDataVersion = (packageId: string) => (
-  BOSSMANN_PACKAGE_IDS.has(packageId) ? BOSSMANN_DATA_VERSION : STORAGE_VERSION
+  PRIMA_VISTA_PACKAGE_IDS.has(packageId) ? PRIMA_VISTA_DATA_VERSION : STORAGE_VERSION
 );
 
 function getPackageSignature(pkg: RenovationPackage | undefined): string {

@@ -18,7 +18,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -64,7 +64,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-tuer-100-au",
+              id: "pv-003-tuer-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -102,7 +102,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-uv339-90130",
+              id: "pv-004-uv339-90130",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -125,7 +125,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv354-10091",
+              id: "pv-005-uv354-10091",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt",
@@ -148,7 +148,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv339-90246",
+              id: "pv-006-uv339-90246",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -186,7 +186,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv293-17108",
+              id: "pv-007-uv293-17108",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -209,7 +209,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv293-17316",
+              id: "pv-008-uv293-17316",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -247,7 +247,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-1013690",
+              id: "pv-009-1013690",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem TB CK4 RS-KA Weißlack ex cl 610x 1985 mm DIN R BB Band 2-tlg vern",
@@ -270,7 +270,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-1013695",
+              id: "pv-010-1013695",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem TB CK4 RS-KA Weißlack ex cl 985x 1985 mm DIN L BB Band 2-tlg vern",
@@ -293,7 +293,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-144904",
+              id: "pv-011-144904",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem Zarge FU-RF Weißlack 610x 2110x 125 mm DIN L",
@@ -331,7 +331,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-1194968",
+              id: "pv-012-1194968",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weißlack Schiebetuer, RS-Einlage, stumpf 860x 1985 mm, Giffmuschel u. Bodennut",
@@ -354,7 +354,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv789-648",
+              id: "pv-013-uv789-648",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk PLANEO 120 COMFORT Schiebetürsystem für Holztür - Deckenmontage",
@@ -392,7 +392,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-uv789-10221",
+              id: "pv-014-uv789-10221",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasschiebetür ESG Typo 688",
@@ -430,7 +430,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-uv789-3122",
+              id: "pv-015-uv789-3122",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasdrehtür ESG All Satin 501 Studio/Office - Basic Green matt",
@@ -453,7 +453,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-uv789-125",
+              id: "pv-016-uv789-125",
               category: "section-07-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk CLASSICO Ganzglastürbeschlagset - 3-teiliger Bandsatz - mit Griff LUCIA PROF",
@@ -491,7 +491,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-uv789-3785",
+              id: "pv-017-uv789-3785",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasdrehtür ESG 3D 636 Studio/Office",
@@ -529,7 +529,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-uv789-10221",
+              id: "pv-018-uv789-10221",
               category: "section-09-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasschiebetür ESG Typo 688",
@@ -552,7 +552,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-uv789-653",
+              id: "pv-019-uv789-653",
               category: "section-09-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk R8 - Schiebetürsystem für Glastür - Wandmontage",
@@ -590,7 +590,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-uv218-10284",
+              id: "pv-020-uv218-10284",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FM Aluminium Haustür DS 92 Modell 04 Anthrazit mit Vierfachverglasung",
@@ -628,7 +628,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-021-1074251",
+              id: "pv-021-1074251",
               category: "section-11-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Bayerwald Alu-Haustuer Modell 4201 RW4 1100x 2100 mm DIN R",
@@ -666,7 +666,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-022-uv218-165",
+              id: "pv-022-uv218-165",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "FM Nebeneingangstür NBT 56 Modell 05 Weiss",
@@ -689,7 +689,7 @@ export const packageTuerenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-165466",
+              id: "pv-023-165466",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R",
@@ -727,7 +727,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-024-tuer-10001-basis",
+              id: "pv-024-tuer-10001-basis",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARAGENTOR | 🛠 Montage-Leistungspaket",
@@ -764,7 +764,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-uv501-705",
+              id: "pv-025-uv501-705",
               category: "section-14-material",
               subcategory: "leistungen-materialien",
               title: "Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss",
@@ -802,7 +802,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-026-uv308-106",
+              id: "pv-026-uv308-106",
               category: "section-15-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Hömann Sektionaltor RenoMatic 42 waagerechte L-Sicke Slategrain",
@@ -840,7 +840,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-027-tuer-101-mon",
+              id: "pv-027-tuer-101-mon",
               category: "section-16-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TOR | 🛠 Montage",
@@ -878,7 +878,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-1172244",
+              id: "pv-028-1172244",
               category: "section-17-material",
               subcategory: "leistungen-materialien",
               title: "Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender",
@@ -916,7 +916,7 @@ export const packageTuerenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-029-1172107",
+              id: "pv-029-1172107",
               category: "section-18-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Terralis Schiebetor 6/5/6 mm steingrau B=500 cm H=160 cm E-Antrieb+Handsender",
@@ -963,7 +963,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -986,7 +986,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -1009,7 +1009,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-tuer-100-au",
+              id: "pv-003-tuer-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -1047,7 +1047,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-uv339-90130",
+              id: "pv-004-uv339-90130",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -1070,7 +1070,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv354-10091",
+              id: "pv-005-uv354-10091",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt",
@@ -1093,7 +1093,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv339-90246",
+              id: "pv-006-uv339-90246",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -1131,7 +1131,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv293-17108",
+              id: "pv-007-uv293-17108",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -1154,7 +1154,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv293-17316",
+              id: "pv-008-uv293-17316",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -1192,7 +1192,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-1013690",
+              id: "pv-009-1013690",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem TB CK4 RS-KA Weißlack ex cl 610x 1985 mm DIN R BB Band 2-tlg vern",
@@ -1215,7 +1215,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-1013695",
+              id: "pv-010-1013695",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem TB CK4 RS-KA Weißlack ex cl 985x 1985 mm DIN L BB Band 2-tlg vern",
@@ -1238,7 +1238,7 @@ export const packageTuerenZimmertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-144904",
+              id: "pv-011-144904",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Pruem Zarge FU-RF Weißlack 610x 2110x 125 mm DIN L",
@@ -1285,7 +1285,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -1308,7 +1308,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -1331,7 +1331,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-tuer-100-au",
+              id: "pv-003-tuer-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -1369,7 +1369,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-1194968",
+              id: "pv-004-1194968",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Weißlack Schiebetuer, RS-Einlage, stumpf 860x 1985 mm, Giffmuschel u. Bodennut",
@@ -1392,7 +1392,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv789-648",
+              id: "pv-005-uv789-648",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Griffwerk PLANEO 120 COMFORT Schiebetürsystem für Holztür - Deckenmontage",
@@ -1430,7 +1430,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-uv789-10221",
+              id: "pv-006-uv789-10221",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasschiebetür ESG Typo 688",
@@ -1453,7 +1453,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv789-653",
+              id: "pv-007-uv789-653",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk R8 - Schiebetürsystem für Glastür - Wandmontage",
@@ -1491,7 +1491,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-uv767-10091",
+              id: "pv-008-uv767-10091",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wingburg Belport B1T-H Schiebetürsystem zargenlos für Trockenbauwand, 1-flügelig für Holztürblatt",
@@ -1514,7 +1514,7 @@ export const packageTuerenSchiebetueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv767-10655",
+              id: "pv-009-uv767-10655",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wingburg Belport B2T-G Schiebetürsystem zargenlos für Trockenbauwand, 2-flügelig für Glastürblatt",
@@ -1561,7 +1561,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -1584,7 +1584,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -1607,7 +1607,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-tuer-100-au",
+              id: "pv-003-tuer-100-au",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -1645,7 +1645,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-uv789-3122",
+              id: "pv-004-uv789-3122",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasdrehtür ESG All Satin 501 Studio/Office - Basic Green matt",
@@ -1668,7 +1668,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv789-125",
+              id: "pv-005-uv789-125",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Griffwerk CLASSICO Ganzglastürbeschlagset - 3-teiliger Bandsatz - mit Griff LUCIA PROF",
@@ -1706,7 +1706,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-uv789-3785",
+              id: "pv-006-uv789-3785",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasdrehtür ESG 3D 636 Studio/Office",
@@ -1744,7 +1744,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv789-10221",
+              id: "pv-007-uv789-10221",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk Glasschiebetür ESG Typo 688",
@@ -1767,7 +1767,7 @@ export const packageTuerenGlastueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv789-653",
+              id: "pv-008-uv789-653",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk R8 - Schiebetürsystem für Glastür - Wandmontage",
@@ -1814,7 +1814,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10238",
+              id: "pv-001-mon-10238",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HEBESCHIEBE | 🛠 Montage",
@@ -1837,7 +1837,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -1875,7 +1875,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fens-701-1",
+              id: "pv-003-fens-701-1",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Hebeschiebetür Schüco EasySlide CT 70",
@@ -1913,7 +1913,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-fens-601-11",
+              id: "pv-004-fens-601-11",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "PSK Tür Kunststoff Schüco LivIng 82 AS",
@@ -1936,7 +1936,7 @@ export const packageTuerenBalkonTerrassen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-501-10",
+              id: "pv-005-fens-501-10",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS",
@@ -1983,7 +1983,7 @@ export const packageTuerenHaustueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -2006,7 +2006,7 @@ export const packageTuerenHaustueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -2044,7 +2044,7 @@ export const packageTuerenHaustueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv218-10284",
+              id: "pv-003-uv218-10284",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "FM Aluminium Haustür DS 92 Modell 04 Anthrazit mit Vierfachverglasung",
@@ -2082,7 +2082,7 @@ export const packageTuerenHaustueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-1074251",
+              id: "pv-004-1074251",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Bayerwald Alu-Haustuer Modell 4201 RW4 1100x 2100 mm DIN R",
@@ -2129,7 +2129,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-100-basis",
+              id: "pv-001-tuer-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -2152,7 +2152,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tuer-101-1-zu",
+              id: "pv-002-tuer-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -2190,7 +2190,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv218-165",
+              id: "pv-003-uv218-165",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "FM Nebeneingangstür NBT 56 Modell 05 Weiss",
@@ -2213,7 +2213,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-165466",
+              id: "pv-004-165466",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "BBE Stahl-Staenderwerkzarge Typ Bud 875x 2000x 125 mm DIN L/R",
@@ -2251,7 +2251,7 @@ export const packageTuerenKellertueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-uv354-10094",
+              id: "pv-005-uv354-10094",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt",
@@ -2298,7 +2298,7 @@ export const packageTuerenGaragentore: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-10001-basis",
+              id: "pv-001-tuer-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARAGENTOR | 🛠 Montage-Leistungspaket",
@@ -2335,7 +2335,7 @@ export const packageTuerenGaragentore: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv501-705",
+              id: "pv-002-uv501-705",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Novoferm Sektionaltor iso 20 Grosssicke Woodgrain Verkehrsweiss",
@@ -2373,7 +2373,7 @@ export const packageTuerenGaragentore: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv308-106",
+              id: "pv-003-uv308-106",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Hömann Sektionaltor RenoMatic 42 waagerechte L-Sicke Slategrain",
@@ -2420,7 +2420,7 @@ export const packageTuerenToreEinfahrt: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-tuer-101-mon",
+              id: "pv-001-tuer-101-mon",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TOR | 🛠 Montage",
@@ -2458,7 +2458,7 @@ export const packageTuerenToreEinfahrt: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-1172244",
+              id: "pv-002-1172244",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Terralis Schiebetor Rundstaebe steingrau B=300 cm H=120 cm E-Antrieb+Handsender",
@@ -2496,7 +2496,7 @@ export const packageTuerenToreEinfahrt: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-1172107",
+              id: "pv-003-1172107",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Terralis Schiebetor 6/5/6 mm steingrau B=500 cm H=160 cm E-Antrieb+Handsender",

@@ -18,7 +18,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-101-1-zu",
+              id: "pv-001-rohb-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-101-1-mat",
+              id: "pv-002-rohb-101-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket",
@@ -64,7 +64,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-rohb-101-2-mat",
+              id: "pv-003-rohb-101-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (17-35 cm) | 🛠 Demontage-Leistungspaket",
@@ -102,7 +102,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-rohb-100-au",
+              id: "pv-004-rohb-100-au",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu ROHBAU |**Varianten**",
@@ -140,7 +140,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-rohb-201-mat",
+              id: "pv-005-rohb-201-mat",
               category: "section-03-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**",
@@ -163,7 +163,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-rohb-201-1-zu",
+              id: "pv-006-rohb-201-1-zu",
               category: "section-03-stahltrager-basis-haus",
               subcategory: "leistungen-materialien",
               title: "BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage",
@@ -201,7 +201,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-007-rohb-401-mat",
+              id: "pv-007-rohb-401-mat",
               category: "section-04-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WANDPUTZ-GIPS | 🛠 Montage-Leistungspaket",
@@ -224,7 +224,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-rohb-401-1-op",
+              id: "pv-008-rohb-401-1-op",
               category: "section-04-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-PUTZ |🛠 Demontage & Entsorgung",
@@ -262,7 +262,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-troc-100-basis",
+              id: "pv-009-troc-100-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DECKEN | 🛠 Montage-Leistungspaket",
@@ -285,7 +285,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-troc-200-basis",
+              id: "pv-010-troc-200-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -308,7 +308,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-troc-300-basis",
+              id: "pv-011-troc-300-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VORSATZWÄNDE | 🛠 Montage-Leistungspaket",
@@ -331,7 +331,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-troc-101-1-zu",
+              id: "pv-012-troc-101-1-zu",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -354,7 +354,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-troc-201-1-zu",
+              id: "pv-013-troc-201-1-zu",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage",
@@ -377,7 +377,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-troc-201-2-zu",
+              id: "pv-014-troc-201-2-zu",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -415,7 +415,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-015-556617",
+              id: "pv-015-556617",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -438,7 +438,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-1010766",
+              id: "pv-016-1010766",
               category: "section-06-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -476,7 +476,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-017-troc-401-zu",
+              id: "pv-017-troc-401-zu",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -499,7 +499,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-troc-501-zu",
+              id: "pv-018-troc-501-zu",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -537,7 +537,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-019-elek-100-basis",
+              id: "pv-019-elek-100-basis",
               category: "section-08-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO-NEUINSTALLATION (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -574,7 +574,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-020-elek-201-1-zu",
+              id: "pv-020-elek-201-1-zu",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ZULEITUNGEN SET | 8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage",
@@ -597,7 +597,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-elek-101-2-mat",
+              id: "pv-021-elek-101-2-mat",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -620,7 +620,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-elek-201-2-zu",
+              id: "pv-022-elek-201-2-zu",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -643,7 +643,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-elek-201-3-zu",
+              id: "pv-023-elek-201-3-zu",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -681,7 +681,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-024-elek-201-mat",
+              id: "pv-024-elek-201-mat",
               category: "section-10-material",
               subcategory: "leistungen-materialien",
               title: "SCHALTER/STECKD. SET 25/8 | Gira S 55 weiß |**Varianten**",
@@ -718,7 +718,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-025-elek-10002-basis",
+              id: "pv-025-elek-10002-basis",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -755,7 +755,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-026-lht-1005368",
+              id: "pv-026-lht-1005368",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: " SLV NUMINOS® MOVE S Einbaustrahler weiß 40°",
@@ -793,7 +793,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-027-lht-93567",
+              id: "pv-027-lht-93567",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " LED Möbel-Aufbauleuchten Set, 3x3,2W, rund",
@@ -831,7 +831,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-elek-301-zu",
+              id: "pv-028-elek-301-zu",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -854,7 +854,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-elek-501-mat",
+              id: "pv-029-elek-501-mat",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JALOUSIESCHALTER | Free-Home |**Varianten**",
@@ -877,7 +877,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-elek-100-au",
+              id: "pv-030-elek-100-au",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu ELEKTROINSTALLATION |**Varianten**",
@@ -915,7 +915,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-031-male-100-basis",
+              id: "pv-031-male-100-basis",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -937,7 +937,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-032-male-101-mat",
+              id: "pv-032-male-101-mat",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket",
@@ -960,7 +960,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-033-male-201-mat",
+              id: "pv-033-male-201-mat",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -998,7 +998,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-034-male-101-1-zu",
+              id: "pv-034-male-101-1-zu",
               category: "section-16-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -1021,7 +1021,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-035-male-101-2-zu",
+              id: "pv-035-male-101-2-zu",
               category: "section-16-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TAPETEN |🛠 Demontage & Entsorgung",
@@ -1059,7 +1059,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-036-male-100-au",
+              id: "pv-036-male-100-au",
               category: "section-17-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu MALER & LACKIERER |**Varianten**",
@@ -1097,7 +1097,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-037-wass-100-basis",
+              id: "pv-037-wass-100-basis",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket",
@@ -1120,7 +1120,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-038-wass-200-basis",
+              id: "pv-038-wass-200-basis",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket",
@@ -1143,7 +1143,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-039-wass-300-basis",
+              id: "pv-039-wass-300-basis",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -1166,7 +1166,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-040-wass-501-mat",
+              id: "pv-040-wass-501-mat",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HAUPTSTRANG (Trink- & Abwasser  & Zirkul.) | 🛠 Montage-Leistungspaket",
@@ -1204,7 +1204,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-041-wass-105-zu",
+              id: "pv-041-wass-105-zu",
               category: "section-19-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -1227,7 +1227,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-042-wass-101-mon",
+              id: "pv-042-wass-101-mon",
               category: "section-19-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -1265,7 +1265,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-043-cvis3wt112",
+              id: "pv-043-cvis3wt112",
               category: "section-20-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -1288,7 +1288,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-044-dfix320wc112",
+              id: "pv-044-dfix320wc112",
               category: "section-20-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -1311,7 +1311,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-045-sigma30wech",
+              id: "pv-045-sigma30wech",
               category: "section-20-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -1349,7 +1349,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-046-wass-100-au",
+              id: "pv-046-wass-100-au",
               category: "section-21-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -1387,7 +1387,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-047-heiz-101-mon",
+              id: "pv-047-heiz-101-mon",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -1424,7 +1424,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-048-uv835-10017",
+              id: "pv-048-uv835-10017",
               category: "section-23-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -1447,7 +1447,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-049-uv835-1083",
+              id: "pv-049-uv835-1083",
               category: "section-23-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -1485,7 +1485,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-050-pt6333080",
+              id: "pv-050-pt6333080",
               category: "section-24-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012",
@@ -1523,7 +1523,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-051-heiz-201-1-op",
+              id: "pv-051-heiz-201-1-op",
               category: "section-25-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER |🛠 Demontage & Entsorgung ",
@@ -1545,7 +1545,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-052-heiz-301-mat",
+              id: "pv-052-heiz-301-mat",
               category: "section-25-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -1583,7 +1583,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-053-heiz-100-basis",
+              id: "pv-053-heiz-100-basis",
               category: "section-26-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BODENHEIZUNG | 🛠 Montage-Leistungspaket",
@@ -1620,7 +1620,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-054-rohb-501-mat",
+              id: "pv-054-rohb-501-mat",
               category: "section-27-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | Trocken-Platten |**Varianten**",
@@ -1643,7 +1643,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-055-rohb-501-1-op",
+              id: "pv-055-rohb-501-1-op",
               category: "section-27-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -1681,7 +1681,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-056-mon-10158",
+              id: "pv-056-mon-10158",
               category: "section-28-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -1704,7 +1704,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-057-uv722-00108",
+              id: "pv-057-uv722-00108",
               category: "section-28-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",
@@ -1742,7 +1742,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-058-bade-100-basis",
+              id: "pv-058-bade-100-basis",
               category: "section-29-fliesen-badezimmer",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - BAD | 🛠 Montage-Leistungspaket",
@@ -1779,7 +1779,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-059-1168296",
+              id: "pv-059-1168296",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -1802,7 +1802,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-060-1176157",
+              id: "pv-060-1176157",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -1825,7 +1825,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-061-1054265",
+              id: "pv-061-1054265",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -1848,7 +1848,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-062-uv867-00298",
+              id: "pv-062-uv867-00298",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -1871,7 +1871,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-063-uv519-00256",
+              id: "pv-063-uv519-00256",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -1894,7 +1894,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-064-uv519-00143",
+              id: "pv-064-uv519-00143",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -1917,7 +1917,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-065-uv608-6903",
+              id: "pv-065-uv608-6903",
               category: "section-30-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -1955,7 +1955,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-066-bade-500-basis",
+              id: "pv-066-bade-500-basis",
               category: "section-31-sanitar-badezimmer",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - BAD | Montage-Leistungspaket",
@@ -1992,7 +1992,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-067-dewwc",
+              id: "pv-067-dewwc",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC derby sichtbare Befestigung weiss VIGOUR",
@@ -2015,7 +2015,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-068-desias",
+              id: "pv-068-desias",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz derby Edelstahlscharnier abnehmbar mit Absenkautomatik weiss VIG.",
@@ -2038,7 +2038,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-069-des60p",
+              id: "pv-069-des60p",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Waschtisch derby style 60x48cm weiss PflegePLUS VIGOUR",
@@ -2061,7 +2061,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-070-des",
+              id: "pv-070-des",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-Waschtischbatterie derby style mit Ablaufgarnitur verchromt VIGOUR",
@@ -2084,7 +2084,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-071-desm180p",
+              id: "pv-071-desm180p",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Badewanne Stahl derby 180x80cm weiss Ab-/Überlauf mittig Pflegeplus VIGOUR",
@@ -2107,7 +2107,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-072-depghw",
+              id: "pv-072-depghw",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-AP-Badebatterie derby plus mit Hebel geschl. o. Brausegarn. verchr. VIG",
@@ -2130,7 +2130,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-073-cls90ef",
+              id: "pv-073-cls90ef",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Duschwanne Stahl clivia 90x90x3.2cm weiss VIGOUR",
@@ -2153,7 +2153,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-074-euphdsee260",
+              id: "pv-074-euphdsee260",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Duschsystem Euphoria 260 mit Einhandmischer 9,5l/min chrom Grohe",
@@ -2176,7 +2176,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-075-v2ge90l",
+              id: "pv-075-v2ge90l",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Gleittür Eckhälfte 2.0 links 900x1950mm silber matt ESG klar VIGOUR",
@@ -2199,7 +2199,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-076-v2ge90r",
+              id: "pv-076-v2ge90r",
               category: "section-32-material",
               subcategory: "leistungen-materialien",
               title: "Gleittür Eckhälfte 2.0 rechts 900x1950mm silber matt ESG klar VIGOUR",
@@ -2237,7 +2237,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-077-bade-507-4-mat",
+              id: "pv-077-bade-507-4-mat",
               category: "section-33-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket",
@@ -2275,7 +2275,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-078-strahyr",
+              id: "pv-078-strahyr",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke",
@@ -2298,7 +2298,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-079-santralabh18",
+              id: "pv-079-santralabh18",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt",
@@ -2321,7 +2321,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-080-codessp50",
+              id: "pv-080-codessp50",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti",
@@ -2344,7 +2344,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-081-cwsssppas",
+              id: "pv-081-cwsssppas",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss",
@@ -2367,7 +2367,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-082-hewiksiw448",
+              id: "pv-082-hewiksiw448",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung",
@@ -2390,7 +2390,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-083-hewiwig600",
+              id: "pv-083-hewiwig600",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Winkelgriff Hewi 600x300mm reinweiss",
@@ -2428,7 +2428,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-084-gawc-100-basis",
+              id: "pv-084-gawc-100-basis",
               category: "section-35-fliesen-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -2466,7 +2466,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-085-uv816-00746",
+              id: "pv-085-uv816-00746",
               category: "section-36-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -2504,7 +2504,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-086-1168296",
+              id: "pv-086-1168296",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -2527,7 +2527,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-087-1176157",
+              id: "pv-087-1176157",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -2550,7 +2550,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-088-1054265",
+              id: "pv-088-1054265",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -2573,7 +2573,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-089-uv867-00298",
+              id: "pv-089-uv867-00298",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -2596,7 +2596,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-090-uv519-00256",
+              id: "pv-090-uv519-00256",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -2619,7 +2619,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-091-uv519-00143",
+              id: "pv-091-uv519-00143",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -2642,7 +2642,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-092-uv608-6903",
+              id: "pv-092-uv608-6903",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -2680,7 +2680,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-093-gawc-500-basis",
+              id: "pv-093-gawc-500-basis",
               category: "section-38-sanitar-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -2718,7 +2718,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-094-dewwc",
+              id: "pv-094-dewwc",
               category: "section-39-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC derby sichtbare Befestigung weiss VIGOUR",
@@ -2741,7 +2741,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-095-desias",
+              id: "pv-095-desias",
               category: "section-39-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz derby Edelstahlscharnier abnehmbar mit Absenkautomatik weiss VIG.",
@@ -2764,7 +2764,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-096-desp45ohp",
+              id: "pv-096-desp45ohp",
               category: "section-39-material",
               subcategory: "leistungen-materialien",
               title: "Handwaschb.derby style plus 45x35cm ohne HL mit ÜL weiss PflegePLUS VIGOUR",
@@ -2787,7 +2787,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-097-des",
+              id: "pv-097-des",
               category: "section-39-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-Waschtischbatterie derby style mit Ablaufgarnitur verchromt VIGOUR",
@@ -2825,7 +2825,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-098-bode-100-basis",
+              id: "pv-098-bode-100-basis",
               category: "section-40-holz-boden",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG-Boden | 🛠 Montage-Leistungspaket",
@@ -2862,7 +2862,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-099-bode-100-1-op",
+              id: "pv-099-bode-100-1-op",
               category: "section-41-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -2900,7 +2900,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-100-par1501534-e28a",
+              id: "pv-100-par1501534-e28a",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "JOKA Classic KINGSTON 435 SB / DS 3.5 mm Fertigparkett 3-S m",
@@ -2923,7 +2923,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-101-1265921",
+              id: "pv-101-1265921",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "RAW Sockelleiste MDF Cubus !Z weiß uni alle Dekore 2500x 16x 80 mm",
@@ -2946,7 +2946,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-102-1105594",
+              id: "pv-102-1105594",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "Egger Laminat Classic 31 Stangl Buche EBL002 1292x192x7mm",
@@ -2969,7 +2969,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-103-642888",
+              id: "pv-103-642888",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "Egger Sockelleiste 2400x 17x 60mm Leiste zu EBL002 L131",
@@ -2992,7 +2992,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-104-287221",
+              id: "pv-104-287221",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau",
@@ -3015,7 +3015,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-105-1098740",
+              id: "pv-105-1098740",
               category: "section-42-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -3053,7 +3053,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-106-uv816-00746",
+              id: "pv-106-uv816-00746",
               category: "section-43-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -3076,7 +3076,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-107-bode-100-2-op",
+              id: "pv-107-bode-100-2-op",
               category: "section-43-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -3114,7 +3114,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-108-bode-400-basis",
+              id: "pv-108-bode-400-basis",
               category: "section-44-fliesen-boden",
               subcategory: "leistungen-materialien",
               title: "BODENFLIESEN | 🛠 Montage-Leistungspaket",
@@ -3151,7 +3151,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-109-1209835",
+              id: "pv-109-1209835",
               category: "section-45-material",
               subcategory: "leistungen-materialien",
               title: "*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834",
@@ -3174,7 +3174,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-110-662445",
+              id: "pv-110-662445",
               category: "section-45-material",
               subcategory: "leistungen-materialien",
               title: "V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS",
@@ -3197,7 +3197,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-111-uv867-00298",
+              id: "pv-111-uv867-00298",
               category: "section-45-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -3235,7 +3235,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-112-bode-100-2-op",
+              id: "pv-112-bode-100-2-op",
               category: "section-46-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -3273,7 +3273,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-113-tuer-100-basis",
+              id: "pv-113-tuer-100-basis",
               category: "section-47-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -3296,7 +3296,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-114-tuer-101-1-zu",
+              id: "pv-114-tuer-101-1-zu",
               category: "section-47-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -3319,7 +3319,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-115-tuer-100-au",
+              id: "pv-115-tuer-100-au",
               category: "section-47-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -3357,7 +3357,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-116-uv339-90130",
+              id: "pv-116-uv339-90130",
               category: "section-48-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -3380,7 +3380,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-117-uv354-10091",
+              id: "pv-117-uv354-10091",
               category: "section-48-material",
               subcategory: "leistungen-materialien",
               title: "Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt",
@@ -3403,7 +3403,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-118-1194968",
+              id: "pv-118-1194968",
               category: "section-48-material",
               subcategory: "leistungen-materialien",
               title: "Weißlack Schiebetuer, RS-Einlage, stumpf 860x 1985 mm, Giffmuschel u. Bodennut",
@@ -3441,7 +3441,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-119-uv339-90246",
+              id: "pv-119-uv339-90246",
               category: "section-49-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -3479,7 +3479,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-120-uv293-17108",
+              id: "pv-120-uv293-17108",
               category: "section-50-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -3502,7 +3502,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-121-uv293-17316",
+              id: "pv-121-uv293-17316",
               category: "section-50-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -3540,7 +3540,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-122-uv218-26616",
+              id: "pv-122-uv218-26616",
               category: "section-51-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FM Mehrzwecktür MZ 41 mm Weiss - Nebeneingangstür - Kellertür - Garagentür",
@@ -3578,7 +3578,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-123-kuec-10001-basis",
+              id: "pv-123-kuec-10001-basis",
               category: "section-52-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -3615,7 +3615,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-124-neu-000053",
+              id: "pv-124-neu-000053",
               category: "section-53-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen",
@@ -3653,7 +3653,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-125-670036575447",
+              id: "pv-125-670036575447",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche München 430 cm in Weiß komplett - online kaufen",
@@ -3691,7 +3691,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-126-670036573313",
+              id: "pv-126-670036573313",
               category: "section-55-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -3714,7 +3714,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-127-3372-953-044",
+              id: "pv-127-3372-953-044",
               category: "section-55-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -3752,7 +3752,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-128-fens-100-basis",
+              id: "pv-128-fens-100-basis",
               category: "section-56-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -3789,7 +3789,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-129-fens-102-1-op",
+              id: "pv-129-fens-102-1-op",
               category: "section-57-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -3827,7 +3827,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-130-fens-101-3-k1",
+              id: "pv-130-fens-101-3-k1",
               category: "section-58-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 1 m Kantenlänge",
@@ -3850,7 +3850,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-131-fens-101-3-k2",
+              id: "pv-131-fens-101-3-k2",
               category: "section-58-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 2 m Kantenlänge",
@@ -3873,7 +3873,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-132-fens-101-3-k3",
+              id: "pv-132-fens-101-3-k3",
               category: "section-58-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 3 m Kantenlänge",
@@ -3895,7 +3895,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-133-fens-101-3-k4",
+              id: "pv-133-fens-101-3-k4",
               category: "section-58-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 4 m Kantenlänge",
@@ -3917,7 +3917,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-134-fens-501-9",
+              id: "pv-134-fens-501-9",
               category: "section-58-material",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS Rondo",
@@ -3955,7 +3955,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-135-1101181",
+              id: "pv-135-1101181",
               category: "section-59-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -3993,7 +3993,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-136-uv789-1039",
+              id: "pv-136-uv789-1039",
               category: "section-60-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -4016,7 +4016,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-137-fens-101-basis",
+              id: "pv-137-fens-101-basis",
               category: "section-60-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -4054,7 +4054,7 @@ export const packageWohnungMaisonette: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-138-ents-101-mat",
+              id: "pv-138-ents-101-mat",
               category: "section-61-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",

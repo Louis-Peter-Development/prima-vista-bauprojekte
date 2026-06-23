@@ -580,7 +580,7 @@ const WOHNUNG_ROWS: Record<string, WohnungRow[]> = {
   ],
 };
 
-export function createBossmannWohnungPackage(id: string, title: string, defaultArea: number, defaultFloorCount: number): RenovationPackage {
+export function createPrimaVistaWohnungPackage(id: string, title: string, defaultArea: number, defaultFloorCount: number): RenovationPackage {
   const rows = WOHNUNG_ROWS[id] ?? WOHNUNG_ROWS['2zi'];
   const grouped = new Map<string, WohnungRow[]>();
   rows.forEach((row) => {

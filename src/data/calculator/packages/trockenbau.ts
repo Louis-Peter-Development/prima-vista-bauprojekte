@@ -18,7 +18,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-troc-100-basis",
+              id: "pv-001-troc-100-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DECKEN | 🛠 Montage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-troc-200-basis",
+              id: "pv-002-troc-200-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -64,7 +64,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-troc-300-basis",
+              id: "pv-003-troc-300-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZWÄNDE | 🛠 Montage-Leistungspaket",
@@ -87,7 +87,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-troc-101-1-zu",
+              id: "pv-004-troc-101-1-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -110,7 +110,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-troc-201-1-zu",
+              id: "pv-005-troc-201-1-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage",
@@ -133,7 +133,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-troc-201-2-zu",
+              id: "pv-006-troc-201-2-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -171,7 +171,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-556617",
+              id: "pv-007-556617",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -194,7 +194,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-1010766",
+              id: "pv-008-1010766",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -232,7 +232,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-troc-401-zu",
+              id: "pv-009-troc-401-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -255,7 +255,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-troc-501-zu",
+              id: "pv-010-troc-501-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -278,7 +278,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv169-236",
+              id: "pv-011-uv169-236",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand",
@@ -316,7 +316,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-troc-201-1-zu",
+              id: "pv-012-troc-201-1-zu",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage",
@@ -339,7 +339,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-troc-201-2-zu",
+              id: "pv-013-troc-201-2-zu",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -362,7 +362,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-troc-401-zu",
+              id: "pv-014-troc-401-zu",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -385,7 +385,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-troc-501-zu",
+              id: "pv-015-troc-501-zu",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -423,7 +423,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-016-mon-10222",
+              id: "pv-016-mon-10222",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -446,7 +446,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-rohb-501-1-op",
+              id: "pv-017-rohb-501-1-op",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -469,7 +469,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-uv204-000321",
+              id: "pv-018-uv204-000321",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm",
@@ -492,7 +492,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-204-00071",
+              id: "pv-019-204-00071",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Kleber - 1 kg Flasche",
@@ -515,7 +515,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-204-00073",
+              id: "pv-020-204-00073",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück",
@@ -553,7 +553,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-021-rohb-501-2-op",
+              id: "pv-021-rohb-501-2-op",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -576,7 +576,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-204-85",
+              id: "pv-022-204-85",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wabenschüttung - 15 Liter Sack",
@@ -599,7 +599,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-204-00088",
+              id: "pv-023-204-00088",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wärmedämmschüttung - 100 Liter Sack",
@@ -622,7 +622,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-204-00086",
+              id: "pv-024-204-00086",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm",
@@ -660,7 +660,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-dach-600-basis",
+              id: "pv-025-dach-600-basis",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -682,7 +682,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-dach-601-1-zu",
+              id: "pv-026-dach-601-1-zu",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -705,7 +705,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-dach-600-2-op",
+              id: "pv-027-dach-600-2-op",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -728,7 +728,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-556617",
+              id: "pv-028-556617",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -751,7 +751,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-1010766",
+              id: "pv-029-1010766",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -774,7 +774,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-609625",
+              id: "pv-030-609625",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -796,7 +796,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-031-1010361",
+              id: "pv-031-1010361",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -834,7 +834,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-032-dach-600-au",
+              id: "pv-032-dach-600-au",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -857,7 +857,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-033-517-01445",
+              id: "pv-033-517-01445",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -880,7 +880,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-034-517-02194",
+              id: "pv-034-517-02194",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -918,7 +918,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-035-dach-602-mon",
+              id: "pv-035-dach-602-mon",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -940,7 +940,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-036-688152",
+              id: "pv-036-688152",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -962,7 +962,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-037-uv569-00014",
+              id: "pv-037-uv569-00014",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -985,7 +985,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-038-uv383-00605",
+              id: "pv-038-uv383-00605",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -1023,7 +1023,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-039-dach-500-basis",
+              id: "pv-039-dach-500-basis",
               category: "section-10-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -1045,7 +1045,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-040-uv702-1369",
+              id: "pv-040-uv702-1369",
               category: "section-10-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -1068,7 +1068,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-041-uv704-91870",
+              id: "pv-041-uv704-91870",
               category: "section-10-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -1106,7 +1106,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-042-troc-200-basis",
+              id: "pv-042-troc-200-basis",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -1129,7 +1129,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-043-pladiver2-181",
+              id: "pv-043-pladiver2-181",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ARDESIO Steinpaneel",
@@ -1167,7 +1167,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-044-auspan2021-03",
+              id: "pv-044-auspan2021-03",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JOKA PARO AKUSTIK Echtholzpaneel GEPRÄGT 2400 x 600 x 20 mm,",
@@ -1190,7 +1190,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-045-737-00336",
+              id: "pv-045-737-00336",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "De Ryck Steinriemchen Murok Sierra M47",
@@ -1228,7 +1228,7 @@ export const packageTrockenbauAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-046-080-28",
+              id: "pv-046-080-28",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Botament M21 HP Premium-Flexkleber - 25Kg",
@@ -1275,7 +1275,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-troc-100-basis",
+              id: "pv-001-troc-100-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "DECKEN | 🛠 Montage-Leistungspaket",
@@ -1298,7 +1298,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-troc-101-1-zu",
+              id: "pv-002-troc-101-1-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -1321,7 +1321,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-troc-201-2-zu",
+              id: "pv-003-troc-201-2-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -1359,7 +1359,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-556617",
+              id: "pv-004-556617",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -1382,7 +1382,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-1010766",
+              id: "pv-005-1010766",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -1420,7 +1420,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-517-01445",
+              id: "pv-006-517-01445",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -1443,7 +1443,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-517-02194",
+              id: "pv-007-517-02194",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -1466,7 +1466,7 @@ export const packageTrockenbauDecken: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-dach-600-au",
+              id: "pv-008-dach-600-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -1513,7 +1513,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-troc-200-basis",
+              id: "pv-001-troc-200-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -1536,7 +1536,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-troc-300-basis",
+              id: "pv-002-troc-300-basis",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZWÄNDE | 🛠 Montage-Leistungspaket",
@@ -1559,7 +1559,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-troc-101-1-zu",
+              id: "pv-003-troc-101-1-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -1582,7 +1582,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-troc-201-1-zu",
+              id: "pv-004-troc-201-1-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage",
@@ -1605,7 +1605,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-troc-201-2-zu",
+              id: "pv-005-troc-201-2-zu",
               category: "section-01-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -1643,7 +1643,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-556617",
+              id: "pv-006-556617",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -1666,7 +1666,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-1010766",
+              id: "pv-007-1010766",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -1704,7 +1704,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-troc-401-zu",
+              id: "pv-008-troc-401-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -1727,7 +1727,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-troc-501-zu",
+              id: "pv-009-troc-501-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -1750,7 +1750,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv169-236",
+              id: "pv-010-uv169-236",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ECLISSE Innenwand Schiebetürset inkl. Holztürblatt Unico EF 1-flügelig für Trockenbauwand",
@@ -1788,7 +1788,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-auspan2021-03",
+              id: "pv-011-auspan2021-03",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JOKA PARO AKUSTIK Echtholzpaneel GEPRÄGT 2400 x 600 x 20 mm,",
@@ -1811,7 +1811,7 @@ export const packageTrockenbauWaendeStellen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-pladiver2-181",
+              id: "pv-012-pladiver2-181",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ARDESIO Steinpaneel",
@@ -1858,7 +1858,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-troc-200-basis",
+              id: "pv-001-troc-200-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -1896,7 +1896,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-pladiver2-181",
+              id: "pv-002-pladiver2-181",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "ARDESIO Steinpaneel",
@@ -1934,7 +1934,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-auspan2021-03",
+              id: "pv-003-auspan2021-03",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JOKA PARO AKUSTIK Echtholzpaneel GEPRÄGT 2400 x 600 x 20 mm,",
@@ -1957,7 +1957,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-737-00336",
+              id: "pv-004-737-00336",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "De Ryck Steinriemchen Murok Sierra M47",
@@ -1995,7 +1995,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-080-28",
+              id: "pv-005-080-28",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Botament M21 HP Premium-Flexkleber - 25Kg",
@@ -2033,7 +2033,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-troc-300-basis",
+              id: "pv-006-troc-300-basis",
               category: "section-05-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZWÄNDE | 🛠 Montage-Leistungspaket",
@@ -2056,7 +2056,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-556617",
+              id: "pv-007-556617",
               category: "section-05-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -2079,7 +2079,7 @@ export const packageTrockenbauWaendeVerkleiden: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-1010766",
+              id: "pv-008-1010766",
               category: "section-05-trockenbau-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -2126,7 +2126,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10222",
+              id: "pv-001-mon-10222",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | 🛠 Montage",
@@ -2149,7 +2149,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-rohb-501-1-op",
+              id: "pv-002-rohb-501-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -2187,7 +2187,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv204-000321",
+              id: "pv-003-uv204-000321",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Elemente (MW) mit Mineralwolldämmung 1500x500 mm - Dicke: 30 mm",
@@ -2225,7 +2225,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-204-00071",
+              id: "pv-004-204-00071",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Kleber - 1 kg Flasche",
@@ -2248,7 +2248,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-204-00073",
+              id: "pv-005-204-00073",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Schnellbauschrauben für Estrichelemente 3,9x19 mm, 1000 Stück",
@@ -2286,7 +2286,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-rohb-501-2-op",
+              id: "pv-006-rohb-501-2-op",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Ausgleichsschüttung Herstellen (bis 3 cm)",
@@ -2309,7 +2309,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-204-85",
+              id: "pv-007-204-85",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wabenschüttung - 15 Liter Sack",
@@ -2332,7 +2332,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-204-00088",
+              id: "pv-008-204-00088",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Wärmedämmschüttung - 100 Liter Sack",
@@ -2355,7 +2355,7 @@ export const packageTrockenbauEstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-204-00086",
+              id: "pv-009-204-00086",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Fermacell Estrich-Wabe 1.500x1.000 mm, Dicke 30 mm",
@@ -2402,7 +2402,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-600-basis",
+              id: "pv-001-dach-600-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -2439,7 +2439,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-dach-601-1-zu",
+              id: "pv-002-dach-601-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -2462,7 +2462,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dach-600-2-op",
+              id: "pv-003-dach-600-2-op",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -2500,7 +2500,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-556617",
+              id: "pv-004-556617",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -2523,7 +2523,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-1010766",
+              id: "pv-005-1010766",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -2546,7 +2546,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-609625",
+              id: "pv-006-609625",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -2568,7 +2568,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-1010361",
+              id: "pv-007-1010361",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -2606,7 +2606,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-dach-600-au",
+              id: "pv-008-dach-600-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -2629,7 +2629,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-517-01445",
+              id: "pv-009-517-01445",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -2652,7 +2652,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-517-02194",
+              id: "pv-010-517-02194",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -2690,7 +2690,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-dach-602-mon",
+              id: "pv-011-dach-602-mon",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -2712,7 +2712,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-688152",
+              id: "pv-012-688152",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -2734,7 +2734,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv569-00014",
+              id: "pv-013-uv569-00014",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -2757,7 +2757,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv383-00605",
+              id: "pv-014-uv383-00605",
               category: "section-05-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -2795,7 +2795,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-dach-500-basis",
+              id: "pv-015-dach-500-basis",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -2817,7 +2817,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-uv702-1369",
+              id: "pv-016-uv702-1369",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -2840,7 +2840,7 @@ export const packageTrockenbauDachschraegen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-uv704-91870",
+              id: "pv-017-uv704-91870",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",

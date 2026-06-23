@@ -18,7 +18,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-fens-100-basis",
+              id: "pv-001-fens-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -40,7 +40,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-fens-102-1-op",
+              id: "pv-002-fens-102-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -78,7 +78,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-fens-101-3-k1",
+              id: "pv-003-fens-101-3-k1",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 1 m Kantenlänge",
@@ -101,7 +101,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-fens-101-3-k2",
+              id: "pv-004-fens-101-3-k2",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 2 m Kantenlänge",
@@ -124,7 +124,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-101-3-k3",
+              id: "pv-005-fens-101-3-k3",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 3 m Kantenlänge",
@@ -146,7 +146,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-fens-101-3-k4",
+              id: "pv-006-fens-101-3-k4",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 4 m Kantenlänge",
@@ -168,7 +168,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-fens-501-9",
+              id: "pv-007-fens-501-9",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS Rondo",
@@ -206,7 +206,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-1101181",
+              id: "pv-008-1101181",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -244,7 +244,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-uv789-1039",
+              id: "pv-009-uv789-1039",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -267,7 +267,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-fens-101-basis",
+              id: "pv-010-fens-101-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -305,7 +305,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv600-130",
+              id: "pv-011-uv600-130",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Rollo",
@@ -328,7 +328,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv600-142",
+              id: "pv-012-uv600-142",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Schiebetür",
@@ -366,7 +366,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-fens-100-au",
+              id: "pv-013-fens-100-au",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FENSTER |**Varianten**",
@@ -389,7 +389,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv652-10002",
+              id: "pv-014-uv652-10002",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)",
@@ -427,7 +427,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-fens-10001-basis",
+              id: "pv-015-fens-10001-basis",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MARKISEN\n | 🛠 Montage-Leistungspaket",
@@ -449,7 +449,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-mat-anfrage",
+              id: "pv-016-mat-anfrage",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -472,7 +472,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-fens-10002-basis",
+              id: "pv-017-fens-10002-basis",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FENSTERLÄDEN | 🛠 Montage-Leistungspaket",
@@ -494,7 +494,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-mat-anfrage",
+              id: "pv-018-mat-anfrage",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -517,7 +517,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-fens-101-1-zu",
+              id: "pv-019-fens-101-1-zu",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | ANTRIEB-MANUELL | 🛠 Zusatz-Montage",
@@ -540,7 +540,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-mat-anfrage",
+              id: "pv-020-mat-anfrage",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -563,7 +563,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-fens-101-2-zu",
+              id: "pv-021-fens-101-2-zu",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | ANTRIEB-ELEKTRISCH | 🛠 Zusatz-Montage",
@@ -586,7 +586,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-mat-anfrage",
+              id: "pv-022-mat-anfrage",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -609,7 +609,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-carp-10001-basis",
+              id: "pv-023-carp-10001-basis",
               category: "section-07-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORTBAU FREISTEHEND | 🛠 Montage-Leistungspaket",
@@ -646,7 +646,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-024-uv595-30018",
+              id: "pv-024-uv595-30018",
               category: "section-08-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten",
@@ -669,7 +669,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-025-uv595-30003",
+              id: "pv-025-uv595-30003",
               category: "section-08-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten",
@@ -707,7 +707,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-026-carp-10008-basis",
+              id: "pv-026-carp-10008-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORTBELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -729,7 +729,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-carp-10009-basis",
+              id: "pv-027-carp-10009-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORTBODEN\n | 🛠 Montage-Leistungspaket",
@@ -751,7 +751,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-carp-10010-basis",
+              id: "pv-028-carp-10010-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT-SEITENWÄNDE | 🛠 Montage-Leistungspaket",
@@ -773,7 +773,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-carp-10011-basis",
+              id: "pv-029-carp-10011-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT REGENRINNEN | 🛠 Montage-Leistungspaket",
@@ -795,7 +795,7 @@ export const packageFensterAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-carp-10012-basis",
+              id: "pv-030-carp-10012-basis",
               category: "section-09-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT-TOR | 🛠 Montage-Leistungspaket",
@@ -832,7 +832,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-gara-10002-basis",
+              id: "pv-031-gara-10002-basis",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GARAGENTOR\n | 🛠 Montage-Leistungspaket",
@@ -869,7 +869,7 @@ export const packageFensterAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-032-mat-anfrage",
+              id: "pv-032-mat-anfrage",
               category: "section-11-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -916,7 +916,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-100-basis",
+              id: "pv-001-fens-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -938,7 +938,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-fens-102-1-op",
+              id: "pv-002-fens-102-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -976,7 +976,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fens-101-3-k1",
+              id: "pv-003-fens-101-3-k1",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 1 m Kantenlänge",
@@ -999,7 +999,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-fens-101-3-k2",
+              id: "pv-004-fens-101-3-k2",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 2 m Kantenlänge",
@@ -1022,7 +1022,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-101-3-k3",
+              id: "pv-005-fens-101-3-k3",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 3 m Kantenlänge",
@@ -1044,7 +1044,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-fens-101-3-k4",
+              id: "pv-006-fens-101-3-k4",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 4 m Kantenlänge",
@@ -1066,7 +1066,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-fens-501-9",
+              id: "pv-007-fens-501-9",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS Rondo",
@@ -1104,7 +1104,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-1101181",
+              id: "pv-008-1101181",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -1142,7 +1142,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-uv789-1039",
+              id: "pv-009-uv789-1039",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -1165,7 +1165,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-fens-101-basis",
+              id: "pv-010-fens-101-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -1203,7 +1203,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv600-130",
+              id: "pv-011-uv600-130",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Rollo",
@@ -1226,7 +1226,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv600-142",
+              id: "pv-012-uv600-142",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Schiebetür",
@@ -1264,7 +1264,7 @@ export const packageFensterKunststoff: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-fens-100-au",
+              id: "pv-013-fens-100-au",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FENSTER |**Varianten**",
@@ -1287,7 +1287,7 @@ export const packageFensterKunststoff: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv652-10002",
+              id: "pv-014-uv652-10002",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)",
@@ -1334,7 +1334,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-100-basis",
+              id: "pv-001-fens-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -1356,7 +1356,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-fens-102-1-op",
+              id: "pv-002-fens-102-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -1394,7 +1394,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fens-301-1-k1",
+              id: "pv-003-fens-301-1-k1",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wertbau Holzfenster IV68 Classic mit Regenschiene - bis 1 m Kantenlänge",
@@ -1417,7 +1417,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-fens-301-1-k2",
+              id: "pv-004-fens-301-1-k2",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wertbau Holzfenster IV68 Classic mit Regenschiene - bis 2 m Kantenlänge",
@@ -1440,7 +1440,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-301-1-k3",
+              id: "pv-005-fens-301-1-k3",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wertbau Holzfenster IV68 Classic mit Regenschiene - bis 3 m Kantenlänge",
@@ -1463,7 +1463,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-fens-301-1-k4",
+              id: "pv-006-fens-301-1-k4",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wertbau Holzfenster IV68 Classic mit Regenschiene - bis 4 m Kantenlänge",
@@ -1486,7 +1486,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-fens-501-39",
+              id: "pv-007-fens-501-39",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wertbau Balkontür Holz IV68 Stil mit Regenschiene",
@@ -1524,7 +1524,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-1101181",
+              id: "pv-008-1101181",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -1562,7 +1562,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-uv789-1039",
+              id: "pv-009-uv789-1039",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -1585,7 +1585,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-fens-101-basis",
+              id: "pv-010-fens-101-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -1623,7 +1623,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv600-130",
+              id: "pv-011-uv600-130",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Rollo",
@@ -1646,7 +1646,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv600-142",
+              id: "pv-012-uv600-142",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Schiebetür",
@@ -1684,7 +1684,7 @@ export const packageFensterHolz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-fens-100-au",
+              id: "pv-013-fens-100-au",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FENSTER |**Varianten**",
@@ -1707,7 +1707,7 @@ export const packageFensterHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv652-10002",
+              id: "pv-014-uv652-10002",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)",
@@ -1754,7 +1754,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-100-basis",
+              id: "pv-001-fens-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -1776,7 +1776,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-fens-102-1-op",
+              id: "pv-002-fens-102-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -1814,7 +1814,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fens-201-1-k1",
+              id: "pv-003-fens-201-1-k1",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco CT70 Kunststoff-Alu-Fenster - bis 1 m Kantenlänge",
@@ -1837,7 +1837,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-fens-201-1-k2",
+              id: "pv-004-fens-201-1-k2",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco CT70 Kunststoff-Alu-Fenster - bis 2 m Kantenlänge",
@@ -1860,7 +1860,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-201-1-k3",
+              id: "pv-005-fens-201-1-k3",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco CT70 Kunststoff-Alu-Fenster - bis 3 m Kantenlänge",
@@ -1883,7 +1883,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-fens-201-1-k4",
+              id: "pv-006-fens-201-1-k4",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco CT70 Kunststoff-Alu-Fenster - bis 4 m Kantenlänge",
@@ -1906,7 +1906,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-fens-501-37",
+              id: "pv-007-fens-501-37",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Schüco CT70 Balkontür Kunststoff-Alu",
@@ -1944,7 +1944,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-1101181",
+              id: "pv-008-1101181",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -1982,7 +1982,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-009-uv789-1039",
+              id: "pv-009-uv789-1039",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -2005,7 +2005,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-fens-101-basis",
+              id: "pv-010-fens-101-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -2043,7 +2043,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-uv600-130",
+              id: "pv-011-uv600-130",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Rollo",
@@ -2066,7 +2066,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-uv600-142",
+              id: "pv-012-uv600-142",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Schiebetür",
@@ -2104,7 +2104,7 @@ export const packageFensterAluminium: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-fens-100-au",
+              id: "pv-013-fens-100-au",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FENSTER |**Varianten**",
@@ -2127,7 +2127,7 @@ export const packageFensterAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-uv652-10002",
+              id: "pv-014-uv652-10002",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)",
@@ -2174,7 +2174,7 @@ export const packageFensterFensterlaeden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-10002-basis",
+              id: "pv-001-fens-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTERLÄDEN | 🛠 Montage-Leistungspaket",
@@ -2211,7 +2211,7 @@ export const packageFensterFensterlaeden: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-fens-101-basis",
+              id: "pv-002-fens-101-basis",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -2258,7 +2258,7 @@ export const packageFensterRolladen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-101-1-zu",
+              id: "pv-001-fens-101-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | ANTRIEB-MANUELL | 🛠 Zusatz-Montage",
@@ -2296,7 +2296,7 @@ export const packageFensterRolladen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-fens-101-2-zu",
+              id: "pv-002-fens-101-2-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | ANTRIEB-ELEKTRISCH | 🛠 Zusatz-Montage",
@@ -2334,7 +2334,7 @@ export const packageFensterRolladen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mat-anfrage",
+              id: "pv-003-mat-anfrage",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -2381,7 +2381,7 @@ export const packageFensterDachfenster: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-500-basis",
+              id: "pv-001-dach-500-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -2418,7 +2418,7 @@ export const packageFensterDachfenster: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv702-1369",
+              id: "pv-002-uv702-1369",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -2456,7 +2456,7 @@ export const packageFensterDachfenster: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv704-91870",
+              id: "pv-003-uv704-91870",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -2503,7 +2503,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-100-basis",
+              id: "pv-001-fens-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -2525,7 +2525,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-fens-102-1-op",
+              id: "pv-002-fens-102-1-op",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -2563,7 +2563,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fens-501-9",
+              id: "pv-003-fens-501-9",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS Rondo",
@@ -2601,7 +2601,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-fens-701-2",
+              id: "pv-004-fens-701-2",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Hebeschiebetür Schüco LivIngSlide HST Eco",
@@ -2624,7 +2624,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fens-601-11",
+              id: "pv-005-fens-601-11",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "PSK Tür Kunststoff Schüco LivIng 82 AS",
@@ -2662,7 +2662,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-uv789-1039",
+              id: "pv-006-uv789-1039",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -2685,7 +2685,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-fens-101-basis",
+              id: "pv-007-fens-101-basis",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -2708,7 +2708,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv600-130",
+              id: "pv-008-uv600-130",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Rollo",
@@ -2731,7 +2731,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv600-142",
+              id: "pv-009-uv600-142",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Schellenberg Insektenschutz Schiebetür",
@@ -2754,7 +2754,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-fens-100-au",
+              id: "pv-010-fens-100-au",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FENSTER |**Varianten**",
@@ -2777,7 +2777,7 @@ export const packageFensterBalkontueren: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv652-10002",
+              id: "pv-011-uv652-10002",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Steico fix 2.0 Dämmkeile 20x1350 mm (Unterfensterbank)",
@@ -2824,7 +2824,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-carp-10001-basis",
+              id: "pv-001-carp-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CARPORTBAU FREISTEHEND | 🛠 Montage-Leistungspaket",
@@ -2861,7 +2861,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-uv595-30018",
+              id: "pv-002-uv595-30018",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten",
@@ -2884,7 +2884,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv595-30003",
+              id: "pv-003-uv595-30003",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten",
@@ -2922,7 +2922,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-carp-10008-basis",
+              id: "pv-004-carp-10008-basis",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORTBELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -2944,7 +2944,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-carp-10009-basis",
+              id: "pv-005-carp-10009-basis",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORTBODEN\n | 🛠 Montage-Leistungspaket",
@@ -2966,7 +2966,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-carp-10010-basis",
+              id: "pv-006-carp-10010-basis",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT-SEITENWÄNDE | 🛠 Montage-Leistungspaket",
@@ -2988,7 +2988,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-carp-10011-basis",
+              id: "pv-007-carp-10011-basis",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT REGENRINNEN | 🛠 Montage-Leistungspaket",
@@ -3010,7 +3010,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-carp-10012-basis",
+              id: "pv-008-carp-10012-basis",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "CARPORT-TOR | 🛠 Montage-Leistungspaket",
@@ -3047,7 +3047,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-gara-10002-basis",
+              id: "pv-009-gara-10002-basis",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GARAGENTOR\n | 🛠 Montage-Leistungspaket",
@@ -3084,7 +3084,7 @@ export const packageFensterCarportGaragentore: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-mat-anfrage",
+              id: "pv-010-mat-anfrage",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -3131,7 +3131,7 @@ export const packageFensterFensterLackierung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-2-mat",
+              id: "pv-001-male-301-2-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -3178,7 +3178,7 @@ export const packageFensterMarkisen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fens-10001-basis",
+              id: "pv-001-fens-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MARKISEN\n | 🛠 Montage-Leistungspaket",
@@ -3215,7 +3215,7 @@ export const packageFensterMarkisen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",

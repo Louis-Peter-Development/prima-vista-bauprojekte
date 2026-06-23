@@ -140,7 +140,7 @@ export type KalkulatorGroup = {
 
 /** Map SKU prefixes (first segment, e.g. ROHB-201-MAT → "ROHB") to a
  *  human-readable trade label. Used to nest the flat category breakdown
- *  in the Bossmann calculator under their parent trade. */
+ *  in the Prima Vista calculator under their parent trade. */
 const SKU_PREFIX_TO_TRADE: Record<string, string> = {
   ROHB: 'Abbruch & Rohbau',
   TROC: 'Trockenbau',

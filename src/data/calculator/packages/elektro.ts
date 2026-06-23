@@ -18,7 +18,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-elek-100-basis",
+              id: "pv-001-elek-100-basis",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO-NEUINSTALLATION (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-elek-201-1-zu",
+              id: "pv-002-elek-201-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ZULEITUNGEN SET | 8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage",
@@ -78,7 +78,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-elek-101-2-mat",
+              id: "pv-003-elek-101-2-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -101,7 +101,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-elek-201-2-zu",
+              id: "pv-004-elek-201-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -124,7 +124,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-elek-201-3-zu",
+              id: "pv-005-elek-201-3-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -147,7 +147,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-elek-310-mat",
+              id: "pv-006-elek-310-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO_CHECK (pro Etage)",
@@ -185,7 +185,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-elek-201-mat",
+              id: "pv-007-elek-201-mat",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "SCHALTER/STECKD. SET 25/8 | Gira S 55 weiß |**Varianten**",
@@ -222,7 +222,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-elek-301-zu",
+              id: "pv-008-elek-301-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -245,7 +245,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-elek-401-1-mat",
+              id: "pv-009-elek-401-1-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "LED-EINBAUSTPOST (3 Stück) | 🛠 Montage-Leistungspaket",
@@ -268,7 +268,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-elek-100-au",
+              id: "pv-010-elek-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu ELEKTROINSTALLATION |**Varianten**",
@@ -291,7 +291,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-elek-301-1-zu",
+              id: "pv-011-elek-301-1-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -329,7 +329,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-elek-302-mat",
+              id: "pv-012-elek-302-mat",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -352,7 +352,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-elek-301-mat",
+              id: "pv-013-elek-301-mat",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -375,7 +375,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-elek-201-2-zu",
+              id: "pv-014-elek-201-2-zu",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -398,7 +398,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-elek-101-2-mat",
+              id: "pv-015-elek-101-2-mat",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -436,7 +436,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-016-elek-201-3-zu",
+              id: "pv-016-elek-201-3-zu",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -459,7 +459,7 @@ export const packageElektroAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-017-elek-310-mat",
+              id: "pv-017-elek-310-mat",
               category: "section-06-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO_CHECK (pro Etage)",
@@ -497,7 +497,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-elek-301-zu",
+              id: "pv-018-elek-301-zu",
               category: "section-07-it-netzwerk-basis-haus",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -535,7 +535,7 @@ export const packageElektroAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-019-elek-401-1-mat",
+              id: "pv-019-elek-401-1-mat",
               category: "section-08-lampen-leuchtmittel-basis-haus",
               subcategory: "leistungen-materialien",
               title: "LED-EINBAUSTPOST (3 Stück) | 🛠 Montage-Leistungspaket",
@@ -582,7 +582,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-100-basis",
+              id: "pv-001-elek-100-basis",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO-NEUINSTALLATION (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -619,7 +619,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-elek-201-1-zu",
+              id: "pv-002-elek-201-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ZULEITUNGEN SET | 8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage",
@@ -642,7 +642,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-elek-101-2-mat",
+              id: "pv-003-elek-101-2-mat",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -665,7 +665,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-elek-201-2-zu",
+              id: "pv-004-elek-201-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -688,7 +688,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-elek-201-3-zu",
+              id: "pv-005-elek-201-3-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -726,7 +726,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-006-elek-201-mat",
+              id: "pv-006-elek-201-mat",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "SCHALTER/STECKD. SET 25/8 | Gira S 55 weiß |**Varianten**",
@@ -763,7 +763,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-elek-301-zu",
+              id: "pv-007-elek-301-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -786,7 +786,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-elek-401-1-mat",
+              id: "pv-008-elek-401-1-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "LED-EINBAUSTPOST (3 Stück) | 🛠 Montage-Leistungspaket",
@@ -809,7 +809,7 @@ export const packageElektroNeuinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-elek-100-au",
+              id: "pv-009-elek-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu ELEKTROINSTALLATION |**Varianten**",
@@ -856,7 +856,7 @@ export const packageElektroSicherungskasten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-101-2-mat",
+              id: "pv-001-elek-101-2-mat",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -894,7 +894,7 @@ export const packageElektroSicherungskasten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-elek-310-mat",
+              id: "pv-002-elek-310-mat",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO_CHECK (pro Etage)",
@@ -941,7 +941,7 @@ export const packageElektroNetzwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-301-zu",
+              id: "pv-001-elek-301-zu",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -988,7 +988,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-301-1-zu",
+              id: "pv-001-elek-301-1-zu",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -1026,7 +1026,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-elek-302-mat",
+              id: "pv-002-elek-302-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "STECKDOSE | Gira S 55 weiß |**Varianten**",
@@ -1049,7 +1049,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-elek-301-mat",
+              id: "pv-003-elek-301-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "LICHTSCHALTER | Gira S 55 weiß |**Varianten**",
@@ -1072,7 +1072,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-elek-201-2-zu",
+              id: "pv-004-elek-201-2-zu",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1095,7 +1095,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-elek-101-2-mat",
+              id: "pv-005-elek-101-2-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -1133,7 +1133,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-elek-201-3-zu",
+              id: "pv-006-elek-201-3-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -1156,7 +1156,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-elek-310-mat",
+              id: "pv-007-elek-310-mat",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO_CHECK (pro Etage)",
@@ -1194,7 +1194,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-elek-301-zu",
+              id: "pv-008-elek-301-zu",
               category: "section-04-it-netzwerk-basis-haus",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -1232,7 +1232,7 @@ export const packageElektroEinzelinstallation: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-elek-401-1-mat",
+              id: "pv-009-elek-401-1-mat",
               category: "section-05-lampen-leuchtmittel-basis-haus",
               subcategory: "leistungen-materialien",
               title: "LED-EINBAUSTPOST (3 Stück) | 🛠 Montage-Leistungspaket",
@@ -1279,7 +1279,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-10002-basis",
+              id: "pv-001-elek-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -1316,7 +1316,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-lht-1005368",
+              id: "pv-002-lht-1005368",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " SLV NUMINOS® MOVE S Einbaustrahler weiß 40°",
@@ -1354,7 +1354,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-lht-93567",
+              id: "pv-003-lht-93567",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " LED Möbel-Aufbauleuchten Set, 3x3,2W, rund",
@@ -1377,7 +1377,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-lht-94741",
+              id: "pv-004-lht-94741",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " LED Pollerleuchte Bako 50cm IP44 Anthrazit",
@@ -1400,7 +1400,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-lht-3230-61-102",
+              id: "pv-005-lht-3230-61-102",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " \"FABAS LUCE WIGTON Deckenleuchte Weiß IP65\"",
@@ -1423,7 +1423,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-lht-3561-46-101",
+              id: "pv-006-lht-3561-46-101",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " \"Allegra Pendelleuchte 90cm E27 Schwarz\"",
@@ -1446,7 +1446,7 @@ export const packageElektroLichttechnik: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-lht-9069-22-pn",
+              id: "pv-007-lht-9069-22-pn",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " \"ETON Wandleuchte in Betonoptik, Paul Neuhaus\"",
@@ -1493,7 +1493,7 @@ export const packageElektroFreeHome: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-mat-anfrage",
+              id: "pv-001-mat-anfrage",
               category: "section-01-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
@@ -1540,7 +1540,7 @@ export const packageElektroRolladen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-301-1-zu",
+              id: "pv-001-elek-301-1-zu",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "E-ZULEITUNG - ALS EINZELINSTALLATION (PRO 5 M) | 🛠 Zusatz-Montage",
@@ -1578,7 +1578,7 @@ export const packageElektroRolladen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-elek-501-mat",
+              id: "pv-002-elek-501-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "JALOUSIESCHALTER | Free-Home |**Varianten**",
@@ -1616,7 +1616,7 @@ export const packageElektroRolladen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-elek-601-27",
+              id: "pv-003-elek-601-27",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Verteilerkomponenten Rollo Steuerung",
@@ -1663,7 +1663,7 @@ export const packageElektroSprechanlagen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-elek-10003-basis",
+              id: "pv-001-elek-10003-basis",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "SPRECHANLAGEN | 🛠 Montage-Leistungspaket",
@@ -1700,7 +1700,7 @@ export const packageElektroSprechanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",

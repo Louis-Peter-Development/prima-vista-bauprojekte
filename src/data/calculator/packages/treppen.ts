@@ -18,7 +18,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-mon-10255",
+              id: "pv-001-mon-10255",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -41,7 +41,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-tr-uv-11504",
+              id: "pv-002-tr-uv-11504",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Holztreppe Lindos (Eiche) gerade",
@@ -79,7 +79,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-600",
+              id: "pv-003-600",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Holztreppe Lindos (Eiche) ¼ gewendelt unten",
@@ -117,7 +117,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-trep-10030",
+              id: "pv-004-trep-10030",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETONTREPPE pro Stufe | 🛠 Montage",
@@ -139,7 +139,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-10031",
+              id: "pv-005-trep-10031",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETON-PODEST für Treppe | 🛠 Montage",
@@ -176,7 +176,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-mon-10077",
+              id: "pv-006-mon-10077",
               category: "section-04-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -199,7 +199,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-144-12646",
+              id: "pv-007-144-12646",
               category: "section-04-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",
@@ -237,7 +237,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-trep-10001-basis",
+              id: "pv-008-trep-10001-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUßENTREPPE | 🛠 Montage-Leistungspaket",
@@ -259,7 +259,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-tr-uv-11845",
+              id: "pv-009-tr-uv-11845",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Außenstahlwangentreppe Kreta gerade",
@@ -297,7 +297,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-tr-uv-11882",
+              id: "pv-010-tr-uv-11882",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Außenspindeltreppe PINIO aus massiven Stahl mit Geländer und Podest",
@@ -335,7 +335,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-trep-10002-basis",
+              id: "pv-011-trep-10002-basis",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SPINDELTREPPE\n | 🛠 Montage-Leistungspaket",
@@ -357,7 +357,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-152-43",
+              id: "pv-012-152-43",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213",
@@ -395,7 +395,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-tr-uv-11882",
+              id: "pv-013-tr-uv-11882",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Außenspindeltreppe PINIO aus massiven Stahl mit Geländer und Podest",
@@ -418,7 +418,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-tr-uv-11902",
+              id: "pv-014-tr-uv-11902",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spindeltreppe HEAVY METAL aus Stahl mit Podest und Geländer",
@@ -456,7 +456,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-trep-10004-basis",
+              id: "pv-015-trep-10004-basis",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "RAUMSPAR-TREPPE\n | 🛠 Montage-Leistungspaket",
@@ -478,7 +478,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-tr-uv-11639",
+              id: "pv-016-tr-uv-11639",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Raumspartreppe Fichte 2000 mit Holzgeländer",
@@ -516,7 +516,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-tr-uv-11760",
+              id: "pv-017-tr-uv-11760",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Mittelholmtreppe SEGMENT aus Stahl mit Geländer",
@@ -554,7 +554,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-male-301-5-mat",
+              id: "pv-018-male-301-5-mat",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -577,7 +577,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-trep-201-3-zu",
+              id: "pv-019-trep-201-3-zu",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage",
@@ -600,7 +600,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-male-301-6-mat",
+              id: "pv-020-male-301-6-mat",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -638,7 +638,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-021-trep-202-1-zu",
+              id: "pv-021-trep-202-1-zu",
               category: "section-12-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -661,7 +661,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-trep-203-1-zu",
+              id: "pv-022-trep-203-1-zu",
               category: "section-12-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -684,7 +684,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-tr-uv-11824",
+              id: "pv-023-tr-uv-11824",
               category: "section-12-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Treppenstufe Modell Samos",
@@ -707,7 +707,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-tr-uv-11819",
+              id: "pv-024-tr-uv-11819",
               category: "section-12-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Setzstufen aus Massivholz",
@@ -745,7 +745,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-mon-10259",
+              id: "pv-025-mon-10259",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER| 🛠 Montage",
@@ -768,7 +768,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-tr-uv-11773",
+              id: "pv-026-tr-uv-11773",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Treppengeländer Modell Kos gerade",
@@ -791,7 +791,7 @@ export const packageTreppenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-tr-uv-11798",
+              id: "pv-027-tr-uv-11798",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Brüstungsgeländer Modell Kos",
@@ -829,7 +829,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-trep-102-3-mat",
+              id: "pv-028-trep-102-3-mat",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Glasgeländer Premium",
@@ -867,7 +867,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-029-mon-10255",
+              id: "pv-029-mon-10255",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -905,7 +905,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-030-uv729-20050",
+              id: "pv-030-uv729-20050",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -943,7 +943,7 @@ export const packageTreppenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-uv577-149",
+              id: "pv-031-uv577-149",
               category: "section-17-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Roto Bodentreppe Designo Passivhaus KH 29 - U-Wert 0,63",
@@ -990,7 +990,7 @@ export const packageTreppenHolztreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10255",
+              id: "pv-001-mon-10255",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -1028,7 +1028,7 @@ export const packageTreppenHolztreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-tr-uv-11504",
+              id: "pv-002-tr-uv-11504",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Holztreppe Lindos (Eiche) gerade",
@@ -1066,7 +1066,7 @@ export const packageTreppenHolztreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-600",
+              id: "pv-003-600",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Holztreppe Lindos (Eiche) ¼ gewendelt unten",
@@ -1104,7 +1104,7 @@ export const packageTreppenHolztreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-blitz-trep-durch",
+              id: "pv-004-blitz-trep-durch",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHBRUCH TREPPENAUGE  Angebot | Kalkulator für Montage & Material",
@@ -1127,7 +1127,7 @@ export const packageTreppenHolztreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-101-1-zu",
+              id: "pv-005-trep-101-1-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WANGENVERKLEIDUNG TREPPENLOCH | 🛠 Zusatz-Montage",
@@ -1174,7 +1174,7 @@ export const packageTreppenBetontreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-trep-10030",
+              id: "pv-001-trep-10030",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETONTREPPE pro Stufe | 🛠 Montage",
@@ -1196,7 +1196,7 @@ export const packageTreppenBetontreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-trep-10031",
+              id: "pv-002-trep-10031",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETON-PODEST für Treppe | 🛠 Montage",
@@ -1233,7 +1233,7 @@ export const packageTreppenBetontreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mon-10077",
+              id: "pv-003-mon-10077",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -1256,7 +1256,7 @@ export const packageTreppenBetontreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-144-12646",
+              id: "pv-004-144-12646",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",
@@ -1303,7 +1303,7 @@ export const packageTreppenDurchbruch: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-trep-501-1-zu",
+              id: "pv-001-trep-501-1-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENLOCH IN BETONDECKE HERSTELLEN | 🛠 Zusatz-Montage",
@@ -1341,7 +1341,7 @@ export const packageTreppenDurchbruch: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-trep-101-1-zu",
+              id: "pv-002-trep-101-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WANGENVERKLEIDUNG TREPPENLOCH | 🛠 Zusatz-Montage",
@@ -1364,7 +1364,7 @@ export const packageTreppenDurchbruch: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-trep-101-2-zu",
+              id: "pv-003-trep-101-2-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TREPPENLOCH | VERSCHLIEßEN | 🛠 Zusatz-Montage",
@@ -1411,7 +1411,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10259",
+              id: "pv-001-mon-10259",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER| 🛠 Montage",
@@ -1449,7 +1449,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-tr-uv-11773",
+              id: "pv-002-tr-uv-11773",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Treppengeländer Modell Kos gerade",
@@ -1472,7 +1472,7 @@ export const packageTreppenGelaender: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-tr-uv-11798",
+              id: "pv-003-tr-uv-11798",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Brüstungsgeländer Modell Kos",
@@ -1510,7 +1510,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-trep-102-3-mat",
+              id: "pv-004-trep-102-3-mat",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Glasgeländer Premium",
@@ -1548,7 +1548,7 @@ export const packageTreppenGelaender: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-male-301-6-mat",
+              id: "pv-005-male-301-6-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -1595,7 +1595,7 @@ export const packageTreppenAussentreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-trep-10001-basis",
+              id: "pv-001-trep-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUßENTREPPE | 🛠 Montage-Leistungspaket",
@@ -1632,7 +1632,7 @@ export const packageTreppenAussentreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-tr-uv-11845",
+              id: "pv-002-tr-uv-11845",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Außenstahlwangentreppe Kreta gerade",
@@ -1670,7 +1670,7 @@ export const packageTreppenAussentreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-tr-uv-11882",
+              id: "pv-003-tr-uv-11882",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Außenspindeltreppe PINIO aus massiven Stahl mit Geländer und Podest",
@@ -1708,7 +1708,7 @@ export const packageTreppenAussentreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-blitz-trep-durch",
+              id: "pv-004-blitz-trep-durch",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHBRUCH TREPPENAUGE  Angebot | Kalkulator für Montage & Material",
@@ -1731,7 +1731,7 @@ export const packageTreppenAussentreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-101-2-zu",
+              id: "pv-005-trep-101-2-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TREPPENLOCH | VERSCHLIEßEN | 🛠 Zusatz-Montage",
@@ -1778,7 +1778,7 @@ export const packageTreppenRaumspartreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-trep-10004-basis",
+              id: "pv-001-trep-10004-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "RAUMSPAR-TREPPE\n | 🛠 Montage-Leistungspaket",
@@ -1815,7 +1815,7 @@ export const packageTreppenRaumspartreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-tr-uv-11639",
+              id: "pv-002-tr-uv-11639",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Raumspartreppe Fichte 2000 mit Holzgeländer",
@@ -1853,7 +1853,7 @@ export const packageTreppenRaumspartreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-tr-uv-11760",
+              id: "pv-003-tr-uv-11760",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Mittelholmtreppe SEGMENT aus Stahl mit Geländer",
@@ -1891,7 +1891,7 @@ export const packageTreppenRaumspartreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-blitz-trep-durch",
+              id: "pv-004-blitz-trep-durch",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHBRUCH TREPPENAUGE  Angebot | Kalkulator für Montage & Material",
@@ -1914,7 +1914,7 @@ export const packageTreppenRaumspartreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-101-2-zu",
+              id: "pv-005-trep-101-2-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TREPPENLOCH | VERSCHLIEßEN | 🛠 Zusatz-Montage",
@@ -1961,7 +1961,7 @@ export const packageTreppenDachbodentreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10255",
+              id: "pv-001-mon-10255",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -1999,7 +1999,7 @@ export const packageTreppenDachbodentreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv729-20050",
+              id: "pv-002-uv729-20050",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -2037,7 +2037,7 @@ export const packageTreppenDachbodentreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv577-149",
+              id: "pv-003-uv577-149",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Roto Bodentreppe Designo Passivhaus KH 29 - U-Wert 0,63",
@@ -2084,7 +2084,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-trep-10002-basis",
+              id: "pv-001-trep-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SPINDELTREPPE\n | 🛠 Montage-Leistungspaket",
@@ -2121,7 +2121,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-152-43",
+              id: "pv-002-152-43",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Dolle Spindeltreppe Oslo Buche Leimholz, lackiert - Ø 120 cm Art.Nr.: 760213",
@@ -2159,7 +2159,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-tr-uv-11882",
+              id: "pv-003-tr-uv-11882",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Außenspindeltreppe PINIO aus massiven Stahl mit Geländer und Podest",
@@ -2182,7 +2182,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-tr-uv-11902",
+              id: "pv-004-tr-uv-11902",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spindeltreppe HEAVY METAL aus Stahl mit Podest und Geländer",
@@ -2220,7 +2220,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-blitz-trep-durch",
+              id: "pv-005-blitz-trep-durch",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHBRUCH TREPPENAUGE  Angebot | Kalkulator für Montage & Material",
@@ -2243,7 +2243,7 @@ export const packageTreppenSpindeltreppe: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-trep-101-1-zu",
+              id: "pv-006-trep-101-1-zu",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WANGENVERKLEIDUNG TREPPENLOCH | 🛠 Zusatz-Montage",
@@ -2290,7 +2290,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-5-mat",
+              id: "pv-001-male-301-5-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -2313,7 +2313,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-trep-201-3-zu",
+              id: "pv-002-trep-201-3-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage",
@@ -2336,7 +2336,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-301-6-mat",
+              id: "pv-003-male-301-6-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -2374,7 +2374,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-trep-202-1-zu",
+              id: "pv-004-trep-202-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -2397,7 +2397,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-203-1-zu",
+              id: "pv-005-trep-203-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -2420,7 +2420,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-tr-uv-11824",
+              id: "pv-006-tr-uv-11824",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Treppenstufe Modell Samos",
@@ -2443,7 +2443,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-tr-uv-11819",
+              id: "pv-007-tr-uv-11819",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Setzstufen aus Massivholz",
@@ -2481,7 +2481,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-mon-10077",
+              id: "pv-008-mon-10077",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -2504,7 +2504,7 @@ export const packageTreppenAufbereiten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-144-12646",
+              id: "pv-009-144-12646",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",
@@ -2551,7 +2551,7 @@ export const packageTreppenBelegung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-male-301-5-mat",
+              id: "pv-001-male-301-5-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -2574,7 +2574,7 @@ export const packageTreppenBelegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-trep-201-3-zu",
+              id: "pv-002-trep-201-3-zu",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage",
@@ -2597,7 +2597,7 @@ export const packageTreppenBelegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-male-301-6-mat",
+              id: "pv-003-male-301-6-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -2635,7 +2635,7 @@ export const packageTreppenBelegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-trep-202-1-zu",
+              id: "pv-004-trep-202-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -2658,7 +2658,7 @@ export const packageTreppenBelegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-trep-203-1-zu",
+              id: "pv-005-trep-203-1-zu",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -2696,7 +2696,7 @@ export const packageTreppenBelegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-tr-uv-11824",
+              id: "pv-006-tr-uv-11824",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Treppenstufe Modell Samos",
@@ -2719,7 +2719,7 @@ export const packageTreppenBelegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-tr-uv-11819",
+              id: "pv-007-tr-uv-11819",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Setzstufen aus Massivholz",
@@ -2757,7 +2757,7 @@ export const packageTreppenBelegung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-mon-10077",
+              id: "pv-008-mon-10077",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -2780,7 +2780,7 @@ export const packageTreppenBelegung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-144-12646",
+              id: "pv-009-144-12646",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",

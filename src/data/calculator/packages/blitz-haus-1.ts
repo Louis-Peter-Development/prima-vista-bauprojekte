@@ -18,7 +18,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-dach-100-basis",
+              id: "pv-001-dach-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "NEUBEDACHUNG | 🛠 Montage-Leistungspaket",
@@ -55,7 +55,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-dach-101-1-zu",
+              id: "pv-002-dach-101-1-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ZIEGEL |🛠 Demontage & Entsorgung",
@@ -78,7 +78,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-dach-101-2-zu",
+              id: "pv-003-dach-101-2-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
@@ -101,7 +101,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-dach-101-3-zu",
+              id: "pv-004-dach-101-3-zu",
               category: "section-02-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "RINNE & FALLROHR | 🛠 Zusatz-Montage",
@@ -139,7 +139,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-1007285",
+              id: "pv-005-1007285",
               category: "section-03-material",
               subcategory: "leistungen-materialien",
               title: "Erlus E 58 S Flachdachpfanne Engobe in kupferbraun",
@@ -177,7 +177,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-dach-602-mon",
+              id: "pv-006-dach-602-mon",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -199,7 +199,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv24-00017",
+              id: "pv-007-uv24-00017",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Bauder PIR SF Steildachwärmedämmelement WLS 023 - Nut & Feder - 1800 x 1200 mm",
@@ -222,7 +222,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-688152",
+              id: "pv-008-688152",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -244,7 +244,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv569-00014",
+              id: "pv-009-uv569-00014",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -282,7 +282,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-dach-100-au",
+              id: "pv-010-dach-100-au",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu NEUBEDACHUNG |**Varianten**",
@@ -320,7 +320,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-011-dach-500-basis",
+              id: "pv-011-dach-500-basis",
               category: "section-06-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHFENSTER | 🛠 Montage-Leistungspaket",
@@ -357,7 +357,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-012-uv702-1369",
+              id: "pv-012-uv702-1369",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "Velux GGU Kunststoff-Dachfenster | Schwingfenster Solarfenster",
@@ -395,7 +395,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-uv704-91870",
+              id: "pv-013-uv704-91870",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Velux DG Verdunkelungs-Rollo manuell",
@@ -433,7 +433,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-dach-201-mat",
+              id: "pv-014-dach-201-mat",
               category: "section-09-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "SCHLEPPE-GAUBE | 🛠 Montage-Leistungspaket",
@@ -471,7 +471,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-dach-301-mat",
+              id: "pv-015-dach-301-mat",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DACHSTUHL Satteldach | 🛠 Montage-Leistungspaket",
@@ -493,7 +493,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-dach-301-1-zu",
+              id: "pv-016-dach-301-1-zu",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DACHSTUHL |🛠 Demontage & Entsorgung",
@@ -531,7 +531,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-017-dach-600-basis",
+              id: "pv-017-dach-600-basis",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DACHAUSBAU | 🛠 Montage-Leistungspaket",
@@ -568,7 +568,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-018-dach-601-1-zu",
+              id: "pv-018-dach-601-1-zu",
               category: "section-12-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG AUF GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -591,7 +591,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-dach-600-2-op",
+              id: "pv-019-dach-600-2-op",
               category: "section-12-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-DÄMMUNG |🛠 Demontage & Entsorgung",
@@ -629,7 +629,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-020-556617",
+              id: "pv-020-556617",
               category: "section-13-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -652,7 +652,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-1010766",
+              id: "pv-021-1010766",
               category: "section-13-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -675,7 +675,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-609625",
+              id: "pv-022-609625",
               category: "section-13-material",
               subcategory: "leistungen-materialien",
               title: "URSA SF 32 PLUS 1-seitig vlieskaschiert 2800x 1200x 140 mm",
@@ -697,7 +697,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-1010361",
+              id: "pv-023-1010361",
               category: "section-13-material",
               subcategory: "leistungen-materialien",
               title: "Knauf Ins. LDS Flex Plus Dampfbremsbahn 1,5x 40 m/Ro",
@@ -720,7 +720,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-uv383-00605",
+              id: "pv-024-uv383-00605",
               category: "section-13-material",
               subcategory: "leistungen-materialien",
               title: "Knauf REVO BS90 Wand 25 Revisionsklappe | Dicke: 25 mm | LxB: 300 x 300 mm",
@@ -758,7 +758,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-517-01445",
+              id: "pv-025-517-01445",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Paneele Novara Esche Weiss geplankt Dekor (1602384)",
@@ -781,7 +781,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-517-02194",
+              id: "pv-026-517-02194",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Parador Deckenleiste DAL 2 Esche Weiss glänzend Dekor (1745640)",
@@ -819,7 +819,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-027-dach-602-mon",
+              id: "pv-027-dach-602-mon",
               category: "section-15-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DÄMMUNG  | 🛠 Montage",
@@ -841,7 +841,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-688152",
+              id: "pv-028-688152",
               category: "section-15-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rigidur Dachbodenelement 032 TF 85 1500x 500x 85 mm EPS 032 DEO",
@@ -863,7 +863,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-uv569-00014",
+              id: "pv-029-uv569-00014",
               category: "section-15-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rockwool Masterrock 035 Kleinformat, Aufsparrendämmung 1000x600 mm",
@@ -901,7 +901,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-030-dach-600-au",
+              id: "pv-030-dach-600-au",
               category: "section-16-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu INNENAUSBAU |**Varianten**",
@@ -939,7 +939,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-mon-10255",
+              id: "pv-031-mon-10255",
               category: "section-17-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOLZTREPPEN | 🛠 Montage",
@@ -962,7 +962,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-032-uv729-20050",
+              id: "pv-032-uv729-20050",
               category: "section-17-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Wellhöfer Bodentreppe StahlBlau mit WärmeSchutz WS3D",
@@ -1000,7 +1000,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-033-rohb-101-1-zu",
+              id: "pv-033-rohb-101-1-zu",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-DECKEN (Leichtbau) | 🛠 Demontage-Leistungspaket",
@@ -1023,7 +1023,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-034-rohb-101-1-mat",
+              id: "pv-034-rohb-101-1-mat",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (6-16 cm) | 🛠 Demontage-Leistungspaket",
@@ -1046,7 +1046,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-035-rohb-101-2-mat",
+              id: "pv-035-rohb-101-2-mat",
               category: "section-18-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ABBRUCH-WÄNDE (17-35 cm) | 🛠 Demontage-Leistungspaket",
@@ -1084,7 +1084,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-036-rohb-100-au",
+              id: "pv-036-rohb-100-au",
               category: "section-19-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu ROHBAU |**Varianten**",
@@ -1122,7 +1122,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-037-rohb-201-mat",
+              id: "pv-037-rohb-201-mat",
               category: "section-20-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "STAHLTRÄGER | Profil HE-A-140 - (max. 2m) |**Varianten**",
@@ -1145,7 +1145,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-038-rohb-201-1-zu",
+              id: "pv-038-rohb-201-1-zu",
               category: "section-20-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BETON-AUFLAGER FÜR STAHLTRÄGER |**VARIANTEN** | 🛠 Zusatz-Montage",
@@ -1183,7 +1183,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-039-rohb-401-mat",
+              id: "pv-039-rohb-401-mat",
               category: "section-21-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WANDPUTZ-GIPS | 🛠 Montage-Leistungspaket",
@@ -1206,7 +1206,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-040-rohb-401-1-op",
+              id: "pv-040-rohb-401-1-op",
               category: "section-21-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-PUTZ |🛠 Demontage & Entsorgung",
@@ -1244,7 +1244,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-041-troc-100-basis",
+              id: "pv-041-troc-100-basis",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DECKEN | 🛠 Montage-Leistungspaket",
@@ -1267,7 +1267,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-042-troc-200-basis",
+              id: "pv-042-troc-200-basis",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄNDE | 🛠 Montage-Leistungspaket",
@@ -1290,7 +1290,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-043-troc-300-basis",
+              id: "pv-043-troc-300-basis",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VORSATZWÄNDE | 🛠 Montage-Leistungspaket",
@@ -1313,7 +1313,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-044-troc-101-1-zu",
+              id: "pv-044-troc-101-1-zu",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERSPACHTLUNG | STREICHFERTIG FÜR GIPSPLATTEN | 🛠 Zusatz-Montage",
@@ -1336,7 +1336,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-045-troc-201-1-zu",
+              id: "pv-045-troc-201-1-zu",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜRLOCH HERSTELLUNG - FÜR GK-WÄNDE | 🛠 Zusatz-Montage",
@@ -1359,7 +1359,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-046-troc-201-2-zu",
+              id: "pv-046-troc-201-2-zu",
               category: "section-22-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ECKAUSBILDUNG - FÜR GK-WÄNDE &-DECKEN | 🛠 Zusatz-Montage",
@@ -1397,7 +1397,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-047-556617",
+              id: "pv-047-556617",
               category: "section-23-material",
               subcategory: "leistungen-materialien",
               title: " Rigips Gipsplatte",
@@ -1420,7 +1420,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-048-1010766",
+              id: "pv-048-1010766",
               category: "section-23-material",
               subcategory: "leistungen-materialien",
               title: "Knauf GKBI SONDERPAL. impraegniert 2000x 1250x 12,5 mm AK 24 St/Pal",
@@ -1458,7 +1458,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-049-troc-401-zu",
+              id: "pv-049-troc-401-zu",
               category: "section-24-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROHRKÄSTEN & KOFFER - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -1481,7 +1481,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-050-troc-501-zu",
+              id: "pv-050-troc-501-zu",
               category: "section-24-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "DURCHGANG VERSCHLIEßEN - BAU IN TROCKENBAUWEISE | 🛠 Zusatz-Montage",
@@ -1519,7 +1519,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-051-elek-100-basis",
+              id: "pv-051-elek-100-basis",
               category: "section-25-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ELEKTRO-NEUINSTALLATION (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -1556,7 +1556,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-052-elek-201-1-zu",
+              id: "pv-052-elek-201-1-zu",
               category: "section-26-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ZULEITUNGEN SET | 8X SCHALTER/ 25X STECKDOSEN (PRO ETAGE) | 🛠 Zusatz-Montage",
@@ -1579,7 +1579,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-053-elek-101-2-mat",
+              id: "pv-053-elek-101-2-mat",
               category: "section-26-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "SICHERUNGSKASTEN   | 🛠 Montage-Leistungspaket",
@@ -1602,7 +1602,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-054-elek-201-2-zu",
+              id: "pv-054-elek-201-2-zu",
               category: "section-26-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HERDANSCHLUSS ZULEITUNG + DOSE | 🛠 Zusatz-Montage",
@@ -1625,7 +1625,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-055-elek-201-3-zu",
+              id: "pv-055-elek-201-3-zu",
               category: "section-26-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "MAUERSCHLITZE BETON | HERSTELLEN PRO ELEKTROELEMENT | 🛠 Zusatz-Montage",
@@ -1663,7 +1663,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-056-elek-201-mat",
+              id: "pv-056-elek-201-mat",
               category: "section-27-material",
               subcategory: "leistungen-materialien",
               title: "SCHALTER/STECKD. SET 25/8 | Gira S 55 weiß |**Varianten**",
@@ -1700,7 +1700,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-057-elek-10002-basis",
+              id: "pv-057-elek-10002-basis",
               category: "section-28-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG | 🛠 Montage-Leistungspaket",
@@ -1737,7 +1737,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-058-lht-1005368",
+              id: "pv-058-lht-1005368",
               category: "section-29-material",
               subcategory: "leistungen-materialien",
               title: " SLV NUMINOS® MOVE S Einbaustrahler weiß 40°",
@@ -1775,7 +1775,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-059-lht-93567",
+              id: "pv-059-lht-93567",
               category: "section-30-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " LED Möbel-Aufbauleuchten Set, 3x3,2W, rund",
@@ -1798,7 +1798,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-060-lht-94741",
+              id: "pv-060-lht-94741",
               category: "section-30-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " LED Pollerleuchte Bako 50cm IP44 Anthrazit",
@@ -1836,7 +1836,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-061-elek-301-zu",
+              id: "pv-061-elek-301-zu",
               category: "section-31-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "IT NETZWERKINSTALLATION | SET BIS 50 QM | 🛠 Zusatz-Montage",
@@ -1859,7 +1859,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-062-elek-501-mat",
+              id: "pv-062-elek-501-mat",
               category: "section-31-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JALOUSIESCHALTER | Free-Home |**Varianten**",
@@ -1882,7 +1882,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-063-elek-100-au",
+              id: "pv-063-elek-100-au",
               category: "section-31-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte zu ELEKTROINSTALLATION |**Varianten**",
@@ -1920,7 +1920,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-064-male-100-basis",
+              id: "pv-064-male-100-basis",
               category: "section-32-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MALER (pro Etage) | 🛠 Montage-Leistungspaket",
@@ -1942,7 +1942,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-065-male-101-mat",
+              id: "pv-065-male-101-mat",
               category: "section-32-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GLÄTTUNG MIT FEINSPACHTEL | 🛠 Montage-Leistungspaket",
@@ -1965,7 +1965,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-066-male-201-mat",
+              id: "pv-066-male-201-mat",
               category: "section-32-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ANSTRICH | 🛠 Montage-Leistungspaket",
@@ -2003,7 +2003,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-067-male-101-1-zu",
+              id: "pv-067-male-101-1-zu",
               category: "section-33-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GRUNDIERUNG - DER FLÄCHEN | 🛠 Zusatz-Montage",
@@ -2026,7 +2026,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-068-male-101-2-zu",
+              id: "pv-068-male-101-2-zu",
               category: "section-33-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-TAPETEN |🛠 Demontage & Entsorgung",
@@ -2064,7 +2064,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-069-male-100-au",
+              id: "pv-069-male-100-au",
               category: "section-34-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu MALER & LACKIERER |**Varianten**",
@@ -2102,7 +2102,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-070-wass-100-basis",
+              id: "pv-070-wass-100-basis",
               category: "section-35-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket",
@@ -2125,7 +2125,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-071-wass-200-basis",
+              id: "pv-071-wass-200-basis",
               category: "section-35-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION GÄSTE-WC | 🛠 Montage-Leistungspaket",
@@ -2148,7 +2148,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-072-wass-300-basis",
+              id: "pv-072-wass-300-basis",
               category: "section-35-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION KÜCHE | 🛠 Montage-Leistungspaket",
@@ -2171,7 +2171,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-073-wass-400-basis",
+              id: "pv-073-wass-400-basis",
               category: "section-35-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLLATION KELLER | 🛠 Montage-Leistungspaket",
@@ -2194,7 +2194,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-074-wass-501-mat",
+              id: "pv-074-wass-501-mat",
               category: "section-35-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HAUPTSTRANG (Trink- & Abwasser  & Zirkul.) | 🛠 Montage-Leistungspaket",
@@ -2232,7 +2232,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-075-wass-105-zu",
+              id: "pv-075-wass-105-zu",
               category: "section-36-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -2255,7 +2255,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-076-wass-101-mon",
+              id: "pv-076-wass-101-mon",
               category: "section-36-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -2293,7 +2293,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-077-cvis3wt112",
+              id: "pv-077-cvis3wt112",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -2316,7 +2316,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-078-dfix320wc112",
+              id: "pv-078-dfix320wc112",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -2339,7 +2339,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-079-sigma30wech",
+              id: "pv-079-sigma30wech",
               category: "section-37-material",
               subcategory: "leistungen-materialien",
               title: " Abdeckplatte Sigma30 weiß/hgl.verchr. f.2-Mengen-Spülung, für UP-Spülkästen GE",
@@ -2377,7 +2377,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-080-wass-100-au",
+              id: "pv-080-wass-100-au",
               category: "section-38-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -2415,7 +2415,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-081-heiz-101-mon",
+              id: "pv-081-heiz-101-mon",
               category: "section-39-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -2452,7 +2452,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-082-uv835-10017",
+              id: "pv-082-uv835-10017",
               category: "section-40-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -2490,7 +2490,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-083-pt6333080",
+              id: "pv-083-pt6333080",
               category: "section-41-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Plan-Flachheizkörper Cosmo T6 Typ 33 - 300 x 800 cm - (W) 1012",
@@ -2513,7 +2513,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-084-uv835-1083",
+              id: "pv-084-uv835-1083",
               category: "section-41-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ximax Elektro Raumheizkörper Fortuna Horizontal - weiß",
@@ -2551,7 +2551,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-085-heiz-201-1-op",
+              id: "pv-085-heiz-201-1-op",
               category: "section-42-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER |🛠 Demontage & Entsorgung ",
@@ -2573,7 +2573,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-086-heiz-301-mat",
+              id: "pv-086-heiz-301-mat",
               category: "section-42-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -2611,7 +2611,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-087-heiz-100-basis",
+              id: "pv-087-heiz-100-basis",
               category: "section-43-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BODENHEIZUNG | 🛠 Montage-Leistungspaket",
@@ -2648,7 +2648,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-088-rohb-501-mat",
+              id: "pv-088-rohb-501-mat",
               category: "section-44-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ESTRICH | Trocken-Platten |**Varianten**",
@@ -2671,7 +2671,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-089-rohb-501-1-op",
+              id: "pv-089-rohb-501-1-op",
               category: "section-44-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ESTRICH |🛠 Demontage & Entsorgung",
@@ -2709,7 +2709,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-090-mon-10158",
+              id: "pv-090-mon-10158",
               category: "section-45-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FLÄCHENHEIZSYSTEME | 🛠 Montage",
@@ -2732,7 +2732,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-091-uv722-00108",
+              id: "pv-091-uv722-00108",
               category: "section-45-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Warmup Aluminiumfolien-Heizsystem, für Holz-, Vinyl- und Laminatböden, 80 Watt",
@@ -2770,7 +2770,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-092-heiz-400-basis",
+              id: "pv-092-heiz-400-basis",
               category: "section-46-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WÄRMEPUMPEN | 🛠 Montage-Leistungspaket",
@@ -2807,7 +2807,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-093-heiz-411-4-mat",
+              id: "pv-093-heiz-411-4-mat",
               category: "section-47-material",
               subcategory: "leistungen-materialien",
               title: "12 KW - LG WÄRMEPUMPEN im Paket - TM187/123",
@@ -2829,7 +2829,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-094-heiz-411-zu",
+              id: "pv-094-heiz-411-zu",
               category: "section-47-material",
               subcategory: "leistungen-materialien",
               title: "LG-ZUBEHÖR-SET - für LG Wärmepumpen",
@@ -2867,7 +2867,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-095-heiz-431-1-zu",
+              id: "pv-095-heiz-431-1-zu",
               category: "section-48-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-ÖLTANK |🛠 Demontage & Entsorgung",
@@ -2890,7 +2890,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-096-heiz-401-basis",
+              id: "pv-096-heiz-401-basis",
               category: "section-48-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FUNDAMENT | für Therme & Wärmepumpe",
@@ -2928,7 +2928,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-097-bade-100-basis",
+              id: "pv-097-bade-100-basis",
               category: "section-49-fliesen-badezimmer",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - BAD | 🛠 Montage-Leistungspaket",
@@ -2965,7 +2965,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-098-1168296",
+              id: "pv-098-1168296",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -2988,7 +2988,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-099-1176157",
+              id: "pv-099-1176157",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -3011,7 +3011,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-100-1054265",
+              id: "pv-100-1054265",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -3034,7 +3034,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-101-uv867-00298",
+              id: "pv-101-uv867-00298",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -3057,7 +3057,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-102-uv519-00256",
+              id: "pv-102-uv519-00256",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -3080,7 +3080,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-103-uv519-00143",
+              id: "pv-103-uv519-00143",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -3103,7 +3103,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-104-uv608-6903",
+              id: "pv-104-uv608-6903",
               category: "section-50-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -3141,7 +3141,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-105-bade-500-basis",
+              id: "pv-105-bade-500-basis",
               category: "section-51-sanitar-badezimmer",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - BAD | Montage-Leistungspaket",
@@ -3178,7 +3178,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-106-dewwc",
+              id: "pv-106-dewwc",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC derby sichtbare Befestigung weiss VIGOUR",
@@ -3201,7 +3201,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-107-desias",
+              id: "pv-107-desias",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz derby Edelstahlscharnier abnehmbar mit Absenkautomatik weiss VIG.",
@@ -3224,7 +3224,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-108-des60p",
+              id: "pv-108-des60p",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Waschtisch derby style 60x48cm weiss PflegePLUS VIGOUR",
@@ -3247,7 +3247,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-109-des",
+              id: "pv-109-des",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-Waschtischbatterie derby style mit Ablaufgarnitur verchromt VIGOUR",
@@ -3270,7 +3270,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-110-desm180p",
+              id: "pv-110-desm180p",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Badewanne Stahl derby 180x80cm weiss Ab-/Überlauf mittig Pflegeplus VIGOUR",
@@ -3293,7 +3293,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-111-depghw",
+              id: "pv-111-depghw",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-AP-Badebatterie derby plus mit Hebel geschl. o. Brausegarn. verchr. VIG",
@@ -3316,7 +3316,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-112-cls90ef",
+              id: "pv-112-cls90ef",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Duschwanne Stahl clivia 90x90x3.2cm weiss VIGOUR",
@@ -3339,7 +3339,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-113-euphdsee260",
+              id: "pv-113-euphdsee260",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Duschsystem Euphoria 260 mit Einhandmischer 9,5l/min chrom Grohe",
@@ -3362,7 +3362,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-114-v2ge90l",
+              id: "pv-114-v2ge90l",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Gleittür Eckhälfte 2.0 links 900x1950mm silber matt ESG klar VIGOUR",
@@ -3385,7 +3385,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-115-v2ge90r",
+              id: "pv-115-v2ge90r",
               category: "section-52-material",
               subcategory: "leistungen-materialien",
               title: "Gleittür Eckhälfte 2.0 rechts 900x1950mm silber matt ESG klar VIGOUR",
@@ -3423,7 +3423,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-116-bade-507-4-mat",
+              id: "pv-116-bade-507-4-mat",
               category: "section-53-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket",
@@ -3461,7 +3461,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-117-strahyr",
+              id: "pv-117-strahyr",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke",
@@ -3484,7 +3484,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-118-santralabh18",
+              id: "pv-118-santralabh18",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt",
@@ -3507,7 +3507,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-119-codessp50",
+              id: "pv-119-codessp50",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti",
@@ -3530,7 +3530,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-120-cwsssppas",
+              id: "pv-120-cwsssppas",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss",
@@ -3553,7 +3553,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-121-hewiksiw448",
+              id: "pv-121-hewiksiw448",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung",
@@ -3576,7 +3576,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-122-hewiwig600",
+              id: "pv-122-hewiwig600",
               category: "section-54-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Winkelgriff Hewi 600x300mm reinweiss",
@@ -3614,7 +3614,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-123-gawc-100-basis",
+              id: "pv-123-gawc-100-basis",
               category: "section-55-fliesen-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -3652,7 +3652,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-124-uv816-00746",
+              id: "pv-124-uv816-00746",
               category: "section-56-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -3690,7 +3690,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-125-1168296",
+              id: "pv-125-1168296",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -3713,7 +3713,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-126-1176157",
+              id: "pv-126-1176157",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -3736,7 +3736,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-127-1054265",
+              id: "pv-127-1054265",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -3759,7 +3759,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-128-uv867-00298",
+              id: "pv-128-uv867-00298",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -3782,7 +3782,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-129-uv519-00256",
+              id: "pv-129-uv519-00256",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -3805,7 +3805,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-130-uv519-00143",
+              id: "pv-130-uv519-00143",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -3828,7 +3828,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-131-uv608-6903",
+              id: "pv-131-uv608-6903",
               category: "section-57-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -3866,7 +3866,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-132-gawc-500-basis",
+              id: "pv-132-gawc-500-basis",
               category: "section-58-sanitar-gaste-wc",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - GÄSTE WC | 🛠 Montage-Leistungspaket",
@@ -3904,7 +3904,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-133-dewwc",
+              id: "pv-133-dewwc",
               category: "section-59-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC derby sichtbare Befestigung weiss VIGOUR",
@@ -3927,7 +3927,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-134-desias",
+              id: "pv-134-desias",
               category: "section-59-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz derby Edelstahlscharnier abnehmbar mit Absenkautomatik weiss VIG.",
@@ -3950,7 +3950,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-135-desp45ohp",
+              id: "pv-135-desp45ohp",
               category: "section-59-material",
               subcategory: "leistungen-materialien",
               title: "Handwaschb.derby style plus 45x35cm ohne HL mit ÜL weiss PflegePLUS VIGOUR",
@@ -3973,7 +3973,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-136-des",
+              id: "pv-136-des",
               category: "section-59-material",
               subcategory: "leistungen-materialien",
               title: "Einhand-Waschtischbatterie derby style mit Ablaufgarnitur verchromt VIGOUR",
@@ -4011,7 +4011,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-137-bode-100-basis",
+              id: "pv-137-bode-100-basis",
               category: "section-60-holz-boden",
               subcategory: "leistungen-materialien",
               title: "VERLEGUNG-Boden | 🛠 Montage-Leistungspaket",
@@ -4048,7 +4048,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-138-bode-100-1-op",
+              id: "pv-138-bode-100-1-op",
               category: "section-61-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-BODEN |🛠 Demontage & Entsorgung",
@@ -4086,7 +4086,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-139-par1501534-e28a",
+              id: "pv-139-par1501534-e28a",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "JOKA Classic KINGSTON 435 SB / DS 3.5 mm Fertigparkett 3-S m",
@@ -4109,7 +4109,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-140-1265921",
+              id: "pv-140-1265921",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "RAW Sockelleiste MDF Cubus !Z weiß uni alle Dekore 2500x 16x 80 mm",
@@ -4132,7 +4132,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-141-1105594",
+              id: "pv-141-1105594",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "Egger Laminat Classic 31 Stangl Buche EBL002 1292x192x7mm",
@@ -4155,7 +4155,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-142-642888",
+              id: "pv-142-642888",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "Egger Sockelleiste 2400x 17x 60mm Leiste zu EBL002 L131",
@@ -4178,7 +4178,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-143-287221",
+              id: "pv-143-287221",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "Geficell PE Basic Schaumdaemmbahn 5/1000 mm, 50 m/Ro = 50,00 qm, blau",
@@ -4201,7 +4201,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-144-1098740",
+              id: "pv-144-1098740",
               category: "section-62-material",
               subcategory: "leistungen-materialien",
               title: "Prinz Alu-Uebergangsprofil - gel !Z 38 mm 100 cm lang Silber",
@@ -4239,7 +4239,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-145-uv816-00746",
+              id: "pv-145-uv816-00746",
               category: "section-63-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -4262,7 +4262,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-146-bode-100-2-op",
+              id: "pv-146-bode-100-2-op",
               category: "section-63-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -4300,7 +4300,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-147-bode-400-basis",
+              id: "pv-147-bode-400-basis",
               category: "section-64-fliesen-boden",
               subcategory: "leistungen-materialien",
               title: "BODENFLIESEN | 🛠 Montage-Leistungspaket",
@@ -4337,7 +4337,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-148-1209835",
+              id: "pv-148-1209835",
               category: "section-65-material",
               subcategory: "leistungen-materialien",
               title: "*V&B 80x 80x 0,9 2835BZ1001 Pure Base !Z creme matt ugl. FS R10/B rekt. #1209834",
@@ -4360,7 +4360,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-149-662445",
+              id: "pv-149-662445",
               category: "section-65-material",
               subcategory: "leistungen-materialien",
               title: "V&B 7,5x 60 2872RU200 My Earth Sockel beige multicolor ugl. FS",
@@ -4383,7 +4383,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-150-uv867-00298",
+              id: "pv-150-uv867-00298",
               category: "section-65-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -4421,7 +4421,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-151-bode-100-2-op",
+              id: "pv-151-bode-100-2-op",
               category: "section-66-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AUSGLEICH-Boden | max. 1 cm der Bodenfläche",
@@ -4459,7 +4459,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-152-male-301-5-mat",
+              id: "pv-152-male-301-5-mat",
               category: "section-67-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENSTUFEN LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -4482,7 +4482,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-153-trep-201-3-zu",
+              id: "pv-153-trep-201-3-zu",
               category: "section-67-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "AUFBEREITEN PODEST | JE PODEST (SCHLEIFEN & LACKIEREN) | 🛠 Zusatz-Montage",
@@ -4505,7 +4505,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-154-male-301-6-mat",
+              id: "pv-154-male-301-6-mat",
               category: "section-67-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TREPPENGELÄNDER LACKIERUNG | 🛠 Montage-Leistungspaket",
@@ -4543,7 +4543,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-155-trep-202-1-zu",
+              id: "pv-155-trep-202-1-zu",
               category: "section-68-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG STUFE | JE TREPPENSTUFE (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -4566,7 +4566,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-156-trep-203-1-zu",
+              id: "pv-156-trep-203-1-zu",
               category: "section-68-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG PODEST | JE PODEST (MIT MASSIVHOLZ) | 🛠 Zusatz-Montage",
@@ -4589,7 +4589,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-157-tr-uv-11824",
+              id: "pv-157-tr-uv-11824",
               category: "section-68-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Treppenstufe Modell Samos",
@@ -4612,7 +4612,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-158-tr-uv-11819",
+              id: "pv-158-tr-uv-11819",
               category: "section-68-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Setzstufen aus Massivholz",
@@ -4650,7 +4650,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-159-mon-10077",
+              id: "pv-159-mon-10077",
               category: "section-69-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "STUFEN | FLIESEN | 🛠 Montage",
@@ -4673,7 +4673,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-160-144-12646",
+              id: "pv-160-144-12646",
               category: "section-69-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Agrob Buchtal Stufenplatte 25x35x1,4/4,2cm Goldline goldocker R11/A 851-9330",
@@ -4711,7 +4711,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-161-tuer-100-basis",
+              id: "pv-161-tuer-100-basis",
               category: "section-70-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TÜREN | 🛠 Montage-Leistungspaket",
@@ -4734,7 +4734,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-162-tuer-101-1-zu",
+              id: "pv-162-tuer-101-1-zu",
               category: "section-70-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALT-TÜREN |🛠 Demontage & Entsorgung",
@@ -4757,7 +4757,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-163-tuer-100-au",
+              id: "pv-163-tuer-100-au",
               category: "section-70-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu TÜREN |**Varianten**",
@@ -4795,7 +4795,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-164-uv339-90130",
+              id: "pv-164-uv339-90130",
               category: "section-71-material",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -4818,7 +4818,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-165-uv354-10091",
+              id: "pv-165-uv354-10091",
               category: "section-71-material",
               subcategory: "leistungen-materialien",
               title: "Karcher Design Rosettengarnitur Rhodos PLAN-Rosetten flächenbündig 2-tlg. | Edelstahl matt",
@@ -4841,7 +4841,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-166-uv218-10284",
+              id: "pv-166-uv218-10284",
               category: "section-71-material",
               subcategory: "leistungen-materialien",
               title: "FM Aluminium Haustür DS 92 Modell 04 Anthrazit mit Vierfachverglasung",
@@ -4864,7 +4864,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-167-1194968",
+              id: "pv-167-1194968",
               category: "section-71-material",
               subcategory: "leistungen-materialien",
               title: "Weißlack Schiebetuer, RS-Einlage, stumpf 860x 1985 mm, Giffmuschel u. Bodennut",
@@ -4902,7 +4902,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-168-uv339-90246",
+              id: "pv-168-uv339-90246",
               category: "section-72-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "JELD-WEN Innentürelement Optima 30 (Zarge + Türblatt) - Rundkante - DuriTop CPL Weisslack",
@@ -4940,7 +4940,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-169-uv293-17108",
+              id: "pv-169-uv293-17108",
               category: "section-73-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -4963,7 +4963,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-170-uv293-17316",
+              id: "pv-170-uv293-17316",
               category: "section-73-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Herholz Innentürelement Modern Decora horizontal CPL (Zarge+Türblatt) - SR-Kante - Sandbirke",
@@ -5001,7 +5001,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-171-uv218-26616",
+              id: "pv-171-uv218-26616",
               category: "section-74-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "FM Mehrzwecktür MZ 41 mm Weiss - Nebeneingangstür - Kellertür - Garagentür",
@@ -5039,7 +5039,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-172-kuec-10001-basis",
+              id: "pv-172-kuec-10001-basis",
               category: "section-75-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KÜCHENMONTAGEpauschal\n | 🛠 Montage-Leistungspaket",
@@ -5076,7 +5076,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-173-neu-000053",
+              id: "pv-173-neu-000053",
               category: "section-76-material",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche Berlin 540 cm in Weiß komplett konfigurierbar - online kaufen",
@@ -5114,7 +5114,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-174-670036575447",
+              id: "pv-174-670036575447",
               category: "section-77-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Einbauküche L-Küche München 430 cm in Weiß komplett - online kaufen",
@@ -5152,7 +5152,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-175-670036573313",
+              id: "pv-175-670036573313",
               category: "section-78-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Hailo Einbau-Abfallsammler Separato ASSB 40 Mülleimer für Badezimmer-Auszugschränke 22cm hoch",
@@ -5175,7 +5175,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-176-3372-953-044",
+              id: "pv-176-3372-953-044",
               category: "section-78-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "nobilia Handtuchhalter 2-armig HTHA2",
@@ -5213,7 +5213,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-177-fens-100-basis",
+              id: "pv-177-fens-100-basis",
               category: "section-79-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FENSTER & Türen | 🛠 Montage-Leistungspaket",
@@ -5250,7 +5250,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-178-fens-102-1-op",
+              id: "pv-178-fens-102-1-op",
               category: "section-80-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-FENSTER |🛠 Demontage & Entsorgung",
@@ -5288,7 +5288,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-179-fens-101-3-k1",
+              id: "pv-179-fens-101-3-k1",
               category: "section-81-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 1 m Kantenlänge",
@@ -5311,7 +5311,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-180-fens-101-3-k2",
+              id: "pv-180-fens-101-3-k2",
               category: "section-81-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 2 m Kantenlänge",
@@ -5334,7 +5334,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-181-fens-101-3-k3",
+              id: "pv-181-fens-101-3-k3",
               category: "section-81-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 3 m Kantenlänge",
@@ -5356,7 +5356,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-182-fens-101-3-k4",
+              id: "pv-182-fens-101-3-k4",
               category: "section-81-material",
               subcategory: "leistungen-materialien",
               title: "Schüco LivIng 82 AS Rondo - bis 4 m Kantenlänge",
@@ -5378,7 +5378,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-183-fens-501-9",
+              id: "pv-183-fens-501-9",
               category: "section-81-material",
               subcategory: "leistungen-materialien",
               title: "Balkontür Kunststoff Schüco LivIng 82 AS Rondo",
@@ -5416,7 +5416,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-184-1101181",
+              id: "pv-184-1101181",
               category: "section-82-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Therm 3.0 RWA-Drehfluegel 3fach DIN L 1000x 500 m. 3 Baendern +RA-Beschlagtei.",
@@ -5454,7 +5454,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-185-uv789-1039",
+              id: "pv-185-uv789-1039",
               category: "section-83-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Griffwerk LUCIA PROFESSIONAL Schraubtechnik GK4 - Fensterolive",
@@ -5477,7 +5477,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-186-fens-101-basis",
+              id: "pv-186-fens-101-basis",
               category: "section-83-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "ROLLADENPANZER | Antrieb-MANUELL |**Varianten**",
@@ -5515,7 +5515,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-187-fass-100-basis",
+              id: "pv-187-fass-100-basis",
               category: "section-84-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Dämmung WDVS | 🛠 Montage-Leistungspaket",
@@ -5552,7 +5552,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-188-uv868-00626",
+              id: "pv-188-uv868-00626",
               category: "section-85-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm ",
@@ -5590,7 +5590,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-189-868-00365",
+              id: "pv-189-868-00365",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg",
@@ -5613,7 +5613,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-190-uv868-00877",
+              id: "pv-190-uv868-00877",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg",
@@ -5636,7 +5636,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-191-868-00188",
+              id: "pv-191-868-00188",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m",
@@ -5659,7 +5659,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-192-868-00413",
+              id: "pv-192-868-00413",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Dübelteller DT 140",
@@ -5682,7 +5682,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-193-uv868-00282",
+              id: "pv-193-uv868-00282",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weber Gewebe-Abschlussprofil",
@@ -5705,7 +5705,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-194-uv868-00722",
+              id: "pv-194-uv868-00722",
               category: "section-86-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Sockelabschlussprofil W61-1 KU",
@@ -5743,7 +5743,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-195-abbd-101-1-mat",
+              id: "pv-195-abbd-101-1-mat",
               category: "section-87-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
@@ -5781,7 +5781,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-196-uv868-00421",
+              id: "pv-196-uv868-00421",
               category: "section-88-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
@@ -5819,7 +5819,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-197-gart-10010-basis",
+              id: "pv-197-gart-10010-basis",
               category: "section-89-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TERRASSEN AUS STEIN | 🛠 Montage-Leistungspaket",
@@ -5856,7 +5856,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-198-769-116",
+              id: "pv-198-769-116",
               category: "section-90-material",
               subcategory: "leistungen-materialien",
               title: "Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten",
@@ -5894,7 +5894,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-199-zaun-10004",
+              id: "pv-199-zaun-10004",
               category: "section-91-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "METALLZAUN | 🛠 Montage",
@@ -5916,7 +5916,7 @@ export const packageBlitzHaus1: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-200-uv12-00202",
+              id: "pv-200-uv12-00202",
               category: "section-91-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)",
@@ -5954,7 +5954,7 @@ export const packageBlitzHaus1: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-201-ents-101-mat",
+              id: "pv-201-ents-101-mat",
               category: "section-92-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CONTAINER |  Entsorgung  Bauschutt |**Varianten**",

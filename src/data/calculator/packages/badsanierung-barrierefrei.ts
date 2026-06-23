@@ -18,7 +18,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-100-basis",
+              id: "pv-001-wass-100-basis",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASSERINSTALLATION BADEZIMMER | 🛠 Montage-Leistungspaket",
@@ -41,7 +41,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-wass-105-zu",
+              id: "pv-002-wass-105-zu",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "WASCHMASCHINEN ANSCHLUSS | 🛠 Zusatz-Montage",
@@ -64,7 +64,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-wass-101-mon",
+              id: "pv-003-wass-101-mon",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "VORSATZ-ELEMENT | 🛠 Montage",
@@ -87,7 +87,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-bade-507-4-mat",
+              id: "pv-004-bade-507-4-mat",
               category: "section-01-wasserinstallation-basis-haus",
               subcategory: "leistungen-materialien",
               title: "Ebenerdigen Duschbereich herstellen & befliesen | 🛠 Montage-Leistungspaket",
@@ -125,7 +125,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-cvis3wt112",
+              id: "pv-005-cvis3wt112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VIS Waschtisch-Montageelement | CONEL VIS Waschtisch-Montage",
@@ -148,7 +148,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-dfix320wc112",
+              id: "pv-006-dfix320wc112",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Montageelement für Wand-WC, mit UP-Spülkasten Sigma 12 cm |",
@@ -171,7 +171,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-gebpffnwcs10n",
+              id: "pv-007-gebpffnwcs10n",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "WC-Strg. mit elektr. Spül, Netz, BT 1-Mengen-Sp. Sigma10, für SKG, Funk",
@@ -194,7 +194,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-clpufs",
+              id: "pv-008-clpufs",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Universalfunkauslöser clivia plus mit Schelle, schwarz VIGOUR",
@@ -232,7 +232,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-wass-100-au",
+              id: "pv-009-wass-100-au",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "WEITERES zu WASSERINSTALLATION - (Klick Grünes-Symbol)",
@@ -270,7 +270,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-010-heiz-101-mon",
+              id: "pv-010-heiz-101-mon",
               category: "section-04-heizkorper-basis-haus",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER | 🛠 Montage",
@@ -292,7 +292,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-heiz-301-mat",
+              id: "pv-011-heiz-301-mat",
               category: "section-04-heizkorper-basis-haus",
               subcategory: "leistungen-materialien",
               title: "HEIZSTRÄNGE bis max. 5 m | 🛠 Montage-Leistungspaket",
@@ -315,7 +315,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-012-heiz-201-1-op",
+              id: "pv-012-heiz-201-1-op",
               category: "section-04-heizkorper-basis-haus",
               subcategory: "leistungen-materialien",
               title: "HEIZKÖRPER |🛠 Demontage & Entsorgung ",
@@ -352,7 +352,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-013-uv835-10017",
+              id: "pv-013-uv835-10017",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "Ximax Badheizkörper BIANCA - weiß",
@@ -375,7 +375,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-014-clagecfxun",
+              id: "pv-014-clagecfxun",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "Clage Kompakt-Durchlauferhitzer CFX-U FUNKTRONIC MPS",
@@ -398,7 +398,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-uv816-00746",
+              id: "pv-015-uv816-00746",
               category: "section-05-material",
               subcategory: "leistungen-materialien",
               title: "Gutjahr IndorTec THERM-E Komplettset TD 3-in-1 Elektro-Flächenheizung",
@@ -436,7 +436,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-016-bade-100-basis",
+              id: "pv-016-bade-100-basis",
               category: "section-06-fliesen-badezimmer",
               subcategory: "leistungen-materialien",
               title: "FLIESEN - BAD | 🛠 Montage-Leistungspaket",
@@ -473,7 +473,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-017-1168296",
+              id: "pv-017-1168296",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 1571TW010 Unit Two weiß matt",
@@ -496,7 +496,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-1176157",
+              id: "pv-018-1176157",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "V&B 30x 60 2341BP900 Daytona !B dark grey matt ugl. FS R10/B",
@@ -519,7 +519,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-019-1054265",
+              id: "pv-019-1054265",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "V&B 5x 10 2037BU9M8 Cadiz Mosaik ash grey ugl. FS R10/B rekt.",
@@ -542,7 +542,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-020-uv867-00298",
+              id: "pv-020-uv867-00298",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "Ottoseal S 110 Premium Neutral Silicon",
@@ -565,7 +565,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-uv519-00256",
+              id: "pv-021-uv519-00256",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "PCI Nanofug Variabler Flexfugenmörtel",
@@ -588,7 +588,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-022-uv519-00143",
+              id: "pv-022-uv519-00143",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "PCI Flexmörtel Verformungsfähiger Fliesenkleber",
@@ -611,7 +611,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-uv608-6903",
+              id: "pv-023-uv608-6903",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "Schlüter FINEC Dekorprofil Eckenset",
@@ -649,7 +649,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-024-bade-500-basis",
+              id: "pv-024-bade-500-basis",
               category: "section-08-sanitar-badezimmer",
               subcategory: "leistungen-materialien",
               title: "SANITÄR - BAD | Montage-Leistungspaket",
@@ -686,7 +686,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-025-starck3vwwc",
+              id: "pv-025-starck3vwwc",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Wand-Tiefspül-WC Vital Starck 3 Ausladung 700mm weiss Duravit",
@@ -709,7 +709,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-starck3sr",
+              id: "pv-026-starck3sr",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitzring Starck 3 Vital Duravit m.Winkelpuffern Scharniere edelstahl we",
@@ -732,7 +732,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-starck3sies",
+              id: "pv-027-starck3sies",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "WC-Sitz Starck 3 Vital mit Deckel weiss Scharniere edelstahl Duravit",
@@ -755,7 +755,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-skg600resm",
+              id: "pv-028-skg600resm",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Stützklappgriff 600mm re Edelstahl fein matt",
@@ -778,7 +778,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-vita65n",
+              id: "pv-029-vita65n",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Waschtisch Vitalis barrierefrei 65x60cm m.Hahnloch m.Überlauf weiss Geberit",
@@ -801,7 +801,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-upsfs",
+              id: "pv-030-upsfs",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "GE WT UP-Siphon mit Fertigbauset, Sieb- ventil und Standrohr, Abgang horizontal",
@@ -824,7 +824,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-031-aquaf5ev1001",
+              id: "pv-031-aquaf5ev1001",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Standventil F5E DN15 Ausladung 125mm messing verchromt Franke",
@@ -847,7 +847,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-032-euphdsee260",
+              id: "pv-032-euphdsee260",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Duschsystem Euphoria 260 mit Einhandmischer 9,5l/min chrom Grohe",
@@ -885,7 +885,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-033-hewiksiw448",
+              id: "pv-033-hewiksiw448",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Klappsitz Hewi 448x428mm reinweiss m.Wandplatten o.Befestigung",
@@ -908,7 +908,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-034-hewiwig600",
+              id: "pv-034-hewiwig600",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Winkelgriff Hewi 600x300mm reinweiss",
@@ -931,7 +931,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-035-strahyr",
+              id: "pv-035-strahyr",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "AP-Hygienebeutelspender Stratos m.runder Öffnung Edelstahl matt Franke",
@@ -954,7 +954,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-036-santralabh18",
+              id: "pv-036-santralabh18",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Abfallbox SanTral 18 Liter m.Beutelhalt. Edelstahl Ophardt",
@@ -977,7 +977,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-037-codessp50",
+              id: "pv-037-codessp50",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Spender berührungsfrei weiss für Desinfektionsmittel 0,5 l Conti",
@@ -1000,7 +1000,7 @@ export const packageBadBarrierefrei: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-038-cwsssppas",
+              id: "pv-038-cwsssppas",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Seifensch.-Spend.CWS ParadiseAntib.Slim m.Panel weiss f.500ml Flaschen m.Schloss",

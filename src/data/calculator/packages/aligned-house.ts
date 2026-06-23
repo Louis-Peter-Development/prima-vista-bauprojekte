@@ -553,7 +553,7 @@ function slug(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-export function createBossmannHousePackage(id: string, title: string, defaultArea: number, defaultFloorCount: number): RenovationPackage {
+export function createPrimaVistaHousePackage(id: string, title: string, defaultArea: number, defaultFloorCount: number): RenovationPackage {
   const rows = HOUSE_ROWS[id] ?? HOUSE_ROWS['1e'];
   const grouped = new Map<string, SourceRow[]>();
   rows.forEach((row) => {
@@ -587,7 +587,7 @@ export function createBossmannHousePackage(id: string, title: string, defaultAre
             title: sectionTitle,
             type,
             products: typedRows.map((row, rowIndex) => createProduct(meta.id, sectionId, {
-              id: `bossmann-${slug(row[6])}-${rowIndex}`,
+              id: `pv-${slug(row[6])}-${rowIndex}`,
               title: row[1],
               sku: row[6],
               basePrice: row[2],
