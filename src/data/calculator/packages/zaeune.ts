@@ -18,7 +18,7 @@ export const packageZaeuneAluminium: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10008",
+              id: "pv-001-zaun-10008",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ALUMINIUMZAUN | 🛠 Montage",
@@ -40,11 +40,12 @@ export const packageZaeuneAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-uv257-00567",
+              id: "pv-002-uv257-00567",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten",
               sku: "uv257-00567",
+              image: "/assets/img/products/uv257-00567.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 478.43,
@@ -62,11 +63,12 @@ export const packageZaeuneAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv257-00946",
+              id: "pv-003-uv257-00946",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra",
               sku: "uv257-00946",
+              image: "/assets/img/products/uv257-00946.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 41.73,
@@ -84,11 +86,12 @@ export const packageZaeuneAluminium: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv257-00569",
+              id: "pv-004-uv257-00569",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen",
               sku: "uv257-00569",
+              image: "/assets/img/products/uv257-00569.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 780.95,
@@ -121,11 +124,12 @@ export const packageZaeuneAluminium: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-uv257-00746",
+              id: "pv-005-uv257-00746",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau",
               sku: "uv257-00746",
+              image: "/assets/img/products/uv257-00746.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2804.95,
@@ -167,7 +171,7 @@ export const packageZaeuneHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10003",
+              id: "pv-001-zaun-10003",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOLZZAUN | 🛠 Montage",
@@ -204,11 +208,12 @@ export const packageZaeuneHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-679-01308",
+              id: "pv-002-679-01308",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE Lamellenzaun 180 x 150 cm",
               sku: "679-01308",
+              image: "/assets/img/products/679-01308.jpg",
               type: "material",
               unit: "",
               basePrice: 314.6,
@@ -241,11 +246,12 @@ export const packageZaeuneHolz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-679-00373",
+              id: "pv-003-679-00373",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE KS-Zaun Ranki 180 x 150 cm Füllung weiß / Rahmen weiß",
               sku: "679-00373",
+              image: "/assets/img/products/679-00373.jpg",
               type: "optional",
               unit: "",
               basePrice: 325.6,
@@ -263,11 +269,12 @@ export const packageZaeuneHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-679-00372",
+              id: "pv-004-679-00372",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE KS-Zaun Ranki Ecke  90 x 150/90 cm Füllung weiß / Rahmen weiß",
               sku: "679-00372",
+              image: "/assets/img/products/679-00372.jpg",
               type: "optional",
               unit: "",
               basePrice: 325.6,
@@ -300,11 +307,12 @@ export const packageZaeuneHolz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-mon-10307",
+              id: "pv-005-mon-10307",
               category: "section-04-alternativ",
               subcategory: "leistungen-materialien",
               title: "VORGARTENZAUN | 🛠 Montage",
               sku: "MON-10307",
+              image: "/assets/img/products/MON-10307.jpg",
               type: "optional",
               unit: "lfm",
               basePrice: 98,
@@ -322,11 +330,12 @@ export const packageZaeuneHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-679-00661",
+              id: "pv-006-679-00661",
               category: "section-04-alternativ",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm",
               sku: "679-00661",
+              image: "/assets/img/products/679-00661.jpg",
               type: "optional",
               unit: "",
               basePrice: 178.2,
@@ -344,11 +353,12 @@ export const packageZaeuneHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-679-01292",
+              id: "pv-007-679-01292",
               category: "section-04-alternativ",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm",
               sku: "679-01292",
+              image: "/assets/img/products/679-01292.jpg",
               type: "optional",
               unit: "",
               basePrice: 609.4,
@@ -390,7 +400,7 @@ export const packageZaeuneGlas: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10013",
+              id: "pv-001-zaun-10013",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GLASZAUN 🛠 Montage",
@@ -427,11 +437,12 @@ export const packageZaeuneGlas: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv257-00457",
+              id: "pv-002-uv257-00457",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas",
               sku: "uv257-00457",
+              image: "/assets/img/products/uv257-00457.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 174.77,
@@ -464,11 +475,12 @@ export const packageZaeuneGlas: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv257-00974",
+              id: "pv-003-uv257-00974",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "GroJa Alu-Steckzaunpfosten inkl. Kappe zum Einbetonieren, 9 x 9 cm - anthrazit, DB 703",
               sku: "uv257-00974",
+              image: "/assets/img/products/uv257-00974.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 98.95,
@@ -510,7 +522,7 @@ export const packageZaeuneMetall: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10004",
+              id: "pv-001-zaun-10004",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "METALLZAUN | 🛠 Montage",
@@ -547,11 +559,12 @@ export const packageZaeuneMetall: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv12-00202",
+              id: "pv-002-uv12-00202",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)",
               sku: "uv12-00202",
+              image: "/assets/img/products/uv12-00202.jpg",
               type: "material",
               unit: "Set",
               basePrice: 1875.14,
@@ -593,7 +606,7 @@ export const packageZaeuneDoppelstab: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10002",
+              id: "pv-001-zaun-10002",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DOPPELSTABMATTENZAUN | 🛠 Montage",
@@ -615,11 +628,12 @@ export const packageZaeuneDoppelstab: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-uv265-84105",
+              id: "pv-002-uv265-84105",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen",
               sku: "uv265-84105",
+              image: "/assets/img/products/uv265-84105.jpg",
               type: "material",
               unit: "Set",
               basePrice: 847.69,
@@ -637,11 +651,12 @@ export const packageZaeuneDoppelstab: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-265-00045",
+              id: "pv-003-265-00045",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Anthrazit für Zaunhöhe: 123 cm",
               sku: "265-00045",
+              image: "/assets/img/products/265-00045.jpg",
               type: "material",
               unit: "",
               basePrice: 364.1,
@@ -683,7 +698,7 @@ export const packageZaeuneGabionen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10015",
+              id: "pv-001-zaun-10015",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GABIONENZAUN | 🛠 Montage",
@@ -720,11 +735,12 @@ export const packageZaeuneGabionen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv12-00355",
+              id: "pv-002-uv12-00355",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt",
               sku: "uv12-00355",
+              image: "/assets/img/products/uv12-00355.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 295.77,
@@ -766,7 +782,7 @@ export const packageZaeuneSichtschutz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10006",
+              id: "pv-001-zaun-10006",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "SICHTSCHUTZZAUN | 🛠 Montage",
@@ -803,11 +819,12 @@ export const packageZaeuneSichtschutz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-679-01171",
+              id: "pv-002-679-01171",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Sichtschutzzaun SUNLINE Ranki 180 x 180 cm",
               sku: "679-01171",
+              image: "/assets/img/products/679-01171.jpg",
               type: "material",
               unit: "",
               basePrice: 199.1,
@@ -840,11 +857,12 @@ export const packageZaeuneSichtschutz: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-679-01172",
+              id: "pv-003-679-01172",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Sichtschutzzaun SUNLINE Ranki ECKE 90 x 180/90 cm",
               sku: "679-01172",
+              image: "/assets/img/products/679-01172.jpg",
               type: "optional",
               unit: "",
               basePrice: 199.1,
@@ -886,7 +904,7 @@ export const packageZaeuneMaschendraht: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10001",
+              id: "pv-001-zaun-10001",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MASCHENDRAHTZAUN | 🛠 Montage",
@@ -923,11 +941,12 @@ export const packageZaeuneMaschendraht: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv804-50054",
+              id: "pv-002-uv804-50054",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Alberts Maschendraht-Zaun-Set - Pfosten zum Einbetonieren - Anthrazit-Metallic - incl. Pfosten und Befestigungen",
               sku: "uv804-50054",
+              image: "/assets/img/products/uv804-50054.jpg",
               type: "material",
               unit: "",
               basePrice: 268.35,
@@ -945,11 +964,12 @@ export const packageZaeuneMaschendraht: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-265-00040",
+              id: "pv-003-265-00040",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Hadra Drehflügeltor für Doppelstabmatten SMALL, 1-flügelig, Grün für Zaunhöhe: 83 cm",
               sku: "265-00040",
+              image: "/assets/img/products/265-00040.jpg",
               type: "material",
               unit: "",
               basePrice: 290.4,
@@ -982,11 +1002,12 @@ export const packageZaeuneMaschendraht: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-012-00598",
+              id: "pv-004-012-00598",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "DZT VARIO compact 2-flügeliges Tor - 2960 x 1400 mm grün",
               sku: "012-00598",
+              image: "/assets/img/products/012-00598.jpg",
               type: "optional",
               unit: "",
               basePrice: 1191.55,
@@ -1028,11 +1049,12 @@ export const packageZaeuneSteck: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10305",
+              id: "pv-001-mon-10305",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "STECKZAUN | 🛠 Montage",
               sku: "MON-10305",
+              image: "/assets/img/products/MON-10305.jpg",
               type: "service",
               unit: "lfm",
               basePrice: 98,
@@ -1050,11 +1072,12 @@ export const packageZaeuneSteck: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-uv257-00567",
+              id: "pv-002-uv257-00567",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten",
               sku: "uv257-00567",
+              image: "/assets/img/products/uv257-00567.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 478.43,
@@ -1072,11 +1095,12 @@ export const packageZaeuneSteck: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv257-00946",
+              id: "pv-003-uv257-00946",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra",
               sku: "uv257-00946",
+              image: "/assets/img/products/uv257-00946.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 41.73,
@@ -1094,11 +1118,12 @@ export const packageZaeuneSteck: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv257-00569",
+              id: "pv-004-uv257-00569",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen",
               sku: "uv257-00569",
+              image: "/assets/img/products/uv257-00569.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 780.95,
@@ -1131,11 +1156,12 @@ export const packageZaeuneSteck: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-uv257-00746",
+              id: "pv-005-uv257-00746",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau",
               sku: "uv257-00746",
+              image: "/assets/img/products/uv257-00746.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2804.95,
@@ -1177,11 +1203,12 @@ export const packageZaeuneVorgarten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-mon-10307",
+              id: "pv-001-mon-10307",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VORGARTENZAUN | 🛠 Montage",
               sku: "MON-10307",
+              image: "/assets/img/products/MON-10307.jpg",
               type: "service",
               unit: "lfm",
               basePrice: 98,
@@ -1199,11 +1226,12 @@ export const packageZaeuneVorgarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-679-00661",
+              id: "pv-002-679-00661",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE Vorgarten gerade, weiß 180 x 80 cm",
               sku: "679-00661",
+              image: "/assets/img/products/679-00661.jpg",
               type: "material",
               unit: "",
               basePrice: 178.2,
@@ -1221,11 +1249,12 @@ export const packageZaeuneVorgarten: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-679-01292",
+              id: "pv-003-679-01292",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE KS-Vorgartentor weiß 100 x 80 cm",
               sku: "679-01292",
+              image: "/assets/img/products/679-01292.jpg",
               type: "material",
               unit: "",
               basePrice: 609.4,
@@ -1267,7 +1296,7 @@ export const packageZaeuneSichtschutzstreifen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10012",
+              id: "pv-001-zaun-10012",
               category: "section-01-leistungen-materialien",
               subcategory: "leistungen-materialien",
               title: "SICHTSCHUTZSTREIFEN| 🛠 Montage",

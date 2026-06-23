@@ -18,7 +18,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-gart-10001-basis",
+              id: "pv-001-gart-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG IM GARTEN | 🛠 Montage-Leistungspaket",
@@ -40,11 +40,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-lht-94741",
+              id: "pv-002-lht-94741",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: " LED Pollerleuchte Bako 50cm IP44 Anthrazit",
               sku: "LHT-94741",
+              image: "/assets/img/products/LHT-94741.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 54.54,
@@ -77,11 +78,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-lht-661-320",
+              id: "pv-003-lht-661-320",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Konstsmide Mode Zink Sockelleuchte E27 IP54",
               sku: "LHT-661-320",
+              image: "/assets/img/products/LHT-661-320.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 261.68,
@@ -99,11 +101,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-lht-94828",
+              id: "pv-004-lht-94828",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " Paulmann 94828 LED Pollerleuchte Zenera IP44",
               sku: "LHT-94828",
+              image: "/assets/img/products/LHT-94828.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 142.51,
@@ -121,11 +124,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-lht-48688-06",
+              id: "pv-005-lht-48688-06",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Brilliant Istria 3-flg. Außenleuchte E27 IP23",
               sku: "LHT-48688-06",
+              image: "/assets/img/products/LHT-48688-06.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 249.78,
@@ -158,7 +162,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-006-gart-10002-basis",
+              id: "pv-006-gart-10002-basis",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BLOCKSTUFEN | 🛠 Montage-Leistungspaket",
@@ -180,11 +184,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv628-04021",
+              id: "pv-007-uv628-04021",
               category: "section-03-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis",
               sku: "uv628-04021",
+              image: "/assets/img/products/uv628-04021.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 184.94,
@@ -217,11 +222,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-008-uv353-00813",
+              id: "pv-008-uv353-00813",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "KANN La Tierra Blockstufe Sunset",
               sku: "uv353-00813",
+              image: "/assets/img/products/uv353-00813.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 38.02,
@@ -239,11 +245,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv353-00822",
+              id: "pv-009-uv353-00822",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "KANN Travino Blockstufe sandstein",
               sku: "uv353-00822",
+              image: "/assets/img/products/uv353-00822.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 50.96,
@@ -276,7 +283,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-gart-10004-basis",
+              id: "pv-010-gart-10004-basis",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOCHBEET | 🛠 Montage-Leistungspaket",
@@ -298,11 +305,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv66-20633",
+              id: "pv-011-uv66-20633",
               category: "section-05-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Biohort HochBeet",
               sku: "uv66-20633",
+              image: "/assets/img/products/uv66-20633.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 390.5,
@@ -335,11 +343,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-mon-10142",
+              id: "pv-012-mon-10142",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOCHBETE| 🛠 Montage",
               sku: "MON-10142",
+              image: "/assets/img/products/MON-10142.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 295,
@@ -357,11 +366,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv237-00169",
+              id: "pv-013-uv237-00169",
               category: "section-06-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gerwing GerloCastell  \"Hochbeet\" rechteckig MURADA beige-hell",
               sku: "uv237-00169",
+              image: "/assets/img/products/uv237-00169.jpg",
               type: "optional",
               unit: "Set",
               basePrice: 874.5,
@@ -394,7 +404,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-carp-10002-basis",
+              id: "pv-014-carp-10002-basis",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket",
@@ -416,11 +426,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-uv595-30018",
+              id: "pv-015-uv595-30018",
               category: "section-07-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten",
               sku: "uv595-30018",
+              image: "/assets/img/products/uv595-30018.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2848.95,
@@ -453,11 +464,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-016-uv595-30003",
+              id: "pv-016-uv595-30003",
               category: "section-08-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten",
               sku: "uv595-30003",
+              image: "/assets/img/products/uv595-30003.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 4168.93,
@@ -490,7 +502,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-carp-10002-basis",
+              id: "pv-017-carp-10002-basis",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket",
@@ -512,11 +524,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-018-uv595-30018",
+              id: "pv-018-uv595-30018",
               category: "section-09-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten",
               sku: "uv595-30018",
+              image: "/assets/img/products/uv595-30018.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2848.95,
@@ -549,11 +562,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-019-uv595-30003",
+              id: "pv-019-uv595-30003",
               category: "section-10-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten",
               sku: "uv595-30003",
+              image: "/assets/img/products/uv595-30003.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 4168.93,
@@ -586,7 +600,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-gart-10005-basis",
+              id: "pv-020-gart-10005-basis",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARTENHAUS | 🛠 Montage-Leistungspaket",
@@ -608,11 +622,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-uv595-10098",
+              id: "pv-021-uv595-10098",
               category: "section-11-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm",
               sku: "uv595-10098",
+              image: "/assets/img/products/uv595-10098.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2001.95,
@@ -645,11 +660,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-022-uv595-10004",
+              id: "pv-022-uv595-10004",
               category: "section-12-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Gartenhaus Basel Natur",
               sku: "uv595-10004",
+              image: "/assets/img/products/uv595-10004.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 6584.53,
@@ -682,7 +698,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-023-gart-10006-basis",
+              id: "pv-023-gart-10006-basis",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GERÄTEHAUS | 🛠 Montage-Leistungspaket",
@@ -704,11 +720,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-024-uv66-20086",
+              id: "pv-024-uv66-20086",
               category: "section-13-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Biohort Europa Gerätehaus - Gerätehütte",
               sku: "uv66-20086",
+              image: "/assets/img/products/uv66-20086.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 789.79,
@@ -741,11 +758,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-uv66-20125",
+              id: "pv-025-uv66-20125",
               category: "section-14-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Biohort HighLine Gerätehaus - Geräteschuppen",
               sku: "uv66-20125",
+              image: "/assets/img/products/uv66-20125.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1970.09,
@@ -778,7 +796,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-026-gart-10007-basis",
+              id: "pv-026-gart-10007-basis",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PAVILLON | 🛠 Montage-Leistungspaket",
@@ -800,11 +818,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-uv595-40073",
+              id: "pv-027-uv595-40073",
               category: "section-15-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 6-Eck Pavillon Versailles",
               sku: "uv595-40073",
+              image: "/assets/img/products/uv595-40073.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 3904.93,
@@ -837,11 +856,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-028-uv595-40026",
+              id: "pv-028-uv595-40026",
               category: "section-16-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 4-Eck Pavillon Orleans",
               sku: "uv595-40026",
+              image: "/assets/img/products/uv595-40026.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 5884.95,
@@ -874,7 +894,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-029-gart-10007-basis",
+              id: "pv-029-gart-10007-basis",
               category: "section-17-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PAVILLON | 🛠 Montage-Leistungspaket",
@@ -896,11 +916,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-030-uv595-40073",
+              id: "pv-030-uv595-40073",
               category: "section-17-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 6-Eck Pavillon Versailles",
               sku: "uv595-40073",
+              image: "/assets/img/products/uv595-40073.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 3904.93,
@@ -933,11 +954,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-uv595-40026",
+              id: "pv-031-uv595-40026",
               category: "section-18-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 4-Eck Pavillon Orleans",
               sku: "uv595-40026",
+              image: "/assets/img/products/uv595-40026.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 5884.95,
@@ -970,7 +992,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-032-gart-10008-basis",
+              id: "pv-032-gart-10008-basis",
               category: "section-19-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PFLASTERN MIT STEINE | 🛠 Montage-Leistungspaket",
@@ -992,11 +1014,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-033-uv881-01020",
+              id: "pv-033-uv881-01020",
               category: "section-19-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Diephaus Pflasterstein Lineo Quarzit PE2",
               sku: "uv881-01020",
+              image: "/assets/img/products/uv881-01020.jpg",
               type: "optional",
               unit: "",
               basePrice: 47.54,
@@ -1029,11 +1052,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-034-uv881-01018",
+              id: "pv-034-uv881-01018",
               category: "section-20-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Diephaus Pflasterstein Lineo Muschelkalk PE2",
               sku: "uv881-01018",
+              image: "/assets/img/products/uv881-01018.jpg",
               type: "optional",
               unit: "",
               basePrice: 47.54,
@@ -1066,7 +1090,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-035-gart-10009-basis",
+              id: "pv-035-gart-10009-basis",
               category: "section-21-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TERRASSEN AUS HOLZ | 🛠 Montage-Leistungspaket",
@@ -1088,11 +1112,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-036-uv399-00135",
+              id: "pv-036-uv399-00135",
               category: "section-21-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Kovalex WPC-Terrassendiele mit Struktur Walnussfarben mattiert - 145x20 mm Massiv | Längen-Zuschnitt",
               sku: "uv399-00135",
+              image: "/assets/img/products/uv399-00135.jpg",
               type: "optional",
               unit: "lfm",
               basePrice: 13.3,
@@ -1110,11 +1135,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-037-399-00283",
+              id: "pv-037-399-00283",
               category: "section-21-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm",
               sku: "399-00283",
+              image: "/assets/img/products/399-00283.jpg",
               type: "optional",
               unit: "",
               basePrice: 26.07,
@@ -1147,11 +1173,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-038-399-00312",
+              id: "pv-038-399-00312",
               category: "section-22-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Terrassenlager 0 (Nicht höhenverstellbar)",
               sku: "399-00312",
+              image: "/assets/img/products/399-00312.jpg",
               type: "optional",
               unit: "",
               basePrice: 2.96,
@@ -1169,11 +1196,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-039-399-00300",
+              id: "pv-039-399-00300",
               category: "section-22-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm",
               sku: "399-00300",
+              image: "/assets/img/products/399-00300.jpg",
               type: "optional",
               unit: "",
               basePrice: 27.17,
@@ -1191,11 +1219,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-040-399-00310",
+              id: "pv-040-399-00310",
               category: "section-22-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)",
               sku: "399-00310",
+              image: "/assets/img/products/399-00310.jpg",
               type: "optional",
               unit: "",
               basePrice: 19.8,
@@ -1213,11 +1242,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-041-399-00305",
+              id: "pv-041-399-00305",
               category: "section-22-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm",
               sku: "399-00305",
+              image: "/assets/img/products/399-00305.jpg",
               type: "optional",
               unit: "",
               basePrice: 18.26,
@@ -1250,7 +1280,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-042-gart-10010-basis",
+              id: "pv-042-gart-10010-basis",
               category: "section-23-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TERRASSEN AUS STEIN | 🛠 Montage-Leistungspaket",
@@ -1272,11 +1302,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-043-769-116",
+              id: "pv-043-769-116",
               category: "section-23-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten",
               sku: "769-116",
+              image: "/assets/img/products/769-116.jpg",
               type: "optional",
               unit: "",
               basePrice: 63.69,
@@ -1309,11 +1340,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-044-756-2360",
+              id: "pv-044-756-2360",
               category: "section-24-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Novabell Terrassenplatte 40x120x2cm NOVA ARTWOOD honey RT | AWD42RT",
               sku: "756-2360",
+              image: "/assets/img/products/756-2360.jpg",
               type: "optional",
               unit: "",
               basePrice: 111.1,
@@ -1331,11 +1363,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-045-uv773-01162",
+              id: "pv-045-uv773-01162",
               category: "section-24-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "EHL Milena-Terrassenplatte basalt gestrahlt",
               sku: "uv773-01162",
+              image: "/assets/img/products/uv773-01162.jpg",
               type: "optional",
               unit: "",
               basePrice: 62.45,
@@ -1353,11 +1386,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-046-uv262-10237",
+              id: "pv-046-uv262-10237",
               category: "section-24-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Alpensteine Gabionensteine gebrochen Körnung",
               sku: "uv262-10237",
+              image: "/assets/img/products/uv262-10237.jpg",
               type: "optional",
               unit: "BigB.",
               basePrice: 269.49,
@@ -1390,7 +1424,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-047-gart-10011-basis",
+              id: "pv-047-gart-10011-basis",
               category: "section-25-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ÜBERDACHUNG | 🛠 Montage-Leistungspaket",
@@ -1412,11 +1446,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-048-uv232-525",
+              id: "pv-048-uv232-525",
               category: "section-25-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Alu anthrazit Glanz",
               sku: "uv232-525",
+              image: "/assets/img/products/uv232-525.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -1449,11 +1484,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-049-uv232-475",
+              id: "pv-049-uv232-475",
               category: "section-26-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Legend Alu weiß",
               sku: "uv232-475",
+              image: "/assets/img/products/uv232-475.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -1486,7 +1522,7 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-050-gart-10012-basis",
+              id: "pv-050-gart-10012-basis",
               category: "section-27-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WINTERGÄRTEN | 🛠 Montage-Leistungspaket",
@@ -1508,11 +1544,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-051-uv232-325",
+              id: "pv-051-uv232-325",
               category: "section-27-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Legend Alu cremeweiß",
               sku: "uv232-325",
+              image: "/assets/img/products/uv232-325.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -1545,11 +1582,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-052-mon-100-stk",
+              id: "pv-052-mon-100-stk",
               category: "section-28-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "MONTAGE | 🛠 Montage 100",
               sku: "MON-100-stk",
+              image: "/assets/img/products/MON-100-stk.jpg",
               type: "optional",
               unit: "Stk",
               basePrice: 999.9,
@@ -1567,11 +1605,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-053-uv563-01018",
+              id: "pv-053-uv563-01018",
               category: "section-28-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "Rewatec NEO Gartenanlage Basic",
               sku: "uv563-01018",
+              image: "/assets/img/products/uv563-01018.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1946.93,
@@ -1604,11 +1643,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-054-563-01344",
+              id: "pv-054-563-01344",
               category: "section-29-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041",
               sku: "563-01344",
+              image: "/assets/img/products/563-01344.jpg",
               type: "optional",
               unit: "",
               basePrice: 299.2,
@@ -1641,11 +1681,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-055-563-01505",
+              id: "pv-055-563-01505",
               category: "section-30-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserverteiler RainStar - extern - ebenerdiger Einbau - begehbar",
               sku: "563-01505",
+              image: "/assets/img/products/563-01505.jpg",
               type: "optional",
               unit: "",
               basePrice: 173.8,
@@ -1678,11 +1719,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-056-wass-607-1-mat",
+              id: "pv-056-wass-607-1-mat",
               category: "section-31-alternativ",
               subcategory: "leistungen-materialien",
               title: "GARTEN-ANSCHLUSS |  inkl. frostsicheren Außenwasserhahn",
               sku: "WASS-607.1-MAT",
+              image: "/assets/img/products/WASS-607.1-MAT.png",
               type: "optional",
               unit: "Stück",
               basePrice: 346.5,
@@ -1715,11 +1757,12 @@ export const packageGartenAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-057-563-01504",
+              id: "pv-057-563-01504",
               category: "section-32-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasser-Entnahmearmatur für TwinCover",
               sku: "563-01504",
+              image: "/assets/img/products/563-01504.jpg",
               type: "optional",
               unit: "",
               basePrice: 104.39,
@@ -1737,11 +1780,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-058-007-00208",
+              id: "pv-058-007-00208",
               category: "section-32-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Haus und Garten Professional vollautomatische Regenwasserzentrale mit Pumpe",
               sku: "007-00208",
+              image: "/assets/img/products/007-00208.jpg",
               type: "optional",
               unit: "",
               basePrice: 3211.95,
@@ -1759,11 +1803,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-059-007-00206",
+              id: "pv-059-007-00206",
               category: "section-32-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Garten Plus Klarwasserpumpe, schwimmende Ansaugung 1m",
               sku: "007-00206",
+              image: "/assets/img/products/007-00206.jpg",
               type: "optional",
               unit: "",
               basePrice: 1033.95,
@@ -1781,11 +1826,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-060-uv7-00036",
+              id: "pv-060-uv7-00036",
               category: "section-32-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Gartenanlage Plus Einbau stehend",
               sku: "uv7-00036",
+              image: "/assets/img/products/uv7-00036.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 3090.93,
@@ -1803,11 +1849,12 @@ export const packageGartenAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-061-uv7-00277",
+              id: "pv-061-uv7-00277",
               category: "section-32-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Regenwassertzisterne für Regenwassernutzung",
               sku: "uv7-00277",
+              image: "/assets/img/products/uv7-00277.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1484.93,
@@ -1849,7 +1896,7 @@ export const packageGartenBeleuchtung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10001-basis",
+              id: "pv-001-gart-10001-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BELEUCHTUNG IM GARTEN | 🛠 Montage-Leistungspaket",
@@ -1886,11 +1933,12 @@ export const packageGartenBeleuchtung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-lht-94741",
+              id: "pv-002-lht-94741",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: " LED Pollerleuchte Bako 50cm IP44 Anthrazit",
               sku: "LHT-94741",
+              image: "/assets/img/products/LHT-94741.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 54.54,
@@ -1923,11 +1971,12 @@ export const packageGartenBeleuchtung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-lht-661-320",
+              id: "pv-003-lht-661-320",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Konstsmide Mode Zink Sockelleuchte E27 IP54",
               sku: "LHT-661-320",
+              image: "/assets/img/products/LHT-661-320.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 261.68,
@@ -1945,11 +1994,12 @@ export const packageGartenBeleuchtung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-lht-94828",
+              id: "pv-004-lht-94828",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: " Paulmann 94828 LED Pollerleuchte Zenera IP44",
               sku: "LHT-94828",
+              image: "/assets/img/products/LHT-94828.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 142.51,
@@ -1967,11 +2017,12 @@ export const packageGartenBeleuchtung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-lht-48688-06",
+              id: "pv-005-lht-48688-06",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Brilliant Istria 3-flg. Außenleuchte E27 IP23",
               sku: "LHT-48688-06",
+              image: "/assets/img/products/LHT-48688-06.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 249.78,
@@ -2013,7 +2064,7 @@ export const packageGartenBlockstufen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10002-basis",
+              id: "pv-001-gart-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "BLOCKSTUFEN | 🛠 Montage-Leistungspaket",
@@ -2050,11 +2101,12 @@ export const packageGartenBlockstufen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv628-04021",
+              id: "pv-002-uv628-04021",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Seltra Blockstufe BIASCA satiniert 15x35 cm Silbergrau-liniert Gneis",
               sku: "uv628-04021",
+              image: "/assets/img/products/uv628-04021.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 184.94,
@@ -2087,11 +2139,12 @@ export const packageGartenBlockstufen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv353-00813",
+              id: "pv-003-uv353-00813",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "KANN La Tierra Blockstufe Sunset",
               sku: "uv353-00813",
+              image: "/assets/img/products/uv353-00813.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 38.02,
@@ -2109,11 +2162,12 @@ export const packageGartenBlockstufen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv353-00822",
+              id: "pv-004-uv353-00822",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "KANN Travino Blockstufe sandstein",
               sku: "uv353-00822",
+              image: "/assets/img/products/uv353-00822.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 50.96,
@@ -2155,7 +2209,7 @@ export const packageGartenCarport: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-carp-10002-basis",
+              id: "pv-001-carp-10002-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "CARPORTBAU AN BESTEHENDEM GEBÄUDE | Montage-Leistungspaket",
@@ -2192,11 +2246,12 @@ export const packageGartenCarport: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv595-30018",
+              id: "pv-002-uv595-30018",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Carport Eifel mit Bogen mit Doppelstegplatten",
               sku: "uv595-30018",
+              image: "/assets/img/products/uv595-30018.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 2848.95,
@@ -2229,11 +2284,12 @@ export const packageGartenCarport: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv595-30003",
+              id: "pv-003-uv595-30003",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Caravan-Carport Emsland mit Aluminium-Dachplatten",
               sku: "uv595-30003",
+              image: "/assets/img/products/uv595-30003.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 4168.93,
@@ -2275,7 +2331,7 @@ export const packageGartenHochbeete: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10004-basis",
+              id: "pv-001-gart-10004-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "HOCHBEET | 🛠 Montage-Leistungspaket",
@@ -2312,11 +2368,12 @@ export const packageGartenHochbeete: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv66-20633",
+              id: "pv-002-uv66-20633",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Biohort HochBeet",
               sku: "uv66-20633",
+              image: "/assets/img/products/uv66-20633.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 390.5,
@@ -2349,11 +2406,12 @@ export const packageGartenHochbeete: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mon-10142",
+              id: "pv-003-mon-10142",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "HOCHBETE| 🛠 Montage",
               sku: "MON-10142",
+              image: "/assets/img/products/MON-10142.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 295,
@@ -2371,11 +2429,12 @@ export const packageGartenHochbeete: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv237-00169",
+              id: "pv-004-uv237-00169",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gerwing GerloCastell  \"Hochbeet\" rechteckig MURADA beige-hell",
               sku: "uv237-00169",
+              image: "/assets/img/products/uv237-00169.jpg",
               type: "optional",
               unit: "Set",
               basePrice: 874.5,
@@ -2417,7 +2476,7 @@ export const packageGartenGartenhaus: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10005-basis",
+              id: "pv-001-gart-10005-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARTENHAUS | 🛠 Montage-Leistungspaket",
@@ -2454,11 +2513,12 @@ export const packageGartenGartenhaus: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv595-10098",
+              id: "pv-002-uv595-10098",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Gartenhaus Porto Natur mit Vordach 40 cm",
               sku: "uv595-10098",
+              image: "/assets/img/products/uv595-10098.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 2001.95,
@@ -2491,11 +2551,12 @@ export const packageGartenGartenhaus: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv595-10004",
+              id: "pv-003-uv595-10004",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz Gartenhaus Basel Natur",
               sku: "uv595-10004",
+              image: "/assets/img/products/uv595-10004.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 6584.53,
@@ -2537,7 +2598,7 @@ export const packageGartenGartenmauern: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-rohb-10003-basis",
+              id: "pv-001-rohb-10003-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARTENMAUERN | 🛠 Montage-Leistungspaket",
@@ -2574,11 +2635,12 @@ export const packageGartenGartenmauern: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv229-00499",
+              id: "pv-002-uv229-00499",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Spaltino Mauerblock - Gelbsand-Melange ohne Fase",
               sku: "uv229-00499",
+              image: "/assets/img/products/uv229-00499.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 23.85,
@@ -2611,11 +2673,12 @@ export const packageGartenGartenmauern: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-uv633-00009",
+              id: "pv-003-uv633-00009",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
               sku: "uv633-00009",
+              image: "/assets/img/products/uv633-00009.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 23.3,
@@ -2633,11 +2696,12 @@ export const packageGartenGartenmauern: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv31-00018",
+              id: "pv-004-uv31-00018",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 19.73,
@@ -2679,7 +2743,7 @@ export const packageGartenGeraetehaus: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10006-basis",
+              id: "pv-001-gart-10006-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GERÄTEHAUS | 🛠 Montage-Leistungspaket",
@@ -2716,11 +2780,12 @@ export const packageGartenGeraetehaus: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv66-20086",
+              id: "pv-002-uv66-20086",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Biohort Europa Gerätehaus - Gerätehütte",
               sku: "uv66-20086",
+              image: "/assets/img/products/uv66-20086.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 789.79,
@@ -2753,11 +2818,12 @@ export const packageGartenGeraetehaus: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv66-20125",
+              id: "pv-003-uv66-20125",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Biohort HighLine Gerätehaus - Geräteschuppen",
               sku: "uv66-20125",
+              image: "/assets/img/products/uv66-20125.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1970.09,
@@ -2799,7 +2865,7 @@ export const packageGartenPavillon: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10007-basis",
+              id: "pv-001-gart-10007-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "PAVILLON | 🛠 Montage-Leistungspaket",
@@ -2836,11 +2902,12 @@ export const packageGartenPavillon: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv595-40073",
+              id: "pv-002-uv595-40073",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 6-Eck Pavillon Versailles",
               sku: "uv595-40073",
+              image: "/assets/img/products/uv595-40073.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 3904.93,
@@ -2873,11 +2940,12 @@ export const packageGartenPavillon: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv595-40026",
+              id: "pv-003-uv595-40026",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Skan Holz 4-Eck Pavillon Orleans",
               sku: "uv595-40026",
+              image: "/assets/img/products/uv595-40026.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 5884.95,
@@ -2919,7 +2987,7 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10009-basis",
+              id: "pv-001-gart-10009-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TERRASSEN AUS HOLZ | 🛠 Montage-Leistungspaket",
@@ -2956,11 +3024,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv399-00135",
+              id: "pv-002-uv399-00135",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Kovalex WPC-Terrassendiele mit Struktur Walnussfarben mattiert - 145x20 mm Massiv | Längen-Zuschnitt",
               sku: "uv399-00135",
+              image: "/assets/img/products/uv399-00135.jpg",
               type: "material",
               unit: "lfm",
               basePrice: 13.3,
@@ -2978,11 +3047,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-399-00283",
+              id: "pv-003-399-00283",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Kovalex WPC-Universal-Unterkonstruktion Schwarz 300 cm",
               sku: "399-00283",
+              image: "/assets/img/products/399-00283.jpg",
               type: "material",
               unit: "",
               basePrice: 26.07,
@@ -3015,11 +3085,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-399-00312",
+              id: "pv-004-399-00312",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Terrassenlager 0 (Nicht höhenverstellbar)",
               sku: "399-00312",
+              image: "/assets/img/products/399-00312.jpg",
               type: "material",
               unit: "",
               basePrice: 2.96,
@@ -3037,11 +3108,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-399-00300",
+              id: "pv-005-399-00300",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Alu-Einfassprofil für 20 mm-Diele Anthrazit 250 cm",
               sku: "399-00300",
+              image: "/assets/img/products/399-00300.jpg",
               type: "material",
               unit: "",
               basePrice: 27.17,
@@ -3059,11 +3131,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-399-00310",
+              id: "pv-006-399-00310",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Blech-Schrauben-Set 2 (bei Alu-Unterkonstruktion)",
               sku: "399-00310",
+              image: "/assets/img/products/399-00310.jpg",
               type: "material",
               unit: "",
               basePrice: 19.8,
@@ -3081,11 +3154,12 @@ export const packageGartenTerrassenHolz: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-399-00305",
+              id: "pv-007-399-00305",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Kovalex Holz- und Bautenschutzunterlage Schwarz 60 Stück 9 x 6 cm",
               sku: "399-00305",
+              image: "/assets/img/products/399-00305.jpg",
               type: "material",
               unit: "",
               basePrice: 18.26,
@@ -3127,7 +3201,7 @@ export const packageGartenTerrassenStein: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10010-basis",
+              id: "pv-001-gart-10010-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "TERRASSEN AUS STEIN | 🛠 Montage-Leistungspaket",
@@ -3164,11 +3238,12 @@ export const packageGartenTerrassenStein: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-769-116",
+              id: "pv-002-769-116",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Mirage Evo_2/E Tribeca Harrison TB 02 - 60 x 60 x 2 cm - Feinsteinzeug Terrassenplatten",
               sku: "769-116",
+              image: "/assets/img/products/769-116.jpg",
               type: "material",
               unit: "",
               basePrice: 63.69,
@@ -3201,11 +3276,12 @@ export const packageGartenTerrassenStein: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-756-2360",
+              id: "pv-003-756-2360",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Novabell Terrassenplatte 40x120x2cm NOVA ARTWOOD honey RT | AWD42RT",
               sku: "756-2360",
+              image: "/assets/img/products/756-2360.jpg",
               type: "optional",
               unit: "",
               basePrice: 111.1,
@@ -3223,11 +3299,12 @@ export const packageGartenTerrassenStein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv773-01162",
+              id: "pv-004-uv773-01162",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "EHL Milena-Terrassenplatte basalt gestrahlt",
               sku: "uv773-01162",
+              image: "/assets/img/products/uv773-01162.jpg",
               type: "optional",
               unit: "",
               basePrice: 62.45,
@@ -3245,11 +3322,12 @@ export const packageGartenTerrassenStein: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv262-10237",
+              id: "pv-005-uv262-10237",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Alpensteine Gabionensteine gebrochen Körnung",
               sku: "uv262-10237",
+              image: "/assets/img/products/uv262-10237.jpg",
               type: "optional",
               unit: "BigB.",
               basePrice: 269.49,
@@ -3291,7 +3369,7 @@ export const packageGartenUeberdachung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10011-basis",
+              id: "pv-001-gart-10011-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "ÜBERDACHUNG | 🛠 Montage-Leistungspaket",
@@ -3328,11 +3406,12 @@ export const packageGartenUeberdachung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv232-525",
+              id: "pv-002-uv232-525",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Alu anthrazit Glanz",
               sku: "uv232-525",
+              image: "/assets/img/products/uv232-525.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -3365,11 +3444,12 @@ export const packageGartenUeberdachung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-uv232-475",
+              id: "pv-003-uv232-475",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Legend Alu weiß",
               sku: "uv232-475",
+              image: "/assets/img/products/uv232-475.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -3411,7 +3491,7 @@ export const packageGartenWintergarten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-gart-10012-basis",
+              id: "pv-001-gart-10012-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "WINTERGÄRTEN | 🛠 Montage-Leistungspaket",
@@ -3448,11 +3528,12 @@ export const packageGartenWintergarten: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv232-325",
+              id: "pv-002-uv232-325",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Gardendreams Terrassenüberdachung Legend Alu cremeweiß",
               sku: "uv232-325",
+              image: "/assets/img/products/uv232-325.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 1978.68,
@@ -3494,7 +3575,7 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-zaun-10004",
+              id: "pv-001-zaun-10004",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "METALLZAUN | 🛠 Montage",
@@ -3516,11 +3597,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-002-uv12-00202",
+              id: "pv-002-uv12-00202",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "DZT Metallzaun-Komplett-Set VALENCIA anthrazitgrau (RAL7016) - Elemente 2,0 m breit (Schmuckzaun)",
               sku: "uv12-00202",
+              image: "/assets/img/products/uv12-00202.jpg",
               type: "material",
               unit: "Set",
               basePrice: 1875.14,
@@ -3553,11 +3635,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-mon-10299",
+              id: "pv-003-mon-10299",
               category: "section-02-alternativ",
               subcategory: "leistungen-materialien",
               title: "DOPPELSTABMATTENZAUN | 🛠 Montage",
               sku: "MON-10299",
+              image: "/assets/img/products/MON-10299.jpg",
               type: "optional",
               unit: "lfm",
               basePrice: 98,
@@ -3575,11 +3658,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv265-84105",
+              id: "pv-004-uv265-84105",
               category: "section-02-alternativ",
               subcategory: "leistungen-materialien",
               title: "Hadra Doppelstabmattenzaun Komplettset Anthrazit - Elemente 2,5 m breit - incl. Pfosten und Befestigungen",
               sku: "uv265-84105",
+              image: "/assets/img/products/uv265-84105.jpg",
               type: "optional",
               unit: "Set",
               basePrice: 847.69,
@@ -3612,11 +3696,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-005-mon-10305",
+              id: "pv-005-mon-10305",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "STECKZAUN | 🛠 Montage",
               sku: "MON-10305",
+              image: "/assets/img/products/MON-10305.jpg",
               type: "optional",
               unit: "lfm",
               basePrice: 98,
@@ -3634,11 +3719,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv257-00567",
+              id: "pv-006-uv257-00567",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Steckzaun quadratisch 180x180 cm, ohne Pfosten",
               sku: "uv257-00567",
+              image: "/assets/img/products/uv257-00567.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 478.43,
@@ -3656,11 +3742,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv257-00946",
+              id: "pv-007-uv257-00946",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "GroJa WPC-Steckzaunpfosten inkl. Kappe zum Aufdübeln, 10x10 cm - Terra",
               sku: "uv257-00946",
+              image: "/assets/img/products/uv257-00946.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 41.73,
@@ -3678,11 +3765,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv257-00746",
+              id: "pv-008-uv257-00746",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 2-flügelig 300 x 180 cm, ohne Pfosten - mit Anthrazitrahmen - anthrazitgrau",
               sku: "uv257-00746",
+              image: "/assets/img/products/uv257-00746.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 2804.95,
@@ -3700,11 +3788,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-009-uv257-00569",
+              id: "pv-009-uv257-00569",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "GroJa Lumino Alu-Steckzaun Tor 1-flügelig 100 x 180 cm, ohne Pfosten - mit Alurahmen",
               sku: "uv257-00569",
+              image: "/assets/img/products/uv257-00569.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 780.95,
@@ -3737,7 +3826,7 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-zaun-10013",
+              id: "pv-010-zaun-10013",
               category: "section-04-alternativ",
               subcategory: "leistungen-materialien",
               title: "GLASZAUN 🛠 Montage",
@@ -3759,11 +3848,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-011-uv257-00457",
+              id: "pv-011-uv257-00457",
               category: "section-04-alternativ",
               subcategory: "leistungen-materialien",
               title: "GroJa Ambiente Glaszaun schräg, 90 x 180/90 cm, ohne Pfosten - Klarglas",
               sku: "uv257-00457",
+              image: "/assets/img/products/uv257-00457.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 174.77,
@@ -3796,7 +3886,7 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-zaun-10005",
+              id: "pv-012-zaun-10005",
               category: "section-05-alternativ",
               subcategory: "leistungen-materialien",
               title: "GABIONENZAUN | 🛠 Montage",
@@ -3818,11 +3908,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-013-uv12-00355",
+              id: "pv-013-uv12-00355",
               category: "section-05-alternativ",
               subcategory: "leistungen-materialien",
               title: "DZT Gabione Onyx KL: 400x347 mm - feuerverzinkt",
               sku: "uv12-00355",
+              image: "/assets/img/products/uv12-00355.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 295.77,
@@ -3855,11 +3946,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-mon-10302",
+              id: "pv-014-mon-10302",
               category: "section-06-alternativ",
               subcategory: "leistungen-materialien",
               title: "LATTENZAUN | 🛠 Montage",
               sku: "MON-10302",
+              image: "/assets/img/products/MON-10302.jpg",
               type: "optional",
               unit: "lfm",
               basePrice: 98,
@@ -3877,11 +3969,12 @@ export const packageGartenZaunanlagen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-015-679-01308",
+              id: "pv-015-679-01308",
               category: "section-06-alternativ",
               subcategory: "leistungen-materialien",
               title: "LIGHTLINE Lamellenzaun 180 x 150 cm",
               sku: "679-01308",
+              image: "/assets/img/products/679-01308.jpg",
               type: "optional",
               unit: "",
               basePrice: 314.6,
@@ -3923,11 +4016,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-wass-607-1-mat",
+              id: "pv-001-wass-607-1-mat",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "GARTEN-ANSCHLUSS |  inkl. frostsicheren Außenwasserhahn",
               sku: "WASS-607.1-MAT",
+              image: "/assets/img/products/WASS-607.1-MAT.png",
               type: "material",
               unit: "Stück",
               basePrice: 346.5,
@@ -3960,11 +4054,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-563-01504",
+              id: "pv-002-563-01504",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasser-Entnahmearmatur für TwinCover",
               sku: "563-01504",
+              image: "/assets/img/products/563-01504.jpg",
               type: "optional",
               unit: "",
               basePrice: 104.39,
@@ -3982,11 +4077,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-007-00208",
+              id: "pv-003-007-00208",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Haus und Garten Professional vollautomatische Regenwasserzentrale mit Pumpe",
               sku: "007-00208",
+              image: "/assets/img/products/007-00208.jpg",
               type: "optional",
               unit: "",
               basePrice: 3211.95,
@@ -4004,11 +4100,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-007-00206",
+              id: "pv-004-007-00206",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Garten Plus Klarwasserpumpe, schwimmende Ansaugung 1m",
               sku: "007-00206",
+              image: "/assets/img/products/007-00206.jpg",
               type: "optional",
               unit: "",
               basePrice: 1033.95,
@@ -4026,11 +4123,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv7-00036",
+              id: "pv-005-uv7-00036",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Gartenanlage Plus Einbau stehend",
               sku: "uv7-00036",
+              image: "/assets/img/products/uv7-00036.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 3090.93,
@@ -4048,11 +4146,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv7-00277",
+              id: "pv-006-uv7-00277",
               category: "section-02-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ACO Rain4me Regenwassertzisterne für Regenwassernutzung",
               sku: "uv7-00277",
+              image: "/assets/img/products/uv7-00277.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 1484.93,
@@ -4085,11 +4184,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-mon-100-stk",
+              id: "pv-007-mon-100-stk",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "MONTAGE | 🛠 Montage 100",
               sku: "MON-100-stk",
+              image: "/assets/img/products/MON-100-stk.jpg",
               type: "service",
               unit: "Stk",
               basePrice: 999.9,
@@ -4107,11 +4207,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv563-01018",
+              id: "pv-008-uv563-01018",
               category: "section-03-alternativ",
               subcategory: "leistungen-materialien",
               title: "Rewatec NEO Gartenanlage Basic",
               sku: "uv563-01018",
+              image: "/assets/img/products/uv563-01018.jpg",
               type: "material",
               unit: "Stk.",
               basePrice: 1946.93,
@@ -4144,11 +4245,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-563-01344",
+              id: "pv-009-563-01344",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserzapfsäule Premium Art.Nr.: RWZT0041",
               sku: "563-01344",
+              image: "/assets/img/products/563-01344.jpg",
               type: "material",
               unit: "",
               basePrice: 299.2,
@@ -4181,11 +4283,12 @@ export const packageGartenWasserwirtschaft: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-010-563-01505",
+              id: "pv-010-563-01505",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Rewatec Wasserverteiler RainStar - extern - ebenerdiger Einbau - begehbar",
               sku: "563-01505",
+              image: "/assets/img/products/563-01505.jpg",
               type: "optional",
               unit: "",
               basePrice: 173.8,

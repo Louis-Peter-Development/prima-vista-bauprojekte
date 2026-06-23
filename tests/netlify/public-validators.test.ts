@@ -65,6 +65,11 @@ describe('public endpoint validators', () => {
             unit: 'Stk',
             unitPrice: 279,
             subtotal: 558,
+            sku: 'WASS-101-MON',
+            description: 'Montagepaket für ein Vorsatz-Element im Badezimmer.',
+            category: 'Wasserinstallation | Basis-Haus',
+            subcategory: 'Leistungen & Materialien',
+            type: 'Montage',
           }],
         }],
       },
@@ -128,6 +133,11 @@ describe('public endpoint validators', () => {
             unit: 'Stk',
             unitPrice: 279,
             subtotal: 558,
+            sku: 'WASS-101-MON',
+            description: 'Montagepaket für ein Vorsatz-Element im Badezimmer.',
+            category: 'Wasserinstallation | Basis-Haus',
+            subcategory: 'Leistungen & Materialien',
+            type: 'Montage',
           }],
         }],
       },
@@ -139,7 +149,7 @@ describe('public endpoint validators', () => {
       kalkulator: {
         kindLabel: 'Bad mit Wanne',
         scopeLabel: 'Wohnfläche in qm',
-        picks: [{ rows: [{ label: 'Vorsatz-Element | Montage' }] }],
+        picks: [{ rows: [{ label: 'Vorsatz-Element | Montage', sku: 'WASS-101-MON' }] }],
       },
     });
     expect(validateCalculatorPdfPayload({ ...valid, consent: false })).toEqual({
@@ -172,6 +182,11 @@ describe('public endpoint validators', () => {
             unit: 'Stk',
             unitPrice: 279,
             subtotal: 558,
+            sku: 'WASS-101-MON',
+            description: 'Montagepaket für ein Vorsatz-Element im Badezimmer.',
+            category: 'Wasserinstallation | Basis-Haus',
+            subcategory: 'Leistungen & Materialien',
+            type: 'Montage',
           }],
         }],
       },
@@ -181,6 +196,7 @@ describe('public endpoint validators', () => {
 
     expect(pdf.subarray(0, 5).toString('utf8')).toBe('%PDF-');
     expect(pdf.length).toBeGreaterThan(1000);
+    expect((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length).toBeGreaterThanOrEqual(4);
   });
 
   it('sanitizes comments and rejects empty/spam values', () => {

@@ -93,12 +93,24 @@ export type KalkulatorRow = {
   unit: string;
   unitPrice: number;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
 };
 
 export type KalkulatorPick = {
   key: string;
   label: string;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
   /** Optional trade grouping for hierarchical display. When set, picks
    *  with the same tradeKey are rendered nested under the tradeLabel. */
   tradeKey?: string;
@@ -128,7 +140,7 @@ export type KalkulatorGroup = {
 
 /** Map SKU prefixes (first segment, e.g. ROHB-201-MAT → "ROHB") to a
  *  human-readable trade label. Used to nest the flat category breakdown
- *  in the Bossmann calculator under their parent trade. */
+ *  in the Prima Vista calculator under their parent trade. */
 const SKU_PREFIX_TO_TRADE: Record<string, string> = {
   ROHB: 'Abbruch & Rohbau',
   TROC: 'Trockenbau',

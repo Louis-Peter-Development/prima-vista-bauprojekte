@@ -112,15 +112,24 @@ export default function RenovationCalculator({
         const activeRows = categoryRows.filter((row) => row.enabled);
         const subtotal = activeRows.reduce((sum, row) => sum + rowTotal(row), 0);
         const trade = inferTradeFromSku(activeRows[0]?.sku);
-        const detailRows = activeRows.map((row) => ({
-          // Strip trailing "| Varianten" / "**Varianten**" / "| Montage-..." cruft
-          // for a tighter human-readable label.
-          label: row.title.replace(/\s*\|\s*\*?\*?(Varianten|VARIANTEN)\*?\*?\s*/gi, '').trim(),
-          quantity: row.quantity,
-          unit: row.unit,
-          unitPrice: row.basePrice,
-          subtotal: rowTotal(row),
-        }));
+        const detailRows = activeRows.map((row) => {
+          const subsection = category.subsections.find((item) => item.id === row.subcategory);
+          return {
+            // Strip trailing "| Varianten" / "**Varianten**" / "| Montage-..." cruft
+            // for a tighter human-readable label.
+            label: row.title.replace(/\s*\|\s*\*?\*?(Varianten|VARIANTEN)\*?\*?\s*/gi, '').trim(),
+            quantity: row.quantity,
+            unit: row.unit,
+            unitPrice: row.basePrice,
+            subtotal: rowTotal(row),
+            sku: row.sku,
+            description: row.description,
+            image: row.image,
+            category: category.title,
+            subcategory: subsection?.title ?? row.subcategory,
+            type: typeLabel(row.type),
+          };
+        });
 
         return {
           key: BLITZ_CATEGORY_KEYS[category.id] ?? category.id,

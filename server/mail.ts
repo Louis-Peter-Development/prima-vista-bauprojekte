@@ -72,12 +72,24 @@ export type KalkulatorRow = {
   unit: string;
   unitPrice: number;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
 };
 
 export type KalkulatorPick = {
   key: string;
   label: string;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
   tradeKey?: string;
   tradeLabel?: string;
   rows?: KalkulatorRow[];

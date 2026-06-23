@@ -48,6 +48,12 @@ function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
             unit: asString(row.unit),
             unitPrice: asNumber(row.unitPrice),
             subtotal: asNumber(row.subtotal),
+            sku: asString(row.sku) || undefined,
+            description: asString(row.description) || undefined,
+            image: asString(row.image) || undefined,
+            category: asString(row.category) || undefined,
+            subcategory: asString(row.subcategory) || undefined,
+            type: asString(row.type) || undefined,
           };
         }).filter((row): row is NonNullable<typeof row> => Boolean(row && row.label))
         : undefined;
@@ -56,6 +62,12 @@ function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
         key: asString(pick.key),
         label: asString(pick.label),
         subtotal: asNumber(pick.subtotal),
+        sku: asString(pick.sku) || undefined,
+        description: asString(pick.description) || undefined,
+        image: asString(pick.image) || undefined,
+        category: asString(pick.category) || undefined,
+        subcategory: asString(pick.subcategory) || undefined,
+        type: asString(pick.type) || undefined,
         tradeKey: asString(pick.tradeKey) || undefined,
         tradeLabel: asString(pick.tradeLabel) || undefined,
         rows,

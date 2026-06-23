@@ -18,7 +18,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-001-fass-100-basis",
+              id: "pv-001-fass-100-basis",
               category: "section-01-dammung-fassade",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Dämmung WDVS | 🛠 Montage-Leistungspaket",
@@ -55,11 +55,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-uv868-00626",
+              id: "pv-002-uv868-00626",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm ",
               sku: "uv868-00626",
+              image: "/assets/img/products/uv868-00626.jpg",
               type: "optional",
               unit: "",
               basePrice: 30.48,
@@ -92,11 +93,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-868-00365",
+              id: "pv-003-868-00365",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg",
               sku: "868-00365",
+              image: "/assets/img/products/868-00365.jpg",
               type: "optional",
               unit: "",
               basePrice: 23.1,
@@ -114,11 +116,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv868-00877",
+              id: "pv-004-uv868-00877",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg",
               sku: "uv868-00877",
+              image: "/assets/img/products/uv868-00877.jpg",
               type: "optional",
               unit: "",
               basePrice: 19.73,
@@ -136,11 +139,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-868-00188",
+              id: "pv-005-868-00188",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m",
               sku: "868-00188",
+              image: "/assets/img/products/868-00188.jpg",
               type: "optional",
               unit: "",
               basePrice: 91.52,
@@ -158,11 +162,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-868-00413",
+              id: "pv-006-868-00413",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Dübelteller DT 140",
               sku: "868-00413",
+              image: "/assets/img/products/868-00413.jpg",
               type: "optional",
               unit: "",
               basePrice: 53.79,
@@ -180,11 +185,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv868-00282",
+              id: "pv-007-uv868-00282",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weber Gewebe-Abschlussprofil",
               sku: "uv868-00282",
+              image: "/assets/img/products/uv868-00282.jpg",
               type: "optional",
               unit: "",
               basePrice: 27.28,
@@ -202,11 +208,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv868-00722",
+              id: "pv-008-uv868-00722",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Sockelabschlussprofil W61-1 KU",
               sku: "uv868-00722",
+              image: "/assets/img/products/uv868-00722.jpg",
               type: "optional",
               unit: "",
               basePrice: 13.7,
@@ -239,11 +246,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-abbd-101-1-mat",
+              id: "pv-009-abbd-101-1-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
               sku: "ABBD-101.1-MAT",
+              image: "/assets/img/products/ABBD-101.1-MAT.png",
               type: "optional",
               unit: "qm",
               basePrice: 249,
@@ -261,11 +269,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv868-00421",
+              id: "pv-010-uv868-00421",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
               sku: "uv868-00421",
+              image: "/assets/img/products/uv868-00421.jpg",
               type: "optional",
               unit: "",
               basePrice: 22.62,
@@ -298,11 +307,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-fass-100-au",
+              id: "pv-011-fass-100-au",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FASSADE |**Varianten**",
               sku: "FASS-100-AU",
+              image: "/assets/img/products/FASS-100-AU.png",
               type: "optional",
               unit: "Stk",
               basePrice: 0,
@@ -335,7 +345,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-012-fass-300-basis",
+              id: "pv-012-fass-300-basis",
               category: "section-06-holz-fassaden-verkleidung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Verkleidung | 🛠 Montage-Leistungspaket",
@@ -372,11 +382,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-013-fass-401-mat",
+              id: "pv-013-fass-401-mat",
               category: "section-07-material",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG | Fassade aus Lärchen-Holz |**Varianten**",
               sku: "FASS-401-MAT",
+              image: "/assets/img/products/FASS-401-MAT.png",
               type: "optional",
               unit: "qm",
               basePrice: 97.96,
@@ -409,7 +420,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-014-fass-10012",
+              id: "pv-014-fass-10012",
               category: "section-08-verblendmauerwerk-fassaden-verkleidung",
               subcategory: "leistungen-materialien",
               title: "VERBLENDMAUERWERK | 🛠 Montage",
@@ -446,11 +457,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-015-744-10030",
+              id: "pv-015-744-10030",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt",
               sku: "744-10030",
+              image: "/assets/img/products/744-10030.jpg",
               type: "optional",
               unit: "",
               basePrice: 2.42,
@@ -468,11 +480,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-016-uv633-00009",
+              id: "pv-016-uv633-00009",
               category: "section-09-material",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
               sku: "uv633-00009",
+              image: "/assets/img/products/uv633-00009.jpg",
               type: "optional",
               unit: "Sack",
               basePrice: 23.3,
@@ -505,11 +518,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-017-uv31-00018",
+              id: "pv-017-uv31-00018",
               category: "section-10-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "optional",
               unit: "Sack",
               basePrice: 19.73,
@@ -542,7 +556,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-018-fass-10007",
+              id: "pv-018-fass-10007",
               category: "section-11-naturstein-fassaden-verkleidung",
               subcategory: "leistungen-materialien",
               title: "NATURSTEIN | 🛠 Montage",
@@ -579,11 +593,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-019-466-20089",
+              id: "pv-019-466-20089",
               category: "section-12-material",
               subcategory: "leistungen-materialien",
               title: "Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm",
               sku: "466-20089",
+              image: "/assets/img/products/466-20089.jpg",
               type: "optional",
               unit: "",
               basePrice: 18.92,
@@ -616,11 +631,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-020-229-00258",
+              id: "pv-020-229-00258",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Cremona Landhausmauer Mauersysteme Mischformat, 12,5 cm Dicke - Sahara-Weiß Melange",
               sku: "229-00258",
+              image: "/assets/img/products/229-00258.jpg",
               type: "optional",
               unit: "",
               basePrice: 177.1,
@@ -638,11 +654,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-021-uv229-00499",
+              id: "pv-021-uv229-00499",
               category: "section-13-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Spaltino Mauerblock - Gelbsand-Melange ohne Fase",
               sku: "uv229-00499",
+              image: "/assets/img/products/uv229-00499.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 23.85,
@@ -675,11 +692,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-022-uv633-00009",
+              id: "pv-022-uv633-00009",
               category: "section-14-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
               sku: "uv633-00009",
+              image: "/assets/img/products/uv633-00009.jpg",
               type: "optional",
               unit: "Sack",
               basePrice: 23.3,
@@ -697,11 +715,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-023-uv31-00018",
+              id: "pv-023-uv31-00018",
               category: "section-14-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "optional",
               unit: "Sack",
               basePrice: 19.73,
@@ -734,7 +753,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-024-fass-10001",
+              id: "pv-024-fass-10001",
               category: "section-15-klinkerriemchen-fassaden-verkleidung",
               subcategory: "leistungen-materialien",
               title: "KLINKERRIEMCHEN | 🛠 Montage",
@@ -771,11 +790,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-025-737-00359",
+              id: "pv-025-737-00359",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "De Ryck Steinriemchen Granulit G52 | 21x1,5x6 cm",
               sku: "737-00359",
+              image: "/assets/img/products/737-00359.jpg",
               type: "optional",
               unit: "",
               basePrice: 59.62,
@@ -793,11 +813,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-026-uv737-00378",
+              id: "pv-026-uv737-00378",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "De Ryck Imprägnierung Kanister",
               sku: "uv737-00378",
+              image: "/assets/img/products/uv737-00378.jpg",
               type: "optional",
               unit: "",
               basePrice: 24.01,
@@ -815,11 +836,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-027-031-00032",
+              id: "pv-027-031-00032",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen",
               sku: "031-00032",
+              image: "/assets/img/products/031-00032.jpg",
               type: "optional",
               unit: "",
               basePrice: 38.39,
@@ -837,11 +859,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-028-uv31-00018",
+              id: "pv-028-uv31-00018",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "optional",
               unit: "Sack",
               basePrice: 19.73,
@@ -859,11 +882,12 @@ export const packageFassadeAlles: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-029-uv31-00012",
+              id: "pv-029-uv31-00012",
               category: "section-16-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand",
               sku: "uv31-00012",
+              image: "/assets/img/products/uv31-00012.jpg",
               type: "optional",
               unit: "Geb.",
               basePrice: 39.58,
@@ -896,11 +920,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-030-uv13-00223",
+              id: "pv-030-uv13-00223",
               category: "section-17-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Austrotherm XPS Plus P GK Dämmplatte 1250 x 600 mm",
               sku: "uv13-00223",
+              image: "/assets/img/products/uv13-00223.jpg",
               type: "optional",
               unit: "m²",
               basePrice: 17.71,
@@ -933,7 +958,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-031-fass-10009",
+              id: "pv-031-fass-10009",
               category: "section-18-vorhangfassade",
               subcategory: "leistungen-materialien",
               title: "VORHANGFASSADE | 🛠 Montage",
@@ -970,11 +995,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-032-mat-anfrage",
+              id: "pv-032-mat-anfrage",
               category: "section-19-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
               sku: "MAT-Anfrage",
+              image: "/assets/img/products/MAT-Anfrage.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 0,
@@ -1007,7 +1033,7 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-033-fass-10010",
+              id: "pv-033-fass-10010",
               category: "section-20-plattenverkleidung",
               subcategory: "leistungen-materialien",
               title: "FASSADENVERKLEIDUNG MIT GLASPLATTEN | 🛠 Montage",
@@ -1044,11 +1070,12 @@ export const packageFassadeAlles: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-034-mat-anfrage",
+              id: "pv-034-mat-anfrage",
               category: "section-21-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
               sku: "MAT-Anfrage",
+              image: "/assets/img/products/MAT-Anfrage.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 0,
@@ -1090,7 +1117,7 @@ export const packageFassadeDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-100-basis",
+              id: "pv-001-fass-100-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Dämmung WDVS | 🛠 Montage-Leistungspaket",
@@ -1127,11 +1154,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv868-00626",
+              id: "pv-002-uv868-00626",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.therm MW 035 Fassade Mineralwoll-Dämmplatte - 140 mm ",
               sku: "uv868-00626",
+              image: "/assets/img/products/uv868-00626.jpg",
               type: "material",
               unit: "",
               basePrice: 30.48,
@@ -1164,11 +1192,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-868-00365",
+              id: "pv-003-868-00365",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 302 Klebe- und Armierungsmötel leicht naturweiss, 25 Kg",
               sku: "868-00365",
+              image: "/assets/img/products/868-00365.jpg",
               type: "material",
               unit: "",
               basePrice: 23.1,
@@ -1186,11 +1215,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv868-00877",
+              id: "pv-004-uv868-00877",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.top 203 AquaBalance Edelkratzputz fein mit Glimmer 25 Kg",
               sku: "uv868-00877",
+              image: "/assets/img/products/uv868-00877.jpg",
               type: "material",
               unit: "",
               basePrice: 19.73,
@@ -1208,11 +1238,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-868-00188",
+              id: "pv-005-868-00188",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm 310 Armierungsgewebe 8x8mm - 1,1x50 m",
               sku: "868-00188",
+              image: "/assets/img/products/868-00188.jpg",
               type: "material",
               unit: "",
               basePrice: 91.52,
@@ -1230,11 +1261,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-868-00413",
+              id: "pv-006-868-00413",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Dübelteller DT 140",
               sku: "868-00413",
+              image: "/assets/img/products/868-00413.jpg",
               type: "material",
               unit: "",
               basePrice: 53.79,
@@ -1252,11 +1284,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-007-uv868-00282",
+              id: "pv-007-uv868-00282",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Weber Gewebe-Abschlussprofil",
               sku: "uv868-00282",
+              image: "/assets/img/products/uv868-00282.jpg",
               type: "material",
               unit: "",
               basePrice: 27.28,
@@ -1274,11 +1307,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-008-uv868-00722",
+              id: "pv-008-uv868-00722",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm Sockelabschlussprofil W61-1 KU",
               sku: "uv868-00722",
+              image: "/assets/img/products/uv868-00722.jpg",
               type: "material",
               unit: "",
               basePrice: 13.7,
@@ -1311,11 +1345,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-009-abbd-101-1-mat",
+              id: "pv-009-abbd-101-1-mat",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "PERIMETERDÄMMUNG Abdichtung | 🛠 Montage-Leistungspaket",
               sku: "ABBD-101.1-MAT",
+              image: "/assets/img/products/ABBD-101.1-MAT.png",
               type: "optional",
               unit: "qm",
               basePrice: 249,
@@ -1333,11 +1368,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-010-uv868-00421",
+              id: "pv-010-uv868-00421",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "weber.therm EPS 032 Sockel standard Polystyrol Perimeter-Dämmplatte",
               sku: "uv868-00421",
+              image: "/assets/img/products/uv868-00421.jpg",
               type: "optional",
               unit: "",
               basePrice: 22.62,
@@ -1370,11 +1406,12 @@ export const packageFassadeDaemmung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-011-fass-100-au",
+              id: "pv-011-fass-100-au",
               category: "section-05-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FASSADE |**Varianten**",
               sku: "FASS-100-AU",
+              image: "/assets/img/products/FASS-100-AU.png",
               type: "optional",
               unit: "Stk",
               basePrice: 0,
@@ -1416,7 +1453,7 @@ export const packageFassadeAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-200-basis",
+              id: "pv-001-fass-200-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Anstrich | 🛠 Montage-Leistungspaket",
@@ -1453,11 +1490,12 @@ export const packageFassadeAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv868-00943",
+              id: "pv-002-uv868-00943",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "weber.ton 410 AquaBalance Silikatfarbe aussen",
               sku: "uv868-00943",
+              image: "/assets/img/products/uv868-00943.jpg",
               type: "material",
               unit: "",
               basePrice: 159.5,
@@ -1490,11 +1528,12 @@ export const packageFassadeAnstrich: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fass-100-2-zu",
+              id: "pv-003-fass-100-2-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
               sku: "FASS-100-2-ZU",
+              image: "/assets/img/products/FASS-100-2-ZU.png",
               type: "service",
               unit: "qm",
               basePrice: 26.95,
@@ -1527,11 +1566,12 @@ export const packageFassadeAnstrich: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-fass-100-2-op",
+              id: "pv-004-fass-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-FARBE | abkratzen",
               sku: "FASS-100-2-OP",
+              image: "/assets/img/products/FASS-100-2-OP.png",
               type: "optional",
               unit: "qm",
               basePrice: 5.09,
@@ -1549,11 +1589,12 @@ export const packageFassadeAnstrich: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fass-100-au",
+              id: "pv-005-fass-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FASSADE |**Varianten**",
               sku: "FASS-100-AU",
+              image: "/assets/img/products/FASS-100-AU.png",
               type: "optional",
               unit: "Stk",
               basePrice: 0,
@@ -1595,7 +1636,7 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-300-basis",
+              id: "pv-001-fass-300-basis",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADEN Verkleidung | 🛠 Montage-Leistungspaket",
@@ -1632,11 +1673,12 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-fass-401-mat",
+              id: "pv-002-fass-401-mat",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "VERKLEIDUNG | Fassade aus Lärchen-Holz |**Varianten**",
               sku: "FASS-401-MAT",
+              image: "/assets/img/products/FASS-401-MAT.png",
               type: "material",
               unit: "qm",
               basePrice: 97.96,
@@ -1669,11 +1711,12 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-003-fass-100-2-zu",
+              id: "pv-003-fass-100-2-zu",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "FASSADENGERÜST STELLEN | 🛠 Zusatz-Montage",
               sku: "FASS-100-2-ZU",
+              image: "/assets/img/products/FASS-100-2-ZU.png",
               type: "service",
               unit: "qm",
               basePrice: 26.95,
@@ -1706,11 +1749,12 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-004-fass-100-2-op",
+              id: "pv-004-fass-100-2-op",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "ALT-FARBE | abkratzen",
               sku: "FASS-100-2-OP",
+              image: "/assets/img/products/FASS-100-2-OP.png",
               type: "optional",
               unit: "qm",
               basePrice: 5.09,
@@ -1728,11 +1772,12 @@ export const packageFassadeHolzverkleidung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-fass-100-au",
+              id: "pv-005-fass-100-au",
               category: "section-04-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Weitere Produkte - zu FASSADE |**Varianten**",
               sku: "FASS-100-AU",
+              image: "/assets/img/products/FASS-100-AU.png",
               type: "optional",
               unit: "Stk",
               basePrice: 0,
@@ -1774,7 +1819,7 @@ export const packageFassadeSockeldaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10006",
+              id: "pv-001-fass-10006",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADENVERKLEIDUNG | 🛠 Montage",
@@ -1811,11 +1856,12 @@ export const packageFassadeSockeldaemmung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-uv13-00223",
+              id: "pv-002-uv13-00223",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Austrotherm XPS Plus P GK Dämmplatte 1250 x 600 mm",
               sku: "uv13-00223",
+              image: "/assets/img/products/uv13-00223.jpg",
               type: "material",
               unit: "m²",
               basePrice: 17.71,
@@ -1833,11 +1879,12 @@ export const packageFassadeSockeldaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-031-00032",
+              id: "pv-003-031-00032",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen",
               sku: "031-00032",
+              image: "/assets/img/products/031-00032.jpg",
               type: "material",
               unit: "",
               basePrice: 38.39,
@@ -1855,11 +1902,12 @@ export const packageFassadeSockeldaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv31-00018",
+              id: "pv-004-uv31-00018",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 19.73,
@@ -1877,11 +1925,12 @@ export const packageFassadeSockeldaemmung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv31-00012",
+              id: "pv-005-uv31-00012",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand",
               sku: "uv31-00012",
+              image: "/assets/img/products/uv31-00012.jpg",
               type: "material",
               unit: "Geb.",
               basePrice: 39.58,
@@ -1923,7 +1972,7 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10001",
+              id: "pv-001-fass-10001",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "KLINKERRIEMCHEN | 🛠 Montage",
@@ -1960,11 +2009,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-737-00359",
+              id: "pv-002-737-00359",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "De Ryck Steinriemchen Granulit G52 | 21x1,5x6 cm",
               sku: "737-00359",
+              image: "/assets/img/products/737-00359.jpg",
               type: "material",
               unit: "",
               basePrice: 59.62,
@@ -1982,11 +2032,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv737-00378",
+              id: "pv-003-uv737-00378",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "De Ryck Imprägnierung Kanister",
               sku: "uv737-00378",
+              image: "/assets/img/products/uv737-00378.jpg",
               type: "material",
               unit: "",
               basePrice: 24.01,
@@ -2004,11 +2055,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-031-00032",
+              id: "pv-004-031-00032",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE Wand- und Bodenspachtel 50S - 25 Kg Spachtelmasse für innen & außen",
               sku: "031-00032",
+              image: "/assets/img/products/031-00032.jpg",
               type: "material",
               unit: "",
               basePrice: 38.39,
@@ -2026,11 +2078,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-005-uv31-00018",
+              id: "pv-005-uv31-00018",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 19.73,
@@ -2048,11 +2101,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv31-00012",
+              id: "pv-006-uv31-00012",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE universal Fertig Grundierung für saugende Untergründe innen & außen Boden & Wand",
               sku: "uv31-00012",
+              image: "/assets/img/products/uv31-00012.jpg",
               type: "material",
               unit: "Geb.",
               basePrice: 39.58,
@@ -2085,11 +2139,12 @@ export const packageFassadeKlinkerSteinriemchen: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-007-uv13-00223",
+              id: "pv-007-uv13-00223",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Austrotherm XPS Plus P GK Dämmplatte 1250 x 600 mm",
               sku: "uv13-00223",
+              image: "/assets/img/products/uv13-00223.jpg",
               type: "optional",
               unit: "m²",
               basePrice: 17.71,
@@ -2131,7 +2186,7 @@ export const packageFassadePlattenverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10010",
+              id: "pv-001-fass-10010",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "FASSADENVERKLEIDUNG MIT GLASPLATTEN | 🛠 Montage",
@@ -2168,11 +2223,12 @@ export const packageFassadePlattenverkleidung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
               sku: "MAT-Anfrage",
+              image: "/assets/img/products/MAT-Anfrage.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 0,
@@ -2214,7 +2270,7 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10007",
+              id: "pv-001-fass-10007",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "NATURSTEIN | 🛠 Montage",
@@ -2251,11 +2307,12 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-466-20089",
+              id: "pv-002-466-20089",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Metten Naturstein Mauersystem ARTIC GRANIT Hellgrau gestockt 40x20x15 cm",
               sku: "466-20089",
+              image: "/assets/img/products/466-20089.jpg",
               type: "material",
               unit: "",
               basePrice: 18.92,
@@ -2288,11 +2345,12 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-003-229-00258",
+              id: "pv-003-229-00258",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Cremona Landhausmauer Mauersysteme Mischformat, 12,5 cm Dicke - Sahara-Weiß Melange",
               sku: "229-00258",
+              image: "/assets/img/products/229-00258.jpg",
               type: "optional",
               unit: "",
               basePrice: 177.1,
@@ -2310,11 +2368,12 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-004-uv229-00499",
+              id: "pv-004-uv229-00499",
               category: "section-03-optionale-positionen",
               subcategory: "leistungen-materialien",
               title: "Gala-Lusit Spaltino Mauerblock - Gelbsand-Melange ohne Fase",
               sku: "uv229-00499",
+              image: "/assets/img/products/uv229-00499.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 23.85,
@@ -2347,11 +2406,12 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-005-uv633-00009",
+              id: "pv-005-uv633-00009",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
               sku: "uv633-00009",
+              image: "/assets/img/products/uv633-00009.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 23.3,
@@ -2369,11 +2429,12 @@ export const packageFassadeNatursteinverkleidung: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-006-uv31-00018",
+              id: "pv-006-uv31-00018",
               category: "section-04-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 19.73,
@@ -2415,7 +2476,7 @@ export const packageFassadeVorhangfassade: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10009",
+              id: "pv-001-fass-10009",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VORHANGFASSADE | 🛠 Montage",
@@ -2452,11 +2513,12 @@ export const packageFassadeVorhangfassade: RenovationPackage = {
           type: "optional",
           products: [
             {
-              id: "bossmann-002-mat-anfrage",
+              id: "pv-002-mat-anfrage",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "AUF ANFRAGE & BEMUSTERUNG DER MATERIALIEN",
               sku: "MAT-Anfrage",
+              image: "/assets/img/products/MAT-Anfrage.jpg",
               type: "optional",
               unit: "Stk.",
               basePrice: 0,
@@ -2498,7 +2560,7 @@ export const packageFassadeVerblendmauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-001-fass-10012",
+              id: "pv-001-fass-10012",
               category: "section-01-art-der-ausfuhrung",
               subcategory: "leistungen-materialien",
               title: "VERBLENDMAUERWERK | 🛠 Montage",
@@ -2535,11 +2597,12 @@ export const packageFassadeVerblendmauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-002-744-10030",
+              id: "pv-002-744-10030",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Terca Klinker KMz 28-2,4-DF voll KK1 rotbunt glatt",
               sku: "744-10030",
+              image: "/assets/img/products/744-10030.jpg",
               type: "material",
               unit: "",
               basePrice: 2.42,
@@ -2557,11 +2620,12 @@ export const packageFassadeVerblendmauerwerk: RenovationPackage = {
               alternatives: [],
             },
             {
-              id: "bossmann-003-uv633-00009",
+              id: "pv-003-uv633-00009",
               category: "section-02-material",
               subcategory: "leistungen-materialien",
               title: "Stebah Fugenmörtel - 25 Kg - Hellgrau",
               sku: "uv633-00009",
+              image: "/assets/img/products/uv633-00009.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 23.3,
@@ -2594,11 +2658,12 @@ export const packageFassadeVerblendmauerwerk: RenovationPackage = {
           type: "service",
           products: [
             {
-              id: "bossmann-004-uv31-00018",
+              id: "pv-004-uv31-00018",
               category: "section-03-extra-positionen",
               subcategory: "leistungen-materialien",
               title: "1A BAUCHEMIE T-FLEX TE C2 Flex Klebemörtel für keramische Wand- und Bodenbeläge im Innen- und Außenbereich grau",
               sku: "uv31-00018",
+              image: "/assets/img/products/uv31-00018.jpg",
               type: "material",
               unit: "Sack",
               basePrice: 19.73,
