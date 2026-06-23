@@ -8,7 +8,10 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-  included_files = ["public/assets/img/logo.png"]
+  included_files = [
+    "public/assets/img/logo.png",
+    "public/assets/img/products/**",
+  ]
 
 [[headers]]
   for = "/*"
