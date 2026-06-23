@@ -1,4 +1,6 @@
 import PDFDocument from 'pdfkit';
+import { existsSync, readFileSync } from 'node:fs';
+import path from 'node:path';
 import type { KalkulatorHandoff, KalkulatorPick, KalkulatorRow } from './mail.js';
 
 export type CalculatorPdfPayload = {
@@ -33,6 +35,19 @@ const COLORS = {
   rule: '#ded5cd',
   paper: '#fbf8f5',
 };
+
+let cachedLogo: Buffer | null | undefined;
+
+function getLogoBuffer(): Buffer | null {
+  if (cachedLogo !== undefined) return cachedLogo;
+  const candidates = [
+    path.join(process.cwd(), 'public', 'assets', 'img', 'logo.png'),
+    path.join(process.cwd(), 'assets', 'img', 'logo.png'),
+  ];
+  const logoPath = candidates.find((candidate) => existsSync(candidate));
+  cachedLogo = logoPath ? readFileSync(logoPath) : null;
+  return cachedLogo;
+}
 
 function cleanLabel(value: string): string {
   return String(value || '')
@@ -137,20 +152,37 @@ function lineUnitPrice(line: KalkulatorRow | KalkulatorPick, handoff: Kalkulator
 }
 
 function addHeader(doc: PDFKit.PDFDocument, title: string) {
+  const logo = getLogoBuffer();
+  const logoSize = 48;
+  const wordmarkX = logo ? PAGE.marginX + logoSize + 16 : PAGE.marginX;
+
   doc.save();
   doc.rect(0, 0, PAGE.width, 92).fill(COLORS.ink);
+  if (logo) {
+    doc
+      .roundedRect(PAGE.marginX, 20, logoSize, logoSize, 6)
+      .fillOpacity(0.08)
+      .fill(COLORS.bone)
+      .fillOpacity(1)
+      .strokeColor(COLORS.bone)
+      .strokeOpacity(0.18)
+      .lineWidth(0.6)
+      .stroke()
+      .strokeOpacity(1);
+    doc.image(logo, PAGE.marginX + 5, 25, { fit: [38, 38], align: 'center', valign: 'center' });
+  }
   doc
     .fillColor(COLORS.bone)
     .font('Helvetica-Bold')
     .fontSize(22)
-    .text('PRIMA VISTA', PAGE.marginX, 32, { continued: true })
+    .text('PRIMA VISTA', wordmarkX, 30, { continued: true })
     .fillColor(COLORS.copper)
     .text(' BAUPROJEKTE');
   doc
     .fillColor(COLORS.faint)
     .font('Helvetica')
     .fontSize(8)
-    .text('SANIERUNG & BAU · VORAB-SCHÄTZUNG', PAGE.marginX, 58, { characterSpacing: 1.5 });
+    .text('SANIERUNG & BAU · VORAB-SCHÄTZUNG', wordmarkX, 58, { characterSpacing: 1.5 });
   doc.restore();
 
   doc

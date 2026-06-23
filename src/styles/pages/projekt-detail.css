@@ -41,54 +41,6 @@
   transition: color 200ms;
 }
 .pd-hero__back:hover { color: var(--pv-bone); }
-.pd-hero__brand {
-  position: absolute;
-  top: 36px;
-  right: 48px;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 10px 14px 10px 10px;
-  border: 1px solid rgba(236, 229, 223, .14);
-  background: rgba(236, 229, 223, .055);
-  color: var(--pv-bone);
-  text-decoration: none;
-  backdrop-filter: blur(14px);
-  transition: border-color 200ms, background 200ms;
-}
-.pd-hero__brand:hover {
-  border-color: rgba(216, 173, 124, .45);
-  background: rgba(216, 173, 124, .1);
-}
-.pd-hero__brand img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  filter: brightness(1.08);
-}
-.pd-hero__brand span {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.pd-hero__brand strong,
-.pd-hero__brand small {
-  font-family: var(--pv-font-display);
-  text-transform: uppercase;
-  line-height: 1;
-}
-.pd-hero__brand strong {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-}
-.pd-hero__brand small {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  color: var(--pv-text-on-dark-muted);
-}
 .pd-hero__num {
   display: block;
   font-family: var(--pv-font-mono);
@@ -493,7 +445,6 @@
   .pd-nav__link--next { border-left: none; border-top: 1px solid rgba(236, 229, 223, .1); padding-left: 0; text-align: left; }
   .pd-hero { grid-template-columns: 1fr; }
   .pd-hero__bg { min-height: 45svh; }
-  .pd-hero__brand { top: 28px; right: var(--pv-shell-gutter); }
   .pd-facts { margin-top: 0; }
   .pd-facts__inner { margin-left: 0; }
 }
@@ -501,21 +452,8 @@
 @media (max-width: 600px) {
   .pd-hero { grid-template-columns: 1fr; }
   .pd-hero__bg { min-height: 50svh; }
-  .pd-hero__content { padding: 96px var(--pv-shell-gutter) 48px; }
+  .pd-hero__content { padding: 64px var(--pv-shell-gutter) 48px; }
   .pd-hero__back { top: 24px; left: var(--pv-shell-gutter); font-size: 10px; }
-  .pd-hero__brand {
-    top: 52px;
-    left: var(--pv-shell-gutter);
-    right: auto;
-    min-height: 44px;
-    padding: 8px 12px 8px 8px;
-  }
-  .pd-hero__brand img {
-    width: 28px;
-    height: 28px;
-  }
-  .pd-hero__brand strong { font-size: 9px; }
-  .pd-hero__brand small { font-size: 8px; }
   .pd-hero__headline { font-size: clamp(36px, 10vw, 56px); }
 
   .pd-facts__inner { padding: 28px var(--pv-shell-gutter); gap: 24px 32px; margin-left: 0; }
