@@ -169,6 +169,31 @@ function isValidRow(row: unknown): row is RenovationProduct {
     && typeof maybe.quantity === 'number';
 }
 
+function buildProductImageLookup(pkg: RenovationPackage): Map<string, string> {
+  const images = new Map<string, string>();
+
+  pkg.categories.forEach((category) => {
+    category.subsections.forEach((subsection) => {
+      subsection.products.forEach((product) => {
+        if (product.image) images.set(product.sku, product.image);
+        product.alternatives.forEach((alternative) => {
+          if (alternative.image) images.set(alternative.sku, alternative.image);
+        });
+      });
+    });
+  });
+
+  return images;
+}
+
+function refreshStoredRowMetadata(rows: RenovationProduct[], pkg: RenovationPackage): RenovationProduct[] {
+  const imagesBySku = buildProductImageLookup(pkg);
+  return rows.map((row) => {
+    const image = row.image || imagesBySku.get(row.sku);
+    return image && image !== row.image ? { ...row, image } : row;
+  });
+}
+
 function hydrateFromStorage(pkg: RenovationPackage): ReadyState {
   const initial = buildInitialState(pkg);
   if (typeof window === 'undefined') return initial;
@@ -182,7 +207,7 @@ function hydrateFromStorage(pkg: RenovationPackage): ReadyState {
     if (saved.dataSignature !== getPackageSignature(pkg)) return initial;
 
     const rows = Array.isArray(saved.rows) && saved.rows.every(isValidRow)
-      ? saved.rows
+      ? refreshStoredRowMetadata(saved.rows, pkg)
       : initial.rows;
     const livingArea = typeof saved.livingArea === 'number'
       ? Math.max(0, saved.livingArea)
