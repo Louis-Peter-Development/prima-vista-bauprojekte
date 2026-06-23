@@ -93,12 +93,24 @@ export type KalkulatorRow = {
   unit: string;
   unitPrice: number;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
 };
 
 export type KalkulatorPick = {
   key: string;
   label: string;
   subtotal: number;
+  sku?: string;
+  description?: string;
+  image?: string;
+  category?: string;
+  subcategory?: string;
+  type?: string;
   /** Optional trade grouping for hierarchical display. When set, picks
    *  with the same tradeKey are rendered nested under the tradeLabel. */
   tradeKey?: string;
