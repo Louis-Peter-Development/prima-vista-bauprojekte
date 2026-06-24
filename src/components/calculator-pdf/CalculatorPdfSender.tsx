@@ -236,6 +236,47 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
               <p>{handoff.kindLabel}{handoff.scopeLabel ? ` · ${handoff.scopeLabel}` : ''}</p>
             </header>
 
+            <form className="calculator-pdf__send" onSubmit={onSubmit}>
+              <div className="calculator-pdf__send-head">
+                <MailIcon aria-hidden="true" />
+                <span>Als PDF versenden</span>
+              </div>
+              <label className="calculator-pdf__label" htmlFor={emailId}>Bitte E-Mail-Adresse eingeben</label>
+              <input
+                id={emailId}
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                value={email}
+                onChange={(event) => {
+                  setEmail(event.currentTarget.value);
+                  if (status !== 'sending') setStatus('idle');
+                }}
+                placeholder="E-Mail-Adresse eingeben"
+              />
+              <label className="calculator-pdf__check" htmlFor={consentId}>
+                <input
+                  id={consentId}
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(event) => {
+                    setConsent(event.currentTarget.checked);
+                    if (status !== 'sending') setStatus('idle');
+                  }}
+                />
+                <span aria-hidden="true" />
+                <em>Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.</em>
+              </label>
+              <button type="submit" className="calculator-pdf__submit" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Wird gesendet' : 'Jetzt senden'}
+              </button>
+              {message && (
+                <p className={`calculator-pdf__message calculator-pdf__message--${status}`} role={status === 'error' ? 'alert' : 'status'}>
+                  {message}
+                </p>
+              )}
+            </form>
+
             <dl className="calculator-pdf__summary">
               <div>
                 <dt>Positionen</dt>
@@ -287,47 +328,6 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
                 </article>
               ))}
             </div>
-
-            <form className="calculator-pdf__send" onSubmit={onSubmit}>
-              <div className="calculator-pdf__send-head">
-                <MailIcon aria-hidden="true" />
-                <span>Als PDF versenden</span>
-              </div>
-              <label className="calculator-pdf__label" htmlFor={emailId}>Bitte E-Mail-Adresse eingeben</label>
-              <input
-                id={emailId}
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.currentTarget.value);
-                  if (status !== 'sending') setStatus('idle');
-                }}
-                placeholder="E-Mail-Adresse eingeben"
-              />
-              <label className="calculator-pdf__check" htmlFor={consentId}>
-                <input
-                  id={consentId}
-                  type="checkbox"
-                  checked={consent}
-                  onChange={(event) => {
-                    setConsent(event.currentTarget.checked);
-                    if (status !== 'sending') setStatus('idle');
-                  }}
-                />
-                <span aria-hidden="true" />
-                <em>Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.</em>
-              </label>
-              <button type="submit" className="calculator-pdf__submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Wird gesendet' : 'Jetzt senden'}
-              </button>
-              {message && (
-                <p className={`calculator-pdf__message calculator-pdf__message--${status}`} role={status === 'error' ? 'alert' : 'status'}>
-                  {message}
-                </p>
-              )}
-            </form>
           </section>
         </div>,
         document.body,
