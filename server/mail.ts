@@ -178,6 +178,35 @@ function sectionTitle(label: string, marginTop = 32): string {
   return `<h2 style="margin:${marginTop}px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(label)}</h2>`;
 }
 
+function callout(title: string, text: string): string {
+  return `<div style="margin:24px 0 0 0;padding:16px 18px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;color:${COLORS.ink};border-left:3px solid ${COLORS.copper};">
+<div style="margin:0 0 6px 0;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:${COLORS.copper};">${escape(title)}</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:${COLORS.muted};">${nl2br(text)}</p>
+</div>`;
+}
+
+function serviceListHtml(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+  const cleanItems = items.map((item) => item.trim()).filter(Boolean);
+  if (cleanItems.length === 0) {
+    return bodyParagraph(emptyLabel);
+  }
+
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;border-top:1px solid ${COLORS.rule};">
+${cleanItems
+    .map((item, index) => `<tr>
+<td style="padding:12px 0;border-bottom:1px solid ${COLORS.rule};vertical-align:top;width:34px;font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;color:${COLORS.copper};">${String(index + 1).padStart(2, '0')}</td>
+<td style="padding:12px 0;border-bottom:1px solid ${COLORS.rule};vertical-align:top;font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:1.45;color:${COLORS.ink};">${escape(item)}</td>
+</tr>`)
+    .join('')}
+</table>`;
+}
+
+function serviceListText(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+  const cleanItems = items.map((item) => item.trim()).filter(Boolean);
+  if (cleanItems.length === 0) return `· ${emptyLabel}`;
+  return cleanItems.map((item) => `· ${item}`).join('\n');
+}
+
 function formatEuro(value: number): string {
   if (!Number.isFinite(value)) return '—';
   return value.toLocaleString('de-DE', {
@@ -225,6 +254,92 @@ function calculatorScopeValue(p: BlitzPayload, handoff: KalkulatorHandoff): stri
   if (/laufmeter|zaunlänge/.test(label)) return `${amount} m`;
   if (/qm|m²|fläche|wohnfläche|dachfläche|fassadenfläche/.test(label)) return `${amount} m²`;
   return amount;
+}
+
+function isLegacyCalculatorNote(message: string): boolean {
+  const normalized = message.toLocaleLowerCase('de-DE');
+  return normalized.includes('aus dem kalkulator übernommen')
+    || (normalized.includes('vorab-schätzung') && normalized.includes('gewählte gewerke'));
+}
+
+function legacyCalculatorField(message: string, label: string): string | null {
+  const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = message.match(new RegExp(`^\\s*${escapedLabel}\\s*:\\s*(.+)$`, 'im'));
+  return match?.[1]?.trim() || null;
+}
+
+function legacyCalculatorScope(message: string): { label: string; value: string } | null {
+  const match = message.match(/^\s*(Fläche|Wohnfläche|Umfang|Anzahl|Dachfläche|Fassadenfläche|Zaunlänge)\s*:\s*(.+)$/im);
+  if (!match?.[1] || !match[2]) return null;
+  return { label: match[1].trim(), value: match[2].trim() };
+}
+
+function cleanLegacyCalculatorNote(message: string): string {
+  return message
+    .replace(/^\s*[—-]\s*Aus dem Kalkulator übernommen\s*[—-]\s*$/im, 'Aus dem Kalkulator übernommen')
+    .trim();
+}
+
+function hasCalculatorContext(p: BlitzPayload): boolean {
+  return Boolean(p.kalkulator) || isLegacyCalculatorNote(p.msg);
+}
+
+function blitzRequestContext(p: BlitzPayload): string {
+  if (p.kalkulator) return `${calculatorScopeValue(p, p.kalkulator)} ${p.kalkulator.kindLabel || p.artLabel}`;
+  if (isLegacyCalculatorNote(p.msg)) {
+    const kind = legacyCalculatorField(p.msg, 'Objektart') || p.artLabel;
+    const scope = legacyCalculatorScope(p.msg)?.value || blitzScopeValue(p);
+    return `${scope} ${kind}`.trim();
+  }
+  return `${blitzScopeValue(p)} ${p.artLabel}`.trim();
+}
+
+function blitzProjectRows(p: BlitzPayload): string {
+  if (p.kalkulator) {
+    return [
+      row('Anfrage', 'Aus dem Kalkulator übernommen'),
+      row('Rechner', p.kalkulator.kindLabel || p.artLabel),
+      row(calculatorScopeLabel(p), calculatorScopeValue(p, p.kalkulator)),
+      row('Vorab-Schätzung', `${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`),
+      row('Baubeginn', p.starterminLabel),
+    ].join('');
+  }
+
+  if (isLegacyCalculatorNote(p.msg)) {
+    const scope = legacyCalculatorScope(p.msg);
+    return [
+      row('Anfrage', 'Aus dem Kalkulator übernommen'),
+      row('Rechner', legacyCalculatorField(p.msg, 'Objektart') || p.artLabel),
+      scope ? row(scope.label, scope.value) : row(blitzScopeLabel(p), blitzScopeValue(p)),
+      row('Vorab-Schätzung', legacyCalculatorField(p.msg, 'Vorab-Schätzung')),
+      row('Baubeginn', p.starterminLabel),
+    ].join('');
+  }
+
+  return [
+    row('Objektart', p.artLabel),
+    row(blitzScopeLabel(p), blitzScopeValue(p)),
+    row('Baubeginn', p.starterminLabel),
+  ].join('');
+}
+
+function blitzServiceSectionHtml(title: string, p: BlitzPayload, marginTop = 28): string {
+  if (p.gewerke.length === 0 && hasCalculatorContext(p)) return '';
+  return `${sectionTitle(title, marginTop)}${serviceListHtml(p.gewerke)}`;
+}
+
+function blitzServiceSectionText(title: string, p: BlitzPayload): string {
+  if (p.gewerke.length === 0 && hasCalculatorContext(p)) return '';
+  return `\n${title}:\n${serviceListText(p.gewerke)}`;
+}
+
+function legacyCalculatorBlockHtml(p: BlitzPayload, heading: string): string {
+  if (p.kalkulator || !isLegacyCalculatorNote(p.msg)) return '';
+  return `
+${sectionTitle(heading)}
+<div style="margin:0 0 18px 0;padding:16px 18px;background:${COLORS.bg};border-left:3px solid ${COLORS.copper};">
+${bodyParagraph(cleanLegacyCalculatorNote(p.msg))}
+</div>`;
 }
 
 function groupCalculatorPicks(picks: KalkulatorPick[]): KalkulatorGroup[] {
@@ -478,25 +593,26 @@ function blitzOfficeHtml(p: BlitzPayload): string {
     row('Name', p.name),
     row('E-Mail', p.email),
     row('Telefon', p.tel || ''),
-    row('Objektart', p.artLabel),
-    row(blitzScopeLabel(p), blitzScopeValue(p)),
-    row('Baubeginn', p.starterminLabel),
-    row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
+    blitzProjectRows(p),
   ].join('');
   const calculatorBlock = calculatorDetailsHtml(p, {
     includeRows: true,
     heading: 'Übernommene Kalkulation',
   });
-  const msgBlock = p.msg
+  const legacyCalculatorBlock = legacyCalculatorBlockHtml(p, 'Übernommene Kalkulation');
+  const msgBlock = p.msg && !isLegacyCalculatorNote(p.msg)
     ? `${sectionTitle('Besonderheiten / Kundennotiz')}${bodyParagraph(p.msg)}`
     : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
+${blitzServiceSectionHtml('Gewählte Leistungen / Anfragebereich', p, 28)}
 ${calculatorBlock}
+${legacyCalculatorBlock}
 ${msgBlock}
-<p style="margin:24px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.5;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">
-Antworten Sie innerhalb von 24 Stunden mit einer ersten Kostenschätzung. Reply geht direkt an ${escape(p.email)}.
-</p>`;
+${callout(
+  'Nächster Schritt',
+  `Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten. Eine Antwort auf diese E-Mail geht direkt an ${p.email}.`,
+)}`;
   return shell(`Blitz-Anfrage von ${escape(p.name)}`, 'Blitz-Angebot · 24-Std-Schätzung', body);
 }
 
@@ -507,14 +623,25 @@ function blitzOfficeText(p: BlitzPayload): string {
     `Name: ${p.name}`,
     `E-Mail: ${p.email}`,
     p.tel ? `Telefon: ${p.tel}` : '',
-    `Objektart: ${p.artLabel}`,
-    `${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
+    hasCalculatorContext(p) ? `Anfrage: Aus dem Kalkulator übernommen` : `Objektart: ${p.artLabel}`,
+    hasCalculatorContext(p) ? `Rechner: ${p.kalkulator?.kindLabel || legacyCalculatorField(p.msg, 'Objektart') || p.artLabel}` : `${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
+    p.kalkulator
+      ? `${calculatorScopeLabel(p)}: ${calculatorScopeValue(p, p.kalkulator)}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorScope(p.msg)
+        ? `${legacyCalculatorScope(p.msg)!.label}: ${legacyCalculatorScope(p.msg)!.value}`
+        : '',
+    p.kalkulator
+      ? `Vorab-Schätzung: ${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorField(p.msg, 'Vorab-Schätzung')
+        ? `Vorab-Schätzung: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
+        : '',
     `Baubeginn: ${p.starterminLabel}`,
-    `Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
+    blitzServiceSectionText('Gewählte Leistungen / Anfragebereich', p),
     p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: true, heading: 'Übernommene Kalkulation' })}` : '',
-    p.msg ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
+    !p.kalkulator && isLegacyCalculatorNote(p.msg) ? `\nÜbernommene Kalkulation:\n${cleanLegacyCalculatorNote(p.msg)}` : '',
+    p.msg && !isLegacyCalculatorNote(p.msg) ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
     ``,
-    `— Antwort innerhalb von 24 Stunden zugesagt.`,
+    `Nächster Schritt: Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten.`,
   ]
     .filter(Boolean)
     .join('\n');
@@ -524,17 +651,13 @@ function blitzOfficeText(p: BlitzPayload): string {
 
 function blitzConfirmHtml(p: BlitzPayload): string {
   const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
-  const echo = [
-    row('Objektart', p.artLabel),
-    row(blitzScopeLabel(p), blitzScopeValue(p)),
-    row('Baubeginn', p.starterminLabel),
-    row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
-  ].join('');
+  const echo = blitzProjectRows(p);
   const calculatorBlock = calculatorDetailsHtml(p, {
     includeRows: false,
     heading: 'Ihre übernommene Kalkulation',
   });
-  const noteBlock = p.msg
+  const legacyCalculatorBlock = legacyCalculatorBlockHtml(p, 'Ihre übernommene Kalkulation');
+  const noteBlock = p.msg && !isLegacyCalculatorNote(p.msg)
     ? `${sectionTitle('Ihre Notiz')}${bodyParagraph(p.msg)}`
     : '';
   const body = `
@@ -543,7 +666,9 @@ ${bodyParagraph(
 )}
 <h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Ihre Angaben</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${echo}</table>
+${blitzServiceSectionHtml('Ihre ausgewählten Leistungen', p, 28)}
 ${calculatorBlock}
+${legacyCalculatorBlock}
 ${noteBlock}
 <h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">So geht es weiter</h2>
 ${steps([
@@ -563,12 +688,23 @@ function blitzConfirmText(p: BlitzPayload): string {
     `Ihre Blitz-Anfrage ist bei uns eingegangen. Sie erhalten innerhalb von 24 Stunden eine erste Kostenschätzung per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
     ``,
     `Ihre Angaben:`,
-    `· Objektart: ${p.artLabel}`,
-    `· ${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
+    hasCalculatorContext(p) ? `· Anfrage: Aus dem Kalkulator übernommen` : `· Objektart: ${p.artLabel}`,
+    hasCalculatorContext(p) ? `· Rechner: ${p.kalkulator?.kindLabel || legacyCalculatorField(p.msg, 'Objektart') || p.artLabel}` : `· ${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
+    p.kalkulator
+      ? `· ${calculatorScopeLabel(p)}: ${calculatorScopeValue(p, p.kalkulator)}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorScope(p.msg)
+        ? `· ${legacyCalculatorScope(p.msg)!.label}: ${legacyCalculatorScope(p.msg)!.value}`
+        : '',
+    p.kalkulator
+      ? `· Vorab-Schätzung: ${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorField(p.msg, 'Vorab-Schätzung')
+        ? `· Vorab-Schätzung: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
+        : '',
     `· Baubeginn: ${p.starterminLabel}`,
-    `· Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
+    blitzServiceSectionText('Ihre ausgewählten Leistungen', p),
     p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: false, heading: 'Ihre übernommene Kalkulation' })}` : '',
-    p.msg ? `\nIhre Notiz:\n${p.msg}` : '',
+    !p.kalkulator && isLegacyCalculatorNote(p.msg) ? `\nIhre übernommene Kalkulation:\n${cleanLegacyCalculatorNote(p.msg)}` : '',
+    p.msg && !isLegacyCalculatorNote(p.msg) ? `\nIhre Notiz:\n${p.msg}` : '',
     ``,
     `So geht es weiter:`,
     `01  Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.`,
@@ -616,6 +752,39 @@ function calculatorPdfText(p: CalculatorPdfPayload): string {
 
 // ----- Public API -----
 
+type RenderedEmail = {
+  from: string;
+  to: string;
+  replyTo: string;
+  subject: string;
+  html: string;
+  text: string;
+};
+
+export function renderBlitzEmails(payload: BlitzPayload): {
+  office: RenderedEmail;
+  customer: RenderedEmail;
+} {
+  return {
+    office: {
+      from: FROM,
+      to: TO_OFFICE,
+      replyTo: payload.email,
+      subject: `Blitz-Anfrage · ${payload.name} · ${blitzRequestContext(payload)}`,
+      html: blitzOfficeHtml(payload),
+      text: blitzOfficeText(payload),
+    },
+    customer: {
+      from: FROM,
+      to: payload.email,
+      replyTo: TO_OFFICE,
+      subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
+      html: blitzConfirmHtml(payload),
+      text: blitzConfirmText(payload),
+    },
+  };
+}
+
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
   const resend = getResend();
   // Office notification — reply-to set to customer so the team can reply directly.
@@ -640,21 +809,22 @@ export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> 
 
 export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
   const resend = getResend();
+  const rendered = renderBlitzEmails(payload);
   ensureEmailSent(await resend.emails.send({
-    from: FROM,
-    to: TO_OFFICE,
-    replyTo: payload.email,
-    subject: `Blitz-Anfrage · ${payload.name} · ${blitzScopeValue(payload)} ${payload.artLabel}`,
-    html: blitzOfficeHtml(payload),
-    text: blitzOfficeText(payload),
+    from: rendered.office.from,
+    to: rendered.office.to,
+    replyTo: rendered.office.replyTo,
+    subject: rendered.office.subject,
+    html: rendered.office.html,
+    text: rendered.office.text,
   }), 'Blitz office');
   ensureEmailSent(await resend.emails.send({
-    from: FROM,
-    to: payload.email,
-    replyTo: TO_OFFICE,
-    subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
-    html: blitzConfirmHtml(payload),
-    text: blitzConfirmText(payload),
+    from: rendered.customer.from,
+    to: rendered.customer.to,
+    replyTo: rendered.customer.replyTo,
+    subject: rendered.customer.subject,
+    html: rendered.customer.html,
+    text: rendered.customer.text,
   }), 'Blitz confirmation');
 }
 

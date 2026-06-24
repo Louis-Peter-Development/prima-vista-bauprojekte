@@ -52,6 +52,43 @@ const SUGGESTIONS = [
 
 const CHAT_SCROLL_IDLE_MS = 5000;
 
+const CALCULATOR_PATHS = [
+  '/kalkulator',
+  '/haus-sanierung',
+  '/wohnung-sanierung',
+  '/gastronomie-ausbau',
+  '/buero-ausbau',
+  '/badsanierung',
+  '/badsanierung-gaeste-wc',
+  '/kuechen-moebelbau',
+  '/boeden-belaege',
+  '/elektroinstallation',
+  '/trockenbau',
+  '/maler-lackierer',
+  '/fassadensanierung',
+  '/abdichtung-keller',
+  '/dachsanierung',
+  '/treppen-gelaender',
+  '/garten-aussenanlagen',
+  '/barrierefreiheit',
+  '/fenstertechnik',
+  '/rohbau-abbruch',
+  '/tueren-zargen',
+  '/sanitaerinstallation',
+  '/zaeune',
+  '/heizkoerper',
+  '/heizstraenge',
+  '/fussbodenheizung',
+  '/waermepumpe',
+  '/gas-heizung',
+  '/pelletofen',
+  '/saunaofen',
+] as const;
+
+function isCalculatorPath(pathname: string) {
+  return CALCULATOR_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`));
+}
+
 function getRouteMain() {
   const mains = Array.from(document.querySelectorAll('main'));
   return mains[0] ?? null;
@@ -440,7 +477,7 @@ function TypingDots() {
   );
 }
 
-export default function Chat() {
+function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [previewDismissed, setPreviewDismissed] = useState(false);
   const [messages, setMessages] = useState<Message[]>([GREETING]);
@@ -749,4 +786,12 @@ export default function Chat() {
       )}
     </>
   );
+}
+
+export default function Chat() {
+  const { pathname } = useLocation();
+
+  if (isCalculatorPath(pathname)) return null;
+
+  return <ChatWidget />;
 }

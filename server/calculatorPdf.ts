@@ -663,13 +663,30 @@ function addTotals(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) {
   doc.y = y + 72;
 }
 
-function resolvePdfImagePath(image?: string): string | null {
-  if (!image) return null;
-  const normalized = image.startsWith('/') ? image.slice(1) : image;
-  const candidates = [
-    path.join(process.cwd(), 'public', normalized),
-    path.join(process.cwd(), normalized),
-  ];
+function candidatePdfImagePaths(image?: string, sku?: string): string[] {
+  const candidates: string[] = [];
+  if (image) {
+    const normalized = image.startsWith('/') ? image.slice(1) : image;
+    candidates.push(
+      path.join(process.cwd(), 'public', normalized),
+      path.join(process.cwd(), normalized),
+    );
+  }
+
+  if (sku) {
+    ['.png', '.jpg', '.jpeg'].forEach((ext) => {
+      candidates.push(path.join(process.cwd(), 'public', 'assets', 'img', 'products', `${sku}${ext}`));
+    });
+    if (/-MON$/i.test(sku)) {
+      candidates.push(path.join(process.cwd(), 'public', 'assets', 'img', 'products', 'MON-100-stk.jpg'));
+    }
+  }
+
+  return candidates;
+}
+
+function resolvePdfImagePath(detail: ProductDetail): string | null {
+  const candidates = candidatePdfImagePaths(detail.image, detail.sku);
   const imagePath = candidates.find((candidate) => existsSync(candidate));
   if (!imagePath) return null;
   const ext = path.extname(imagePath).toLocaleLowerCase();
@@ -684,7 +701,7 @@ function ensureProductDetailSpace(doc: PDFKit.PDFDocument, height: number) {
 
 function addProductThumb(doc: PDFKit.PDFDocument, detail: ProductDetail, x: number, y: number) {
   const size = 78;
-  const imagePath = resolvePdfImagePath(detail.image);
+  const imagePath = resolvePdfImagePath(detail);
 
   doc.save();
   doc.roundedRect(x, y, size, size, 2).fill(COLORS.paper).strokeColor(COLORS.rule).lineWidth(0.8).stroke();
