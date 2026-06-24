@@ -221,61 +221,65 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
             aria-modal="true"
             aria-label="PDF Preview"
           >
-            <button
-              type="button"
-              className="calculator-pdf__close"
-              aria-label="Preview schließen"
-              onClick={() => setOpen(false)}
-            >
-              <CloseIcon aria-hidden="true" />
-            </button>
+            <form className="calculator-pdf__send" onSubmit={onSubmit}>
+              <div className="calculator-pdf__send-top">
+                <div className="calculator-pdf__send-head">
+                  <MailIcon aria-hidden="true" />
+                  <span>Als PDF versenden</span>
+                </div>
+                <button
+                  type="button"
+                  className="calculator-pdf__close"
+                  aria-label="Preview schließen"
+                  onClick={() => setOpen(false)}
+                >
+                  <CloseIcon aria-hidden="true" />
+                </button>
+              </div>
+
+              <div className="calculator-pdf__send-body">
+                <label className="calculator-pdf__label" htmlFor={emailId}>Bitte E-Mail-Adresse eingeben</label>
+                <input
+                  id={emailId}
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.currentTarget.value);
+                    if (status !== 'sending') setStatus('idle');
+                  }}
+                  placeholder="E-Mail-Adresse eingeben"
+                />
+                <button type="submit" className="calculator-pdf__submit" disabled={status === 'sending'}>
+                  {status === 'sending' ? 'Wird gesendet' : 'Jetzt senden'}
+                </button>
+                <label className="calculator-pdf__check" htmlFor={consentId}>
+                  <input
+                    id={consentId}
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(event) => {
+                      setConsent(event.currentTarget.checked);
+                      if (status !== 'sending') setStatus('idle');
+                    }}
+                  />
+                  <span aria-hidden="true" />
+                  <em>Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.</em>
+                </label>
+                {message && (
+                  <p className={`calculator-pdf__message calculator-pdf__message--${status}`} role={status === 'error' ? 'alert' : 'status'}>
+                    {message}
+                  </p>
+                )}
+              </div>
+            </form>
 
             <header className="calculator-pdf__preview-head">
               <span>PDF-Vorschau</span>
               <h3>Details der Auswahl</h3>
               <p>{handoff.kindLabel}{handoff.scopeLabel ? ` · ${handoff.scopeLabel}` : ''}</p>
             </header>
-
-            <form className="calculator-pdf__send" onSubmit={onSubmit}>
-              <div className="calculator-pdf__send-head">
-                <MailIcon aria-hidden="true" />
-                <span>Als PDF versenden</span>
-              </div>
-              <label className="calculator-pdf__label" htmlFor={emailId}>Bitte E-Mail-Adresse eingeben</label>
-              <input
-                id={emailId}
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                value={email}
-                onChange={(event) => {
-                  setEmail(event.currentTarget.value);
-                  if (status !== 'sending') setStatus('idle');
-                }}
-                placeholder="E-Mail-Adresse eingeben"
-              />
-              <label className="calculator-pdf__check" htmlFor={consentId}>
-                <input
-                  id={consentId}
-                  type="checkbox"
-                  checked={consent}
-                  onChange={(event) => {
-                    setConsent(event.currentTarget.checked);
-                    if (status !== 'sending') setStatus('idle');
-                  }}
-                />
-                <span aria-hidden="true" />
-                <em>Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.</em>
-              </label>
-              <button type="submit" className="calculator-pdf__submit" disabled={status === 'sending'}>
-                {status === 'sending' ? 'Wird gesendet' : 'Jetzt senden'}
-              </button>
-              {message && (
-                <p className={`calculator-pdf__message calculator-pdf__message--${status}`} role={status === 'error' ? 'alert' : 'status'}>
-                  {message}
-                </p>
-              )}
-            </form>
 
             <dl className="calculator-pdf__summary">
               <div>
