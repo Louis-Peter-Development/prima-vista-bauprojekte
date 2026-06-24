@@ -4,6 +4,12 @@ import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-l
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Bound how many calculator rows an untrusted payload can expand into the
+// rendered email, mirroring the calculator-pdf endpoint.
+const MAX_PICKS = 80;
+const MAX_ROWS_PER_PICK = 250;
+const MAX_TOTAL_ROWS = 1200;
+
 function asString(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
 }
@@ -31,12 +37,14 @@ function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
   const source = asObject(v);
   if (!source) return undefined;
 
+  let rowBudget = MAX_TOTAL_ROWS;
   const picks = Array.isArray(source.picks)
-    ? source.picks.slice(0, 80).map((pickValue) => {
+    ? source.picks.slice(0, MAX_PICKS).map((pickValue) => {
       const pick = asObject(pickValue);
       if (!pick) return null;
+      const rowLimit = Math.max(0, Math.min(MAX_ROWS_PER_PICK, rowBudget));
       const rows = Array.isArray(pick.rows)
-        ? pick.rows.slice(0, 400).map((rowValue) => {
+        ? pick.rows.slice(0, rowLimit).map((rowValue) => {
           const item = asObject(rowValue);
           if (!item) return null;
           return {
@@ -48,6 +56,7 @@ function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
           };
         }).filter((row): row is NonNullable<typeof row> => Boolean(row && row.label))
         : undefined;
+      if (rows) rowBudget -= rows.length;
 
       return {
         key: asString(pick.key),

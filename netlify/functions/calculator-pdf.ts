@@ -4,6 +4,13 @@ import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-l
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Bound the work a single request can force the PDF builder to do. The largest
+// real package yields a few hundred line items; these ceilings leave generous
+// headroom while capping a crafted payload far below the old 80 × 500 = 40 000.
+const MAX_PICKS = 80;
+const MAX_ROWS_PER_PICK = 250;
+const MAX_TOTAL_ROWS = 1200;
+
 type CalculatorPdfRequest = {
   email: string;
   consent: boolean;
@@ -34,12 +41,14 @@ function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
   const source = asObject(v);
   if (!source) return null;
 
+  let rowBudget = MAX_TOTAL_ROWS;
   const picks = Array.isArray(source.picks)
-    ? source.picks.slice(0, 80).map((pickValue) => {
+    ? source.picks.slice(0, MAX_PICKS).map((pickValue) => {
       const pick = asObject(pickValue);
       if (!pick) return null;
+      const rowLimit = Math.max(0, Math.min(MAX_ROWS_PER_PICK, rowBudget));
       const rows = Array.isArray(pick.rows)
-        ? pick.rows.slice(0, 500).map((rowValue) => {
+        ? pick.rows.slice(0, rowLimit).map((rowValue) => {
           const row = asObject(rowValue);
           if (!row) return null;
           return {
@@ -57,6 +66,7 @@ function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
           };
         }).filter((row): row is NonNullable<typeof row> => Boolean(row && row.label))
         : undefined;
+      if (rows) rowBudget -= rows.length;
 
       return {
         key: asString(pick.key),
@@ -107,7 +117,9 @@ export function validateCalculatorPdfPayload(body: unknown): CalculatorPdfReques
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };
   if (!payload.consent) return { error: 'consent is required' };
   if (!kalkulator) return { error: 'kalkulator is required' };
-  if (!Number.isFinite(payload.kalkulator.totalMid)) return { error: 'total is invalid' };
+  // asNumber() always yields a finite number, so the meaningful guard is a
+  // positive estimate — a zero/negative total means there is nothing to send.
+  if (!(payload.kalkulator.totalMid > 0)) return { error: 'total is invalid' };
   return payload;
 }
 

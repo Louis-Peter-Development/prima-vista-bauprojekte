@@ -199,6 +199,69 @@ describe('public endpoint validators', () => {
     expect((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length).toBeGreaterThanOrEqual(4);
   });
 
+  it('rejects calculator PDF requests without a positive total', () => {
+    const base = {
+      email: 'ada@example.com',
+      consent: true,
+      kalkulator: {
+        kind: 'gewerke',
+        kindLabel: 'Bad mit Wanne',
+        area: 6,
+        totalMin: 0,
+        totalMax: 0,
+        totalMid: 0,
+        perM2: 0,
+        picks: [],
+      },
+    };
+
+    expect(validateCalculatorPdfPayload(base)).toEqual({ error: 'total is invalid' });
+    expect(validateCalculatorPdfPayload({
+      ...base,
+      kalkulator: { ...base.kalkulator, totalMid: -5 },
+    })).toEqual({ error: 'total is invalid' });
+  });
+
+  it('caps the calculator rows an untrusted payload can expand into', () => {
+    const rows = Array.from({ length: 200 }, (_, i) => ({
+      label: `Position ${i}`,
+      quantity: 1,
+      unit: 'Stk',
+      unitPrice: 1,
+      subtotal: 1,
+    }));
+    const picks = Array.from({ length: 10 }, (_, i) => ({
+      key: `k${i}`,
+      label: `Gewerk ${i}`,
+      subtotal: 200,
+      tradeKey: `t${i}`,
+      tradeLabel: `Gewerk ${i}`,
+      rows,
+    }));
+
+    const result = validateCalculatorPdfPayload({
+      email: 'ada@example.com',
+      consent: true,
+      kalkulator: {
+        kind: 'gewerke',
+        kindLabel: 'Stresstest',
+        area: 10,
+        totalMin: 1,
+        totalMax: 2,
+        totalMid: 1,
+        perM2: 1,
+        picks,
+      },
+    });
+
+    if ('error' in result) throw new Error(result.error);
+    const totalRows = result.kalkulator.picks.reduce(
+      (sum, pick) => sum + (pick.rows?.length ?? 0),
+      0,
+    );
+    expect(totalRows).toBe(1200);
+  });
+
   it('sanitizes comments and rejects empty/spam values', () => {
     expect(validateCommentPayload({ name: 'Ada', body: 'Hallo <script>alert(1)</script>' })).toEqual({
       name: 'Ada',

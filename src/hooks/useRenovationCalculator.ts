@@ -315,11 +315,13 @@ function renovationReducer(
     }
 
     case 'removeRow': {
+      const target = state.rows.find((row) => row.id === action.id);
+      if (!target || !target.canRemove) return state;
       const manualQuantities = { ...state.manualQuantities };
       delete manualQuantities[action.id];
       return {
         ...state,
-        rows: state.rows.filter((row) => row.id !== action.id || !row.canRemove),
+        rows: state.rows.filter((row) => row.id !== action.id),
         manualQuantities,
       };
     }
