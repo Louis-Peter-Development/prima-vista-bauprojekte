@@ -94,4 +94,38 @@ describe('Blitz email rendering', () => {
     expect(emails.customer.text).toContain('So geht es weiter:');
     expect(emails.customer.text).not.toMatch(/PDF|Anhang/i);
   });
+
+  it('renders legacy calculator summaries as calculator blocks instead of customer notes', () => {
+    const emails = renderBlitzEmails({
+      ...sampleBlitzPayload,
+      art: 'anderes',
+      artLabel: 'Haus',
+      groesse: '1',
+      gewerke: [],
+      kalkulator: undefined,
+      msg: [
+        '— Aus dem Kalkulator übernommen —',
+        'Objektart: Heizkörper',
+        'Fläche: 1 m²',
+        'Vorab-Schätzung: € 1 Tsd. – € 1 Tsd. (Mittelwert € 1 Tsd. · ca. € 898 / m²)',
+        '',
+        'Gewählte Gewerke:',
+        '• Heizung — € 898',
+        '– Art der Ausführung — € 149',
+        '· HEIZKÖRPER | Montage (1 Stk) — € 149',
+        '– Material — € 749',
+      ].join('\n'),
+    });
+
+    expect(emails.office.subject).toContain('1 m² Heizkörper');
+    expect(emails.customer.html).toContain('Rechner');
+    expect(emails.customer.html).toContain('Heizkörper');
+    expect(emails.customer.html).toContain('Ihre übernommene Kalkulation');
+    expect(emails.customer.html).not.toContain('Ihre Notiz');
+    expect(emails.customer.html).not.toContain('Noch keine Vorauswahl');
+    expect(emails.customer.text).toContain('· Anfrage: Aus dem Kalkulator übernommen');
+    expect(emails.customer.text).toContain('· Rechner: Heizkörper');
+    expect(emails.customer.text).toContain('Ihre übernommene Kalkulation:');
+    expect(emails.customer.text).not.toContain('Ihre ausgewählten Leistungen:');
+  });
 });
