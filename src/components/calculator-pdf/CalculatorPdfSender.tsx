@@ -203,7 +203,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
         disabled={unavailable}
       >
         <PreviewIcon aria-hidden="true" />
-        Preview
+        PDF-Vorschau
       </button>
 
       {open && !unavailable && createPortal(
@@ -219,7 +219,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
             className="calculator-pdf__panel calculator-pdf__preview"
             role="dialog"
             aria-modal="true"
-            aria-label="PDF Preview"
+            aria-label="PDF-Vorschau"
           >
             <form className="calculator-pdf__send" onSubmit={onSubmit}>
               <div className="calculator-pdf__send-top">
@@ -230,7 +230,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
                 <button
                   type="button"
                   className="calculator-pdf__close"
-                  aria-label="Preview schließen"
+                  aria-label="Vorschau schließen"
                   onClick={() => setOpen(false)}
                 >
                   <CloseIcon aria-hidden="true" />
