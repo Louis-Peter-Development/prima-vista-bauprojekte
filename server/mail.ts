@@ -178,6 +178,35 @@ function sectionTitle(label: string, marginTop = 32): string {
   return `<h2 style="margin:${marginTop}px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(label)}</h2>`;
 }
 
+function callout(title: string, text: string): string {
+  return `<div style="margin:24px 0 0 0;padding:16px 18px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;color:${COLORS.ink};border-left:3px solid ${COLORS.copper};">
+<div style="margin:0 0 6px 0;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:${COLORS.copper};">${escape(title)}</div>
+<p style="margin:0;font-size:13px;line-height:1.55;color:${COLORS.muted};">${nl2br(text)}</p>
+</div>`;
+}
+
+function serviceListHtml(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+  const cleanItems = items.map((item) => item.trim()).filter(Boolean);
+  if (cleanItems.length === 0) {
+    return bodyParagraph(emptyLabel);
+  }
+
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;border-top:1px solid ${COLORS.rule};">
+${cleanItems
+    .map((item, index) => `<tr>
+<td style="padding:12px 0;border-bottom:1px solid ${COLORS.rule};vertical-align:top;width:34px;font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;color:${COLORS.copper};">${String(index + 1).padStart(2, '0')}</td>
+<td style="padding:12px 0;border-bottom:1px solid ${COLORS.rule};vertical-align:top;font-family:Helvetica, Arial, sans-serif;font-size:14px;line-height:1.45;color:${COLORS.ink};">${escape(item)}</td>
+</tr>`)
+    .join('')}
+</table>`;
+}
+
+function serviceListText(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+  const cleanItems = items.map((item) => item.trim()).filter(Boolean);
+  if (cleanItems.length === 0) return `· ${emptyLabel}`;
+  return cleanItems.map((item) => `· ${item}`).join('\n');
+}
+
 function formatEuro(value: number): string {
   if (!Number.isFinite(value)) return '—';
   return value.toLocaleString('de-DE', {
@@ -481,7 +510,6 @@ function blitzOfficeHtml(p: BlitzPayload): string {
     row('Objektart', p.artLabel),
     row(blitzScopeLabel(p), blitzScopeValue(p)),
     row('Baubeginn', p.starterminLabel),
-    row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
   ].join('');
   const calculatorBlock = calculatorDetailsHtml(p, {
     includeRows: true,
@@ -492,11 +520,14 @@ function blitzOfficeHtml(p: BlitzPayload): string {
     : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
+${sectionTitle('Gewählte Leistungen / Anfragebereich', 28)}
+${serviceListHtml(p.gewerke)}
 ${calculatorBlock}
 ${msgBlock}
-<p style="margin:24px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.5;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">
-Antworten Sie innerhalb von 24 Stunden mit einer ersten Kostenschätzung. Reply geht direkt an ${escape(p.email)}.
-</p>`;
+${callout(
+  'Nächster Schritt',
+  `Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten. Eine Antwort auf diese E-Mail geht direkt an ${p.email}.`,
+)}`;
   return shell(`Blitz-Anfrage von ${escape(p.name)}`, 'Blitz-Angebot · 24-Std-Schätzung', body);
 }
 
@@ -510,11 +541,13 @@ function blitzOfficeText(p: BlitzPayload): string {
     `Objektart: ${p.artLabel}`,
     `${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
     `Baubeginn: ${p.starterminLabel}`,
-    `Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
+    ``,
+    `Gewählte Leistungen / Anfragebereich:`,
+    serviceListText(p.gewerke),
     p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: true, heading: 'Übernommene Kalkulation' })}` : '',
     p.msg ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
     ``,
-    `— Antwort innerhalb von 24 Stunden zugesagt.`,
+    `Nächster Schritt: Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten.`,
   ]
     .filter(Boolean)
     .join('\n');
@@ -528,7 +561,6 @@ function blitzConfirmHtml(p: BlitzPayload): string {
     row('Objektart', p.artLabel),
     row(blitzScopeLabel(p), blitzScopeValue(p)),
     row('Baubeginn', p.starterminLabel),
-    row('Gewerke', p.gewerke.length ? p.gewerke.join(', ') : '—'),
   ].join('');
   const calculatorBlock = calculatorDetailsHtml(p, {
     includeRows: false,
@@ -543,6 +575,8 @@ ${bodyParagraph(
 )}
 <h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Ihre Angaben</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${echo}</table>
+${sectionTitle('Ihre ausgewählten Leistungen', 28)}
+${serviceListHtml(p.gewerke)}
 ${calculatorBlock}
 ${noteBlock}
 <h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">So geht es weiter</h2>
@@ -566,7 +600,9 @@ function blitzConfirmText(p: BlitzPayload): string {
     `· Objektart: ${p.artLabel}`,
     `· ${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
     `· Baubeginn: ${p.starterminLabel}`,
-    `· Gewerke: ${p.gewerke.length ? p.gewerke.join(', ') : '—'}`,
+    ``,
+    `Ihre ausgewählten Leistungen:`,
+    serviceListText(p.gewerke),
     p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: false, heading: 'Ihre übernommene Kalkulation' })}` : '',
     p.msg ? `\nIhre Notiz:\n${p.msg}` : '',
     ``,
@@ -616,6 +652,39 @@ function calculatorPdfText(p: CalculatorPdfPayload): string {
 
 // ----- Public API -----
 
+type RenderedEmail = {
+  from: string;
+  to: string;
+  replyTo: string;
+  subject: string;
+  html: string;
+  text: string;
+};
+
+export function renderBlitzEmails(payload: BlitzPayload): {
+  office: RenderedEmail;
+  customer: RenderedEmail;
+} {
+  return {
+    office: {
+      from: FROM,
+      to: TO_OFFICE,
+      replyTo: payload.email,
+      subject: `Blitz-Anfrage · ${payload.name} · ${blitzScopeValue(payload)} ${payload.artLabel}`,
+      html: blitzOfficeHtml(payload),
+      text: blitzOfficeText(payload),
+    },
+    customer: {
+      from: FROM,
+      to: payload.email,
+      replyTo: TO_OFFICE,
+      subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
+      html: blitzConfirmHtml(payload),
+      text: blitzConfirmText(payload),
+    },
+  };
+}
+
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
   const resend = getResend();
   // Office notification — reply-to set to customer so the team can reply directly.
@@ -640,21 +709,22 @@ export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> 
 
 export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
   const resend = getResend();
+  const rendered = renderBlitzEmails(payload);
   ensureEmailSent(await resend.emails.send({
-    from: FROM,
-    to: TO_OFFICE,
-    replyTo: payload.email,
-    subject: `Blitz-Anfrage · ${payload.name} · ${blitzScopeValue(payload)} ${payload.artLabel}`,
-    html: blitzOfficeHtml(payload),
-    text: blitzOfficeText(payload),
+    from: rendered.office.from,
+    to: rendered.office.to,
+    replyTo: rendered.office.replyTo,
+    subject: rendered.office.subject,
+    html: rendered.office.html,
+    text: rendered.office.text,
   }), 'Blitz office');
   ensureEmailSent(await resend.emails.send({
-    from: FROM,
-    to: payload.email,
-    replyTo: TO_OFFICE,
-    subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
-    html: blitzConfirmHtml(payload),
-    text: blitzConfirmText(payload),
+    from: rendered.customer.from,
+    to: rendered.customer.to,
+    replyTo: rendered.customer.replyTo,
+    subject: rendered.customer.subject,
+    html: rendered.customer.html,
+    text: rendered.customer.text,
   }), 'Blitz confirmation');
 }
 
