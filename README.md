@@ -57,7 +57,7 @@ ADMIN_PASSWORD=strong-password-used-only-for-seeding
 VITE_GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
 GOOGLE_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
 ADMIN_GOOGLE_EMAIL=admin@example.com
-VITE_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+VITE_GOOGLE_ANALYTICS_ID=G-ZSYN2EKHTF
 ```
 
 ## Blog admin
