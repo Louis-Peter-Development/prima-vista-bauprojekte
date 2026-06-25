@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
+import { useVideoActive } from '../../hooks/useVideoPlayback';
 
 export type ProjectVideo = { id: string; label?: string };
 
@@ -14,6 +15,7 @@ export default function ProjectVideos({ videos, headline, poster }: ProjectVideo
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState<Set<string>>(() => new Set());
+  useVideoActive(active.size > 0);
 
   function handleActivate(id: string) {
     if (!consented) {

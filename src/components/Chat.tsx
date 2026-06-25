@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChatIcon, CloseIcon, MailIcon, PhoneIcon, PinIcon } from './icons';
+import { useAnyVideoPlaying } from '../hooks/useVideoPlayback';
 
 const INTERNAL_PATHS = [
   '/komplett-pakete',
@@ -490,7 +491,11 @@ function ChatWidget() {
 
   const close = useCallback(() => setOpen(false), []);
   const { canShowLauncher, canShowPreview } = useChatScrollWindow(open, close);
-  const shouldAvoidLauncher = useLauncherAvoidance(canShowLauncher && !open);
+  const videoPlaying = useAnyVideoPlaying();
+  // Hide the floating launcher while a video plays so it doesn't overlap the
+  // player; an already-open conversation stays open and is not unmounted.
+  const launcherVisible = canShowLauncher && !videoPlaying;
+  const shouldAvoidLauncher = useLauncherAvoidance(launcherVisible && !open);
 
   useEffect(() => {
     if (!scrollRef.current) return;
@@ -656,8 +661,8 @@ function ChatWidget() {
   return (
     <>
       {!open && (
-        <div className={`pv-chat-launcher${canShowLauncher ? ' is-visible' : ''}${shouldAvoidLauncher ? ' is-avoiding' : ''}`} aria-hidden={!canShowLauncher}>
-          {canShowPreview && !previewDismissed && (
+        <div className={`pv-chat-launcher${launcherVisible ? ' is-visible' : ''}${shouldAvoidLauncher ? ' is-avoiding' : ''}`} aria-hidden={!launcherVisible}>
+          {canShowPreview && !previewDismissed && !videoPlaying && (
             <div
               role="button"
               tabIndex={0}
@@ -694,7 +699,7 @@ function ChatWidget() {
             aria-label="Bau-Concierge starten"
             aria-expanded={open}
             onClick={() => setOpen(true)}
-            disabled={!canShowLauncher}
+            disabled={!launcherVisible}
           >
             <ChatIcon />
             <span>Bau-Concierge</span>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
+import { useVideoActive } from '../../hooks/useVideoPlayback';
 import type { ProjectVideo } from './ProjectVideos';
 
 type ProjectFeatureVideoProps = {
@@ -13,6 +14,7 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
+  useVideoActive(active);
   const title = video.label ?? `${headline} — Film`;
 
   function handleActivate() {
