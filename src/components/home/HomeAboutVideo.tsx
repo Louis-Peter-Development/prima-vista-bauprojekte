@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
+import { useVideoActive } from '../../hooks/useVideoPlayback';
 
 const ABOUT_VIDEO_ID = 'pm5HSjADlOs';
 const ABOUT_VIDEO_TITLE = 'Prima Vista Bauprojekte – Über uns';
@@ -10,6 +11,7 @@ export default function HomeAboutVideo() {
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
+  useVideoActive(active);
 
   function handleActivate() {
     if (!consented) {
