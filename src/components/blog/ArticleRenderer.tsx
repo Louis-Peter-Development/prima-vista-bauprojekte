@@ -5,11 +5,29 @@ type ArticleRendererProps = {
   content: TiptapNode;
 };
 
+// Only allow URLs that can't execute script. Relative paths and anchors are
+// safe; absolute URLs must use an allowlisted scheme. Control/whitespace chars
+// are stripped before testing because browsers ignore them inside a scheme
+// (e.g. `java\tscript:` parses as `javascript:`), which would otherwise bypass
+// a naive prefix check. Returns null when the URL is unsafe.
+function safeUrl(value: unknown, allowMailto = false): string | null {
+  if (typeof value !== 'string') return null;
+  const raw = value.trim();
+  if (!raw) return null;
+  const probe = raw.replace(/[\s\u0000-\u001f\u007f-\u009f]/g, "").toLowerCase();
+  if (probe.startsWith('/') || probe.startsWith('#') || probe.startsWith('?')) return raw;
+  const colon = probe.indexOf(':');
+  if (colon === -1) return raw; // no scheme → relative
+  const scheme = probe.slice(0, colon);
+  const allowed = allowMailto ? ['http', 'https', 'mailto'] : ['http', 'https'];
+  return allowed.includes(scheme) ? raw : null;
+}
+
 function markNode(text: ReactNode, mark: TiptapMark, key: string) {
   if (mark.type === 'bold') return <strong key={key}>{text}</strong>;
   if (mark.type === 'italic') return <em key={key}>{text}</em>;
   if (mark.type === 'link') {
-    const href = typeof mark.attrs?.href === 'string' ? mark.attrs.href : '#';
+    const href = safeUrl(mark.attrs?.href, true) ?? '#';
     return (
       <a key={key} href={href} target="_blank" rel="noreferrer">
         {text}
@@ -57,7 +75,7 @@ function renderNode(node: TiptapNode, key: string): ReactNode {
     case 'hardBreak':
       return <br key={key} />;
     case 'image': {
-      const src = typeof node.attrs?.src === 'string' ? node.attrs.src : '';
+      const src = safeUrl(node.attrs?.src);
       const alt = typeof node.attrs?.alt === 'string' ? node.attrs.alt : '';
       if (!src) return null;
       return <img key={key} src={src} alt={alt} loading="lazy" />;

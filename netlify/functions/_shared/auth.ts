@@ -38,8 +38,23 @@ function readCookie(req: Request, context?: Context, name = COOKIE_NAME): string
     ?.slice(name.length + 1);
 }
 
+let warnedWeakSecret = false;
+
+// Pin HS256 explicitly on sign and verify so the verifier never accepts a
+// token signed with a different algorithm (alg-confusion defense). Surface a
+// weak secret without throwing, so a short JWT_SECRET can't lock out admin
+// login on deploy — rotate it to a long random value (openssl rand -base64 48).
+function jwtSecret(): string {
+  const secret = requireEnv('JWT_SECRET');
+  if (secret.length < 32 && !warnedWeakSecret) {
+    warnedWeakSecret = true;
+    console.warn('[auth] JWT_SECRET is shorter than 32 characters; rotate it to a longer random value.');
+  }
+  return secret;
+}
+
 export function signAdminToken(payload: AdminSession): string {
-  return jwt.sign(payload, requireEnv('JWT_SECRET'), { expiresIn: MAX_AGE_SECONDS });
+  return jwt.sign(payload, jwtSecret(), { algorithm: 'HS256', expiresIn: MAX_AGE_SECONDS });
 }
 
 export function verifyAdmin(req: Request, context?: Context): AdminSession | null {
@@ -47,7 +62,7 @@ export function verifyAdmin(req: Request, context?: Context): AdminSession | nul
   if (!token) return null;
 
   try {
-    const decoded = jwt.verify(token, requireEnv('JWT_SECRET'));
+    const decoded = jwt.verify(token, jwtSecret(), { algorithms: ['HS256'] });
     if (!decoded || typeof decoded !== 'object') return null;
     const email = (decoded as Record<string, unknown>).email;
     const sub = (decoded as Record<string, unknown>).sub;
