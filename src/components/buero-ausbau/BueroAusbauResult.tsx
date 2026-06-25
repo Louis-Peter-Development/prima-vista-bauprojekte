@@ -70,9 +70,10 @@ export default function BueroAusbauResult({
                 </span>
               </div>
               <div className="kalk-result__meta">
-                <span><small>Mittelwert</small> € {formatTsd(totalMid)}</span>
-                <span><small>pro m²</small> € {Math.round(perM2).toLocaleString('de-DE')}</span>
+                <span><small>Mittelwert netto</small> € {formatTsd(totalMid)}</span>
+                <span><small>pro m² netto</small> € {Math.round(perM2).toLocaleString('de-DE')}</span>
               </div>
+              <p className="kalk-result__vat-note">Alle Beträge netto · zzgl. 19 % MwSt.</p>
             </>
           ) : (
             <div className="kalk-result__empty-state">

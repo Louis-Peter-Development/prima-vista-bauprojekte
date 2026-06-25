@@ -518,6 +518,13 @@
   color: var(--pv-text-on-dark-muted);
   margin-bottom: 4px;
 }
+.kalk-result__vat-note {
+  margin: 10px 0 0;
+  font-family: var(--pv-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--pv-text-on-dark-muted);
+}
 
 /* Empty state */
 .kalk-result__empty-state {
