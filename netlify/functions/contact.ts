@@ -4,6 +4,10 @@ import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-l
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Bound field lengths so the endpoint can't be used to send oversized mails.
+const MAX_FIELD = 200;
+const MAX_MSG = 5_000;
+
 function asString(v: unknown): string {
   return typeof v === 'string' ? v.trim() : '';
 }
@@ -27,6 +31,9 @@ export function validateKontaktPayload(body: unknown): KontaktPayload | { error:
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };
   if (!payload.msg) return { error: 'msg is required' };
   if (!b.dsgvo) return { error: 'dsgvo consent is required' };
+  const overField = [payload.vorname, payload.nachname, payload.email, payload.tel, payload.art, payload.region, payload.budget]
+    .some((field) => (field?.length ?? 0) > MAX_FIELD);
+  if (overField || payload.msg.length > MAX_MSG) return { error: 'field too long' };
   return payload;
 }
 

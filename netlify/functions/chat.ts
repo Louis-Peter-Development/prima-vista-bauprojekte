@@ -4,6 +4,13 @@ import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
 
 type Body = { messages?: ChatMessage[] };
 
+// Bound the input forwarded to the LLM so a single request can't run up an
+// unbounded Anthropic bill (denial-of-wallet). The rate limit caps request
+// count; these cap the size of each request.
+const MAX_MESSAGES = 24;
+const MAX_MESSAGE_CHARS = 8_000;
+const MAX_TOTAL_CHARS = 24_000;
+
 export default async (req: Request) => {
   if (req.method !== 'POST') {
     return methodNotAllowed(['POST']);
@@ -35,7 +42,18 @@ export default async (req: Request) => {
     return new Response('No messages', { status: 400 });
   }
 
-  const stream = createChatStream(messages);
+  if (messages.some((m) => m.content.length > MAX_MESSAGE_CHARS)) {
+    return new Response('Message too long', { status: 413 });
+  }
+
+  // Keep only the most recent turns and bound the total forwarded payload.
+  const trimmed = messages.slice(-MAX_MESSAGES);
+  const totalChars = trimmed.reduce((sum, m) => sum + m.content.length, 0);
+  if (totalChars > MAX_TOTAL_CHARS) {
+    return new Response('Conversation too long', { status: 413 });
+  }
+
+  const stream = createChatStream(trimmed);
   return new Response(stream, {
     headers: {
       'content-type': 'text/event-stream; charset=utf-8',
