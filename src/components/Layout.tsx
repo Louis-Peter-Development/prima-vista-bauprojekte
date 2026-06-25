@@ -268,7 +268,7 @@ function GoogleAnalyticsTracker() {
     if (hasTrackedPath.current === pagePath) return;
 
     hasTrackedPath.current = pagePath;
-    void trackGoogleAnalyticsPageView(pagePath);
+    trackGoogleAnalyticsPageView(pagePath);
   }, [analyticsAllowed, pagePath]);
 
   return null;
