@@ -20,6 +20,11 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # The sha256 allows the inline theme-init script in index.html; update it if
+    # that script changes. Origins cover Google Analytics, Google sign-in
+    # (admin), and YouTube embeds. style-src needs 'unsafe-inline' for React
+    # inline styles.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-EQx5r5mvsrOcWhdMRMgI2NR5rzwdMNIzjngdpAFRKBA=' https://www.googletagmanager.com https://www.google-analytics.com https://accounts.google.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://accounts.google.com; img-src 'self' data: blob: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://accounts.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://accounts.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
 
 [[headers]]
   for = "/"
