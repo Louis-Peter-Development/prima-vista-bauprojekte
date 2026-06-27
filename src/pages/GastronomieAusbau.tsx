@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import PageIntro from '../components/common/PageIntro';
+import CalcPage from '../components/common/CalcPage';
 import GastronomieAusbauBoard from '../components/gastronomie-ausbau/GastronomieAusbauBoard';
 import GastronomieAusbauResult from '../components/gastronomie-ausbau/GastronomieAusbauResult';
 import {
@@ -7,12 +7,8 @@ import {
   GASTRONOMIE_TYPES,
   type GastronomieType,
 } from '../data/gastronomieAusbau';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css'; // Reusing layout styles
 
 export default function GastronomieAusbau() {
-  usePageTitle('Gastronomie-Ausbau kalkulieren');
   const [gastronomieType, setGastronomieType] = useState<GastronomieType>('restaurant');
   const [area, setArea] = useState<number>(60);
   const [picked, setPicked] = useState<string[]>([
@@ -50,45 +46,33 @@ export default function GastronomieAusbau() {
   const hasPicks = picked.length > 0 && area > 0;
 
   return (
-    <>
-      <PageIntro
-        className="kalk-intro"
-        backgroundImage="/assets/img/proj-moroccan-dining.webp"
-        crumbNumber="07"
-        crumbLabel="Gastronomie-Ausbau · Konfigurator"
-        title={<>Gastronomie-Ausbau<br /><em>nach Maß.</em></>}
-        lede="Restaurants, Bars, Hotels und Systemgastronomie. Wählen Sie die Konfiguration, die zu Ihrem Vorhaben passt — die Schätzung aktualisiert sich live."
-        meta={[
-          { label: 'Betriebsarten', value: '3 Konzepte' },
-          { label: 'Gewerke', value: '11 Positionen' },
-          { label: 'Genauigkeit', value: '± 15 % Vorab-Spanne' },
-          { label: 'Konzept-Sprint', value: 'Auf Wunsch' },
-        ]}
-      />
-
-      <section className="kalkulator">
-        <div className="kalkulator__inner">
-          <GastronomieAusbauBoard
-            gastronomieType={gastronomieType}
-            area={area}
-            picked={picked}
-            onGastronomieTypeChange={setGastronomieType}
-            onAreaChange={setArea}
-            onToggleGewerk={toggle}
-          />
-          <GastronomieAusbauResult
-            hasPicks={hasPicks}
-            totalMin={totalMin}
-            totalMax={totalMax}
-            totalMid={totalMid}
-            perM2={perM2}
-            area={area}
-            picked={picked}
-            factor={factor}
-            kindLabel={GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType)?.label ?? 'Gastronomie-Ausbau'}
-          />
-        </div>
-      </section>
-    </>
+    <CalcPage
+      pageKey="gastro"
+      crumbNumber="07"
+      backgroundImage="/assets/img/proj-moroccan-dining.webp"
+      className="kalk-intro"
+    >
+      <div className="kalkulator__inner">
+        <GastronomieAusbauBoard
+          gastronomieType={gastronomieType}
+          area={area}
+          picked={picked}
+          onGastronomieTypeChange={setGastronomieType}
+          onAreaChange={setArea}
+          onToggleGewerk={toggle}
+        />
+        <GastronomieAusbauResult
+          hasPicks={hasPicks}
+          totalMin={totalMin}
+          totalMax={totalMax}
+          totalMid={totalMid}
+          perM2={perM2}
+          area={area}
+          picked={picked}
+          factor={factor}
+          kindLabel={GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType)?.label ?? 'Gastronomie-Ausbau'}
+        />
+      </div>
+    </CalcPage>
   );
 }
