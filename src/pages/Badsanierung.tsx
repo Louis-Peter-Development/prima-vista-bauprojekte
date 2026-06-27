@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import BadsanierungConfigurator from '../components/gewerke/BadsanierungConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function Badsanierung() {
-  usePageTitle('Badsanierung & Gäste-WC');
-
   return (
-    <>
-      <PageIntro
-        className="kalk-intro"
-        backgroundImage="/assets/img/leistungen/badsanierung-02.webp"
-        crumbNumber="04"
-        crumbLabel="Gewerke · Badsanierung"
-        title={<>Badsanierung<br /><em>kalkulieren.</em></>}
-        lede="Vom modernen Gäste-WC bis zum exklusiven Komplettbad: Konfigurieren Sie Ihre Sanierung und erhalten Sie transparente Kosten für Sanitär, Fliesen und Objekte."
-        meta={[
-          { label: 'Varianten', value: '4 Konzepte' },
-          { label: 'Gewerke', value: 'Sanitär & Fliesen' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="badsanierung" />
-
-      <section className="kalkulator">
-        <BadsanierungConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Zeit für ein neues Bad?"
-        title={<>Wir planen <em>Sanitär</em><br />und Design vor Ort.</>}
-        ctaLabel="Badsanierung anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="badsanierung" crumbNumber="04" backgroundImage="/assets/img/leistungen/badsanierung-02.webp" photoSet="badsanierung" className="kalk-intro">
+      <BadsanierungConfigurator />
+    </GewerkePage>
   );
 }

@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import FassadeConfigurator from '../components/gewerke/FassadeConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function Fassadensanierung() {
-  usePageTitle('Fassadensanierung Kostenrechner');
-
   return (
-    <>
-      <PageIntro
-        backgroundImage="/assets/img/leistungen/fassadensanierung-01.webp"
-        crumbNumber="03"
-        crumbLabel="Gewerke · Fassaden & Dämmung"
-        title={<>Fassaden &<br /><em>Dämmung kalkulieren.</em></>}
-        lede="Dämmung, Anstrich, Holzverkleidung, Sockeldämmung, Riemchen oder Vorhangfassade: Wählen Sie die passende Fassadenleistung und erhalten Sie eine erste Vorab-Schätzung."
-        meta={[
-          { label: 'Varianten', value: '10 Rechner' },
-          { label: 'Gewerke', value: 'Putz & WDVS' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="fassade" />
-
-      <section className="kalkulator">
-        <FassadeConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Fassade erneuern?"
-        title={<>Wir prüfen <em>Untergrund</em><br />und Anschlüsse vor Ort.</>}
-        ctaLabel="Fassade anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="fassade" crumbNumber="03" backgroundImage="/assets/img/leistungen/fassadensanierung-01.webp" photoSet="fassade">
+      <FassadeConfigurator />
+    </GewerkePage>
   );
 }

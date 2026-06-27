@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import WasserConfigurator from '../components/gewerke/WasserConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function Sanitaerinstallation() {
-  usePageTitle('Wasserinstallation Kostenrechner');
-
   return (
-    <>
-      <PageIntro
-        backgroundImage="/assets/img/leistungen/wasserinstallation-04.webp"
-        crumbNumber="05"
-        crumbLabel="Gewerke · Wasser & Sanitär"
-        title={<>Wasser<br /><em>kalkulieren.</em></>}
-        lede="Bad, Küche, Keller oder Außen: Wählen Sie den passenden Sanitärstrang und erhalten Sie eine erste Vorab-Schätzung."
-        meta={[
-          { label: 'Varianten', value: '5 Rechner' },
-          { label: 'Gewerke', value: 'Wasser & Sanitär' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="wasser" />
-
-      <section className="kalkulator">
-        <WasserConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Neuinstallation geplant?"
-        title={<>Wir koordinieren <em>Trink-</em><br />und Abwasser aus einer Hand.</>}
-        ctaLabel="Sanitär anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="wasser" crumbNumber="05" backgroundImage="/assets/img/leistungen/wasserinstallation-04.webp" photoSet="wasser">
+      <WasserConfigurator />
+    </GewerkePage>
   );
 }
