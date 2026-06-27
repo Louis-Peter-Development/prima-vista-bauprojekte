@@ -32,6 +32,17 @@
     "requestExpress": "Request an express quote",
     "expressQuote": "Express quote"
   },
+  "notFound": {
+    "eyebrow": "404 / Not found",
+    "title": "This page isn't on the building site right now.",
+    "lede": "The link you followed is out of date, moved or misspelled. From here you can quickly get back to the most important sections.",
+    "actionsAria": "Next steps",
+    "toHome": "Go to home page",
+    "toContact": "Make an enquiry",
+    "panelAria": "Quick start",
+    "linksAria": "Popular pages",
+    "metaTitle": "Page not found"
+  },
   "cookie": {
     "aria": "Cookie notice",
     "eyebrow": "Privacy",

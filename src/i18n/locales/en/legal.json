@@ -1,0 +1,136 @@
+{
+  "bindingNote": "The German version is legally binding. This translation is provided for ease of understanding only.",
+  "datenschutz": {
+    "metaTitle": "Privacy policy",
+    "crumbLabel": "Privacy · GDPR",
+    "title": "Privacy",
+    "lede": "Information on the processing of personal data on this website.",
+    "metaResponsible": "Controller",
+    "metaContact": "Contact",
+    "metaAnalytics": "Analytics",
+    "metaChatbot": "Chatbot",
+    "summaryEyebrow": "Data controller",
+    "contactHeading": "Contact",
+    "emailLabel": "Email",
+    "overview": {
+      "title": "Privacy at a glance",
+      "hGeneral": "General information",
+      "p1": "The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified.",
+      "hCollection": "Data collection on this website",
+      "p2": "Data processing on this website is carried out by the website operator. You can find their contact details in the section “Information on the data controller” in this privacy policy.",
+      "p3": "Some of your data is collected when you provide it to us. This may, for example, be data you enter in a contact form. Other data is collected automatically or with your consent when you visit the website, via our IT systems. This is primarily technical data, for example your internet browser, operating system, or the time the page was accessed."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "p1": "The technical provision of this website is handled by the hosting and deployment provider used at the time. In particular, technical access data such as the IP address, the time the page was accessed, browser information and server log files may be processed, insofar as this is necessary for the secure and stable provision of the website.",
+      "p2": "Processing is carried out on the basis of Art. 6(1)(f) GDPR. Our legitimate interest lies in the technically error-free, secure and efficient provision of our online offering."
+    },
+    "general": {
+      "title": "General information and mandatory disclosures",
+      "hPrivacy": "Data protection",
+      "p1": "The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.",
+      "hResponsible": "Information on the data controller",
+      "responsibleIntro": "The party responsible for data processing on this website is:",
+      "p2": "The controller is the natural or legal person who alone or jointly with others determines the purposes and means of the processing of personal data.",
+      "hStorage": "Retention period",
+      "p3": "Unless a more specific retention period is stated within this privacy policy, your personal data will remain with us until the purpose for processing it no longer applies. If you assert a legitimate request for erasure or withdraw consent to data processing, your data will be deleted, unless we have other legally permissible grounds for storing your personal data."
+    },
+    "rights": {
+      "title": "Your rights",
+      "p1": "You can withdraw consent you have already given at any time. If data processing is carried out on the basis of Art. 6(1)(e) or (f) GDPR, you also have the right to object, on grounds relating to your particular situation, to the processing of your personal data.",
+      "p2": "In the event of breaches of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority. You also have the right to data portability and, within the framework of the applicable statutory provisions, the right at any time to free information about, correction or erasure of your stored personal data.",
+      "hSsl": "SSL / TLS encryption",
+      "p3": "For security reasons and to protect the transmission of confidential content, this site uses SSL or TLS encryption."
+    },
+    "collection": {
+      "title": "Data collection on this website",
+      "hCookies": "Cookies",
+      "p1": "Our web pages may use so-called cookies. Cookies are small data packets and do no harm to your device. They are stored either temporarily for the duration of a session or permanently on your device. Where cookies or comparable technologies requiring consent are used, this only happens after you have given your consent.",
+      "hLogs": "Server log files",
+      "p2": "The provider of the pages automatically collects and stores information in so-called server log files, which your browser transmits to us automatically. These are, in particular, the browser type and version, the operating system used, the referrer URL, the host name of the accessing computer, the time of the server request and the IP address.",
+      "p3": "This data is not merged with other data sources. Collection is carried out on the basis of Art. 6(1)(f) GDPR.",
+      "hContact": "Contact form / enquiry by email",
+      "p4": "If you send us enquiries via the contact form or by email, your details, including the contact data you provide there, will be stored by us for the purpose of processing the enquiry and in case of follow-up questions. We do not pass on this data without your consent."
+    },
+    "analytics": {
+      "title": "Analytics tools and advertising",
+      "hGa": "Google Analytics",
+      "p1": "This website uses Google Analytics, provided you accept optional analytics services in the cookie notice. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. We use Google Analytics to analyse page views and the use of the website and to improve our offering.",
+      "p2": "Google Analytics may use cookies such as “_ga” and process technical data such as device and browser information, truncated IP addresses, pages visited, referrer and times of use. The processing of data requiring consent is only carried out on the basis of your consent pursuant to Art. 6(1)(a) GDPR; consent can be withdrawn at any time with effect for the future.",
+      "p3pre": "Further information can be found in Google's privacy policy at ",
+      "p3post": "."
+    },
+    "chatbot": {
+      "title": "Chatbot",
+      "hClaude": "Claude-based chatbot",
+      "p1": "On this website we use a chatbot (“Bau-Concierge”) based on the AI model Claude from the provider Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA. The chatbot is only active once you have given your consent via the cookie banner.",
+      "hData": "Data processed",
+      "p2": "When you use the chatbot, the content you enter in the chat as well as technical metadata (e.g. the time of the request, IP address) are processed in order to answer your enquiry and provide the service technically. Your input is transmitted from our server to Anthropic's interface and processed there to generate the response.",
+      "hLegal": "Legal basis",
+      "p3": "Processing is carried out on the basis of your consent pursuant to Art. 6(1)(a) GDPR. You can withdraw this consent at any time with effect for the future by changing your cookie settings or deleting your browser storage data for this website.",
+      "hThirdCountry": "Transfer to a third country (USA)",
+      "p4pre": "Anthropic processes data, among other places, in the USA. The transfer is carried out on the basis of the European Commission's standard contractual clauses pursuant to Art. 46(2)(c) GDPR, together with supplementary technical and organisational measures. Further information can be found in Anthropic's privacy notice at ",
+      "p4post": ".",
+      "hStorage": "Retention period",
+      "p5": "We do not permanently store chat histories on our servers. Anthropic may store transmitted content for a limited period in accordance with its applicable terms of service for the purposes of providing the service, preventing misuse and complying with legal obligations; details can be found in Anthropic's notice linked above.",
+      "hNote": "Note",
+      "p6": "Please do not enter any sensitive data (e.g. health data, financial data, passwords) in the chat. For confidential matters, please contact us directly by email or telephone."
+    },
+    "plugins": {
+      "title": "Plugins and tools",
+      "hFonts": "Google Web Fonts (local hosting)",
+      "p1": "To display fonts consistently, this site uses web fonts. The fonts embedded in the project are provided locally insofar as this is technically possible. As a result, no connection to Google Fonts servers is established when the page is accessed.",
+      "hYoutube": "Embedded YouTube videos",
+      "p2": "Individual pages may embed videos from the YouTube service. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. The videos are only loaded once you have consented to optional services via the cookie notice.",
+      "p3": "Where technically possible, we use the more privacy-friendly embedding via youtube-nocookie.com. When playing a video, a connection to YouTube or Google servers may nevertheless be established; in particular, your IP address, technical device information and information about the video viewed may be processed. The legal basis is your consent pursuant to Art. 6(1)(a) GDPR; you can withdraw it at any time with effect for the future.",
+      "p4pre": "Further information can be found in Google's privacy policy at ",
+      "p4post": "."
+    }
+  },
+  "impressum": {
+    "metaTitle": "Legal notice",
+    "crumbLabel": "Legal notice · Legal",
+    "title": "Legal notice",
+    "lede": "Information pursuant to § 5 DDG for Prima Vista Bauprojekte.",
+    "metaSeat": "Registered office",
+    "metaContact": "Contact",
+    "metaPhone": "Phone",
+    "metaVat": "VAT ID",
+    "summaryEyebrow": "Information pursuant to § 5 DDG",
+    "contactHeading": "Contact",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "vat": {
+      "title": "VAT identification number",
+      "body": "VAT identification number pursuant to § 27 a of the German VAT Act (Umsatzsteuergesetz):"
+    },
+    "authority": {
+      "title": "Supervisory authority",
+      "body": "Local Court (Amtsgericht) of Frankfurt am Main"
+    },
+    "odr": {
+      "title": "EU dispute resolution",
+      "pre": "The European Commission provides a platform for online dispute resolution (ODR): ",
+      "post": ". You will find our email address at the top of this legal notice."
+    },
+    "consumer": {
+      "title": "Consumer dispute resolution / universal arbitration board",
+      "body": "We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board."
+    },
+    "content": {
+      "title": "Liability for content",
+      "p1": "As a service provider, we are responsible for our own content on these pages in accordance with § 7 (1) DDG and general law. However, pursuant to §§ 8 to 10 DDG, we as a service provider are not obliged to monitor transmitted or stored third-party information, or to investigate circumstances that indicate unlawful activity.",
+      "p2": "Obligations to remove or block the use of information under general law remain unaffected. Liability in this respect is, however, only possible from the point in time at which we become aware of a specific infringement. Upon becoming aware of such infringements, we will remove the content concerned without delay."
+    },
+    "links": {
+      "title": "Liability for links",
+      "p1": "Our offering contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal infringements at the time of linking. No unlawful content was apparent at the time of linking.",
+      "p2": "However, permanent monitoring of the content of the linked pages is not reasonable without concrete evidence of an infringement. Upon becoming aware of legal infringements, we will remove such links without delay."
+    },
+    "copyright": {
+      "title": "Copyright",
+      "p1": "The content and works on these pages created by the site operators are subject to German copyright law. Reproduction, processing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are permitted for private, non-commercial use only.",
+      "p2": "Where the content on this page was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, we ask that you notify us accordingly. Upon becoming aware of legal infringements, we will remove such content without delay."
+    }
+  }
+}

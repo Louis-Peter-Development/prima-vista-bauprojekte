@@ -1,0 +1,136 @@
+{
+  "bindingNote": "La versione tedesca è quella giuridicamente vincolante. Questa traduzione è fornita solo per facilitarne la comprensione.",
+  "datenschutz": {
+    "metaTitle": "Informativa sulla privacy",
+    "crumbLabel": "Privacy · GDPR",
+    "title": "Privacy",
+    "lede": "Informazioni sul trattamento dei dati personali su questo sito web.",
+    "metaResponsible": "Titolare",
+    "metaContact": "Contatto",
+    "metaAnalytics": "Analisi",
+    "metaChatbot": "Chatbot",
+    "summaryEyebrow": "Titolare del trattamento",
+    "contactHeading": "Contatto",
+    "emailLabel": "E-mail",
+    "overview": {
+      "title": "La privacy in breve",
+      "hGeneral": "Informazioni generali",
+      "p1": "Le seguenti informazioni offrono una semplice panoramica di ciò che accade ai suoi dati personali quando visita questo sito web. I dati personali sono tutti i dati con cui è possibile identificarla personalmente.",
+      "hCollection": "Raccolta dei dati su questo sito web",
+      "p2": "Il trattamento dei dati su questo sito web è effettuato dal gestore del sito. I suoi dati di contatto sono indicati nella sezione «Informazioni sul titolare del trattamento» della presente informativa.",
+      "p3": "I suoi dati vengono raccolti in parte perché lei ce li comunica. Può trattarsi, ad esempio, di dati che inserisce in un modulo di contatto. Altri dati vengono raccolti automaticamente o previo suo consenso durante la visita del sito tramite i nostri sistemi informatici. Si tratta soprattutto di dati tecnici, ad esempio il browser, il sistema operativo o l'ora di consultazione della pagina."
+    },
+    "hosting": {
+      "title": "Hosting",
+      "p1": "La fornitura tecnica di questo sito web avviene tramite il fornitore di hosting e deployment di volta in volta utilizzato. In tale ambito possono essere trattati in particolare dati di accesso tecnici come indirizzo IP, ora di consultazione della pagina, informazioni sul browser e file di log del server, nella misura necessaria alla fornitura sicura e stabile del sito.",
+      "p2": "Il trattamento avviene sulla base dell'art. 6, par. 1, lett. f) GDPR. Il nostro legittimo interesse consiste nella fornitura tecnicamente corretta, sicura ed efficiente della nostra offerta online."
+    },
+    "general": {
+      "title": "Informazioni generali e obbligatorie",
+      "hPrivacy": "Protezione dei dati",
+      "p1": "I gestori di queste pagine prendono molto sul serio la protezione dei suoi dati personali. Trattiamo i suoi dati personali in modo riservato e in conformità alle norme di legge sulla protezione dei dati e alla presente informativa.",
+      "hResponsible": "Informazioni sul titolare del trattamento",
+      "responsibleIntro": "Il titolare del trattamento dei dati su questo sito web è:",
+      "p2": "Titolare del trattamento è la persona fisica o giuridica che, da sola o insieme ad altre, determina le finalità e i mezzi del trattamento dei dati personali.",
+      "hStorage": "Periodo di conservazione",
+      "p3": "Salvo che nella presente informativa sia indicato un periodo di conservazione più specifico, i suoi dati personali resteranno presso di noi fino al venir meno della finalità del trattamento. Se lei esercita una legittima richiesta di cancellazione o revoca il consenso al trattamento, i suoi dati saranno cancellati, a meno che non sussistano altri motivi legalmente ammessi per la conservazione dei suoi dati personali."
+    },
+    "rights": {
+      "title": "I suoi diritti",
+      "p1": "Può revocare in qualsiasi momento un consenso già prestato al trattamento dei dati. Se il trattamento avviene sulla base dell'art. 6, par. 1, lett. e) o f) GDPR, ha inoltre il diritto di opporsi, per motivi connessi alla sua situazione particolare, al trattamento dei suoi dati personali.",
+      "p2": "In caso di violazioni del GDPR, gli interessati hanno il diritto di presentare reclamo a un'autorità di controllo. Ha inoltre il diritto alla portabilità dei dati nonché, nei limiti delle disposizioni di legge applicabili, il diritto in qualsiasi momento di ottenere gratuitamente informazioni, rettifica o cancellazione dei suoi dati personali memorizzati.",
+      "hSsl": "Crittografia SSL / TLS",
+      "p3": "Per motivi di sicurezza e per proteggere la trasmissione di contenuti riservati, questo sito utilizza una crittografia SSL o TLS."
+    },
+    "collection": {
+      "title": "Raccolta dei dati su questo sito web",
+      "hCookies": "Cookie",
+      "p1": "Le nostre pagine web possono utilizzare i cosiddetti cookie. I cookie sono piccoli pacchetti di dati e non arrecano alcun danno al suo dispositivo. Vengono memorizzati sul suo dispositivo temporaneamente per la durata di una sessione oppure in modo permanente. Qualora vengano utilizzati cookie o tecnologie analoghe soggetti a consenso, ciò avviene solo previo suo consenso.",
+      "hLogs": "File di log del server",
+      "p2": "Il provider delle pagine raccoglie e memorizza automaticamente informazioni nei cosiddetti file di log del server, che il suo browser ci trasmette automaticamente. Si tratta in particolare di tipo e versione del browser, sistema operativo utilizzato, URL di provenienza (referrer), nome host del computer che effettua l'accesso, ora della richiesta al server e indirizzo IP.",
+      "p3": "Questi dati non vengono uniti ad altre fonti di dati. La raccolta avviene sulla base dell'art. 6, par. 1, lett. f) GDPR.",
+      "hContact": "Modulo di contatto / richiesta via e-mail",
+      "p4": "Se ci invia richieste tramite il modulo di contatto o via e-mail, i suoi dati, compresi i dati di contatto ivi indicati, vengono memorizzati presso di noi ai fini dell'evasione della richiesta e per eventuali domande successive. Non trasmettiamo questi dati senza il suo consenso."
+    },
+    "analytics": {
+      "title": "Strumenti di analisi e pubblicità",
+      "hGa": "Google Analytics",
+      "p1": "Questo sito web utilizza Google Analytics, qualora lei accetti i servizi di analisi opzionali nell'avviso sui cookie. Il fornitore è Google Ireland Limited, Gordon House, Barrow Street, Dublino 4, Irlanda. Utilizziamo Google Analytics per analizzare le visualizzazioni delle pagine e l'utilizzo del sito e per migliorare la nostra offerta.",
+      "p2": "Google Analytics può utilizzare cookie come «_ga» e trattare dati tecnici quali informazioni sul dispositivo e sul browser, indirizzi IP abbreviati, pagine consultate, referrer e orari di utilizzo. Il trattamento dei dati soggetti a consenso avviene esclusivamente sulla base del suo consenso ai sensi dell'art. 6, par. 1, lett. a) GDPR; il consenso è revocabile in qualsiasi momento con effetto per il futuro.",
+      "p3pre": "Ulteriori informazioni sono disponibili nell'informativa sulla privacy di Google all'indirizzo ",
+      "p3post": "."
+    },
+    "chatbot": {
+      "title": "Chatbot",
+      "hClaude": "Chatbot basato su Claude",
+      "p1": "Su questo sito web utilizziamo un chatbot («Bau-Concierge») basato sul modello di IA Claude del fornitore Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA. Il chatbot è attivo solo dopo che lei ha prestato il suo consenso tramite il banner dei cookie.",
+      "hData": "Dati trattati",
+      "p2": "Quando utilizza il chatbot, i contenuti da lei inseriti nella chat nonché i metadati tecnici (ad es. ora della richiesta, indirizzo IP) vengono trattati per rispondere alla sua richiesta e fornire tecnicamente il servizio. Le sue immissioni vengono trasmesse dal nostro server all'interfaccia di Anthropic e ivi elaborate per generare la risposta.",
+      "hLegal": "Base giuridica",
+      "p3": "Il trattamento avviene sulla base del suo consenso ai sensi dell'art. 6, par. 1, lett. a) GDPR. Può revocare questo consenso in qualsiasi momento con effetto per il futuro modificando le sue impostazioni dei cookie o cancellando i dati di archiviazione del browser per questo sito.",
+      "hThirdCountry": "Trasferimento verso un Paese terzo (USA)",
+      "p4pre": "Anthropic tratta i dati, tra l'altro, negli USA. Il trasferimento avviene sulla base delle clausole contrattuali tipo della Commissione europea ai sensi dell'art. 46, par. 2, lett. c) GDPR, nonché di ulteriori misure tecniche e organizzative. Ulteriori informazioni sono disponibili nell'informativa sulla privacy di Anthropic all'indirizzo ",
+      "p4post": ".",
+      "hStorage": "Periodo di conservazione",
+      "p5": "Non conserviamo in modo permanente le cronologie delle chat sui nostri server. Anthropic può conservare i contenuti trasmessi per un periodo limitato, conformemente alle condizioni contrattuali applicabili, ai fini della fornitura del servizio, della prevenzione degli abusi e dell'adempimento di obblighi di legge; i dettagli sono riportati nell'informativa di Anthropic collegata sopra.",
+      "hNote": "Avvertenza",
+      "p6": "La preghiamo di non inserire nella chat dati sensibili (ad es. dati sanitari, dati finanziari, password). Per questioni riservate, la preghiamo di contattarci direttamente via e-mail o telefono."
+    },
+    "plugins": {
+      "title": "Plugin e strumenti",
+      "hFonts": "Google Web Fonts (hosting locale)",
+      "p1": "Per una rappresentazione uniforme dei caratteri, questo sito utilizza web font. I caratteri integrati nel progetto vengono forniti localmente, ove tecnicamente possibile. In questo modo, all'apertura della pagina non viene stabilita alcuna connessione ai server di Google Fonts.",
+      "hYoutube": "Video YouTube incorporati",
+      "p2": "Su singole pagine possono essere incorporati video del servizio YouTube. Il fornitore è Google Ireland Limited, Gordon House, Barrow Street, Dublino 4, Irlanda. I video vengono caricati solo dopo che lei ha acconsentito ai servizi opzionali tramite l'avviso sui cookie.",
+      "p3": "Ove tecnicamente possibile, utilizziamo l'incorporamento più rispettoso della privacy tramite youtube-nocookie.com. Durante la riproduzione può comunque essere stabilita una connessione ai server di YouTube o Google; in tale ambito possono essere trattati in particolare il suo indirizzo IP, informazioni tecniche sul dispositivo e informazioni sul video visualizzato. La base giuridica è il suo consenso ai sensi dell'art. 6, par. 1, lett. a) GDPR; può revocarlo in qualsiasi momento con effetto per il futuro.",
+      "p4pre": "Ulteriori informazioni sono disponibili nell'informativa sulla privacy di Google all'indirizzo ",
+      "p4post": "."
+    }
+  },
+  "impressum": {
+    "metaTitle": "Note legali",
+    "crumbLabel": "Note legali · Informazioni legali",
+    "title": "Note legali",
+    "lede": "Informazioni ai sensi del § 5 DDG per Prima Vista Bauprojekte.",
+    "metaSeat": "Sede legale",
+    "metaContact": "Contatto",
+    "metaPhone": "Telefono",
+    "metaVat": "Partita IVA",
+    "summaryEyebrow": "Informazioni ai sensi del § 5 DDG",
+    "contactHeading": "Contatto",
+    "phoneLabel": "Telefono",
+    "emailLabel": "E-mail",
+    "vat": {
+      "title": "Numero di partita IVA",
+      "body": "Numero di identificazione IVA ai sensi del § 27 a della legge tedesca sull'IVA (Umsatzsteuergesetz):"
+    },
+    "authority": {
+      "title": "Autorità di vigilanza",
+      "body": "Tribunale (Amtsgericht) di Francoforte sul Meno"
+    },
+    "odr": {
+      "title": "Risoluzione delle controversie UE",
+      "pre": "La Commissione europea mette a disposizione una piattaforma per la risoluzione delle controversie online (ODR): ",
+      "post": ". Il nostro indirizzo e-mail è riportato in alto in queste note legali."
+    },
+    "consumer": {
+      "title": "Risoluzione delle controversie con i consumatori / organismo di conciliazione",
+      "body": "Non siamo disposti né obbligati a partecipare a procedure di risoluzione delle controversie dinanzi a un organismo di conciliazione per i consumatori."
+    },
+    "content": {
+      "title": "Responsabilità per i contenuti",
+      "p1": "In qualità di fornitori di servizi, siamo responsabili dei contenuti propri di queste pagine in conformità al § 7 (1) DDG e alle leggi generali. Tuttavia, ai sensi dei §§ da 8 a 10 DDG, in qualità di fornitori di servizi non siamo tenuti a monitorare le informazioni di terzi trasmesse o memorizzate, né a indagare su circostanze che indichino un'attività illecita.",
+      "p2": "Gli obblighi di rimozione o blocco dell'uso delle informazioni ai sensi delle leggi generali restano impregiudicati. Una responsabilità in tal senso è però possibile solo a partire dal momento in cui si viene a conoscenza di una violazione concreta. Non appena veniamo a conoscenza di tali violazioni, rimuoviamo immediatamente i contenuti interessati."
+    },
+    "links": {
+      "title": "Responsabilità per i link",
+      "p1": "La nostra offerta contiene link a siti web esterni di terzi, sui cui contenuti non abbiamo alcuna influenza. Pertanto non possiamo assumerci alcuna responsabilità per tali contenuti di terzi. Per i contenuti delle pagine collegate è sempre responsabile il rispettivo fornitore o gestore delle pagine. Al momento del collegamento, le pagine collegate sono state verificate per eventuali violazioni di legge. Al momento del collegamento non erano riconoscibili contenuti illeciti.",
+      "p2": "Un controllo permanente dei contenuti delle pagine collegate non è però ragionevolmente esigibile in assenza di indizi concreti di una violazione. Non appena veniamo a conoscenza di violazioni di legge, rimuoviamo immediatamente tali link."
+    },
+    "copyright": {
+      "title": "Diritto d'autore",
+      "p1": "I contenuti e le opere creati dai gestori del sito su queste pagine sono soggetti al diritto d'autore tedesco. La riproduzione, l'elaborazione, la diffusione e qualsiasi forma di utilizzo al di fuori dei limiti del diritto d'autore richiedono il consenso scritto del rispettivo autore o creatore. Download e copie di questa pagina sono consentiti solo per uso privato e non commerciale.",
+      "p2": "Nella misura in cui i contenuti di questa pagina non sono stati creati dal gestore, vengono rispettati i diritti d'autore di terzi. In particolare, i contenuti di terzi vengono contrassegnati come tali. Qualora dovesse comunque notare una violazione del diritto d'autore, la preghiamo di segnalarcelo. Non appena veniamo a conoscenza di violazioni, rimuoviamo immediatamente tali contenuti."
+    }
+  }
+}

@@ -75,11 +75,23 @@ in addresses.
 6. Verify: `npm run typecheck && npm run lint`, then check the page in all three
    languages in the browser.
 
+## Namespaces
+`common` (chrome: nav, header, footer, cookie banner, 404), `home` (full Home
+page), `legal` (Impressum + Datenschutz). Register new ones in `config.ts`.
+
 ## Status
 - ✅ Foundation: i18n library, localized routing, language switcher, locale
   metadata/hreflang.
-- ✅ Translated: global chrome (Header, Footer), Home page.
-- ⏳ Remaining: hero/marquee + other home subcomponents, all other pages,
-  `src/data/*` (incl. calculator packages), forms + validation, cookie consent,
-  server emails (`server/mail.ts`) & PDF (`server/calculatorPdf.ts`), and the
-  DB-backed blog (per-language schema + admin editor).
+- ✅ Phase 1–2: global chrome (Header, Footer, cookie consent) + the entire
+  Home page incl. all subcomponents.
+- ✅ Phase 3 (self-contained pages): NotFound, Impressum, Datenschutz.
+  NOTE: legal/privacy pages carry a "German version is binding" note and need a
+  lawyer's review before launch — machine translation of legal text is provisional.
+- ⏳ Remaining: overview pages (Gewerke, KomplettPakete, Heizmethoden, Projekte,
+  Kontakt) + their sub-components; the trade/package/heating detail pages, which
+  are coupled to the contact-preset system (`createContactPresetFromCtaLabel` —
+  decouple display label from preset `art`) and the calculator configurators;
+  `src/data/*` (incl. 33 calculator packages); form validation; server emails
+  (`server/mail.ts`) & PDF (`server/calculatorPdf.ts`); DB-backed blog
+  (per-language schema + admin editor). Plus a few data-layer leftovers:
+  `src/data/home.ts` hero-slide `alt` + featured-project captions.

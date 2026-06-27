@@ -9,13 +9,16 @@ import itCommon from './locales/it/common.json';
 import deHome from './locales/de/home.json';
 import enHome from './locales/en/home.json';
 import itHome from './locales/it/home.json';
+import deLegal from './locales/de/legal.json';
+import enLegal from './locales/en/legal.json';
+import itLegal from './locales/it/legal.json';
 
-export const NAMESPACES = ['common', 'home'] as const;
+export const NAMESPACES = ['common', 'home', 'legal'] as const;
 
 const resources = {
-  de: { common: deCommon, home: deHome },
-  en: { common: enCommon, home: enHome },
-  it: { common: itCommon, home: itHome },
+  de: { common: deCommon, home: deHome, legal: deLegal },
+  en: { common: enCommon, home: enHome, legal: enLegal },
+  it: { common: itCommon, home: itHome, legal: itLegal },
 } as const;
 
 i18n.use(initReactI18next).init({

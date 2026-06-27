@@ -32,6 +32,17 @@
     "requestExpress": "Richiedi un preventivo express",
     "expressQuote": "Preventivo express"
   },
+  "notFound": {
+    "eyebrow": "404 / Non trovata",
+    "title": "Questa pagina al momento non è in cantiere.",
+    "lede": "Il link che ha seguito è obsoleto, è stato spostato o contiene un errore. Da qui può tornare rapidamente alle sezioni più importanti.",
+    "actionsAria": "Prossimi passi",
+    "toHome": "Vai alla home",
+    "toContact": "Invia una richiesta",
+    "panelAria": "Accesso rapido",
+    "linksAria": "Pagine popolari",
+    "metaTitle": "Pagina non trovata"
+  },
   "cookie": {
     "aria": "Avviso sui cookie",
     "eyebrow": "Privacy",

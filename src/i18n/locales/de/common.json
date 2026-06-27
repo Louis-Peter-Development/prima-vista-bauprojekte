@@ -32,6 +32,17 @@
     "requestExpress": "Blitz-Angebot anfordern",
     "expressQuote": "Blitz-Angebot"
   },
+  "notFound": {
+    "eyebrow": "404 / Nicht gefunden",
+    "title": "Diese Seite ist gerade nicht auf der Baustelle.",
+    "lede": "Der gesuchte Link ist veraltet, verschoben oder falsch geschrieben. Von hier aus kommen Sie schnell zurück zu den wichtigsten Bereichen.",
+    "actionsAria": "Nächste Schritte",
+    "toHome": "Zur Startseite",
+    "toContact": "Anfrage stellen",
+    "panelAria": "Schnelleinstieg",
+    "linksAria": "Beliebte Seiten",
+    "metaTitle": "Seite nicht gefunden"
+  },
   "cookie": {
     "aria": "Cookie-Hinweis",
     "eyebrow": "Datenschutz",

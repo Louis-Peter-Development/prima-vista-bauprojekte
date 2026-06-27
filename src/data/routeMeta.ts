@@ -151,12 +151,28 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       description:
         'Prima Vista Bauprojekte plans and delivers renovation, refurbishment and fit-out from a single source in Frankfurt, Emmenbrücke and the surrounding area.',
     },
+    '/impressum': {
+      title: 'Legal notice',
+      description: 'Legal notice and provider identification for the Prima Vista Bauprojekte website.',
+    },
+    '/datenschutz': {
+      title: 'Privacy policy',
+      description: 'Privacy policy with information on the processing of personal data on this website.',
+    },
   },
   it: {
     '/': {
       title: 'Ristrutturazione e costruzione premium a Francoforte ed Emmenbrücke',
       description:
         'Prima Vista Bauprojekte progetta e realizza ristrutturazione, rinnovo e allestimento da un unico interlocutore a Francoforte, Emmenbrücke e dintorni.',
+    },
+    '/impressum': {
+      title: 'Note legali',
+      description: 'Note legali e identificazione del fornitore per il sito web di Prima Vista Bauprojekte.',
+    },
+    '/datenschutz': {
+      title: 'Informativa sulla privacy',
+      description: "Informativa sulla privacy con informazioni sul trattamento dei dati personali su questo sito web.",
     },
   },
 };
