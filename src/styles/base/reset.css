@@ -20,4 +20,15 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 a, button { touch-action: manipulation; }
 button { font: inherit; color: inherit; border: none; background: none; cursor: pointer; }
+
+/* iOS Safari zooms the viewport whenever a focused form control has a
+   font-size below 16px. On touch devices, enforce a 16px floor on form
+   controls so tapping a field never triggers an unwanted zoom. The
+   calculator's hero area input keeps its larger display size. */
+@media (hover: none) and (pointer: coarse) {
+  input,
+  textarea,
+  select { font-size: 16px !important; }
+  .renocalc__area input { font-size: 24px !important; }
+}
 ::selection { background: var(--pv-copper); color: var(--pv-white); }

@@ -101,7 +101,10 @@
     letter-spacing: 0.1em;
   }
 }
-@media (max-width: 1080px) {
+/* The width clause covers narrow screens; the pointer clause makes any touch
+   device (e.g. an iPad in landscape, which is wider than 1080px) collapse to
+   the burger menu and hide the hover-oriented side rails. */
+@media (max-width: 1080px), (hover: none) and (pointer: coarse) {
   .pv-nav {
     display: flex;
     flex: 1;

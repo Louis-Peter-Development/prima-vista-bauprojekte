@@ -33,7 +33,7 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
           </h2>
         </div>
         <p className="reveal" data-delay="1">
-          Fahren Sie über einen Eintrag, um eine Vorschau zu sehen. Jedes Gewerk wird durch eigene Bauleitung koordiniert — Sie buchen einzeln oder gebündelt.
+          Tippen Sie auf ein Gewerk, um den Kostenrechner zu öffnen — am Desktop genügt das Überfahren für eine Vorschau. Jedes Gewerk wird durch eigene Bauleitung koordiniert — Sie buchen einzeln oder gebündelt.
         </p>
       </div>
 

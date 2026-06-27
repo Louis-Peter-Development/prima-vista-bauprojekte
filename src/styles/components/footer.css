@@ -130,6 +130,15 @@
   width: 15px;
   height: 15px;
 }
+
+/* Touch devices: grow secondary footer links and social icons toward the
+   ~44px comfortable hit-target size without altering desktop spacing. */
+@media (hover: none) and (pointer: coarse) {
+  a.pv-footer__contact-link { padding: 8px 0; }
+  .pv-footer__socials { gap: 16px; }
+  .pv-footer__socials .pv-footer__contact-icon { width: 44px; height: 44px; }
+  .pv-footer__bottom a { padding: 8px 6px; }
+}
 .pv-footer__contact-icon--brand {
   overflow: hidden;
 }
