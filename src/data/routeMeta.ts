@@ -171,6 +171,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Trades – all services at a glance',
       description: 'All trades for renovation, fit-out and refurbishment: bathroom, kitchen, floors, electrical, shell, façade, roof and more.',
     },
+    '/komplett-pakete': {
+      title: 'Complete packages for renovation & construction',
+      description: 'Complete packages for house, apartment, hospitality and office with coordinated trades and a transparent cost framework.',
+    },
   },
   it: {
     '/': {
@@ -197,6 +201,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/gewerke': {
       title: 'Lavori – tutti i servizi in sintesi',
       description: 'Tutte le lavorazioni per ristrutturazione, allestimento e rinnovo: bagno, cucina, pavimenti, impianti elettrici, struttura, facciata, tetto e altro.',
+    },
+    '/komplett-pakete': {
+      title: 'Pacchetti completi per ristrutturazione e costruzione',
+      description: 'Pacchetti completi per casa, appartamento, ristorazione e ufficio con lavorazioni coordinate e un quadro dei costi trasparente.',
     },
   },
 };

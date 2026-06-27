@@ -1,26 +1,26 @@
+import { Trans, useTranslation } from 'react-i18next';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import PageIntro from '../components/common/PageIntro';
 import PackageCompare from '../components/komplett-pakete/PackageCompare';
 import PackageDetailSection from '../components/komplett-pakete/PackageDetailSection';
 import { PACKAGES } from '../data/komplettPakete';
-import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/komplett-pakete.css';
 
 export default function KomplettPakete() {
-  usePageTitle('Komplett-Pakete für Sanierung & Bau');
+  const { t } = useTranslation('pages');
   return (
     <>
       <PageIntro
         backgroundImage="/assets/img/photo-haus-exterior.webp"
         crumbNumber="02"
-        crumbLabel="Komplett-Pakete"
-        title={<>Vier Wege<br />zum fertigen<br /><em>Raum.</em></>}
-        lede="Verwandeln Sie Räume in starke Orte: sorgenfreie Komplett­sanierung für Haus, Wohnung, Gastronomie und Büro — Bauleitung und alle Materialien inklusive."
+        crumbLabel={t('pakete.crumbLabel')}
+        title={<Trans i18nKey="pages:pakete.title" components={{ em: <em />, br: <br /> }} />}
+        lede={t('pakete.lede')}
         meta={[
-          { label: 'Festpreisgarantie', value: 'Schriftlich, vor Beginn' },
-          { label: 'Bauzeit', value: '6–32 Wochen' },
-          { label: 'Bauleitung', value: 'Eigene Inhouse-Teams' },
-          { label: 'Versicherung', value: '5 Jahre Werksgewähr' },
+          { label: t('pakete.metaPriceLabel'), value: t('pakete.metaPriceValue') },
+          { label: t('pakete.metaTimeLabel'), value: t('pakete.metaTimeValue') },
+          { label: t('pakete.metaMgmtLabel'), value: t('pakete.metaMgmtValue') },
+          { label: t('pakete.metaInsuranceLabel'), value: t('pakete.metaInsuranceValue') },
         ]}
       />
 
@@ -33,18 +33,19 @@ export default function KomplettPakete() {
       <section className="pkg-quote">
         <div className="reveal">
           <blockquote>
-            Sie zahlen <em>einen</em> Preis, sehen <em>ein</em> Datum, sprechen mit <em>einer</em> Person — und das vom ersten Telefonat bis zur Schlüsselübergabe.
+            <Trans i18nKey="pages:pakete.quote" components={{ em: <em /> }} />
           </blockquote>
           <div className="attr">
-            <span className="name">Daniel &amp; Monica</span> &nbsp;·&nbsp; Gründer, Prima Vista Bauprojekte
+            <span className="name">{t('pakete.quoteName')}</span> &nbsp;·&nbsp; {t('pakete.quoteRole')}
           </div>
         </div>
       </section>
 
       <EndCtaLocal
-        eyebrow="Erste Beratung kostenlos"
-        title={<>Welches <em>Paket</em><br />passt zu Ihnen?</>}
-        ctaLabel="Termin vereinbaren"
+        eyebrow={t('pakete.endEyebrow')}
+        title={<Trans i18nKey="pages:pakete.endTitle" components={{ em: <em />, br: <br /> }} />}
+        ctaLabel={t('pakete.endCta')}
+        art="haus"
         style={{ background: 'var(--pv-cream-paper)' }}
       />
     </>

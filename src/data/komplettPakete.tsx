@@ -1,100 +1,64 @@
-import type { ReactNode } from 'react';
+// Layout / render metadata only. All display text lives in the i18n `pages`
+// namespace under `pakete.packages.<key>` and `pakete.compare.rows.<key>`.
+
+export type PackageKey = 'haus' | 'wohnung' | 'gastro' | 'buero';
 
 export type Package = {
+  key: PackageKey;
   num: string;
-  variant?: 'paper' | 'ink' | undefined;
+  variant?: 'paper' | 'ink';
   reverse?: boolean;
   photo: string;
-  alt: string;
-  eyebrow: string;
-  title: ReactNode;
-  lede: string;
-  priceLabel: string;
-  priceVal: string;
-  priceFrom: string;
-  includes: string[];
-  ctaLabel: string;
   ctaDark?: boolean;
   detailTo?: string;
-  detailCtaLabel?: string;
 };
 
 export const PACKAGES: Package[] = [
   {
+    key: 'haus',
     num: '01',
     photo: '/assets/img/photo-haus-exterior.webp',
-    alt: 'Haus-Sanierung',
-    eyebrow: 'Komplettpaket · Haus',
     detailTo: '/haus-sanierung',
-    title: <>Haus-<br /><em>Sanierung.</em></>,
-    lede: 'Generalsanierung von Bestandsbauten — vom Dach bis zur Hofeinfahrt. Für Einfamilienhäuser, Mehrfamilien­häuser und Reihenhäuser bis 480 m².',
-    priceLabel: 'Festpreis ab',
-    priceVal: '€ 1.480 / m²',
-    priceFrom: 'inkl. Material & Bauleitung',
-    includes: ['Dach & Dämmung', 'Fassade & Putz', 'Fenster & Türen', 'Elektrik & Smart-Home',
-      'Sanitär & Heizung', 'Innenausbau komplett', 'Garten & Außenanlagen', 'Behörden & Genehmigungen'],
-    ctaLabel: 'Festpreis anfragen',
   },
   {
+    key: 'wohnung',
     num: '02',
     variant: 'paper',
     reverse: true,
     photo: '/assets/img/photo-parkett-altbau.webp',
-    alt: 'Wohnung-Sanierung',
-    eyebrow: 'Komplettpaket · Wohnung',
     detailTo: '/wohnung-sanierung',
-    title: <>Wohnung-<br /><em>Sanierung.</em></>,
-    lede: 'Etagenwohnungen modular sanieren: Bäder, Küchen, Böden, Elektrik, Heizung — in 6 bis 10 Wochen bewohnbar. Auch bei vermieteten Einheiten.',
-    priceLabel: 'Festpreis ab',
-    priceVal: '€ 980 / m²',
-    priceFrom: 'inkl. Material & Bauleitung',
-    includes: ['Bäder & WCs', 'Küche & Geräte', 'Parkett, Stein, Vinyl', 'Elektrik komplett',
-      'Sanitärstränge', 'Wände & Decken', 'Maler & Tapeten', 'Innentüren'],
-    ctaLabel: 'Festpreis anfragen',
   },
   {
+    key: 'gastro',
     num: '03',
     variant: 'ink',
     photo: '/assets/img/proj-sushi.webp',
-    alt: 'Gastronomie-Ausbau',
-    eyebrow: 'Komplettpaket · Gastronomie',
     detailTo: '/gastronomie-ausbau',
-    title: <>Gastronomie-<br /><em>Ausbau.</em></>,
-    lede: 'Restaurants, Bars und Hotels — von der Konzeptphase bis zur Eröffnung. Wir bauen schlüssel­fertig und stellen Sie auf das Veterinär­amt vor.',
-    priceLabel: 'Konzept-Sprint ab',
-    priceVal: '€ 4.800',
-    priceFrom: 'Bauleistung individuell',
-    includes: ['Innenarchitektur & Konzept', 'Lüftungs- und Klimatechnik', 'Küche & Theke (gewerblich)',
-      'Kühlhäuser & Lager', 'Sanitärbereiche Gast/Personal', 'Möbel, Polster & Licht',
-      'POS & Audio-/Video-Technik', 'Brandschutz & Abnahmen'],
-    ctaLabel: 'Konzept buchen',
     ctaDark: true,
   },
   {
+    key: 'buero',
     num: '04',
     variant: 'paper',
     reverse: true,
     photo: '/assets/img/photo-office-light.webp',
-    alt: 'Büro-Ausbau',
-    eyebrow: 'Komplettpaket · Büro',
     detailTo: '/buero-ausbau',
-    detailCtaLabel: 'Büro kalkulieren',
-    title: <>Büro-<br /><em>Ausbau.</em></>,
-    lede: 'Büroflächen, Praxen und Arbeitswelten — von Empfang und Besprechungsräumen bis Teeküche, Akustik und Beleuchtung. Wir koordinieren Ausbau, Technik und Oberflächen aus einer Hand.',
-    priceLabel: 'Festpreis ab',
-    priceVal: '€ 790 / m²',
-    priceFrom: 'abhängig von Fläche & Standard',
-    includes: ['Flächenplanung & Bauleitung', 'Trockenbau & Akustik', 'Elektro, Netzwerk & Licht', 'Bodenbeläge', 'Malerarbeiten', 'Teeküche & Einbauten', 'Brandschutz & Fluchtwege', 'Übergabe bezugsfertig'],
-    ctaLabel: 'Büroprojekt anfragen',
   },
 ];
 
-export const COMPARE_ROWS: Array<{ feature: string; haus: ReactNode; wohnung: ReactNode; gastro: ReactNode; buero: ReactNode }> = [
-  { feature: 'Bauzeit (Median)', haus: <span className="num">22 Wochen</span>, wohnung: <span className="num">8 Wochen</span>, gastro: <span className="num">14 Wochen</span>, buero: <span className="num">10 Wochen</span> },
-  { feature: 'Investition (ab)', haus: <span className="num">€ 1.480 / m²</span>, wohnung: <span className="num">€ 980 / m²</span>, gastro: <span className="num">Individuell</span>, buero: <span className="num">€ 790 / m²</span> },
-  { feature: 'Geeignet für Selbstbewohner', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span>, buero: <span className="compare__no">—</span> },
-  { feature: 'Während Bewohnung möglich', haus: <span className="compare__no">teils</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__no">—</span>, buero: <span className="compare__no">teils</span> },
-  { feature: 'Behörden & Genehmigungen', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
-  { feature: 'Festpreisgarantie', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
-  { feature: '5 Jahre Werksgewähr', haus: <span className="compare__check">✓</span>, wohnung: <span className="compare__check">✓</span>, gastro: <span className="compare__check">✓</span>, buero: <span className="compare__check">✓</span> },
+/** How each comparison cell renders: a tick, a dash, a numeric value, or
+ *  short translated text shown in the "no/partial" style. */
+export type CompareCell = 'check' | 'no' | 'num' | 'noText';
+
+export const COMPARE_ROWS: Array<{
+  key: string;
+  cells: Record<PackageKey, CompareCell>;
+}> = [
+  { key: 'buildTime', cells: { haus: 'num', wohnung: 'num', gastro: 'num', buero: 'num' } },
+  { key: 'investment', cells: { haus: 'num', wohnung: 'num', gastro: 'num', buero: 'num' } },
+  { key: 'selfOccupant', cells: { haus: 'check', wohnung: 'check', gastro: 'no', buero: 'no' } },
+  { key: 'duringOccupancy', cells: { haus: 'noText', wohnung: 'check', gastro: 'no', buero: 'noText' } },
+  { key: 'authorities', cells: { haus: 'check', wohnung: 'check', gastro: 'check', buero: 'check' } },
+  { key: 'fixedPrice', cells: { haus: 'check', wohnung: 'check', gastro: 'check', buero: 'check' } },
+  { key: 'warranty', cells: { haus: 'check', wohnung: 'check', gastro: 'check', buero: 'check' } },
 ];

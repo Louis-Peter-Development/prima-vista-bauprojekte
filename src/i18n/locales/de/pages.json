@@ -1,4 +1,93 @@
 {
+  "pakete": {
+    "crumbLabel": "Komplett-Pakete",
+    "title": "Vier Wege<br/>zum fertigen<br/><em>Raum.</em>",
+    "lede": "Verwandeln Sie Räume in starke Orte: sorgenfreie Komplettsanierung für Haus, Wohnung, Gastronomie und Büro — Bauleitung und alle Materialien inklusive.",
+    "metaPriceLabel": "Festpreisgarantie",
+    "metaPriceValue": "Schriftlich, vor Beginn",
+    "metaTimeLabel": "Bauzeit",
+    "metaTimeValue": "6–32 Wochen",
+    "metaMgmtLabel": "Bauleitung",
+    "metaMgmtValue": "Eigene Inhouse-Teams",
+    "metaInsuranceLabel": "Versicherung",
+    "metaInsuranceValue": "5 Jahre Werksgewähr",
+    "calcCta": "Sanierung kalkulieren",
+    "quote": "Sie zahlen <em>einen</em> Preis, sehen <em>ein</em> Datum, sprechen mit <em>einer</em> Person — und das vom ersten Telefonat bis zur Schlüsselübergabe.",
+    "quoteName": "Daniel & Monica",
+    "quoteRole": "Gründer, Prima Vista Bauprojekte",
+    "endEyebrow": "Erste Beratung kostenlos",
+    "endTitle": "Welches <em>Paket</em><br/>passt zu Ihnen?",
+    "endCta": "Termin vereinbaren",
+    "packages": {
+      "haus": {
+        "alt": "Haus-Sanierung",
+        "eyebrow": "Komplettpaket · Haus",
+        "title": "Haus-<br/><em>Sanierung.</em>",
+        "lede": "Generalsanierung von Bestandsbauten — vom Dach bis zur Hofeinfahrt. Für Einfamilienhäuser, Mehrfamilienhäuser und Reihenhäuser bis 480 m².",
+        "priceLabel": "Festpreis ab",
+        "priceVal": "€ 1.480 / m²",
+        "priceFrom": "inkl. Material & Bauleitung",
+        "includes": ["Dach & Dämmung", "Fassade & Putz", "Fenster & Türen", "Elektrik & Smart-Home", "Sanitär & Heizung", "Innenausbau komplett", "Garten & Außenanlagen", "Behörden & Genehmigungen"],
+        "ctaLabel": "Festpreis anfragen",
+        "detailCtaLabel": "Sanierung kalkulieren"
+      },
+      "wohnung": {
+        "alt": "Wohnung-Sanierung",
+        "eyebrow": "Komplettpaket · Wohnung",
+        "title": "Wohnung-<br/><em>Sanierung.</em>",
+        "lede": "Etagenwohnungen modular sanieren: Bäder, Küchen, Böden, Elektrik, Heizung — in 6 bis 10 Wochen bewohnbar. Auch bei vermieteten Einheiten.",
+        "priceLabel": "Festpreis ab",
+        "priceVal": "€ 980 / m²",
+        "priceFrom": "inkl. Material & Bauleitung",
+        "includes": ["Bäder & WCs", "Küche & Geräte", "Parkett, Stein, Vinyl", "Elektrik komplett", "Sanitärstränge", "Wände & Decken", "Maler & Tapeten", "Innentüren"],
+        "ctaLabel": "Festpreis anfragen",
+        "detailCtaLabel": "Sanierung kalkulieren"
+      },
+      "gastro": {
+        "alt": "Gastronomie-Ausbau",
+        "eyebrow": "Komplettpaket · Gastronomie",
+        "title": "Gastronomie-<br/><em>Ausbau.</em>",
+        "lede": "Restaurants, Bars und Hotels — von der Konzeptphase bis zur Eröffnung. Wir bauen schlüsselfertig und stellen Sie auf das Veterinäramt vor.",
+        "priceLabel": "Konzept-Sprint ab",
+        "priceVal": "€ 4.800",
+        "priceFrom": "Bauleistung individuell",
+        "includes": ["Innenarchitektur & Konzept", "Lüftungs- und Klimatechnik", "Küche & Theke (gewerblich)", "Kühlhäuser & Lager", "Sanitärbereiche Gast/Personal", "Möbel, Polster & Licht", "POS & Audio-/Video-Technik", "Brandschutz & Abnahmen"],
+        "ctaLabel": "Konzept buchen",
+        "detailCtaLabel": "Sanierung kalkulieren"
+      },
+      "buero": {
+        "alt": "Büro-Ausbau",
+        "eyebrow": "Komplettpaket · Büro",
+        "title": "Büro-<br/><em>Ausbau.</em>",
+        "lede": "Büroflächen, Praxen und Arbeitswelten — von Empfang und Besprechungsräumen bis Teeküche, Akustik und Beleuchtung. Wir koordinieren Ausbau, Technik und Oberflächen aus einer Hand.",
+        "priceLabel": "Festpreis ab",
+        "priceVal": "€ 790 / m²",
+        "priceFrom": "abhängig von Fläche & Standard",
+        "includes": ["Flächenplanung & Bauleitung", "Trockenbau & Akustik", "Elektro, Netzwerk & Licht", "Bodenbeläge", "Malerarbeiten", "Teeküche & Einbauten", "Brandschutz & Fluchtwege", "Übergabe bezugsfertig"],
+        "ctaLabel": "Büroprojekt anfragen",
+        "detailCtaLabel": "Büro kalkulieren"
+      }
+    },
+    "compare": {
+      "eyebrow": "Im Vergleich",
+      "title": "Welches Paket passt zu <em>Ihrem</em> Projekt?",
+      "intro": "Die Antwort steckt fast immer in zwei Fragen: Wohnen Sie selbst dort? Und wie groß ist der Eingriff? Die folgenden Werte sind unsere Median-Erfahrungen aus 412 Projekten.",
+      "colFeature": "Merkmal",
+      "colHaus": "Haus",
+      "colWohnung": "Wohnung",
+      "colGastro": "Gastro",
+      "colBuero": "Büro",
+      "rows": {
+        "buildTime": { "feature": "Bauzeit (Median)", "haus": "22 Wochen", "wohnung": "8 Wochen", "gastro": "14 Wochen", "buero": "10 Wochen" },
+        "investment": { "feature": "Investition (ab)", "haus": "€ 1.480 / m²", "wohnung": "€ 980 / m²", "gastro": "Individuell", "buero": "€ 790 / m²" },
+        "selfOccupant": { "feature": "Geeignet für Selbstbewohner" },
+        "duringOccupancy": { "feature": "Während Bewohnung möglich", "haus": "teils", "buero": "teils" },
+        "authorities": { "feature": "Behörden & Genehmigungen" },
+        "fixedPrice": { "feature": "Festpreisgarantie" },
+        "warranty": { "feature": "5 Jahre Werksgewähr" }
+      }
+    }
+  },
   "gewerke": {
     "crumbLabel": "Gewerke · Bauleistungen",
     "title": "Neunzehn<br/>Gewerke,<br/><em>eine Hand.</em>",

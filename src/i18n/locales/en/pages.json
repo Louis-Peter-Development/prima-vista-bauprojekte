@@ -1,4 +1,93 @@
 {
+  "pakete": {
+    "crumbLabel": "Complete packages",
+    "title": "Four routes<br/>to a finished<br/><em>space.</em>",
+    "lede": "Turn rooms into places with presence: worry-free complete renovation for houses, apartments, hospitality and offices — site management and all materials included.",
+    "metaPriceLabel": "Fixed-price guarantee",
+    "metaPriceValue": "In writing, before we start",
+    "metaTimeLabel": "Build time",
+    "metaTimeValue": "6–32 weeks",
+    "metaMgmtLabel": "Site management",
+    "metaMgmtValue": "Our own in-house teams",
+    "metaInsuranceLabel": "Insurance",
+    "metaInsuranceValue": "5-year workmanship warranty",
+    "calcCta": "Calculate the renovation",
+    "quote": "You pay <em>one</em> price, see <em>one</em> date, talk to <em>one</em> person — from the first phone call to the handover of keys.",
+    "quoteName": "Daniel & Monica",
+    "quoteRole": "Founders, Prima Vista Bauprojekte",
+    "endEyebrow": "First consultation free",
+    "endTitle": "Which <em>package</em><br/>suits you?",
+    "endCta": "Book an appointment",
+    "packages": {
+      "haus": {
+        "alt": "House renovation",
+        "eyebrow": "Complete package · House",
+        "title": "House<br/><em>renovation.</em>",
+        "lede": "Full renovation of existing buildings — from the roof to the driveway. For detached houses, apartment buildings and terraced houses up to 480 m².",
+        "priceLabel": "Fixed price from",
+        "priceVal": "€ 1,480 / m²",
+        "priceFrom": "incl. materials & site management",
+        "includes": ["Roof & insulation", "Façade & render", "Windows & doors", "Electrical & smart home", "Plumbing & heating", "Complete interiors", "Garden & outdoor areas", "Authorities & permits"],
+        "ctaLabel": "Request a fixed price",
+        "detailCtaLabel": "Calculate the renovation"
+      },
+      "wohnung": {
+        "alt": "Apartment renovation",
+        "eyebrow": "Complete package · Apartment",
+        "title": "Apartment<br/><em>renovation.</em>",
+        "lede": "Renovate city apartments modularly: bathrooms, kitchens, floors, wiring, heating — liveable in 6 to 10 weeks. Also for tenanted units.",
+        "priceLabel": "Fixed price from",
+        "priceVal": "€ 980 / m²",
+        "priceFrom": "incl. materials & site management",
+        "includes": ["Bathrooms & WCs", "Kitchen & appliances", "Parquet, stone, vinyl", "Complete wiring", "Plumbing risers", "Walls & ceilings", "Painting & wallpaper", "Internal doors"],
+        "ctaLabel": "Request a fixed price",
+        "detailCtaLabel": "Calculate the renovation"
+      },
+      "gastro": {
+        "alt": "Restaurant fit-out",
+        "eyebrow": "Complete package · Hospitality",
+        "title": "Restaurant<br/><em>fit-out.</em>",
+        "lede": "Restaurants, bars and hotels — from concept to opening night. We build turnkey and prepare you for the health authority inspection.",
+        "priceLabel": "Concept sprint from",
+        "priceVal": "€ 4,800",
+        "priceFrom": "construction priced individually",
+        "includes": ["Interior design & concept", "Ventilation & air conditioning", "Kitchen & counter (commercial)", "Cold rooms & storage", "Guest/staff washrooms", "Furniture, upholstery & lighting", "POS & audio/video systems", "Fire safety & sign-offs"],
+        "ctaLabel": "Book a concept",
+        "detailCtaLabel": "Calculate the renovation"
+      },
+      "buero": {
+        "alt": "Office fit-out",
+        "eyebrow": "Complete package · Office",
+        "title": "Office<br/><em>fit-out.</em>",
+        "lede": "Offices, practices and workspaces — from reception and meeting rooms to the kitchenette, acoustics and lighting. We coordinate fit-out, services and finishes from a single source.",
+        "priceLabel": "Fixed price from",
+        "priceVal": "€ 790 / m²",
+        "priceFrom": "depending on area & standard",
+        "includes": ["Space planning & site management", "Drywall & acoustics", "Power, network & lighting", "Floor coverings", "Painting", "Kitchenette & fitted units", "Fire safety & escape routes", "Move-in-ready handover"],
+        "ctaLabel": "Enquire about an office project",
+        "detailCtaLabel": "Calculate the office"
+      }
+    },
+    "compare": {
+      "eyebrow": "Compared",
+      "title": "Which package suits <em>your</em> project?",
+      "intro": "The answer almost always comes down to two questions: do you live there yourself? And how extensive is the work? The values below are our median figures from 412 projects.",
+      "colFeature": "Feature",
+      "colHaus": "House",
+      "colWohnung": "Apartment",
+      "colGastro": "Hospitality",
+      "colBuero": "Office",
+      "rows": {
+        "buildTime": { "feature": "Build time (median)", "haus": "22 weeks", "wohnung": "8 weeks", "gastro": "14 weeks", "buero": "10 weeks" },
+        "investment": { "feature": "Investment (from)", "haus": "€ 1,480 / m²", "wohnung": "€ 980 / m²", "gastro": "Individual", "buero": "€ 790 / m²" },
+        "selfOccupant": { "feature": "Suitable for owner-occupiers" },
+        "duringOccupancy": { "feature": "Possible while occupied", "haus": "partly", "buero": "partly" },
+        "authorities": { "feature": "Authorities & permits" },
+        "fixedPrice": { "feature": "Fixed-price guarantee" },
+        "warranty": { "feature": "5-year workmanship warranty" }
+      }
+    }
+  },
   "gewerke": {
     "crumbLabel": "Trades · Building services",
     "title": "Nineteen<br/>trades,<br/><em>one hand.</em>",

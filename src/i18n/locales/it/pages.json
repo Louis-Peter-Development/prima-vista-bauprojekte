@@ -1,4 +1,93 @@
 {
+  "pakete": {
+    "crumbLabel": "Pacchetti completi",
+    "title": "Quattro strade<br/>verso uno spazio<br/><em>finito.</em>",
+    "lede": "Trasformi gli ambienti in luoghi di carattere: ristrutturazione completa senza pensieri per casa, appartamento, ristorazione e ufficio — direzione lavori e tutti i materiali inclusi.",
+    "metaPriceLabel": "Garanzia di prezzo fisso",
+    "metaPriceValue": "Per iscritto, prima dell'inizio",
+    "metaTimeLabel": "Tempi di realizzazione",
+    "metaTimeValue": "6–32 settimane",
+    "metaMgmtLabel": "Direzione lavori",
+    "metaMgmtValue": "Squadre interne proprie",
+    "metaInsuranceLabel": "Assicurazione",
+    "metaInsuranceValue": "5 anni di garanzia",
+    "calcCta": "Calcola la ristrutturazione",
+    "quote": "Paga <em>un</em> prezzo, vede <em>una</em> data, parla con <em>una</em> persona — dalla prima telefonata alla consegna delle chiavi.",
+    "quoteName": "Daniel & Monica",
+    "quoteRole": "Fondatori, Prima Vista Bauprojekte",
+    "endEyebrow": "Prima consulenza gratuita",
+    "endTitle": "Quale <em>pacchetto</em><br/>è adatto a lei?",
+    "endCta": "Fissa un appuntamento",
+    "packages": {
+      "haus": {
+        "alt": "Ristrutturazione casa",
+        "eyebrow": "Pacchetto completo · Casa",
+        "title": "Ristruttura-<br/>zione <em>casa.</em>",
+        "lede": "Ristrutturazione completa di edifici esistenti — dal tetto al vialetto d'ingresso. Per case unifamiliari, plurifamiliari e a schiera fino a 480 m².",
+        "priceLabel": "Prezzo fisso da",
+        "priceVal": "€ 1.480 / m²",
+        "priceFrom": "incl. materiali e direzione lavori",
+        "includes": ["Tetto e isolamento", "Facciata e intonaco", "Finestre e porte", "Impianti elettrici e smart home", "Idraulica e riscaldamento", "Interni completi", "Giardino ed esterni", "Enti e autorizzazioni"],
+        "ctaLabel": "Richiedi un prezzo fisso",
+        "detailCtaLabel": "Calcola la ristrutturazione"
+      },
+      "wohnung": {
+        "alt": "Ristrutturazione appartamento",
+        "eyebrow": "Pacchetto completo · Appartamento",
+        "title": "Ristruttura-<br/>zione <em>appartamento.</em>",
+        "lede": "Ristrutturi gli appartamenti in modo modulare: bagni, cucine, pavimenti, impianti elettrici, riscaldamento — abitabili in 6-10 settimane. Anche per unità in affitto.",
+        "priceLabel": "Prezzo fisso da",
+        "priceVal": "€ 980 / m²",
+        "priceFrom": "incl. materiali e direzione lavori",
+        "includes": ["Bagni e WC", "Cucina ed elettrodomestici", "Parquet, pietra, vinile", "Impianto elettrico completo", "Colonne idrauliche", "Pareti e soffitti", "Imbiancatura e carte da parati", "Porte interne"],
+        "ctaLabel": "Richiedi un prezzo fisso",
+        "detailCtaLabel": "Calcola la ristrutturazione"
+      },
+      "gastro": {
+        "alt": "Allestimento ristorazione",
+        "eyebrow": "Pacchetto completo · Ristorazione",
+        "title": "Allestimento<br/><em>ristorazione.</em>",
+        "lede": "Ristoranti, bar e hotel — dal concept all'inaugurazione. Costruiamo chiavi in mano e la prepariamo per l'ispezione dell'autorità sanitaria.",
+        "priceLabel": "Concept sprint da",
+        "priceVal": "€ 4.800",
+        "priceFrom": "opere edili a preventivo",
+        "includes": ["Architettura d'interni e concept", "Ventilazione e climatizzazione", "Cucina e bancone (professionali)", "Celle frigorifere e magazzino", "Servizi igienici clienti/personale", "Arredi, tappezzeria e luci", "POS e impianti audio/video", "Sicurezza antincendio e collaudi"],
+        "ctaLabel": "Prenota un concept",
+        "detailCtaLabel": "Calcola la ristrutturazione"
+      },
+      "buero": {
+        "alt": "Allestimento ufficio",
+        "eyebrow": "Pacchetto completo · Ufficio",
+        "title": "Allestimento<br/><em>ufficio.</em>",
+        "lede": "Uffici, studi e spazi di lavoro — dalla reception e dalle sale riunioni fino alla cucina, all'acustica e all'illuminazione. Coordiniamo allestimento, impianti e finiture da un unico interlocutore.",
+        "priceLabel": "Prezzo fisso da",
+        "priceVal": "€ 790 / m²",
+        "priceFrom": "in base a superficie e standard",
+        "includes": ["Progettazione degli spazi e direzione lavori", "Cartongesso e acustica", "Elettrico, rete e luci", "Pavimentazioni", "Imbiancatura", "Cucina e arredi su misura", "Sicurezza antincendio e vie di fuga", "Consegna pronta all'uso"],
+        "ctaLabel": "Richiedi un progetto ufficio",
+        "detailCtaLabel": "Calcola l'ufficio"
+      }
+    },
+    "compare": {
+      "eyebrow": "A confronto",
+      "title": "Quale pacchetto è adatto al <em>suo</em> progetto?",
+      "intro": "La risposta sta quasi sempre in due domande: ci abita lei? E quanto è esteso l'intervento? I valori seguenti sono le nostre medie su 412 progetti.",
+      "colFeature": "Caratteristica",
+      "colHaus": "Casa",
+      "colWohnung": "Appartamento",
+      "colGastro": "Ristorazione",
+      "colBuero": "Ufficio",
+      "rows": {
+        "buildTime": { "feature": "Tempi (mediana)", "haus": "22 settimane", "wohnung": "8 settimane", "gastro": "14 settimane", "buero": "10 settimane" },
+        "investment": { "feature": "Investimento (da)", "haus": "€ 1.480 / m²", "wohnung": "€ 980 / m²", "gastro": "Su misura", "buero": "€ 790 / m²" },
+        "selfOccupant": { "feature": "Adatto a chi vi abita" },
+        "duringOccupancy": { "feature": "Possibile durante l'occupazione", "haus": "in parte", "buero": "in parte" },
+        "authorities": { "feature": "Enti e autorizzazioni" },
+        "fixedPrice": { "feature": "Garanzia di prezzo fisso" },
+        "warranty": { "feature": "5 anni di garanzia" }
+      }
+    }
+  },
   "gewerke": {
     "crumbLabel": "Lavori · Prestazioni edili",
     "title": "Diciannove<br/>lavorazioni,<br/><em>un'unica mano.</em>",
