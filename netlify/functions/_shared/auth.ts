@@ -7,6 +7,18 @@ import { connectDb } from './db';
 
 const COOKIE_NAME = 'pv_admin_token';
 const MAX_AGE_SECONDS = 60 * 60 * 8;
+const GOOGLE_VERIFY_TIMEOUT_MS = 8000;
+
+// google-auth-library's verifyIdToken accepts no AbortSignal, so bound it by
+// racing against a timeout — a stalled Google endpoint then fails fast instead
+// of hanging the function until the platform kills it.
+function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer)) as Promise<T>;
+}
 
 export type AdminSession = {
   sub: string;
@@ -90,10 +102,11 @@ export async function loginGoogleAdmin(credential: string): Promise<string | nul
   if (!allowedEmail) throw new Error('Missing ADMIN_GOOGLE_EMAIL or ADMIN_EMAIL');
 
   const client = new OAuth2Client(clientId);
-  const ticket = await client.verifyIdToken({
-    idToken: credential,
-    audience: clientId,
-  });
+  const ticket = await withTimeout(
+    client.verifyIdToken({ idToken: credential, audience: clientId }),
+    GOOGLE_VERIFY_TIMEOUT_MS,
+    'Google verifyIdToken',
+  );
   const payload = ticket.getPayload();
   const email = payload?.email?.toLowerCase();
 

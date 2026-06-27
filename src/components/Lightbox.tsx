@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from './icons';
 
@@ -20,6 +20,9 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<LightboxItem[]>([]);
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const restoreFocusRef = useRef<HTMLElement | null>(null);
 
   const open = useCallback((nextItems: LightboxItem[], i: number) => {
     setItems(nextItems);
@@ -38,15 +41,45 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = 'hidden';
+    // Remember what was focused so we can restore it on close, then move focus
+    // into the dialog.
+    restoreFocusRef.current = document.activeElement as HTMLElement | null;
+    closeButtonRef.current?.focus();
+
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') step(-1);
-      else if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'Escape') {
+        close();
+      } else if (e.key === 'ArrowLeft') {
+        step(-1);
+      } else if (e.key === 'ArrowRight') {
+        step(1);
+      } else if (e.key === 'Tab') {
+        // Trap focus among the dialog's controls so Tab can't reach the page behind.
+        const dialog = dialogRef.current;
+        if (!dialog) return;
+        const focusable = dialog.querySelectorAll<HTMLElement>('button:not([disabled]), a[href]');
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        const activeEl = document.activeElement as HTMLElement | null;
+        if (!dialog.contains(activeEl)) {
+          e.preventDefault();
+          first.focus();
+        } else if (e.shiftKey && activeEl === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && activeEl === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     document.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
       document.removeEventListener('keydown', onKey);
+      restoreFocusRef.current?.focus();
+      restoreFocusRef.current = null;
     };
   }, [isOpen, close, step]);
 
@@ -57,14 +90,16 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
     <LightboxContext.Provider value={value}>
       {children}
       <div
+        ref={dialogRef}
         className={`pv-lightbox${isOpen ? ' is-open' : ''}`}
         role="dialog"
+        aria-modal={isOpen}
         aria-hidden={!isOpen}
         onClick={(e) => {
           if (e.target === e.currentTarget) close();
         }}
       >
-        <button className="pv-lightbox__close" aria-label="Schließen" onClick={close} type="button">
+        <button ref={closeButtonRef} className="pv-lightbox__close" aria-label="Schließen" onClick={close} type="button">
           <CloseIcon />
         </button>
         <button

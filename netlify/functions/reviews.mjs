@@ -4,7 +4,8 @@ let cache = { data: null, timestamp: 0 };
 
 async function getGoogleReviews(apiKey, placeId) {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,user_ratings_total,reviews,url&reviews_sort=newest&language=de&key=${apiKey}`;
-  const res = await fetch(url);
+  // Bound the upstream call so a stalled Google endpoint can't hang the function.
+  const res = await fetch(url, { signal: AbortSignal.timeout(7000) });
   if (!res.ok) throw new Error(`Google API ${res.status}`);
   const json = await res.json();
   if (json.status !== 'OK') throw new Error(`Google status ${json.status}`);
@@ -34,21 +35,31 @@ export default async (_req) => {
     });
   }
 
-  try {
-    const now = Date.now();
-    if (!cache.data || now - cache.timestamp > ONE_DAY_MS) {
-      cache = { data: await getGoogleReviews(apiKey, placeId), timestamp: now };
-    }
+  const now = Date.now();
+  const isStale = !cache.data || now - cache.timestamp > ONE_DAY_MS;
+  let servedStale = false;
 
-    const headers = { 'Content-Type': 'application/json' };
-    if (process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production') {
-      headers['Cache-Control'] = 'public, max-age=86400';
+  if (isStale) {
+    try {
+      cache = { data: await getGoogleReviews(apiKey, placeId), timestamp: now };
+    } catch (err) {
+      // A transient Google failure must not take the widget down when we still
+      // hold usable data — serve the stale cache and only hard-fail when empty.
+      if (!cache.data) {
+        return new Response(JSON.stringify({ error: err.message || 'Failed to fetch reviews' }), {
+          status: 502,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
+      servedStale = true;
     }
-    return new Response(JSON.stringify(cache.data), { status: 200, headers });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: err.message || 'Failed to fetch reviews' }), {
-      status: 502,
-      headers: { 'Content-Type': 'application/json' },
-    });
   }
+
+  const headers = { 'Content-Type': 'application/json' };
+  if (process.env.NODE_ENV === 'production' || process.env.CONTEXT === 'production') {
+    // Shorten the cache window after serving stale data so a recovered upstream
+    // is picked up sooner than the usual 24h.
+    headers['Cache-Control'] = servedStale ? 'public, max-age=300' : 'public, max-age=86400';
+  }
+  return new Response(JSON.stringify(cache.data), { status: 200, headers });
 };

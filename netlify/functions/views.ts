@@ -1,6 +1,6 @@
 import type { Config, Context } from '@netlify/functions';
 import { connectDb } from './_shared/db';
-import { json, methodNotAllowed } from './_shared/http';
+import { errorResponse, json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
 
 export default async (req: Request, context: Context) => {
@@ -26,9 +26,7 @@ export default async (req: Request, context: Context) => {
     if (!post) return json({ error: 'Post not found' }, { status: 404 });
     return json({ views: post.views });
   } catch (err) {
-    console.error('[views]', err);
-    const message = err instanceof Error ? err.message : 'Unexpected error';
-    return json({ error: message }, { status: 500 });
+    return errorResponse(err, 'views');
   }
 };
 

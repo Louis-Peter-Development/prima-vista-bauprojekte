@@ -663,26 +663,38 @@ function addTotals(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) {
   doc.y = y + 72;
 }
 
+// All PDF thumbnails live under public/. `image`/`sku` arrive from the public
+// calculator-pdf payload, so every constructed path must be confined to this
+// directory — otherwise a value like '../../../etc/secret.png' would let an
+// attacker read an arbitrary image-extension file into the emailed PDF.
+const PUBLIC_DIR = path.resolve(process.cwd(), 'public');
+
+function withinPublic(candidate: string): string | null {
+  const resolved = path.resolve(candidate);
+  return resolved === PUBLIC_DIR || resolved.startsWith(PUBLIC_DIR + path.sep) ? resolved : null;
+}
+
 function candidatePdfImagePaths(image?: string, sku?: string): string[] {
   const candidates: string[] = [];
-  if (image) {
+  if (image && !image.includes('..') && !image.includes('\\') && !image.includes('\0')) {
     const normalized = image.startsWith('/') ? image.slice(1) : image;
-    candidates.push(
-      path.join(process.cwd(), 'public', normalized),
-      path.join(process.cwd(), normalized),
-    );
+    candidates.push(path.join(PUBLIC_DIR, normalized));
   }
 
   if (sku) {
     ['.png', '.jpg', '.jpeg'].forEach((ext) => {
-      candidates.push(path.join(process.cwd(), 'public', 'assets', 'img', 'products', `${sku}${ext}`));
+      candidates.push(path.join(PUBLIC_DIR, 'assets', 'img', 'products', `${sku}${ext}`));
     });
     if (/-MON$/i.test(sku)) {
-      candidates.push(path.join(process.cwd(), 'public', 'assets', 'img', 'products', 'MON-100-stk.jpg'));
+      candidates.push(path.join(PUBLIC_DIR, 'assets', 'img', 'products', 'MON-100-stk.jpg'));
     }
   }
 
-  return candidates;
+  // Drop any candidate that escapes public/ (defends against traversal in a
+  // crafted `sku` as well as `image`).
+  return candidates
+    .map(withinPublic)
+    .filter((candidate): candidate is string => candidate !== null);
 }
 
 function resolvePdfImagePath(detail: ProductDetail): string | null {
@@ -705,13 +717,22 @@ function addProductThumb(doc: PDFKit.PDFDocument, detail: ProductDetail, x: numb
 
   doc.save();
   doc.roundedRect(x, y, size, size, 2).fill(COLORS.paper).strokeColor(COLORS.rule).lineWidth(0.8).stroke();
+  let drewImage = false;
   if (imagePath) {
-    doc.image(imagePath, x + 5, y + 5, {
-      fit: [size - 10, size - 10],
-      align: 'center',
-      valign: 'center',
-    });
-  } else {
+    try {
+      doc.image(imagePath, x + 5, y + 5, {
+        fit: [size - 10, size - 10],
+        align: 'center',
+        valign: 'center',
+      });
+      drewImage = true;
+    } catch (err) {
+      // A corrupt/unsupported image must not abort the whole PDF (which would
+      // 502 the entire send) — fall back to the SKU-prefix placeholder.
+      console.warn('[calculatorPdf] thumbnail render failed, using placeholder', err);
+    }
+  }
+  if (!drewImage) {
     doc
       .fillColor(COLORS.copper)
       .font('Helvetica-Bold')

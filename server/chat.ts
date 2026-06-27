@@ -68,7 +68,10 @@ export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8A
           return;
         }
 
-        const client = new Anthropic();
+        // Bound the request so a hung connection fails fast instead of holding
+        // the function open for the SDK's 10-minute default; a 600-token Haiku
+        // reply completes in seconds, so 60s leaves ample headroom.
+        const client = new Anthropic({ timeout: 60_000 });
         const stream = client.messages.stream({
           model: MODEL,
           max_tokens: MAX_TOKENS,

@@ -37,6 +37,28 @@ function asObject(v: unknown): Record<string, unknown> | null {
     : null;
 }
 
+// The PDF renders `sourceUrl` as a clickable link in the office-bound copy, so
+// an unvalidated value is a phishing-link delivery vector into the internal
+// inbox. Only accept an https URL on the company's own domain; anything else
+// falls back to DEFAULT_SOURCE_URL in the builder.
+const ALLOWED_SOURCE_HOSTS = ['primavista-bauprojekte.com', 'primavista-bauprojekte.ch'];
+
+function safeSourceUrl(v: unknown): string | undefined {
+  const raw = asString(v);
+  if (!raw) return undefined;
+  try {
+    const url = new URL(raw);
+    const host = url.hostname.toLowerCase();
+    const ownDomain = ALLOWED_SOURCE_HOSTS.some(
+      (domain) => host === domain || host.endsWith(`.${domain}`),
+    );
+    if (url.protocol === 'https:' && ownDomain) return url.toString();
+  } catch {
+    // not a parseable URL — fall through to the default
+  }
+  return undefined;
+}
+
 function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
   const source = asObject(v);
   if (!source) return null;
@@ -88,15 +110,28 @@ function sanitizeKalkulator(v: unknown): KalkulatorHandoff | null {
   const kindLabel = asString(source.kindLabel);
   if (!kindLabel) return null;
 
+  // Never trust the client's grand total: the PDF prints `totalMid` as the net
+  // sum directly above the line items, so derive it from the sanitized picks to
+  // guarantee the quote is internally consistent. Prefer the row sums when a
+  // pick is itemised, else fall back to the pick subtotal.
+  const totalMid = picks.reduce((sum, pick) => {
+    const pickTotal = pick.rows && pick.rows.length
+      ? pick.rows.reduce((rowSum, row) => rowSum + row.subtotal, 0)
+      : pick.subtotal;
+    return sum + pickTotal;
+  }, 0);
+
   return {
     kind: asString(source.kind) || 'gewerke',
     kindLabel,
     scopeLabel: asString(source.scopeLabel) || undefined,
     area: asNumber(source.area),
     picks,
+    // totalMin/totalMax/perM2 are a deliberately fuzzy pre-estimate band shown
+    // separately; only the grand total must match the printed line items.
     totalMin: asNumber(source.totalMin),
     totalMax: asNumber(source.totalMax),
-    totalMid: asNumber(source.totalMid),
+    totalMid,
     perM2: asNumber(source.perM2),
   };
 }
@@ -111,7 +146,7 @@ export function validateCalculatorPdfPayload(body: unknown): CalculatorPdfReques
     email: asString(b.email),
     consent: b.consent === true,
     kalkulator: kalkulator as KalkulatorHandoff,
-    sourceUrl: asString(b.sourceUrl) || undefined,
+    sourceUrl: safeSourceUrl(b.sourceUrl),
   };
 
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };

@@ -143,7 +143,9 @@ export function recalculateRowsForArea(
   manualQuantities: Record<string, boolean> = {},
 ): RenovationProduct[] {
   if (livingArea <= 0) {
-    return rows.map((row) => ({ ...row, quantity: 0 }));
+    // Preserve manually-edited rows across an empty-area blip; only auto-scaled
+    // rows fall to zero.
+    return rows.map((row) => (manualQuantities[row.id] ? row : { ...row, quantity: 0 }));
   }
 
   const scaleBase = packageDefaultArea > 0 ? packageDefaultArea : 1;
@@ -248,7 +250,10 @@ function renovationReducer(
     case 'setArea': {
       const livingArea = Math.max(0, action.value);
       const pkg = getCachedRenovationPackage(state.packageId);
-      const manualQuantities = livingArea <= 0 ? {} : state.manualQuantities;
+      // Keep manual quantity overrides even when the area input is transiently
+      // empty (livingArea 0) — clearing the field must not silently wipe the
+      // user's hand-entered values.
+      const manualQuantities = state.manualQuantities;
       return {
         ...state,
         livingArea,

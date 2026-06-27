@@ -76,6 +76,15 @@ export default function ProjectVideos({ videos, headline, poster }: ProjectVideo
                   height={360}
                   loading="lazy"
                   decoding="async"
+                  onError={consented ? (e) => {
+                    // A missing YouTube thumbnail should fall back to the local
+                    // poster rather than render broken, matching the sibling facades.
+                    const img = e.currentTarget;
+                    if (img.dataset.fallback !== '1') {
+                      img.dataset.fallback = '1';
+                      img.src = poster;
+                    }
+                  } : undefined}
                 />
                 <span className="pd-video__play" aria-hidden="true">
                   <svg viewBox="0 0 68 48" width="68" height="48">

@@ -10,7 +10,7 @@ import {
   type PostStatus,
   type TiptapDoc,
 } from './_shared/content';
-import { asString, json, methodNotAllowed, readJson } from './_shared/http';
+import { asString, errorResponse, json, methodNotAllowed, readJson } from './_shared/http';
 
 type PostPayload = {
   title: string;
@@ -202,9 +202,7 @@ export default async (req: Request, context: Context) => {
     if (req.method === 'DELETE' && slug) return deletePost(req, context, slug);
     return methodNotAllowed(slug ? ['GET', 'PATCH', 'PUT', 'DELETE'] : ['GET', 'POST']);
   } catch (err) {
-    console.error('[posts]', err);
-    const message = err instanceof Error ? err.message : 'Unexpected error';
-    return json({ error: message }, { status: message === 'Invalid JSON' ? 400 : 500 });
+    return errorResponse(err, 'posts');
   }
 };
 
