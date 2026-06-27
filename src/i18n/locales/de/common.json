@@ -32,6 +32,7 @@
     "requestExpress": "Blitz-Angebot anfordern",
     "expressQuote": "Blitz-Angebot"
   },
+  "contactPresetMsg": "Hallo Prima Vista Team,\n\nich interessiere mich für: {{topic}}.\n\nBitte melden Sie sich bei mir zur ersten Abstimmung.",
   "notFound": {
     "eyebrow": "404 / Nicht gefunden",
     "title": "Diese Seite ist gerade nicht auf der Baustelle.",

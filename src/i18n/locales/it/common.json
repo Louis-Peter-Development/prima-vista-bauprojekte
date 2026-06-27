@@ -32,6 +32,7 @@
     "requestExpress": "Richiedi un preventivo express",
     "expressQuote": "Preventivo express"
   },
+  "contactPresetMsg": "Salve team di Prima Vista,\n\nmi interessa: {{topic}}.\n\nVi prego di contattarmi per un primo confronto.",
   "notFound": {
     "eyebrow": "404 / Non trovata",
     "title": "Questa pagina al momento non è in cantiere.",

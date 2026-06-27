@@ -159,6 +159,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Privacy policy',
       description: 'Privacy policy with information on the processing of personal data on this website.',
     },
+    '/kontakt': {
+      title: 'Contact – make an enquiry',
+      description: 'Contact Prima Vista Bauprojekte for renovation, refurbishment, fit-out and building projects in Germany and Switzerland.',
+    },
   },
   it: {
     '/': {
@@ -173,6 +177,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/datenschutz': {
       title: 'Informativa sulla privacy',
       description: "Informativa sulla privacy con informazioni sul trattamento dei dati personali su questo sito web.",
+    },
+    '/kontakt': {
+      title: 'Contatti – invia una richiesta',
+      description: 'Contatti Prima Vista Bauprojekte per ristrutturazione, rinnovo, allestimento e progetti edilizi in Germania e Svizzera.',
     },
   },
 };

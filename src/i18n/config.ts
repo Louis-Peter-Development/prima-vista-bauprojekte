@@ -12,13 +12,16 @@ import itHome from './locales/it/home.json';
 import deLegal from './locales/de/legal.json';
 import enLegal from './locales/en/legal.json';
 import itLegal from './locales/it/legal.json';
+import deKontakt from './locales/de/kontakt.json';
+import enKontakt from './locales/en/kontakt.json';
+import itKontakt from './locales/it/kontakt.json';
 
-export const NAMESPACES = ['common', 'home', 'legal'] as const;
+export const NAMESPACES = ['common', 'home', 'legal', 'kontakt'] as const;
 
 const resources = {
-  de: { common: deCommon, home: deHome, legal: deLegal },
-  en: { common: enCommon, home: enHome, legal: enLegal },
-  it: { common: itCommon, home: itHome, legal: itLegal },
+  de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt },
+  en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt },
+  it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt },
 } as const;
 
 i18n.use(initReactI18next).init({

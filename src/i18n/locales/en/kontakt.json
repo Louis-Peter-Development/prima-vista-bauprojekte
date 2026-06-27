@@ -1,0 +1,113 @@
+{
+  "intro": {
+    "crumb": "Contact",
+    "title": "Let's talk about<br/>your <em>building project.</em>",
+    "lede": "A first consultation, free and without obligation. An appointment within 48 hours, on site or by video — we listen first, then sketch.",
+    "phoneLabel": "Phone",
+    "phoneMeta": "Mon–Fri · 08:00–18:00 · DE / CH",
+    "emailLabel": "Email",
+    "emailMeta": "A reply within 24 hours — on working days.",
+    "consultLabel": "First consultation",
+    "consultValue": "Appointment within 48 hours",
+    "consultMeta": "Free & without obligation · on site or by video.",
+    "officeDe": "Frankfurt — DE",
+    "officeCh": "Emmenbrücke — CH",
+    "countryDe": "Germany",
+    "countryCh": "Switzerland",
+    "mediaAlt": "Bright meeting room for project consultations",
+    "mediaCaption": "First consultation · Frankfurt & Emmenbrücke"
+  },
+  "form": {
+    "eyebrow": "Send an enquiry",
+    "title": "Tell us about<br/>your <em>project.</em>",
+    "vorname": "First name",
+    "nachname": "Last name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "tel": "Phone",
+    "telOptional": "(optional)",
+    "telPlaceholder": "+49 …",
+    "artLabel": "Type of project",
+    "art": {
+      "haus": "House renovation",
+      "wohnung": "Apartment",
+      "gastro": "Hospitality",
+      "buero": "Office",
+      "einzel": "Single trade",
+      "andere": "Other"
+    },
+    "regionLabel": "Region",
+    "regions": {
+      "frankfurt": "Frankfurt & Hesse",
+      "innerschweiz": "Central Switzerland",
+      "ausserhalb": "Elsewhere"
+    },
+    "budgetLabel": "Budget range",
+    "budget": {
+      "unset": "Please choose",
+      "lt50": "Under € 50,000",
+      "mid1": "€ 50,000 – € 150,000",
+      "mid2": "€ 150,000 – € 500,000",
+      "gt500": "Over € 500,000"
+    },
+    "msgLabel": "What's it about?",
+    "msgPlaceholder": "Describe your project in a few sentences — we'll get back to you within 24 hours.",
+    "consent": "I agree that my details may be used to respond to my enquiry. They will not be passed on to third parties.",
+    "consentLink": "Privacy",
+    "note": "Reply within 24 h",
+    "submit": "Send",
+    "submitting": "Sending…",
+    "errors": {
+      "vorname": "Please enter your first name.",
+      "nachname": "Please enter your last name.",
+      "emailRequired": "Please enter your email address.",
+      "emailFormat": "Please check the format of your email address.",
+      "msg": "Please briefly describe your project.",
+      "dsgvo": "Please confirm the privacy notice.",
+      "unknown": "Unknown error",
+      "submit": "Your enquiry could not be sent ({{error}}). Please try again or write to us directly at office@primavista-bauprojekte.com."
+    },
+    "success": {
+      "eyebrow": "Sent",
+      "title": "Thank you",
+      "body": "Your enquiry has reached us. We'll review your project and get back to you within <s>24 hours</s> — by email at <s>{{email}}</s>",
+      "bodyPhone": " or by phone at <s>{{tel}}</s>",
+      "step1": "We read your details and prepare initial questions.",
+      "step2": "You receive a written reply or a callback.",
+      "step3": "If you wish, we arrange an on-site appointment.",
+      "toHome": "Go to home page",
+      "toProjects": "View projects"
+    }
+  },
+  "faqSection": {
+    "eyebrow": "Frequently asked",
+    "title": "What clients<br/>ask us<br/><em>most often.</em>",
+    "intro": "Answers on fixed prices, build time, materials and warranty. We're happy to clarify any further questions in person."
+  },
+  "faq": [
+    {
+      "q": "How is a binding fixed price arrived at?",
+      "a": "After the initial conversation, we take measurements on site, check the structure and fabric and draw up a detailed schedule of works. Within 14 days you receive a written fixed price — valid for 60 days and binding once the contract is signed."
+    },
+    {
+      "q": "How quickly can you start the work?",
+      "a": "Usually 4–8 weeks after the contract is concluded. Often sooner for apartment renovations, and correspondingly longer for projects requiring permits (structure, roof, façade). We commit to the start date."
+    },
+    {
+      "q": "Do you work with subcontractors?",
+      "a": "Our site management, electrical, plumbing, drywall, painting and joinery are in-house. Tilers, roofers and façade specialists are long-standing partner firms under contract — no day labourers, no repeated hand-offs."
+    },
+    {
+      "q": "What is included in the fixed price?",
+      "a": "All materials as selected, all trades, site management, construction-waste disposal, cleaning, dealings with authorities and insurance. Not included: special requests made after the contract is signed (shown separately) and ownership levies."
+    },
+    {
+      "q": "Can I stay in the apartment during the renovation?",
+      "a": "For apartments with a partial renovation (e.g. only the bathroom or kitchen): yes, with limited use. For full renovations we recommend moving out — we help with interim furnishing and logistics."
+    },
+    {
+      "q": "What warranty do you give?",
+      "a": "Five years' workmanship warranty on all completed work — more than the statutory requirement. The manufacturer's warranty applies to materials, which we assert on your behalf."
+    }
+  ]
+}

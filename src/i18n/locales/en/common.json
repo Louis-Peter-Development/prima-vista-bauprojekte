@@ -32,6 +32,7 @@
     "requestExpress": "Request an express quote",
     "expressQuote": "Express quote"
   },
+  "contactPresetMsg": "Hello Prima Vista team,\n\nI'm interested in: {{topic}}.\n\nPlease get in touch with me for an initial discussion.",
   "notFound": {
     "eyebrow": "404 / Not found",
     "title": "This page isn't on the building site right now.",
