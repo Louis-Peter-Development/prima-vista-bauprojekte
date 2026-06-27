@@ -68,9 +68,14 @@ describe('recalculateRowsForArea', () => {
     expect(recalculateRowsForArea(rows, 1, 1, 60)[0].quantity).toBe(0);
   });
 
-  it('sets rows to zero when the project scope is zero', () => {
-    const rows = [{ ...baseProduct, quantity: 8, baseQuantity: 5 }];
+  it('zeroes auto-scaled rows but preserves manual edits when the project scope is zero', () => {
+    const manual = { ...baseProduct, id: 'manual', quantity: 8, baseQuantity: 5 };
+    const auto = { ...baseProduct, id: 'auto', quantity: 5, baseQuantity: 5 };
 
-    expect(recalculateRowsForArea(rows, 0, 1, 100, { 'test-product': true })[0].quantity).toBe(0);
+    const result = recalculateRowsForArea([manual, auto], 0, 1, 100, { manual: true });
+
+    // A transiently empty area field must not wipe a hand-entered quantity.
+    expect(result.find((row) => row.id === 'manual')?.quantity).toBe(8);
+    expect(result.find((row) => row.id === 'auto')?.quantity).toBe(0);
   });
 });

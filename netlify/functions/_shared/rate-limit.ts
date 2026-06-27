@@ -25,11 +25,13 @@ function getBuckets() {
 }
 
 export function getClientIp(req: Request): string {
-  const forwarded = req.headers.get('x-forwarded-for');
+  // Only trust IPs set by the platform edge (Netlify, or Cloudflare when
+  // fronted by it). The raw `x-forwarded-for` header is client-spoofable, so
+  // using it as a rate-limit key would let an attacker mint a fresh bucket per
+  // request and bypass the limit entirely.
   return (
     req.headers.get('x-nf-client-connection-ip')
     ?? req.headers.get('cf-connecting-ip')
-    ?? forwarded?.split(',')[0]?.trim()
     ?? 'unknown'
   );
 }

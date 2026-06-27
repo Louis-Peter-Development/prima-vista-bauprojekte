@@ -23,10 +23,29 @@ function getResend(): Resend {
 
 type ResendSendResult = Awaited<ReturnType<Resend['emails']['send']>>;
 
+// Resend's fetch client (v6) accepts no AbortSignal, so bound each call by
+// racing it against a timeout. Keeps a stalled upstream from burning the whole
+// function wall-clock — the rejection lands in the route's try/catch and yields
+// a clean 502 instead of a hard platform kill.
+const RESEND_TIMEOUT_MS = 8000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer)) as Promise<T>;
+}
+
 function ensureEmailSent(result: ResendSendResult, context: string): void {
   if (!result.error) return;
   const detail = `${result.error.name}: ${result.error.message}`;
   throw new Error(`Resend ${context} email failed (${detail})`);
+}
+
+async function sendEmail(payload: Parameters<Resend['emails']['send']>[0], context: string): Promise<void> {
+  const result = await withTimeout(getResend().emails.send(payload), RESEND_TIMEOUT_MS, `Resend ${context}`);
+  ensureEmailSent(result, context);
 }
 
 const COLORS = {
@@ -786,50 +805,47 @@ export function renderBlitzEmails(payload: BlitzPayload): {
 }
 
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
-  const resend = getResend();
   // Office notification — reply-to set to customer so the team can reply directly.
-  ensureEmailSent(await resend.emails.send({
+  await sendEmail({
     from: FROM,
     to: TO_OFFICE,
     replyTo: payload.email,
     subject: `Neue Anfrage · ${payload.vorname} ${payload.nachname}`,
     html: kontaktOfficeHtml(payload),
     text: kontaktOfficeText(payload),
-  }), 'Kontakt office');
+  }, 'Kontakt office');
   // Customer confirmation — reply-to set to office so the customer can write back.
-  ensureEmailSent(await resend.emails.send({
+  await sendEmail({
     from: FROM,
     to: payload.email,
     replyTo: TO_OFFICE,
     subject: `Vielen Dank für Ihre Anfrage — Prima Vista Bauprojekte`,
     html: kontaktConfirmHtml(payload),
     text: kontaktConfirmText(payload),
-  }), 'Kontakt confirmation');
+  }, 'Kontakt confirmation');
 }
 
 export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
-  const resend = getResend();
   const rendered = renderBlitzEmails(payload);
-  ensureEmailSent(await resend.emails.send({
+  await sendEmail({
     from: rendered.office.from,
     to: rendered.office.to,
     replyTo: rendered.office.replyTo,
     subject: rendered.office.subject,
     html: rendered.office.html,
     text: rendered.office.text,
-  }), 'Blitz office');
-  ensureEmailSent(await resend.emails.send({
+  }, 'Blitz office');
+  await sendEmail({
     from: rendered.customer.from,
     to: rendered.customer.to,
     replyTo: rendered.customer.replyTo,
     subject: rendered.customer.subject,
     html: rendered.customer.html,
     text: rendered.customer.text,
-  }), 'Blitz confirmation');
+  }, 'Blitz confirmation');
 }
 
 export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Promise<void> {
-  const resend = getResend();
   const pdf = await buildCalculatorPdf(payload);
   const slug = cleanCalculatorLabel(payload.kalkulator.kindLabel)
     .toLocaleLowerCase('de-DE')
@@ -841,7 +857,7 @@ export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Pro
     .replace(/^-+|-+$/g, '')
     || 'kalkulator';
 
-  ensureEmailSent(await resend.emails.send({
+  await sendEmail({
     from: FROM,
     to: payload.email,
     bcc: TO_OFFICE,
@@ -853,5 +869,5 @@ export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Pro
       filename: `prima-vista-${slug}.pdf`,
       content: pdf,
     }],
-  }), 'Calculator PDF');
+  }, 'Calculator PDF');
 }

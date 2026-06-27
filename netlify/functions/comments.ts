@@ -1,7 +1,7 @@
 import type { Config, Context } from '@netlify/functions';
 import { connectDb } from './_shared/db';
 import { sanitizePlainText } from './_shared/content';
-import { asString, json, methodNotAllowed, readJson } from './_shared/http';
+import { asString, errorResponse, json, methodNotAllowed, readJson } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
 function serialize(comment: {
@@ -73,9 +73,7 @@ export default async (req: Request, context: Context) => {
     if (req.method === 'POST') return createComment(req, slug);
     return methodNotAllowed(['GET', 'POST']);
   } catch (err) {
-    console.error('[comments]', err);
-    const message = err instanceof Error ? err.message : 'Unexpected error';
-    return json({ error: message }, { status: message === 'Invalid JSON' ? 400 : 500 });
+    return errorResponse(err, 'comments');
   }
 };
 

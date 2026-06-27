@@ -36,6 +36,8 @@ const fmtEuro = (n) => (typeof n === 'number' ? n.toFixed(2) + ' €' : String(n
 const high = [];   // same subsection, same sku, 2+ charged  → real double-charge
 const cross = [];  // same sku charged across 2+ subsections  → usually per-room, review only
 const idCollisions = [];
+const rawTitleSku = [];      // title is just the raw SKU code (placeholder, never populated)
+const zeroPricePackages = []; // package whose every product is priced at 0 (broken stub)
 
 async function loadPackage(file) {
   const out = await esbuild.build({
@@ -69,6 +71,8 @@ for (const file of files) {
 
   const idsSeen = new Map();
   const chargedBySku = new Map(); // package-wide: sku -> [{ scope, ... }]
+  let maxBasePrice = 0;           // package-wide highest basePrice (0 ⇒ broken stub)
+  let productCount = 0;
 
   for (const cat of pkg.categories ?? []) {
     for (const sub of cat.subsections ?? []) {
@@ -87,6 +91,12 @@ for (const file of files) {
           charged: !!p.enabled && !p.optional,
           basePrice: p.basePrice,
         };
+        productCount += 1;
+        if (typeof p.basePrice === 'number' && p.basePrice > maxBasePrice) maxBasePrice = p.basePrice;
+        // A title equal to its own SKU code is an un-populated placeholder row.
+        if (rec.sku && rec.title && rec.title === rec.sku) {
+          rawTitleSku.push({ file, id: rec.id, sku: rec.sku });
+        }
         if (!rec.sku) continue;
         if (!bySku.has(rec.sku)) bySku.set(rec.sku, []);
         bySku.get(rec.sku).push(rec);
@@ -106,6 +116,10 @@ for (const file of files) {
     const scopes = new Set(entries.map((e) => e.scope));
     if (entries.length >= 2 && scopes.size >= 2) cross.push({ file, sku, entries, scopes: [...scopes] });
   }
+
+  // Every product priced at 0 means the package can only ever quote 0 € — a
+  // broken stub that must never ship live.
+  if (productCount > 0 && maxBasePrice === 0) zeroPricePackages.push({ file });
 }
 
 await rm(tmp, { recursive: true, force: true });
@@ -114,6 +128,8 @@ const isLive = (f) => liveTag(f.file) === 'LIVE';
 const highLive = high.filter(isLive);
 const idLive = idCollisions.filter(isLive);
 const crossLive = cross.filter(isLive);
+const rawTitleLive = rawTitleSku.filter(isLive);
+const zeroPriceLive = zeroPricePackages.filter(isLive);
 
 console.log(`Scanned ${files.length} package files (${LIVE.size} live in index).`);
 
@@ -133,12 +149,20 @@ if (cross.length) {
   for (const f of cross) byFile.set(f.file, (byFile.get(f.file) ?? 0) + 1);
   for (const [file, n] of [...byFile].sort()) console.log(`  ${liveTag(file)}  ${file}: ${n}`);
 }
+if (rawTitleSku.length) {
+  console.log(`\nRAW TITLES — product title equals its SKU code (un-populated placeholder):`);
+  for (const r of rawTitleSku) console.log(`  ${liveTag(r.file)}  ${r.file}  id="${r.id}"  sku=${r.sku}`);
+}
+if (zeroPricePackages.length) {
+  console.log(`\nZERO-PRICE PACKAGES — every product priced at 0 (can only quote 0 €):`);
+  for (const z of zeroPricePackages) console.log(`  ${liveTag(z.file)}  ${z.file}`);
+}
 
-console.log(`\nSUMMARY (LIVE): double-charge=${highLive.length}, id-collisions=${idLive.length}, cross-section=${crossLive.length} (info)`);
+console.log(`\nSUMMARY (LIVE): double-charge=${highLive.length}, id-collisions=${idLive.length}, raw-titles=${rawTitleLive.length}, zero-price=${zeroPriceLive.length}, cross-section=${crossLive.length} (info)`);
 
-if (highLive.length || idLive.length) {
-  console.error(`\n✗ FAIL: ${highLive.length} double-charge + ${idLive.length} id-collision issue(s) in live packages.`);
+if (highLive.length || idLive.length || rawTitleLive.length || zeroPriceLive.length) {
+  console.error(`\n✗ FAIL: ${highLive.length} double-charge + ${idLive.length} id-collision + ${rawTitleLive.length} raw-title + ${zeroPriceLive.length} zero-price issue(s) in live packages.`);
   process.exitCode = 1;
 } else {
-  console.log(`\n✓ PASS: no double-charge or id-collision issues in live packages.`);
+  console.log(`\n✓ PASS: no double-charge, id-collision, raw-title, or zero-price issues in live packages.`);
 }

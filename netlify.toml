@@ -20,6 +20,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Force HTTPS on every subsequent request so the admin cookie can never be
+    # sent over a downgraded connection. `preload` is intentionally omitted
+    # until the apex+subdomains are confirmed HTTPS-only and submitted.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     # The sha256 allows the inline theme-init script in index.html; update it if
     # that script changes. Origins cover Google Analytics, Google sign-in
     # (admin), and YouTube embeds. style-src needs 'unsafe-inline' for React

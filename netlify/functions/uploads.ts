@@ -2,7 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { getStore } from '@netlify/blobs';
 import type { Config, Context } from '@netlify/functions';
 import { verifyAdmin } from './_shared/auth';
-import { json, methodNotAllowed } from './_shared/http';
+import { errorResponse, json, methodNotAllowed } from './_shared/http';
 
 const STORE_NAME = 'pv-blog-images';
 const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
@@ -89,9 +89,7 @@ export default async (req: Request, context: Context) => {
     if (req.method === 'GET' && key) return getImage(key);
     return methodNotAllowed(key ? ['GET'] : ['POST']);
   } catch (err) {
-    console.error('[uploads]', err);
-    const message = err instanceof Error ? err.message : 'Unexpected error';
-    return json({ error: message }, { status: 500 });
+    return errorResponse(err, 'uploads');
   }
 };
 

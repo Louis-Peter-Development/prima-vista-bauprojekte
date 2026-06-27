@@ -1,9 +1,19 @@
 import type { Config, Context } from '@netlify/functions';
 import { adminCookie, clearAdminCookie, loginAdmin, loginGoogleAdmin, verifyAdmin } from './_shared/auth';
 import { getEnv } from './_shared/env';
-import { asString, json, methodNotAllowed, readJson } from './_shared/http';
+import { asString, errorResponse, json, methodNotAllowed, readJson } from './_shared/http';
+import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
+
+// Throttle unauthenticated credential checks so the single admin account can't
+// be brute-forced / password-sprayed. Best-effort (the limiter is per-instance
+// in-memory), but it raises the cost of guessing dramatically and mirrors the
+// rate limiting already applied to every other mutating endpoint.
+const LOGIN_RATE_LIMIT = { key: 'auth-login', limit: 5, windowMs: 10 * 60 * 1000 } as const;
 
 async function handleLogin(req: Request) {
+  const rateLimit = checkRateLimit(req, LOGIN_RATE_LIMIT);
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
+
   const body = await readJson(req);
   if (!body || typeof body !== 'object') return json({ error: 'Invalid body' }, { status: 400 });
 
@@ -24,6 +34,9 @@ async function handleLogin(req: Request) {
 }
 
 async function handleGoogleLogin(req: Request) {
+  const rateLimit = checkRateLimit(req, LOGIN_RATE_LIMIT);
+  if (!rateLimit.ok) return rateLimitResponse(rateLimit);
+
   const body = await readJson(req);
   if (!body || typeof body !== 'object') return json({ error: 'Invalid body' }, { status: 400 });
 
@@ -72,9 +85,7 @@ export default async (req: Request, context: Context) => {
     if (action === 'logout' && req.method === 'POST') return handleLogout();
     return methodNotAllowed(action === 'session' ? ['GET'] : ['POST']);
   } catch (err) {
-    console.error('[auth]', err);
-    const message = err instanceof Error ? err.message : 'Unexpected error';
-    return json({ error: message }, { status: message === 'Invalid JSON' ? 400 : 500 });
+    return errorResponse(err, 'auth');
   }
 };
 
