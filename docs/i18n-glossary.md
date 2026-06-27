@@ -78,7 +78,12 @@ in addresses.
 ## Namespaces
 `common` (chrome: nav, header, footer, cookie banner, 404, contact-preset msg),
 `home` (full Home page), `legal` (Impressum + Datenschutz), `kontakt` (contact
-page: intro, form, validation, FAQ). Register new ones in `config.ts`.
+page: intro, form, validation, FAQ), `pages` (overview pages: heizmethoden,
+gewerke, pakete). Register new ones in `config.ts`.
+
+Pattern for data-driven pages: reduce the `src/data/*` file to layout/render
+metadata + a stable `key`, and move all display text to the `pages` namespace
+keyed by that key (see gewerke.ts / komplettPakete.tsx for the model).
 
 ## Status
 - ✅ Foundation: i18n library, localized routing, language switcher, locale
@@ -93,10 +98,14 @@ page: intro, form, validation, FAQ). Register new ones in `config.ts`.
   pages (don't rely on label keyword matching); preset message is localized via
   `common.contactPresetMsg`. Select VALUES stay canonical German (server contract);
   only the display is localized.
-- ⏳ Remaining: overview pages (Gewerke, KomplettPakete, Heizmethoden, Projekte)
-  + their sub-components and `src/data/*` (gewerke.ts, komplettPakete.ts,
-  projects.ts); the trade/package/heating DETAIL pages + calculator configurators
-  + the 33 calculator packages; server emails (`server/mail.ts`) & PDF
-  (`server/calculatorPdf.ts`); DB-backed blog (per-language schema + admin editor).
-  Data-layer leftovers: `src/data/home.ts` hero-slide `alt` + featured-project
-  captions. On detail pages, pass `art` to EndCtaLocal.
+- ✅ Phase 4b–d (overview pages): Heizmethoden, Gewerke (+ FeaturedTrades,
+  TradeIndex, ProcessSection), KomplettPakete (+ PackageDetailSection,
+  PackageCompare).
+- ⏳ Remaining: Projekte overview + `src/data/projects.ts` + ProjectGallery;
+  the ~25 trade/package/heating DETAIL pages + their calculator configurators +
+  the 33 calculator package data files; Kalkulator & BlitzAngebot pages/forms;
+  server emails (`server/mail.ts`) & PDF (`server/calculatorPdf.ts`); DB-backed
+  blog (per-language schema + admin editor). Data-layer leftovers:
+  `src/data/home.ts` hero-slide `alt` + featured-project captions; the now-unused
+  German `name`/`lead` on TRADES and `label`/`title`/`desc` on PROCESS_STEPS in
+  gewerke.ts can be deleted. On detail pages, pass `art` to EndCtaLocal.
