@@ -183,6 +183,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Cost calculator for renovation & construction',
       description: 'Interactive cost calculator for house, apartment, trades and heating methods with transparent guide prices.',
     },
+    '/blitz-angebot': {
+      title: 'Express quote within 24 hours',
+      description: 'A fast project enquiry for renovation and fit-out with a reply within 24 hours on working days.',
+    },
   },
   it: {
     '/': {
@@ -221,6 +225,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/kalkulator': {
       title: 'Preventivatore per ristrutturazione e costruzione',
       description: 'Preventivatore interattivo per casa, appartamento, lavorazioni e metodi di riscaldamento con prezzi indicativi trasparenti.',
+    },
+    '/blitz-angebot': {
+      title: 'Preventivo express entro 24 ore',
+      description: 'Una richiesta di progetto rapida per ristrutturazione e allestimento con risposta entro 24 ore nei giorni feriali.',
     },
   },
 };
