@@ -1,0 +1,62 @@
+{
+  "intro": {
+    "metaTitle": "Cost calculator for renovation & construction",
+    "crumbLabel": "Calculator · Live estimate",
+    "title": "What does your<br/><em>building project</em> cost?",
+    "lede": "A few clicks. An honest range. Based on data from over 400 completed projects in Hesse and Central Switzerland — no sign-up, no sales tactics.",
+    "meta": [
+      { "label": "Calculation", "value": "Live, in real time" },
+      { "label": "Data basis", "value": "412 real projects" },
+      { "label": "Accuracy", "value": "−15% / +20% preliminary range" },
+      { "label": "Fixed price", "value": "On request within 24 h" }
+    ],
+    "loading": "Loading …"
+  },
+  "picker": {
+    "categoryLabel": "Category",
+    "categoryHint": "Choose the area that suits your project",
+    "optionCount": "{{count}} options",
+    "leafHint": "Select a detailed calculator"
+  },
+  "categories": {
+    "pakete": { "label": "Complete packages", "description": "Turnkey renovation — living, hospitality or office" },
+    "gewerke": { "label": "Trades", "description": "Calculate individual trades in detail" },
+    "heizung": { "label": "Heating methods", "description": "Configure and calculate a heating system" }
+  },
+  "leaves": {
+    "pakete": {
+      "haus": { "label": "House renovation", "lead": "Full renovation — roof to garden" },
+      "wohnung": { "label": "Apartment renovation", "lead": "Bathrooms, kitchens, floors, wiring" },
+      "gastronomie": { "label": "Restaurant fit-out", "lead": "Restaurant, café, bar or club" },
+      "buero": { "label": "Office fit-out", "lead": "Office, practice, open space" }
+    },
+    "gewerke": {
+      "bad": { "label": "Bathrooms & plumbing", "lead": "Tub, shower, WC" },
+      "kueche": { "label": "Kitchens & cabinetry", "lead": "Joinery, appliances" },
+      "boden": { "label": "Floors & coverings", "lead": "Parquet, stone, vinyl" },
+      "elektro": { "label": "Electrical installation", "lead": "Power, lighting, KNX" },
+      "sanitaer": { "label": "Plumbing installation", "lead": "Water, waste water" },
+      "trockenbau": { "label": "Drywall", "lead": "Walls, ceilings" },
+      "maler": { "label": "Painting & finishing", "lead": "Paint, wallpaper" },
+      "fassade": { "label": "Façade renovation", "lead": "Render, ETICS" },
+      "dach": { "label": "Roof renovation", "lead": "Covering, insulation" },
+      "abdichtung": { "label": "Waterproofing & basement", "lead": "Damp" },
+      "treppen": { "label": "Stairs & railings", "lead": "Wood, concrete, steel" },
+      "garten": { "label": "Garden & outdoor areas", "lead": "Terrace, paths" },
+      "barrierefreiheit": { "label": "Accessibility", "lead": "Bathroom, doors, access" },
+      "fenster": { "label": "Windows", "lead": "PVC, wood, aluminium" },
+      "rohbau": { "label": "Shell & demolition", "lead": "Foundation, masonry" },
+      "tueren": { "label": "Doors & frames", "lead": "Internal, front, sliding" },
+      "zaeune": { "label": "Fences & gates", "lead": "Twin-mesh, wood, privacy screen" }
+    },
+    "heizung": {
+      "heizkoerper": { "label": "Radiators", "lead": "Replacement & painting" },
+      "heizstraenge": { "label": "Heating risers", "lead": "Riser & distribution pipes" },
+      "fussboden": { "label": "Underfloor heating", "lead": "Water-based or electric" },
+      "waermepumpe": { "label": "Air-source heat pump", "lead": "Grant-eligible heat source" },
+      "gas": { "label": "Gas heating", "lead": "Condensing" },
+      "pellet": { "label": "Pellet stove", "lead": "CO₂-neutral alternative" },
+      "sauna": { "label": "Sauna heater", "lead": "Heaters & stoves" }
+    }
+  }
+}

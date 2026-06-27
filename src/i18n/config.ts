@@ -21,13 +21,16 @@ import itPages from './locales/it/pages.json';
 import deProjects from './locales/de/projects.json';
 import enProjects from './locales/en/projects.json';
 import itProjects from './locales/it/projects.json';
+import deKalk from './locales/de/kalk.json';
+import enKalk from './locales/en/kalk.json';
+import itKalk from './locales/it/kalk.json';
 
-export const NAMESPACES = ['common', 'home', 'legal', 'kontakt', 'pages', 'projects'] as const;
+export const NAMESPACES = ['common', 'home', 'legal', 'kontakt', 'pages', 'projects', 'kalk'] as const;
 
 const resources = {
-  de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt, pages: dePages, projects: deProjects },
-  en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt, pages: enPages, projects: enProjects },
-  it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt, pages: itPages, projects: itProjects },
+  de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt, pages: dePages, projects: deProjects, kalk: deKalk },
+  en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt, pages: enPages, projects: enProjects, kalk: enKalk },
+  it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt, pages: itPages, projects: itProjects, kalk: itKalk },
 } as const;
 
 i18n.use(initReactI18next).init({

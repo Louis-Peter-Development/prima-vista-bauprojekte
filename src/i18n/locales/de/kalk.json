@@ -1,0 +1,62 @@
+{
+  "intro": {
+    "metaTitle": "Kostenkalkulator für Sanierung & Bau",
+    "crumbLabel": "Kalkulator · Live-Schätzung",
+    "title": "Was kostet<br/>Ihr <em>Bauprojekt?</em>",
+    "lede": "Ein paar Klicks. Eine ehrliche Spanne. Auf Basis von Daten aus über 400 abgeschlossenen Projekten in Hessen und der Innerschweiz — ohne Anmeldung, ohne Verkaufstaktik.",
+    "meta": [
+      { "label": "Berechnung", "value": "Live, in Echtzeit" },
+      { "label": "Datenbasis", "value": "412 reale Projekte" },
+      { "label": "Genauigkeit", "value": "−15 % / +20 % Vorab-Spanne" },
+      { "label": "Festpreis", "value": "Auf Wunsch in 24 Std." }
+    ],
+    "loading": "Wird geladen …"
+  },
+  "picker": {
+    "categoryLabel": "Kategorie",
+    "categoryHint": "Wählen Sie den Bereich, der zu Ihrem Vorhaben passt",
+    "optionCount": "{{count}} Optionen",
+    "leafHint": "Detail-Rechner auswählen"
+  },
+  "categories": {
+    "pakete": { "label": "Komplett-Pakete", "description": "Schlüsselfertige Sanierung — Wohnen, Gastro oder Büro" },
+    "gewerke": { "label": "Gewerke", "description": "Einzelne Gewerke detailliert kalkulieren" },
+    "heizung": { "label": "Heizmethoden", "description": "Heizsystem konfigurieren und kalkulieren" }
+  },
+  "leaves": {
+    "pakete": {
+      "haus": { "label": "Haus-Sanierung", "lead": "Generalsanierung — Dach bis Garten" },
+      "wohnung": { "label": "Wohnung-Sanierung", "lead": "Bäder, Küchen, Böden, Elektrik" },
+      "gastronomie": { "label": "Gastronomie-Ausbau", "lead": "Restaurant, Café, Bar oder Club" },
+      "buero": { "label": "Büro-Ausbau", "lead": "Office, Praxis, Open Space" }
+    },
+    "gewerke": {
+      "bad": { "label": "Bäder & Sanitär", "lead": "Wanne, Dusche, WC" },
+      "kueche": { "label": "Küchen & Möbelbau", "lead": "Schreinerei, Geräte" },
+      "boden": { "label": "Böden & Beläge", "lead": "Parkett, Stein, Vinyl" },
+      "elektro": { "label": "Elektroinstallation", "lead": "Strom, Licht, KNX" },
+      "sanitaer": { "label": "Sanitärinstallation", "lead": "Wasser, Abwasser" },
+      "trockenbau": { "label": "Trockenbau", "lead": "Wände, Decken" },
+      "maler": { "label": "Maler & Lackierer", "lead": "Farben, Tapeten" },
+      "fassade": { "label": "Fassadensanierung", "lead": "Putz, WDVS" },
+      "dach": { "label": "Dachsanierung", "lead": "Eindeckung, Dämmung" },
+      "abdichtung": { "label": "Abdichtung & Keller", "lead": "Feuchtigkeit" },
+      "treppen": { "label": "Treppen & Geländer", "lead": "Holz, Beton, Stahl" },
+      "garten": { "label": "Garten & Außenanlagen", "lead": "Terrasse, Wege" },
+      "barrierefreiheit": { "label": "Barrierefreiheit", "lead": "Bad, Türen, Zugang" },
+      "fenster": { "label": "Fenstertechnik", "lead": "Kunststoff, Holz, Alu" },
+      "rohbau": { "label": "Rohbau & Abbruch", "lead": "Fundament, Mauerwerk" },
+      "tueren": { "label": "Türen & Zargen", "lead": "Innen, Haus, Schiebe" },
+      "zaeune": { "label": "Zäune & Tore", "lead": "Doppelstab, Holz, Sichtschutz" }
+    },
+    "heizung": {
+      "heizkoerper": { "label": "Heizkörper", "lead": "Austausch & Lackierung" },
+      "heizstraenge": { "label": "Heizstränge", "lead": "Steig- & Verteilstränge" },
+      "fussboden": { "label": "Fußboden-Heizung", "lead": "Wassergeführt oder elektrisch" },
+      "waermepumpe": { "label": "Luft-Wärmepumpe", "lead": "Förderfähige Wärmequelle" },
+      "gas": { "label": "Gas-Heizung", "lead": "Brennwert" },
+      "pellet": { "label": "Pelletofen", "lead": "CO₂-neutrale Alternative" },
+      "sauna": { "label": "Saunaofen", "lead": "Thermen & Öfen" }
+    }
+  }
+}

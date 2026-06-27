@@ -1,0 +1,62 @@
+{
+  "intro": {
+    "metaTitle": "Preventivatore per ristrutturazione e costruzione",
+    "crumbLabel": "Preventivatore · Stima dal vivo",
+    "title": "Quanto costa il<br/>suo <em>progetto edilizio?</em>",
+    "lede": "Pochi clic. Una fascia onesta. Sulla base dei dati di oltre 400 progetti completati in Assia e nella Svizzera centrale — senza registrazione, senza tattiche di vendita.",
+    "meta": [
+      { "label": "Calcolo", "value": "Dal vivo, in tempo reale" },
+      { "label": "Base dati", "value": "412 progetti reali" },
+      { "label": "Precisione", "value": "−15% / +20% fascia preliminare" },
+      { "label": "Prezzo fisso", "value": "Su richiesta entro 24 h" }
+    ],
+    "loading": "Caricamento …"
+  },
+  "picker": {
+    "categoryLabel": "Categoria",
+    "categoryHint": "Scelga l'ambito adatto al suo progetto",
+    "optionCount": "{{count}} opzioni",
+    "leafHint": "Seleziona un preventivatore di dettaglio"
+  },
+  "categories": {
+    "pakete": { "label": "Pacchetti completi", "description": "Ristrutturazione chiavi in mano — abitazione, ristorazione o ufficio" },
+    "gewerke": { "label": "Lavorazioni", "description": "Calcola in dettaglio le singole lavorazioni" },
+    "heizung": { "label": "Riscaldamento", "description": "Configura e calcola un sistema di riscaldamento" }
+  },
+  "leaves": {
+    "pakete": {
+      "haus": { "label": "Ristrutturazione casa", "lead": "Ristrutturazione completa — dal tetto al giardino" },
+      "wohnung": { "label": "Ristrutturazione appartamento", "lead": "Bagni, cucine, pavimenti, impianti elettrici" },
+      "gastronomie": { "label": "Allestimento ristorazione", "lead": "Ristorante, caffè, bar o club" },
+      "buero": { "label": "Allestimento ufficio", "lead": "Ufficio, studio, open space" }
+    },
+    "gewerke": {
+      "bad": { "label": "Bagni & sanitari", "lead": "Vasca, doccia, WC" },
+      "kueche": { "label": "Cucine & mobili", "lead": "Falegnameria, elettrodomestici" },
+      "boden": { "label": "Pavimenti & rivestimenti", "lead": "Parquet, pietra, vinile" },
+      "elektro": { "label": "Impianti elettrici", "lead": "Corrente, luce, KNX" },
+      "sanitaer": { "label": "Impianto idraulico", "lead": "Acqua, acque reflue" },
+      "trockenbau": { "label": "Cartongesso", "lead": "Pareti, soffitti" },
+      "maler": { "label": "Imbiancatura & verniciatura", "lead": "Pitture, carte da parati" },
+      "fassade": { "label": "Ristrutturazione facciata", "lead": "Intonaco, cappotto" },
+      "dach": { "label": "Ristrutturazione tetto", "lead": "Manto, isolamento" },
+      "abdichtung": { "label": "Impermeabilizzazione & cantina", "lead": "Umidità" },
+      "treppen": { "label": "Scale & ringhiere", "lead": "Legno, cemento, acciaio" },
+      "garten": { "label": "Giardino & esterni", "lead": "Terrazza, vialetti" },
+      "barrierefreiheit": { "label": "Accessibilità", "lead": "Bagno, porte, accesso" },
+      "fenster": { "label": "Serramenti", "lead": "PVC, legno, alluminio" },
+      "rohbau": { "label": "Struttura & demolizione", "lead": "Fondazione, muratura" },
+      "tueren": { "label": "Porte & telai", "lead": "Interne, ingresso, scorrevoli" },
+      "zaeune": { "label": "Recinzioni & cancelli", "lead": "Doppia maglia, legno, frangivista" }
+    },
+    "heizung": {
+      "heizkoerper": { "label": "Radiatori", "lead": "Sostituzione & verniciatura" },
+      "heizstraenge": { "label": "Colonne di riscaldamento", "lead": "Colonne montanti e di distribuzione" },
+      "fussboden": { "label": "Riscaldamento a pavimento", "lead": "Ad acqua o elettrico" },
+      "waermepumpe": { "label": "Pompa di calore ad aria", "lead": "Fonte di calore incentivabile" },
+      "gas": { "label": "Riscaldamento a gas", "lead": "Condensazione" },
+      "pellet": { "label": "Stufa a pellet", "lead": "Alternativa a impatto zero di CO₂" },
+      "sauna": { "label": "Stufa per sauna", "lead": "Termali e stufe" }
+    }
+  }
+}

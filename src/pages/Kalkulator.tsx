@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useRef, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import PageIntro from '../components/common/PageIntro';
 import KalkCategoryPicker from '../components/kalkulator/KalkCategoryPicker';
 import KalkLeafPicker from '../components/kalkulator/KalkLeafPicker';
@@ -6,8 +7,11 @@ import { KATEGORIEN, type KategorieKey } from '../data/kalkulatorNav';
 import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/kalkulator.css';
 
+type MetaItem = { label: string; value: string };
+
 export default function Kalkulator() {
-  usePageTitle('Kostenkalkulator für Sanierung & Bau');
+  const { t } = useTranslation('kalk');
+  usePageTitle(t('intro.metaTitle'));
   const [kategorieKey, setKategorieKey] = useState<KategorieKey | null>(null);
   const [leafKey, setLeafKey] = useState<string | null>(null);
   const [categoryScrollTick, setCategoryScrollTick] = useState(0);
@@ -69,15 +73,10 @@ export default function Kalkulator() {
         className="kalk-intro"
         backgroundImage="/assets/img/photo-parkett-altbau.webp"
         crumbNumber="06"
-        crumbLabel="Kalkulator · Live-Schätzung"
-        title={<>Was kostet<br />Ihr <em>Bauprojekt?</em></>}
-        lede="Ein paar Klicks. Eine ehrliche Spanne. Auf Basis von Daten aus über 400 abgeschlossenen Projekten in Hessen und der Innerschweiz — ohne Anmeldung, ohne Verkaufstaktik."
-        meta={[
-          { label: 'Berechnung', value: 'Live, in Echtzeit' },
-          { label: 'Datenbasis', value: '412 reale Projekte' },
-          { label: 'Genauigkeit', value: '−15 % / +20 % Vorab-Spanne' },
-          { label: 'Festpreis', value: 'Auf Wunsch in 24 Std.' },
-        ]}
+        crumbLabel={t('intro.crumbLabel')}
+        title={<Trans i18nKey="kalk:intro.title" components={{ em: <em />, br: <br /> }} />}
+        lede={t('intro.lede')}
+        meta={t('intro.meta', { returnObjects: true }) as MetaItem[]}
       />
 
       <section className={`kalkulator kalkulator--nav ${LeafComponent ? 'has-embed' : ''}`}>
@@ -97,7 +96,7 @@ export default function Kalkulator() {
 
       {LeafComponent && (
         <div ref={embedRef} className="kalk-embed-wrap">
-          <Suspense fallback={<div className="kalk-loading">Wird geladen …</div>}>
+          <Suspense fallback={<div className="kalk-loading">{t('intro.loading')}</div>}>
             <LeafComponent embedded />
           </Suspense>
         </div>

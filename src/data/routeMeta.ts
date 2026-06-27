@@ -179,6 +179,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Projects & references',
       description: 'References and project examples from Prima Vista Bauprojekte for homes, hospitality, hotels and commercial spaces.',
     },
+    '/kalkulator': {
+      title: 'Cost calculator for renovation & construction',
+      description: 'Interactive cost calculator for house, apartment, trades and heating methods with transparent guide prices.',
+    },
   },
   it: {
     '/': {
@@ -213,6 +217,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/projekte': {
       title: 'Progetti e referenze',
       description: 'Referenze ed esempi di progetti di Prima Vista Bauprojekte per abitazioni, ristorazione, hotel e spazi commerciali.',
+    },
+    '/kalkulator': {
+      title: 'Preventivatore per ristrutturazione e costruzione',
+      description: 'Preventivatore interattivo per casa, appartamento, lavorazioni e metodi di riscaldamento con prezzi indicativi trasparenti.',
     },
   },
 };
