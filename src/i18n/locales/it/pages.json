@@ -1,0 +1,34 @@
+{
+  "heizmethoden": {
+    "crumbLabel": "Riscaldamento · Calore ed energia",
+    "title": "Metodi di<br/>riscaldamento moderni.<br/><em>Sette vie.</em>",
+    "lede": "Pronti per il futuro? Dal bilanciamento idraulico dell'impianto esistente alla pompa di calore ad aria incentivabile — progettiamo, forniamo e installiamo. Comprese le perizie di posizionamento e le domande di incentivo BAFA e KfW.",
+    "metaMethodsLabel": "Metodi",
+    "metaMethodsValue": "7 sistemi",
+    "metaFundingLabel": "Incentivi",
+    "metaFundingValue": "BAFA & KfW",
+    "metaCommissioningLabel": "Messa in funzione",
+    "metaCommissioningValue": "Interna",
+    "metaWarrantyLabel": "Garanzia",
+    "metaWarrantyValue": "5 anni",
+    "overviewEyebrow": "Panoramica",
+    "overviewTitle": "Sette metodi di riscaldamento,<br/>un <em>direttore lavori.</em>",
+    "overviewLede": "Quale tecnologia di riscaldamento sia davvero adatta al suo immobile dipende dallo standard di isolamento, dall'idraulica e dagli allacciamenti esistenti. Qui sotto trova i nostri sette sistemi più comuni — ognuno dei quali progettiamo, installiamo e mettiamo in funzione.",
+    "openCalculator": "Apri il preventivatore",
+    "footText": "Verifichiamo gratuitamente per lei gli incentivi BAFA e KfW. Consulenza energetica su richiesta prima della firma del contratto.",
+    "ctaQuote": "Preventivo vincolante",
+    "ctaConsult": "Richiedi una consulenza energetica",
+    "endEyebrow": "Pronto a modernizzare il riscaldamento?",
+    "endTitle": "Quale <em>sistema</em><br/>è adatto alla sua casa?",
+    "endCta": "Richiedi una consulenza",
+    "methods": {
+      "heizkoerper": { "title": "Radiatori", "desc": "Classici ed efficienti. Sostituzione, adattamento alla nuova tecnologia di riscaldamento, verniciatura e rivestimento — compreso il bilanciamento idraulico." },
+      "heizstraenge": { "title": "Colonne di riscaldamento", "desc": "Rinnovo completo delle colonne montanti e di distribuzione in condomini e appartamenti — coordinato piano per piano e con controllo della polvere." },
+      "fussboden": { "title": "Riscaldamento a pavimento", "subtitle": "Riscaldamento a superficie", "desc": "Ad acqua o elettrico — in nuove costruzioni, ristrutturazioni e in aggiunta nell'esistente. Compatibile con parquet, piastrelle e massetto a vista." },
+      "waermepumpe": { "title": "Pompa di calore ad aria", "desc": "Una fonte di calore incentivabile per case ben isolate. Dimensionamento, progettazione del posizionamento, perizia acustica e messa in funzione da un unico interlocutore." },
+      "gas": { "title": "Riscaldamento a gas", "subtitle": "A condensazione", "desc": "In presenza di un allacciamento del gas, una tecnologia ponte sicura — moderne caldaie a condensazione ad alta efficienza, predisposte per la miscelazione con idrogeno." },
+      "pellet": { "title": "Stufa a pellet", "desc": "Pellet di legno come alternativa a impatto zero di CO₂ — come riscaldamento centralizzato con serbatoio di accumulo o come stufa per singolo ambiente nella zona giorno." },
+      "thermen": { "title": "Stufa per sauna Prestige", "subtitle": "Termali e stufe", "desc": "Stufa per sauna di lusso da 9 kW, campionatura dei materiali e sistema di canna fumaria opzionale — per saune private e aree wellness." }
+    }
+  }
+}

@@ -163,6 +163,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Contact – make an enquiry',
       description: 'Contact Prima Vista Bauprojekte for renovation, refurbishment, fit-out and building projects in Germany and Switzerland.',
     },
+    '/heizmethoden': {
+      title: 'Modern heating methods – heat pump, gas, pellet & more',
+      description: 'Compare heating methods such as heat pump, gas heating, pellet, underfloor heating, radiators and hot water.',
+    },
   },
   it: {
     '/': {
@@ -181,6 +185,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/kontakt': {
       title: 'Contatti – invia una richiesta',
       description: 'Contatti Prima Vista Bauprojekte per ristrutturazione, rinnovo, allestimento e progetti edilizi in Germania e Svizzera.',
+    },
+    '/heizmethoden': {
+      title: 'Metodi di riscaldamento moderni – pompa di calore, gas, pellet e altro',
+      description: 'Confronta metodi di riscaldamento come pompa di calore, riscaldamento a gas, pellet, riscaldamento a pavimento, radiatori e acqua calda.',
     },
   },
 };

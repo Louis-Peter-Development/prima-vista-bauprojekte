@@ -1,0 +1,34 @@
+{
+  "heizmethoden": {
+    "crumbLabel": "Heating methods · Heat & energy",
+    "title": "Modern<br/>heating methods.<br/><em>Seven ways.</em>",
+    "lede": "Ready for the future? From hydraulic balancing of an existing system to a grant-eligible air-source heat pump — we plan, supply and install. Including siting assessments and BAFA and KfW funding applications.",
+    "metaMethodsLabel": "Methods",
+    "metaMethodsValue": "7 systems",
+    "metaFundingLabel": "Funding",
+    "metaFundingValue": "BAFA & KfW",
+    "metaCommissioningLabel": "Commissioning",
+    "metaCommissioningValue": "In-house",
+    "metaWarrantyLabel": "Warranty",
+    "metaWarrantyValue": "5 years",
+    "overviewEyebrow": "Overview",
+    "overviewTitle": "Seven heating methods,<br/>one <em>site manager.</em>",
+    "overviewLede": "Which heating technology really suits your property depends on insulation standard, hydraulics and the existing connections. Below are our seven most common systems — each of which we plan, install and commission.",
+    "openCalculator": "Open cost calculator",
+    "footText": "We check BAFA and KfW funding for you free of charge. Energy consulting on request before the contract is signed.",
+    "ctaQuote": "Binding quote",
+    "ctaConsult": "Request energy consulting",
+    "endEyebrow": "Ready to modernise your heating?",
+    "endTitle": "Which <em>system</em><br/>suits your home?",
+    "endCta": "Request a consultation",
+    "methods": {
+      "heizkoerper": { "title": "Radiators", "desc": "Classic and efficient. Replacement, adaptation to new heating technology, painting and cladding — including hydraulic balancing." },
+      "heizstraenge": { "title": "Heating risers", "desc": "Complete renewal of the riser and distribution pipes in apartment buildings — coordinated floor by floor, with dust control." },
+      "fussboden": { "title": "Underfloor heating", "subtitle": "Surface heating", "desc": "Water-based or electric — in new builds, renovations and retrofitted into existing buildings. Compatible with parquet, tiles and exposed screed." },
+      "waermepumpe": { "title": "Air-source heat pump", "desc": "A grant-eligible heat source for well-insulated homes. Sizing, siting plans, acoustic assessment and commissioning from a single source." },
+      "gas": { "title": "Gas heating", "subtitle": "Condensing", "desc": "Where a gas connection exists, a safe bridging technology — modern condensing boilers with high efficiency, ready for hydrogen blending." },
+      "pellet": { "title": "Pellet stove", "desc": "Wood pellets as a CO₂-neutral alternative — as central heating with a buffer tank or as a single-room heater in the living area." },
+      "thermen": { "title": "Prestige sauna heater", "subtitle": "Heaters & stoves", "desc": "A luxury 9 kW sauna heater, material sampling and an optional flue system — for private saunas and wellness areas." }
+    }
+  }
+}

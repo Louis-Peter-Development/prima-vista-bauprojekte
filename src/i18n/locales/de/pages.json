@@ -1,0 +1,34 @@
+{
+  "heizmethoden": {
+    "crumbLabel": "Heizmethoden · Wärme & Energie",
+    "title": "Moderne<br/>Heizmethoden.<br/><em>Sieben Wege.</em>",
+    "lede": "Bereit für die Zukunft? Vom hydraulischen Abgleich der Bestandsanlage bis zur förderfähigen Luft-Wärmepumpe — wir planen, liefern und bauen ein. Inklusive Aufstellgutachten, BAFA- und KfW-Anträgen.",
+    "metaMethodsLabel": "Methoden",
+    "metaMethodsValue": "7 Systeme",
+    "metaFundingLabel": "Förderung",
+    "metaFundingValue": "BAFA & KfW",
+    "metaCommissioningLabel": "Inbetriebnahme",
+    "metaCommissioningValue": "Inhouse",
+    "metaWarrantyLabel": "Garantie",
+    "metaWarrantyValue": "5 Jahre",
+    "overviewEyebrow": "Übersicht",
+    "overviewTitle": "Sieben Heizmethoden,<br/>ein <em>Bauleiter.</em>",
+    "overviewLede": "Welche Heiztechnik wirklich zu Ihrem Objekt passt, hängt von Dämmstandard, Hydraulik und vorhandenen Anschlüssen ab. Unten finden Sie unsere sieben häufigsten Systeme — jedes davon planen wir, montieren wir und nehmen wir in Betrieb.",
+    "openCalculator": "Kostenrechner öffnen",
+    "footText": "Förderung über BAFA und KfW prüfen wir kostenfrei mit. Energieberatung auf Wunsch vor der Vertragsunterzeichnung.",
+    "ctaQuote": "Verbindliches Angebot",
+    "ctaConsult": "Energieberatung anfragen",
+    "endEyebrow": "Bereit für die Heizungsmodernisierung?",
+    "endTitle": "Welches <em>System</em><br/>passt zu Ihrem Haus?",
+    "endCta": "Beratung anfragen",
+    "methods": {
+      "heizkoerper": { "title": "Heizkörper", "desc": "Klassisch und effizient. Austausch, Anpassung an neue Heiztechnik, Lackierung und Verkleidung — inklusive hydraulischem Abgleich." },
+      "heizstraenge": { "title": "Heizstränge", "desc": "Komplette Erneuerung der Steig- und Verteilstränge in Mehrfamilienhäusern und Etagenwohnungen — staub- und etagenweise koordiniert." },
+      "fussboden": { "title": "Fußboden-Heizung", "subtitle": "Flächenheizung", "desc": "Wassergeführt oder elektrisch — in Neubau, Sanierung und nachträglich im Bestand. Verträglich mit Parkett, Fliesen und Sichtestrich." },
+      "waermepumpe": { "title": "Luft-Wärmepumpe", "desc": "Förderfähige Wärmequelle für gut gedämmte Häuser. Auslegung, Aufstellplanung, Schallgutachten und Inbetriebnahme aus einer Hand." },
+      "gas": { "title": "Gas-Heizung", "subtitle": "Brennwert", "desc": "Bei vorhandenem Gasanschluss eine sichere Brückentechnologie — moderne Brennwertkessel mit hoher Effizienz, vorbereitet für Wasserstoff-Beimischung." },
+      "pellet": { "title": "Pelletofen", "desc": "Holzpellets als CO₂-neutrale Alternative — als Zentralheizung mit Pufferspeicher oder als Einzelraum-Heizgerät im Wohnbereich." },
+      "thermen": { "title": "Saunaofen Prestige", "subtitle": "Thermen & Öfen", "desc": "Luxus-Saunaofen mit 9 kW Leistung, Materialbemusterung und optionalem Kaminsystem — für private Saunen und Wellnessbereiche." }
+    }
+  }
+}
