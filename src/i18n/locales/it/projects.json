@@ -1,0 +1,336 @@
+{
+  "overview": {
+    "crumbLabel": "Progetti · Vetrina",
+    "title": "Spazi dal<br/><em>laboratorio.</em>",
+    "lede": "Una selezione dei progetti che abbiamo completato tra il 2024 e il 2026 — abitazioni, ristorazione e spazi a uso misto in Assia e nella Svizzera centrale.",
+    "metaShownLabel": "Mostrati",
+    "metaShownValue": "{{count}} progetti",
+    "metaPeriodLabel": "Periodo",
+    "metaPeriodValue": "2024–2026",
+    "metaRegionLabel": "Regione",
+    "metaRegionValue": "DE Francoforte · CH Lucerna",
+    "metaPortfolioLabel": "Portfolio completo",
+    "metaPortfolioValue": "Su richiesta",
+    "endEyebrow": "Il suo progetto",
+    "endTitle": "Ci racconti del<br/>suo <em>prossimo spazio.</em>",
+    "endCta": "Fissa un appuntamento"
+  },
+  "filter": {
+    "label": "Filtra per",
+    "all": "Tutti",
+    "wohnsitz": "Residenza",
+    "gastro": "Ristorazione",
+    "bad": "Bagni",
+    "kueche": "Cucine",
+    "commercial": "Commerciale"
+  },
+  "map": {
+    "eyebrow": "Sedi",
+    "title": "Costruito in due<br/>Paesi, con la stessa<br/><em>ambizione.</em>",
+    "intro": "Dalla sede di Francoforte seguiamo i progetti in tutta l'Assia. Da Emmenbrücke, la Svizzera centrale. I due uffici condividono direttori dei lavori, fornitori e standard.",
+    "cities": {
+      "frankfurt": "Francoforte sul Meno",
+      "emmenbruecke": "Emmenbrücke / Lucerna",
+      "wiesbaden": "Wiesbaden",
+      "zug": "Zugo, Zurigo",
+      "darmstadt": "Darmstadt, Offenbach",
+      "innerschweiz": "Svizzera centrale"
+    },
+    "photoAlt": "Il team Prima Vista in cantiere",
+    "photoLabel": "Team Francoforte — 2026"
+  },
+  "gallery": {
+    "more": "Scopri di più"
+  },
+  "detail": {
+    "back": "Tutti i progetti",
+    "factLocation": "Località",
+    "factYear": "Anno",
+    "factArea": "Superficie",
+    "factDuration": "Tempi",
+    "factScope": "Prestazione",
+    "aboutEyebrow": "Il progetto",
+    "aboutTitleSuffix": "nel dettaglio.",
+    "gewerkeHeading": "Lavorazioni coinvolte",
+    "galleryEyebrow": "Galleria",
+    "imageAlt": "{{headline}} — immagine {{n}}",
+    "prev": "Progetto precedente",
+    "next": "Progetto successivo",
+    "ctaTitle": "Un <em>progetto</em> simile?",
+    "ctaText": "Ce ne parli — prima consulenza gratuita, appuntamento entro 48 ore.",
+    "ctaExpress": "Preventivo express",
+    "ctaAppointment": "Fissa un appuntamento",
+    "notFound": "Progetto non trovato.",
+    "notFoundBack": "Torna alla panoramica",
+    "metaTitleSuffix": "Progetto",
+    "filmEyebrow": "Il film",
+    "tourEyebrow": "Tour",
+    "videoNoticeOne": "Il video è incorporato tramite YouTube e viene caricato solo dopo il suo consenso.",
+    "videoNoticeMany": "I video sono incorporati tramite YouTube e vengono caricati solo dopo il suo consenso.",
+    "videoManage": "Gestisci cookie e servizi",
+    "videoPlayAria": "Riproduci il video: {{title}}",
+    "videoConsentAria": "{{title}} — accetta i cookie per riprodurre",
+    "featureFallback": "{{headline}} — film",
+    "videoFallback": "{{headline}} — video {{n}}"
+  },
+  "items": {
+    "zoi-restaurant": {
+      "title": "Zoi — Ristorante · Francoforte · 2026",
+      "ttl": "Zoi Restaurant",
+      "meta": "Ristorazione · Francoforte · 2026",
+      "headline": "Zoi Restaurant",
+      "location": "Francoforte",
+      "area": "240 m²",
+      "duration": "16 settimane",
+      "scope": "Allestimento completo",
+      "videoLabel": "Ristrutturare un ristorante in tempo record — il film",
+      "description": [
+        "Un ristorante greco-mediterraneo — Zoi (in greco «vita») — dallo spazio commerciale al grezzo all'inaugurazione chiavi in mano, da un unico interlocutore.",
+        "Il concept degli ambienti vive di archi scultorei e nicchie a tutto sesto: profonde pareti color terracotta con nicchie incassate, boiserie scure e un bancone bar su misura con piano a mosaico costituiscono l'ossatura progettuale della sala.",
+        "Murales botanici dipinti a mano e un progetto illuminotecnico coordinato aggiungono accenti caldi, mentre tutte le lavorazioni — compresa la ventilazione per la ristorazione e l'intero impianto cucina — si integrano in modo coordinato."
+      ],
+      "gewerke": ["Cartongesso", "Impianti elettrici", "Idraulica", "Ventilazione", "Pavimentazione", "Piastrelle", "Imbiancatura e verniciatura", "Falegnameria", "Arredi su misura", "Illuminazione"]
+    },
+    "riad-restaurant": {
+      "title": "Riad — Ristorante · Francoforte · 2025",
+      "ttl": "Riad Restaurant",
+      "meta": "Ristorazione · Francoforte · 2025",
+      "headline": "Riad Restaurant",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "320 m²",
+      "duration": "14 settimane",
+      "scope": "Allestimento completo",
+      "description": [
+        "Un ristorante di ispirazione marocchina nel cuore di Sachsenhausen — dallo spazio commerciale al grezzo all'inaugurazione chiavi in mano in 14 settimane.",
+        "Il concept unisce l'architettura tradizionale del riad all'ambizione moderna di Francoforte: piastrelle zellige fatte a mano, cucina a vista, accenti in rame e un sistema di illuminazione che accompagna l'ospite attraverso la serata.",
+        "Tutte le 20 lavorazioni sono state coordinate da un unico interlocutore — compreso l'impianto di ventilazione a norma per la ristorazione e l'intero impianto cucina."
+      ],
+      "gewerke": ["Cartongesso", "Impianti elettrici", "Idraulica", "Ventilazione", "Pavimentazione", "Imbiancatura e verniciatura", "Cucina", "Arredi su misura", "Illuminazione"]
+    },
+    "villa-sichtbeton": {
+      "title": "Villa in cemento a vista · Lucerna · 2024",
+      "ttl": "Villa in cemento a vista",
+      "meta": "Residenza · Lucerna · 2024",
+      "headline": "Villa in cemento a vista",
+      "location": "Lucerna, Svizzera centrale",
+      "area": "280 m²",
+      "duration": "18 settimane",
+      "scope": "Ristrutturazione generale",
+      "description": [
+        "Ristrutturazione completa di una villa degli anni '70 con cemento a vista e una concezione scultorea degli spazi.",
+        "La struttura esistente è stata mantenuta e integrata con inserimenti moderni: scale in cemento a vista, una zona giorno-pranzo aperta con finestre a tutta altezza e un concept del bagno in pietra naturale.",
+        "Particolare attenzione al risanamento termico dell'involucro edilizio, preservando al contempo il carattere brutalista."
+      ],
+      "gewerke": ["Opere strutturali", "Facciata e cappotto", "Serramenti", "Cartongesso", "Impianti elettrici", "Idraulica", "Pavimenti", "Imbiancatura"]
+    },
+    "kueche-eichenholz": {
+      "title": "Cucina in rovere · Francoforte · 2025",
+      "ttl": "Cucina in rovere",
+      "meta": "Residenza · Francoforte · 2025",
+      "headline": "Cucina in rovere",
+      "location": "Frankfurt-Nordend",
+      "area": "42 m²",
+      "duration": "6 settimane",
+      "scope": "Zona cucina e pranzo",
+      "description": [
+        "Cucina su misura in rovere massello con ante senza maniglia e isola di cottura integrata.",
+        "L'intera zona cucina e pranzo è stata riorganizzata: nuovi allacciamenti elettrici e idraulici, riscaldamento a pavimento, striscia LED e un passaggio senza soluzione di continuità verso la zona giorno."
+      ],
+      "gewerke": ["Falegnameria", "Impianti elettrici", "Idraulica", "Pavimentazione", "Imbiancatura"]
+    },
+    "spa-bad-hotel": {
+      "title": "Bagno Spa — Hotel · Emmenbrücke · 2025",
+      "ttl": "Bagno Spa",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Bagno Spa Hotel",
+      "location": "Emmenbrücke, Svizzera centrale",
+      "area": "86 m²",
+      "duration": "8 settimane",
+      "scope": "Bagno wellness",
+      "description": [
+        "Trasformazione di un classico bagno d'hotel in un moderno paesaggio spa con vasca freestanding, doccia a pioggia e pietra naturale.",
+        "Il progetto illuminotecnico punta su strisce LED indirette e un cielo stellato sopra la vasca — dimmerato tramite KNX."
+      ],
+      "gewerke": ["Idraulica", "Impianti elettrici e KNX", "Pietra naturale", "Cartongesso", "Imbiancatura"]
+    },
+    "office-lobby": {
+      "title": "Office Lobby · Francoforte · 2026",
+      "ttl": "Office Lobby",
+      "meta": "Commerciale · Francoforte · 2026",
+      "headline": "Office Lobby",
+      "location": "Francoforte centro",
+      "area": "160 m²",
+      "duration": "10 settimane",
+      "scope": "Area reception",
+      "description": [
+        "Riprogettazione della lobby di un edificio per uffici con un albero vivo come divisorio, bancone reception in pietra naturale e pannelli a soffitto fonoassorbenti.",
+        "Il disegno del pavimento combina lastre in gres porcellanato di grande formato con inserti metallici — un sistema visivo che guida intuitivamente i visitatori verso la reception."
+      ],
+      "gewerke": ["Cartongesso", "Pavimentazione", "Impianti elettrici", "Imbiancatura", "Arredi su misura", "Piantumazione"]
+    },
+    "sushi-counter": {
+      "title": "Sushi Counter · Wiesbaden · 2025",
+      "ttl": "Sushi Counter",
+      "meta": "Ristorazione · Wiesbaden · 2025",
+      "headline": "Sushi Counter",
+      "location": "Wiesbaden centro",
+      "area": "110 m²",
+      "duration": "9 settimane",
+      "scope": "Allestimento ristorazione",
+      "description": [
+        "Un bancone da 16 posti in rovere oliato con refrigerazione integrata e zona di preparazione a vista.",
+        "Lo spazio compatto è stato progettato fin nei dettagli: impianto di ventilazione, trattamento dell'acqua, vetrina espositiva per il sushi e un rivestimento ligneo minimalista che unisce la sobrietà giapponese al Gründerzeit di Wiesbaden."
+      ],
+      "gewerke": ["Falegnameria", "Ventilazione", "Refrigerazione", "Idraulica", "Impianti elettrici", "Pavimentazione"]
+    },
+    "treppenhaus-sichtbeton": {
+      "title": "Scala in cemento a vista · Lucerna · 2024",
+      "ttl": "Vano scala",
+      "meta": "Commerciale · Lucerna · 2024",
+      "headline": "Scala in cemento a vista",
+      "location": "Lucerna, Svizzera centrale",
+      "area": "65 m²",
+      "duration": "6 settimane",
+      "scope": "Scala",
+      "description": [
+        "Scala elicoidale a sbalzo in cemento a vista su tre piani con corrimano LED incassato e ringhiera in acciaio inox.",
+        "La scala in legno esistente è stata rimossa e sostituita con una struttura monolitica in cemento — gettata in opera, levigata e sigillata."
+      ],
+      "gewerke": ["Opere strutturali", "Scale e ringhiere", "Impianti elettrici", "Imbiancatura"]
+    },
+    "doppelbad": {
+      "title": "Doppio bagno · Francoforte · 2025",
+      "ttl": "Doppio bagno",
+      "meta": "Residenza · Francoforte · 2025",
+      "headline": "Doppio bagno",
+      "location": "Frankfurt-Westend",
+      "area": "28 m²",
+      "duration": "5 settimane",
+      "scope": "Ristrutturazione bagno",
+      "description": [
+        "Due bagni collegati — un bagno padronale con vasca freestanding e un WC per gli ospiti con doccia — in un concept di materiali continuo in pietra naturale grigia.",
+        "Docce a filo pavimento, WC sospesi e un doppio lavabo su misura in Corian."
+      ],
+      "gewerke": ["Idraulica", "Piastrelle", "Impianti elettrici", "Cartongesso", "Imbiancatura"]
+    },
+    "naturstein-bad": {
+      "title": "Bagno in pietra naturale · Sachsenhausen · 2024",
+      "ttl": "Bagno in pietra naturale",
+      "meta": "Residenza · Sachsenhausen · 2024",
+      "headline": "Bagno in pietra naturale",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "18 m²",
+      "duration": "4 settimane",
+      "scope": "Ristrutturazione bagno",
+      "description": [
+        "Ristrutturazione completa del bagno di un edificio d'epoca con rivestimento continuo in pietra calcarea su parete e pavimento.",
+        "Posato fuga su fuga, con giunti di dilatazione minimi — il risultato sembra ricavato da un unico blocco."
+      ],
+      "gewerke": ["Idraulica", "Pietra naturale", "Impianti elettrici", "Impermeabilizzazione"]
+    },
+    "riad-bar-ecke": {
+      "title": "Riad — Angolo bar · Francoforte · 2025",
+      "ttl": "Riad Angolo bar",
+      "meta": "Ristorazione · Francoforte · 2025",
+      "headline": "Riad Angolo bar",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "45 m²",
+      "duration": "Parte del progetto Riad",
+      "scope": "Bar & lounge",
+      "description": [
+        "L'intimo angolo bar del ristorante Riad — con bancone su misura in noce scuro, piastrelle marocchine e calda luce ramata.",
+        "L'area è separata acusticamente dalla sala principale e offre posto a 18 ospiti."
+      ],
+      "gewerke": ["Falegnameria", "Impianti elettrici", "Piastrelle", "Imbiancatura"]
+    },
+    "concrete-corner": {
+      "title": "Concrete Corner · Lucerna · 2024",
+      "ttl": "Concrete Corner",
+      "meta": "Residenza · Lucerna · 2024",
+      "headline": "Concrete Corner",
+      "location": "Lucerna, Svizzera centrale",
+      "area": "Parte della Villa in cemento a vista",
+      "duration": "Parte del progetto villa",
+      "scope": "Zona giorno",
+      "description": [
+        "La zona giorno aperta della Villa in cemento a vista — con finestre a tutta altezza, camino incassato e un passaggio senza soluzione di continuità verso la terrazza.",
+        "Le pareti in cemento a vista sono state levigate e protette con un sigillante trasparente."
+      ],
+      "gewerke": ["Opere strutturali", "Serramenti", "Impianti elettrici", "Pavimentazione"]
+    },
+    "wine-bar": {
+      "title": "Wine Bar · Francoforte · 2026",
+      "ttl": "Wine Bar",
+      "meta": "Ristorazione · Francoforte · 2026",
+      "headline": "Wine Bar",
+      "location": "Francoforte centro",
+      "area": "95 m²",
+      "duration": "8 settimane",
+      "scope": "Allestimento ristorazione",
+      "description": [
+        "Un'elegante enoteca con cantina climatizzata dietro vetro, rustico bancone in rovere e suggestiva illuminazione a sospensione.",
+        "La climatizzazione è stata dimensionata appositamente per la conservazione del vino — zone separate per rossi e bianchi."
+      ],
+      "gewerke": ["Falegnameria", "Refrigerazione", "Impianti elettrici", "Idraulica", "Pavimentazione", "Imbiancatura"]
+    },
+    "spa-korridor": {
+      "title": "Corridoio Spa · Emmenbrücke · 2025",
+      "ttl": "Corridoio Spa",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Corridoio Spa",
+      "location": "Emmenbrücke, Svizzera centrale",
+      "area": "40 m²",
+      "duration": "Parte del progetto spa",
+      "scope": "Corridoio d'hotel",
+      "description": [
+        "L'area di passaggio tra le camere d'hotel e la spa — concepita come un corridoio meditativo con luce indiretta, lamelle in rovere e un gioco d'acqua in fondo al passaggio."
+      ],
+      "gewerke": ["Cartongesso", "Impianti elettrici", "Pavimentazione", "Imbiancatura", "Falegnameria"]
+    },
+    "eiche-parkett": {
+      "title": "Parquet in rovere · Wiesbaden · 2025",
+      "ttl": "Parquet in rovere",
+      "meta": "Residenza · Wiesbaden · 2025",
+      "headline": "Parquet in rovere",
+      "location": "Wiesbaden",
+      "area": "120 m²",
+      "duration": "3 settimane",
+      "scope": "Pavimentazione",
+      "description": [
+        "Posa di tavole in rovere massello a spina di pesce in un appartamento d'epoca — compresi preparazione del sottofondo, isolamento acustico al calpestio e battiscopa.",
+        "Le tavole sono state levigate in opera e oliate tre volte per una sensazione naturale e calda al tatto."
+      ],
+      "gewerke": ["Pavimentazione", "Cartongesso", "Imbiancatura"]
+    },
+    "lobby-garden": {
+      "title": "Lobby Garden · Francoforte · 2026",
+      "ttl": "Lobby Garden",
+      "meta": "Commerciale · Francoforte · 2026",
+      "headline": "Lobby Garden",
+      "location": "Francoforte centro",
+      "area": "80 m²",
+      "duration": "Parte del progetto lobby",
+      "scope": "Verde d'interni",
+      "description": [
+        "L'area verde della Office Lobby — un ulivo vivo circondato da isole di seduta in cemento spazzolato e fioriere integrate.",
+        "Irrigazione e drenaggio sono nascosti sotto la pavimentazione, la luce è gestita da un ciclo automatizzato di luce diurna."
+      ],
+      "gewerke": ["Piantumazione", "Idraulica", "Impianti elettrici", "Pavimentazione", "Arredi su misura"]
+    },
+    "riad-lampen": {
+      "title": "Riad — Lampade · Francoforte · 2025",
+      "ttl": "Riad Lampade",
+      "meta": "Ristorazione · Francoforte · 2025",
+      "headline": "Riad Lampade",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "Parte del progetto Riad",
+      "duration": "Parte del progetto Riad",
+      "scope": "Progetto illuminotecnico",
+      "description": [
+        "Lampade marocchine in ottone fatte a mano, importate singolarmente e collegate in opera a un sistema LED dimmerabile.",
+        "Ogni lampada proietta sulla parete un proprio motivo di ombre — un gioco di luce e ornamento che attraversa l'intera sala."
+      ],
+      "gewerke": ["Impianti elettrici", "Illuminazione", "Falegnameria"]
+    }
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "overview": {
+    "crumbLabel": "Projekte · Werkschau",
+    "title": "Räume aus<br/>der <em>Werkstatt.</em>",
+    "lede": "Eine Auswahl der Projekte, die wir 2024 bis 2026 abgeschlossen haben — Wohnsitz, Gastronomie und gemischte Nutzungen in Hessen und der Innerschweiz.",
+    "metaShownLabel": "Gezeigt",
+    "metaShownValue": "{{count}} Projekte",
+    "metaPeriodLabel": "Zeitraum",
+    "metaPeriodValue": "2024–2026",
+    "metaRegionLabel": "Region",
+    "metaRegionValue": "DE Frankfurt · CH Luzern",
+    "metaPortfolioLabel": "Vollständiges Portfolio",
+    "metaPortfolioValue": "Auf Anfrage",
+    "endEyebrow": "Ihr Projekt",
+    "endTitle": "Erzählen Sie uns von<br/>Ihrem <em>nächsten Raum.</em>",
+    "endCta": "Termin vereinbaren"
+  },
+  "filter": {
+    "label": "Filtern nach",
+    "all": "Alle",
+    "wohnsitz": "Wohnsitz",
+    "gastro": "Gastronomie",
+    "bad": "Bäder",
+    "kueche": "Küchen",
+    "commercial": "Commercial"
+  },
+  "map": {
+    "eyebrow": "Standorte",
+    "title": "Gebaut in zwei<br/>Ländern, gleicher<br/><em>Anspruch.</em>",
+    "intro": "Von der Frankfurter Zentrale aus betreuen wir Projekte in ganz Hessen. Aus Emmenbrücke heraus die Innerschweiz. Beide Büros teilen Bauleiter, Lieferanten und Standards.",
+    "cities": {
+      "frankfurt": "Frankfurt am Main",
+      "emmenbruecke": "Emmenbrücke / Luzern",
+      "wiesbaden": "Wiesbaden",
+      "zug": "Zug, Zürich",
+      "darmstadt": "Darmstadt, Offenbach",
+      "innerschweiz": "Innerschweiz"
+    },
+    "photoAlt": "Prima Vista Team auf der Baustelle",
+    "photoLabel": "Team Frankfurt — 2026"
+  },
+  "gallery": {
+    "more": "Mehr erfahren"
+  },
+  "detail": {
+    "back": "Alle Projekte",
+    "factLocation": "Standort",
+    "factYear": "Jahr",
+    "factArea": "Fläche",
+    "factDuration": "Bauzeit",
+    "factScope": "Leistung",
+    "aboutEyebrow": "Über das Projekt",
+    "aboutTitleSuffix": "im Detail.",
+    "gewerkeHeading": "Beteiligte Gewerke",
+    "galleryEyebrow": "Galerie",
+    "imageAlt": "{{headline}} — Bild {{n}}",
+    "prev": "Vorheriges Projekt",
+    "next": "Nächstes Projekt",
+    "ctaTitle": "Ähnliches <em>Projekt?</em>",
+    "ctaText": "Erzählen Sie uns davon — erste Beratung kostenlos, Termin innerhalb von 48 Stunden.",
+    "ctaExpress": "Blitz-Angebot",
+    "ctaAppointment": "Termin vereinbaren",
+    "notFound": "Projekt nicht gefunden.",
+    "notFoundBack": "Zurück zur Übersicht",
+    "metaTitleSuffix": "Projekt",
+    "filmEyebrow": "Der Film",
+    "tourEyebrow": "Rundgang",
+    "videoNoticeOne": "Das Video wird über YouTube eingebettet und erst nach Ihrer Zustimmung geladen.",
+    "videoNoticeMany": "Die Videos werden über YouTube eingebettet und erst nach Ihrer Zustimmung geladen.",
+    "videoManage": "Cookies & Dienste verwalten",
+    "videoPlayAria": "Video abspielen: {{title}}",
+    "videoConsentAria": "{{title}} — Cookies akzeptieren, um abzuspielen",
+    "featureFallback": "{{headline}} — Film",
+    "videoFallback": "{{headline}} — Video {{n}}"
+  },
+  "items": {
+    "zoi-restaurant": {
+      "title": "Zoi — Restaurant · Frankfurt · 2026",
+      "ttl": "Zoi Restaurant",
+      "meta": "Gastronomie · Frankfurt · 2026",
+      "headline": "Zoi Restaurant",
+      "location": "Frankfurt",
+      "area": "240 m²",
+      "duration": "16 Wochen",
+      "scope": "Komplett-Ausbau",
+      "videoLabel": "Restaurant sanieren in Rekordzeit — der Film",
+      "description": [
+        "Ein griechisch-mediterranes Restaurant — Zoi (griechisch für „Leben“) — von der rohen Gewerbefläche bis zur schlüsselfertigen Eröffnung aus einer Hand.",
+        "Das Raumkonzept lebt von skulpturalen Bögen und Rundbogen-Nischen: tiefe Terrakotta-Wände mit eingelassenen Rundnischen, dunkle Holzvertäfelungen und eine maßgefertigte Bar mit Mosaiktresen bilden das gestalterische Rückgrat des Gastraums.",
+        "Handgemalte botanische Wandmalereien und ein abgestimmtes Lichtkonzept setzen warme Akzente, während alle Gewerke — inklusive Gastro-Lüftung und kompletter Kücheninstallation — koordiniert ineinandergreifen."
+      ],
+      "gewerke": ["Trockenbau", "Elektroinstallation", "Sanitär", "Lüftung", "Bodenbelag", "Fliesen", "Maler & Lackierer", "Schreinerei", "Möbelbau", "Beleuchtung"]
+    },
+    "riad-restaurant": {
+      "title": "Riad — Restaurant · Frankfurt · 2025",
+      "ttl": "Riad Restaurant",
+      "meta": "Gastronomie · Frankfurt · 2025",
+      "headline": "Riad Restaurant",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "320 m²",
+      "duration": "14 Wochen",
+      "scope": "Komplett-Ausbau",
+      "description": [
+        "Ein marokkanisch inspiriertes Restaurant im Herzen von Sachsenhausen — von der rohen Gewerbefläche bis zur schlüsselfertigen Eröffnung in 14 Wochen.",
+        "Das Konzept verbindet traditionelle Riad-Architektur mit modernem Frankfurter Anspruch: handgefertigte Zellige-Fliesen, offene Showküche, kupferne Akzente und ein Lichtsystem, das den Gast durch den Abend begleitet.",
+        "Alle 20 Gewerke wurden aus einer Hand koordiniert — einschließlich Lüftungsanlage nach Gastro-Vorschriften und kompletter Kücheninstallation."
+      ],
+      "gewerke": ["Trockenbau", "Elektroinstallation", "Sanitär", "Lüftung", "Bodenbelag", "Maler & Lackierer", "Küche", "Möbelbau", "Beleuchtung"]
+    },
+    "villa-sichtbeton": {
+      "title": "Villa Sichtbeton · Luzern · 2024",
+      "ttl": "Villa Sichtbeton",
+      "meta": "Wohnsitz · Luzern · 2024",
+      "headline": "Villa Sichtbeton",
+      "location": "Luzern, Innerschweiz",
+      "area": "280 m²",
+      "duration": "18 Wochen",
+      "scope": "Generalsanierung",
+      "description": [
+        "Komplettsanierung einer 1970er-Jahre-Villa mit freiliegendem Sichtbeton und skulpturaler Raumgestaltung.",
+        "Die bestehende Substanz wurde erhalten und durch moderne Einbauten ergänzt: Sichtbetontreppen, ein offener Wohn-Essbereich mit raumhohen Fenstern und ein Badkonzept aus Naturstein.",
+        "Besonderer Fokus auf thermische Sanierung der Gebäudehülle bei gleichzeitiger Bewahrung des brutalistischen Charakters."
+      ],
+      "gewerke": ["Rohbau", "Fassade & WDVS", "Fenstertechnik", "Trockenbau", "Elektro", "Sanitär", "Böden", "Maler"]
+    },
+    "kueche-eichenholz": {
+      "title": "Küche Eichenholz · Frankfurt · 2025",
+      "ttl": "Küche Eiche",
+      "meta": "Wohnsitz · Frankfurt · 2025",
+      "headline": "Küche Eichenholz",
+      "location": "Frankfurt-Nordend",
+      "area": "42 m²",
+      "duration": "6 Wochen",
+      "scope": "Küchen- & Essbereich",
+      "description": [
+        "Maßgefertigte Einbauküche aus massiver Eiche mit griffloser Front und integrierter Kochinsel.",
+        "Der gesamte Koch- und Essbereich wurde neu strukturiert: neue Elektro- und Wasseranschlüsse, Fußbodenheizung, LED-Lichtband und ein nahtloser Übergang zum Wohnbereich."
+      ],
+      "gewerke": ["Schreinerei", "Elektro", "Sanitär", "Bodenbelag", "Maler"]
+    },
+    "spa-bad-hotel": {
+      "title": "Spa-Bad — Hotel · Emmenbrücke · 2025",
+      "ttl": "Spa-Bad",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Spa-Bad Hotel",
+      "location": "Emmenbrücke, Innerschweiz",
+      "area": "86 m²",
+      "duration": "8 Wochen",
+      "scope": "Wellness-Bad",
+      "description": [
+        "Umbau eines klassischen Hotelbadezimmers in eine moderne Spa-Landschaft mit freistehender Badewanne, Regendusche und Naturstein.",
+        "Das Lichtkonzept setzt auf indirekte LED-Streifen und einen Sternenhimmel über der Wanne — gedimmt über KNX."
+      ],
+      "gewerke": ["Sanitär", "Elektro & KNX", "Naturstein", "Trockenbau", "Maler"]
+    },
+    "office-lobby": {
+      "title": "Office Lobby · Frankfurt · 2026",
+      "ttl": "Office Lobby",
+      "meta": "Commercial · Frankfurt · 2026",
+      "headline": "Office Lobby",
+      "location": "Frankfurt-Innenstadt",
+      "area": "160 m²",
+      "duration": "10 Wochen",
+      "scope": "Empfangsbereich",
+      "description": [
+        "Neugestaltung der Lobby eines Bürogebäudes mit lebendem Baum als Raumteiler, Naturstein-Empfangstresen und akustisch wirksamen Deckenplatten.",
+        "Die Bodengestaltung kombiniert großformatige Feinsteinzeugplatten mit eingelassenen Metallstreifen — ein visuelles Leitsystem, das Besucher intuitiv zum Empfang führt."
+      ],
+      "gewerke": ["Trockenbau", "Bodenbelag", "Elektro", "Maler", "Möbelbau", "Bepflanzung"]
+    },
+    "sushi-counter": {
+      "title": "Sushi Counter · Wiesbaden · 2025",
+      "ttl": "Sushi Counter",
+      "meta": "Gastronomie · Wiesbaden · 2025",
+      "headline": "Sushi Counter",
+      "location": "Wiesbaden-Innenstadt",
+      "area": "110 m²",
+      "duration": "9 Wochen",
+      "scope": "Gastro-Ausbau",
+      "description": [
+        "Ein 16-Sitzplatz-Counter aus geöltem Eichenholz mit integrierter Kühlung und Live-Zubereitungszone.",
+        "Der kompakte Raum wurde bis ins Detail geplant: Belüftungsanlage, Wasseraufbereitung, Sushi-Display-Vitrine und eine minimalistische Holzverkleidung, die japanische Schlichtheit mit Wiesbadener Gründerzeit verbindet."
+      ],
+      "gewerke": ["Schreinerei", "Lüftung", "Kältetechnik", "Sanitär", "Elektro", "Bodenbelag"]
+    },
+    "treppenhaus-sichtbeton": {
+      "title": "Sichtbeton-Treppenhaus · Luzern · 2024",
+      "ttl": "Treppenhaus",
+      "meta": "Commercial · Luzern · 2024",
+      "headline": "Sichtbeton-Treppenhaus",
+      "location": "Luzern, Innerschweiz",
+      "area": "65 m²",
+      "duration": "6 Wochen",
+      "scope": "Treppenanlage",
+      "description": [
+        "Freitragende Sichtbeton-Wendeltreppe über drei Geschosse mit eingelassenem LED-Handlauf und Edelstahlgeländer.",
+        "Die bestehende Holztreppe wurde rückgebaut und durch eine monolithische Betonkonstruktion ersetzt — gegossen vor Ort, geschliffen und versiegelt."
+      ],
+      "gewerke": ["Rohbau", "Treppen & Geländer", "Elektro", "Maler"]
+    },
+    "doppelbad": {
+      "title": "Doppelbad · Frankfurt · 2025",
+      "ttl": "Doppelbad",
+      "meta": "Wohnsitz · Frankfurt · 2025",
+      "headline": "Doppelbad",
+      "location": "Frankfurt-Westend",
+      "area": "28 m²",
+      "duration": "5 Wochen",
+      "scope": "Badsanierung",
+      "description": [
+        "Zwei miteinander verbundene Bäder — ein Master-Bad mit freistehender Wanne und ein Gäste-WC mit Dusche — in einem durchgängigen Materialkonzept aus grauem Naturstein.",
+        "Bodenbündige Duschen, wandhängende WCs und ein maßgefertigter Doppelwaschtisch aus Corian."
+      ],
+      "gewerke": ["Sanitär", "Fliesen", "Elektro", "Trockenbau", "Maler"]
+    },
+    "naturstein-bad": {
+      "title": "Naturstein-Bad · Sachsenhausen · 2024",
+      "ttl": "Naturstein-Bad",
+      "meta": "Wohnsitz · Sachsenhausen · 2024",
+      "headline": "Naturstein-Bad",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "18 m²",
+      "duration": "4 Wochen",
+      "scope": "Badsanierung",
+      "description": [
+        "Komplettsanierung eines Altbau-Badezimmers mit durchgängigem Kalkstein-Belag an Wand und Boden.",
+        "Fuge auf Fuge verlegt, mit minimalen Dehnungsfugen — das Ergebnis wirkt wie aus einem Stück."
+      ],
+      "gewerke": ["Sanitär", "Naturstein", "Elektro", "Abdichtung"]
+    },
+    "riad-bar-ecke": {
+      "title": "Riad — Bar-Ecke · Frankfurt · 2025",
+      "ttl": "Riad Bar-Ecke",
+      "meta": "Gastronomie · Frankfurt · 2025",
+      "headline": "Riad Bar-Ecke",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "45 m²",
+      "duration": "Teil des Riad-Projekts",
+      "scope": "Bar & Lounge",
+      "description": [
+        "Die intime Bar-Ecke des Riad Restaurants — mit maßgefertigtem Tresen aus dunklem Walnussholz, marokkanischen Kacheln und warmem Kupferlicht.",
+        "Der Bereich ist akustisch vom Hauptraum getrennt und bietet Platz für 18 Gäste."
+      ],
+      "gewerke": ["Schreinerei", "Elektro", "Fliesen", "Maler"]
+    },
+    "concrete-corner": {
+      "title": "Concrete Corner · Luzern · 2024",
+      "ttl": "Concrete Corner",
+      "meta": "Wohnsitz · Luzern · 2024",
+      "headline": "Concrete Corner",
+      "location": "Luzern, Innerschweiz",
+      "area": "Teil der Villa Sichtbeton",
+      "duration": "Teil des Villa-Projekts",
+      "scope": "Wohnbereich",
+      "description": [
+        "Der offene Wohnbereich der Villa Sichtbeton — mit raumhohen Fenstern, eingelassenem Kamin und einem nahtlosen Übergang zur Terrasse.",
+        "Die Sichtbetonwände wurden geschliffen und mit einer transparenten Versiegelung geschützt."
+      ],
+      "gewerke": ["Rohbau", "Fenstertechnik", "Elektro", "Bodenbelag"]
+    },
+    "wine-bar": {
+      "title": "Wine Bar · Frankfurt · 2026",
+      "ttl": "Wine Bar",
+      "meta": "Gastronomie · Frankfurt · 2026",
+      "headline": "Wine Bar",
+      "location": "Frankfurt-Innenstadt",
+      "area": "95 m²",
+      "duration": "8 Wochen",
+      "scope": "Gastro-Ausbau",
+      "description": [
+        "Eine elegante Weinbar mit temperaturgesteuertem Weinlager hinter Glas, rustikalem Eichentresen und atmosphärischer Pendelbeleuchtung.",
+        "Die Klimaanlage wurde speziell für die Weinlagerung dimensioniert — getrennte Zonen für Rot- und Weißwein."
+      ],
+      "gewerke": ["Schreinerei", "Kältetechnik", "Elektro", "Sanitär", "Bodenbelag", "Maler"]
+    },
+    "spa-korridor": {
+      "title": "Spa-Korridor · Emmenbrücke · 2025",
+      "ttl": "Spa Korridor",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Spa Korridor",
+      "location": "Emmenbrücke, Innerschweiz",
+      "area": "40 m²",
+      "duration": "Teil des Spa-Projekts",
+      "scope": "Hotelflur",
+      "description": [
+        "Der Übergangsbereich zwischen Hotelzimmern und Spa-Bereich — gestaltet als meditativer Korridor mit indirektem Licht, Eichenholzlamellen und einem Wasserspiel am Ende des Gangs."
+      ],
+      "gewerke": ["Trockenbau", "Elektro", "Bodenbelag", "Maler", "Schreinerei"]
+    },
+    "eiche-parkett": {
+      "title": "Eiche Parkett · Wiesbaden · 2025",
+      "ttl": "Eiche Parkett",
+      "meta": "Wohnsitz · Wiesbaden · 2025",
+      "headline": "Eiche Parkett",
+      "location": "Wiesbaden",
+      "area": "120 m²",
+      "duration": "3 Wochen",
+      "scope": "Bodenbelag",
+      "description": [
+        "Verlegung von Eiche-Massivdielen im Fischgrätmuster in einer Altbauwohnung — einschließlich Unterbodenaufbereitung, Trittschalldämmung und Sockelleisten.",
+        "Die Dielen wurden vor Ort geschliffen und dreifach geölt für eine natürliche, warme Haptik."
+      ],
+      "gewerke": ["Bodenbelag", "Trockenbau", "Maler"]
+    },
+    "lobby-garden": {
+      "title": "Lobby Garden · Frankfurt · 2026",
+      "ttl": "Lobby Garden",
+      "meta": "Commercial · Frankfurt · 2026",
+      "headline": "Lobby Garden",
+      "location": "Frankfurt-Innenstadt",
+      "area": "80 m²",
+      "duration": "Teil des Lobby-Projekts",
+      "scope": "Innenraumbegrünung",
+      "description": [
+        "Der begrünte Bereich der Office Lobby — ein lebender Olivenbaum, umgeben von Sitzinseln aus gebürstetem Beton und integrierten Pflanzbeeten.",
+        "Bewässerung und Drainage wurden unter dem Bodenbelag versteckt, das Licht über einen automatisierten Tageslichtzyklus gesteuert."
+      ],
+      "gewerke": ["Bepflanzung", "Sanitär", "Elektro", "Bodenbelag", "Möbelbau"]
+    },
+    "riad-lampen": {
+      "title": "Riad — Lampen · Frankfurt · 2025",
+      "ttl": "Riad Lampen",
+      "meta": "Gastronomie · Frankfurt · 2025",
+      "headline": "Riad Lampen",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "Teil des Riad-Projekts",
+      "duration": "Teil des Riad-Projekts",
+      "scope": "Beleuchtungskonzept",
+      "description": [
+        "Handgefertigte marokkanische Messinglampen, einzeln importiert und vor Ort an ein dimmbares LED-System angeschlossen.",
+        "Jede Lampe wirft ein eigenes Schattenmuster an die Wand — ein Spiel aus Licht und Ornament, das den gesamten Gastraum durchzieht."
+      ],
+      "gewerke": ["Elektro", "Beleuchtung", "Schreinerei"]
+    }
+  }
+}

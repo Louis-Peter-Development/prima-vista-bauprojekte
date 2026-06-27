@@ -1,38 +1,36 @@
+import { Trans, useTranslation } from 'react-i18next';
 import SectionEyebrow from '../common/SectionEyebrow';
 
-const CITIES = [
-  ['DE', 'Frankfurt am Main'],
-  ['CH', 'Emmenbrücke / Luzern'],
-  ['DE', 'Wiesbaden'],
-  ['CH', 'Zug, Zürich'],
-  ['DE', 'Darmstadt, Offenbach'],
-  ['CH', 'Innerschweiz'],
+const CITIES: Array<[string, string]> = [
+  ['DE', 'frankfurt'],
+  ['CH', 'emmenbruecke'],
+  ['DE', 'wiesbaden'],
+  ['CH', 'zug'],
+  ['DE', 'darmstadt'],
+  ['CH', 'innerschweiz'],
 ];
 
 export default function MapBand() {
+  const { t } = useTranslation('projects');
   return (
     <section className="map-band">
       <div className="map-band__inner">
         <div className="reveal reveal--left">
-          <SectionEyebrow onDark>Standorte</SectionEyebrow>
+          <SectionEyebrow onDark>{t('map.eyebrow')}</SectionEyebrow>
           <h2>
-            Gebaut in zwei<br />
-            Ländern, gleicher<br />
-            <em>Anspruch.</em>
+            <Trans i18nKey="projects:map.title" components={{ em: <em />, br: <br /> }} />
           </h2>
-          <p>
-            Von der Frankfurter Zentrale aus betreuen wir Projekte in ganz Hessen. Aus Emmenbrücke heraus die Innerschweiz. Beide Büros teilen Bauleiter, Lieferanten und Standards.
-          </p>
+          <p>{t('map.intro')}</p>
           <ul className="map-band__cities">
-            {CITIES.map(([country, city]) => (
-              <li key={`${country}-${city}`}><span className="num">{country}</span><span className="city">{city}</span></li>
+            {CITIES.map(([country, key]) => (
+              <li key={`${country}-${key}`}><span className="num">{country}</span><span className="city">{t(`map.cities.${key}`)}</span></li>
             ))}
           </ul>
         </div>
         <div className="map-band__photo reveal reveal--right" data-delay="1">
-          <img src="/assets/img/proj-team-jacket.webp" alt="Prima Vista Team auf der Baustelle" width="900" height="1600" loading="lazy" />
+          <img src="/assets/img/proj-team-jacket.webp" alt={t('map.photoAlt')} width="900" height="1600" loading="lazy" />
           <div className="map-band__photo-label">
-            <span>Team Frankfurt — 2026</span>
+            <span>{t('map.photoLabel')}</span>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
 import type { LightboxItem } from '../Lightbox';
 import type { Project } from '../../data/projects';
 
@@ -34,6 +35,7 @@ export default function ProjectGallery({
   getIndex,
   onOpen,
 }: ProjectGalleryProps) {
+  const { t } = useTranslation('projects');
   const totalVisible = visible.filter((project) => project.match).length;
   const projects = visible.map(({ p, match }, index) => {
     if (!match) return { p, match, layout: undefined, align: undefined };
@@ -77,15 +79,15 @@ export default function ProjectGallery({
             </a>
             <div className="g-card__body">
               <span className="g-card__num">{p.num}</span>
-              <h3 className="g-card__ttl">{p.ttl}</h3>
-              <span className="g-card__meta">{p.meta}</span>
+              <h3 className="g-card__ttl">{t(`items.${p.slug}.ttl`, { defaultValue: p.ttl })}</h3>
+              <span className="g-card__meta">{t(`items.${p.slug}.meta`, { defaultValue: p.meta })}</span>
               {p.detail && (
                 <Link
                   className="g-card__more"
                   to={`/projekte/${p.slug}`}
                   onClick={(e) => e.stopPropagation()}
                 >
-                  Mehr erfahren <span>›</span>
+                  {t('gallery.more')} <span>›</span>
                 </Link>
               )}
             </div>

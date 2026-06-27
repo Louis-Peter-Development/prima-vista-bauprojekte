@@ -1,0 +1,336 @@
+{
+  "overview": {
+    "crumbLabel": "Projects · Showcase",
+    "title": "Spaces from<br/>the <em>workshop.</em>",
+    "lede": "A selection of the projects we completed between 2024 and 2026 — homes, hospitality and mixed-use spaces in Hesse and Central Switzerland.",
+    "metaShownLabel": "Shown",
+    "metaShownValue": "{{count}} projects",
+    "metaPeriodLabel": "Period",
+    "metaPeriodValue": "2024–2026",
+    "metaRegionLabel": "Region",
+    "metaRegionValue": "DE Frankfurt · CH Lucerne",
+    "metaPortfolioLabel": "Full portfolio",
+    "metaPortfolioValue": "On request",
+    "endEyebrow": "Your project",
+    "endTitle": "Tell us about<br/>your <em>next space.</em>",
+    "endCta": "Book an appointment"
+  },
+  "filter": {
+    "label": "Filter by",
+    "all": "All",
+    "wohnsitz": "Residence",
+    "gastro": "Hospitality",
+    "bad": "Bathrooms",
+    "kueche": "Kitchens",
+    "commercial": "Commercial"
+  },
+  "map": {
+    "eyebrow": "Locations",
+    "title": "Built in two<br/>countries, the same<br/><em>standard.</em>",
+    "intro": "From our Frankfurt base we look after projects across Hesse. From Emmenbrücke, Central Switzerland. Both offices share site managers, suppliers and standards.",
+    "cities": {
+      "frankfurt": "Frankfurt am Main",
+      "emmenbruecke": "Emmenbrücke / Lucerne",
+      "wiesbaden": "Wiesbaden",
+      "zug": "Zug, Zurich",
+      "darmstadt": "Darmstadt, Offenbach",
+      "innerschweiz": "Central Switzerland"
+    },
+    "photoAlt": "Prima Vista team on site",
+    "photoLabel": "Team Frankfurt — 2026"
+  },
+  "gallery": {
+    "more": "Learn more"
+  },
+  "detail": {
+    "back": "All projects",
+    "factLocation": "Location",
+    "factYear": "Year",
+    "factArea": "Area",
+    "factDuration": "Build time",
+    "factScope": "Scope",
+    "aboutEyebrow": "About the project",
+    "aboutTitleSuffix": "in detail.",
+    "gewerkeHeading": "Trades involved",
+    "galleryEyebrow": "Gallery",
+    "imageAlt": "{{headline}} — image {{n}}",
+    "prev": "Previous project",
+    "next": "Next project",
+    "ctaTitle": "A similar <em>project?</em>",
+    "ctaText": "Tell us about it — first consultation free, an appointment within 48 hours.",
+    "ctaExpress": "Express quote",
+    "ctaAppointment": "Book an appointment",
+    "notFound": "Project not found.",
+    "notFoundBack": "Back to the overview",
+    "metaTitleSuffix": "Project",
+    "filmEyebrow": "The film",
+    "tourEyebrow": "Walkthrough",
+    "videoNoticeOne": "The video is embedded via YouTube and only loads once you give your consent.",
+    "videoNoticeMany": "The videos are embedded via YouTube and only load once you give your consent.",
+    "videoManage": "Manage cookies & services",
+    "videoPlayAria": "Play video: {{title}}",
+    "videoConsentAria": "{{title}} — accept cookies to play",
+    "featureFallback": "{{headline}} — film",
+    "videoFallback": "{{headline}} — video {{n}}"
+  },
+  "items": {
+    "zoi-restaurant": {
+      "title": "Zoi — Restaurant · Frankfurt · 2026",
+      "ttl": "Zoi Restaurant",
+      "meta": "Hospitality · Frankfurt · 2026",
+      "headline": "Zoi Restaurant",
+      "location": "Frankfurt",
+      "area": "240 m²",
+      "duration": "16 weeks",
+      "scope": "Complete fit-out",
+      "videoLabel": "Renovating a restaurant in record time — the film",
+      "description": [
+        "A Greek-Mediterranean restaurant — Zoi (Greek for “life”) — from bare commercial space to turnkey opening, all from a single source.",
+        "The interior is built around sculptural arches and rounded niches: deep terracotta walls with recessed alcoves, dark wood panelling and a bespoke bar with a mosaic counter form the design backbone of the dining room.",
+        "Hand-painted botanical murals and a coordinated lighting scheme add warm accents, while every trade — including hospitality ventilation and the complete kitchen installation — interlocks in a coordinated way."
+      ],
+      "gewerke": ["Drywall", "Electrical installation", "Plumbing", "Ventilation", "Flooring", "Tiling", "Painting & finishing", "Joinery", "Cabinetry", "Lighting"]
+    },
+    "riad-restaurant": {
+      "title": "Riad — Restaurant · Frankfurt · 2025",
+      "ttl": "Riad Restaurant",
+      "meta": "Hospitality · Frankfurt · 2025",
+      "headline": "Riad Restaurant",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "320 m²",
+      "duration": "14 weeks",
+      "scope": "Complete fit-out",
+      "description": [
+        "A Moroccan-inspired restaurant in the heart of Sachsenhausen — from bare commercial space to turnkey opening in 14 weeks.",
+        "The concept combines traditional riad architecture with modern Frankfurt ambition: handmade zellige tiles, an open show kitchen, copper accents and a lighting system that guides the guest through the evening.",
+        "All 20 trades were coordinated from a single source — including a ventilation system compliant with hospitality regulations and the complete kitchen installation."
+      ],
+      "gewerke": ["Drywall", "Electrical installation", "Plumbing", "Ventilation", "Flooring", "Painting & finishing", "Kitchen", "Cabinetry", "Lighting"]
+    },
+    "villa-sichtbeton": {
+      "title": "Exposed-Concrete Villa · Lucerne · 2024",
+      "ttl": "Exposed-Concrete Villa",
+      "meta": "Residence · Lucerne · 2024",
+      "headline": "Exposed-Concrete Villa",
+      "location": "Lucerne, Central Switzerland",
+      "area": "280 m²",
+      "duration": "18 weeks",
+      "scope": "Full renovation",
+      "description": [
+        "Full renovation of a 1970s villa with exposed concrete and sculptural spatial design.",
+        "The existing fabric was preserved and complemented with modern additions: exposed-concrete stairs, an open living-dining area with floor-to-ceiling windows and a bathroom concept in natural stone.",
+        "Particular focus on the thermal renovation of the building envelope while preserving its brutalist character."
+      ],
+      "gewerke": ["Shell construction", "Façade & ETICS", "Windows", "Drywall", "Electrical", "Plumbing", "Floors", "Painting"]
+    },
+    "kueche-eichenholz": {
+      "title": "Oak Kitchen · Frankfurt · 2025",
+      "ttl": "Oak Kitchen",
+      "meta": "Residence · Frankfurt · 2025",
+      "headline": "Oak Kitchen",
+      "location": "Frankfurt-Nordend",
+      "area": "42 m²",
+      "duration": "6 weeks",
+      "scope": "Kitchen & dining area",
+      "description": [
+        "A bespoke fitted kitchen in solid oak with a handleless front and an integrated cooking island.",
+        "The entire cooking and dining area was reorganised: new electrical and water connections, underfloor heating, an LED light strip and a seamless transition to the living area."
+      ],
+      "gewerke": ["Joinery", "Electrical", "Plumbing", "Flooring", "Painting"]
+    },
+    "spa-bad-hotel": {
+      "title": "Spa Bath — Hotel · Emmenbrücke · 2025",
+      "ttl": "Spa Bath",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Spa Bath Hotel",
+      "location": "Emmenbrücke, Central Switzerland",
+      "area": "86 m²",
+      "duration": "8 weeks",
+      "scope": "Wellness bathroom",
+      "description": [
+        "Conversion of a classic hotel bathroom into a modern spa landscape with a freestanding tub, rain shower and natural stone.",
+        "The lighting scheme relies on indirect LED strips and a starry sky above the tub — dimmed via KNX."
+      ],
+      "gewerke": ["Plumbing", "Electrical & KNX", "Natural stone", "Drywall", "Painting"]
+    },
+    "office-lobby": {
+      "title": "Office Lobby · Frankfurt · 2026",
+      "ttl": "Office Lobby",
+      "meta": "Commercial · Frankfurt · 2026",
+      "headline": "Office Lobby",
+      "location": "Frankfurt city centre",
+      "area": "160 m²",
+      "duration": "10 weeks",
+      "scope": "Reception area",
+      "description": [
+        "Redesign of an office building's lobby with a living tree as a room divider, a natural-stone reception counter and acoustically effective ceiling panels.",
+        "The floor design combines large-format porcelain stoneware with inlaid metal strips — a visual guidance system that leads visitors intuitively to reception."
+      ],
+      "gewerke": ["Drywall", "Flooring", "Electrical", "Painting", "Cabinetry", "Planting"]
+    },
+    "sushi-counter": {
+      "title": "Sushi Counter · Wiesbaden · 2025",
+      "ttl": "Sushi Counter",
+      "meta": "Hospitality · Wiesbaden · 2025",
+      "headline": "Sushi Counter",
+      "location": "Wiesbaden city centre",
+      "area": "110 m²",
+      "duration": "9 weeks",
+      "scope": "Hospitality fit-out",
+      "description": [
+        "A 16-seat counter in oiled oak with integrated refrigeration and a live-preparation zone.",
+        "The compact space was planned down to the detail: ventilation system, water treatment, sushi display case and minimalist wood cladding that combines Japanese simplicity with Wiesbaden's Gründerzeit heritage."
+      ],
+      "gewerke": ["Joinery", "Ventilation", "Refrigeration", "Plumbing", "Electrical", "Flooring"]
+    },
+    "treppenhaus-sichtbeton": {
+      "title": "Exposed-Concrete Staircase · Lucerne · 2024",
+      "ttl": "Staircase",
+      "meta": "Commercial · Lucerne · 2024",
+      "headline": "Exposed-Concrete Staircase",
+      "location": "Lucerne, Central Switzerland",
+      "area": "65 m²",
+      "duration": "6 weeks",
+      "scope": "Staircase",
+      "description": [
+        "A cantilevered exposed-concrete spiral staircase over three storeys with an inset LED handrail and a stainless-steel balustrade.",
+        "The existing wooden staircase was removed and replaced with a monolithic concrete structure — cast on site, ground and sealed."
+      ],
+      "gewerke": ["Shell construction", "Stairs & railings", "Electrical", "Painting"]
+    },
+    "doppelbad": {
+      "title": "Double Bathroom · Frankfurt · 2025",
+      "ttl": "Double Bathroom",
+      "meta": "Residence · Frankfurt · 2025",
+      "headline": "Double Bathroom",
+      "location": "Frankfurt-Westend",
+      "area": "28 m²",
+      "duration": "5 weeks",
+      "scope": "Bathroom renovation",
+      "description": [
+        "Two connected bathrooms — a master bath with a freestanding tub and a guest WC with a shower — in a continuous material concept of grey natural stone.",
+        "Floor-flush showers, wall-hung WCs and a bespoke double washbasin in Corian."
+      ],
+      "gewerke": ["Plumbing", "Tiling", "Electrical", "Drywall", "Painting"]
+    },
+    "naturstein-bad": {
+      "title": "Natural-Stone Bath · Sachsenhausen · 2024",
+      "ttl": "Natural-Stone Bath",
+      "meta": "Residence · Sachsenhausen · 2024",
+      "headline": "Natural-Stone Bath",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "18 m²",
+      "duration": "4 weeks",
+      "scope": "Bathroom renovation",
+      "description": [
+        "Full renovation of a period-building bathroom with continuous limestone on walls and floor.",
+        "Laid joint on joint, with minimal expansion joints — the result looks as if cut from a single block."
+      ],
+      "gewerke": ["Plumbing", "Natural stone", "Electrical", "Waterproofing"]
+    },
+    "riad-bar-ecke": {
+      "title": "Riad — Bar Corner · Frankfurt · 2025",
+      "ttl": "Riad Bar Corner",
+      "meta": "Hospitality · Frankfurt · 2025",
+      "headline": "Riad Bar Corner",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "45 m²",
+      "duration": "Part of the Riad project",
+      "scope": "Bar & lounge",
+      "description": [
+        "The intimate bar corner of the Riad restaurant — with a bespoke counter in dark walnut, Moroccan tiles and warm copper light.",
+        "The area is acoustically separated from the main room and seats 18 guests."
+      ],
+      "gewerke": ["Joinery", "Electrical", "Tiling", "Painting"]
+    },
+    "concrete-corner": {
+      "title": "Concrete Corner · Lucerne · 2024",
+      "ttl": "Concrete Corner",
+      "meta": "Residence · Lucerne · 2024",
+      "headline": "Concrete Corner",
+      "location": "Lucerne, Central Switzerland",
+      "area": "Part of the Exposed-Concrete Villa",
+      "duration": "Part of the villa project",
+      "scope": "Living area",
+      "description": [
+        "The open living area of the Exposed-Concrete Villa — with floor-to-ceiling windows, an inset fireplace and a seamless transition to the terrace.",
+        "The exposed-concrete walls were ground and protected with a transparent sealer."
+      ],
+      "gewerke": ["Shell construction", "Windows", "Electrical", "Flooring"]
+    },
+    "wine-bar": {
+      "title": "Wine Bar · Frankfurt · 2026",
+      "ttl": "Wine Bar",
+      "meta": "Hospitality · Frankfurt · 2026",
+      "headline": "Wine Bar",
+      "location": "Frankfurt city centre",
+      "area": "95 m²",
+      "duration": "8 weeks",
+      "scope": "Hospitality fit-out",
+      "description": [
+        "An elegant wine bar with a temperature-controlled wine store behind glass, a rustic oak counter and atmospheric pendant lighting.",
+        "The air-conditioning was sized specifically for wine storage — separate zones for red and white wine."
+      ],
+      "gewerke": ["Joinery", "Refrigeration", "Electrical", "Plumbing", "Flooring", "Painting"]
+    },
+    "spa-korridor": {
+      "title": "Spa Corridor · Emmenbrücke · 2025",
+      "ttl": "Spa Corridor",
+      "meta": "Hotel · Emmenbrücke · 2025",
+      "headline": "Spa Corridor",
+      "location": "Emmenbrücke, Central Switzerland",
+      "area": "40 m²",
+      "duration": "Part of the spa project",
+      "scope": "Hotel corridor",
+      "description": [
+        "The transition between the hotel rooms and the spa area — designed as a meditative corridor with indirect light, oak slats and a water feature at the end of the passage."
+      ],
+      "gewerke": ["Drywall", "Electrical", "Flooring", "Painting", "Joinery"]
+    },
+    "eiche-parkett": {
+      "title": "Oak Parquet · Wiesbaden · 2025",
+      "ttl": "Oak Parquet",
+      "meta": "Residence · Wiesbaden · 2025",
+      "headline": "Oak Parquet",
+      "location": "Wiesbaden",
+      "area": "120 m²",
+      "duration": "3 weeks",
+      "scope": "Flooring",
+      "description": [
+        "Laying solid oak boards in a herringbone pattern in a period apartment — including subfloor preparation, impact-sound insulation and skirting boards.",
+        "The boards were ground on site and triple-oiled for a natural, warm feel."
+      ],
+      "gewerke": ["Flooring", "Drywall", "Painting"]
+    },
+    "lobby-garden": {
+      "title": "Lobby Garden · Frankfurt · 2026",
+      "ttl": "Lobby Garden",
+      "meta": "Commercial · Frankfurt · 2026",
+      "headline": "Lobby Garden",
+      "location": "Frankfurt city centre",
+      "area": "80 m²",
+      "duration": "Part of the lobby project",
+      "scope": "Interior planting",
+      "description": [
+        "The planted area of the Office Lobby — a living olive tree surrounded by seating islands in brushed concrete and integrated planting beds.",
+        "Irrigation and drainage were hidden beneath the flooring, the lighting controlled by an automated daylight cycle."
+      ],
+      "gewerke": ["Planting", "Plumbing", "Electrical", "Flooring", "Cabinetry"]
+    },
+    "riad-lampen": {
+      "title": "Riad — Lamps · Frankfurt · 2025",
+      "ttl": "Riad Lamps",
+      "meta": "Hospitality · Frankfurt · 2025",
+      "headline": "Riad Lamps",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "Part of the Riad project",
+      "duration": "Part of the Riad project",
+      "scope": "Lighting concept",
+      "description": [
+        "Hand-crafted Moroccan brass lamps, imported individually and connected on site to a dimmable LED system.",
+        "Each lamp casts its own pattern of shadows on the wall — a play of light and ornament that runs through the entire dining room."
+      ],
+      "gewerke": ["Electrical", "Lighting", "Joinery"]
+    }
+  }
+}

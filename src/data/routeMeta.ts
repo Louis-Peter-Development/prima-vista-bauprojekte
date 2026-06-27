@@ -175,6 +175,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Complete packages for renovation & construction',
       description: 'Complete packages for house, apartment, hospitality and office with coordinated trades and a transparent cost framework.',
     },
+    '/projekte': {
+      title: 'Projects & references',
+      description: 'References and project examples from Prima Vista Bauprojekte for homes, hospitality, hotels and commercial spaces.',
+    },
   },
   it: {
     '/': {
@@ -205,6 +209,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/komplett-pakete': {
       title: 'Pacchetti completi per ristrutturazione e costruzione',
       description: 'Pacchetti completi per casa, appartamento, ristorazione e ufficio con lavorazioni coordinate e un quadro dei costi trasparente.',
+    },
+    '/projekte': {
+      title: 'Progetti e referenze',
+      description: 'Referenze ed esempi di progetti di Prima Vista Bauprojekte per abitazioni, ristorazione, hotel e spazi commerciali.',
     },
   },
 };

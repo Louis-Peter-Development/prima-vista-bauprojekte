@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
 import PageIntro from '../components/common/PageIntro';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import MapBand from '../components/projekte/MapBand';
@@ -7,11 +8,10 @@ import ProjectFilter from '../components/projekte/ProjectFilter';
 import ProjectGallery, { projectAnchorId } from '../components/projekte/ProjectGallery';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { PROJECTS, type Project, type ProjectTag } from '../data/projects';
-import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/projekte.css';
 
 export default function Projekte() {
-  usePageTitle('Projekte & Referenzen');
+  const { t } = useTranslation('projects');
   const { open } = useLightbox();
   const { hash } = useLocation();
   const [filter, setFilter] = useState<'all' | ProjectTag>('all');
@@ -22,7 +22,8 @@ export default function Projekte() {
     [filter],
   );
   const shownProjects = visible.filter((v) => v.match).map((v) => v.p);
-  const lightboxItems: LightboxItem[] = shownProjects.map((p) => ({ src: p.src, title: p.title, slug: p.detail ? p.slug : undefined }));
+  const itemTitle = (p: Project) => t(`items.${p.slug}.title`, { defaultValue: p.title });
+  const lightboxItems: LightboxItem[] = shownProjects.map((p) => ({ src: p.src, title: itemTitle(p), slug: p.detail ? p.slug : undefined }));
   const indexInShown = (p: Project) => shownProjects.indexOf(p);
 
   useEffect(() => {
@@ -32,24 +33,28 @@ export default function Projekte() {
     if (idx === -1) return;
     openedHashRef.current = target;
     setFilter('all');
-    const allItems: LightboxItem[] = PROJECTS.map((p) => ({ src: p.src, title: p.title, slug: p.detail ? p.slug : undefined }));
+    const allItems: LightboxItem[] = PROJECTS.map((p) => ({
+      src: p.src,
+      title: t(`items.${p.slug}.title`, { defaultValue: p.title }),
+      slug: p.detail ? p.slug : undefined,
+    }));
     document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     open(allItems, idx);
-  }, [hash, open]);
+  }, [hash, open, t]);
 
   return (
     <>
       <PageIntro
         backgroundImage="/assets/img/proj-concrete-sofa-tall.webp"
         crumbNumber="04"
-        crumbLabel="Projekte · Werkschau"
-        title={<>Räume aus<br />der <em>Werkstatt.</em></>}
-        lede="Eine Auswahl der Projekte, die wir 2024 bis 2026 abgeschlossen haben — Wohnsitz, Gastronomie und gemischte Nutzungen in Hessen und der Innerschweiz."
+        crumbLabel={t('overview.crumbLabel')}
+        title={<Trans i18nKey="projects:overview.title" components={{ em: <em />, br: <br /> }} />}
+        lede={t('overview.lede')}
         meta={[
-          { label: 'Gezeigt', value: `${shownProjects.length} Projekte` },
-          { label: 'Zeitraum', value: '2024–2026' },
-          { label: 'Region', value: 'DE Frankfurt · CH Luzern' },
-          { label: 'Vollständiges Portfolio', value: 'Auf Anfrage' },
+          { label: t('overview.metaShownLabel'), value: t('overview.metaShownValue', { count: shownProjects.length }) },
+          { label: t('overview.metaPeriodLabel'), value: t('overview.metaPeriodValue') },
+          { label: t('overview.metaRegionLabel'), value: t('overview.metaRegionValue') },
+          { label: t('overview.metaPortfolioLabel'), value: t('overview.metaPortfolioValue') },
         ]}
       />
 
@@ -57,9 +62,10 @@ export default function Projekte() {
       <ProjectGallery visible={visible} lightboxItems={lightboxItems} getIndex={indexInShown} onOpen={open} />
       <MapBand />
       <EndCtaLocal
-        eyebrow="Ihr Projekt"
-        title={<>Erzählen Sie uns von<br />Ihrem <em>nächsten Raum.</em></>}
-        ctaLabel="Termin vereinbaren"
+        eyebrow={t('overview.endEyebrow')}
+        title={<Trans i18nKey="projects:overview.endTitle" components={{ em: <em />, br: <br /> }} />}
+        ctaLabel={t('overview.endCta')}
+        art="andere"
         style={{ background: 'var(--pv-cream-paper)' }}
       />
     </>
