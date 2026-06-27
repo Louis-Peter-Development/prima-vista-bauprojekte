@@ -12,6 +12,7 @@
         "test": "vitest",
         "test:run": "vitest run",
         "audit:calculator-data": "node scripts/audit-calculator-data.mjs",
+        "audit:duplicate-charges": "node scripts/audit-duplicate-charges.mjs",
         "seed:admin": "node scripts/seed-admin.mjs",
         "netlify:dev": "netlify dev"
     },
