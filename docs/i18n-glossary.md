@@ -78,12 +78,21 @@ in addresses.
 ## Namespaces
 `common` (chrome: nav, header, footer, cookie banner, 404, contact-preset msg),
 `home` (full Home page), `legal` (Impressum + Datenschutz), `kontakt` (contact
-page: intro, form, validation, FAQ), `pages` (overview pages: heizmethoden,
-gewerke, pakete). Register new ones in `config.ts`.
+page), `pages` (all overview + trade/package/heating page shells: calc.*, gw.*,
+trade.*, gewerke.*, pakete.*, heizmethoden.*), `projects` (Projekte + details),
+`kalk` (calculator hub + pickers), `blitz` (express-quote intro + form).
+Register new ones in `config.ts`.
 
 Pattern for data-driven pages: reduce the `src/data/*` file to layout/render
-metadata + a stable `key`, and move all display text to the `pages` namespace
-keyed by that key (see gewerke.ts / komplettPakete.tsx for the model).
+metadata + a stable `key`, and move all display text to the relevant namespace
+keyed by that key (see gewerke.ts / komplettPakete.tsx / projects.ts).
+
+Shared page shells: `GewerkePage` (17 trade pages), `CalcPage` (4 package + 7
+heating pages) — each page is a thin call passing structural props + a key.
+
+Server-contract rule: for `<select>`/radio enums that get POSTed (contact
+region/budget, blitz art/starttermin), keep the submitted VALUE canonical German
+and only localize the displayed label, so server email templates don't change.
 
 ## Status
 - ✅ Foundation: i18n library, localized routing, language switcher, locale
@@ -98,14 +107,29 @@ keyed by that key (see gewerke.ts / komplettPakete.tsx for the model).
   pages (don't rely on label keyword matching); preset message is localized via
   `common.contactPresetMsg`. Select VALUES stay canonical German (server contract);
   only the display is localized.
-- ✅ Phase 4b–d (overview pages): Heizmethoden, Gewerke (+ FeaturedTrades,
-  TradeIndex, ProcessSection), KomplettPakete (+ PackageDetailSection,
-  PackageCompare).
-- ⏳ Remaining: Projekte overview + `src/data/projects.ts` + ProjectGallery;
-  the ~25 trade/package/heating DETAIL pages + their calculator configurators +
-  the 33 calculator package data files; Kalkulator & BlitzAngebot pages/forms;
-  server emails (`server/mail.ts`) & PDF (`server/calculatorPdf.ts`); DB-backed
-  blog (per-language schema + admin editor). Data-layer leftovers:
-  `src/data/home.ts` hero-slide `alt` + featured-project captions; the now-unused
-  German `name`/`lead` on TRADES and `label`/`title`/`desc` on PROCESS_STEPS in
-  gewerke.ts can be deleted. On detail pages, pass `art` to EndCtaLocal.
+- ✅ Phase 4b–d (overview pages): Heizmethoden, Gewerke, KomplettPakete.
+- ✅ Phase 4e: Projekte overview + all 17 detail pages + ProjectGallery + videos.
+- ✅ Phase 4f: 17 trade detail page SHELLS (GewerkePage).
+- ✅ Phase 4g: 4 package + 7 heating page SHELLS (CalcPage).
+- ✅ Phase 4h: Kalkulator hub (page + KalkCategoryPicker/KalkLeafPicker, 28 leaves).
+- ✅ Phase 4i: BlitzAngebot intro + 5-step form wizard chrome.
+
+  => Every page header/intro/form-chrome/CTA across the site is trilingual.
+
+- ⏳ Remaining — three distinct, deeper clusters:
+  1. **Calculator product catalog** (pricing-coupled, highest risk): the 33
+     `src/data/calculator/packages/*` files, `RenovationCalculator`, the 17
+     gewerke + 4 package configurators, `BLITZ_SERVICE_GROUPS`,
+     `gastronomieAusbau.ts`, `CalculatorPdfSender`. Recommended approach: a
+     SKU-keyed translation layer (Map<sku, {en,it}>) applied at RENDER only —
+     do NOT change the German titles/SKUs the engine, audit script and server
+     PDF key on. Verify `npm run audit:calculator-data` + pricing after.
+  2. **Server outbound text**: `server/mail.ts` (Resend emails) +
+     `server/calculatorPdf.ts` (PDF). Needs locale threaded through the
+     `/api/contact`, `/api/blitz`, `/api/calculator-pdf` payloads, then templated.
+  3. **Blog**: Blog/BlogDetail pages, Admin* pages, and a per-language DB schema
+     + admin editor (the only data-model change).
+- Data-layer leftovers (safe to prune): unused German display fields now
+  superseded by i18n on `projects.ts`, `gewerke.ts` (TRADES name/lead,
+  PROCESS_STEPS), `kalkulatorNav.ts`, `komplettPakete` originals;
+  `src/data/home.ts` hero-slide `alt` + featured-project captions.
