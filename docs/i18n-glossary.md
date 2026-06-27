@@ -76,8 +76,9 @@ in addresses.
    languages in the browser.
 
 ## Namespaces
-`common` (chrome: nav, header, footer, cookie banner, 404), `home` (full Home
-page), `legal` (Impressum + Datenschutz). Register new ones in `config.ts`.
+`common` (chrome: nav, header, footer, cookie banner, 404, contact-preset msg),
+`home` (full Home page), `legal` (Impressum + Datenschutz), `kontakt` (contact
+page: intro, form, validation, FAQ). Register new ones in `config.ts`.
 
 ## Status
 - ✅ Foundation: i18n library, localized routing, language switcher, locale
@@ -87,11 +88,15 @@ page), `legal` (Impressum + Datenschutz). Register new ones in `config.ts`.
 - ✅ Phase 3 (self-contained pages): NotFound, Impressum, Datenschutz.
   NOTE: legal/privacy pages carry a "German version is binding" note and need a
   lawyer's review before launch — machine translation of legal text is provisional.
-- ⏳ Remaining: overview pages (Gewerke, KomplettPakete, Heizmethoden, Projekte,
-  Kontakt) + their sub-components; the trade/package/heating detail pages, which
-  are coupled to the contact-preset system (`createContactPresetFromCtaLabel` —
-  decouple display label from preset `art`) and the calculator configurators;
-  `src/data/*` (incl. 33 calculator packages); form validation; server emails
-  (`server/mail.ts`) & PDF (`server/calculatorPdf.ts`); DB-backed blog
-  (per-language schema + admin editor). Plus a few data-layer leftovers:
-  `src/data/home.ts` hero-slide `alt` + featured-project captions.
+- ✅ Phase 4a (contact system): Kontakt page, form + validation + success/error
+  states, FAQ. EndCtaLocal decoupled — pass an explicit `art` prop on translated
+  pages (don't rely on label keyword matching); preset message is localized via
+  `common.contactPresetMsg`. Select VALUES stay canonical German (server contract);
+  only the display is localized.
+- ⏳ Remaining: overview pages (Gewerke, KomplettPakete, Heizmethoden, Projekte)
+  + their sub-components and `src/data/*` (gewerke.ts, komplettPakete.ts,
+  projects.ts); the trade/package/heating DETAIL pages + calculator configurators
+  + the 33 calculator packages; server emails (`server/mail.ts`) & PDF
+  (`server/calculatorPdf.ts`); DB-backed blog (per-language schema + admin editor).
+  Data-layer leftovers: `src/data/home.ts` hero-slide `alt` + featured-project
+  captions. On detail pages, pass `art` to EndCtaLocal.
