@@ -32,6 +32,15 @@
     "requestExpress": "Richiedi un preventivo express",
     "expressQuote": "Preventivo express"
   },
+  "cookie": {
+    "aria": "Avviso sui cookie",
+    "eyebrow": "Privacy",
+    "title": "Cookie e servizi",
+    "body": "Utilizziamo le tecnologie necessarie al funzionamento del sito. I servizi opzionali come l'analisi, i video YouTube incorporati e il nostro chatbot basato su Claude vengono attivati solo dopo il suo consenso.",
+    "policy": "Leggi l'informativa sulla privacy",
+    "necessary": "Solo necessari",
+    "acceptAll": "Accetta tutti"
+  },
   "footer": {
     "blurb": "Ristrutturazione e rinnovo da un unico interlocutore — per abitazioni e ristorazione, a Francoforte ed Emmenbrücke.",
     "about": "Chi siamo",

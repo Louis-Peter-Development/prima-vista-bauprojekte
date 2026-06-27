@@ -32,6 +32,15 @@
     "requestExpress": "Blitz-Angebot anfordern",
     "expressQuote": "Blitz-Angebot"
   },
+  "cookie": {
+    "aria": "Cookie-Hinweis",
+    "eyebrow": "Datenschutz",
+    "title": "Cookies & Dienste",
+    "body": "Wir nutzen notwendige Technologien für den Betrieb der Website. Optionale Dienste wie Analyse, eingebettete YouTube-Videos und unser Claude-basierter Chatbot werden erst nach Ihrer Zustimmung aktiviert.",
+    "policy": "Datenschutzerklärung ansehen",
+    "necessary": "Nur notwendige",
+    "acceptAll": "Alle akzeptieren"
+  },
   "footer": {
     "blurb": "Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.",
     "about": "Über uns",

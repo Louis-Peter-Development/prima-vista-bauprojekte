@@ -1,21 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
 import { FEATURED_HOME_PROJECTS, FEATURED_HOME_TITLES } from '../../data/home';
 import { projectAnchorId } from '../projekte/ProjectGallery';
 
 export default function FeaturedProjects() {
+  const { t } = useTranslation('home');
   return (
     <section className="featured">
       <div className="featured__head">
         <div className="reveal">
-          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Ausgewählte Projekte</div>
+          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('featured.eyebrow')}</div>
           <h2>
-            Zuletzt aus der<br />
-            <em>Werkstatt.</em>
+            <Trans i18nKey="home:featured.title" components={{ em: <em />, br: <br /> }} />
           </h2>
         </div>
         <div className="meta reveal" data-delay="1">
           2024 — 2026<br />
-          Frankfurt · Wiesbaden · Luzern
+          {t('featured.meta')}
         </div>
       </div>
 
@@ -38,7 +39,7 @@ export default function FeaturedProjects() {
 
       <div className="featured__more reveal">
         <Link className="btn btn--light" to="/projekte">
-          Alle Projekte ansehen <span className="arrow">&gt;</span>
+          {t('featured.viewAll')} <span className="arrow">&gt;</span>
         </Link>
       </div>
     </section>

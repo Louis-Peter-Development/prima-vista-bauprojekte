@@ -1,4 +1,78 @@
 {
+  "hero": {
+    "toplineLocation": "Frankfurt & Emmenbrücke",
+    "toplineTagline": "Sanierung & Renovierung — Bauprojekte seit 2014",
+    "toplineIssue": "N° 26 / Frühjahr 2026",
+    "headline1": "<em>Eine</em> Vision.",
+    "headline2": "<em>Eine</em> Adresse.",
+    "headline3": "<em>Ein</em> Team.",
+    "metaNum": "01 — Versprechen",
+    "lede": "<strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werksgewähr.",
+    "ctaSmall": "Termin in 48 Stunden",
+    "cta": "Termin vereinbaren"
+  },
+  "marquee": {
+    "items": ["Sanierung", "Renovierung", "Gastronomie-Ausbau", "Bäder", "Küchen", "Böden", "Elektro", "Heizung", "Fassade", "Maler & Lack", "Treppen", "Trockenbau"]
+  },
+  "heroPhotos": {
+    "aria": "Einblicke in unsere Projekte",
+    "eyebrow": "Einblicke",
+    "title": "Vom Rohbau bis zur <em>Übergabe</em>.",
+    "p": "Ausschnitte aus Projekten, die wir aus einer Hand umgesetzt haben.",
+    "rohbau": { "label": "Rohbau", "alt": "Rohbaufläche mit Betonwänden und vorbereiteten Leitungen" },
+    "bad": { "label": "Bad", "alt": "Modernisiertes Bad mit Dusche und WC" },
+    "kueche": { "label": "Küche", "alt": "Küche mit Insel und maßgefertigten Einbauten" },
+    "gastro": { "label": "Gastronomie", "alt": "Ausgebautes Gastronomieprojekt mit dekorativer Wandgestaltung" }
+  },
+  "featured": {
+    "eyebrow": "Ausgewählte Projekte",
+    "title": "Zuletzt aus der<br/><em>Werkstatt.</em>",
+    "meta": "Frankfurt · Wiesbaden · Luzern",
+    "viewAll": "Alle Projekte ansehen"
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 Sterne",
+    "source": "Google Bewertung"
+  },
+  "aboutVideo": {
+    "notice": "Das Video wird über YouTube eingebettet und erst nach Ihrer Zustimmung geladen.",
+    "manage": "Cookies & Dienste verwalten",
+    "title": "Prima Vista Bauprojekte – Über uns",
+    "playAria": "Video abspielen: {{title}}",
+    "consentAria": "{{title}} – Cookies akzeptieren, um abzuspielen"
+  },
+  "kalkLive": {
+    "label": "Kalkulator · Live",
+    "objektart": "Objektart",
+    "flaeche": "Fläche",
+    "gewerke": "Gewerke",
+    "liveRange": "Live-Spanne",
+    "objekt": { "Haus": "Haus", "Wohnung": "Wohnung", "Gastro": "Gastro", "Anderes": "Anderes" },
+    "trade": { "Bad": "Bad", "Küche": "Küche", "Boden": "Boden", "Elektrik": "Elektrik", "Heizung": "Heizung" },
+    "states": [
+      { "price": "€ 84 – 112 Tsd.", "note": "Mittelwert € 98 Tsd. · ca. € 690 / m²" },
+      { "price": "€ 52 – 71 Tsd.", "note": "Mittelwert € 61 Tsd. · ca. € 720 / m²" },
+      { "price": "€ 145 – 195 Tsd.", "note": "Mittelwert € 170 Tsd. · ca. € 810 / m²" },
+      { "price": "€ 95 – 130 Tsd.", "note": "Mittelwert € 112 Tsd. · ca. € 930 / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Vorab-Kostenschätzung",
+    "stamp": "In 24 Std.",
+    "rowProjekt": "Projekt",
+    "rowStandort": "Standort",
+    "rowGewerke": "Gewerke",
+    "rowStandard": "Standard",
+    "totalLabel": "Geschätzte Investition",
+    "totalNote": "Verbindlich nach Aufmaß vor Ort.",
+    "sigName": "Daniel Vogel · Bauleitung",
+    "sigPlace": "Frankfurt/Luzern",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Wohnungssanierung · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bad, Küche, Elektrik, Maler", "standard": "Gehoben", "investition": "€ 184 – 226 Tsd.", "datum": "17. Mai 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "Haus-Sanierung · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Dach, Fassade, Heizung, Rohbau", "standard": "Premium", "investition": "€ 320 – 385 Tsd.", "datum": "22. Mai 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Gastronomie-Ausbau · 180 m²", "standort": "Luzern Innenstadt", "gewerke": "Lüftung, Sanitär, Trockenbau", "standard": "Objektbau / Gewerbe", "investition": "CHF 280 – 340 Tsd.", "datum": "02. Juni 2026" }
+    ]
+  },
   "promise": {
     "eyebrow": "№ 01 — Versprechen",
     "title": "Verantwortung<br/><em>aus einer</em><br/>Hand.",

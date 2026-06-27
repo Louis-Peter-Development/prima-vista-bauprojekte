@@ -1,13 +1,15 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
 import { useVideoActive } from '../../hooks/useVideoPlayback';
 
 const ABOUT_VIDEO_ID = 'pm5HSjADlOs';
-const ABOUT_VIDEO_TITLE = 'Prima Vista Bauprojekte – Über uns';
 // Self-hosted poster shown before consent so no request reaches Google/YouTube.
 const LOCAL_POSTER = '/assets/img/proj-team-jacket.webp';
 
 export default function HomeAboutVideo() {
+  const { t } = useTranslation('home');
+  const videoTitle = t('aboutVideo.title');
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
@@ -25,9 +27,9 @@ export default function HomeAboutVideo() {
     <div className="founders-video">
       {!consented && (
         <p className="founders-video__notice">
-          Das Video wird über YouTube eingebettet und erst nach Ihrer Zustimmung geladen.{' '}
+          {t('aboutVideo.notice')}{' '}
           <button type="button" className="founders-video__notice-btn" onClick={openConsentBanner}>
-            Cookies &amp; Dienste verwalten
+            {t('aboutVideo.manage')}
           </button>
         </p>
       )}
@@ -36,7 +38,7 @@ export default function HomeAboutVideo() {
         <div className="founders-video__frame founders-video__frame--playing">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${ABOUT_VIDEO_ID}?autoplay=1&rel=0`}
-            title={ABOUT_VIDEO_TITLE}
+            title={videoTitle}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
@@ -46,7 +48,7 @@ export default function HomeAboutVideo() {
           type="button"
           className="founders-video__frame founders-video__frame--facade"
           onClick={handleActivate}
-          aria-label={consented ? `Video abspielen: ${ABOUT_VIDEO_TITLE}` : `${ABOUT_VIDEO_TITLE} – Cookies akzeptieren, um abzuspielen`}
+          aria-label={consented ? t('aboutVideo.playAria', { title: videoTitle }) : t('aboutVideo.consentAria', { title: videoTitle })}
         >
           <img
             src={consented ? `https://i.ytimg.com/vi/${ABOUT_VIDEO_ID}/maxresdefault.jpg` : LOCAL_POSTER}

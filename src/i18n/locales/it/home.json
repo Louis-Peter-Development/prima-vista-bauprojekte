@@ -1,4 +1,78 @@
 {
+  "hero": {
+    "toplineLocation": "Francoforte & Emmenbrücke",
+    "toplineTagline": "Ristrutturazione & rinnovo — progetti edilizi dal 2014",
+    "toplineIssue": "N° 26 / Primavera 2026",
+    "headline1": "<em>Una</em> visione.",
+    "headline2": "<em>Un</em> indirizzo.",
+    "headline3": "<em>Una</em> squadra.",
+    "metaNum": "01 — Promessa",
+    "lede": "<strong>Ristrutturazione completa da un unico interlocutore</strong> — dal concept alla consegna delle chiavi. Rispondiamo di ogni lavorazione: prezzo fisso, data di consegna certa, cinque anni di garanzia.",
+    "ctaSmall": "Appuntamento entro 48 ore",
+    "cta": "Fissa un appuntamento"
+  },
+  "marquee": {
+    "items": ["Ristrutturazione", "Rinnovo", "Allestimento ristorazione", "Bagni", "Cucine", "Pavimenti", "Impianti elettrici", "Riscaldamento", "Facciate", "Imbiancatura", "Scale", "Cartongesso"]
+  },
+  "heroPhotos": {
+    "aria": "Uno sguardo ai nostri progetti",
+    "eyebrow": "Uno sguardo",
+    "title": "Dalla struttura grezza alla <em>consegna</em>.",
+    "p": "Scorci di progetti realizzati da un unico interlocutore.",
+    "rohbau": { "label": "Grezzo", "alt": "Superficie al grezzo con pareti in cemento e impianti predisposti" },
+    "bad": { "label": "Bagno", "alt": "Bagno modernizzato con doccia e WC" },
+    "kueche": { "label": "Cucina", "alt": "Cucina con isola e arredi su misura" },
+    "gastro": { "label": "Ristorazione", "alt": "Progetto di ristorazione completato con parete decorativa" }
+  },
+  "featured": {
+    "eyebrow": "Progetti selezionati",
+    "title": "Appena usciti dal<br/><em>laboratorio.</em>",
+    "meta": "Francoforte · Wiesbaden · Lucerna",
+    "viewAll": "Vedi tutti i progetti"
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 stelle",
+    "source": "Recensione Google"
+  },
+  "aboutVideo": {
+    "notice": "Il video è incorporato tramite YouTube e viene caricato solo dopo il suo consenso.",
+    "manage": "Gestisci cookie e servizi",
+    "title": "Prima Vista Bauprojekte – Chi siamo",
+    "playAria": "Riproduci il video: {{title}}",
+    "consentAria": "{{title}} – accetta i cookie per riprodurre"
+  },
+  "kalkLive": {
+    "label": "Preventivatore · Live",
+    "objektart": "Tipo di immobile",
+    "flaeche": "Superficie",
+    "gewerke": "Lavorazioni",
+    "liveRange": "Fascia dal vivo",
+    "objekt": { "Haus": "Casa", "Wohnung": "Appartamento", "Gastro": "Ristorazione", "Anderes": "Altro" },
+    "trade": { "Bad": "Bagno", "Küche": "Cucina", "Boden": "Pavimento", "Elektrik": "Impianti", "Heizung": "Riscaldamento" },
+    "states": [
+      { "price": "€ 84–112 mila", "note": "Media € 98 mila · ca. € 690 / m²" },
+      { "price": "€ 52–71 mila", "note": "Media € 61 mila · ca. € 720 / m²" },
+      { "price": "€ 145–195 mila", "note": "Media € 170 mila · ca. € 810 / m²" },
+      { "price": "€ 95–130 mila", "note": "Media € 112 mila · ca. € 930 / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Stima preliminare dei costi",
+    "stamp": "In 24 h",
+    "rowProjekt": "Progetto",
+    "rowStandort": "Località",
+    "rowGewerke": "Lavorazioni",
+    "rowStandard": "Standard",
+    "totalLabel": "Investimento stimato",
+    "totalNote": "Vincolante dopo il rilievo in loco.",
+    "sigName": "Daniel Vogel · Direzione lavori",
+    "sigPlace": "Francoforte/Lucerna",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Ristrutturazione appartamento · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bagno, cucina, impianti, imbianchino", "standard": "Di pregio", "investition": "€ 184–226 mila", "datum": "17 maggio 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "Ristrutturazione casa · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Tetto, facciata, riscaldamento, struttura", "standard": "Premium", "investition": "€ 320–385 mila", "datum": "22 maggio 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Allestimento ristorazione · 180 m²", "standort": "Lucerna centro", "gewerke": "Ventilazione, idraulica, cartongesso", "standard": "Commerciale", "investition": "CHF 280–340 mila", "datum": "2 giugno 2026" }
+    ]
+  },
   "promise": {
     "eyebrow": "№ 01 — La nostra promessa",
     "title": "Un solo<br/>referente, <em>tutta</em><br/>la responsabilità.",

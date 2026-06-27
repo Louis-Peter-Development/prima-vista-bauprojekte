@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 type Review = {
   author: string;
@@ -20,6 +21,7 @@ type Props = {
 };
 
 export default function GoogleReviews({ fallback }: Props) {
+  const { t } = useTranslation('home');
   const [data, setData] = useState<ReviewsPayload | null>(null);
   const [error, setError] = useState(false);
 
@@ -67,9 +69,9 @@ export default function GoogleReviews({ fallback }: Props) {
         }}>
           {reviews.slice(0, 4).map((r, i) => {
             const meta = [
-              `${r.rating} / 5 Sterne`,
+              `${r.rating} ${t('reviews.starsSuffix')}`,
               r.relativeTime,
-              'Google Bewertung',
+              t('reviews.source'),
             ].filter(Boolean).join(' · ');
 
             return (

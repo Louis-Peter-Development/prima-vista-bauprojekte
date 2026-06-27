@@ -32,6 +32,15 @@
     "requestExpress": "Request an express quote",
     "expressQuote": "Express quote"
   },
+  "cookie": {
+    "aria": "Cookie notice",
+    "eyebrow": "Privacy",
+    "title": "Cookies & services",
+    "body": "We use necessary technologies to run the website. Optional services such as analytics, embedded YouTube videos and our Claude-based chatbot are only activated once you give your consent.",
+    "policy": "Read the privacy policy",
+    "necessary": "Necessary only",
+    "acceptAll": "Accept all"
+  },
   "footer": {
     "blurb": "Renovation & refurbishment from a single source — for homes and hospitality, in Frankfurt and Emmenbrücke.",
     "about": "About us",

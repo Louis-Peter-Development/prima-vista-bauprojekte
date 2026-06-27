@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
 import {
   CONSENT_EVENT,
   CONSENT_OPEN_EVENT,
@@ -8,6 +9,7 @@ import {
 } from '../hooks/useConsent';
 
 export default function CookieConsent() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -44,22 +46,20 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <aside className="pv-cookie" aria-label="Cookie-Hinweis">
+    <aside className="pv-cookie" aria-label={t('cookie.aria')}>
       <div className="pv-cookie__content">
         <div>
-          <div className="pv-cookie__eyebrow"><span className="rule-red"></span> Datenschutz</div>
-          <h2>Cookies & Dienste</h2>
-          <p>
-            Wir nutzen notwendige Technologien für den Betrieb der Website. Optionale Dienste wie Analyse, eingebettete YouTube-Videos und unser Claude-basierter Chatbot werden erst nach Ihrer Zustimmung aktiviert.
-          </p>
-          <Link className="pv-cookie__link" to="/datenschutz">Datenschutzerklärung ansehen</Link>
+          <div className="pv-cookie__eyebrow"><span className="rule-red"></span> {t('cookie.eyebrow')}</div>
+          <h2>{t('cookie.title')}</h2>
+          <p>{t('cookie.body')}</p>
+          <Link className="pv-cookie__link" to="/datenschutz">{t('cookie.policy')}</Link>
         </div>
         <div className="pv-cookie__actions">
           <button className="btn btn--light" type="button" onClick={() => saveChoice('necessary')}>
-            Nur notwendige
+            {t('cookie.necessary')}
           </button>
           <button className="btn btn--solid" type="button" onClick={() => saveChoice('all')}>
-            Alle akzeptieren
+            {t('cookie.acceptAll')}
           </button>
         </div>
       </div>

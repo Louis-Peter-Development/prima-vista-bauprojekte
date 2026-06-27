@@ -1,4 +1,78 @@
 {
+  "hero": {
+    "toplineLocation": "Frankfurt & Emmenbrücke",
+    "toplineTagline": "Renovation & refurbishment — building since 2014",
+    "toplineIssue": "N° 26 / Spring 2026",
+    "headline1": "<em>One</em> vision.",
+    "headline2": "<em>One</em> address.",
+    "headline3": "<em>One</em> team.",
+    "metaNum": "01 — Promise",
+    "lede": "<strong>Full renovation from a single source</strong> — from concept to handover. We own every trade: a fixed price, a firm completion date, a five-year workmanship warranty.",
+    "ctaSmall": "Appointment within 48 hours",
+    "cta": "Book an appointment"
+  },
+  "marquee": {
+    "items": ["Renovation", "Refurbishment", "Restaurant fit-out", "Bathrooms", "Kitchens", "Floors", "Electrical", "Heating", "Façades", "Painting", "Stairs", "Drywall"]
+  },
+  "heroPhotos": {
+    "aria": "A look inside our projects",
+    "eyebrow": "A look inside",
+    "title": "From bare shell to <em>handover</em>.",
+    "p": "Glimpses of projects we delivered from a single source.",
+    "rohbau": { "label": "Shell", "alt": "Bare shell with concrete walls and roughed-in services" },
+    "bad": { "label": "Bathroom", "alt": "Modernised bathroom with shower and WC" },
+    "kueche": { "label": "Kitchen", "alt": "Kitchen with island and bespoke cabinetry" },
+    "gastro": { "label": "Hospitality", "alt": "Finished hospitality project with decorative wall design" }
+  },
+  "featured": {
+    "eyebrow": "Selected projects",
+    "title": "Fresh from the<br/><em>workshop.</em>",
+    "meta": "Frankfurt · Wiesbaden · Lucerne",
+    "viewAll": "See all projects"
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 stars",
+    "source": "Google review"
+  },
+  "aboutVideo": {
+    "notice": "The video is embedded via YouTube and only loads once you give your consent.",
+    "manage": "Manage cookies & services",
+    "title": "Prima Vista Bauprojekte – About us",
+    "playAria": "Play video: {{title}}",
+    "consentAria": "{{title}} – accept cookies to play"
+  },
+  "kalkLive": {
+    "label": "Calculator · Live",
+    "objektart": "Property type",
+    "flaeche": "Area",
+    "gewerke": "Trades",
+    "liveRange": "Live range",
+    "objekt": { "Haus": "House", "Wohnung": "Apartment", "Gastro": "Hospitality", "Anderes": "Other" },
+    "trade": { "Bad": "Bath", "Küche": "Kitchen", "Boden": "Floor", "Elektrik": "Electrical", "Heizung": "Heating" },
+    "states": [
+      { "price": "€ 84–112k", "note": "Average € 98k · approx. € 690 / m²" },
+      { "price": "€ 52–71k", "note": "Average € 61k · approx. € 720 / m²" },
+      { "price": "€ 145–195k", "note": "Average € 170k · approx. € 810 / m²" },
+      { "price": "€ 95–130k", "note": "Average € 112k · approx. € 930 / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Preliminary cost estimate",
+    "stamp": "In 24 h",
+    "rowProjekt": "Project",
+    "rowStandort": "Location",
+    "rowGewerke": "Trades",
+    "rowStandard": "Standard",
+    "totalLabel": "Estimated investment",
+    "totalNote": "Binding after an on-site measure-up.",
+    "sigName": "Daniel Vogel · Site management",
+    "sigPlace": "Frankfurt/Lucerne",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Apartment renovation · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bath, kitchen, electrical, painting", "standard": "Upscale", "investition": "€ 184–226k", "datum": "17 May 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "House renovation · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Roof, façade, heating, shell", "standard": "Premium", "investition": "€ 320–385k", "datum": "22 May 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Restaurant fit-out · 180 m²", "standort": "Lucerne city centre", "gewerke": "Ventilation, plumbing, drywall", "standard": "Commercial", "investition": "CHF 280–340k", "datum": "2 June 2026" }
+    ]
+  },
   "promise": {
     "eyebrow": "№ 01 — Our promise",
     "title": "One hand,<br/><em>full</em><br/>responsibility.",

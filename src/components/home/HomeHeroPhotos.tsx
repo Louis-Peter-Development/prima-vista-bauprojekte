@@ -1,47 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
 
 const HERO_END_PHOTOS = [
-  {
-    src: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
-    alt: 'Rohbaufläche mit Betonwänden und vorbereiteten Leitungen',
-    label: 'Rohbau',
-    to: '/rohbau-abbruch',
-    width: 1200,
-    height: 900,
-  },
-  {
-    src: '/assets/img/leistungen/badsanierung-05.webp',
-    alt: 'Modernisiertes Bad mit Dusche und WC',
-    label: 'Bad',
-    to: '/badsanierung',
-    width: 1200,
-    height: 1600,
-  },
-  {
-    src: '/assets/img/leistungen/kuechen-moebelbau-02.webp',
-    alt: 'Küche mit Insel und maßgefertigten Einbauten',
-    label: 'Küche',
-    to: '/kuechen-moebelbau',
-    width: 1402,
-    height: 1122,
-  },
-  {
-    src: '/assets/img/proj-zoi-01.webp',
-    alt: 'Ausgebautes Gastronomieprojekt mit dekorativer Wandgestaltung',
-    label: 'Gastronomie',
-    to: '/projekte',
-    width: 1600,
-    height: 1200,
-  },
-];
+  { key: 'rohbau', src: '/assets/img/leistungen/rohbau-trockenbau-01.webp', to: '/rohbau-abbruch', width: 1200, height: 900 },
+  { key: 'bad', src: '/assets/img/leistungen/badsanierung-05.webp', to: '/badsanierung', width: 1200, height: 1600 },
+  { key: 'kueche', src: '/assets/img/leistungen/kuechen-moebelbau-02.webp', to: '/kuechen-moebelbau', width: 1402, height: 1122 },
+  { key: 'gastro', src: '/assets/img/proj-zoi-01.webp', to: '/projekte', width: 1600, height: 1200 },
+] as const;
 
 export default function HomeHeroPhotos() {
+  const { t } = useTranslation('home');
   return (
-    <section className="home-hero-photos" aria-label="Einblicke in unsere Projekte">
+    <section className="home-hero-photos" aria-label={t('heroPhotos.aria')}>
       <div className="home-hero-photos__head reveal">
-        <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Einblicke</div>
-        <h2>Vom Rohbau bis zur <em>Übergabe</em>.</h2>
-        <p>Ausschnitte aus Projekten, die wir aus einer Hand umgesetzt haben.</p>
+        <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('heroPhotos.eyebrow')}</div>
+        <h2><Trans i18nKey="home:heroPhotos.title" components={{ em: <em /> }} /></h2>
+        <p>{t('heroPhotos.p')}</p>
       </div>
       <ul className="home-hero-photos__grid">
         {HERO_END_PHOTOS.map((photo) => (
@@ -49,14 +23,14 @@ export default function HomeHeroPhotos() {
             <Link className="home-hero-photos__link" to={photo.to}>
               <img
                 src={photo.src}
-                alt={photo.alt}
+                alt={t(`heroPhotos.${photo.key}.alt`)}
                 width={photo.width}
                 height={photo.height}
                 loading="lazy"
                 decoding="async"
               />
               <span className="home-hero-photos__label">
-                {photo.label}
+                {t(`heroPhotos.${photo.key}.label`)}
                 <svg className="home-hero-photos__arrow" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
