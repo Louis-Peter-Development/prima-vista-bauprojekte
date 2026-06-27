@@ -1,4 +1,70 @@
 {
+  "gewerke": {
+    "crumbLabel": "Gewerke · Bauleistungen",
+    "title": "Neunzehn<br/>Gewerke,<br/><em>eine Hand.</em>",
+    "lede": "Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Frankfurt und Emmenbrücke.",
+    "metaSelectionLabel": "Auswahl",
+    "metaSelectionValue": "19 Gewerke",
+    "metaCoordLabel": "Koordination",
+    "metaCoordValue": "Inhouse-Bauleitung",
+    "metaMaterialsLabel": "Materialien",
+    "metaMaterialsValue": "Inklusive Festpreis",
+    "metaWarrantyLabel": "Garantie",
+    "metaWarrantyValue": "5 Jahre",
+    "endEyebrow": "Bereit zu starten?",
+    "endTitle": "Welches <em>Gewerk</em><br/>steht bei Ihnen an?",
+    "endCta": "Anfrage senden",
+    "featured": {
+      "eyebrow": "Am häufigsten gefragt",
+      "title": "Drei Gewerke, die fast<br/>jedes Projekt <em>tragen.</em>",
+      "intro": "Ob Komplettsanierung oder Einzelauftrag — drei Disziplinen sind in jedem zweiten Auftrag dabei. Mit eigenen Teams in Bad, Küche und Boden.",
+      "openCalculator": "Kostenrechner öffnen",
+      "cards": {
+        "bad": { "alt": "Badezimmer — Sanitär & Fliesen", "count": "01 — 142 Projekte", "heading1": "Bäder &", "heading2": "Sanitär", "desc": "Komplettbäder von 4 bis 28 m². Fliesen, Sanitär, Heizkörper, Beleuchtung — aus einer Bestellung." },
+        "kueche": { "alt": "Küchen & Möbelbau", "count": "02 — 98 Projekte", "heading1": "Küchen &", "heading2": "Möbelbau", "desc": "Maßgefertigte Schreinerküchen und Einbauten." },
+        "boden": { "alt": "Bodenbeläge", "count": "03 — 187 Projekte", "heading1": "Böden &", "heading2": "Beläge", "desc": "Parkett, Vinyl, Naturstein, Estrich, Industrieboden." }
+      }
+    },
+    "index": {
+      "eyebrow": "Alle Gewerke",
+      "title": "Das vollständige<br/><em>Verzeichnis.</em>",
+      "intro": "Tippen Sie auf ein Gewerk, um den Kostenrechner zu öffnen — am Desktop genügt das Überfahren für eine Vorschau. Jedes Gewerk wird durch eigene Bauleitung koordiniert — Sie buchen einzeln oder gebündelt.",
+      "openCalculator": "Kostenrechner öffnen",
+      "openAria": "{{name}} Kostenrechner öffnen"
+    },
+    "process": {
+      "eyebrow": "So arbeiten wir",
+      "title": "Vom Anruf bis zur<br/>schlüsselfertigen <em>Übergabe.</em>",
+      "intro": "Vier Etappen — jede mit fester Ansprechperson, festem Termin und schriftlichem Festpreis. Keine Stundenabrechnung, keine Übergaben zwischen Subunternehmern.",
+      "steps": {
+        "1": { "label": "Erstgespräch", "title": "Aufnahme vor Ort", "desc": "Termin in 48 Stunden. Wir messen, hören zu und skizzieren grobe Optionen." },
+        "2": { "label": "Festpreis", "title": "Verbindliches Angebot", "desc": "Innerhalb von 14 Tagen erhalten Sie ein Festpreis-Angebot mit Endtermin." },
+        "3": { "label": "Bauphase", "title": "Eine Bauleitung", "desc": "Wöchentlicher Status, ein Ansprechpartner, alle Gewerke unter Vertrag." },
+        "4": { "label": "Übergabe", "title": "Abnahme & Pflege", "desc": "Schlüsselübergabe, Pflegeprotokoll, 5 Jahre Werksgewähr — und Sie sind drin." }
+      }
+    },
+    "trades": {
+      "abdichtung": { "name": "Abdichtungen", "lead": "Feuchtigkeit" },
+      "bad": { "name": "Badsanierung & Gäste WC", "lead": "Wanne, Dusche, WC" },
+      "barrierefreiheit": { "name": "Barrierefreies Bad", "lead": "Bad, Dusche, WC" },
+      "boden": { "name": "Boden & Estrich", "lead": "Parkett, Stein, Vinyl" },
+      "dach": { "name": "Dachsanierungen", "lead": "Eindeckung, Dämmung" },
+      "elektro": { "name": "Elektroinstallationen", "lead": "Strom, Licht, KNX" },
+      "fassade": { "name": "Fassaden & Dämmung", "lead": "Putz, WDVS" },
+      "fenster": { "name": "Fenster & Balkontüren", "lead": "Fenster, Türen, Sonnenschutz" },
+      "garten": { "name": "Garten & Terassen", "lead": "Terrasse, Wege" },
+      "heizung": { "name": "Heizung & Heizstränge", "lead": "Wärmepumpe, FBH" },
+      "kueche": { "name": "Küchen & Möbelbau", "lead": "Schreinerei" },
+      "maler": { "name": "Maler & Lackierungen", "lead": "Farben, Tapeten" },
+      "rohbau": { "name": "Rohbau Leistungen", "lead": "Fundament, Mauerwerk, Decken" },
+      "thermen": { "name": "Thermen & Heiztechnik", "lead": "Gas, Öl, Wärmepumpen" },
+      "treppen": { "name": "Treppen & Geländer", "lead": "Holz, Beton, Stahl" },
+      "tueren": { "name": "Türen & Tore", "lead": "Innen, Haus, Schiebe" },
+      "trockenbau": { "name": "Trockenbau", "lead": "Wände, Decken" },
+      "sanitaer": { "name": "Wasserinstallationen", "lead": "Wasser, Abwasser" },
+      "zaun": { "name": "Zaunbau", "lead": "Doppelstab, Holz, Sichtschutz" }
+    }
+  },
   "heizmethoden": {
     "crumbLabel": "Heizmethoden · Wärme & Energie",
     "title": "Moderne<br/>Heizmethoden.<br/><em>Sieben Wege.</em>",

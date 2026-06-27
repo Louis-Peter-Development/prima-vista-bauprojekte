@@ -167,6 +167,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Modern heating methods – heat pump, gas, pellet & more',
       description: 'Compare heating methods such as heat pump, gas heating, pellet, underfloor heating, radiators and hot water.',
     },
+    '/gewerke': {
+      title: 'Trades – all services at a glance',
+      description: 'All trades for renovation, fit-out and refurbishment: bathroom, kitchen, floors, electrical, shell, façade, roof and more.',
+    },
   },
   it: {
     '/': {
@@ -189,6 +193,10 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     '/heizmethoden': {
       title: 'Metodi di riscaldamento moderni – pompa di calore, gas, pellet e altro',
       description: 'Confronta metodi di riscaldamento come pompa di calore, riscaldamento a gas, pellet, riscaldamento a pavimento, radiatori e acqua calda.',
+    },
+    '/gewerke': {
+      title: 'Lavori – tutti i servizi in sintesi',
+      description: 'Tutte le lavorazioni per ristrutturazione, allestimento e rinnovo: bagno, cucina, pavimenti, impianti elettrici, struttura, facciata, tetto e altro.',
     },
   },
 };

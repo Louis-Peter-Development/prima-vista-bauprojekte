@@ -1,4 +1,70 @@
 {
+  "gewerke": {
+    "crumbLabel": "Trades · Building services",
+    "title": "Nineteen<br/>trades,<br/><em>one hand.</em>",
+    "lede": "Discover individual products, building materials and complete packages for every trade — coordinated by our site management in Frankfurt and Emmenbrücke.",
+    "metaSelectionLabel": "Selection",
+    "metaSelectionValue": "19 trades",
+    "metaCoordLabel": "Coordination",
+    "metaCoordValue": "In-house site management",
+    "metaMaterialsLabel": "Materials",
+    "metaMaterialsValue": "Included in the fixed price",
+    "metaWarrantyLabel": "Warranty",
+    "metaWarrantyValue": "5 years",
+    "endEyebrow": "Ready to start?",
+    "endTitle": "Which <em>trade</em><br/>is on your list?",
+    "endCta": "Send an enquiry",
+    "featured": {
+      "eyebrow": "Most requested",
+      "title": "Three trades that carry<br/>almost every <em>project.</em>",
+      "intro": "Whether a full renovation or a one-off job — three disciplines feature in every second commission. With our own teams for bathrooms, kitchens and floors.",
+      "openCalculator": "Open cost calculator",
+      "cards": {
+        "bad": { "alt": "Bathroom — plumbing & tiling", "count": "01 — 142 projects", "heading1": "Bathrooms", "heading2": "& plumbing", "desc": "Complete bathrooms from 4 to 28 m². Tiling, plumbing, radiators, lighting — from a single order." },
+        "kueche": { "alt": "Kitchens & cabinetry", "count": "02 — 98 projects", "heading1": "Kitchens", "heading2": "& cabinetry", "desc": "Bespoke joinery kitchens and fitted units." },
+        "boden": { "alt": "Floor coverings", "count": "03 — 187 projects", "heading1": "Floors", "heading2": "& coverings", "desc": "Parquet, vinyl, natural stone, screed, industrial flooring." }
+      }
+    },
+    "index": {
+      "eyebrow": "All trades",
+      "title": "The complete<br/><em>directory.</em>",
+      "intro": "Tap a trade to open the cost calculator — on desktop, hovering is enough for a preview. Each trade is coordinated by its own site management — book them individually or bundled.",
+      "openCalculator": "Open cost calculator",
+      "openAria": "Open {{name}} cost calculator"
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "title": "From the call to<br/>a turnkey <em>handover.</em>",
+      "intro": "Four stages — each with a fixed point of contact, a fixed date and a written fixed price. No hourly billing, no hand-offs between subcontractors.",
+      "steps": {
+        "1": { "label": "First conversation", "title": "On-site survey", "desc": "An appointment within 48 hours. We measure, listen and sketch rough options." },
+        "2": { "label": "Fixed price", "title": "Binding quote", "desc": "Within 14 days you receive a fixed-price quote with a completion date." },
+        "3": { "label": "Build phase", "title": "One site management", "desc": "Weekly status, one point of contact, all trades under contract." },
+        "4": { "label": "Handover", "title": "Acceptance & care", "desc": "Handover of keys, a care guide, 5 years' workmanship warranty — and you're in." }
+      }
+    },
+    "trades": {
+      "abdichtung": { "name": "Waterproofing", "lead": "Damp" },
+      "bad": { "name": "Bathroom renovation & guest WC", "lead": "Tub, shower, WC" },
+      "barrierefreiheit": { "name": "Accessible bathroom", "lead": "Bath, shower, WC" },
+      "boden": { "name": "Floors & screed", "lead": "Parquet, stone, vinyl" },
+      "dach": { "name": "Roof renovation", "lead": "Covering, insulation" },
+      "elektro": { "name": "Electrical installation", "lead": "Power, lighting, KNX" },
+      "fassade": { "name": "Façades & insulation", "lead": "Render, ETICS" },
+      "fenster": { "name": "Windows & balcony doors", "lead": "Windows, doors, shading" },
+      "garten": { "name": "Garden & terraces", "lead": "Terrace, paths" },
+      "heizung": { "name": "Heating & risers", "lead": "Heat pump, underfloor" },
+      "kueche": { "name": "Kitchens & cabinetry", "lead": "Joinery" },
+      "maler": { "name": "Painting & finishing", "lead": "Paint, wallpaper" },
+      "rohbau": { "name": "Shell construction", "lead": "Foundation, masonry, slabs" },
+      "thermen": { "name": "Boilers & heating tech", "lead": "Gas, oil, heat pumps" },
+      "treppen": { "name": "Stairs & railings", "lead": "Wood, concrete, steel" },
+      "tueren": { "name": "Doors & gates", "lead": "Internal, front, sliding" },
+      "trockenbau": { "name": "Drywall", "lead": "Walls, ceilings" },
+      "sanitaer": { "name": "Plumbing", "lead": "Water, waste water" },
+      "zaun": { "name": "Fencing", "lead": "Mesh, wood, privacy screens" }
+    }
+  },
   "heizmethoden": {
     "crumbLabel": "Heating methods · Heat & energy",
     "title": "Modern<br/>heating methods.<br/><em>Seven ways.</em>",

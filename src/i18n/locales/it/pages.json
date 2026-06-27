@@ -1,4 +1,70 @@
 {
+  "gewerke": {
+    "crumbLabel": "Lavori · Prestazioni edili",
+    "title": "Diciannove<br/>lavorazioni,<br/><em>un'unica mano.</em>",
+    "lede": "Scopra prodotti su misura, materiali da costruzione e pacchetti completi per ogni lavorazione — coordinati dalla nostra direzione lavori a Francoforte ed Emmenbrücke.",
+    "metaSelectionLabel": "Selezione",
+    "metaSelectionValue": "19 lavorazioni",
+    "metaCoordLabel": "Coordinamento",
+    "metaCoordValue": "Direzione lavori interna",
+    "metaMaterialsLabel": "Materiali",
+    "metaMaterialsValue": "Inclusi nel prezzo fisso",
+    "metaWarrantyLabel": "Garanzia",
+    "metaWarrantyValue": "5 anni",
+    "endEyebrow": "Pronto a iniziare?",
+    "endTitle": "Quale <em>lavorazione</em><br/>la riguarda?",
+    "endCta": "Invia una richiesta",
+    "featured": {
+      "eyebrow": "Le più richieste",
+      "title": "Tre lavorazioni che reggono<br/>quasi ogni <em>progetto.</em>",
+      "intro": "Che si tratti di una ristrutturazione completa o di un singolo incarico — tre discipline sono presenti in un incarico su due. Con squadre proprie per bagni, cucine e pavimenti.",
+      "openCalculator": "Apri il preventivatore",
+      "cards": {
+        "bad": { "alt": "Bagno — sanitari e piastrelle", "count": "01 — 142 progetti", "heading1": "Bagni &", "heading2": "sanitari", "desc": "Bagni completi da 4 a 28 m². Piastrelle, sanitari, radiatori, illuminazione — da un unico ordine." },
+        "kueche": { "alt": "Cucine e mobili", "count": "02 — 98 progetti", "heading1": "Cucine &", "heading2": "mobili", "desc": "Cucine in falegnameria su misura e arredi fissi." },
+        "boden": { "alt": "Rivestimenti per pavimenti", "count": "03 — 187 progetti", "heading1": "Pavimenti &", "heading2": "rivestimenti", "desc": "Parquet, vinile, pietra naturale, massetto, pavimento industriale." }
+      }
+    },
+    "index": {
+      "eyebrow": "Tutte le lavorazioni",
+      "title": "L'elenco<br/><em>completo.</em>",
+      "intro": "Tocchi una lavorazione per aprire il preventivatore — su desktop basta passarci sopra per un'anteprima. Ogni lavorazione è coordinata dalla propria direzione lavori — le prenota singolarmente o in pacchetto.",
+      "openCalculator": "Apri il preventivatore",
+      "openAria": "Apri il preventivatore per {{name}}"
+    },
+    "process": {
+      "eyebrow": "Come lavoriamo",
+      "title": "Dalla telefonata alla<br/>consegna <em>chiavi in mano.</em>",
+      "intro": "Quattro fasi — ognuna con un referente fisso, una data fissa e un prezzo fisso scritto. Niente fatturazione a ore, niente passaggi di mano tra subappaltatori.",
+      "steps": {
+        "1": { "label": "Primo colloquio", "title": "Rilievo in loco", "desc": "Appuntamento entro 48 ore. Misuriamo, ascoltiamo e abbozziamo le prime opzioni." },
+        "2": { "label": "Prezzo fisso", "title": "Preventivo vincolante", "desc": "Entro 14 giorni riceve un preventivo a prezzo fisso con data di consegna." },
+        "3": { "label": "Fase di cantiere", "title": "Un'unica direzione lavori", "desc": "Stato settimanale, un solo referente, tutte le lavorazioni sotto contratto." },
+        "4": { "label": "Consegna", "title": "Collaudo e cura", "desc": "Consegna delle chiavi, protocollo di manutenzione, 5 anni di garanzia — ed è dentro." }
+      }
+    },
+    "trades": {
+      "abdichtung": { "name": "Impermeabilizzazioni", "lead": "Umidità" },
+      "bad": { "name": "Ristrutturazione bagno & WC ospiti", "lead": "Vasca, doccia, WC" },
+      "barrierefreiheit": { "name": "Bagno accessibile", "lead": "Bagno, doccia, WC" },
+      "boden": { "name": "Pavimenti & massetto", "lead": "Parquet, pietra, vinile" },
+      "dach": { "name": "Ristrutturazioni del tetto", "lead": "Manto, isolamento" },
+      "elektro": { "name": "Impianti elettrici", "lead": "Corrente, luce, KNX" },
+      "fassade": { "name": "Facciate & isolamento", "lead": "Intonaco, cappotto" },
+      "fenster": { "name": "Finestre & porte-finestra", "lead": "Finestre, porte, schermature" },
+      "garten": { "name": "Giardino & terrazze", "lead": "Terrazza, vialetti" },
+      "heizung": { "name": "Riscaldamento & colonne", "lead": "Pompa di calore, a pavimento" },
+      "kueche": { "name": "Cucine & mobili", "lead": "Falegnameria" },
+      "maler": { "name": "Imbiancatura & verniciatura", "lead": "Pitture, carte da parati" },
+      "rohbau": { "name": "Opere strutturali", "lead": "Fondazioni, murature, solai" },
+      "thermen": { "name": "Caldaie & tecnica termica", "lead": "Gas, gasolio, pompe di calore" },
+      "treppen": { "name": "Scale & ringhiere", "lead": "Legno, cemento, acciaio" },
+      "tueren": { "name": "Porte & portoni", "lead": "Interne, ingresso, scorrevoli" },
+      "trockenbau": { "name": "Cartongesso", "lead": "Pareti, soffitti" },
+      "sanitaer": { "name": "Impianti idraulici", "lead": "Acqua, acque reflue" },
+      "zaun": { "name": "Recinzioni", "lead": "Doppia maglia, legno, frangivista" }
+    }
+  },
   "heizmethoden": {
     "crumbLabel": "Riscaldamento · Calore ed energia",
     "title": "Metodi di<br/>riscaldamento moderni.<br/><em>Sette vie.</em>",
