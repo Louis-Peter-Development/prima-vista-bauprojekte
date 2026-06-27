@@ -1,0 +1,63 @@
+.pv-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--pv-font-mono, monospace);
+}
+
+.pv-lang__btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: currentColor;
+  opacity: 0.55;
+  border-radius: var(--pv-radius-sm, 4px);
+  transition: opacity var(--pv-dur-fast, 0.15s) var(--pv-ease-out, ease);
+}
+
+.pv-lang__btn:hover {
+  opacity: 0.9;
+}
+
+.pv-lang__btn.is-active {
+  opacity: 1;
+  color: var(--pv-copper, currentColor);
+  font-weight: 600;
+}
+
+.pv-lang__btn:focus-visible {
+  outline: 2px solid var(--pv-copper, currentColor);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+/* Separators between the three codes. */
+.pv-lang__btn + .pv-lang__btn {
+  position: relative;
+}
+.pv-lang__btn + .pv-lang__btn::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 0.7em;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+/* Larger touch targets inside the mobile menu. */
+.pv-lang--mobile {
+  gap: 4px;
+}
+.pv-lang--mobile .pv-lang__btn {
+  font-size: 0.85rem;
+  padding: 10px 12px;
+}

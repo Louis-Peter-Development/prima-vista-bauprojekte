@@ -1,0 +1,155 @@
+{
+  "promise": {
+    "eyebrow": "№ 01 — Versprechen",
+    "title": "Verantwortung<br/><em>aus einer</em><br/>Hand.",
+    "p1": "Wir glauben an Sanierung ohne Übergaben: ein Generalunternehmer, der die Verantwortung für jedes Gewerk trägt — vom Rohbau bis zur Möbelfuge. Sie sprechen mit einem Ansprechpartner, der für alles bürgt.",
+    "p2": "Diese Klarheit ist kein Komfort, sondern die Voraussetzung für Räume, die in fünfzehn Jahren noch dieselbe Ruhe ausstrahlen wie am ersten Tag.",
+    "list": {
+      "1": "Bauleitung inkl.",
+      "2": "Alle Materialien",
+      "3": "Festpreisgarantie",
+      "4": "Termin in 48 Std.",
+      "5": "Festes Endtermin-Datum",
+      "6": "5 Jahre Werksgewähr"
+    }
+  },
+  "packages": {
+    "eyebrow": "Komplett-Pakete",
+    "title": "Vier Wege zum<br/>fertigen <em>Raum.</em>",
+    "intro": "Ob Einzimmer-Refresh, Büroausbau oder Generalsanierung: jedes Paket bündelt Planung, Bauleitung und alle Gewerke — mit klarem Preis und festem Endtermin.",
+    "items": {
+      "haus": {
+        "num": "№ 01 — Komplett",
+        "title": "Haus-<br/>Sanierung",
+        "desc": "Generalsanierung von Bestandsbauten — Dach, Fassade, Innenausbau aus einer Hand.",
+        "alt": "Haus-Sanierung"
+      },
+      "wohnung": {
+        "num": "№ 02 — Modular",
+        "title": "Wohnung-<br/>Sanierung",
+        "desc": "Bäder, Küchen, Böden, Elektrik: Etagenwohnungen — bewohnbar in 6–10 Wochen.",
+        "alt": "Wohnung-Sanierung"
+      },
+      "gastronomie": {
+        "num": "№ 03 — Konzept",
+        "title": "Gastronomie-<br/>Ausbau",
+        "desc": "Restaurants, Bars, Hotels: von der Konzeptphase bis zur Eröffnung — schlüsselfertig.",
+        "alt": "Gastronomie-Ausbau"
+      },
+      "buero": {
+        "num": "№ 04 — Büro",
+        "title": "Büro-<br/>Ausbau",
+        "desc": "Büroflächen, Praxen und Arbeitswelten — bezugsfertig mit Technik, Akustik und Oberflächen.",
+        "alt": "Büro-Ausbau"
+      }
+    }
+  },
+  "stats": {
+    "title": "Zwölf Jahre. <em>Eine Linie.</em>",
+    "intro": "Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2014.",
+    "since": {
+      "label": "Bauleitung seit",
+      "desc": "Gegründet von Daniel und Monica in Frankfurt am Main."
+    },
+    "projects": {
+      "label": "Abgeschlossene Projekte",
+      "desc": "Von der Einliegerwohnung bis zum 220-Sitzplatz-Restaurant."
+    },
+    "trades": {
+      "label": "Gewerke aus einer Hand",
+      "desc": "Vom Rohbau bis zum Schreiner — alles inhouse oder unter Vertrag."
+    },
+    "onTime": {
+      "label": "Termintreue",
+      "desc": "Festes Endtermin-Datum im Vertrag — sonst Konventionalstrafe."
+    }
+  },
+  "calculator": {
+    "eyebrow": "№ 05 · Kalkulator",
+    "title": "Live-Schätzung.<br/>In <em>Sekunden.</em>",
+    "p": "Vier Klicks, eine Spanne: Objektart, Fläche, Ausbaustandard, Gewerke. Der Kalkulator rechnet in Echtzeit — keine Anmeldung, kein Telefonat. Eine erste Orientierung, sofort.",
+    "steps": {
+      "1": "Objektart & Fläche wählen",
+      "2": "Gewerke an- und abwählen",
+      "3": "Spanne aktualisiert live"
+    },
+    "toCalculator": "Zum Kalkulator",
+    "appointment": "Termin vereinbaren"
+  },
+  "blitz": {
+    "eyebrow": "№ 06 · Blitz-Angebot",
+    "title": "Festpreis. Schwarz auf weiß.<br/>In <em>24 Stunden.</em>",
+    "p": "Etwas konkreter? Beantworten Sie ein Kurzformular — wir prüfen, kalkulieren und schicken eine schriftliche Vorab-Kostenschätzung, per Mail, von unserer Bauleitung gegengezeichnet.",
+    "steps": {
+      "1": "Kurzformular ausfüllen (3 Minuten)",
+      "2": "Bauleitung prüft Substanz & Gewerke",
+      "3": "Schriftliches Angebot in 24 Stunden"
+    },
+    "request": "Blitz-Angebot anfordern",
+    "appointment": "Termin vereinbaren"
+  },
+  "trades": {
+    "eyebrow": "Gewerke",
+    "title": "Neunzehn Gewerke,<br/><em>eine Hand.</em>",
+    "intro": "Jedes Gewerk koordiniert durch unsere eigene Bauleitung — einzeln buchbar oder als Komplettpaket. Hier ein Auszug der am häufigsten gefragten Disziplinen.",
+    "openCalculator": "Kostenrechner öffnen",
+    "viewAll": "Alle 19 Gewerke ansehen",
+    "preview": {
+      "bad": { "name": "Bäder & Sanitär", "lead": "Wanne, Dusche, WC" },
+      "kueche": { "name": "Küchen & Möbelbau", "lead": "Schreinerei" },
+      "boden": { "name": "Böden & Beläge", "lead": "Parkett, Stein, Vinyl" },
+      "elektro": { "name": "Elektroinstallation", "lead": "Strom, Licht, KNX" },
+      "heizung": { "name": "Heizungsbau", "lead": "Wärmepumpe, FBH" },
+      "maler": { "name": "Maler & Lackierer", "lead": "Farben, Tapeten" },
+      "fassade": { "name": "Fassadensanierung", "lead": "Putz, WDVS" },
+      "trockenbau": { "name": "Trockenbau", "lead": "Wände, Decken" }
+    }
+  },
+  "heating": {
+    "eyebrow": "Moderne Heizmethoden",
+    "title": "Bereit für die <em>Zukunft.</em>",
+    "p": "Rüsten Sie mit unseren Paketen auf innovative Heizmethoden auf — förderfähig, geräuscharm und unabhängig vom Gas.",
+    "pump": {
+      "num": "№ 01",
+      "title": "Luftwärme-<br/>pumpe",
+      "desc": "Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.",
+      "alt": "Luftwärmepumpe"
+    },
+    "risers": {
+      "num": "№ 02",
+      "title": "Heizungs-<br/>stränge",
+      "desc": "Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.",
+      "alt": "Heizungsstränge"
+    },
+    "radiators": {
+      "num": "№ 03",
+      "title": "Design-<br/>Heizkörper",
+      "desc": "Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.",
+      "alt": "Heizkörper"
+    },
+    "more": "Mehr erfahren",
+    "viewAll": "Alle Heizmethoden ansehen"
+  },
+  "founders": {
+    "eyebrow": "Über uns",
+    "title": "Ein Bauunternehmen<br/>geführt wie ein<br/><em>Familienbetrieb.</em>",
+    "p1": "Daniel und Monica führen Prima Vista seit 2014 — als Paar, als Bauleiter, als Ansprechpartner. Wer hier baut, redet nicht mit einem Callcenter, sondern mit den Menschen, deren Namen am Vertrag stehen.",
+    "p2": "Von der Frankfurter Zentrale aus betreuen wir Projekte in Hessen; aus Emmenbrücke heraus die ganze Innerschweiz. Beide Büros teilen Materialien, Pläne und Standards — Sie bekommen überall denselben Anspruch.",
+    "sigName": "Daniel & Monica",
+    "sigRole": "Gründer & Bauleitung",
+    "photoAlt": "Daniel und Monica — Gründer Prima Vista Bauprojekte",
+    "photoLabel": "Daniel & Monica — Frankfurt, 2026"
+  },
+  "testimonial": {
+    "quote": "Wir hatten Angst vor der Sanierung — und wurden überrascht: Prima Vista lieferte pünktlich, sauber und so präzise, dass wir schon einen Monat früher einziehen konnten.",
+    "name": "Familie Brauer",
+    "meta": "Komplettsanierung Eigentumswohnung · Sachsenhausen"
+  },
+  "finalCta": {
+    "title": "Lassen Sie uns über<br/>Ihr <em>Bauprojekt</em> reden.",
+    "p": "Erste Beratung kostenlos. Termin innerhalb von 48 Stunden, vor Ort oder per Video — in Frankfurt und Emmenbrücke.",
+    "appointment": "Termin vereinbaren",
+    "toCalculator": "Zum Kalkulator",
+    "expressQuote": "Blitz-Angebot"
+  }
+}

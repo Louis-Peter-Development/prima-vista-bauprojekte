@@ -1,8 +1,12 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
+import { toCanonicalPath } from '../i18n/routes';
 import { ChatIcon, FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
 
 export default function Footer() {
-  const { pathname } = useLocation();
+  const { t } = useTranslation();
+  const pathname = toCanonicalPath(useLocation().pathname);
   return (
     <footer className="pv-footer">
       <div className="pv-footer__inner">
@@ -24,11 +28,9 @@ export default function Footer() {
                 <span className="pv-logo__tag">Bauprojekte</span>
               </span>
             </Link>
-            <p className="pv-footer__brand-blurb">
-              Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.
-            </p>
+            <p className="pv-footer__brand-blurb">{t('footer.blurb')}</p>
             <div className="pv-footer__socials">
-              <Link className="pv-footer__contact-icon pv-footer__contact-icon--brand" to="/#ueber-uns" title="Über uns">
+              <Link className="pv-footer__contact-icon pv-footer__contact-icon--brand" to="/#ueber-uns" title={t('footer.about')}>
                 <img src="/assets/img/logo.png" alt="" width="1085" height="1051" loading="lazy" />
               </Link>
               <a className="pv-footer__contact-icon" href="https://www.instagram.com/primavista.bauprojekte" target="_blank" rel="noopener noreferrer" title="Instagram">
@@ -43,7 +45,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h3>Standorte</h3>
+            <h3>{t('footer.locations')}</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <div className="pv-footer__contact-link pv-footer__contact-link--static">
@@ -55,7 +57,7 @@ export default function Footer() {
                     <br />
                     60314 Frankfurt
                     <br />
-                    Deutschland
+                    {t('footer.countryDe')}
                     <br />
                     <a href="tel:+4915789818308">+49 1578 98 18 308</a>
                   </span>
@@ -71,7 +73,7 @@ export default function Footer() {
                     <br />
                     6020 Emmenbrücke
                     <br />
-                    Schweiz
+                    {t('footer.countryCh')}
                     <br />
                     <a href="tel:+41782659332">+41 78 265 93 32</a>
                   </span>
@@ -80,53 +82,53 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3>Leistungen</h3>
+            <h3>{t('footer.services')}</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <Link className="pv-footer__contact-link" to="/komplett-pakete">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">01</span>
-                  <span>Komplett-Pakete</span>
+                  <span>{t('footer.links.packages')}</span>
                 </Link>
               </li>
               <li>
                 <Link className="pv-footer__contact-link" to="/gewerke">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">02</span>
-                  <span>Gewerke</span>
+                  <span>{t('footer.links.trades')}</span>
                 </Link>
               </li>
               <li>
                 <Link className="pv-footer__contact-link" to="/heizmethoden">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">03</span>
-                  <span>Heizmethoden</span>
+                  <span>{t('footer.links.heating')}</span>
                 </Link>
               </li>
               <li>
                 <Link className="pv-footer__contact-link" to="/kalkulator">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">04</span>
-                  <span>Kalkulator</span>
+                  <span>{t('footer.links.calculator')}</span>
                 </Link>
               </li>
               <li>
                 <Link className="pv-footer__contact-link" to="/projekte">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">05</span>
-                  <span>Projekte</span>
+                  <span>{t('footer.links.projects')}</span>
                 </Link>
               </li>
               <li>
                 <Link className="pv-footer__contact-link" to="/blitz-angebot">
                   <span className="pv-footer__contact-icon pv-footer__contact-icon--text" aria-hidden="true">06</span>
-                  <span>Blitz-Angebote</span>
+                  <span>{t('footer.links.express')}</span>
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3>Kontakt</h3>
+            <h3>{t('footer.contact')}</h3>
             <ul className="pv-footer__contact-list">
               <li>
                 <Link className="pv-footer__contact-link" to="/kontakt">
                   <span className="pv-footer__contact-icon" aria-hidden="true"><ChatIcon /></span>
-                  <span>Kontaktformular</span>
+                  <span>{t('footer.links.contactForm')}</span>
                 </Link>
               </li>
               <li>
@@ -157,11 +159,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="pv-footer__bottom">
-          <small>© 2026 Prima Vista Bauprojekte GmbH</small>
+          <small>{t('footer.copyright')}</small>
           <div className="pv-footer__legal">
-            <Link to="/admin/blog">Admin</Link>
-            <Link to="/impressum">Impressum</Link>
-            <Link to="/datenschutz">Datenschutz</Link>
+            <Link to="/admin/blog">{t('footer.admin')}</Link>
+            <Link to="/impressum">{t('footer.imprint')}</Link>
+            <Link to="/datenschutz">{t('footer.privacy')}</Link>
           </div>
         </div>
       </div>

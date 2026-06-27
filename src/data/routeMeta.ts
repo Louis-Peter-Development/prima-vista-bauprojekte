@@ -1,3 +1,5 @@
+import type { Locale } from '../i18n/routes';
+
 export type RouteMeta = {
   title: string;
   description: string;
@@ -140,19 +142,52 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   },
 };
 
-export function getRouteMeta(pathname: string): RouteMeta {
-  if (ROUTE_META[pathname]) return ROUTE_META[pathname];
+// Localized route-meta overrides. Routes not yet listed here fall back to the
+// German meta above, so SEO never regresses while translation rolls out.
+const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> = {
+  en: {
+    '/': {
+      title: 'Premium renovation & construction in Frankfurt and Emmenbrücke',
+      description:
+        'Prima Vista Bauprojekte plans and delivers renovation, refurbishment and fit-out from a single source in Frankfurt, Emmenbrücke and the surrounding area.',
+    },
+  },
+  it: {
+    '/': {
+      title: 'Ristrutturazione e costruzione premium a Francoforte ed Emmenbrücke',
+      description:
+        'Prima Vista Bauprojekte progetta e realizza ristrutturazione, rinnovo e allestimento da un unico interlocutore a Francoforte, Emmenbrücke e dintorni.',
+    },
+  },
+};
+
+const DYNAMIC_TITLES: Record<Locale, { blog: string; project: string }> = {
+  de: { blog: 'Magazinbeitrag', project: 'Projekt' },
+  en: { blog: 'Magazine article', project: 'Project' },
+  it: { blog: 'Articolo del magazine', project: 'Progetto' },
+};
+
+/**
+ * Resolve route metadata for a canonical (German) path in the given locale.
+ * Falls back to the German meta when a localized override is not yet defined.
+ */
+export function getRouteMeta(pathname: string, locale: Locale = 'de'): RouteMeta {
+  const localeMeta = locale === 'de' ? ROUTE_META : ROUTE_META_I18N[locale];
+
+  if (localeMeta[pathname]) return localeMeta[pathname];
+  if (locale !== 'de' && ROUTE_META[pathname]) return ROUTE_META[pathname];
+
   if (pathname.startsWith('/blog/')) {
     return {
-      title: 'Magazinbeitrag',
-      description: ROUTE_META['/blog'].description,
+      title: DYNAMIC_TITLES[locale].blog,
+      description: (localeMeta['/blog'] ?? ROUTE_META['/blog']).description,
     };
   }
   if (pathname.startsWith('/projekte/')) {
     return {
-      title: 'Projekt',
-      description: ROUTE_META['/projekte'].description,
+      title: DYNAMIC_TITLES[locale].project,
+      description: (localeMeta['/projekte'] ?? ROUTE_META['/projekte']).description,
     };
   }
-  return DEFAULT_ROUTE_META;
+  return localeMeta['/'] ?? DEFAULT_ROUTE_META;
 }

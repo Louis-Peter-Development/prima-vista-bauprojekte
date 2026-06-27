@@ -1,0 +1,57 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Start",
+    "packages": "Komplett-Pakete",
+    "trades": "Gewerke",
+    "heating": "Heizmethoden",
+    "projects": "Projekte",
+    "magazine": "Magazin",
+    "calculator": "Kalkulator",
+    "ariaPrimary": "Hauptnavigation",
+    "ariaMobile": "Mobile Navigation"
+  },
+  "header": {
+    "logoAria": "Prima Vista — Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "themeToDark": "Zum dunklen Design wechseln",
+    "themeToLight": "Zum hellen Design wechseln",
+    "themeDarkTitle": "Dunkles Design",
+    "themeLightTitle": "Helles Design"
+  },
+  "language": { "aria": "Sprache wählen" },
+  "mobileMenu": {
+    "focus": "Im Fokus",
+    "callPrefix": "oder rufen Sie an"
+  },
+  "cta": {
+    "learnMore": "Mehr erfahren",
+    "appointment": "Termin vereinbaren",
+    "toCalculator": "Zum Kalkulator",
+    "requestExpress": "Blitz-Angebot anfordern",
+    "expressQuote": "Blitz-Angebot"
+  },
+  "footer": {
+    "blurb": "Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.",
+    "about": "Über uns",
+    "locations": "Standorte",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "countryDe": "Deutschland",
+    "countryCh": "Schweiz",
+    "links": {
+      "packages": "Komplett-Pakete",
+      "trades": "Gewerke",
+      "heating": "Heizmethoden",
+      "calculator": "Kalkulator",
+      "projects": "Projekte",
+      "express": "Blitz-Angebote",
+      "contactForm": "Kontaktformular"
+    },
+    "admin": "Admin",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}

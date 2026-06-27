@@ -1,17 +1,21 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { NavLink, Link } from '../i18n/Link';
+import { toCanonicalPath } from '../i18n/routes';
+import LanguageSwitcher from './LanguageSwitcher';
 import { useTheme } from '../hooks/useTheme';
 
-type NavItem = { to: string; label: string; activeOn?: string[] };
+type NavItem = { to: string; labelKey: string; activeOn?: string[] };
 
 const NAV: NavItem[] = [
-  { to: '/', label: 'Start' },
-  { to: '/komplett-pakete', label: 'Komplett-Pakete', activeOn: ['/haus-sanierung', '/wohnung-sanierung', '/gastronomie-ausbau', '/buero-ausbau'] },
-  { to: '/gewerke', label: 'Gewerke', activeOn: ['/badsanierung', '/kuechen-moebelbau', '/boeden-belaege', '/elektroinstallation', '/trockenbau', '/maler-lackierer', '/fassadensanierung', '/abdichtung-keller', '/dachsanierung', '/treppen-gelaender', '/garten-aussenanlagen', '/barrierefreiheit', '/fenstertechnik', '/rohbau-abbruch', '/tueren-zargen', '/sanitaerinstallation', '/zaeune'] },
-  { to: '/heizmethoden', label: 'Heizmethoden', activeOn: ['/heizkoerper', '/heizstraenge', '/fussbodenheizung', '/waermepumpe', '/gas-heizung', '/pelletofen', '/saunaofen'] },
-  { to: '/projekte', label: 'Projekte' },
-  { to: '/blog', label: 'Magazin' },
-  { to: '/kalkulator', label: 'Kalkulator' },
+  { to: '/', labelKey: 'nav.home' },
+  { to: '/komplett-pakete', labelKey: 'nav.packages', activeOn: ['/haus-sanierung', '/wohnung-sanierung', '/gastronomie-ausbau', '/buero-ausbau'] },
+  { to: '/gewerke', labelKey: 'nav.trades', activeOn: ['/badsanierung', '/kuechen-moebelbau', '/boeden-belaege', '/elektroinstallation', '/trockenbau', '/maler-lackierer', '/fassadensanierung', '/abdichtung-keller', '/dachsanierung', '/treppen-gelaender', '/garten-aussenanlagen', '/barrierefreiheit', '/fenstertechnik', '/rohbau-abbruch', '/tueren-zargen', '/sanitaerinstallation', '/zaeune'] },
+  { to: '/heizmethoden', labelKey: 'nav.heating', activeOn: ['/heizkoerper', '/heizstraenge', '/fussbodenheizung', '/waermepumpe', '/gas-heizung', '/pelletofen', '/saunaofen'] },
+  { to: '/projekte', labelKey: 'nav.projects' },
+  { to: '/blog', labelKey: 'nav.magazine' },
+  { to: '/kalkulator', labelKey: 'nav.calculator' },
 ];
 
 function navItemMatches(item: NavItem, pathname: string): boolean {
@@ -32,9 +36,11 @@ const FEATURED_PROJECT = {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { pathname } = useLocation();
+  const { t } = useTranslation();
+  const { pathname: rawPathname } = useLocation();
+  const pathname = toCanonicalPath(rawPathname);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => { setOpen(false); }, [rawPathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -55,7 +61,7 @@ export default function Header() {
           <Link
             className="pv-logo"
             to="/"
-            aria-label="Prima Vista — Startseite"
+            aria-label={t('header.logoAria')}
             onClick={() => {
               if (pathname === '/') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,7 +74,7 @@ export default function Header() {
               <span className="pv-logo__tag">Bauprojekte</span>
             </span>
           </Link>
-          <nav className="pv-nav" aria-label="Hauptnavigation">
+          <nav className="pv-nav" aria-label={t('nav.ariaPrimary')}>
             <ul className="pv-nav__list">
               {NAV.map((item) => {
                 const active = navItemMatches(item, pathname);
@@ -84,18 +90,19 @@ export default function Header() {
                         }
                       }}
                     >
-                      {item.label}
+                      {t(item.labelKey)}
                     </NavLink>
                   </li>
                 );
               })}
             </ul>
+            <LanguageSwitcher className="pv-nav__lang" />
             <button
               type="button"
               className="pv-theme-toggle"
-              aria-label={theme === 'dark' ? 'Zum hellen Design wechseln' : 'Zum dunklen Design wechseln'}
+              aria-label={theme === 'dark' ? t('header.themeToLight') : t('header.themeToDark')}
               aria-pressed={theme === 'dark'}
-              title={theme === 'dark' ? 'Helles Design' : 'Dunkles Design'}
+              title={theme === 'dark' ? t('header.themeLightTitle') : t('header.themeDarkTitle')}
               onClick={toggleTheme}
             >
               <span className="pv-theme-toggle__track" aria-hidden="true">
@@ -107,12 +114,12 @@ export default function Header() {
           </nav>
           <div className="pv-header__actions">
             <Link className="btn btn--light pv-header__cta" to="/blitz-angebot">
-              Blitz-Angebot <span className="arrow">&gt;</span>
+              {t('cta.expressQuote')} <span className="arrow">&gt;</span>
             </Link>
             <button
               type="button"
               className={`pv-burger${open ? ' is-open' : ''}`}
-              aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
+              aria-label={open ? t('header.closeMenu') : t('header.openMenu')}
               aria-expanded={open}
               aria-controls="pv-mobile-menu"
               onClick={() => setOpen((v) => !v)}
@@ -128,14 +135,14 @@ export default function Header() {
         className={`pv-mobile-menu${open ? ' is-open' : ''}`}
         role="dialog"
         aria-modal="true"
-        aria-label="Hauptnavigation"
+        aria-label={t('nav.ariaPrimary')}
         hidden={!open}
       >
         <Link to="/projekte" className="pv-mobile-menu__feature" onClick={() => setOpen(false)}>
           <img src={FEATURED_PROJECT.src} alt="" width="1500" height="1125" loading="lazy" />
           <span className="pv-mobile-menu__feature-overlay" aria-hidden="true" />
           <span className="pv-mobile-menu__feature-eyebrow">
-            Im Fokus <span className="pv-mobile-menu__feature-sep">·</span> {FEATURED_PROJECT.num}
+            {t('mobileMenu.focus')} <span className="pv-mobile-menu__feature-sep">·</span> {FEATURED_PROJECT.num}
           </span>
           <span className="pv-mobile-menu__feature-body">
             <span className="pv-mobile-menu__feature-title">
@@ -150,7 +157,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="pv-mobile-menu__nav" aria-label="Mobile Navigation">
+        <nav className="pv-mobile-menu__nav" aria-label={t('nav.ariaMobile')}>
           <ul className="pv-mobile-menu__list">
             {NAV.map((item, i) => {
               const active = navItemMatches(item, pathname);
@@ -167,7 +174,7 @@ export default function Header() {
                     setOpen(false);
                   }}
                 >
-                  <span className="pv-mobile-menu__label">{item.label}</span>
+                  <span className="pv-mobile-menu__label">{t(item.labelKey)}</span>
                   <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>
                 </NavLink>
               </li>
@@ -177,14 +184,15 @@ export default function Header() {
         </nav>
 
         <div className="pv-mobile-menu__foot">
+          <LanguageSwitcher className="pv-lang--mobile pv-mobile-menu__lang" />
           <Link to="/blitz-angebot" className="pv-mobile-menu__cta" onClick={() => setOpen(false)}>
-            Blitz-Angebot <span className="arrow">&gt;</span>
+            {t('cta.expressQuote')} <span className="arrow">&gt;</span>
           </Link>
           <Link to="/kontakt" className="pv-mobile-menu__cta pv-mobile-menu__cta--ghost" onClick={() => setOpen(false)}>
-            Termin vereinbaren <span className="arrow">&gt;</span>
+            {t('cta.appointment')} <span className="arrow">&gt;</span>
           </Link>
           <div className="pv-mobile-menu__phone">
-            oder rufen Sie an <span className="pv-mobile-menu__phone-sep">·</span>{' '}
+            {t('mobileMenu.callPrefix')} <span className="pv-mobile-menu__phone-sep">·</span>{' '}
             <a href="tel:+4915789818308">+49 1578 98 18 308</a>
           </div>
         </div>

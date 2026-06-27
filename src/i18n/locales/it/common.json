@@ -1,0 +1,57 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Home",
+    "packages": "Pacchetti",
+    "trades": "Lavori",
+    "heating": "Riscaldamento",
+    "projects": "Progetti",
+    "magazine": "Magazine",
+    "calculator": "Preventivo",
+    "ariaPrimary": "Navigazione principale",
+    "ariaMobile": "Navigazione mobile"
+  },
+  "header": {
+    "logoAria": "Prima Vista — home",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "themeToDark": "Passa al tema scuro",
+    "themeToLight": "Passa al tema chiaro",
+    "themeDarkTitle": "Tema scuro",
+    "themeLightTitle": "Tema chiaro"
+  },
+  "language": { "aria": "Scegli la lingua" },
+  "mobileMenu": {
+    "focus": "In primo piano",
+    "callPrefix": "oppure chiamaci"
+  },
+  "cta": {
+    "learnMore": "Scopri di più",
+    "appointment": "Fissa un appuntamento",
+    "toCalculator": "Apri il preventivatore",
+    "requestExpress": "Richiedi un preventivo express",
+    "expressQuote": "Preventivo express"
+  },
+  "footer": {
+    "blurb": "Ristrutturazione e rinnovo da un unico interlocutore — per abitazioni e ristorazione, a Francoforte ed Emmenbrücke.",
+    "about": "Chi siamo",
+    "locations": "Sedi",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "countryDe": "Germania",
+    "countryCh": "Svizzera",
+    "links": {
+      "packages": "Pacchetti completi",
+      "trades": "Lavori",
+      "heating": "Riscaldamento",
+      "calculator": "Preventivatore",
+      "projects": "Progetti",
+      "express": "Preventivi express",
+      "contactForm": "Modulo di contatto"
+    },
+    "admin": "Admin",
+    "imprint": "Note legali",
+    "privacy": "Privacy",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}

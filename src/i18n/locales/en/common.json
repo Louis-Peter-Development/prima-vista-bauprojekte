@@ -1,0 +1,57 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Home",
+    "packages": "Packages",
+    "trades": "Trades",
+    "heating": "Heating",
+    "projects": "Projects",
+    "magazine": "Magazine",
+    "calculator": "Calculator",
+    "ariaPrimary": "Main navigation",
+    "ariaMobile": "Mobile navigation"
+  },
+  "header": {
+    "logoAria": "Prima Vista — home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToDark": "Switch to dark theme",
+    "themeToLight": "Switch to light theme",
+    "themeDarkTitle": "Dark theme",
+    "themeLightTitle": "Light theme"
+  },
+  "language": { "aria": "Choose language" },
+  "mobileMenu": {
+    "focus": "In focus",
+    "callPrefix": "or give us a call"
+  },
+  "cta": {
+    "learnMore": "Learn more",
+    "appointment": "Book an appointment",
+    "toCalculator": "Open the calculator",
+    "requestExpress": "Request an express quote",
+    "expressQuote": "Express quote"
+  },
+  "footer": {
+    "blurb": "Renovation & refurbishment from a single source — for homes and hospitality, in Frankfurt and Emmenbrücke.",
+    "about": "About us",
+    "locations": "Locations",
+    "services": "Services",
+    "contact": "Contact",
+    "countryDe": "Germany",
+    "countryCh": "Switzerland",
+    "links": {
+      "packages": "Complete packages",
+      "trades": "Trades",
+      "heating": "Heating",
+      "calculator": "Calculator",
+      "projects": "Projects",
+      "express": "Express quotes",
+      "contactForm": "Contact form"
+    },
+    "admin": "Admin",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}
