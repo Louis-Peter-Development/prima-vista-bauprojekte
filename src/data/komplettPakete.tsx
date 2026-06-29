@@ -32,7 +32,7 @@ export const PACKAGES: Package[] = [
     key: 'gastro',
     num: '03',
     variant: 'ink',
-    photo: '/assets/img/proj-sushi.webp',
+    photo: '/assets/img/proj-restaurant-dining.webp',
     detailTo: '/gastronomie-ausbau',
     ctaDark: true,
   },
@@ -41,7 +41,7 @@ export const PACKAGES: Package[] = [
     num: '04',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/photo-office-light.webp',
+    photo: '/assets/img/photo-office-modern.webp',
     detailTo: '/buero-ausbau',
   },
 ];
