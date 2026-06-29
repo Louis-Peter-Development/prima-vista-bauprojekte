@@ -4,6 +4,7 @@ export type WohnungTypeOption = {
   value: WohnungType;
   label: string;
   detail: string;
+  defaultArea: number;
   factor: number;
   multiLevel: boolean;
 };
@@ -23,10 +24,10 @@ export type WohnungGewerk = {
 };
 
 export const WOHNUNG_TYPES: WohnungTypeOption[] = [
-  { value: 'studio', label: '1-Zimmer · Studio', detail: 'Kompakte Etagenwohnung', factor: 0.96, multiLevel: false },
-  { value: '2zi', label: '2-Zimmer-Wohnung', detail: 'Standard-Etagenwohnung', factor: 1.00, multiLevel: false },
-  { value: '3zi', label: '3-Zimmer-Wohnung', detail: 'Familienwohnung mit mehr Trennwänden', factor: 1.04, multiLevel: false },
-  { value: 'maisonette', label: 'Maisonette · 4+ Zimmer', detail: 'Mehrgeschossig oder Penthouse', factor: 1.12, multiLevel: true },
+  { value: 'studio', label: '1-Zimmer · Studio', detail: 'Kompakte Etagenwohnung', defaultArea: 50, factor: 0.96, multiLevel: false },
+  { value: '2zi', label: '2-Zimmer-Wohnung', detail: 'Standard-Etagenwohnung', defaultArea: 100, factor: 1.00, multiLevel: false },
+  { value: '3zi', label: '3-Zimmer-Wohnung', detail: 'Familienwohnung mit mehr Trennwänden', defaultArea: 150, factor: 1.04, multiLevel: false },
+  { value: 'maisonette', label: 'Maisonette · 4+ Zimmer', detail: 'Mehrgeschossig oder Penthouse', defaultArea: 200, factor: 1.12, multiLevel: true },
 ];
 
 export const AREA_OPTIONS: AreaOption[] = [

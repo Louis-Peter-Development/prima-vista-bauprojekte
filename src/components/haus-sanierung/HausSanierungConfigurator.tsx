@@ -21,21 +21,28 @@ const DEFAULT_PICKED = [
   'wasser',
 ];
 
+const DEFAULT_HOUSE_TYPE = DETAILED_CALCULATOR_TYPES[0];
+
+function getHouseTypeOption(value: HouseType) {
+  return HOUSE_TYPES.find((type) => type.value === value);
+}
+
 type Props = {
   embedded?: boolean;
 };
 
 export default function HausSanierungConfigurator({ embedded }: Props) {
-  const [houseType, setHouseType] = useState<HouseType>(DETAILED_CALCULATOR_TYPES[0]);
-  const [area, setArea] = useState<number>(10);
+  const [houseType, setHouseType] = useState<HouseType>(DEFAULT_HOUSE_TYPE);
+  const [area, setArea] = useState<number>(() => getHouseTypeOption(DEFAULT_HOUSE_TYPE)?.defaultArea ?? 60);
   const [picked, setPicked] = useState<string[]>(DEFAULT_PICKED);
 
-  const selectedType = HOUSE_TYPES.find((type) => type.value === houseType);
+  const selectedType = getHouseTypeOption(houseType);
   const showsDetailedCalculator = DETAILED_CALCULATOR_TYPES.includes(houseType);
 
   function changeHouseType(value: HouseType) {
-    const nextType = HOUSE_TYPES.find((type) => type.value === value);
+    const nextType = getHouseTypeOption(value);
     setHouseType(value);
+    if (nextType) setArea(nextType.defaultArea);
     if (!nextType?.includesDach) {
       setPicked((current) => current.filter((key) => {
         const gewerk = HAUS_GEWERKE.find((item) => item.key === key);
