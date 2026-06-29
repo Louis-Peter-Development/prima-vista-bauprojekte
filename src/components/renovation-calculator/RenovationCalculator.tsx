@@ -360,7 +360,7 @@ export default function RenovationCalculator({
                                     <span className="renocalc-row-name__text">
                                       <em>{typeLabel(row.type)}</em>
                                       <strong>{rowTitle}</strong>
-                                      <small>{row.description}</small>
+                                      <small>{localizeCatalog(row.description, row.description, locale)}</small>
                                     </span>
                                   </label>
                                   {replaceRowId === row.id && (
@@ -372,7 +372,7 @@ export default function RenovationCalculator({
                                     >
                                       {row.alternatives.map((alternative: RenovationProductAlternative) => (
                                         <option key={alternative.id} value={alternative.id}>
-                                          {alternative.title} · {formatEuro(alternative.basePrice)}
+                                          {localizeCatalog(alternative.sku, alternative.title, locale)} · {formatEuro(alternative.basePrice)}
                                         </option>
                                       ))}
                                     </select>

@@ -1,4 +1,15 @@
 import type { Locale } from './routes';
+import enProducts from './catalog/en.json';
+import itProducts from './catalog/it.json';
+
+// Full product/display-string dictionary for the calculator catalog, keyed by
+// the exact canonical-German source string. ~1.1k entries per locale covering
+// the individual product, category and unit titles that the seeded map below
+// does not. German source data is never touched — this is render-time only.
+const PRODUCT_DICT: Partial<Record<Locale, Record<string, string>>> = {
+  en: enProducts as Record<string, string>,
+  it: itProducts as Record<string, string>,
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Render-only translation layer for the RenovationCalculator product catalog.
@@ -133,10 +144,14 @@ export const CATALOG_TRANSLATIONS: Map<string, Partial<Record<Exclude<Locale, 'd
  */
 export function localizeCatalog(key: string, german: string, locale: Locale): string {
   if (locale === 'de') return german;
+  // 1) Curated overrides (section/category headings) win.
   const entry = CATALOG_TRANSLATIONS.get(key) ?? CATALOG_TRANSLATIONS.get(german);
-  // Falls back to German for any locale not seeded (e.g. fr), matching the
-  // per-product catalog behaviour.
-  return entry?.[locale] ?? german;
+  if (entry?.[locale]) return entry[locale];
+  // 2) Full product/display dictionary, keyed by the German source string.
+  const dict = PRODUCT_DICT[locale];
+  // 3) Fall back to German for anything unseeded (e.g. fr, or a string the
+  //    dictionary doesn't cover).
+  return dict?.[key] ?? dict?.[german] ?? german;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
