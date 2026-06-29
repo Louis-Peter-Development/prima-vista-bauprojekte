@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
 import {
   BLITZ_ART_OPTIONS,
   BLITZ_SERVICE_GROUPS,
@@ -17,6 +18,40 @@ import {
 type BlitzErrors = Partial<Record<keyof BlitzFormState, string>>;
 
 type LocationState = { kalkulator?: KalkulatorHandoff } | null;
+
+// Maps each canonical German BLITZ_SERVICE_GROUPS option (the value POSTed to
+// the server, which MUST stay German) to a `kalk` i18n leaf key so the DISPLAY
+// can be localized. Falls back to the German option string when unmapped.
+const SERVICE_OPTION_I18N: Record<string, string> = {
+  'Haus-Sanierung': 'kalk:leaves.pakete.haus.label',
+  'Wohnung-Sanierung': 'kalk:leaves.pakete.wohnung.label',
+  'Gastronomie-Ausbau': 'kalk:leaves.pakete.gastronomie.label',
+  'Büro-Ausbau': 'kalk:leaves.pakete.buero.label',
+  'Bäder & Sanitär': 'kalk:leaves.gewerke.bad.label',
+  'Küchen & Möbelbau': 'kalk:leaves.gewerke.kueche.label',
+  'Böden & Beläge': 'kalk:leaves.gewerke.boden.label',
+  'Elektroinstallation': 'kalk:leaves.gewerke.elektro.label',
+  'Sanitärinstallation': 'kalk:leaves.gewerke.sanitaer.label',
+  'Trockenbau': 'kalk:leaves.gewerke.trockenbau.label',
+  'Maler & Lackierer': 'kalk:leaves.gewerke.maler.label',
+  'Fassadensanierung': 'kalk:leaves.gewerke.fassade.label',
+  'Dachsanierung': 'kalk:leaves.gewerke.dach.label',
+  'Abdichtung & Keller': 'kalk:leaves.gewerke.abdichtung.label',
+  'Treppen & Geländer': 'kalk:leaves.gewerke.treppen.label',
+  'Garten & Außenanlagen': 'kalk:leaves.gewerke.garten.label',
+  'Barrierefreiheit': 'kalk:leaves.gewerke.barrierefreiheit.label',
+  'Fenstertechnik': 'kalk:leaves.gewerke.fenster.label',
+  'Rohbau & Abbruch': 'kalk:leaves.gewerke.rohbau.label',
+  'Türen & Zargen': 'kalk:leaves.gewerke.tueren.label',
+  'Zäune & Tore': 'kalk:leaves.gewerke.zaeune.label',
+  'Heizkörper': 'kalk:leaves.heizung.heizkoerper.label',
+  'Heizstränge': 'kalk:leaves.heizung.heizstraenge.label',
+  'Fußboden-Heizung': 'kalk:leaves.heizung.fussboden.label',
+  'Luft-Wärmepumpe': 'kalk:leaves.heizung.waermepumpe.label',
+  'Gas-Heizung': 'kalk:leaves.heizung.gas.label',
+  'Pelletofen': 'kalk:leaves.heizung.pellet.label',
+  'Saunaofen': 'kalk:leaves.heizung.sauna.label',
+};
 
 // Canonical German labels, submitted to the server (office reads them in DE).
 const STARTTERMIN_LABELS: Record<string, string> = {
@@ -46,6 +81,7 @@ function getScopeField(art: BlitzFormState['art']): {
 
 export default function BlitzForm() {
   const { t } = useTranslation('blitz');
+  const locale = useLocale();
   const location = useLocation();
   const handoff = (location.state as LocationState)?.kalkulator ?? null;
 
@@ -200,6 +236,7 @@ export default function BlitzForm() {
           name: form.name.trim(),
           email: form.email.trim(),
           tel: form.tel.trim(),
+          locale,
         }),
       });
       if (!res.ok) {
@@ -354,7 +391,7 @@ export default function BlitzForm() {
                   <div className="form-choice-groups">
                     {serviceGroups.map((group) => (
                       <fieldset className="form-choice-group" key={group.key}>
-                        <legend>{group.label}</legend>
+                        <legend>{t(`form.art.${group.key}`, { defaultValue: group.label })}</legend>
                         <div className="form-chips">
                           {group.options.map((option, index) => {
                             const id = serviceOptionId(group.key, index);
@@ -378,7 +415,9 @@ export default function BlitzForm() {
                                     htmlFor={id}
                                     onClick={isMultiSelect ? undefined : () => selectServiceOption(option)}
                                   >
-                                    {option}
+                                    {SERVICE_OPTION_I18N[option]
+                                      ? t(SERVICE_OPTION_I18N[option], { defaultValue: option })
+                                      : option}
                                   </label>
                               </span>
                             );

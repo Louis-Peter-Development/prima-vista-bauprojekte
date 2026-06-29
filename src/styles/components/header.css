@@ -391,3 +391,203 @@
 }
 .pv-mobile-menu__phone-sep { color: var(--pv-copper); margin: 0 4px; }
 .pv-mobile-menu__phone a { color: var(--pv-copper); text-decoration: none; }
+
+/* ── Services dropdown ─────────────────────────────────────────────────── */
+.pv-nav__has-menu { position: relative; }
+.pv-nav__menu-trigger {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pv-ink);
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  white-space: nowrap;
+  transition: color 140ms var(--pv-ease-out);
+}
+.pv-nav__menu-trigger:hover,
+.pv-nav__menu-trigger.is-active { color: var(--pv-copper); }
+.pv-nav__menu-trigger.is-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 17px;
+  bottom: -2px;
+  height: 1.5px;
+  background: var(--pv-copper);
+}
+.pv-nav__chevron {
+  width: 12px;
+  height: 12px;
+  transition: transform 160ms var(--pv-ease-out);
+}
+.pv-nav__has-menu.is-open .pv-nav__chevron { transform: rotate(180deg); }
+
+.pv-nav__menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 230px;
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  background: var(--pv-cream-paper);
+  border: 1px solid var(--pv-border-hair);
+  border-radius: 12px;
+  box-shadow: var(--pv-shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 160ms var(--pv-ease-out), transform 160ms var(--pv-ease-out), visibility 160ms;
+  z-index: 60;
+}
+/* hover bridge so the cursor can cross the gap without closing */
+.pv-nav__menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+.pv-nav__has-menu.is-open .pv-nav__menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.pv-nav__menu li { margin: 0; }
+.pv-nav__menu a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pv-ink);
+  white-space: nowrap;
+}
+.pv-nav__menu a.is-active::after { display: none; }
+.pv-nav__menu a:hover,
+.pv-nav__menu a.is-active {
+  background: var(--pv-cream-soft);
+  color: var(--pv-copper);
+}
+
+/* ── Search ────────────────────────────────────────────────────────────── */
+.pv-search { position: relative; flex: 0 0 auto; }
+.pv-search__field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid var(--pv-border-thin);
+  border-radius: 999px;
+  background: var(--pv-cream-soft);
+  transition: border-color 140ms var(--pv-ease-out), background 140ms var(--pv-ease-out);
+}
+.pv-search__field:focus-within {
+  border-color: var(--pv-copper);
+  background: var(--pv-cream-paper);
+}
+.pv-search__icon { width: 15px; height: 15px; color: var(--pv-ink-3); flex: 0 0 auto; }
+.pv-search__input {
+  border: 0;
+  background: none;
+  outline: none;
+  color: var(--pv-ink);
+  font-size: 12.5px;
+  width: clamp(96px, 9vw, 156px);
+  padding: 0;
+}
+.pv-search__input::placeholder { color: var(--pv-ink-3); }
+.pv-search__input::-webkit-search-cancel-button { display: none; }
+.pv-search__clear {
+  background: none;
+  border: 0;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--pv-ink-3);
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+.pv-search__clear svg { width: 13px; height: 13px; }
+.pv-search__clear:hover { color: var(--pv-copper); }
+
+.pv-search__panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: min(380px, 86vw);
+  max-height: 62vh;
+  overflow-y: auto;
+  background: var(--pv-cream-paper);
+  border: 1px solid var(--pv-border-hair);
+  border-radius: 12px;
+  box-shadow: var(--pv-shadow-lg);
+  padding: 8px;
+  z-index: 70;
+}
+.pv-search__empty { margin: 0; padding: 10px 12px; color: var(--pv-ink-3); font-size: 13px; }
+.pv-search__group + .pv-search__group {
+  margin-top: 6px;
+  border-top: 1px solid var(--pv-border-hair);
+  padding-top: 6px;
+}
+.pv-search__group-label {
+  margin: 4px 12px 6px;
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pv-ink-3);
+}
+.pv-search__group ul { list-style: none; margin: 0; padding: 0; }
+.pv-search__result {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--pv-ink);
+}
+.pv-search__result.is-active,
+.pv-search__result:hover { background: var(--pv-cream-soft); }
+.pv-search__result-label { font-size: 13.5px; font-weight: 600; }
+.pv-search__result-lead { font-size: 12px; color: var(--pv-ink-3); }
+
+/* Below the desktop-nav breakpoint the nav (and its inline search) is hidden;
+   the mobile menu renders its own full-width search instead. */
+.pv-search--mobile { flex: 0 0 auto; margin: 14px var(--pv-shell-gutter) 4px; }
+.pv-search--mobile .pv-search__field { height: 46px; border-radius: 12px; padding: 0 14px; }
+.pv-search--mobile .pv-search__input { width: 100%; font-size: 15px; }
+.pv-search--mobile .pv-search__panel {
+  position: static;
+  width: 100%;
+  border: 0;
+  box-shadow: none;
+  padding: 6px 0 0;
+  max-height: 44vh;
+}
+
+/* The inline nav search rides inside .pv-nav, which stays visible on mobile
+   (only .pv-nav__list + CTA hide). Hide the inline search at that breakpoint —
+   the mobile menu renders its own .pv-search--mobile instead. */
+@media (max-width: 1080px), (hover: none) and (pointer: coarse) {
+  .pv-nav__search { display: none; }
+}

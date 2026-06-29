@@ -1,4 +1,10 @@
 import type { Locale } from '../i18n/routes';
+import deBlog from '../i18n/locales/de/blog.json';
+import enBlog from '../i18n/locales/en/blog.json';
+import itBlog from '../i18n/locales/it/blog.json';
+import dePages from '../i18n/locales/de/pages.json';
+import enPages from '../i18n/locales/en/pages.json';
+import itPages from '../i18n/locales/it/pages.json';
 
 export type RouteMeta = {
   title: string;
@@ -12,6 +18,96 @@ export const DEFAULT_ROUTE_META: RouteMeta = {
   title: 'Premium Sanierung & Bau in Frankfurt und Emmenbrücke',
   description:
     'Prima Vista Bauprojekte plant und realisiert Sanierung, Renovierung und Ausbau aus einer Hand in Frankfurt, Emmenbrücke und Umgebung.',
+};
+
+type MetaSource = { metaTitle: string; lede: string };
+type PageCatalog = {
+  calc: Record<keyof typeof dePages.calc, MetaSource>;
+  trade: Record<keyof typeof dePages.trade, MetaSource>;
+};
+type BlogCatalog = { pageTitle: string; masthead: { sub: string } };
+type CalcMetaKey = keyof PageCatalog['calc'];
+type TradeMetaKey = keyof PageCatalog['trade'];
+
+const TRADE_ROUTE_KEYS = {
+  '/badsanierung': 'badsanierung',
+  '/badsanierung-gaeste-wc': 'badsanierung',
+  '/kuechen-moebelbau': 'kueche',
+  '/boeden-belaege': 'boeden',
+  '/elektroinstallation': 'elektro',
+  '/trockenbau': 'trockenbau',
+  '/maler-lackierer': 'maler',
+  '/fassadensanierung': 'fassade',
+  '/abdichtung-keller': 'abdichtung',
+  '/dachsanierung': 'dach',
+  '/treppen-gelaender': 'treppen',
+  '/garten-aussenanlagen': 'garten',
+  '/barrierefreiheit': 'barrierefreiheit',
+  '/fenstertechnik': 'fenster',
+  '/rohbau-abbruch': 'rohbau',
+  '/tueren-zargen': 'tueren',
+  '/sanitaerinstallation': 'wasser',
+  '/zaeune': 'zaeune',
+} as const satisfies Record<string, TradeMetaKey>;
+
+const CALC_ROUTE_KEYS = {
+  '/haus-sanierung': 'haus',
+  '/wohnung-sanierung': 'wohnung',
+  '/gastronomie-ausbau': 'gastro',
+  '/buero-ausbau': 'buero',
+  '/heizkoerper': 'heizkoerper',
+  '/heizstraenge': 'heizstraenge',
+  '/fussbodenheizung': 'fussboden',
+  '/waermepumpe': 'waermepumpe',
+  '/gas-heizung': 'gas',
+  '/pelletofen': 'pellet',
+  '/saunaofen': 'sauna',
+} as const satisfies Record<string, CalcMetaKey>;
+
+const MISSING_DE_ROUTE_META_KEYS = [
+  '/badsanierung-gaeste-wc',
+  '/heizkoerper',
+  '/heizstraenge',
+  '/fussbodenheizung',
+  '/waermepumpe',
+  '/gas-heizung',
+  '/pelletofen',
+  '/saunaofen',
+] as const;
+
+function metaFromEntry(entry: MetaSource): RouteMeta {
+  return { title: entry.metaTitle, description: entry.lede };
+}
+
+function metaFromBlog(blog: BlogCatalog): RouteMeta {
+  return { title: blog.pageTitle, description: blog.masthead.sub };
+}
+
+function localizedServiceMeta(pages: PageCatalog, blog: BlogCatalog): Record<string, RouteMeta> {
+  const meta: Record<string, RouteMeta> = { '/blog': metaFromBlog(blog) };
+
+  for (const [path, key] of Object.entries(TRADE_ROUTE_KEYS) as Array<[string, TradeMetaKey]>) {
+    meta[path] = metaFromEntry(pages.trade[key]);
+  }
+
+  for (const [path, key] of Object.entries(CALC_ROUTE_KEYS) as Array<[string, CalcMetaKey]>) {
+    meta[path] = metaFromEntry(pages.calc[key]);
+  }
+
+  return meta;
+}
+
+function pickRouteMeta<Key extends string>(
+  source: Record<string, RouteMeta>,
+  keys: readonly Key[],
+): Record<Key, RouteMeta> {
+  return Object.fromEntries(keys.map((key) => [key, source[key]])) as Record<Key, RouteMeta>;
+}
+
+const SERVICE_ROUTE_META: Record<Locale, Record<string, RouteMeta>> = {
+  de: localizedServiceMeta(dePages, deBlog),
+  en: localizedServiceMeta(enPages, enBlog),
+  it: localizedServiceMeta(itPages, itBlog),
 };
 
 export const ROUTE_META: Record<string, RouteMeta> = {
@@ -140,6 +236,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: 'Datenschutzerklärung',
     description: 'Datenschutzerklärung mit Informationen zur Verarbeitung personenbezogener Daten auf dieser Webseite.',
   },
+  ...pickRouteMeta(SERVICE_ROUTE_META.de, MISSING_DE_ROUTE_META_KEYS),
 };
 
 // Localized route-meta overrides. Routes not yet listed here fall back to the
@@ -187,6 +284,7 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Express quote within 24 hours',
       description: 'A fast project enquiry for renovation and fit-out with a reply within 24 hours on working days.',
     },
+    ...SERVICE_ROUTE_META.en,
   },
   it: {
     '/': {
@@ -230,6 +328,7 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
       title: 'Preventivo express entro 24 ore',
       description: 'Una richiesta di progetto rapida per ristrutturazione e allestimento con risposta entro 24 ore nei giorni feriali.',
     },
+    ...SERVICE_ROUTE_META.it,
   },
 };
 

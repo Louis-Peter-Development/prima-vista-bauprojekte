@@ -28,7 +28,14 @@
     "eyebrow": "Progetti selezionati",
     "title": "Appena usciti dal<br/><em>laboratorio.</em>",
     "meta": "Francoforte · Wiesbaden · Lucerna",
-    "viewAll": "Vedi tutti i progetti"
+    "viewAll": "Vedi tutti i progetti",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Ristorante", "alt": "Ristorante Zoi, Francoforte" },
+      "proj--b": { "ttl": "Villa in cemento a vista", "alt": "Villa in cemento a vista, Lucerna" },
+      "proj--c": { "ttl": "Cucina in rovere", "alt": "Cucina in rovere, Francoforte" },
+      "proj--d": { "ttl": "Bagno Spa — Hotel", "alt": "Bagno spa, hotel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Lobby ufficio, Francoforte" }
+    }
   },
   "reviews": {
     "starsSuffix": "/ 5 stelle",

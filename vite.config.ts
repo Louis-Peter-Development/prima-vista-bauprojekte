@@ -16,6 +16,7 @@ function chatDevPlugin(): Plugin {
           const mod = await server.ssrLoadModule('/server/chat.ts');
           const stream: ReadableStream<Uint8Array> = mod.createChatStream(
             body.messages ?? [],
+            body.locale,
           );
           res.writeHead(200, {
             'content-type': 'text/event-stream; charset=utf-8',

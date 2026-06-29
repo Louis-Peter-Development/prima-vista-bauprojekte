@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
-import { HAUS_GEWERKE, formatTsd } from '../../data/hausSanierung';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
+import { formatTsd, formatGroupedInt } from '../../i18n/calculatorCatalog';
+import { HAUS_GEWERKE } from '../../data/hausSanierung';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
 
 type Props = {
@@ -25,6 +28,8 @@ export default function HausSanierungResult({
   factor,
   kindLabel,
 }: Props) {
+  const { t } = useTranslation('kalk');
+  const locale = useLocale();
   const pickedGewerke = HAUS_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
@@ -51,30 +56,30 @@ export default function HausSanierungResult({
         <div className="kalk-result__head">
           <div className="kalk-result__eyebrow">
             <span className="rule-red"></span>
-            Live-Schätzung
+            {t('result.liveEstimate')}
           </div>
           {hasPicks ? (
             <>
               <div className="kalk-result__range">
                 <span className="kalk-result__from">
-                  <small>ab</small>
-                  <strong>€ {formatTsd(totalMin)}</strong>
+                  <small>{t('result.from')}</small>
+                  <strong>€ {formatTsd(totalMin, locale)}</strong>
                 </span>
                 <span className="kalk-result__dash">—</span>
                 <span className="kalk-result__to">
-                  <small>bis</small>
-                  <strong>€ {formatTsd(totalMax)}</strong>
+                  <small>{t('result.to')}</small>
+                  <strong>€ {formatTsd(totalMax, locale)}</strong>
                 </span>
               </div>
               <div className="kalk-result__meta">
-                <span><small>Mittelwert</small> € {formatTsd(totalMid)}</span>
-                <span><small>pro m²</small> € {Math.round(perM2).toLocaleString('de-DE')}</span>
+                <span><small>{t('result.mean')}</small> € {formatTsd(totalMid, locale)}</span>
+                <span><small>{t('result.perM2')}</small> € {formatGroupedInt(perM2, locale)}</span>
               </div>
             </>
           ) : (
             <div className="kalk-result__empty-state">
-              <div className="kalk-result__placeholder">— — —</div>
-              <p>Wählen Sie mindestens ein Gewerk, um eine erste Spanne zu sehen.</p>
+              <div className="kalk-result__placeholder">{t('result.emptyPlaceholder')}</div>
+              <p>{t('result.emptyHint')}</p>
             </div>
           )}
         </div>
@@ -82,8 +87,8 @@ export default function HausSanierungResult({
         {hasPicks && (
           <div className="kalk-result__breakdown">
             <div className="kalk-result__breakdown-head">
-              <span>Aufstellung</span>
-              <span>nach Gewerk</span>
+              <span>{t('result.breakdownTitle')}</span>
+              <span>{t('result.breakdownSub')}</span>
             </div>
             <ul>
               {pickedGewerke.map((g) => {
@@ -91,8 +96,8 @@ export default function HausSanierungResult({
                 return (
                   <li key={g.key}>
                     <span className="kalk-result__row-num">{g.num}</span>
-                    <span className="kalk-result__row-name">{g.label}</span>
-                    <span className="kalk-result__row-value">€ {formatTsd(sub)}</span>
+                    <span className="kalk-result__row-name">{t(`haus.gewerke.${g.key}.label`, { defaultValue: g.label })}</span>
+                    <span className="kalk-result__row-value">€ {formatTsd(sub, locale)}</span>
                   </li>
                 );
               })}
@@ -101,7 +106,7 @@ export default function HausSanierungResult({
         )}
 
         <p className="kalk-result__disclaimer">
-          Vorab-Schätzung für die gewählten Haustyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß vor Ort.
+          {t('result.disclaimerHaus')}
         </p>
 
         <div className="kalk-result__actions">
@@ -110,10 +115,10 @@ export default function HausSanierungResult({
             to="/blitz-angebot"
             state={handoff ? { kalkulator: handoff } : undefined}
           >
-            Verbindliches Angebot <span className="arrow">&gt;</span>
+            {t('result.bindingOffer')} <span className="arrow">&gt;</span>
           </Link>
           <Link className="btn btn--light kalk-result__btn-light" to="/kontakt">
-            Termin vereinbaren <span className="arrow">&gt;</span>
+            {t('result.appointment')} <span className="arrow">&gt;</span>
           </Link>
         </div>
       </div>

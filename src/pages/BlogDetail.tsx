@@ -1,20 +1,34 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
+import { useLocale } from '../i18n/useLocale';
+import type { Locale } from '../i18n/routes';
 import ArticleRenderer from '../components/blog/ArticleRenderer';
 import CoverImage from '../components/blog/CoverImage';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogComment, BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
 
-function formatDate(value: string | null) {
-  if (!value) return 'Entwurf';
-  return new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }).format(
-    new Date(value),
-  );
+const DATE_LOCALE: Record<Locale, string> = {
+  de: 'de-DE',
+  en: 'en-GB',
+  it: 'it-IT',
+};
+
+function formatDate(value: string | null, locale: Locale, draft: string) {
+  if (!value) return draft;
+  return new Intl.DateTimeFormat(DATE_LOCALE[locale], {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(value));
 }
 
 export default function BlogDetail() {
   const { slug = '' } = useParams();
+  const { t } = useTranslation('blog');
+  const locale = useLocale();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [comments, setComments] = useState<BlogComment[]>([]);
   const [morePosts, setMorePosts] = useState<BlogPost[]>([]);
@@ -24,7 +38,7 @@ export default function BlogDetail() {
   const [error, setError] = useState('');
   const [liked, setLiked] = useState(() => localStorage.getItem(`pv-liked-${slug}`) === 'true');
 
-  usePageTitle(post ? `${post.title} - Magazin` : 'Magazin');
+  usePageTitle(post ? `${post.title} - ${t('pageTitle')}` : t('pageTitle'));
 
   const shareUrl = useMemo(() => window.location.href, []);
 
@@ -33,12 +47,12 @@ export default function BlogDetail() {
     let cancelled = false;
 
     Promise.all([
-      fetch(`/api/posts/${slug}`).then(async (res) => {
-        if (!res.ok) throw new Error('Beitrag nicht gefunden.');
+      fetch(`/api/posts/${slug}?locale=${locale}`).then(async (res) => {
+        if (!res.ok) throw new Error(t('detail.notFound'));
         return res.json() as Promise<{ post: BlogPost }>;
       }),
       fetch(`/api/comments/${slug}`).then((res) => res.json() as Promise<{ comments: BlogComment[] }>),
-      fetch('/api/posts').then((res) => res.json() as Promise<{ posts: BlogPost[] }>),
+      fetch(`/api/posts?locale=${locale}`).then((res) => res.json() as Promise<{ posts: BlogPost[] }>),
     ])
       .then(([postData, commentsData, postsData]) => {
         if (cancelled) return;
@@ -47,7 +61,7 @@ export default function BlogDetail() {
         setMorePosts((postsData.posts ?? []).filter((item) => item.slug !== slug).slice(0, 3));
       })
       .catch((err: unknown) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+        if (!cancelled) setError(err instanceof Error ? err.message : t('unknownError'));
       });
 
     const viewKey = `pv-viewed-${slug}`;
@@ -59,7 +73,7 @@ export default function BlogDetail() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, locale, t]);
 
   useEffect(() => {
     setLiked(localStorage.getItem(`pv-liked-${slug}`) === 'true');
@@ -81,7 +95,7 @@ export default function BlogDetail() {
       return;
     }
     await navigator.clipboard.writeText(shareUrl);
-    setMessage('Link kopiert.');
+    setMessage(t('detail.linkCopied'));
   };
 
   const submitComment = async (event: FormEvent<HTMLFormElement>) => {
@@ -94,13 +108,13 @@ export default function BlogDetail() {
     });
     const data = (await res.json()) as { comment?: BlogComment; error?: string };
     if (!res.ok || !data.comment) {
-      setMessage(data.error ?? 'Kommentar konnte nicht gespeichert werden.');
+      setMessage(data.error ?? t('detail.commentError'));
       return;
     }
     setComments((current) => [...current, data.comment as BlogComment]);
     setName('');
     setBody('');
-    setMessage('Kommentar veröffentlicht.');
+    setMessage(t('detail.commentPublished'));
   };
 
   if (error) {
@@ -108,7 +122,7 @@ export default function BlogDetail() {
       <section className="blog-shell">
         <div className="blog-shell__inner">
           <p className="blog-state blog-state--error">{error}</p>
-          <Link className="btn btn--light" to="/blog">Zurück zum Magazin</Link>
+          <Link className="btn btn--light" to="/blog">{t('detail.back')}</Link>
         </div>
       </section>
     );
@@ -118,7 +132,7 @@ export default function BlogDetail() {
     return (
       <article className="blog-article" aria-busy="true">
         <p className="blog-state blog-state--sr" role="status">
-          Beitrag wird geladen.
+          {t('detail.loading')}
         </p>
         <header className="blog-article__hero blog-article__hero--skeleton" aria-hidden="true">
           <div className="blog-article__hero-inner">
@@ -152,13 +166,13 @@ export default function BlogDetail() {
       <header className="blog-article__hero">
         <CoverImage src={post.coverImageUrl} fallback={null} />
         <div className="blog-article__hero-inner">
-          <Link className="blog-back" to="/blog">Magazin</Link>
+          <Link className="blog-back" to="/blog">{t('detail.backShort')}</Link>
           <h1>{post.title}</h1>
           <p>{post.excerpt}</p>
           <div className="blog-article__meta">
             <span>{post.author}</span>
-            <span>{formatDate(post.publishedAt)}</span>
-            <span>{post.readingTime} Min. Lesezeit</span>
+            <span>{formatDate(post.publishedAt, locale, t('draft'))}</span>
+            <span>{t('readingTime', { minutes: post.readingTime })}</span>
           </div>
         </div>
       </header>
@@ -170,16 +184,16 @@ export default function BlogDetail() {
 
         <div className="blog-article__tools">
           <button type="button" className="btn btn--light" disabled={liked} onClick={likePost}>
-            {liked ? 'Gemerkt' : 'Like'} <span>{post.likes}</span>
+            {liked ? t('detail.liked') : t('detail.like')} <span>{post.likes}</span>
           </button>
           <button type="button" className="btn btn--light" onClick={sharePost}>
-            Teilen
+            {t('detail.share')}
           </button>
         </div>
 
         <section className="blog-comments">
           <div className="blog-comments__head">
-            <h2>Kommentare</h2>
+            <h2>{t('detail.commentsTitle')}</h2>
             <span>{comments.length}</span>
           </div>
 
@@ -187,16 +201,16 @@ export default function BlogDetail() {
             {comments.map((comment) => (
               <article className="blog-comment" key={comment.id}>
                 <strong>{comment.name}</strong>
-                <time>{formatDate(comment.createdAt)}</time>
+                <time>{formatDate(comment.createdAt, locale, t('draft'))}</time>
                 <p>{comment.body}</p>
               </article>
             ))}
           </div>
 
           <form className="blog-comment-form" onSubmit={submitComment}>
-            <input value={name} onChange={(event) => setName(event.target.value)} placeholder="Name" required />
-            <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder="Kommentar" rows={4} required />
-            <button className="btn btn--solid" type="submit">Kommentar senden</button>
+            <input value={name} onChange={(event) => setName(event.target.value)} placeholder={t('detail.namePlaceholder')} required />
+            <textarea value={body} onChange={(event) => setBody(event.target.value)} placeholder={t('detail.commentPlaceholder')} rows={4} required />
+            <button className="btn btn--solid" type="submit">{t('detail.submitComment')}</button>
             {message && <p>{message}</p>}
           </form>
         </section>
@@ -204,8 +218,8 @@ export default function BlogDetail() {
         {morePosts.length > 0 && (
           <section className="blog-more">
             <div className="blog-more__head">
-              <span className="pv-eyebrow">Weiterlesen</span>
-              <h2>Weitere Beiträge</h2>
+              <span className="pv-eyebrow">{t('detail.moreEyebrow')}</span>
+              <h2>{t('detail.moreTitle')}</h2>
             </div>
             <div className="blog-more__grid">
               {morePosts.map((item) => (
@@ -214,7 +228,10 @@ export default function BlogDetail() {
                     <CoverImage src={item.coverImageUrl} />
                   </span>
                   <span className="blog-more-card__body">
-                    <span className="blog-card__meta">{formatDate(item.publishedAt)} · {item.readingTime} Min.</span>
+                    <span className="blog-card__meta">
+                      {formatDate(item.publishedAt, locale, t('draft'))} ·{' '}
+                      {t('readingTimeShort', { minutes: item.readingTime })}
+                    </span>
                     <span className="blog-more-card__title">{item.title}</span>
                   </span>
                 </Link>

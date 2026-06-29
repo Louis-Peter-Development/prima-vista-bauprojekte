@@ -28,7 +28,14 @@
     "eyebrow": "Selected projects",
     "title": "Fresh from the<br/><em>workshop.</em>",
     "meta": "Frankfurt · Wiesbaden · Lucerne",
-    "viewAll": "See all projects"
+    "viewAll": "See all projects",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Zoi restaurant, Frankfurt" },
+      "proj--b": { "ttl": "Exposed-Concrete Villa", "alt": "Exposed-concrete villa, Lucerne" },
+      "proj--c": { "ttl": "Oak Kitchen", "alt": "Oak kitchen, Frankfurt" },
+      "proj--d": { "ttl": "Spa Bath — Hotel", "alt": "Spa bathroom, hotel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Office lobby, Frankfurt" }
+    }
   },
   "reviews": {
     "starsSuffix": "/ 5 stars",

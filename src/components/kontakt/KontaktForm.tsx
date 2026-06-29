@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
 import {
   CONTACT_ART_OPTIONS,
   INITIAL_CONTACT_FORM,
@@ -16,6 +17,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function KontaktForm() {
   const { t } = useTranslation('kontakt');
+  const locale = useLocale();
   const location = useLocation();
   const contactPreset = (location.state as ContactLocationState | null)?.contact;
   const [form, setForm] = useState<ContactFormState>(() => {
@@ -87,6 +89,7 @@ export default function KontaktForm() {
           budget: form.budget,
           msg: form.msg.trim(),
           dsgvo: form.dsgvo,
+          locale,
         }),
       });
       if (!res.ok) {

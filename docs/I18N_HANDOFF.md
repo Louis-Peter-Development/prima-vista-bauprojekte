@@ -14,8 +14,13 @@ the higher-level "where things stand + how to continue + how to ship".
 - **The entire navigable site is translated** — every page header/intro, every
   form's interface, the calculator hub, navigation, footer, legal pages, the
   cookie banner and all CTAs — in DE/EN/IT, verified live in the browser.
-- Three deeper subsystems remain (calculator product catalog, server
-  emails/PDF, blog) — see §6. They are scoped and isolated, not blocking.
+- **Phase 5 (this pass): all three deeper subsystems are now done** — calculator
+  catalog chrome + render-only number/currency localization, customer-facing
+  server emails + PDF, and the blog (page chrome + per-language post schema).
+  See §6 for what each entailed. The **one** intentional remainder is the
+  ~5,738 individual calculator product line-item titles, which render via a
+  render-only SKU layer with **German fallback** until a bulk translation pass
+  fills `src/i18n/calculatorCatalog.ts` — pricing data is never touched.
 - All work is committed on `translations`. Quality gates were green at **every**
   commit: `npm run typecheck`, `npm run lint`, `npm run test:run` (29 tests).
 
@@ -122,36 +127,68 @@ that catalog is pricing-coupled.
 
 ---
 
-## 6. What remains — three isolated clusters
+## 6. The three clusters — now DONE (Phase 5)
 
-Ordered by suggested sequence. Each is a different *kind* of work; the first two
-carry real risk, so they were intentionally left for focused passes.
+All three were completed in this pass. What each entailed:
 
-### 6.1 Calculator product catalog  *(pricing-coupled — highest risk)*
-The line items **inside** the calculators are still German: the 33
-`src/data/calculator/packages/*.ts` files, `RenovationCalculator.tsx`, the 17
-gewerke + 4 package configurators, `BLITZ_SERVICE_GROUPS` (blitz step 2), the
-kalkulator-handoff item labels, `gastronomieAusbau.ts`, and `CalculatorPdfSender`.
+### 6.1 Calculator product catalog  ✅ *(pricing-coupled — render-only)*
+- New `src/i18n/calculatorCatalog.ts`: a **render-only** `CATALOG_TRANSLATIONS`
+  `Map` + `localizeCatalog(key, german, locale)`, plus locale-aware
+  `formatTsd` / `formatGroupedInt` / `formatEuroLocalized`. The German
+  `title`/`sku`/`id` source fields are **never** touched — verified: `git status`
+  on `src/data/calculator/packages` is empty and `audit:calculator-data` is green.
+- Calculator chrome moved into the `kalk` namespace (`result.*`, `types.*`,
+  `gastro.*`, `haus.*`, `buero.*`, `wohnung.*`, `gw.*`, `board.*`, `reno.*`,
+  `pdf.*`): the 3 `*Result` components, **all 22 configurator boards** (the 4
+  package boards haus/wohnung/buero/gastro + the 18 per-trade/heating
+  `gewerke/*Board.tsx`, each wired via `gw.<trade>.types.<value>` keyed by the
+  stable option value), `RenovationCalculator` (type labels + category/section
+  titles via the SKU layer), `CalculatorPdfSender` modal, and the blitz step-2
+  service display (POSTed values stay canonical German).
+- ⚠️ Remainder: the ~5,738 individual product `row.title` values fall back to
+  German via `localizeCatalog`. Seed `CATALOG_TRANSLATIONS` (or a bulk MT pass) to
+  finish them; the seam is in place and pricing-safe.
 
-⚠️ The pricing engine, the `audit:calculator-data` script and the **server PDF**
-key on the German product **titles/SKUs**. **Do not translate the source titles.**
-Recommended approach: a **SKU-keyed translation layer** — `Map<sku, {en, it}>`
-applied at **render only** in `RenovationCalculator` (and the PDF, via locale —
-see §6.2). Then re-run the audit and verify totals are unchanged.
+### 6.2 Server outbound text  ✅
+- New `server/i18n.ts`: a dependency-free `Record<Locale, …>` string catalogue +
+  `normalizeLocale`, code→label maps, and locale-aware euro/number/quantity
+  formatters. `locale` is threaded through the `/api/contact`, `/api/blitz`,
+  `/api/calculator-pdf` payloads + validators (default `de`) and the 3 client
+  callers (`useLocale()`).
+- Localized by request locale: the **customer** confirmation emails + the
+  calculator-PDF covering email + the generated PDF (`server/calculatorPdf.ts`).
+  **Internal office-notification emails stay German** by design (read by the team).
+  `tests/server/mail.test.ts` extended with en/it cases (32 tests green).
 
-### 6.2 Server outbound text
-`server/mail.ts` (Resend confirmation/office emails) and
-`server/calculatorPdf.ts` (generated PDF). Customer-facing.
-Approach: thread a `locale` field through the `/api/contact`, `/api/blitz` and
-`/api/calculator-pdf` payloads (the client already knows the active locale via
-`useLocale()`), then translate the templates server-side. Tests live in
-`tests/server/mail.test.ts` — extend them.
+### 6.3 Blog  ✅
+- New `blog` namespace (registered in `config.ts`); `Blog.tsx` + `BlogDetail.tsx`
+  fully trilingual incl. per-locale date formatting; fetches pass `?locale=`.
+- **Per-language post schema** (the data-model change): `PostDocument.translations`
+  optional `{ en?, it? }` subdoc holding `{title, body, excerpt, readingTime}`.
+  Top-level fields stay the **canonical German**; `posts.ts` `serialize(post, locale)`
+  resolves `translations[locale]` with **German fallback** — so existing posts need
+  **no migration**. `AdminEditor` gained DE/EN/IT content tabs; slug/counters/status
+  stay global. Admin UI chrome is intentionally left German (outside localized URLs).
 
-### 6.3 Blog
-`Blog.tsx`, `BlogDetail.tsx`, `AdminBlog/AdminEditor/AdminLogin`, and a
-**per-language DB schema** + admin editor so posts can be authored per language.
-This is the **only data-model change** — get product sign-off before touching the
-MongoDB schema. Page chrome can be translated independently of the schema work.
+### 6.4 Live-audit follow-ups (caught by a page-by-page EN/IT sweep)  ✅
+A function-word page scan misses noun-only German, so a **static "German literal
+but no `useTranslation`"** sweep was run across every component. It surfaced and
+fixed:
+- **All 19 configurator boards** (18 `gewerke/*Board.tsx` + `WohnungSanierungBoard`)
+  — see the note in §6.1 (`gw.*` keys keyed by the stable option `value`).
+- **Home featured-project captions** (`FeaturedProjects.tsx`, `home.featured.projects.*`)
+  — e.g. "Küche Eichenholz" → "Oak Kitchen"/"Cucina in rovere"; reuses the
+  `projects` namespace wording. Hero-slide `alt`s in `home.ts` are not rendered here.
+- **Calculator `customAreaLabel`s** (11) — localized at render via
+  `localizeCatalog`; the handoff `scopeLabel` stays canonical German.
+- **The `Chat.tsx` "Bau-Concierge" widget** — new `chat` namespace; brand name
+  localized (EN "Construction Concierge" / IT "Concierge edile"); **`locale` is
+  threaded to `/api/chat`** and `server/chat.ts` appends a language instruction so
+  the bot replies in the visitor's language (German default unchanged).
+- **`Lightbox.tsx`** (close/prev/next aria + "Mehr erfahren" → `cta.learnMore`,
+  i18n `Link`) and **`ErrorBoundary.tsx`** (self-contained per-locale fallback copy).
+- **Intentionally still German:** the `/admin/*` UI chrome (internal tooling) and
+  the ~5,738 calculator product titles/descriptions (render-only German fallback).
 
 ---
 
@@ -160,10 +197,12 @@ MongoDB schema. Page chrome can be translated independently of the schema work.
 - **Legal pages need a lawyer.** `Impressum` and `Datenschutz` carry a visible
   "the German version is legally binding" note; the EN/IT legal text is a
   provisional machine translation and should be reviewed before launch.
-- **Interim German** (expected, by design until §6 is done): calculator line
-  items, blitz step-2 service checkboxes, blog post bodies.
-- **Minor leftovers:** `src/data/home.ts` hero-slide `alt` text + featured-project
-  captions are still German.
+- **Interim German** (render-only fallback): the ~5,738 calculator product
+  line-item titles/descriptions (see §6.1) and blog post bodies authored without
+  an en/it translation (fall back to German per §6.3).
+- **Minor leftovers:** `src/data/home.ts` hero-slide `alt` text is still German
+  (screen-reader only; not rendered as visible text). Featured-project captions
+  are now localized (§6.4).
 - **Safe to prune** (dead German display fields now superseded by i18n):
   `projects.ts` (title/ttl/meta/headline/…), `gewerke.ts` (`TRADES` name/lead,
   `PROCESS_STEPS`), `komplettPakete` originals, `kalkulatorNav.ts` labels,

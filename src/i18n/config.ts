@@ -27,13 +27,19 @@ import itKalk from './locales/it/kalk.json';
 import deBlitz from './locales/de/blitz.json';
 import enBlitz from './locales/en/blitz.json';
 import itBlitz from './locales/it/blitz.json';
+import deBlog from './locales/de/blog.json';
+import enBlog from './locales/en/blog.json';
+import itBlog from './locales/it/blog.json';
+import deChat from './locales/de/chat.json';
+import enChat from './locales/en/chat.json';
+import itChat from './locales/it/chat.json';
 
-export const NAMESPACES = ['common', 'home', 'legal', 'kontakt', 'pages', 'projects', 'kalk', 'blitz'] as const;
+export const NAMESPACES = ['common', 'home', 'legal', 'kontakt', 'pages', 'projects', 'kalk', 'blitz', 'blog', 'chat'] as const;
 
 const resources = {
-  de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt, pages: dePages, projects: deProjects, kalk: deKalk, blitz: deBlitz },
-  en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt, pages: enPages, projects: enProjects, kalk: enKalk, blitz: enBlitz },
-  it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt, pages: itPages, projects: itProjects, kalk: itKalk, blitz: itBlitz },
+  de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt, pages: dePages, projects: deProjects, kalk: deKalk, blitz: deBlitz, blog: deBlog, chat: deChat },
+  en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt, pages: enPages, projects: enProjects, kalk: enKalk, blitz: enBlitz, blog: enBlog, chat: enChat },
+  it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt, pages: itPages, projects: itProjects, kalk: itKalk, blitz: itBlitz, blog: itBlog, chat: itChat },
 } as const;
 
 i18n.use(initReactI18next).init({

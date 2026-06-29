@@ -116,19 +116,21 @@ and only localize the displayed label, so server email templates don't change.
 
   => Every page header/intro/form-chrome/CTA across the site is trilingual.
 
-- ⏳ Remaining — three distinct, deeper clusters:
-  1. **Calculator product catalog** (pricing-coupled, highest risk): the 33
-     `src/data/calculator/packages/*` files, `RenovationCalculator`, the 17
-     gewerke + 4 package configurators, `BLITZ_SERVICE_GROUPS`,
-     `gastronomieAusbau.ts`, `CalculatorPdfSender`. Recommended approach: a
-     SKU-keyed translation layer (Map<sku, {en,it}>) applied at RENDER only —
-     do NOT change the German titles/SKUs the engine, audit script and server
-     PDF key on. Verify `npm run audit:calculator-data` + pricing after.
-  2. **Server outbound text**: `server/mail.ts` (Resend emails) +
-     `server/calculatorPdf.ts` (PDF). Needs locale threaded through the
-     `/api/contact`, `/api/blitz`, `/api/calculator-pdf` payloads, then templated.
-  3. **Blog**: Blog/BlogDetail pages, Admin* pages, and a per-language DB schema
-     + admin editor (the only data-model change).
+- ✅ Phase 5 (this pass) — the three deeper clusters are now done:
+  1. **Calculator catalog chrome**: render-only `src/i18n/calculatorCatalog.ts`
+     (SKU-keyed `localizeCatalog` + locale-aware `formatTsd`/`formatGroupedInt`/
+     `formatEuroLocalized`); the 3 result components, configurator boards,
+     `RenovationCalculator`, `CalculatorPdfSender` and blitz step-2 display moved
+     to the `kalk` namespace. German titles/SKUs untouched; `audit:calculator-data`
+     green. ⏳ The ~5,738 individual product line-item titles fall back to German
+     until `CATALOG_TRANSLATIONS` is filled (bulk MT pass).
+  2. **Server outbound text**: `server/i18n.ts` (standalone catalogue +
+     `normalizeLocale` + formatters); `locale` threaded through the contact/blitz/
+     calculator-pdf payloads + 3 client callers. Customer emails + PDF localized;
+     internal office emails stay German by design.
+  3. **Blog**: new `blog` namespace; `Blog`/`BlogDetail` trilingual; per-language
+     `PostDocument.translations` subdoc with German-fallback `serialize(post, locale)`
+     (no migration needed); `AdminEditor` DE/EN/IT content tabs. Admin UI stays German.
 - Data-layer leftovers (safe to prune): unused German display fields now
   superseded by i18n on `projects.ts`, `gewerke.ts` (TRADES name/lead,
   PROCESS_STEPS), `kalkulatorNav.ts`, `komplettPakete` originals;

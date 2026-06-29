@@ -2,9 +2,46 @@ import { Component, type ErrorInfo, type ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/components/error-boundary.css';
 
+type ErrorStrings = {
+  eyebrow: string;
+  title: string;
+  lede: string;
+  reload: string;
+  home: string;
+};
+
+// Self-contained copy (no i18next dependency): this fallback may render when the
+// app — including the i18n provider — has failed to load. Locale is derived from
+// the URL prefix.
+const ERROR_STRINGS: Record<'de' | 'en' | 'it', ErrorStrings> = {
+  de: {
+    eyebrow: 'Fehler beim Laden',
+    title: 'Diese Seite konnte nicht sauber geladen werden.',
+    lede: 'Vermutlich ist noch eine alte Browser-Version der Website aktiv. Laden Sie die Seite neu, damit Chrome oder Safari die aktuelle Fassung abruft.',
+    reload: 'Neu laden',
+    home: 'Zur Startseite',
+  },
+  en: {
+    eyebrow: 'Loading error',
+    title: 'This page could not load cleanly.',
+    lede: 'An older cached version of the site is probably still active. Reload the page so Chrome or Safari fetches the current version.',
+    reload: 'Reload',
+    home: 'Back to home',
+  },
+  it: {
+    eyebrow: 'Errore di caricamento',
+    title: 'Questa pagina non è stata caricata correttamente.',
+    lede: 'Probabilmente è ancora attiva una versione precedente del sito nella cache. Ricarichi la pagina così Chrome o Safari recuperano la versione aggiornata.',
+    reload: 'Ricarica',
+    home: 'Alla home page',
+  },
+};
+
 type ErrorBoundaryProps = {
   children: ReactNode;
   resetKey: string;
+  strings: ErrorStrings;
+  homeHref: string;
 };
 
 type ErrorBoundaryState = {
@@ -47,20 +84,19 @@ class ErrorBoundaryInner extends Component<ErrorBoundaryProps, ErrorBoundaryStat
   render() {
     if (!this.state.error) return this.props.children;
 
+    const { strings, homeHref } = this.props;
     return (
       <main className="app-error" role="alert" aria-labelledby="app-error-title">
         <section className="app-error__inner">
-          <p className="app-error__eyebrow">Fehler beim Laden</p>
-          <h1 id="app-error-title">Diese Seite konnte nicht sauber geladen werden.</h1>
-          <p className="app-error__lede">
-            Vermutlich ist noch eine alte Browser-Version der Website aktiv. Laden Sie die Seite neu, damit Chrome oder Safari die aktuelle Fassung abruft.
-          </p>
+          <p className="app-error__eyebrow">{strings.eyebrow}</p>
+          <h1 id="app-error-title">{strings.title}</h1>
+          <p className="app-error__lede">{strings.lede}</p>
           <div className="app-error__actions">
             <button className="btn btn--solid" type="button" onClick={() => void clearBrowserStateAndReload()}>
-              Neu laden <span className="arrow">&gt;</span>
+              {strings.reload} <span className="arrow">&gt;</span>
             </button>
-            <Link className="btn btn--dark" to="/">
-              Zur Startseite <span className="arrow">&gt;</span>
+            <Link className="btn btn--dark" to={homeHref}>
+              {strings.home} <span className="arrow">&gt;</span>
             </Link>
           </div>
         </section>
@@ -71,8 +107,18 @@ class ErrorBoundaryInner extends Component<ErrorBoundaryProps, ErrorBoundaryStat
 
 export default function ErrorBoundary({ children }: { children: ReactNode }) {
   const location = useLocation();
+  const locale = location.pathname.startsWith('/en')
+    ? 'en'
+    : location.pathname.startsWith('/it')
+      ? 'it'
+      : 'de';
+  const homeHref = locale === 'de' ? '/' : `/${locale}`;
   return (
-    <ErrorBoundaryInner resetKey={`${location.pathname}${location.search}`}>
+    <ErrorBoundaryInner
+      resetKey={`${location.pathname}${location.search}`}
+      strings={ERROR_STRINGS[locale]}
+      homeHref={homeHref}
+    >
       {children}
     </ErrorBoundaryInner>
   );

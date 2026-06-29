@@ -1,5 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode, type TouchEvent as ReactTouchEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
 import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from './icons';
 
 export type LightboxItem = { src: string; title?: string; slug?: string };
@@ -17,6 +18,7 @@ export function useLightbox() {
 }
 
 export function LightboxProvider({ children }: { children: ReactNode }) {
+  const { t } = useTranslation('common');
   const [items, setItems] = useState<LightboxItem[]>([]);
   const [index, setIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
@@ -138,12 +140,12 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
           if (e.target === e.currentTarget) close();
         }}
       >
-        <button ref={closeButtonRef} className="pv-lightbox__close" aria-label="Schließen" onClick={close} type="button">
+        <button ref={closeButtonRef} className="pv-lightbox__close" aria-label={t('lightbox.close')} onClick={close} type="button">
           <CloseIcon />
         </button>
         <button
           className="pv-lightbox__nav pv-lightbox__nav--prev"
-          aria-label="Zurück"
+          aria-label={t('lightbox.prev')}
           type="button"
           onClick={() => step(-1)}
         >
@@ -152,7 +154,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
         <img className="pv-lightbox__img" src={current?.src} alt={current?.title ?? ''} />
         <button
           className="pv-lightbox__nav pv-lightbox__nav--next"
-          aria-label="Weiter"
+          aria-label={t('lightbox.next')}
           type="button"
           onClick={() => step(1)}
         >
@@ -169,7 +171,7 @@ export function LightboxProvider({ children }: { children: ReactNode }) {
           </div>
           {current?.slug && (
             <Link className="pv-lightbox__more" to={`/projekte/${current.slug}`} onClick={close}>
-              Mehr erfahren <span>›</span>
+              {t('cta.learnMore')} <span>›</span>
             </Link>
           )}
         </div>

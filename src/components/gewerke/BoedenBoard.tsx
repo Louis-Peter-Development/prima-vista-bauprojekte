@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 export type BoedenGridType = 
@@ -43,6 +44,7 @@ export default function BoedenBoard({
   activeType,
   onTypeChange,
 }: Props) {
+  const { t } = useTranslation('kalk');
   function chooseType(value: BoedenGridType) {
     onTypeChange(value);
     scrollToCalculatorResult();
@@ -53,21 +55,21 @@ export default function BoedenBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Belagsart</span>
-          <span className="kalk-board__hint">Wählen Sie den gewünschten Kalkulator</span>
+          <span className="kalk-board__label">{t('gw.boden.field')}</span>
+          <span className="kalk-board__hint">{t('gw.boden.hint')}</span>
         </div>
         <div className="haus-types" style={{ flexWrap: 'wrap', gap: '12px' }}>
-          {BOEDEN_TYPES.map((t) => (
+          {BOEDEN_TYPES.map((option) => (
             <button
-              key={t.num}
+              key={option.num}
               type="button"
-              className={`haus-types__opt${t.value === activeType ? ' is-on' : ''}`}
-              onClick={() => chooseType(t.value)}
-              aria-pressed={t.value === activeType}
+              className={`haus-types__opt${option.value === activeType ? ' is-on' : ''}`}
+              onClick={() => chooseType(option.value)}
+              aria-pressed={option.value === activeType}
               style={{ flex: '1 1 calc(33.333% - 12px)', minWidth: '180px' }}
             >
-              <span className="haus-types__label">{t.label}</span>
-              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t.detail}</span>
+              <span className="haus-types__label">{t(`gw.boden.types.${option.value}.label`, { defaultValue: option.label })}</span>
+              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t(`gw.boden.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
             </button>
           ))}
         </div>

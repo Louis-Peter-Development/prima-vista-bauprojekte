@@ -1,4 +1,5 @@
 import { sendBlitzEmails, type BlitzPayload } from '../../server/mail.js';
+import { normalizeLocale } from '../../server/i18n.js';
 import { json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
@@ -101,6 +102,7 @@ export function validateBlitzPayload(body: unknown): BlitzPayload | { error: str
     name: asString(b.name),
     email: asString(b.email),
     tel: asString(b.tel),
+    locale: normalizeLocale(b.locale),
   };
   if (!payload.name) return { error: 'name is required' };
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };

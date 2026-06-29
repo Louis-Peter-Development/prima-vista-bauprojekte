@@ -7,10 +7,13 @@ import {
   readingTimeFromDoc,
   sanitizePlainText,
   uniqueSlug,
+  type LocalizedContent,
   type PostStatus,
+  type PostTranslations,
   type TiptapDoc,
 } from './_shared/content';
 import { asString, errorResponse, json, methodNotAllowed, readJson } from './_shared/http';
+import { normalizeLocale, type Locale } from '../../server/i18n.js';
 
 type PostPayload = {
   title: string;
@@ -18,18 +21,28 @@ type PostPayload = {
   coverImageUrl: string;
   body: TiptapDoc;
   status: PostStatus;
+  translations: PostTranslations;
 };
 
-function serialize(post: PostDocument & { _id?: unknown }) {
-  return {
+function serialize(
+  post: PostDocument & { _id?: unknown },
+  locale: Locale = 'de',
+  includeTranslations = false,
+) {
+  // Resolve display content: non-German locales use their translation when it
+  // has a title, otherwise we fall back to the canonical German top-level.
+  const localized = locale !== 'de' ? post.translations?.[locale] : undefined;
+  const source = localized?.title ? localized : post;
+
+  const base = {
     id: String(post._id ?? ''),
-    title: post.title,
+    title: source.title,
     slug: post.slug,
     author: post.author,
     coverImageUrl: post.coverImageUrl,
-    body: post.body,
-    excerpt: post.excerpt,
-    readingTime: post.readingTime,
+    body: source.body,
+    excerpt: source.excerpt,
+    readingTime: source.readingTime,
     status: post.status,
     sortOrder: post.sortOrder ?? 0,
     views: post.views,
@@ -37,6 +50,18 @@ function serialize(post: PostDocument & { _id?: unknown }) {
     publishedAt: post.publishedAt,
     createdAt: post.createdAt,
     updatedAt: post.updatedAt,
+  };
+
+  if (!includeTranslations) return base;
+
+  // Admin editing: expose every language so the editor can load all tabs. The
+  // German content is the top-level fields; en/it come from `translations`.
+  return {
+    ...base,
+    translations: {
+      en: post.translations?.en ?? null,
+      it: post.translations?.it ?? null,
+    },
   };
 }
 
@@ -61,6 +86,34 @@ async function normalizeSortOrders(Post: PostModel) {
   if (operations.length > 0) await Post.bulkWrite(operations);
 }
 
+// Build one optional translation language from an untrusted subdocument. A
+// language is kept only when it has both a non-empty title and a valid TipTap
+// body; otherwise it is omitted so the post falls back to German.
+function localizedFrom(value: unknown): LocalizedContent | undefined {
+  if (!value || typeof value !== 'object') return undefined;
+  const record = value as Record<string, unknown>;
+  const title = sanitizePlainText(asString(record.title), 140);
+  const body = record.body;
+  if (!title || !isTiptapDoc(body)) return undefined;
+  return {
+    title,
+    body,
+    excerpt: excerptFromDoc(body),
+    readingTime: readingTimeFromDoc(body),
+  };
+}
+
+function translationsFrom(value: unknown): PostTranslations {
+  if (!value || typeof value !== 'object') return {};
+  const record = value as Record<string, unknown>;
+  const translations: PostTranslations = {};
+  const en = localizedFrom(record.en);
+  const it = localizedFrom(record.it);
+  if (en) translations.en = en;
+  if (it) translations.it = it;
+  return translations;
+}
+
 function validatePayload(body: unknown): PostPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
   const record = body as Record<string, unknown>;
@@ -73,25 +126,39 @@ function validatePayload(body: unknown): PostPayload | { error: string } {
   if (!title) return { error: 'title is required' };
   if (!isTiptapDoc(tiptapBody)) return { error: 'body must be a TipTap document' };
 
-  return { title, author, coverImageUrl, body: tiptapBody, status };
+  return {
+    title,
+    author,
+    coverImageUrl,
+    body: tiptapBody,
+    status,
+    translations: translationsFrom(record.translations),
+  };
 }
 
 async function listPosts(req: Request, context: Context) {
   const url = new URL(req.url);
+  const locale = normalizeLocale(url.searchParams.get('locale'));
   const wantsAll = url.searchParams.get('all') === 'true';
   const admin = verifyAdmin(req, context);
+  const adminList = wantsAll && !!admin;
   const { Post } = await connectDb();
-  const query: Partial<Pick<PostDocument, 'status'>> = wantsAll && admin ? {} : { status: 'published' };
-  if (wantsAll && admin) await normalizeSortOrders(Post);
+  const query: Partial<Pick<PostDocument, 'status'>> = adminList ? {} : { status: 'published' };
+  if (adminList) await normalizeSortOrders(Post);
 
   const posts = await Post.find(query)
     .sort({ sortOrder: 1, publishedAt: -1, createdAt: -1 })
     .lean();
 
-  return json({ posts: posts.map(serialize), isAdmin: !!admin });
+  return json({
+    posts: posts.map((post) => serialize(post, locale, adminList)),
+    isAdmin: !!admin,
+  });
 }
 
 async function getPost(req: Request, context: Context, slug: string) {
+  const url = new URL(req.url);
+  const locale = normalizeLocale(url.searchParams.get('locale'));
   const admin = verifyAdmin(req, context);
   const { Post } = await connectDb();
   const post = await Post.findOne({ slug }).lean();
@@ -100,7 +167,7 @@ async function getPost(req: Request, context: Context, slug: string) {
     return json({ error: 'Post not found' }, { status: 404 });
   }
 
-  return json({ post: serialize(post), isAdmin: !!admin });
+  return json({ post: serialize(post, locale, !!admin), isAdmin: !!admin });
 }
 
 async function createPost(req: Request, context: Context) {
@@ -120,6 +187,7 @@ async function createPost(req: Request, context: Context) {
     sortOrder: 0,
     excerpt: excerptFromDoc(payload.body),
     readingTime: readingTimeFromDoc(payload.body),
+    translations: Object.keys(payload.translations).length ? payload.translations : undefined,
     publishedAt: payload.status === 'published' ? now : null,
   });
 
@@ -172,6 +240,11 @@ async function updatePost(req: Request, context: Context, slug: string) {
   existing.status = payload.status;
   existing.excerpt = excerptFromDoc(payload.body);
   existing.readingTime = readingTimeFromDoc(payload.body);
+  // Replace the whole translations object so clearing a language removes it.
+  // An empty payload becomes `undefined` to drop the subdocument entirely.
+  existing.translations = Object.keys(payload.translations).length
+    ? payload.translations
+    : undefined;
   existing.slug = await uniqueSlug(Post, payload.title, String(existing._id));
   if (wasDraft && payload.status === 'published') existing.publishedAt = new Date();
   if (payload.status === 'draft') existing.publishedAt = null;

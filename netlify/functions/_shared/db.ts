@@ -1,6 +1,6 @@
 import mongoose, { Schema, type Model } from 'mongoose';
 import { requireEnv, getEnv } from './env';
-import type { PostStatus, TiptapDoc } from './content';
+import type { PostStatus, PostTranslations, TiptapDoc } from './content';
 
 export interface PostDocument {
   title: string;
@@ -17,6 +17,11 @@ export interface PostDocument {
   publishedAt: Date | null;
   createdAt: Date;
   updatedAt: Date;
+  // Per-language content. The top-level title/body/excerpt/readingTime above
+  // remain the canonical German (de). en/it are optional and, when absent, the
+  // resolver falls back to the German top-level fields. slug/counters/status
+  // stay global (one post, one slug, shared views/likes).
+  translations?: PostTranslations;
 }
 
 export interface CommentDocument {
@@ -48,6 +53,18 @@ declare global {
   var __pvMongoose: Cache | undefined;
 }
 
+// One language's content. Reused for the `en` and `it` subdocuments; the
+// German content lives in the top-level post fields.
+const localizedSchema = new Schema(
+  {
+    title: { type: String, required: true, trim: true },
+    body: { type: Schema.Types.Mixed, required: true },
+    excerpt: { type: String, default: '', trim: true },
+    readingTime: { type: Number, default: 1, min: 1 },
+  },
+  { _id: false },
+);
+
 const postSchema = new Schema<PostDocument>(
   {
     title: { type: String, required: true, trim: true },
@@ -62,6 +79,17 @@ const postSchema = new Schema<PostDocument>(
     views: { type: Number, default: 0, min: 0 },
     likes: { type: Number, default: 0, min: 0 },
     publishedAt: { type: Date, default: null, index: true },
+    // Optional per-language overrides. Absent en/it ⇒ German fallback.
+    translations: {
+      type: new Schema(
+        {
+          en: { type: localizedSchema, default: undefined },
+          it: { type: localizedSchema, default: undefined },
+        },
+        { _id: false },
+      ),
+      default: undefined,
+    },
   },
   { timestamps: true },
 );

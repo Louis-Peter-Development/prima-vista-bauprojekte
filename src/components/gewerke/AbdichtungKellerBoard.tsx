@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 export type AbdichtungType = 'abdichtungHorizontal' | 'abdichtungPerimeter' | 'abdichtungKeller' | 'abdichtung';
@@ -25,6 +26,7 @@ export default function AbdichtungKellerBoard({
   activeType,
   onTypeChange,
 }: Props) {
+  const { t } = useTranslation('kalk');
   function chooseType(value: AbdichtungType) {
     onTypeChange(value);
     scrollToCalculatorResult();
@@ -35,21 +37,21 @@ export default function AbdichtungKellerBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Abdichtungssystem</span>
-          <span className="kalk-board__hint">Wählen Sie Ihre Abdichtungsart</span>
+          <span className="kalk-board__label">{t('gw.abdichtung.field')}</span>
+          <span className="kalk-board__hint">{t('gw.abdichtung.hint')}</span>
         </div>
         <div className="haus-types" style={{ flexWrap: 'wrap', gap: '12px' }}>
-          {ABDICHTUNG_TYPES.map((t) => (
+          {ABDICHTUNG_TYPES.map((option) => (
             <button
-              key={t.num}
+              key={option.num}
               type="button"
-              className={`haus-types__opt${t.value === activeType ? ' is-on' : ''}`}
-              onClick={() => chooseType(t.value)}
-              aria-pressed={t.value === activeType}
+              className={`haus-types__opt${option.value === activeType ? ' is-on' : ''}`}
+              onClick={() => chooseType(option.value)}
+              aria-pressed={option.value === activeType}
               style={{ flex: '1 1 calc(50% - 12px)', minWidth: '180px' }}
             >
-              <span className="haus-types__label">{t.label}</span>
-              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t.detail}</span>
+              <span className="haus-types__label">{t(`gw.abdichtung.types.${option.value}.label`, { defaultValue: option.label })}</span>
+              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t(`gw.abdichtung.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
             </button>
           ))}
         </div>

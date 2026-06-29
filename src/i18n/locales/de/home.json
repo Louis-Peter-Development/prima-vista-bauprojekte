@@ -28,7 +28,14 @@
     "eyebrow": "Ausgewählte Projekte",
     "title": "Zuletzt aus der<br/><em>Werkstatt.</em>",
     "meta": "Frankfurt · Wiesbaden · Luzern",
-    "viewAll": "Alle Projekte ansehen"
+    "viewAll": "Alle Projekte ansehen",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Zoi Restaurant Frankfurt" },
+      "proj--b": { "ttl": "Villa Sichtbeton", "alt": "Villa Sichtbeton Luzern" },
+      "proj--c": { "ttl": "Küche Eichenholz", "alt": "Küche Eichenholz Frankfurt" },
+      "proj--d": { "ttl": "Spa-Bad — Hotel", "alt": "Spa-Bad Hotel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Lobby Office Frankfurt" }
+    }
   },
   "reviews": {
     "starsSuffix": "/ 5 Sterne",

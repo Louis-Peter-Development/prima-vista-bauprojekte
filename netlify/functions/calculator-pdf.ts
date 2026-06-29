@@ -1,4 +1,5 @@
 import { sendCalculatorPdfEmail, type KalkulatorHandoff } from '../../server/mail.js';
+import { normalizeLocale, type Locale } from '../../server/i18n.js';
 import { json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
@@ -16,6 +17,7 @@ type CalculatorPdfRequest = {
   consent: boolean;
   kalkulator: KalkulatorHandoff;
   sourceUrl?: string;
+  locale: Locale;
 };
 
 function asString(v: unknown): string {
@@ -147,6 +149,7 @@ export function validateCalculatorPdfPayload(body: unknown): CalculatorPdfReques
     consent: b.consent === true,
     kalkulator: kalkulator as KalkulatorHandoff,
     sourceUrl: safeSourceUrl(b.sourceUrl),
+    locale: normalizeLocale(b.locale),
   };
 
   if (!payload.email || !EMAIL_RE.test(payload.email)) return { error: 'email is invalid' };

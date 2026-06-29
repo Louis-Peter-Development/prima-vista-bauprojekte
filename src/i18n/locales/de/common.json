@@ -2,14 +2,29 @@
   "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
   "nav": {
     "home": "Start",
+    "services": "Leistungen",
     "packages": "Komplett-Pakete",
     "trades": "Gewerke",
     "heating": "Heizmethoden",
     "projects": "Projekte",
     "magazine": "Magazin",
     "calculator": "Kalkulator",
+    "contact": "Kontakt",
+    "servicesMenuAria": "Leistungen-Untermenü",
     "ariaPrimary": "Hauptnavigation",
     "ariaMobile": "Mobile Navigation"
+  },
+  "search": {
+    "label": "Suche",
+    "placeholder": "Suchen …",
+    "aria": "Website durchsuchen",
+    "hint": "Seiten, Leistungen und Magazin durchsuchen",
+    "open": "Suche öffnen",
+    "close": "Suche schließen",
+    "groupPages": "Seiten",
+    "groupServices": "Leistungen",
+    "groupMagazine": "Magazin",
+    "noResults": "Keine Treffer für „{{query}}“."
   },
   "header": {
     "logoAria": "Prima Vista — Startseite",
@@ -21,6 +36,7 @@
     "themeLightTitle": "Helles Design"
   },
   "language": { "aria": "Sprache wählen" },
+  "lightbox": { "close": "Schließen", "prev": "Zurück", "next": "Weiter" },
   "mobileMenu": {
     "focus": "Im Fokus",
     "callPrefix": "oder rufen Sie an"

@@ -28,9 +28,19 @@ export default function FeaturedProjects() {
             data-delay={p.revealDelay}
             to={`/projekte#${projectAnchorId(p.src)}`}
           >
-            <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" />
+            <img
+              src={p.src}
+              alt={t(`featured.projects.${p.gridClass}.alt`, { defaultValue: p.alt })}
+              width={p.width}
+              height={p.height}
+              loading="lazy"
+            />
             <div className="proj__cap">
-              <span className="ttl">{FEATURED_HOME_TITLES[p.gridClass]}</span>
+              <span className="ttl">
+                {t(`featured.projects.${p.gridClass}.ttl`, {
+                  defaultValue: FEATURED_HOME_TITLES[p.gridClass],
+                })}
+              </span>
               <span className="yr">{p.year}</span>
             </div>
           </Link>

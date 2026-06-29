@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Magazin",
+  "draft": "Entwurf",
+  "masthead": {
+    "issue": "Ausgabe №{{number}}",
+    "issueEmpty": "Ausgabe №—",
+    "place": "Frankfurt · Luzern · MMXXVI",
+    "eyebrow": "Das Magazin",
+    "name": "Magazin",
+    "sub": "Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf und Handwerk rund um Sanierung, Ausbau und Renovierung."
+  },
+  "meta": {
+    "formatLabel": "Format",
+    "formatValue": "Ratgeber & Einblicke",
+    "focusLabel": "Fokus",
+    "focusValue": "Wohnsitz · Gewerbe · Gastro",
+    "regionLabel": "Region",
+    "regionValue": "Frankfurt · Luzern",
+    "archiveLabel": "Archiv",
+    "archiveValue_one": "{{count}} Beitrag",
+    "archiveValue_other": "{{count}} Beiträge"
+  },
+  "divider": "Aktuelle Beiträge",
+  "loading": "Beiträge werden geladen.",
+  "loadError": "Beiträge konnten nicht geladen werden.",
+  "unknownError": "Unbekannter Fehler",
+  "empty": "Noch keine veröffentlichten Beiträge.",
+  "leadTag": "Leitartikel",
+  "readingTime": "{{minutes}} Min. Lesezeit",
+  "readingTimeShort": "{{minutes}} Min.",
+  "readMore": "Weiterlesen",
+  "read": "Lesen",
+  "detail": {
+    "notFound": "Beitrag nicht gefunden.",
+    "back": "Zurück zum Magazin",
+    "backShort": "Magazin",
+    "loading": "Beitrag wird geladen.",
+    "like": "Like",
+    "liked": "Gemerkt",
+    "share": "Teilen",
+    "linkCopied": "Link kopiert.",
+    "commentsTitle": "Kommentare",
+    "namePlaceholder": "Name",
+    "commentPlaceholder": "Kommentar",
+    "submitComment": "Kommentar senden",
+    "commentError": "Kommentar konnte nicht gespeichert werden.",
+    "commentPublished": "Kommentar veröffentlicht.",
+    "moreEyebrow": "Weiterlesen",
+    "moreTitle": "Weitere Beiträge"
+  }
+}

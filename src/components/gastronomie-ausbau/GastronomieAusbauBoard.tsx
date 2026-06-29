@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from 'react-i18next';
 import {
   AREA_OPTIONS,
   GASTRONOMIE_GEWERKE,
@@ -23,7 +24,8 @@ export default function GastronomieAusbauBoard({
   onAreaChange,
   onToggleGewerk,
 }: Props) {
-  const selectedType = GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType);
+  const { t } = useTranslation('kalk');
+  const selectedType = GASTRONOMIE_TYPES.find((type) => type.value === gastronomieType);
   const multiLevel = selectedType?.multiLevel ?? false;
 
   function chooseGastronomieType(value: GastronomieType) {
@@ -36,21 +38,21 @@ export default function GastronomieAusbauBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Gastro-Typ</span>
-          <span className="kalk-board__hint">Bestimmt Komplexität & Auflagen</span>
+          <span className="kalk-board__label">{t('board.gastroType')}</span>
+          <span className="kalk-board__hint">{t('board.gastroTypeHint')}</span>
         </div>
         <div className="haus-types">
-          {GASTRONOMIE_TYPES.map((t) => (
+          {GASTRONOMIE_TYPES.map((option) => (
             <button
-              key={t.value}
+              key={option.value}
               type="button"
-              className={`haus-types__opt${t.value === gastronomieType ? ' is-on' : ''}`}
-              onClick={() => chooseGastronomieType(t.value)}
-              aria-pressed={t.value === gastronomieType}
+              className={`haus-types__opt${option.value === gastronomieType ? ' is-on' : ''}`}
+              onClick={() => chooseGastronomieType(option.value)}
+              aria-pressed={option.value === gastronomieType}
             >
-              <span className="haus-types__factor">× {t.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{t.label}</span>
-              <span className="haus-types__detail">{t.detail}</span>
+              <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
+              <span className="haus-types__label">{t(`gastro.types.${option.value}.label`, { defaultValue: option.label })}</span>
+              <span className="haus-types__detail">{t(`gastro.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
             </button>
           ))}
         </div>
@@ -59,7 +61,7 @@ export default function GastronomieAusbauBoard({
       <div className="kalk-board__field reveal" data-delay="1">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">02</span>
-          <span className="kalk-board__label">Fläche</span>
+          <span className="kalk-board__label">{t('board.area')}</span>
           <span className="kalk-board__value-large">
             {area}<small>m²</small>
           </span>
@@ -82,9 +84,13 @@ export default function GastronomieAusbauBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">03</span>
-          <span className="kalk-board__label">Gewerke</span>
+          <span className="kalk-board__label">{t('board.gewerke')}</span>
           <span className="kalk-board__counter">
-            <em>{picked.length}</em> von {GASTRONOMIE_GEWERKE.length} gewählt
+            <Trans
+              i18nKey="kalk:board.gewerkeCount"
+              values={{ count: picked.length, total: GASTRONOMIE_GEWERKE.length }}
+              components={{ em: <em /> }}
+            />
           </span>
         </div>
         <ul className="kalk-trades">
@@ -99,13 +105,13 @@ export default function GastronomieAusbauBoard({
                   aria-pressed={on}
                   aria-disabled={disabled}
                   disabled={disabled}
-                  title={disabled ? 'Nur für mehrgeschossige Objekte' : undefined}
+                  title={disabled ? t('board.multiLevelOnly') : undefined}
                 >
                   <span className="kalk-trades__check" aria-hidden="true"></span>
                   <span className="kalk-trades__num">{g.num}</span>
                   <span className="kalk-trades__body">
-                    <span className="kalk-trades__name">{g.label}</span>
-                    <span className="kalk-trades__lead">{g.lede}</span>
+                    <span className="kalk-trades__name">{t(`gastro.gewerke.${g.key}.label`, { defaultValue: g.label })}</span>
+                    <span className="kalk-trades__lead">{t(`gastro.gewerke.${g.key}.lede`, { defaultValue: g.lede })}</span>
                   </span>
                   <span className="kalk-trades__price">€ {g.pricePerM2}<small>/m²</small></span>
                 </button>

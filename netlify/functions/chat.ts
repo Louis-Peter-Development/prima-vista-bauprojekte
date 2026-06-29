@@ -2,7 +2,16 @@ import { createChatStream, type ChatMessage } from '../../server/chat.js';
 import { methodNotAllowed } from './_shared/http';
 import { checkRateLimit, rateLimitResponse } from './_shared/rate-limit';
 
-type Body = { messages?: ChatMessage[] };
+type Body = { messages?: ChatMessage[]; locale?: string };
+
+const SUPPORTED_LOCALES = ['de', 'en', 'it'] as const;
+type SupportedLocale = (typeof SUPPORTED_LOCALES)[number];
+
+function normalizeLocale(value: unknown): SupportedLocale {
+  return SUPPORTED_LOCALES.includes(value as SupportedLocale)
+    ? (value as SupportedLocale)
+    : 'de';
+}
 
 // Bound the input forwarded to the LLM so a single request can't run up an
 // unbounded Anthropic bill (denial-of-wallet). The rate limit caps request
@@ -53,7 +62,7 @@ export default async (req: Request) => {
     return new Response('Conversation too long', { status: 413 });
   }
 
-  const stream = createChatStream(trimmed);
+  const stream = createChatStream(trimmed, normalizeLocale(body.locale));
   return new Response(stream, {
     headers: {
       'content-type': 'text/event-stream; charset=utf-8',

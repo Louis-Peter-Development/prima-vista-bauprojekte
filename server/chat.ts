@@ -54,8 +54,20 @@ FORMAT
 const MODEL = 'claude-haiku-4-5';
 const MAX_TOKENS = 600;
 
-export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8Array> {
+// Per-language override appended to the system prompt so the assistant always
+// replies in the visitor's language. German is the default and gets no extra
+// instruction, keeping the (cached) prompt byte-identical to before.
+const LANGUAGE_INSTRUCTIONS: Record<string, string> = {
+  en: 'SPRACHE\n- Antworte ausschließlich auf Englisch (neutral-professionell), unabhängig von der Sprache der Seite oder der Nutzereingabe.',
+  it: 'SPRACHE\n- Antworte ausschließlich auf Italienisch (formell, mit der Höflichkeitsform "Lei"), unabhängig von der Sprache der Seite oder der Nutzereingabe.',
+};
+
+export function createChatStream(
+  messages: ChatMessage[],
+  locale?: string,
+): ReadableStream<Uint8Array> {
   const encoder = new TextEncoder();
+  const languageInstruction = locale ? LANGUAGE_INSTRUCTIONS[locale] : undefined;
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -81,6 +93,9 @@ export function createChatStream(messages: ChatMessage[]): ReadableStream<Uint8A
               text: SYSTEM_PROMPT,
               cache_control: { type: 'ephemeral' },
             },
+            ...(languageInstruction
+              ? [{ type: 'text' as const, text: languageInstruction }]
+              : []),
           ],
           messages,
         });

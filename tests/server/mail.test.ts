@@ -129,3 +129,52 @@ describe('Blitz email rendering', () => {
     expect(emails.customer.text).not.toContain('Ihre ausgewählten Leistungen:');
   });
 });
+
+describe('Blitz email localization (customer confirmation)', () => {
+  it('defaults to German when no locale is provided (byte-for-byte unchanged)', () => {
+    const emails = renderBlitzEmails(sampleBlitzPayload);
+    expect(emails.customer.subject).toBe('Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte');
+    expect(emails.customer.html).toContain('Ihre Angaben');
+    expect(emails.customer.text).toContain('So geht es weiter:');
+  });
+
+  it('renders the customer confirmation in English while keeping the office email German', () => {
+    const emails = renderBlitzEmails({ ...sampleBlitzPayload, locale: 'en' });
+
+    // Customer: localized to English.
+    expect(emails.customer.subject).toBe('We have received your express quote request — Prima Vista Bauprojekte');
+    expect(emails.customer.html).toContain('Thank you, Max.');
+    expect(emails.customer.html).toContain('Your details');
+    expect(emails.customer.html).toContain('Your selected services');
+    expect(emails.customer.html).toContain('What happens next');
+    expect(emails.customer.html).toContain('Kind regards,');
+    expect(emails.customer.html).not.toContain('Ihre Angaben');
+    expect(emails.customer.text).toContain('What happens next:');
+    expect(emails.customer.text).toContain('Your transferred calculation');
+    // Canonical German gewerke codes are mapped to localized trade labels in
+    // the customer email (the POSTed values stay German per the server contract).
+    expect(emails.customer.text).toContain('Doors & frames');
+
+    // Office: stays German regardless of request locale.
+    expect(emails.office.subject).toContain('Blitz-Anfrage');
+    expect(emails.office.html).toContain('Gewählte Leistungen / Anfragebereich');
+    expect(emails.office.html).toContain('Übernommene Kalkulation');
+    expect(emails.office.html).not.toMatch(/What happens next|Kind regards/);
+  });
+
+  it('renders the customer confirmation in Italian (formal Lei) while keeping the office email German', () => {
+    const emails = renderBlitzEmails({ ...sampleBlitzPayload, locale: 'it' });
+
+    expect(emails.customer.subject).toBe('Abbiamo ricevuto la Sua richiesta di preventivo express — Prima Vista Bauprojekte');
+    expect(emails.customer.html).toContain('Grazie, Max.');
+    expect(emails.customer.html).toContain('I Suoi dati');
+    expect(emails.customer.html).toContain('Le lavorazioni selezionate');
+    expect(emails.customer.html).toContain('Come si procede');
+    expect(emails.customer.html).toContain('Cordiali saluti,');
+    expect(emails.customer.text).toContain('Porte & telai');
+
+    // Office: German.
+    expect(emails.office.html).toContain('Gewählte Leistungen / Anfragebereich');
+    expect(emails.office.html).not.toMatch(/Come si procede|Cordiali saluti/);
+  });
+});
