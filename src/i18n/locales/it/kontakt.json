@@ -1,0 +1,113 @@
+{
+  "intro": {
+    "crumb": "Contatti",
+    "title": "Parliamo del<br/>suo <em>progetto edilizio.</em>",
+    "lede": "Prima consulenza gratuita e senza impegno. Appuntamento entro 48 ore, in loco o in videochiamata — prima ascoltiamo, poi proponiamo.",
+    "phoneLabel": "Telefono",
+    "phoneMeta": "Lun–Ven · 08:00–18:00 · DE / CH",
+    "emailLabel": "E-mail",
+    "emailMeta": "Risposta entro 24 ore — nei giorni feriali.",
+    "consultLabel": "Primo colloquio",
+    "consultValue": "Appuntamento entro 48 ore",
+    "consultMeta": "Gratuito e senza impegno · in loco o in videochiamata.",
+    "officeDe": "Francoforte — DE",
+    "officeCh": "Emmenbrücke — CH",
+    "countryDe": "Germania",
+    "countryCh": "Svizzera",
+    "mediaAlt": "Sala riunioni luminosa per le consulenze di progetto",
+    "mediaCaption": "Prima consulenza · Francoforte ed Emmenbrücke"
+  },
+  "form": {
+    "eyebrow": "Invia una richiesta",
+    "title": "Ci racconti il<br/>suo <em>progetto.</em>",
+    "vorname": "Nome",
+    "nachname": "Cognome",
+    "email": "E-mail",
+    "emailPlaceholder": "lei@email.com",
+    "tel": "Telefono",
+    "telOptional": "(facoltativo)",
+    "telPlaceholder": "+39 …",
+    "artLabel": "Tipo di progetto",
+    "art": {
+      "haus": "Ristrutturazione casa",
+      "wohnung": "Appartamento",
+      "gastro": "Ristorazione",
+      "buero": "Ufficio",
+      "einzel": "Singola lavorazione",
+      "andere": "Altro"
+    },
+    "regionLabel": "Regione",
+    "regions": {
+      "frankfurt": "Francoforte e Assia",
+      "innerschweiz": "Svizzera centrale",
+      "ausserhalb": "Altrove"
+    },
+    "budgetLabel": "Fascia di budget",
+    "budget": {
+      "unset": "Selezioni",
+      "lt50": "Meno di € 50.000",
+      "mid1": "€ 50.000 – € 150.000",
+      "mid2": "€ 150.000 – € 500.000",
+      "gt500": "Oltre € 500.000"
+    },
+    "msgLabel": "Di cosa si tratta?",
+    "msgPlaceholder": "Descriva il suo progetto in poche frasi — la ricontatteremo entro 24 ore.",
+    "consent": "Acconsento all'utilizzo dei miei dati per rispondere alla mia richiesta. Non verranno trasmessi a terzi.",
+    "consentLink": "Privacy",
+    "note": "Risposta entro 24 h",
+    "submit": "Invia",
+    "submitting": "Invio in corso…",
+    "errors": {
+      "vorname": "Inserisca il suo nome.",
+      "nachname": "Inserisca il suo cognome.",
+      "emailRequired": "Inserisca il suo indirizzo e-mail.",
+      "emailFormat": "Controlli il formato dell'indirizzo e-mail.",
+      "msg": "Descriva brevemente il suo progetto.",
+      "dsgvo": "Confermi l'informativa sulla privacy.",
+      "unknown": "Errore sconosciuto",
+      "submit": "Non è stato possibile inviare la sua richiesta ({{error}}). Riprovi o ci scriva direttamente a office@primavista-bauprojekte.com."
+    },
+    "success": {
+      "eyebrow": "Inviato",
+      "title": "Grazie",
+      "body": "La sua richiesta è arrivata. Esamineremo il suo progetto e la ricontatteremo entro <s>24 ore</s> — via e-mail all'indirizzo <s>{{email}}</s>",
+      "bodyPhone": " oppure per telefono al <s>{{tel}}</s>",
+      "step1": "Leggiamo i suoi dati e prepariamo le prime domande.",
+      "step2": "Riceve una risposta scritta o una richiamata.",
+      "step3": "Se desidera, fissiamo un appuntamento in loco.",
+      "toHome": "Vai alla home",
+      "toProjects": "Vedi i progetti"
+    }
+  },
+  "faqSection": {
+    "eyebrow": "Domande frequenti",
+    "title": "Le domande<br/>più frequenti<br/>dei <em>committenti.</em>",
+    "intro": "Risposte su prezzo fisso, tempi di realizzazione, materiali e garanzia. Saremo lieti di chiarire ulteriori domande di persona."
+  },
+  "faq": [
+    {
+      "q": "Come si arriva a un prezzo fisso vincolante?",
+      "a": "Dopo il primo colloquio effettuiamo il rilievo in loco, verifichiamo la statica e la struttura e redigiamo un capitolato dettagliato. Entro 14 giorni riceve un prezzo fisso scritto — valido 60 giorni e vincolante dopo la firma del contratto."
+    },
+    {
+      "q": "Con quale rapidità potete iniziare i lavori?",
+      "a": "Di norma 4–8 settimane dopo la conclusione del contratto. Spesso prima per le ristrutturazioni di appartamenti, più a lungo per i progetti soggetti ad autorizzazione (statica, tetto, facciata). Comunichiamo la data di inizio in modo vincolante."
+    },
+    {
+      "q": "Lavorate con subappaltatori?",
+      "a": "Direzione lavori, impianti elettrici, idraulica, cartongesso, imbianchino e falegnameria sono interni. Piastrellisti, lattonieri e facciate sono aziende partner di lunga data legate da contratto — niente manodopera a giornata, niente passaggi di mano ripetuti."
+    },
+    {
+      "q": "Cosa è incluso nel prezzo fisso?",
+      "a": "Tutti i materiali secondo la scelta, tutte le lavorazioni, la direzione lavori, lo smaltimento delle macerie, la pulizia, le pratiche con gli enti e l'assicurazione. Non incluso: richieste particolari dopo la firma del contratto (indicate separatamente) e oneri di proprietà."
+    },
+    {
+      "q": "Posso restare nell'appartamento durante la ristrutturazione?",
+      "a": "Per gli appartamenti con ristrutturazione parziale (ad es. solo bagno o cucina): sì, con un uso limitato. Per le ristrutturazioni complete consigliamo di trasferirsi — aiutiamo con l'arredamento provvisorio e la logistica."
+    },
+    {
+      "q": "Quale garanzia offrite?",
+      "a": "Cinque anni di garanzia su tutti i lavori eseguiti — più di quanto previsto per legge. Sui materiali vale la garanzia del produttore, che facciamo valere per lei."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Home",
+    "services": "Servizi",
+    "packages": "Pacchetti",
+    "trades": "Lavori",
+    "heating": "Riscaldamento",
+    "projects": "Progetti",
+    "magazine": "Magazine",
+    "calculator": "Preventivo",
+    "about": "Chi siamo",
+    "contact": "Contatto",
+    "servicesMenuAria": "Sottomenu Servizi",
+    "ariaPrimary": "Navigazione principale",
+    "ariaMobile": "Navigazione mobile"
+  },
+  "search": {
+    "label": "Cerca",
+    "placeholder": "Cerca …",
+    "aria": "Cerca nel sito",
+    "hint": "Cerca tra pagine, servizi e magazine",
+    "open": "Apri la ricerca",
+    "close": "Chiudi la ricerca",
+    "groupPages": "Pagine",
+    "groupServices": "Servizi",
+    "groupMagazine": "Magazine",
+    "noResults": "Nessun risultato per «{{query}}»."
+  },
+  "header": {
+    "logoAria": "Prima Vista — home",
+    "openMenu": "Apri il menu",
+    "closeMenu": "Chiudi il menu",
+    "themeToDark": "Passa al tema scuro",
+    "themeToLight": "Passa al tema chiaro",
+    "themeDarkTitle": "Tema scuro",
+    "themeLightTitle": "Tema chiaro"
+  },
+  "language": { "aria": "Scegli la lingua" },
+  "lightbox": { "close": "Chiudi", "prev": "Precedente", "next": "Successivo" },
+  "mobileMenu": {
+    "focus": "In primo piano",
+    "callPrefix": "oppure chiamaci"
+  },
+  "cta": {
+    "learnMore": "Scopri di più",
+    "appointment": "Fissa un appuntamento",
+    "toCalculator": "Apri il preventivatore",
+    "requestExpress": "Richiedi un preventivo express",
+    "expressQuote": "Preventivo express"
+  },
+  "contactPresetMsg": "Salve team di Prima Vista,\n\nmi interessa: {{topic}}.\n\nVi prego di contattarmi per un primo confronto.",
+  "notFound": {
+    "eyebrow": "404 / Non trovata",
+    "title": "Questa pagina al momento non è in cantiere.",
+    "lede": "Il link che ha seguito è obsoleto, è stato spostato o contiene un errore. Da qui può tornare rapidamente alle sezioni più importanti.",
+    "actionsAria": "Prossimi passi",
+    "toHome": "Vai alla home",
+    "toContact": "Invia una richiesta",
+    "panelAria": "Accesso rapido",
+    "linksAria": "Pagine popolari",
+    "metaTitle": "Pagina non trovata"
+  },
+  "cookie": {
+    "aria": "Avviso sui cookie",
+    "eyebrow": "Privacy",
+    "title": "Cookie e servizi",
+    "body": "Utilizziamo le tecnologie necessarie al funzionamento del sito. I servizi opzionali come l'analisi, i video YouTube incorporati e il nostro chatbot basato su Claude vengono attivati solo dopo il suo consenso.",
+    "policy": "Leggi l'informativa sulla privacy",
+    "necessary": "Solo necessari",
+    "acceptAll": "Accetta tutti"
+  },
+  "footer": {
+    "blurb": "Ristrutturazione e rinnovo da un unico interlocutore — per abitazioni e ristorazione, a Francoforte ed Emmenbrücke.",
+    "about": "Chi siamo",
+    "locations": "Sedi",
+    "services": "Servizi",
+    "contact": "Contatti",
+    "countryDe": "Germania",
+    "countryCh": "Svizzera",
+    "links": {
+      "packages": "Pacchetti completi",
+      "trades": "Lavori",
+      "heating": "Riscaldamento",
+      "calculator": "Preventivatore",
+      "projects": "Progetti",
+      "express": "Preventivi express",
+      "contactForm": "Modulo di contatto"
+    },
+    "admin": "Admin",
+    "imprint": "Note legali",
+    "privacy": "Privacy",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}

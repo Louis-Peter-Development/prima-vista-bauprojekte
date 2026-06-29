@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
-import { GASTRONOMIE_GEWERKE, formatTsd } from '../../data/gastronomieAusbau';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
+import { formatTsd, formatGroupedInt } from '../../i18n/calculatorCatalog';
+import { GASTRONOMIE_GEWERKE } from '../../data/gastronomieAusbau';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
 import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 
@@ -26,6 +29,8 @@ export default function GastronomieAusbauResult({
   factor,
   kindLabel,
 }: Props) {
+  const { t } = useTranslation('kalk');
+  const locale = useLocale();
   const pickedGewerke = GASTRONOMIE_GEWERKE.filter((g) => picked.includes(g.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
@@ -53,31 +58,31 @@ export default function GastronomieAusbauResult({
         <div className="kalk-result__head">
           <div className="kalk-result__eyebrow">
             <span className="rule-red"></span>
-            Live-Schätzung
+            {t('result.liveEstimate')}
           </div>
           {hasPicks ? (
             <>
               <div className="kalk-result__range">
                 <span className="kalk-result__from">
-                  <small>ab</small>
-                  <strong>€ {formatTsd(totalMin)}</strong>
+                  <small>{t('result.from')}</small>
+                  <strong>€ {formatTsd(totalMin, locale)}</strong>
                 </span>
                 <span className="kalk-result__dash">—</span>
                 <span className="kalk-result__to">
-                  <small>bis</small>
-                  <strong>€ {formatTsd(totalMax)}</strong>
+                  <small>{t('result.to')}</small>
+                  <strong>€ {formatTsd(totalMax, locale)}</strong>
                 </span>
               </div>
               <div className="kalk-result__meta">
-                <span><small>Mittelwert netto</small> € {formatTsd(totalMid)}</span>
-                <span><small>pro m² netto</small> € {Math.round(perM2).toLocaleString('de-DE')}</span>
+                <span><small>{t('result.meanNet')}</small> € {formatTsd(totalMid, locale)}</span>
+                <span><small>{t('result.perM2Net')}</small> € {formatGroupedInt(perM2, locale)}</span>
               </div>
-              <p className="kalk-result__vat-note">Alle Beträge netto · zzgl. 19 % MwSt.</p>
+              <p className="kalk-result__vat-note">{t('result.vatNote')}</p>
             </>
           ) : (
             <div className="kalk-result__empty-state">
-              <div className="kalk-result__placeholder">— — —</div>
-              <p>Wählen Sie mindestens ein Gewerk, um eine erste Spanne zu sehen.</p>
+              <div className="kalk-result__placeholder">{t('result.emptyPlaceholder')}</div>
+              <p>{t('result.emptyHint')}</p>
             </div>
           )}
         </div>
@@ -85,8 +90,8 @@ export default function GastronomieAusbauResult({
         {hasPicks && (
           <div className="kalk-result__breakdown">
             <div className="kalk-result__breakdown-head">
-              <span>Aufstellung</span>
-              <span>nach Gewerk</span>
+              <span>{t('result.breakdownTitle')}</span>
+              <span>{t('result.breakdownSub')}</span>
             </div>
             <ul>
               {pickedGewerke.map((g) => {
@@ -94,8 +99,8 @@ export default function GastronomieAusbauResult({
                 return (
                   <li key={g.key}>
                     <span className="kalk-result__row-num">{g.num}</span>
-                    <span className="kalk-result__row-name">{g.label}</span>
-                    <span className="kalk-result__row-value">€ {formatTsd(sub)}</span>
+                    <span className="kalk-result__row-name">{t(`gastro.gewerke.${g.key}.label`, { defaultValue: g.label })}</span>
+                    <span className="kalk-result__row-value">€ {formatTsd(sub, locale)}</span>
                   </li>
                 );
               })}
@@ -104,7 +109,7 @@ export default function GastronomieAusbauResult({
         )}
 
         <p className="kalk-result__disclaimer">
-          Vorab-Schätzung für die gewählten Typ- und Gewerk-Optionen — exklusive Sondergewerke, Gastronomie-Konzessionen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung.
+          {t('result.disclaimerGastro')}
         </p>
 
         <div className="kalk-result__actions">
@@ -114,10 +119,10 @@ export default function GastronomieAusbauResult({
             to="/blitz-angebot"
             state={handoff ? { kalkulator: handoff } : undefined}
           >
-            Verbindliches Angebot <span className="arrow">&gt;</span>
+            {t('result.bindingOffer')} <span className="arrow">&gt;</span>
           </Link>
           <Link className="btn btn--light kalk-result__btn-light" to="/kontakt">
-            Termin vereinbaren <span className="arrow">&gt;</span>
+            {t('result.appointment')} <span className="arrow">&gt;</span>
           </Link>
         </div>
       </div>

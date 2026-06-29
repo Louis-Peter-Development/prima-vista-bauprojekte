@@ -1,7 +1,8 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ReactElement } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './components/Layout';
+import { LOCALES, ROUTE_KEYS, routePattern, toCanonicalPath } from './i18n/routes';
 import './styles/components/route-loading.css';
 
 // Lazy load all pages for code splitting
@@ -52,7 +53,8 @@ const AdminEditor = lazy(() => import('./pages/AdminEditor'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function RouteFallback() {
-  const { pathname } = useLocation();
+  const { pathname: rawPathname } = useLocation();
+  const pathname = toCanonicalPath(rawPathname);
 
   if (pathname === '/blog') {
     return (
@@ -117,55 +119,69 @@ function RouteFallback() {
   );
 }
 
+// Canonical (German) route key -> page element. Keys match those in the route
+// registry; localized paths (/en/…, /it/…) are generated from this single map.
+const PAGES: Record<string, ReactElement> = {
+  '': <Home />,
+  'gewerke': <Gewerke />,
+  'badsanierung': <Badsanierung />,
+  'badsanierung-gaeste-wc': <Badsanierung />,
+  'kuechen-moebelbau': <KuechenMoebelbau />,
+  'boeden-belaege': <BoedenBelaege />,
+  'elektroinstallation': <Elektroinstallation />,
+  'trockenbau': <Trockenbau />,
+  'maler-lackierer': <MalerLackierer />,
+  'fassadensanierung': <Fassadensanierung />,
+  'abdichtung-keller': <AbdichtungKeller />,
+  'dachsanierung': <Dachsanierung />,
+  'treppen-gelaender': <TreppenGelaender />,
+  'garten-aussenanlagen': <GartenAussenanlagen />,
+  'barrierefreiheit': <Barrierefreiheit />,
+  'fenstertechnik': <Fenstertechnik />,
+  'rohbau-abbruch': <RohbauAbbruch />,
+  'tueren-zargen': <TuerenZargen />,
+  'sanitaerinstallation': <Sanitaerinstallation />,
+  'zaeune': <Zaeune />,
+  'komplett-pakete': <KomplettPakete />,
+  'projekte': <Projekte />,
+  'projekte/:slug': <ProjektDetail />,
+  'blog': <Blog />,
+  'blog/:slug': <BlogDetail />,
+  'kontakt': <Kontakt />,
+  'blitz-angebot': <BlitzAngebot />,
+  'kalkulator': <Kalkulator />,
+  'haus-sanierung': <HausSanierung />,
+  'wohnung-sanierung': <WohnungSanierung />,
+  'gastronomie-ausbau': <GastronomieAusbau />,
+  'buero-ausbau': <BueroAusbau />,
+  'heizmethoden': <Heizmethoden />,
+  'heizkoerper': <Heizkoerper />,
+  'heizstraenge': <Heizstraenge />,
+  'fussbodenheizung': <Fussbodenheizung />,
+  'waermepumpe': <Waermepumpe />,
+  'gas-heizung': <GasHeizung />,
+  'pelletofen': <Pelletofen />,
+  'saunaofen': <Saunaofen />,
+  'impressum': <Impressum />,
+  'datenschutz': <Datenschutz />,
+};
+
 export default function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<RouteFallback />}>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/gewerke" element={<Gewerke />} />
-            <Route path="/badsanierung" element={<Badsanierung />} />
-            <Route path="/badsanierung-gaeste-wc" element={<Badsanierung />} />
-            <Route path="/kuechen-moebelbau" element={<KuechenMoebelbau />} />
-            <Route path="/boeden-belaege" element={<BoedenBelaege />} />
-            <Route path="/elektroinstallation" element={<Elektroinstallation />} />
-            <Route path="/trockenbau" element={<Trockenbau />} />
-            <Route path="/maler-lackierer" element={<MalerLackierer />} />
-            <Route path="/fassadensanierung" element={<Fassadensanierung />} />
-            <Route path="/abdichtung-keller" element={<AbdichtungKeller />} />
-
-            <Route path="/dachsanierung" element={<Dachsanierung />} />
-            <Route path="/treppen-gelaender" element={<TreppenGelaender />} />
-            <Route path="/garten-aussenanlagen" element={<GartenAussenanlagen />} />
-            <Route path="/barrierefreiheit" element={<Barrierefreiheit />} />
-            <Route path="/fenstertechnik" element={<Fenstertechnik />} />
-            <Route path="/rohbau-abbruch" element={<RohbauAbbruch />} />
-            <Route path="/tueren-zargen" element={<TuerenZargen />} />
-            <Route path="/sanitaerinstallation" element={<Sanitaerinstallation />} />
-            <Route path="/zaeune" element={<Zaeune />} />
-            <Route path="/komplett-pakete" element={<KomplettPakete />} />
-            <Route path="/projekte" element={<Projekte />} />
-            <Route path="/projekte/:slug" element={<ProjektDetail />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogDetail />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/blitz-angebot" element={<BlitzAngebot />} />
-            <Route path="/kalkulator" element={<Kalkulator />} />
-            <Route path="/haus-sanierung" element={<HausSanierung />} />
-            <Route path="/wohnung-sanierung" element={<WohnungSanierung />} />
-            <Route path="/gastronomie-ausbau" element={<GastronomieAusbau />} />
-            <Route path="/buero-ausbau" element={<BueroAusbau />} />
-            <Route path="/heizmethoden" element={<Heizmethoden />} />
-            <Route path="/heizkoerper" element={<Heizkoerper />} />
-            <Route path="/heizstraenge" element={<Heizstraenge />} />
-            <Route path="/fussbodenheizung" element={<Fussbodenheizung />} />
-            <Route path="/waermepumpe" element={<Waermepumpe />} />
-            <Route path="/gas-heizung" element={<GasHeizung />} />
-            <Route path="/pelletofen" element={<Pelletofen />} />
-            <Route path="/saunaofen" element={<Saunaofen />} />
-            <Route path="/impressum" element={<Impressum />} />
-            <Route path="/datenschutz" element={<Datenschutz />} />
+            {ROUTE_KEYS.flatMap((key) =>
+              LOCALES.map((locale) => (
+                <Route
+                  key={`${locale}:${key}`}
+                  path={routePattern(key, locale)}
+                  element={PAGES[key]}
+                />
+              )),
+            )}
+            {/* Admin stays un-prefixed and untranslated. */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/blog" element={<AdminBlog />} />
             <Route path="/admin/blog/new" element={<AdminEditor />} />

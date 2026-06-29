@@ -12,11 +12,9 @@ export type TradeRow = {
 };
 
 export type FeaturedTrade = {
+  /** Stable i18n key under pages:gewerke.featured.cards. */
+  key: 'bad' | 'kueche' | 'boden';
   src: string;
-  title: string;
-  count: string;
-  heading: [string, string];
-  desc: string;
   feature?: boolean;
   revealDelay?: number;
   detailTo?: string;
@@ -68,29 +66,20 @@ export const TRADES: TradeRow[] = [
 
 export const FEATURED_TRADES: FeaturedTrade[] = [
   {
+    key: 'bad',
     src: '/assets/img/leistungen/badsanierung-05.webp',
-    title: 'Badezimmer — Sanitär & Fliesen',
-    count: '01 — 142 Projekte',
-    heading: ['Bäder &', 'Sanitär'],
-    desc: 'Komplettbäder von 4 bis 28 m². Fliesen, Sanitär, Heizkörper, Beleuchtung — aus einer Bestellung.',
     feature: true,
     detailTo: '/badsanierung',
   },
   {
+    key: 'kueche',
     src: '/assets/img/leistungen/kuechen-moebelbau-02.webp',
-    title: 'Küchen & Möbelbau',
-    count: '02 — 98 Projekte',
-    heading: ['Küchen &', 'Möbelbau'],
-    desc: 'Maßgefertigte Schreiner­küchen und Einbauten.',
     revealDelay: 1,
     detailTo: '/kuechen-moebelbau',
   },
   {
+    key: 'boden',
     src: '/assets/img/leistungen/boeden-belaege-11.webp',
-    title: 'Bodenbeläge',
-    count: '03 — 187 Projekte',
-    heading: ['Böden &', 'Beläge'],
-    desc: 'Parkett, Vinyl, Naturstein, Estrich, Industrieboden.',
     revealDelay: 2,
     detailTo: '/boeden-belaege',
   },

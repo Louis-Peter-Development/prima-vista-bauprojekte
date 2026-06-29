@@ -1,5 +1,6 @@
 import { useEffect, type PointerEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
 import SectionEyebrow from '../common/SectionEyebrow';
 import { PREVIEW_IMAGES, TRADES, type TradeRow } from '../../data/gewerke';
 
@@ -9,6 +10,8 @@ type TradeIndexProps = {
 };
 
 export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) {
+  const { t } = useTranslation('pages');
+
   useEffect(() => {
     Object.values(PREVIEW_IMAGES).forEach((src) => {
       const img = new Image();
@@ -22,19 +25,18 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
     }
   };
 
+  const activeName = t(`gewerke.trades.${active.key}.name`);
+
   return (
     <section className="trade-index">
       <div className="trade-index__head">
         <div className="reveal">
-          <SectionEyebrow>Alle Gewerke</SectionEyebrow>
+          <SectionEyebrow>{t('gewerke.index.eyebrow')}</SectionEyebrow>
           <h2>
-            Das vollständige<br />
-            <em>Verzeichnis.</em>
+            <Trans i18nKey="pages:gewerke.index.title" components={{ em: <em />, br: <br /> }} />
           </h2>
         </div>
-        <p className="reveal" data-delay="1">
-          Tippen Sie auf ein Gewerk, um den Kostenrechner zu öffnen — am Desktop genügt das Überfahren für eine Vorschau. Jedes Gewerk wird durch eigene Bauleitung koordiniert — Sie buchen einzeln oder gebündelt.
-        </p>
+        <p className="reveal" data-delay="1">{t('gewerke.index.intro')}</p>
       </div>
 
       <div className="trade-index__split">
@@ -42,17 +44,17 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
           <img
             key={active.key}
             src={PREVIEW_IMAGES[active.key]}
-            alt={active.name}
+            alt={activeName}
             width="800"
             height="600"
           />
           <div className={`trade-index__preview-cap${active.detailTo ? ' trade-index__preview-cap--with-link' : ''}`}>
             <span className="num">№ {active.num}</span>
-            <span className="ttl">{active.name}</span>
+            <span className="ttl">{activeName}</span>
           </div>
           {active.detailTo ? (
             <Link className="trade-index__preview-link" to={active.detailTo}>
-              Kostenrechner öffnen <span>›</span>
+              {t('gewerke.index.openCalculator')} <span>›</span>
             </Link>
           ) : null}
         </div>
@@ -68,12 +70,12 @@ export default function TradeIndex({ active, onActiveChange }: TradeIndexProps) 
                 to={row.detailTo ?? '/kontakt'}
                 onPointerEnter={(event) => handleRowPointerEnter(event, row)}
                 onFocus={() => onActiveChange(row)}
-                aria-label={`${row.name} Kostenrechner öffnen`}
+                aria-label={t('gewerke.index.openAria', { name: t(`gewerke.trades.${row.key}.name`) })}
                 aria-current={row.key === active.key ? 'page' : undefined}
               >
                 <span className="num">{row.num}</span>
-                <span className="name">{row.name}</span>
-                <span className="lead">{row.lead}</span>
+                <span className="name">{t(`gewerke.trades.${row.key}.name`)}</span>
+                <span className="lead">{t(`gewerke.trades.${row.key}.lead`)}</span>
               </Link>
             </li>
           ))}

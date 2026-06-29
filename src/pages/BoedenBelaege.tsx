@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import BoedenConfigurator from '../components/gewerke/BoedenConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function BoedenBelaege() {
-  usePageTitle('Böden & Beläge Kostenrechner');
-
   return (
-    <>
-      <PageIntro
-        className="kalk-intro"
-        backgroundImage="/assets/img/leistungen/boeden-belaege-01.webp"
-        crumbNumber="03"
-        crumbLabel="Gewerke · Böden & Beläge"
-        title={<>Böden &<br /><em>Beläge kalkulieren.</em></>}
-        lede="Parkett, Laminat, Vinyl, Fliesen, Kork oder Estrich: Wählen Sie die passende Bodenleistung und erhalten Sie eine erste Vorab-Schätzung."
-        meta={[
-          { label: 'Varianten', value: '4 Konzepte' },
-          { label: 'Gewerke', value: 'Boden & Estrich' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="boeden" />
-
-      <section className="kalkulator">
-        <BoedenConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Boden erneuern?"
-        title={<>Wir prüfen <em>Untergrund</em><br />und Übergänge vor Ort.</>}
-        ctaLabel="Bodenverlegung anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="boeden" crumbNumber="03" backgroundImage="/assets/img/leistungen/boeden-belaege-01.webp" photoSet="boeden" className="kalk-intro">
+      <BoedenConfigurator />
+    </GewerkePage>
   );
 }

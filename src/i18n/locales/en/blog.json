@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Magazine",
+  "draft": "Draft",
+  "masthead": {
+    "issue": "Issue №{{number}}",
+    "issueEmpty": "Issue №—",
+    "place": "Frankfurt · Lucerne · MMXXVI",
+    "eyebrow": "The Magazine",
+    "name": "Magazine",
+    "sub": "Ideas, materials and decisions for better spaces — planning, process and craftsmanship around renovation, fit-out and refurbishment."
+  },
+  "meta": {
+    "formatLabel": "Format",
+    "formatValue": "Guides & insights",
+    "focusLabel": "Focus",
+    "focusValue": "Residential · Commercial · Hospitality",
+    "regionLabel": "Region",
+    "regionValue": "Frankfurt · Lucerne",
+    "archiveLabel": "Archive",
+    "archiveValue_one": "{{count}} article",
+    "archiveValue_other": "{{count}} articles"
+  },
+  "divider": "Latest articles",
+  "loading": "Loading articles.",
+  "loadError": "Articles could not be loaded.",
+  "unknownError": "Unknown error",
+  "empty": "No published articles yet.",
+  "leadTag": "Feature",
+  "readingTime": "{{minutes}} min read",
+  "readingTimeShort": "{{minutes}} min",
+  "readMore": "Read more",
+  "read": "Read",
+  "detail": {
+    "notFound": "Article not found.",
+    "back": "Back to the magazine",
+    "backShort": "Magazine",
+    "loading": "Loading article.",
+    "like": "Like",
+    "liked": "Saved",
+    "share": "Share",
+    "linkCopied": "Link copied.",
+    "commentsTitle": "Comments",
+    "namePlaceholder": "Name",
+    "commentPlaceholder": "Comment",
+    "submitComment": "Post comment",
+    "commentError": "The comment could not be saved.",
+    "commentPublished": "Comment published.",
+    "moreEyebrow": "Keep reading",
+    "moreTitle": "More articles"
+  }
+}

@@ -138,3 +138,12 @@
     gap: 12px;
   }
 }
+
+/* i18n: "German version is binding" footnote in the summary aside. */
+.impressum-page__binding {
+  margin-top: 20px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.6;
+  font-style: italic;
+}

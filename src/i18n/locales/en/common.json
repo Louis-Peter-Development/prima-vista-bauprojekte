@@ -1,0 +1,95 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "packages": "Packages",
+    "trades": "Trades",
+    "heating": "Heating",
+    "projects": "Projects",
+    "magazine": "Magazine",
+    "calculator": "Calculator",
+    "about": "About us",
+    "contact": "Contact",
+    "servicesMenuAria": "Services submenu",
+    "ariaPrimary": "Main navigation",
+    "ariaMobile": "Mobile navigation"
+  },
+  "search": {
+    "label": "Search",
+    "placeholder": "Search …",
+    "aria": "Search the website",
+    "hint": "Search pages, services and the magazine",
+    "open": "Open search",
+    "close": "Close search",
+    "groupPages": "Pages",
+    "groupServices": "Services",
+    "groupMagazine": "Magazine",
+    "noResults": "No matches for “{{query}}”."
+  },
+  "header": {
+    "logoAria": "Prima Vista — home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToDark": "Switch to dark theme",
+    "themeToLight": "Switch to light theme",
+    "themeDarkTitle": "Dark theme",
+    "themeLightTitle": "Light theme"
+  },
+  "language": { "aria": "Choose language" },
+  "lightbox": { "close": "Close", "prev": "Previous", "next": "Next" },
+  "mobileMenu": {
+    "focus": "In focus",
+    "callPrefix": "or give us a call"
+  },
+  "cta": {
+    "learnMore": "Learn more",
+    "appointment": "Book an appointment",
+    "toCalculator": "Open the calculator",
+    "requestExpress": "Request an express quote",
+    "expressQuote": "Express quote"
+  },
+  "contactPresetMsg": "Hello Prima Vista team,\n\nI'm interested in: {{topic}}.\n\nPlease get in touch with me for an initial discussion.",
+  "notFound": {
+    "eyebrow": "404 / Not found",
+    "title": "This page isn't on the building site right now.",
+    "lede": "The link you followed is out of date, moved or misspelled. From here you can quickly get back to the most important sections.",
+    "actionsAria": "Next steps",
+    "toHome": "Go to home page",
+    "toContact": "Make an enquiry",
+    "panelAria": "Quick start",
+    "linksAria": "Popular pages",
+    "metaTitle": "Page not found"
+  },
+  "cookie": {
+    "aria": "Cookie notice",
+    "eyebrow": "Privacy",
+    "title": "Cookies & services",
+    "body": "We use necessary technologies to run the website. Optional services such as analytics, embedded YouTube videos and our Claude-based chatbot are only activated once you give your consent.",
+    "policy": "Read the privacy policy",
+    "necessary": "Necessary only",
+    "acceptAll": "Accept all"
+  },
+  "footer": {
+    "blurb": "Renovation & refurbishment from a single source — for homes and hospitality, in Frankfurt and Emmenbrücke.",
+    "about": "About us",
+    "locations": "Locations",
+    "services": "Services",
+    "contact": "Contact",
+    "countryDe": "Germany",
+    "countryCh": "Switzerland",
+    "links": {
+      "packages": "Complete packages",
+      "trades": "Trades",
+      "heating": "Heating",
+      "calculator": "Calculator",
+      "projects": "Projects",
+      "express": "Express quotes",
+      "contactForm": "Contact form"
+    },
+    "admin": "Admin",
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}

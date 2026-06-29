@@ -2,12 +2,23 @@ import PDFDocument from 'pdfkit';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { KalkulatorHandoff, KalkulatorPick, KalkulatorRow } from './mail.js';
+import {
+  type Locale,
+  type StringKey,
+  formatEuroPdf,
+  formatQuantity as formatQuantityFor,
+  interpolate,
+  normalizeLocale,
+  tt,
+} from './i18n.js';
 
 export type CalculatorPdfPayload = {
   email: string;
   consent: boolean;
   kalkulator: KalkulatorHandoff;
   sourceUrl?: string;
+  /** Request locale — localizes the customer-facing PDF. Defaults 'de'. */
+  locale?: Locale;
 };
 
 type PdfGroup = {
@@ -54,14 +65,14 @@ const COLORS = {
 
 const DEFAULT_SOURCE_URL = 'https://primavista-bauprojekte.com';
 
-const ADDRESS_FIELDS = [
-  'Firma',
-  'Vor- und Nachname',
-  'Straße',
-  'PLZ und Ort',
-  'Bundesland',
-  'Land',
-  'USt-ID / Steuernummer',
+const ADDRESS_FIELD_KEYS: StringKey[] = [
+  'pdfAddrFirma',
+  'pdfAddrName',
+  'pdfAddrStreet',
+  'pdfAddrZipCity',
+  'pdfAddrState',
+  'pdfAddrCountry',
+  'pdfAddrTaxId',
 ];
 
 const GENERIC_PRODUCT_DESCRIPTION = 'Kalkulationsposition fuer Montage, Material oder Zusatzleistung.';
@@ -89,27 +100,23 @@ function cleanLabel(value: string): string {
     .trim();
 }
 
-function formatEuro(value: number, cents = true): string {
-  if (!Number.isFinite(value)) return '-';
-  return value.toLocaleString('de-DE', {
-    style: 'currency',
-    currency: 'EUR',
-    minimumFractionDigits: cents ? 2 : 0,
-    maximumFractionDigits: cents ? 2 : 0,
-  });
+function localeTag(locale: Locale): string {
+  return locale === 'en' ? 'en-US' : locale === 'it' ? 'it-IT' : 'de-DE';
 }
 
-function formatQuantity(quantity: number, unit: string): string {
-  if (!Number.isFinite(quantity)) return '-';
-  const amount = Number.isInteger(quantity)
-    ? quantity.toLocaleString('de-DE')
-    : quantity.toLocaleString('de-DE', { maximumFractionDigits: 2 });
-  return `${amount} ${unit || 'Stk.'}`.trim();
+function formatEuro(value: number, locale: Locale, cents = true): string {
+  return formatEuroPdf(value, locale, cents);
 }
 
-function formatScope(handoff: KalkulatorHandoff): string {
+function formatQuantity(quantity: number, unit: string, locale: Locale): string {
+  // The PDF uses a '-' fallback (not the '—' used in mail.ts).
+  return formatQuantityFor(quantity, unit, locale, '-');
+}
+
+function formatScope(handoff: KalkulatorHandoff, locale: Locale): string {
+  // Unit detection keys on the GERMAN scope label; the amount is locale-formatted.
   const label = (handoff.scopeLabel || '').toLocaleLowerCase('de-DE');
-  const amount = Number.isFinite(handoff.area) ? handoff.area.toLocaleString('de-DE') : '-';
+  const amount = Number.isFinite(handoff.area) ? handoff.area.toLocaleString(localeTag(locale)) : '-';
   if (/laufmeter|zaunlänge/.test(label)) return `${amount} m`;
   if (/qm|m²|fläche|wohnfläche|dachfläche|fassadenfläche/.test(label)) return `${amount} m²`;
   return amount;
@@ -222,9 +229,9 @@ function collectProductDetails(handoff: KalkulatorHandoff): ProductDetail[] {
   return details;
 }
 
-function lineQuantity(line: KalkulatorRow | KalkulatorPick, handoff: KalkulatorHandoff): string {
-  if ('quantity' in line) return formatQuantity(line.quantity, line.unit);
-  return handoff.area > 0 ? formatQuantity(handoff.area, 'm²') : '1 Stk.';
+function lineQuantity(line: KalkulatorRow | KalkulatorPick, handoff: KalkulatorHandoff, locale: Locale): string {
+  if ('quantity' in line) return formatQuantity(line.quantity, line.unit, locale);
+  return handoff.area > 0 ? formatQuantity(handoff.area, 'm²', locale) : `1 ${tt(locale, 'unitFallback')}`;
 }
 
 function lineUnitPrice(line: KalkulatorRow | KalkulatorPick, handoff: KalkulatorHandoff): number {
@@ -233,12 +240,15 @@ function lineUnitPrice(line: KalkulatorRow | KalkulatorPick, handoff: Kalkulator
   return line.subtotal;
 }
 
-function compactDescription(detail: ProductDetail): string {
+function compactDescription(detail: ProductDetail, locale: Locale): string {
   const raw = cleanLabel(detail.description || '');
+  // `detail.description` is product copy authored in German in the catalog; when
+  // it is present and meaningful it is shown as-is (no per-product translation
+  // exists). The generic FALLBACK sentence is localized.
   const usable = raw && raw !== GENERIC_PRODUCT_DESCRIPTION && raw.length > 18;
   const text = usable
     ? raw
-    : `${detail.label} ist Teil der ausgewählten Kalkulation im Bereich ${detail.category}. Menge, Ausführung und Materialauswahl werden vor Ort geprüft und im finalen Angebot bestätigt.`;
+    : interpolate(tt(locale, 'pdfProductGenericDescription'), { label: detail.label, category: detail.category });
   return text.length > 520 ? `${text.slice(0, 517).trim()}...` : text;
 }
 
@@ -248,7 +258,7 @@ function readableSkuPrefix(detail: ProductDetail): string {
   return cleanLabel(source).slice(0, 5).toLocaleUpperCase('de-DE') || 'PV';
 }
 
-function addHeader(doc: PDFKit.PDFDocument, title: string) {
+function addHeader(doc: PDFKit.PDFDocument, title: string, locale: Locale) {
   const logo = getLogoBuffer();
   const logoSize = 48;
   const wordmarkX = logo ? PAGE.marginX + logoSize + 16 : PAGE.marginX;
@@ -279,7 +289,7 @@ function addHeader(doc: PDFKit.PDFDocument, title: string) {
     .fillColor(COLORS.faint)
     .font('Helvetica')
     .fontSize(8)
-    .text('SANIERUNG & BAU · VORAB-SCHÄTZUNG', wordmarkX, 58, { characterSpacing: 1.5 });
+    .text(tt(locale, 'pdfHeaderTagline'), wordmarkX, 58, { characterSpacing: 1.5 });
   doc.restore();
 
   doc
@@ -290,31 +300,38 @@ function addHeader(doc: PDFKit.PDFDocument, title: string) {
   doc.y = 176;
 }
 
-function addFooter(doc: PDFKit.PDFDocument, pageNumber: number, totalPages: number) {
+function addFooter(doc: PDFKit.PDFDocument, pageNumber: number, totalPages: number, locale: Locale) {
   const y = PAGE.height - 100;
+  // `isOffice` (not the localized title) drives the copper-accent styling so it
+  // survives translation. Address/contact/legal lines are factual data; only
+  // the section TITLES (and the translatable phone/email/tax labels) localize.
   const columns = [
     {
       x: PAGE.marginX,
       width: 128,
-      title: 'Geschäftssitz',
+      isOffice: true,
+      title: tt(locale, 'pdfFooterOfficeTitle'),
       lines: ['Prima Vista Bauprojekte', 'Gref-Völsing-Straße 13', '60314 Frankfurt am Main'],
     },
     {
       x: PAGE.marginX + 154,
       width: 136,
-      title: 'Kontakt',
-      lines: ['Telefon: +49 1578 98 18 308', 'E-Mail: office@primavista-bauprojekte.com'],
+      isOffice: false,
+      title: tt(locale, 'pdfFooterContactTitle'),
+      lines: [tt(locale, 'pdfFooterPhone'), tt(locale, 'pdfFooterEmail')],
     },
     {
       x: PAGE.marginX + 316,
       width: 116,
-      title: 'Rechtliches',
-      lines: ['Steuernr.: 01483039527', 'USt-ID: DE 358812805', 'Amtsgericht Frankfurt am Main'],
+      isOffice: false,
+      title: tt(locale, 'pdfFooterLegalTitle'),
+      lines: [tt(locale, 'pdfFooterTaxNr'), tt(locale, 'pdfFooterVatId'), tt(locale, 'pdfFooterCourt')],
     },
     {
       x: PAGE.marginX + 444,
       width: 104,
-      title: 'Schweiz',
+      isOffice: false,
+      title: tt(locale, 'pdfFooterSwitzerlandTitle'),
       lines: ['Emmenbrücke / Luzern', '+41 78 265 93 32', 'info@primavista-bauprojekte.ch'],
     },
   ];
@@ -322,7 +339,7 @@ function addFooter(doc: PDFKit.PDFDocument, pageNumber: number, totalPages: numb
   doc.save();
   doc.moveTo(PAGE.marginX, y - 18).lineTo(PAGE.width - PAGE.marginX, y - 18).strokeColor(COLORS.rule).lineWidth(0.8).stroke();
   doc.fillColor(COLORS.muted).font('Helvetica').fontSize(6.5);
-  doc.text(`Seite ${pageNumber} / ${totalPages}`, PAGE.width - PAGE.marginX - 72, y - 35, { width: 72, align: 'right', lineBreak: false });
+  doc.text(interpolate(tt(locale, 'pdfFooterPage'), { n: pageNumber, total: totalPages }), PAGE.width - PAGE.marginX - 72, y - 35, { width: 72, align: 'right', lineBreak: false });
 
   for (const column of columns) {
     doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(6.8).text(column.title, column.x, y, {
@@ -331,8 +348,8 @@ function addFooter(doc: PDFKit.PDFDocument, pageNumber: number, totalPages: numb
     });
     column.lines.forEach((line, index) => {
       doc
-        .fillColor(index === 0 && column.title === 'Geschäftssitz' ? COLORS.copper : COLORS.ink)
-        .font(index === 0 && column.title === 'Geschäftssitz' ? 'Helvetica-Bold' : 'Helvetica')
+        .fillColor(index === 0 && column.isOffice ? COLORS.copper : COLORS.ink)
+        .font(index === 0 && column.isOffice ? 'Helvetica-Bold' : 'Helvetica')
         .fontSize(6.4)
         .text(line, column.x, y + 13 + (index * 10), { width: column.width, lineBreak: false });
     });
@@ -340,7 +357,7 @@ function addFooter(doc: PDFKit.PDFDocument, pageNumber: number, totalPages: numb
   doc.restore();
 }
 
-function addStaticBrandBand(doc: PDFKit.PDFDocument) {
+function addStaticBrandBand(doc: PDFKit.PDFDocument, locale: Locale) {
   const logo = getLogoBuffer();
   const logoSize = 54;
   const x = PAGE.marginX;
@@ -364,7 +381,7 @@ function addStaticBrandBand(doc: PDFKit.PDFDocument) {
     .fillColor(COLORS.faint)
     .font('Helvetica-Bold')
     .fontSize(8)
-    .text('SANIERUNG & BAU · AUFTRAGSUNTERLAGEN', wordmarkX, y + 33, { characterSpacing: 1.8 });
+    .text(tt(locale, 'pdfBandTagline'), wordmarkX, y + 33, { characterSpacing: 1.8 });
   doc.restore();
 }
 
@@ -379,7 +396,7 @@ function fieldBox(doc: PDFKit.PDFDocument, label: string, x: number, y: number, 
   doc.restore();
 }
 
-function addAddressColumn(doc: PDFKit.PDFDocument, title: string, x: number, y: number, width: number) {
+function addAddressColumn(doc: PDFKit.PDFDocument, title: string, x: number, y: number, width: number, locale: Locale) {
   doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(16).text(title, x, y, {
     width,
     align: 'center',
@@ -387,35 +404,35 @@ function addAddressColumn(doc: PDFKit.PDFDocument, title: string, x: number, y: 
   });
 
   let fieldY = y + 42;
-  ADDRESS_FIELDS.forEach((field) => {
-    fieldBox(doc, field, x, fieldY, width);
+  ADDRESS_FIELD_KEYS.forEach((key) => {
+    fieldBox(doc, tt(locale, key), x, fieldY, width);
     fieldY += 40;
   });
 }
 
-function addProjectDetailsPage(doc: PDFKit.PDFDocument, payload: CalculatorPdfPayload) {
+function addProjectDetailsPage(doc: PDFKit.PDFDocument, payload: CalculatorPdfPayload, locale: Locale) {
   const x = PAGE.marginX;
   const contentWidth = PAGE.width - (PAGE.marginX * 2);
   const sourceUrl = payload.sourceUrl || DEFAULT_SOURCE_URL;
 
-  addStaticBrandBand(doc);
+  addStaticBrandBand(doc, locale);
 
   doc
     .fillColor(COLORS.ink)
     .font('Helvetica-Bold')
     .fontSize(20)
-    .text('Projekt- und Rechnungsdaten', x, 154, { width: contentWidth, align: 'center' });
+    .text(tt(locale, 'pdfProjectDataTitle'), x, 154, { width: contentWidth, align: 'center' });
   doc
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(9)
-    .text('Bitte bei Auftragserteilung ausfüllen. Die Kalkulator-Auswahl bleibt im Anhang nachvollziehbar.', x, 184, {
+    .text(tt(locale, 'pdfProjectDataIntro'), x, 184, {
       width: contentWidth,
       align: 'center',
     });
 
   const linkY = 225;
-  doc.fillColor(COLORS.ink).font('Helvetica').fontSize(9).text('Link zur Kalkulator-Auswahl:', x, linkY, {
+  doc.fillColor(COLORS.ink).font('Helvetica').fontSize(9).text(tt(locale, 'pdfLinkLabel'), x, linkY, {
     width: 126,
     lineBreak: false,
   });
@@ -427,20 +444,20 @@ function addProjectDetailsPage(doc: PDFKit.PDFDocument, payload: CalculatorPdfPa
 
   const gap = 24;
   const columnWidth = (contentWidth - gap) / 2;
-  addAddressColumn(doc, 'Rechnungsanschrift', x, 285, columnWidth);
-  addAddressColumn(doc, 'Projekt-/Lieferanschrift', x + columnWidth + gap, 285, columnWidth);
+  addAddressColumn(doc, tt(locale, 'pdfBillingAddress'), x, 285, columnWidth, locale);
+  addAddressColumn(doc, tt(locale, 'pdfProjectAddress'), x + columnWidth + gap, 285, columnWidth, locale);
 
   doc
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(8)
-    .text('Hinweis: Wenn Rechnungs- und Projektanschrift identisch sind, genügt ein Eintrag links. Abweichende Liefer- oder Baustellenadressen bitte rechts ergänzen.', x, 610, {
+    .text(tt(locale, 'pdfAddressHint'), x, 610, {
       width: contentWidth,
       lineGap: 2,
     });
 }
 
-function confirmationCard(doc: PDFKit.PDFDocument, number: string, title: string, body: string, y: number): number {
+function confirmationCard(doc: PDFKit.PDFDocument, number: string, title: string, body: string, y: number, locale: Locale): number {
   const x = PAGE.marginX;
   const width = PAGE.width - (PAGE.marginX * 2);
   const height = 76;
@@ -455,7 +472,7 @@ function confirmationCard(doc: PDFKit.PDFDocument, number: string, title: string
     lineBreak: false,
   });
   doc.rect(x + width - 72, y + 18, 11, 11).strokeColor(COLORS.muted).lineWidth(0.8).stroke();
-  doc.fillColor(COLORS.muted).font('Helvetica').fontSize(7.5).text('bestätigt', x + width - 56, y + 18, {
+  doc.fillColor(COLORS.muted).font('Helvetica').fontSize(7.5).text(tt(locale, 'pdfSignConfirmed'), x + width - 56, y + 18, {
     width: 46,
     lineBreak: false,
   });
@@ -474,7 +491,7 @@ function confirmationCard(doc: PDFKit.PDFDocument, number: string, title: string
   return y + height + 12;
 }
 
-function finalSignatureBlock(doc: PDFKit.PDFDocument, y: number) {
+function finalSignatureBlock(doc: PDFKit.PDFDocument, y: number, locale: Locale) {
   const x = PAGE.marginX;
   const width = PAGE.width - (PAGE.marginX * 2);
   const leftWidth = 180;
@@ -484,12 +501,12 @@ function finalSignatureBlock(doc: PDFKit.PDFDocument, y: number) {
     .fillColor(COLORS.ink)
     .font('Helvetica-Bold')
     .fontSize(10)
-    .text('Abschluss der Auftragserteilung', x, y, { width });
+    .text(tt(locale, 'pdfSignFinalTitle'), x, y, { width });
   doc
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(8.4)
-    .text('Mit Datum und Unterschrift werden die oben genannten Bestätigungen zusammen bestätigt.', x, y + 18, {
+    .text(tt(locale, 'pdfSignFinalBody'), x, y + 18, {
       width,
       lineGap: 1.8,
     });
@@ -500,13 +517,13 @@ function finalSignatureBlock(doc: PDFKit.PDFDocument, y: number) {
   doc.moveTo(x, lineY).lineTo(x + leftWidth, lineY).stroke();
   doc.moveTo(x + width - rightWidth, lineY).lineTo(x + width, lineY).stroke();
   doc.fillColor(COLORS.ink).font('Helvetica').fontSize(8.5);
-  doc.text('Datum, Ort', x, lineY + 8, { width: leftWidth, align: 'center' });
-  doc.text('Unterschrift Auftraggeber/in', x + width - rightWidth, lineY + 8, { width: rightWidth, align: 'center' });
+  doc.text(tt(locale, 'pdfSignDatePlace'), x, lineY + 8, { width: leftWidth, align: 'center' });
+  doc.text(tt(locale, 'pdfSignSignature'), x + width - rightWidth, lineY + 8, { width: rightWidth, align: 'center' });
   doc.restore();
 }
 
-function addSignaturePage(doc: PDFKit.PDFDocument) {
-  addStaticBrandBand(doc);
+function addSignaturePage(doc: PDFKit.PDFDocument, locale: Locale) {
+  addStaticBrandBand(doc, locale);
 
   const contentWidth = PAGE.width - (PAGE.marginX * 2);
 
@@ -514,7 +531,7 @@ function addSignaturePage(doc: PDFKit.PDFDocument) {
     .fillColor(COLORS.ink)
     .font('Helvetica-Bold')
     .fontSize(20)
-    .text('Auftragserteilung und Bestätigungen', PAGE.marginX, 150, {
+    .text(tt(locale, 'pdfSignTitle'), PAGE.marginX, 150, {
       width: PAGE.width - (PAGE.marginX * 2),
       align: 'center',
     });
@@ -523,51 +540,27 @@ function addSignaturePage(doc: PDFKit.PDFDocument) {
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(8.5)
-    .text('Diese Seite ist für die spätere Beauftragung vorgesehen. Die PDF-Aufstellung ist eine Vorab-Schätzung. Verbindlich wird der Auftrag erst nach Aufmaß, finalem Angebot und Unterschrift.', PAGE.marginX, 182, {
+    .text(tt(locale, 'pdfSignIntro'), PAGE.marginX, 182, {
       width: contentWidth,
       align: 'center',
       lineGap: 2,
     });
 
   let y = 222;
-  y = confirmationCard(
-    doc,
-    '01',
-    'Auftrag nach finalem Angebot',
-    'Ich beauftrage Prima Vista Bauprojekte auf Basis des finalisierten Angebots und des gemeinsam abgestimmten Ausführungszeitpunkts.',
-    y,
-  );
-  y = confirmationCard(
-    doc,
-    '02',
-    'Vertragsbedingungen gelesen',
-    'Ich bestätige, die Allgemeinen Geschäftsbedingungen und Vertragsbedingungen erhalten, gelesen und akzeptiert zu haben.',
-    y,
-  );
-  y = confirmationCard(
-    doc,
-    '03',
-    'Leistungsumfang und Materialbasis',
-    'Die aufgeführten Leistungen, Mengen und Materialien bilden die Grundlage für Prüfung, Planung und Angebot. Änderungen werden gesondert ausgewiesen.',
-    y,
-  );
-  y = confirmationCard(
-    doc,
-    '04',
-    'Widerruf und Rücktritt',
-    'Ich bestätige, die Widerrufsbelehrung bzw. Rücktrittsinformation inklusive Formular erhalten und gelesen zu haben, soweit diese Anwendung findet.',
-    y,
-  );
-  finalSignatureBlock(doc, y + 8);
+  y = confirmationCard(doc, '01', tt(locale, 'pdfSignCard1Title'), tt(locale, 'pdfSignCard1Body'), y, locale);
+  y = confirmationCard(doc, '02', tt(locale, 'pdfSignCard2Title'), tt(locale, 'pdfSignCard2Body'), y, locale);
+  y = confirmationCard(doc, '03', tt(locale, 'pdfSignCard3Title'), tt(locale, 'pdfSignCard3Body'), y, locale);
+  y = confirmationCard(doc, '04', tt(locale, 'pdfSignCard4Title'), tt(locale, 'pdfSignCard4Body'), y, locale);
+  finalSignatureBlock(doc, y + 8, locale);
 }
 
-function ensureSpace(doc: PDFKit.PDFDocument, height: number) {
+function ensureSpace(doc: PDFKit.PDFDocument, height: number, locale: Locale) {
   if (doc.y + height <= PAGE.height - PAGE.bottom) return;
   doc.addPage();
-  addHeader(doc, 'Kostenvoranschlag');
+  addHeader(doc, tt(locale, 'pdfTitleEstimate'), locale);
 }
 
-function summaryBox(doc: PDFKit.PDFDocument, payload: CalculatorPdfPayload) {
+function summaryBox(doc: PDFKit.PDFDocument, payload: CalculatorPdfPayload, locale: Locale) {
   const handoff = payload.kalkulator;
   const totalNet = handoff.totalMid;
   const totalVat = totalNet * 0.19;
@@ -578,50 +571,50 @@ function summaryBox(doc: PDFKit.PDFDocument, payload: CalculatorPdfPayload) {
 
   doc.save();
   doc.roundedRect(x, y, width, 130, 6).fill(COLORS.paper).stroke(COLORS.rule);
-  doc.fillColor(COLORS.copper).font('Helvetica-Bold').fontSize(8).text('AUS DEM KALKULATOR', x + 18, y + 16, { characterSpacing: 1.8 });
+  doc.fillColor(COLORS.copper).font('Helvetica-Bold').fontSize(8).text(tt(locale, 'pdfSummaryEyebrow'), x + 18, y + 16, { characterSpacing: 1.8 });
   doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(15).text(cleanLabel(handoff.kindLabel), x + 18, y + 38, { width: 250 });
-  doc.fillColor(COLORS.muted).font('Helvetica').fontSize(9).text(`${handoff.scopeLabel || 'Umfang'}: ${formatScope(handoff)}`, x + 18, y + 60, { width: 250 });
-  doc.text(`Vorab-Schätzung: ${formatEuro(handoff.totalMin, false)} - ${formatEuro(handoff.totalMax, false)}`, x + 18, y + 76, { width: 250 });
-  if (handoff.perM2 > 0) doc.text(`Richtwert: ${formatEuro(handoff.perM2, false)} / m²`, x + 18, y + 92, { width: 250 });
+  doc.fillColor(COLORS.muted).font('Helvetica').fontSize(9).text(interpolate(tt(locale, 'pdfSummaryScope'), { label: handoff.scopeLabel || tt(locale, 'pdfScopeDefault'), value: formatScope(handoff, locale) }), x + 18, y + 60, { width: 250 });
+  doc.text(interpolate(tt(locale, 'pdfSummaryEstimate'), { min: formatEuro(handoff.totalMin, locale, false), max: formatEuro(handoff.totalMax, locale, false) }), x + 18, y + 76, { width: 250 });
+  if (handoff.perM2 > 0) doc.text(interpolate(tt(locale, 'pdfSummaryGuide'), { value: formatEuro(handoff.perM2, locale, false) }), x + 18, y + 92, { width: 250 });
 
   const rightX = x + width - 190;
-  doc.fillColor(COLORS.muted).font('Helvetica-Bold').fontSize(8).text('GESAMTSUMME', rightX, y + 18, { characterSpacing: 1.4 });
-  doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(18).text(formatEuro(totalGross), rightX, y + 38, { width: 172, align: 'right' });
+  doc.fillColor(COLORS.muted).font('Helvetica-Bold').fontSize(8).text(tt(locale, 'pdfSummaryTotal'), rightX, y + 18, { characterSpacing: 1.4 });
+  doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(18).text(formatEuro(totalGross, locale), rightX, y + 38, { width: 172, align: 'right' });
   doc.fillColor(COLORS.muted).font('Helvetica').fontSize(8);
-  doc.text(`Netto ${formatEuro(totalNet)}`, rightX, y + 70, { width: 172, align: 'right' });
-  doc.text(`zzgl. 19 % MwSt. ${formatEuro(totalVat)}`, rightX, y + 86, { width: 172, align: 'right' });
+  doc.text(interpolate(tt(locale, 'pdfSummaryNet'), { value: formatEuro(totalNet, locale) }), rightX, y + 70, { width: 172, align: 'right' });
+  doc.text(interpolate(tt(locale, 'pdfSummaryVat'), { value: formatEuro(totalVat, locale) }), rightX, y + 86, { width: 172, align: 'right' });
   doc.restore();
   doc.y = y + 154;
 }
 
-function tableHeader(doc: PDFKit.PDFDocument) {
+function tableHeader(doc: PDFKit.PDFDocument, locale: Locale) {
   const x = PAGE.marginX;
-  ensureSpace(doc, 34);
+  ensureSpace(doc, 34, locale);
   const y = doc.y;
   doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(9);
-  doc.text('Produkt / Leistung', x, y, { width: 255 });
-  doc.text('Anzahl', x + 280, y, { width: 60, align: 'right' });
-  doc.text('Stückpreis netto', x + 350, y, { width: 78, align: 'right' });
-  doc.text('Gesamt netto', x + 440, y, { width: 68, align: 'right' });
+  doc.text(tt(locale, 'pdfTableProduct'), x, y, { width: 255 });
+  doc.text(tt(locale, 'pdfTableCount'), x + 280, y, { width: 60, align: 'right' });
+  doc.text(tt(locale, 'pdfTableUnitPrice'), x + 350, y, { width: 78, align: 'right' });
+  doc.text(tt(locale, 'pdfTableTotalNet'), x + 440, y, { width: 68, align: 'right' });
   doc.moveTo(x, y + 18).lineTo(PAGE.width - PAGE.marginX, y + 18).strokeColor(COLORS.rule).lineWidth(0.8).stroke();
   doc.y = y + 32;
 }
 
-function addGroupRow(doc: PDFKit.PDFDocument, label: string, subtotal: number) {
-  ensureSpace(doc, 32);
+function addGroupRow(doc: PDFKit.PDFDocument, label: string, subtotal: number, locale: Locale) {
+  ensureSpace(doc, 32, locale);
   const y = doc.y;
   doc.rect(PAGE.marginX, y, PAGE.width - (PAGE.marginX * 2), 24).fill(COLORS.paper);
   doc.fillColor(COLORS.ink).font('Helvetica-Bold').fontSize(10).text(cleanLabel(label), PAGE.marginX + 8, y + 7, { width: 330 });
-  doc.text(formatEuro(subtotal), PAGE.width - PAGE.marginX - 100, y + 7, { width: 92, align: 'right' });
+  doc.text(formatEuro(subtotal, locale), PAGE.width - PAGE.marginX - 100, y + 7, { width: 92, align: 'right' });
   doc.y = y + 34;
 }
 
-function addItemRow(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, line: KalkulatorRow | KalkulatorPick, nested: boolean) {
+function addItemRow(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, line: KalkulatorRow | KalkulatorPick, nested: boolean, locale: Locale) {
   const x = PAGE.marginX;
   const label = cleanLabel(line.label);
   const descHeight = doc.font('Helvetica').fontSize(8).heightOfString(label, { width: 255 });
   const rowHeight = Math.max(32, descHeight + 18);
-  ensureSpace(doc, rowHeight + 6);
+  ensureSpace(doc, rowHeight + 6, locale);
 
   const y = doc.y;
   doc.moveTo(x, y - 6).lineTo(PAGE.width - PAGE.marginX, y - 6).strokeColor(COLORS.rule).lineWidth(0.5).stroke();
@@ -634,23 +627,23 @@ function addItemRow(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, line: K
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(8)
-    .text(lineQuantity(line, handoff), x + 280, y, { width: 60, align: 'right' });
-  doc.text(formatEuro(lineUnitPrice(line, handoff)), x + 350, y, { width: 78, align: 'right' });
-  doc.fillColor(COLORS.ink).text(formatEuro(line.subtotal), x + 440, y, { width: 68, align: 'right' });
+    .text(lineQuantity(line, handoff, locale), x + 280, y, { width: 60, align: 'right' });
+  doc.text(formatEuro(lineUnitPrice(line, handoff), locale), x + 350, y, { width: 78, align: 'right' });
+  doc.fillColor(COLORS.ink).text(formatEuro(line.subtotal, locale), x + 440, y, { width: 68, align: 'right' });
   doc.y = y + rowHeight;
 }
 
-function addTotals(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) {
+function addTotals(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, locale: Locale) {
   const totalNet = handoff.totalMid;
   const totalVat = totalNet * 0.19;
   const totalGross = totalNet + totalVat;
-  ensureSpace(doc, 110);
+  ensureSpace(doc, 110, locale);
   const x = PAGE.width - PAGE.marginX - 220;
   const y = doc.y + 4;
   const rows = [
-    ['Gesamtnettosumme', formatEuro(totalNet)],
-    ['zzgl. 19 % MwSt.', formatEuro(totalVat)],
-    ['Gesamtsumme', formatEuro(totalGross)],
+    [tt(locale, 'pdfTotalNetSum'), formatEuro(totalNet, locale)],
+    [tt(locale, 'pdfTotalVat'), formatEuro(totalVat, locale)],
+    [tt(locale, 'pdfTotalGross'), formatEuro(totalGross, locale)],
   ];
   doc.fontSize(9);
   rows.forEach(([label, value], index) => {
@@ -705,10 +698,10 @@ function resolvePdfImagePath(detail: ProductDetail): string | null {
   return ext === '.png' || ext === '.jpg' || ext === '.jpeg' ? imagePath : null;
 }
 
-function ensureProductDetailSpace(doc: PDFKit.PDFDocument, height: number) {
+function ensureProductDetailSpace(doc: PDFKit.PDFDocument, height: number, locale: Locale) {
   if (doc.y + height <= PAGE.height - PAGE.bottom) return;
   doc.addPage();
-  addHeader(doc, 'Produktdetails');
+  addHeader(doc, tt(locale, 'pdfTitleProductDetails'), locale);
 }
 
 function addProductThumb(doc: PDFKit.PDFDocument, detail: ProductDetail, x: number, y: number) {
@@ -742,39 +735,39 @@ function addProductThumb(doc: PDFKit.PDFDocument, detail: ProductDetail, x: numb
   doc.restore();
 }
 
-function productMetaText(detail: ProductDetail): string {
-  const quantity = detail.quantity != null && detail.unit ? formatQuantity(detail.quantity, detail.unit) : '';
+function productMetaText(detail: ProductDetail, locale: Locale): string {
+  const quantity = detail.quantity != null && detail.unit ? formatQuantity(detail.quantity, detail.unit, locale) : '';
   return [
-    detail.sku ? `Prod.-Nr.: ${detail.sku}` : '',
-    detail.type ? `Art: ${detail.type}` : '',
-    quantity ? `Menge: ${quantity}` : '',
-    detail.unitPrice != null ? `Stückpreis netto: ${formatEuro(detail.unitPrice)}` : '',
-    `Gesamt netto: ${formatEuro(detail.subtotal)}`,
+    detail.sku ? interpolate(tt(locale, 'pdfProductProdNr'), { sku: detail.sku }) : '',
+    detail.type ? interpolate(tt(locale, 'pdfProductType'), { type: detail.type }) : '',
+    quantity ? interpolate(tt(locale, 'pdfProductQuantity'), { value: quantity }) : '',
+    detail.unitPrice != null ? interpolate(tt(locale, 'pdfProductUnitPrice'), { value: formatEuro(detail.unitPrice, locale) }) : '',
+    interpolate(tt(locale, 'pdfProductTotalNet'), { value: formatEuro(detail.subtotal, locale) }),
   ].filter(Boolean).join('  ·  ');
 }
 
-function addProductMeta(doc: PDFKit.PDFDocument, detail: ProductDetail, x: number, y: number, width: number) {
+function addProductMeta(doc: PDFKit.PDFDocument, detail: ProductDetail, x: number, y: number, width: number, locale: Locale) {
   doc
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(8.2)
-    .text(productMetaText(detail), x, y, { width, lineGap: 1.5 });
+    .text(productMetaText(detail, locale), x, y, { width, lineGap: 1.5 });
 }
 
-function addProductDetailCard(doc: PDFKit.PDFDocument, detail: ProductDetail) {
+function addProductDetailCard(doc: PDFKit.PDFDocument, detail: ProductDetail, locale: Locale) {
   const x = PAGE.marginX;
   const thumbSize = 78;
   const gap = 18;
   const copyX = x + thumbSize + gap;
   const copyWidth = PAGE.width - PAGE.marginX - copyX;
   const title = cleanLabel(detail.label);
-  const description = compactDescription(detail);
+  const description = compactDescription(detail, locale);
   const titleHeight = doc.font('Helvetica-Bold').fontSize(10.8).heightOfString(title, { width: copyWidth, lineGap: 1.5 });
-  const metaHeight = doc.font('Helvetica').fontSize(8.2).heightOfString(productMetaText(detail), { width: copyWidth, lineGap: 1.5 });
+  const metaHeight = doc.font('Helvetica').fontSize(8.2).heightOfString(productMetaText(detail, locale), { width: copyWidth, lineGap: 1.5 });
   const descHeight = doc.font('Helvetica').fontSize(8.8).heightOfString(description, { width: copyWidth, lineGap: 2.2 });
   const rowHeight = Math.max(thumbSize, titleHeight + metaHeight + descHeight + 19);
 
-  ensureProductDetailSpace(doc, rowHeight + 18);
+  ensureProductDetailSpace(doc, rowHeight + 18, locale);
   const cardY = doc.y;
   addProductThumb(doc, detail, x, cardY);
 
@@ -783,7 +776,7 @@ function addProductDetailCard(doc: PDFKit.PDFDocument, detail: ProductDetail) {
     .font('Helvetica-Bold')
     .fontSize(10.8)
     .text(title, copyX, cardY, { width: copyWidth, lineGap: 1.5 });
-  addProductMeta(doc, detail, copyX, doc.y + 4, copyWidth);
+  addProductMeta(doc, detail, copyX, doc.y + 4, copyWidth, locale);
   doc
     .fillColor(COLORS.ink)
     .font('Helvetica')
@@ -793,17 +786,17 @@ function addProductDetailCard(doc: PDFKit.PDFDocument, detail: ProductDetail) {
   doc.y = cardY + rowHeight + 18;
 }
 
-function addProductDetails(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) {
+function addProductDetails(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, locale: Locale) {
   const details = collectProductDetails(handoff);
   if (details.length === 0) return;
 
   doc.addPage();
-  addHeader(doc, 'Produktdetails');
+  addHeader(doc, tt(locale, 'pdfTitleProductDetails'), locale);
   doc
     .fillColor(COLORS.muted)
     .font('Helvetica')
     .fontSize(9)
-    .text('Details zu den ausgewählten Positionen aus dem Kalkulator. Mengen, Ausführung und Materialauswahl werden vor Ort geprüft und im finalen Angebot bestätigt.', PAGE.marginX, doc.y, {
+    .text(tt(locale, 'pdfProductDetailsIntro'), PAGE.marginX, doc.y, {
       width: PAGE.width - (PAGE.marginX * 2),
       align: 'center',
       lineGap: 2,
@@ -813,7 +806,7 @@ function addProductDetails(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) 
   let currentCategory = '';
   for (const detail of details) {
     if (detail.category !== currentCategory) {
-      ensureProductDetailSpace(doc, 150);
+      ensureProductDetailSpace(doc, 150, locale);
       currentCategory = detail.category;
       doc
         .fillColor(COLORS.ink)
@@ -832,19 +825,20 @@ function addProductDetails(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff) 
       }
       doc.y += 20;
     }
-    addProductDetailCard(doc, detail);
+    addProductDetailCard(doc, detail, locale);
   }
 }
 
 export async function buildCalculatorPdf(payload: CalculatorPdfPayload): Promise<Buffer> {
+  const locale = normalizeLocale(payload.locale);
   const doc = new PDFDocument({
     size: 'A4',
     margins: { top: PAGE.top, bottom: 36, left: PAGE.marginX, right: PAGE.marginX },
     bufferPages: true,
     info: {
-      Title: `Prima Vista Kostenvoranschlag - ${cleanLabel(payload.kalkulator.kindLabel)}`,
+      Title: interpolate(tt(locale, 'pdfDocTitle'), { kind: cleanLabel(payload.kalkulator.kindLabel) }),
       Author: 'Prima Vista Bauprojekte',
-      Subject: 'Vorab-Schätzung aus dem Kalkulator',
+      Subject: tt(locale, 'pdfDocSubject'),
     },
   });
   const chunks: Buffer[] = [];
@@ -853,53 +847,53 @@ export async function buildCalculatorPdf(payload: CalculatorPdfPayload): Promise
     doc.on('end', () => resolve(Buffer.concat(chunks)));
   });
 
-  addProjectDetailsPage(doc, payload);
+  addProjectDetailsPage(doc, payload, locale);
 
   doc.addPage();
-  addHeader(doc, 'Kostenvoranschlag');
-  summaryBox(doc, payload);
+  addHeader(doc, tt(locale, 'pdfTitleEstimate'), locale);
+  summaryBox(doc, payload, locale);
 
   doc
     .fillColor(COLORS.ink)
     .font('Helvetica-Bold')
     .fontSize(13)
-    .text('Aufstellung der ausgewählten Positionen', PAGE.marginX, doc.y);
+    .text(tt(locale, 'pdfPositionsTitle'), PAGE.marginX, doc.y);
   doc.moveDown(0.8);
-  tableHeader(doc);
+  tableHeader(doc, locale);
 
   for (const group of groupCalculatorPicks(payload.kalkulator.picks)) {
-    addGroupRow(doc, group.label, group.subtotal);
+    addGroupRow(doc, group.label, group.subtotal, locale);
     for (const item of group.items) {
       if (item.rows && item.rows.length > 0) {
-        for (const row of item.rows) addItemRow(doc, payload.kalkulator, row, true);
+        for (const row of item.rows) addItemRow(doc, payload.kalkulator, row, true, locale);
       } else {
-        addItemRow(doc, payload.kalkulator, item, false);
+        addItemRow(doc, payload.kalkulator, item, false, locale);
       }
     }
   }
 
   if (collectLineItems(payload.kalkulator).length === 0) {
-    ensureSpace(doc, 30);
-    doc.fillColor(COLORS.muted).font('Helvetica').fontSize(10).text('Keine aktiven Positionen ausgewählt.', PAGE.marginX, doc.y);
+    ensureSpace(doc, 30, locale);
+    doc.fillColor(COLORS.muted).font('Helvetica').fontSize(10).text(tt(locale, 'pdfNoPositions'), PAGE.marginX, doc.y);
     doc.y += 24;
   }
 
-  addTotals(doc, payload.kalkulator);
-  const disclaimer = 'Diese Vorab-Schätzung basiert auf den im Online-Kalkulator ausgewählten Positionen. Verbindliche Preise entstehen nach Aufmaß, Prüfung der baulichen Situation und Materialbemusterung.';
+  addTotals(doc, payload.kalkulator, locale);
+  const disclaimer = tt(locale, 'pdfDisclaimer');
   doc.fillColor(COLORS.muted).font('Helvetica').fontSize(8).lineGap(3);
   const disclaimerHeight = doc.heightOfString(disclaimer, { width: PAGE.width - (PAGE.marginX * 2) });
-  ensureSpace(doc, disclaimerHeight + 14);
+  ensureSpace(doc, disclaimerHeight + 14, locale);
   doc.text(disclaimer, PAGE.marginX, doc.y, { width: PAGE.width - (PAGE.marginX * 2) });
 
-  addProductDetails(doc, payload.kalkulator);
+  addProductDetails(doc, payload.kalkulator, locale);
 
   doc.addPage();
-  addSignaturePage(doc);
+  addSignaturePage(doc, locale);
 
   const range = doc.bufferedPageRange();
   for (let i = range.start; i < range.start + range.count; i += 1) {
     doc.switchToPage(i);
-    addFooter(doc, i + 1, range.count);
+    addFooter(doc, i + 1, range.count, locale);
   }
 
   doc.end();

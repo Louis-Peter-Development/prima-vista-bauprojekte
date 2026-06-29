@@ -1,10 +1,8 @@
 import BlitzForm from '../components/blitz-angebot/BlitzForm';
 import BlitzIntro from '../components/blitz-angebot/BlitzIntro';
-import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/kontakt.css';
 
 export default function BlitzAngebot() {
-  usePageTitle('Blitz-Angebot in 24 Stunden');
   return (
     <section
       className="kontakt kontakt--blitz"

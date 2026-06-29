@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
 import { HERO_SLIDES } from '../../data/home';
 
 const PARALLAX_RANGE = 600;
@@ -16,6 +17,7 @@ export default function HomeHero() {
    *  trigger Lighthouse to pick a later, low-priority image as LCP. */
   const [mountedSlides, setMountedSlides] = useState<Set<number>>(() => new Set([0]));
   const heroRef = useRef<HTMLElement | null>(null);
+  const { t } = useTranslation('home');
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | undefined;
@@ -98,29 +100,29 @@ export default function HomeHero() {
 
       <div className="hero__inner">
         <div className="hero__topline animate-in">
-          <span><span className="dot"></span>Frankfurt &amp; Emmenbrücke</span>
-          <span>Sanierung &amp; Renovierung — Bauprojekte seit 2014</span>
-          <span>N° 26 / Frühjahr 2026</span>
+          <span><span className="dot"></span>{t('hero.toplineLocation')}</span>
+          <span>{t('hero.toplineTagline')}</span>
+          <span>{t('hero.toplineIssue')}</span>
         </div>
 
         <h1 className="hero__headline animate-in" data-delay="1">
-          <span className="hero__headline-line"><em>Eine</em> Vision.</span>
-          <span className="hero__headline-line"><em>Eine</em> Adresse.</span>
-          <span className="hero__headline-line"><em>Ein</em> Team.</span>
+          <span className="hero__headline-line"><Trans i18nKey="home:hero.headline1" components={{ em: <em /> }} /></span>
+          <span className="hero__headline-line"><Trans i18nKey="home:hero.headline2" components={{ em: <em /> }} /></span>
+          <span className="hero__headline-line"><Trans i18nKey="home:hero.headline3" components={{ em: <em /> }} /></span>
         </h1>
 
         <div className="hero__meta animate-in" data-delay="2">
           <div>
-            <div className="hero__meta-num">01 — Versprechen</div>
+            <div className="hero__meta-num">{t('hero.metaNum')}</div>
             <p className="hero__lede">
-              <strong>Komplettsanierung aus einer Hand</strong> — vom Konzept bis zur Schlüsselübergabe. Wir verantworten jedes Gewerk: Festpreis, fester Endtermin, fünf Jahre Werksgewähr.
+              <Trans i18nKey="home:hero.lede" components={{ strong: <strong /> }} />
             </p>
           </div>
           <div></div>
           <div className="hero__cta">
-            <small>Termin in 48 Stunden</small>
+            <small>{t('hero.ctaSmall')}</small>
             <Link className="btn btn--light" to="/kontakt">
-              Termin vereinbaren <span className="arrow">&gt;</span>
+              {t('hero.cta')} <span className="arrow">&gt;</span>
             </Link>
           </div>
         </div>

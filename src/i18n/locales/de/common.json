@@ -1,0 +1,95 @@
+{
+  "brand": { "name": "Prima Vista", "tag": "Bauprojekte" },
+  "nav": {
+    "home": "Start",
+    "services": "Leistungen",
+    "packages": "Komplett-Pakete",
+    "trades": "Gewerke",
+    "heating": "Heizmethoden",
+    "projects": "Projekte",
+    "magazine": "Magazin",
+    "calculator": "Kalkulator",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "servicesMenuAria": "Leistungen-Untermenü",
+    "ariaPrimary": "Hauptnavigation",
+    "ariaMobile": "Mobile Navigation"
+  },
+  "search": {
+    "label": "Suche",
+    "placeholder": "Suchen …",
+    "aria": "Website durchsuchen",
+    "hint": "Seiten, Leistungen und Magazin durchsuchen",
+    "open": "Suche öffnen",
+    "close": "Suche schließen",
+    "groupPages": "Seiten",
+    "groupServices": "Leistungen",
+    "groupMagazine": "Magazin",
+    "noResults": "Keine Treffer für „{{query}}“."
+  },
+  "header": {
+    "logoAria": "Prima Vista — Startseite",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "themeToDark": "Zum dunklen Design wechseln",
+    "themeToLight": "Zum hellen Design wechseln",
+    "themeDarkTitle": "Dunkles Design",
+    "themeLightTitle": "Helles Design"
+  },
+  "language": { "aria": "Sprache wählen" },
+  "lightbox": { "close": "Schließen", "prev": "Zurück", "next": "Weiter" },
+  "mobileMenu": {
+    "focus": "Im Fokus",
+    "callPrefix": "oder rufen Sie an"
+  },
+  "cta": {
+    "learnMore": "Mehr erfahren",
+    "appointment": "Termin vereinbaren",
+    "toCalculator": "Zum Kalkulator",
+    "requestExpress": "Blitz-Angebot anfordern",
+    "expressQuote": "Blitz-Angebot"
+  },
+  "contactPresetMsg": "Hallo Prima Vista Team,\n\nich interessiere mich für: {{topic}}.\n\nBitte melden Sie sich bei mir zur ersten Abstimmung.",
+  "notFound": {
+    "eyebrow": "404 / Nicht gefunden",
+    "title": "Diese Seite ist gerade nicht auf der Baustelle.",
+    "lede": "Der gesuchte Link ist veraltet, verschoben oder falsch geschrieben. Von hier aus kommen Sie schnell zurück zu den wichtigsten Bereichen.",
+    "actionsAria": "Nächste Schritte",
+    "toHome": "Zur Startseite",
+    "toContact": "Anfrage stellen",
+    "panelAria": "Schnelleinstieg",
+    "linksAria": "Beliebte Seiten",
+    "metaTitle": "Seite nicht gefunden"
+  },
+  "cookie": {
+    "aria": "Cookie-Hinweis",
+    "eyebrow": "Datenschutz",
+    "title": "Cookies & Dienste",
+    "body": "Wir nutzen notwendige Technologien für den Betrieb der Website. Optionale Dienste wie Analyse, eingebettete YouTube-Videos und unser Claude-basierter Chatbot werden erst nach Ihrer Zustimmung aktiviert.",
+    "policy": "Datenschutzerklärung ansehen",
+    "necessary": "Nur notwendige",
+    "acceptAll": "Alle akzeptieren"
+  },
+  "footer": {
+    "blurb": "Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.",
+    "about": "Über uns",
+    "locations": "Standorte",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "countryDe": "Deutschland",
+    "countryCh": "Schweiz",
+    "links": {
+      "packages": "Komplett-Pakete",
+      "trades": "Gewerke",
+      "heating": "Heizmethoden",
+      "calculator": "Kalkulator",
+      "projects": "Projekte",
+      "express": "Blitz-Angebote",
+      "contactForm": "Kontaktformular"
+    },
+    "admin": "Admin",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "© 2026 Prima Vista Bauprojekte GmbH"
+  }
+}

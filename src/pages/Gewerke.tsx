@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import EndCtaLocal from '../components/common/EndCtaLocal';
 import PageIntro from '../components/common/PageIntro';
 import FeaturedTrades from '../components/gewerke/FeaturedTrades';
@@ -6,15 +7,17 @@ import ProcessSection from '../components/gewerke/ProcessSection';
 import TradeIndex from '../components/gewerke/TradeIndex';
 import { useLightbox, type LightboxItem } from '../components/Lightbox';
 import { FEATURED_TRADES, PREVIEW_IMAGES, TRADES, type TradeRow } from '../data/gewerke';
-import { usePageTitle } from '../hooks/usePageTitle';
 import '../styles/pages/gewerke.css';
 
 export default function Gewerke() {
-  usePageTitle('Gewerke – alle Leistungen im Überblick');
+  const { t } = useTranslation('pages');
   const { open } = useLightbox();
   const [active, setActive] = useState<TradeRow>(TRADES[0]);
 
-  const featuredItems: LightboxItem[] = FEATURED_TRADES.map((f) => ({ src: f.src, title: f.title }));
+  const featuredItems: LightboxItem[] = FEATURED_TRADES.map((f) => ({
+    src: f.src,
+    title: t(`gewerke.featured.cards.${f.key}.alt`),
+  }));
   const heroImages = [
     PREVIEW_IMAGES.bad,
     PREVIEW_IMAGES.kueche,
@@ -31,14 +34,14 @@ export default function Gewerke() {
         backgroundImage="/assets/img/leistungen/badsanierung-05.webp"
         backgroundImages={heroImages}
         crumbNumber="03"
-        crumbLabel="Gewerke · Bauleistungen"
-        title={<>Neunzehn<br />Gewerke,<br /><em>eine Hand.</em></>}
-        lede="Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Frankfurt und Emmenbrücke."
+        crumbLabel={t('gewerke.crumbLabel')}
+        title={<Trans i18nKey="pages:gewerke.title" components={{ em: <em />, br: <br /> }} />}
+        lede={t('gewerke.lede')}
         meta={[
-          { label: 'Auswahl', value: '19 Gewerke' },
-          { label: 'Koordination', value: 'Inhouse-Bauleitung' },
-          { label: 'Materialien', value: 'Inklusive Festpreis' },
-          { label: 'Garantie', value: '5 Jahre' },
+          { label: t('gewerke.metaSelectionLabel'), value: t('gewerke.metaSelectionValue') },
+          { label: t('gewerke.metaCoordLabel'), value: t('gewerke.metaCoordValue') },
+          { label: t('gewerke.metaMaterialsLabel'), value: t('gewerke.metaMaterialsValue') },
+          { label: t('gewerke.metaWarrantyLabel'), value: t('gewerke.metaWarrantyValue') },
         ]}
       />
 
@@ -46,9 +49,10 @@ export default function Gewerke() {
       <TradeIndex active={active} onActiveChange={setActive} />
       <ProcessSection />
       <EndCtaLocal
-        eyebrow="Bereit zu starten?"
-        title={<>Welches <em>Gewerk</em><br />steht bei Ihnen an?</>}
-        ctaLabel="Anfrage senden"
+        eyebrow={t('gewerke.endEyebrow')}
+        title={<Trans i18nKey="pages:gewerke.endTitle" components={{ em: <em />, br: <br /> }} />}
+        ctaLabel={t('gewerke.endCta')}
+        art="einzel"
       />
     </>
   );

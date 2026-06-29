@@ -1,3 +1,4 @@
+import { Trans, useTranslation } from 'react-i18next';
 import {
   AREA_OPTIONS,
   BUERO_GEWERKE,
@@ -23,6 +24,7 @@ export default function BueroAusbauBoard({
   onAreaChange,
   onToggleGewerk,
 }: Props) {
+  const { t } = useTranslation('kalk');
   function chooseBueroType(value: BueroType) {
     onBueroTypeChange(value);
     scrollToCalculatorResult();
@@ -33,8 +35,8 @@ export default function BueroAusbauBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Büro-Typ</span>
-          <span className="kalk-board__hint">Bestimmt Ausbaugrad & Technik</span>
+          <span className="kalk-board__label">{t('board.bueroType')}</span>
+          <span className="kalk-board__hint">{t('board.bueroTypeHint')}</span>
         </div>
         <div className="haus-types">
           {BUERO_TYPES.map((type) => (
@@ -46,8 +48,8 @@ export default function BueroAusbauBoard({
               aria-pressed={type.value === bueroType}
             >
               <span className="haus-types__factor">× {type.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{type.label}</span>
-              <span className="haus-types__detail">{type.detail}</span>
+              <span className="haus-types__label">{t(`buero.types.${type.value}.label`, { defaultValue: type.label })}</span>
+              <span className="haus-types__detail">{t(`buero.types.${type.value}.detail`, { defaultValue: type.detail })}</span>
             </button>
           ))}
         </div>
@@ -56,7 +58,7 @@ export default function BueroAusbauBoard({
       <div className="kalk-board__field reveal" data-delay="1">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">02</span>
-          <span className="kalk-board__label">Fläche</span>
+          <span className="kalk-board__label">{t('board.area')}</span>
           <span className="kalk-board__value-large">
             {area}<small>m²</small>
           </span>
@@ -79,9 +81,13 @@ export default function BueroAusbauBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">03</span>
-          <span className="kalk-board__label">Gewerke</span>
+          <span className="kalk-board__label">{t('board.gewerke')}</span>
           <span className="kalk-board__counter">
-            <em>{picked.length}</em> von {BUERO_GEWERKE.length} gewählt
+            <Trans
+              i18nKey="kalk:board.gewerkeCount"
+              values={{ count: picked.length, total: BUERO_GEWERKE.length }}
+              components={{ em: <em /> }}
+            />
           </span>
         </div>
         <ul className="kalk-trades">
@@ -97,8 +103,8 @@ export default function BueroAusbauBoard({
                   <span className="kalk-trades__check" aria-hidden="true"></span>
                   <span className="kalk-trades__num">{gewerk.num}</span>
                   <span className="kalk-trades__body">
-                    <span className="kalk-trades__name">{gewerk.label}</span>
-                    <span className="kalk-trades__lead">{gewerk.lede}</span>
+                    <span className="kalk-trades__name">{t(`buero.gewerke.${gewerk.key}.label`, { defaultValue: gewerk.label })}</span>
+                    <span className="kalk-trades__lead">{t(`buero.gewerke.${gewerk.key}.lede`, { defaultValue: gewerk.lede })}</span>
                   </span>
                   <span className="kalk-trades__price">€ {gewerk.pricePerM2}<small>/m²</small></span>
                 </button>

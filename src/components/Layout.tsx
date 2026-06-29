@@ -12,6 +12,8 @@ import { useReveal } from '../hooks/useReveal';
 import { hasAnalyticsConsent, useConsent } from '../hooks/useConsent';
 import { getRouteMeta } from '../data/routeMeta';
 import { setPageMeta } from '../utils/metadata';
+import LocaleSync from '../i18n/LocaleSync';
+import { localeFromPathname, toCanonicalPath } from '../i18n/routes';
 import {
   hasGoogleAnalyticsConfig,
   trackGoogleAnalyticsPageView,
@@ -244,8 +246,10 @@ function RouteMetadata() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const meta = getRouteMeta(pathname);
-    setPageMeta({ ...meta, pathname });
+    const canonical = toCanonicalPath(pathname);
+    const locale = localeFromPathname(pathname);
+    const meta = getRouteMeta(canonical, locale);
+    setPageMeta({ ...meta, canonical, locale });
   }, [pathname]);
 
   return null;
@@ -279,6 +283,7 @@ export default function Layout() {
   const isDesktop = useIsDesktop();
   return (
     <LightboxProvider>
+      <LocaleSync />
       <RouteMetadata />
       <GoogleAnalyticsTracker />
       <ScrollToTop />

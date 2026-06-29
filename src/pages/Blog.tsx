@@ -1,37 +1,51 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
+import { useLocale } from '../i18n/useLocale';
+import type { Locale } from '../i18n/routes';
 import CoverImage from '../components/blog/CoverImage';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
 
-function formatDate(value: string | null) {
-  if (!value) return 'Entwurf';
-  return new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }).format(
-    new Date(value),
-  );
+const DATE_LOCALE: Record<Locale, string> = {
+  de: 'de-DE',
+  en: 'en-GB',
+  it: 'it-IT',
+  fr: 'fr-FR',
+};
+
+function formatDate(value: string | null, locale: Locale, draft: string) {
+  if (!value) return draft;
+  return new Intl.DateTimeFormat(DATE_LOCALE[locale], {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(value));
 }
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
 export default function Blog() {
-  usePageTitle('Magazin');
+  const { t } = useTranslation('blog');
+  const locale = useLocale();
+  usePageTitle(t('pageTitle'));
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/api/posts')
+    fetch(`/api/posts?locale=${locale}`)
       .then(async (res) => {
-        if (!res.ok) throw new Error('Beiträge konnten nicht geladen werden.');
+        if (!res.ok) throw new Error(t('loadError'));
         return res.json() as Promise<{ posts: BlogPost[] }>;
       })
       .then((data) => {
         if (!cancelled) setPosts(data.posts);
       })
       .catch((err: unknown) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
+        if (!cancelled) setError(err instanceof Error ? err.message : t('unknownError'));
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -39,7 +53,7 @@ export default function Blog() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [locale, t]);
 
   const total = posts.length;
   const lead = posts[0];
@@ -83,37 +97,36 @@ export default function Blog() {
         <div className="mag-masthead__rule animate-in">
           <span>Prima Vista Bauprojekte</span>
           <span>
-            <span className="num">Ausgabe №{total > 0 ? pad(total) : '—'}</span>
-            &nbsp;&nbsp;·&nbsp;&nbsp;Frankfurt · Luzern · MMXXVI
+            <span className="num">
+              {total > 0 ? t('masthead.issue', { number: pad(total) }) : t('masthead.issueEmpty')}
+            </span>
+            &nbsp;&nbsp;·&nbsp;&nbsp;{t('masthead.place')}
           </span>
         </div>
 
         <div className="mag-masthead__foot">
           <div className="mag-masthead__plate animate-in" data-delay="1">
-            <span className="mag-masthead__eyebrow">Das Magazin</span>
-            <h1 className="mag-masthead__name">Magazin</h1>
-            <p className="mag-masthead__sub">
-              Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf
-              und Handwerk rund um Sanierung, Ausbau und Renovierung.
-            </p>
+            <span className="mag-masthead__eyebrow">{t('masthead.eyebrow')}</span>
+            <h1 className="mag-masthead__name">{t('masthead.name')}</h1>
+            <p className="mag-masthead__sub">{t('masthead.sub')}</p>
           </div>
 
           <dl className="mag-masthead__meta animate-in" data-delay="2">
             <div>
-              <dt>Format</dt>
-              <dd>Ratgeber &amp; Einblicke</dd>
+              <dt>{t('meta.formatLabel')}</dt>
+              <dd>{t('meta.formatValue')}</dd>
             </div>
             <div>
-              <dt>Fokus</dt>
-              <dd>Wohnsitz · Gewerbe · Gastro</dd>
+              <dt>{t('meta.focusLabel')}</dt>
+              <dd>{t('meta.focusValue')}</dd>
             </div>
             <div>
-              <dt>Region</dt>
-              <dd>Frankfurt · Luzern</dd>
+              <dt>{t('meta.regionLabel')}</dt>
+              <dd>{t('meta.regionValue')}</dd>
             </div>
             <div>
-              <dt>Archiv</dt>
-              <dd>{total} {total === 1 ? 'Beitrag' : 'Beiträge'}</dd>
+              <dt>{t('meta.archiveLabel')}</dt>
+              <dd>{t('meta.archiveValue', { count: total })}</dd>
             </div>
           </dl>
         </div>
@@ -125,10 +138,10 @@ export default function Blog() {
         {loading && (
           <>
             <p className="blog-state blog-state--sr" role="status">
-              Beiträge werden geladen.
+              {t('loading')}
             </p>
             <div className="mag-divider" aria-hidden="true">
-              <span className="mag-divider__label">Aktuelle Beiträge</span>
+              <span className="mag-divider__label">{t('divider')}</span>
               <span className="mag-divider__line" />
             </div>
             <div className="mag-grid" aria-hidden="true">
@@ -150,27 +163,28 @@ export default function Blog() {
         {!loading && error && <p className="blog-state blog-state--error">{error}</p>}
 
         {!loading && !error && total === 0 && (
-          <p className="blog-state">Noch keine veröffentlichten Beiträge.</p>
+          <p className="blog-state">{t('empty')}</p>
         )}
 
         {!loading && !error && lead && (
           <Link className="mag-lead" to={`/blog/${lead.slug}`}>
             <span className="mag-lead__media">
-              <span className="mag-lead__tag">Leitartikel</span>
+              <span className="mag-lead__tag">{t('leadTag')}</span>
               <CoverImage src={lead.coverImageUrl} />
             </span>
             <span className="mag-lead__body">
               <span className="mag-lead__kicker">
-                <span className="num">№ {pad(issueOf(lead))}</span> · {lead.readingTime} Min. Lesezeit
+                <span className="num">№ {pad(issueOf(lead))}</span> ·{' '}
+                {t('readingTime', { minutes: lead.readingTime })}
               </span>
               <h2 className="mag-lead__title">{lead.title}</h2>
               <p className="mag-lead__excerpt">{lead.excerpt}</p>
               <span className="mag-lead__foot">
                 <span className="author">{lead.author}</span>
                 <span className="sep">/</span>
-                <span>{formatDate(lead.publishedAt)}</span>
+                <span>{formatDate(lead.publishedAt, locale, t('draft'))}</span>
                 <span className="mag-lead__more">
-                  Weiterlesen <span className="arr">→</span>
+                  {t('readMore')} <span className="arr">→</span>
                 </span>
               </span>
             </span>
@@ -180,7 +194,7 @@ export default function Blog() {
         {!loading && !error && rest.length > 0 && (
           <>
             <div className="mag-divider">
-              <span className="mag-divider__label">Aktuelle Beiträge</span>
+              <span className="mag-divider__label">{t('divider')}</span>
               <span className="mag-divider__line" />
               <span className="mag-divider__count">
                 {pad(rest.length)} / {pad(total)}
@@ -196,12 +210,13 @@ export default function Blog() {
                   </span>
                   <span className="mag-card__body">
                     <span className="mag-card__kicker">
-                      {formatDate(post.publishedAt)} · {post.readingTime} Min.
+                      {formatDate(post.publishedAt, locale, t('draft'))} ·{' '}
+                      {t('readingTimeShort', { minutes: post.readingTime })}
                     </span>
                     <h3 className="mag-card__title">{post.title}</h3>
                     <p className="mag-card__excerpt">{post.excerpt}</p>
                     <span className="mag-card__more">
-                      Lesen <span className="arr">→</span>
+                      {t('read')} <span className="arr">→</span>
                     </span>
                   </span>
                 </Link>

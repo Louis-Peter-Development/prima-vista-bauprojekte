@@ -7,6 +7,18 @@
 
 import { Resend } from 'resend';
 import { buildCalculatorPdf, type CalculatorPdfPayload } from './calculatorPdf.js';
+import {
+  type Locale,
+  artLabel as artLabelFor,
+  gewerkeLabel,
+  kontaktArtLabel,
+  starterminLabel as starterminLabelFor,
+  formatEuro as formatEuroFor,
+  formatQuantity as formatQuantityFor,
+  interpolate,
+  normalizeLocale,
+  tt,
+} from './i18n.js';
 
 const FROM = process.env.MAIL_FROM ?? 'Prima Vista Bauprojekte <noreply@primavista-bauprojekte.com>';
 const TO_OFFICE = process.env.MAIL_TO_OFFICE ?? 'office@primavista-bauprojekte.com';
@@ -69,6 +81,8 @@ export type KontaktPayload = {
   region?: string;
   budget?: string;
   msg: string;
+  /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
+  locale?: Locale;
 };
 
 export type BlitzPayload = {
@@ -83,6 +97,8 @@ export type BlitzPayload = {
   name: string;
   email: string;
   tel: string;
+  /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
+  locale?: Locale;
 };
 
 export type KalkulatorRow = {
@@ -204,7 +220,7 @@ function callout(title: string, text: string): string {
 </div>`;
 }
 
-function serviceListHtml(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+function serviceListHtml(items: string[], emptyLabel: string): string {
   const cleanItems = items.map((item) => item.trim()).filter(Boolean);
   if (cleanItems.length === 0) {
     return bodyParagraph(emptyLabel);
@@ -220,28 +236,26 @@ ${cleanItems
 </table>`;
 }
 
-function serviceListText(items: string[], emptyLabel = 'Noch keine Vorauswahl'): string {
+function serviceListText(items: string[], emptyLabel: string): string {
   const cleanItems = items.map((item) => item.trim()).filter(Boolean);
   if (cleanItems.length === 0) return `· ${emptyLabel}`;
   return cleanItems.map((item) => `· ${item}`).join('\n');
 }
 
-function formatEuro(value: number): string {
-  if (!Number.isFinite(value)) return '—';
-  return value.toLocaleString('de-DE', {
-    style: 'currency',
-    currency: 'EUR',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  });
+// Localize the canonical German gewerke codes for the customer email; the
+// office email passes locale 'de' so the labels stay German.
+function localizedGewerke(items: string[], locale: Locale): string[] {
+  return items.map((item) => gewerkeLabel(locale, item.trim()));
 }
 
-function formatQuantity(quantity: number, unit: string): string {
-  if (!Number.isFinite(quantity)) return '—';
-  const amount = Number.isInteger(quantity)
-    ? quantity.toLocaleString('de-DE')
-    : quantity.toLocaleString('de-DE', { maximumFractionDigits: 2 });
-  return `${amount} ${unit || 'Stk.'}`.trim();
+// Office (German) renderers call these with the default `de`; customer
+// renderers pass the request locale so currency/number/unit formatting matches.
+function formatEuro(value: number, locale: Locale = 'de'): string {
+  return formatEuroFor(value, locale);
+}
+
+function formatQuantity(quantity: number, unit: string, locale: Locale = 'de'): string {
+  return formatQuantityFor(quantity, unit, locale);
 }
 
 function cleanCalculatorLabel(label: string): string {
@@ -253,8 +267,8 @@ function cleanCalculatorLabel(label: string): string {
     .trim();
 }
 
-function blitzScopeLabel(p: BlitzPayload): string {
-  return p.art === 'pakete' ? 'Fläche' : 'Umfang';
+function blitzScopeLabel(p: BlitzPayload, locale: Locale = 'de'): string {
+  return p.art === 'pakete' ? tt(locale, 'scopeArea') : tt(locale, 'scopeExtent');
 }
 
 function blitzScopeValue(p: BlitzPayload): string {
@@ -262,17 +276,27 @@ function blitzScopeValue(p: BlitzPayload): string {
   return p.art === 'pakete' ? `${value} m²` : value;
 }
 
-function calculatorScopeLabel(p: BlitzPayload): string {
-  return p.kalkulator?.scopeLabel || (p.art === 'pakete' ? 'Fläche' : 'Fläche / Umfang');
+// The scope LABEL is localized for the customer; the German scopeLabel keyword
+// detection (below) always runs against the German form, so it must not depend
+// on the localized label.
+function calculatorScopeLabel(p: BlitzPayload, locale: Locale = 'de'): string {
+  return p.kalkulator?.scopeLabel
+    || (p.art === 'pakete' ? tt(locale, 'scopeArea') : tt(locale, 'scopeAreaOrExtent'));
 }
 
-function calculatorScopeValue(p: BlitzPayload, handoff: KalkulatorHandoff): string {
+function calculatorScopeValue(p: BlitzPayload, handoff: KalkulatorHandoff, locale: Locale = 'de'): string {
   if (!Number.isFinite(handoff.area)) return blitzScopeValue(p);
-  const label = calculatorScopeLabel(p).toLocaleLowerCase('de-DE');
-  const amount = handoff.area.toLocaleString('de-DE');
+  // Unit detection keys on the GERMAN scope label (scopeLabel from the handoff
+  // or the German fallback), independent of the display locale.
+  const label = calculatorScopeLabel(p, 'de').toLocaleLowerCase('de-DE');
+  const amount = handoff.area.toLocaleString(localeTag(locale));
   if (/laufmeter|zaunlänge/.test(label)) return `${amount} m`;
   if (/qm|m²|fläche|wohnfläche|dachfläche|fassadenfläche/.test(label)) return `${amount} m²`;
   return amount;
+}
+
+function localeTag(locale: Locale): string {
+  return locale === 'en' ? 'en-US' : locale === 'it' ? 'it-IT' : 'de-DE';
 }
 
 function isLegacyCalculatorNote(message: string): boolean {
@@ -313,43 +337,50 @@ function blitzRequestContext(p: BlitzPayload): string {
   return `${blitzScopeValue(p)} ${p.artLabel}`.trim();
 }
 
-function blitzProjectRows(p: BlitzPayload): string {
+// `locale` localizes the row LABELS and enum-derived values for the customer
+// email. The office email passes 'de' and keeps the German display labels the
+// client submitted (p.artLabel / p.starterminLabel).
+function blitzProjectRows(p: BlitzPayload, locale: Locale = 'de'): string {
+  const isDe = locale === 'de';
+  const artDisplay = isDe ? p.artLabel : artLabelFor(locale, p.art);
+  const starttermin = isDe ? p.starterminLabel : starterminLabelFor(locale, p.starttermin);
+
   if (p.kalkulator) {
     return [
-      row('Anfrage', 'Aus dem Kalkulator übernommen'),
-      row('Rechner', p.kalkulator.kindLabel || p.artLabel),
-      row(calculatorScopeLabel(p), calculatorScopeValue(p, p.kalkulator)),
-      row('Vorab-Schätzung', `${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`),
-      row('Baubeginn', p.starterminLabel),
+      row(tt(locale, 'rowRequest'), tt(locale, 'rowRequestValue')),
+      row(tt(locale, 'rowCalculator'), p.kalkulator.kindLabel || artDisplay),
+      row(calculatorScopeLabel(p, locale), calculatorScopeValue(p, p.kalkulator, locale)),
+      row(tt(locale, 'rowEstimate'), `${formatEuro(p.kalkulator.totalMin, locale)} – ${formatEuro(p.kalkulator.totalMax, locale)}`),
+      row(tt(locale, 'rowStart'), starttermin),
     ].join('');
   }
 
   if (isLegacyCalculatorNote(p.msg)) {
     const scope = legacyCalculatorScope(p.msg);
     return [
-      row('Anfrage', 'Aus dem Kalkulator übernommen'),
-      row('Rechner', legacyCalculatorField(p.msg, 'Objektart') || p.artLabel),
-      scope ? row(scope.label, scope.value) : row(blitzScopeLabel(p), blitzScopeValue(p)),
-      row('Vorab-Schätzung', legacyCalculatorField(p.msg, 'Vorab-Schätzung')),
-      row('Baubeginn', p.starterminLabel),
+      row(tt(locale, 'rowRequest'), tt(locale, 'rowRequestValue')),
+      row(tt(locale, 'rowCalculator'), legacyCalculatorField(p.msg, 'Objektart') || artDisplay),
+      scope ? row(scope.label, scope.value) : row(blitzScopeLabel(p, locale), blitzScopeValue(p)),
+      row(tt(locale, 'rowEstimate'), legacyCalculatorField(p.msg, 'Vorab-Schätzung')),
+      row(tt(locale, 'rowStart'), starttermin),
     ].join('');
   }
 
   return [
-    row('Objektart', p.artLabel),
-    row(blitzScopeLabel(p), blitzScopeValue(p)),
-    row('Baubeginn', p.starterminLabel),
+    row(tt(locale, 'rowObjectType'), artDisplay),
+    row(blitzScopeLabel(p, locale), blitzScopeValue(p)),
+    row(tt(locale, 'rowStart'), starttermin),
   ].join('');
 }
 
-function blitzServiceSectionHtml(title: string, p: BlitzPayload, marginTop = 28): string {
+function blitzServiceSectionHtml(title: string, p: BlitzPayload, locale: Locale = 'de', marginTop = 28): string {
   if (p.gewerke.length === 0 && hasCalculatorContext(p)) return '';
-  return `${sectionTitle(title, marginTop)}${serviceListHtml(p.gewerke)}`;
+  return `${sectionTitle(title, marginTop)}${serviceListHtml(localizedGewerke(p.gewerke, locale), tt(locale, 'emptyPreselection'))}`;
 }
 
-function blitzServiceSectionText(title: string, p: BlitzPayload): string {
+function blitzServiceSectionText(title: string, p: BlitzPayload, locale: Locale = 'de'): string {
   if (p.gewerke.length === 0 && hasCalculatorContext(p)) return '';
-  return `\n${title}:\n${serviceListText(p.gewerke)}`;
+  return `\n${title}:\n${serviceListText(localizedGewerke(p.gewerke, locale), tt(locale, 'emptyPreselection'))}`;
 }
 
 function legacyCalculatorBlockHtml(p: BlitzPayload, heading: string): string {
@@ -403,18 +434,19 @@ function groupCalculatorPicks(picks: KalkulatorPick[]): KalkulatorGroup[] {
   return groups;
 }
 
-function calculatorSummaryHtml(p: BlitzPayload, handoff: KalkulatorHandoff): string {
+function calculatorSummaryHtml(p: BlitzPayload, handoff: KalkulatorHandoff, locale: Locale = 'de'): string {
+  const artDisplay = locale === 'de' ? p.artLabel : artLabelFor(locale, p.art);
   const summaryRows = [
-    row('Objektart', handoff.kindLabel || p.artLabel),
-    row(calculatorScopeLabel(p), calculatorScopeValue(p, handoff)),
-    row('Vorab-Schätzung', `${formatEuro(handoff.totalMin)} – ${formatEuro(handoff.totalMax)}`),
-    row('Mittelwert', formatEuro(handoff.totalMid)),
-    handoff.perM2 > 0 ? row('Richtwert', `${formatEuro(handoff.perM2)} / m²`) : '',
+    row(tt(locale, 'rowObjectType'), handoff.kindLabel || artDisplay),
+    row(calculatorScopeLabel(p, locale), calculatorScopeValue(p, handoff, locale)),
+    row(tt(locale, 'rowEstimate'), `${formatEuro(handoff.totalMin, locale)} – ${formatEuro(handoff.totalMax, locale)}`),
+    row(tt(locale, 'rowMid'), formatEuro(handoff.totalMid, locale)),
+    handoff.perM2 > 0 ? row(tt(locale, 'rowGuideValue'), `${formatEuro(handoff.perM2, locale)} / m²`) : '',
   ].join('');
 
   return `
 <div style="margin:24px 0;padding:18px 20px;background:${COLORS.bg};border-left:3px solid ${COLORS.copper};">
-  <div style="font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:${COLORS.copper};margin-bottom:10px;">Aus dem Kalkulator übernommen</div>
+  <div style="font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:${COLORS.copper};margin-bottom:10px;">${escape(tt(locale, 'calcFromCalculator'))}</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${summaryRows}</table>
 </div>`;
 }
@@ -422,6 +454,7 @@ function calculatorSummaryHtml(p: BlitzPayload, handoff: KalkulatorHandoff): str
 function calculatorDetailsHtml(
   p: BlitzPayload,
   options: { includeRows: boolean; heading: string },
+  locale: Locale = 'de',
 ): string {
   const handoff = p.kalkulator;
   if (!handoff) return '';
@@ -434,14 +467,14 @@ function calculatorDetailsHtml(
         ? `<tr><td colspan="3" style="padding:0 0 10px 0;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid ${COLORS.rule};">
             <tr>
-              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};">Position</th>
-              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:84px;">Menge</th>
-              <th align="right" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:90px;">Summe</th>
+              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};">${escape(tt(locale, 'calcColPosition'))}</th>
+              <th align="left" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:84px;">${escape(tt(locale, 'calcColQuantity'))}</th>
+              <th align="right" style="padding:8px 10px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:${COLORS.muted};width:90px;">${escape(tt(locale, 'calcColTotal'))}</th>
             </tr>
             ${item.rows.map((line) => `<tr>
               <td style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(line.label))}</td>
-              <td style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit))}</td>
-              <td align="right" style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal))}</td>
+              <td style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit, locale))}</td>
+              <td align="right" style="padding:8px 10px;border-top:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal, locale))}</td>
             </tr>`).join('')}
           </table>
         </td></tr>`
@@ -451,16 +484,16 @@ function calculatorDetailsHtml(
 
       return `<tr>
         <td style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:13px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(item.label))}</td>
-        <td style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};">${item.rows?.length ? `${item.rows.length} Positionen` : ''}</td>
-        <td align="right" style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:13px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(item.subtotal))}</td>
+        <td style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};">${item.rows?.length ? escape(interpolate(tt(locale, 'calcNPositions'), { n: item.rows.length })) : ''}</td>
+        <td align="right" style="padding:9px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:13px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(item.subtotal, locale))}</td>
       </tr>${itemRows}`;
     }).join('');
 
     const simpleRows = !groupHasNested && options.includeRows && group.items[0]?.rows
       ? group.items[0].rows.map((line) => `<tr>
           <td style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.4;color:${COLORS.ink};">${escape(cleanCalculatorLabel(line.label))}</td>
-          <td style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit))}</td>
-          <td align="right" style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal))}</td>
+          <td style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.muted};white-space:nowrap;">${escape(formatQuantity(line.quantity, line.unit, locale))}</td>
+          <td align="right" style="padding:8px 0;border-bottom:1px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:12px;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(line.subtotal, locale))}</td>
         </tr>`).join('')
       : items;
 
@@ -468,7 +501,7 @@ function calculatorDetailsHtml(
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
   <tr>
     <td style="padding:12px 0;border-bottom:2px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;color:${COLORS.ink};">${escape(cleanCalculatorLabel(group.label))}</td>
-    <td align="right" colspan="2" style="padding:12px 0;border-bottom:2px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(group.subtotal))}</td>
+    <td align="right" colspan="2" style="padding:12px 0;border-bottom:2px solid ${COLORS.rule};font-family:Helvetica, Arial, sans-serif;font-size:14px;font-weight:700;color:${COLORS.ink};white-space:nowrap;">${escape(formatEuro(group.subtotal, locale))}</td>
   </tr>
   ${simpleRows}
 </table>`;
@@ -476,33 +509,38 @@ function calculatorDetailsHtml(
 
   return `
 ${sectionTitle(options.heading)}
-${calculatorSummaryHtml(p, handoff)}
+${calculatorSummaryHtml(p, handoff, locale)}
 ${details}`;
 }
 
-function calculatorDetailsText(p: BlitzPayload, options: { includeRows: boolean; heading: string }): string {
+function calculatorDetailsText(
+  p: BlitzPayload,
+  options: { includeRows: boolean; heading: string },
+  locale: Locale = 'de',
+): string {
   const handoff = p.kalkulator;
   if (!handoff) return '';
+  const artDisplay = locale === 'de' ? p.artLabel : artLabelFor(locale, p.art);
   const groups = groupCalculatorPicks(handoff.picks);
   const lines = [
     options.heading,
-    `Objektart: ${handoff.kindLabel || p.artLabel}`,
-    `${calculatorScopeLabel(p)}: ${calculatorScopeValue(p, handoff)}`,
-    `Vorab-Schätzung: ${formatEuro(handoff.totalMin)} – ${formatEuro(handoff.totalMax)}`,
-    `Mittelwert: ${formatEuro(handoff.totalMid)}`,
-    handoff.perM2 > 0 ? `Richtwert: ${formatEuro(handoff.perM2)} / m²` : '',
+    `${tt(locale, 'rowObjectType')}: ${handoff.kindLabel || artDisplay}`,
+    `${calculatorScopeLabel(p, locale)}: ${calculatorScopeValue(p, handoff, locale)}`,
+    `${tt(locale, 'rowEstimate')}: ${formatEuro(handoff.totalMin, locale)} – ${formatEuro(handoff.totalMax, locale)}`,
+    `${tt(locale, 'rowMid')}: ${formatEuro(handoff.totalMid, locale)}`,
+    handoff.perM2 > 0 ? `${tt(locale, 'rowGuideValue')}: ${formatEuro(handoff.perM2, locale)} / m²` : '',
     '',
-    'Gewählte Leistungen:',
+    tt(locale, 'calcChosenServices'),
   ].filter(Boolean);
 
   for (const group of groups) {
-    lines.push(`- ${cleanCalculatorLabel(group.label)}: ${formatEuro(group.subtotal)}`);
+    lines.push(`- ${cleanCalculatorLabel(group.label)}: ${formatEuro(group.subtotal, locale)}`);
     const groupHasNested = group.items.length > 1 || group.items[0]?.label !== group.label;
     for (const item of group.items) {
-      if (groupHasNested) lines.push(`  - ${cleanCalculatorLabel(item.label)}: ${formatEuro(item.subtotal)}`);
+      if (groupHasNested) lines.push(`  - ${cleanCalculatorLabel(item.label)}: ${formatEuro(item.subtotal, locale)}`);
       if (options.includeRows && item.rows) {
         for (const itemRow of item.rows) {
-          lines.push(`    · ${cleanCalculatorLabel(itemRow.label)} (${formatQuantity(itemRow.quantity, itemRow.unit)}): ${formatEuro(itemRow.subtotal)}`);
+          lines.push(`    · ${cleanCalculatorLabel(itemRow.label)} (${formatQuantity(itemRow.quantity, itemRow.unit, locale)}): ${formatEuro(itemRow.subtotal, locale)}`);
         }
       }
     }
@@ -525,6 +563,9 @@ ${items
 }
 
 // ----- Office notification — Kontakt -----
+// Intentionally kept in GERMAN regardless of the request locale: read by the
+// German-speaking Prima Vista team. The submitted German display values
+// (p.art / p.region / p.budget) are shown verbatim.
 
 function kontaktOfficeHtml(p: KontaktPayload): string {
   const rows = [
@@ -565,48 +606,63 @@ function kontaktOfficeText(p: KontaktPayload): string {
     .join('\n');
 }
 
-// ----- Customer confirmation — Kontakt -----
+// ----- Customer confirmation — Kontakt (localized by request locale) -----
 
-function kontaktConfirmHtml(p: KontaktPayload): string {
+// The kontakt `art` value POSTed is a canonical code (e.g. 'haus'). For `de`
+// the code is echoed verbatim, preserving the existing byte-for-byte output;
+// for en/it it is mapped to a localized label via the server code→label map.
+function kontaktArtDisplay(p: KontaktPayload, locale: Locale): string {
+  if (!p.art) return '';
+  return locale === 'de' ? p.art : kontaktArtLabel(locale, p.art);
+}
+
+function kontaktPhoneSuffix(p: KontaktPayload, locale: Locale): string {
+  return p.tel ? interpolate(tt(locale, 'kontaktPhoneSuffix'), { tel: p.tel }) : '';
+}
+
+function kontaktConfirmHtml(p: KontaktPayload, locale: Locale): string {
   const echo = [
-    row('Ihre E-Mail', p.email),
-    row('Telefon', p.tel || ''),
-    row('Art', p.art || ''),
+    row(tt(locale, 'kontaktRowEmail'), p.email),
+    row(tt(locale, 'kontaktRowTel'), p.tel || ''),
+    row(tt(locale, 'kontaktRowArt'), kontaktArtDisplay(p, locale)),
   ].join('');
   const body = `
 ${bodyParagraph(
-  `Ihre Anfrage ist bei uns eingegangen. Wir prüfen Ihr Vorhaben und melden uns innerhalb von 24 Stunden bei Ihnen — per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
+  interpolate(tt(locale, 'kontaktIntro'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
 )}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;">${echo}</table>
-<h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">So geht es weiter</h2>
+<h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'nextSteps'))}</h2>
 ${steps([
-  'Wir lesen Ihre Angaben und bereiten erste Fragen vor.',
-  'Sie erhalten eine schriftliche Antwort oder einen Rückruf.',
-  'Auf Wunsch vereinbaren wir einen Termin vor Ort.',
+  tt(locale, 'kontaktStep1'),
+  tt(locale, 'kontaktStep2'),
+  tt(locale, 'kontaktStep3'),
 ])}
-${bodyParagraph(`Mit freundlichen Grüßen,\nDaniel & Monica Irimia · Prima Vista Bauprojekte`)}`;
-  return shell(`Vielen Dank, ${escape(p.vorname)}.`, 'Eingangsbestätigung · Kontaktanfrage', body);
+${bodyParagraph(tt(locale, 'signature'))}`;
+  return shell(interpolate(tt(locale, 'kontaktTitle'), { name: escape(p.vorname) }), tt(locale, 'kontaktEyebrow'), body);
 }
 
-function kontaktConfirmText(p: KontaktPayload): string {
+function kontaktConfirmText(p: KontaktPayload, locale: Locale): string {
   return [
-    `Vielen Dank, ${p.vorname}.`,
+    interpolate(tt(locale, 'kontaktTitle'), { name: p.vorname }),
     ``,
-    `Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden bei Ihnen — per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
+    interpolate(tt(locale, 'kontaktIntroText'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
     ``,
-    `So geht es weiter:`,
-    `01  Wir lesen Ihre Angaben und bereiten erste Fragen vor.`,
-    `02  Sie erhalten eine schriftliche Antwort oder einen Rückruf.`,
-    `03  Auf Wunsch vereinbaren wir einen Termin vor Ort.`,
+    `${tt(locale, 'nextSteps')}:`,
+    `01  ${tt(locale, 'kontaktStep1')}`,
+    `02  ${tt(locale, 'kontaktStep2')}`,
+    `03  ${tt(locale, 'kontaktStep3')}`,
     ``,
-    `Mit freundlichen Grüßen,`,
-    `Daniel & Monica Irimia`,
-    `Prima Vista Bauprojekte`,
+    tt(locale, 'signatureLine1'),
+    tt(locale, 'signatureName'),
+    tt(locale, 'company'),
   ].join('\n');
 }
 
 // ----- Office notification — Blitz -----
 
+// Office notification — intentionally kept in GERMAN regardless of the request
+// locale: it is read by the German-speaking Prima Vista team, so the shared
+// helpers are called with the default 'de'.
 function blitzOfficeHtml(p: BlitzPayload): string {
   const rows = [
     row('Name', p.name),
@@ -624,7 +680,7 @@ function blitzOfficeHtml(p: BlitzPayload): string {
     : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
-${blitzServiceSectionHtml('Gewählte Leistungen / Anfragebereich', p, 28)}
+${blitzServiceSectionHtml('Gewählte Leistungen / Anfragebereich', p, 'de', 28)}
 ${calculatorBlock}
 ${legacyCalculatorBlock}
 ${msgBlock}
@@ -666,106 +722,115 @@ function blitzOfficeText(p: BlitzPayload): string {
     .join('\n');
 }
 
-// ----- Customer confirmation — Blitz -----
+// ----- Customer confirmation — Blitz (localized by request locale) -----
 
-function blitzConfirmHtml(p: BlitzPayload): string {
+function blitzPhoneSuffix(p: BlitzPayload, locale: Locale): string {
+  return p.tel ? interpolate(tt(locale, 'kontaktPhoneSuffix'), { tel: p.tel }) : '';
+}
+
+function blitzConfirmHtml(p: BlitzPayload, locale: Locale): string {
   const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
-  const echo = blitzProjectRows(p);
+  const echo = blitzProjectRows(p, locale);
   const calculatorBlock = calculatorDetailsHtml(p, {
     includeRows: false,
-    heading: 'Ihre übernommene Kalkulation',
-  });
-  const legacyCalculatorBlock = legacyCalculatorBlockHtml(p, 'Ihre übernommene Kalkulation');
+    heading: tt(locale, 'blitzCalcHeading'),
+  }, locale);
+  const legacyCalculatorBlock = legacyCalculatorBlockHtml(p, tt(locale, 'blitzCalcHeading'));
   const noteBlock = p.msg && !isLegacyCalculatorNote(p.msg)
-    ? `${sectionTitle('Ihre Notiz')}${bodyParagraph(p.msg)}`
+    ? `${sectionTitle(tt(locale, 'blitzYourNote'))}${bodyParagraph(p.msg)}`
     : '';
   const body = `
 ${bodyParagraph(
-  `Ihre Blitz-Anfrage ist bei uns eingegangen. Wir werten Ihr Projekt aus und stellen Ihnen innerhalb von 24 Stunden eine erste Kostenschätzung zu — per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
+  interpolate(tt(locale, 'blitzIntro'), { email: p.email, phone: blitzPhoneSuffix(p, locale) }),
 )}
-<h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Ihre Angaben</h2>
+<h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'blitzYourDetails'))}</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${echo}</table>
-${blitzServiceSectionHtml('Ihre ausgewählten Leistungen', p, 28)}
+${blitzServiceSectionHtml(tt(locale, 'blitzYourServices'), p, locale, 28)}
 ${calculatorBlock}
 ${legacyCalculatorBlock}
 ${noteBlock}
-<h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">So geht es weiter</h2>
+<h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'nextSteps'))}</h2>
 ${steps([
-  'Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.',
-  'Sie erhalten eine schriftliche Vorab-Kostenschätzung.',
-  'Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.',
+  tt(locale, 'blitzStep1'),
+  tt(locale, 'blitzStep2'),
+  tt(locale, 'blitzStep3'),
 ])}
-${bodyParagraph(`Mit freundlichen Grüßen,\nDaniel & Monica Irimia · Prima Vista Bauprojekte`)}`;
-  return shell(`Vielen Dank, ${escape(firstName)}.`, 'Eingangsbestätigung · Blitz-Angebot', body);
+${bodyParagraph(tt(locale, 'signature'))}`;
+  return shell(interpolate(tt(locale, 'blitzTitle'), { name: escape(firstName) }), tt(locale, 'blitzEyebrow'), body);
 }
 
-function blitzConfirmText(p: BlitzPayload): string {
+function blitzConfirmText(p: BlitzPayload, locale: Locale): string {
   const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
+  const isDe = locale === 'de';
+  const artDisplay = isDe ? p.artLabel : artLabelFor(locale, p.art);
+  const starttermin = isDe ? p.starterminLabel : starterminLabelFor(locale, p.starttermin);
   return [
-    `Vielen Dank, ${firstName}.`,
+    interpolate(tt(locale, 'blitzTitle'), { name: firstName }),
     ``,
-    `Ihre Blitz-Anfrage ist bei uns eingegangen. Sie erhalten innerhalb von 24 Stunden eine erste Kostenschätzung per E-Mail an ${p.email}${p.tel ? ` oder telefonisch unter ${p.tel}` : ''}.`,
+    interpolate(tt(locale, 'blitzIntroText'), { email: p.email, phone: blitzPhoneSuffix(p, locale) }),
     ``,
-    `Ihre Angaben:`,
-    hasCalculatorContext(p) ? `· Anfrage: Aus dem Kalkulator übernommen` : `· Objektart: ${p.artLabel}`,
-    hasCalculatorContext(p) ? `· Rechner: ${p.kalkulator?.kindLabel || legacyCalculatorField(p.msg, 'Objektart') || p.artLabel}` : `· ${blitzScopeLabel(p)}: ${blitzScopeValue(p)}`,
+    `${tt(locale, 'blitzYourDetails')}:`,
+    hasCalculatorContext(p) ? `· ${tt(locale, 'rowRequest')}: ${tt(locale, 'rowRequestValue')}` : `· ${tt(locale, 'rowObjectType')}: ${artDisplay}`,
+    hasCalculatorContext(p) ? `· ${tt(locale, 'rowCalculator')}: ${p.kalkulator?.kindLabel || legacyCalculatorField(p.msg, 'Objektart') || artDisplay}` : `· ${blitzScopeLabel(p, locale)}: ${blitzScopeValue(p)}`,
     p.kalkulator
-      ? `· ${calculatorScopeLabel(p)}: ${calculatorScopeValue(p, p.kalkulator)}`
+      ? `· ${calculatorScopeLabel(p, locale)}: ${calculatorScopeValue(p, p.kalkulator, locale)}`
       : isLegacyCalculatorNote(p.msg) && legacyCalculatorScope(p.msg)
         ? `· ${legacyCalculatorScope(p.msg)!.label}: ${legacyCalculatorScope(p.msg)!.value}`
         : '',
     p.kalkulator
-      ? `· Vorab-Schätzung: ${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`
+      ? `· ${tt(locale, 'rowEstimate')}: ${formatEuro(p.kalkulator.totalMin, locale)} – ${formatEuro(p.kalkulator.totalMax, locale)}`
       : isLegacyCalculatorNote(p.msg) && legacyCalculatorField(p.msg, 'Vorab-Schätzung')
-        ? `· Vorab-Schätzung: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
+        ? `· ${tt(locale, 'rowEstimate')}: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
         : '',
-    `· Baubeginn: ${p.starterminLabel}`,
-    blitzServiceSectionText('Ihre ausgewählten Leistungen', p),
-    p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: false, heading: 'Ihre übernommene Kalkulation' })}` : '',
-    !p.kalkulator && isLegacyCalculatorNote(p.msg) ? `\nIhre übernommene Kalkulation:\n${cleanLegacyCalculatorNote(p.msg)}` : '',
-    p.msg && !isLegacyCalculatorNote(p.msg) ? `\nIhre Notiz:\n${p.msg}` : '',
+    `· ${tt(locale, 'rowStart')}: ${starttermin}`,
+    blitzServiceSectionText(tt(locale, 'blitzYourServices'), p, locale),
+    p.kalkulator ? `\n${calculatorDetailsText(p, { includeRows: false, heading: tt(locale, 'blitzCalcHeading') }, locale)}` : '',
+    !p.kalkulator && isLegacyCalculatorNote(p.msg) ? `\n${tt(locale, 'blitzCalcHeading')}:\n${cleanLegacyCalculatorNote(p.msg)}` : '',
+    p.msg && !isLegacyCalculatorNote(p.msg) ? `\n${tt(locale, 'blitzYourNote')}:\n${p.msg}` : '',
     ``,
-    `So geht es weiter:`,
-    `01  Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.`,
-    `02  Sie erhalten eine schriftliche Vorab-Kostenschätzung.`,
-    `03  Auf Wunsch verfeinern wir das Angebot vor Ort.`,
+    `${tt(locale, 'nextSteps')}:`,
+    `01  ${tt(locale, 'blitzStep1')}`,
+    `02  ${tt(locale, 'blitzStep2')}`,
+    `03  ${tt(locale, 'blitzStep3Text')}`,
     ``,
-    `Mit freundlichen Grüßen,`,
-    `Daniel & Monica Irimia`,
-    `Prima Vista Bauprojekte`,
+    tt(locale, 'signatureLine1'),
+    tt(locale, 'signatureName'),
+    tt(locale, 'company'),
   ].join('\n');
 }
 
-function calculatorPdfHtml(p: CalculatorPdfPayload): string {
+// ----- Calculator-PDF covering email (localized by request locale) -----
+
+function calculatorPdfHtml(p: CalculatorPdfPayload, locale: Locale): string {
   const body = `
 ${bodyParagraph(
-  `Im Anhang finden Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}. Alle Summen, Positionen und Hinweise sind dort kompakt zusammengefasst.`,
+  interpolate(tt(locale, 'pdfMailIntro'), { kind: p.kalkulator.kindLabel }),
 )}
 ${steps([
-  'Öffnen Sie die PDF im Anhang für die vollständige Aufstellung.',
-  'Für ein verbindliches Angebot prüfen wir Aufmaß, Bestand und Materialauswahl.',
-  'Antworten Sie direkt auf diese E-Mail, wenn wir die Schätzung verfeinern sollen.',
+  tt(locale, 'pdfMailStep1'),
+  tt(locale, 'pdfMailStep2'),
+  tt(locale, 'pdfMailStep3'),
 ])}
-${bodyParagraph(`Mit freundlichen Grüßen,\nDaniel & Monica Irimia · Prima Vista Bauprojekte`)}`;
+${bodyParagraph(tt(locale, 'signature'))}`;
 
-  return shell('Ihre PDF-Aufstellung ist da.', 'Kalkulator · PDF-Aufstellung', body);
+  return shell(tt(locale, 'pdfMailTitle'), tt(locale, 'pdfMailEyebrow'), body);
 }
 
-function calculatorPdfText(p: CalculatorPdfPayload): string {
+function calculatorPdfText(p: CalculatorPdfPayload, locale: Locale): string {
   return [
-    `Ihre PDF-Aufstellung ist da.`,
+    tt(locale, 'pdfMailTitle'),
     ``,
-    `Im Anhang finden Sie Ihre PDF-Aufstellung aus dem Prima Vista Kalkulator für ${p.kalkulator.kindLabel}.`,
-    `Alle Summen, Positionen und Hinweise sind dort kompakt zusammengefasst.`,
+    interpolate(tt(locale, 'pdfMailIntroText1'), { kind: p.kalkulator.kindLabel }),
+    tt(locale, 'pdfMailIntroText2'),
     ``,
-    `So geht es weiter:`,
-    `01  Öffnen Sie die PDF im Anhang für die vollständige Aufstellung.`,
-    `02  Für ein verbindliches Angebot prüfen wir Aufmaß, Bestand und Materialauswahl.`,
-    `03  Antworten Sie direkt auf diese E-Mail, wenn wir die Schätzung verfeinern sollen.`,
+    `${tt(locale, 'nextSteps')}:`,
+    `01  ${tt(locale, 'pdfMailStep1')}`,
+    `02  ${tt(locale, 'pdfMailStep2')}`,
+    `03  ${tt(locale, 'pdfMailStep3')}`,
     ``,
-    `Mit freundlichen Grüßen,`,
-    `Daniel & Monica Irimia`,
-    `Prima Vista Bauprojekte`,
+    tt(locale, 'signatureLine1'),
+    tt(locale, 'signatureName'),
+    tt(locale, 'company'),
   ].join('\n');
 }
 
@@ -784,7 +849,9 @@ export function renderBlitzEmails(payload: BlitzPayload): {
   office: RenderedEmail;
   customer: RenderedEmail;
 } {
+  const locale = normalizeLocale(payload.locale);
   return {
+    // Office: always German (subject + body) — read by the Prima Vista team.
     office: {
       from: FROM,
       to: TO_OFFICE,
@@ -793,19 +860,21 @@ export function renderBlitzEmails(payload: BlitzPayload): {
       html: blitzOfficeHtml(payload),
       text: blitzOfficeText(payload),
     },
+    // Customer confirmation: localized to the request locale.
     customer: {
       from: FROM,
       to: payload.email,
       replyTo: TO_OFFICE,
-      subject: `Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte`,
-      html: blitzConfirmHtml(payload),
-      text: blitzConfirmText(payload),
+      subject: tt(locale, 'blitzSubject'),
+      html: blitzConfirmHtml(payload, locale),
+      text: blitzConfirmText(payload, locale),
     },
   };
 }
 
 export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> {
-  // Office notification — reply-to set to customer so the team can reply directly.
+  const locale = normalizeLocale(payload.locale);
+  // Office notification — German, reply-to set to customer so the team can reply directly.
   await sendEmail({
     from: FROM,
     to: TO_OFFICE,
@@ -814,14 +883,14 @@ export async function sendKontaktEmails(payload: KontaktPayload): Promise<void> 
     html: kontaktOfficeHtml(payload),
     text: kontaktOfficeText(payload),
   }, 'Kontakt office');
-  // Customer confirmation — reply-to set to office so the customer can write back.
+  // Customer confirmation — localized; reply-to set to office so the customer can write back.
   await sendEmail({
     from: FROM,
     to: payload.email,
     replyTo: TO_OFFICE,
-    subject: `Vielen Dank für Ihre Anfrage — Prima Vista Bauprojekte`,
-    html: kontaktConfirmHtml(payload),
-    text: kontaktConfirmText(payload),
+    subject: tt(locale, 'kontaktSubject'),
+    html: kontaktConfirmHtml(payload, locale),
+    text: kontaktConfirmText(payload, locale),
   }, 'Kontakt confirmation');
 }
 
@@ -846,6 +915,7 @@ export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
 }
 
 export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Promise<void> {
+  const locale = normalizeLocale(payload.locale);
   const pdf = await buildCalculatorPdf(payload);
   const slug = cleanCalculatorLabel(payload.kalkulator.kindLabel)
     .toLocaleLowerCase('de-DE')
@@ -862,9 +932,9 @@ export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Pro
     to: payload.email,
     bcc: TO_OFFICE,
     replyTo: TO_OFFICE,
-    subject: `Ihre PDF-Aufstellung · ${payload.kalkulator.kindLabel}`,
-    html: calculatorPdfHtml(payload),
-    text: calculatorPdfText(payload),
+    subject: interpolate(tt(locale, 'pdfMailSubject'), { kind: payload.kalkulator.kindLabel }),
+    html: calculatorPdfHtml(payload, locale),
+    text: calculatorPdfText(payload, locale),
     attachments: [{
       filename: `prima-vista-${slug}.pdf`,
       content: pdf,

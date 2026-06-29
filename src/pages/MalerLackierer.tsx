@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import MalerConfigurator from '../components/gewerke/MalerConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/heizkoerper.css';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function MalerLackierer() {
-  usePageTitle('Maler & Lackierer Kostenrechner');
-
   return (
-    <>
-      <PageIntro
-        backgroundImage="/assets/img/leistungen/maler-lackierer-03.webp"
-        crumbNumber="03"
-        crumbLabel="Gewerke · Maler & Lackierer"
-        title={<>Maler &<br /><em>Lackierer kalkulieren.</em></>}
-        lede="Anstrich, Glätten, Tapezieren, Holzdecken, Heizkörper, Fenster, Türen oder Fassadenanstrich: Wählen Sie die passende Leistung und erhalten Sie eine erste Vorab-Schätzung."
-        meta={[
-          { label: 'Varianten', value: '10 Rechner' },
-          { label: 'Gewerke', value: 'Farben & Tapeten' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="maler" />
-
-      <section className="kalkulator">
-        <MalerConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Malerarbeiten planen?"
-        title={<>Wir prüfen <em>Untergrund</em><br />und Farbsystem vor Ort.</>}
-        ctaLabel="Malerarbeiten anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="maler" crumbNumber="03" backgroundImage="/assets/img/leistungen/maler-lackierer-03.webp" photoSet="maler">
+      <MalerConfigurator />
+    </GewerkePage>
   );
 }

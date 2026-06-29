@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Trans, useTranslation } from 'react-i18next';
+import { Link } from '../i18n/Link';
+import { useLocale } from '../i18n/useLocale';
 import { ChatIcon, CloseIcon, MailIcon, PhoneIcon, PinIcon } from './icons';
 import { useAnyVideoPlaying } from '../hooks/useVideoPlayback';
 
@@ -37,19 +40,7 @@ type Message = {
   content: string;
 };
 
-const GREETING: Message = {
-  id: 0,
-  role: 'assistant',
-  content:
-    'Guten Tag und herzlich willkommen bei Prima Vista. Ich bin Ihr Bau-Concierge. Erzählen Sie uns kurz von Ihrem Vorhaben, oder wählen Sie unten ein Thema.',
-};
-
-const SUGGESTIONS = [
-  'Komplett-Sanierung anfragen',
-  'Festpreis-Schätzung',
-  'Heizung modernisieren',
-  'Mit Daniel oder Monica sprechen',
-];
+const GREETING_ID = 0;
 
 const CHAT_SCROLL_IDLE_MS = 5000;
 
@@ -396,9 +387,10 @@ function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boole
 }
 
 function BrandRail() {
+  const { t } = useTranslation('chat');
   return (
-    <aside className="pv-chat-rail" aria-label="Prima Vista Bau-Concierge">
-      <Link className="pv-chat-rail__brand" to="/" aria-label="Prima Vista Startseite">
+    <aside className="pv-chat-rail" aria-label={t('rail.ariaLabel')}>
+      <Link className="pv-chat-rail__brand" to="/" aria-label={t('rail.brandLabel')}>
         <img src="/assets/img/logo.png" alt="" width="1085" height="1051" />
         <span>
           <strong>Prima Vista</strong>
@@ -407,47 +399,44 @@ function BrandRail() {
       </Link>
 
       <div className="pv-chat-rail__intro">
-        <Eyebrow dark>Bau-Concierge</Eyebrow>
-        <h2>Ein Concierge,<br />der zuhört.</h2>
-        <p>
-          Erzählen Sie uns von Ihrem Projekt, vom einzelnen Bad bis zur
-          Komplett-Sanierung. Wir qualifizieren Ihr Vorhaben und zeigen den
-          nächsten sinnvollen Schritt.
-        </p>
+        <Eyebrow dark>{t('rail.eyebrow')}</Eyebrow>
+        <h2><Trans i18nKey="chat:rail.heading" components={{ br: <br /> }} /></h2>
+        <p>{t('rail.paragraph')}</p>
       </div>
 
       <div className="pv-chat-rail__proof">
-        <span><ConciergeIcon name="clock" /> Antwort meist sofort</span>
-        <span><ConciergeIcon name="calendar" /> Erstgespräch in 48 Stunden</span>
-        <span><ConciergeIcon name="shield" /> Festpreis und Bauleitung inklusive</span>
+        <span><ConciergeIcon name="clock" /> {t('rail.proofResponse')}</span>
+        <span><ConciergeIcon name="calendar" /> {t('rail.proofMeeting')}</span>
+        <span><ConciergeIcon name="shield" /> {t('rail.proofGuarantee')}</span>
       </div>
 
       <address className="pv-chat-rail__contact">
         <a href="tel:+4915789818308"><PhoneIcon /> +49 1578 98 18 308</a>
         <a href="mailto:office@primavista-bauprojekte.com"><MailIcon /> office@primavista-bauprojekte.com</a>
-        <span><PinIcon /> Frankfurt am Main · Emmenbrücke</span>
+        <span><PinIcon /> {t('rail.location')}</span>
       </address>
     </aside>
   );
 }
 
 function ChatHeader({ onClose }: { onClose: () => void }) {
+  const { t } = useTranslation('chat');
   return (
     <header className="pv-chat-panel__header">
       <Avatar />
       <div className="pv-chat-panel__title">
-        <strong>Bau-Concierge</strong>
-        <small><span aria-hidden="true" /> Online · Antwort &lt; 5 Min</small>
+        <strong>{t('name')}</strong>
+        <small><span aria-hidden="true" /> {t('header.status')}</small>
       </div>
       <Link className="pv-chat-panel__human" to="/kontakt" onClick={onClose}>
         <ConciergeIcon name="user" />
-        Mit Mensch sprechen
+        {t('header.human')}
       </Link>
       <button
         type="button"
         className="pv-chat-panel__close"
         onClick={onClose}
-        aria-label="Chat schließen"
+        aria-label={t('header.close')}
       >
         <CloseIcon />
       </button>
@@ -456,21 +445,20 @@ function ChatHeader({ onClose }: { onClose: () => void }) {
 }
 
 function WelcomeBlock() {
+  const { t } = useTranslation('chat');
   return (
     <div className="pv-chat-welcome">
-      <Eyebrow>Willkommen</Eyebrow>
-      <h2>Guten Tag.</h2>
-      <p>
-        Wählen Sie ein Thema oder schreiben Sie frei. Je konkreter Objektart,
-        Lage und Umfang sind, desto präziser kann der Concierge einordnen.
-      </p>
+      <Eyebrow>{t('welcome.eyebrow')}</Eyebrow>
+      <h2>{t('welcome.heading')}</h2>
+      <p>{t('welcome.paragraph')}</p>
     </div>
   );
 }
 
 function TypingDots() {
+  const { t } = useTranslation('chat');
   return (
-    <span className="pv-chat-typing" aria-label="Antwort wird geschrieben">
+    <span className="pv-chat-typing" aria-label={t('typingAria')}>
       <span />
       <span />
       <span />
@@ -479,9 +467,16 @@ function TypingDots() {
 }
 
 function ChatWidget() {
+  const { t } = useTranslation('chat');
+  const locale = useLocale();
+  const greeting = t('greeting');
+  const suggestions = t('suggestions', { returnObjects: true }) as string[];
+
   const [open, setOpen] = useState(false);
   const [previewDismissed, setPreviewDismissed] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([GREETING]);
+  const [messages, setMessages] = useState<Message[]>(() => [
+    { id: GREETING_ID, role: 'assistant', content: greeting },
+  ]);
   const [input, setInput] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -499,6 +494,16 @@ function ChatWidget() {
   // player; an already-open conversation stays open and is not unmounted.
   const launcherVisible = canShowLauncher && !videoPlaying;
   const shouldAvoidLauncher = useLauncherAvoidance(launcherVisible && !open);
+
+  // Keep the greeting in the active language while the conversation hasn't
+  // started yet (only the greeting is present); leave a real conversation be.
+  useEffect(() => {
+    setMessages((prev) =>
+      prev.length === 1 && prev[0].id === GREETING_ID && prev[0].content !== greeting
+        ? [{ ...prev[0], content: greeting }]
+        : prev,
+    );
+  }, [greeting]);
 
   useEffect(() => {
     if (!scrollRef.current) return;
@@ -606,7 +611,7 @@ function ChatWidget() {
       setMessages((prev) => [...prev, userMsg, assistantMsg]);
 
       const history = [...messages, userMsg]
-        .filter((m) => m.id !== 0)
+        .filter((m) => m.id !== GREETING_ID)
         .map((m) => ({ role: m.role, content: m.content }));
 
       const controller = new AbortController();
@@ -616,7 +621,7 @@ function ChatWidget() {
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ messages: history }),
+          body: JSON.stringify({ messages: history, locale }),
           signal: controller.signal,
         });
         if (!res.ok || !res.body) {
@@ -664,14 +669,13 @@ function ChatWidget() {
         }
       } catch (err) {
         if ((err as Error).name === 'AbortError') return;
-        setError('Der Bau-Concierge ist lokal noch nicht konfiguriert.');
+        setError(t('error'));
         setMessages((prev) =>
           prev.map((m) =>
             m.id === assistantMsg.id && m.content === ''
               ? {
                   ...m,
-                  content:
-                    'Entschuldigung, gerade gibt es ein technisches Problem. Bitte schreiben Sie uns direkt an office@primavista-bauprojekte.com oder rufen Sie uns unter +49 1578 98 18 308 an.',
+                  content: t('fallbackMessage'),
                 }
               : m,
           ),
@@ -681,7 +685,7 @@ function ChatWidget() {
         abortRef.current = null;
       }
     },
-    [messages, sending],
+    [messages, sending, locale, t],
   );
 
   const onSubmit = (e: React.FormEvent) => {
@@ -705,7 +709,7 @@ function ChatWidget() {
               role="button"
               tabIndex={0}
               className="pv-chat-preview"
-              aria-label="Bau-Concierge öffnen"
+              aria-label={t('launcher.open')}
               onClick={() => setOpen(true)}
               onKeyDown={(event) => {
                 if (event.key !== 'Enter' && event.key !== ' ') return;
@@ -716,7 +720,7 @@ function ChatWidget() {
               <button
                 type="button"
                 className="pv-chat-preview__close"
-                aria-label="Hinweis schließen"
+                aria-label={t('launcher.dismiss')}
                 onClick={(event) => {
                   event.stopPropagation();
                   setPreviewDismissed(true);
@@ -726,8 +730,8 @@ function ChatWidget() {
               </button>
               <Avatar />
               <span>
-                <strong>Bau-Concierge</strong>
-                <small>Guten Tag, erzählen Sie uns kurz von Ihrem Projekt?</small>
+                <strong>{t('name')}</strong>
+                <small>{t('launcher.previewText')}</small>
               </span>
             </div>
           )}
@@ -735,20 +739,20 @@ function ChatWidget() {
             ref={launcherButtonRef}
             className="pv-chat"
             type="button"
-            aria-label="Bau-Concierge starten"
+            aria-label={t('launcher.start')}
             aria-expanded={open}
             onClick={() => setOpen(true)}
             disabled={!launcherVisible}
           >
             <ChatIcon />
-            <span>Bau-Concierge</span>
+            <span>{t('name')}</span>
             <b aria-hidden="true">1</b>
           </button>
         </div>
       )}
 
       {open && canShowLauncher && (
-        <div className="pv-chat-panel" role="dialog" aria-modal="true" aria-label="Bau-Concierge von Prima Vista" ref={panelRef}>
+        <div className="pv-chat-panel" role="dialog" aria-modal="true" aria-label={t('panelAria')} ref={panelRef}>
           <BrandRail />
           <section className="pv-chat-panel__main">
             <ChatHeader onClose={close} />
@@ -775,8 +779,8 @@ function ChatWidget() {
             </div>
 
             {messages.length === 1 && (
-              <div className="pv-chat-panel__suggestions" aria-label="Themenvorschläge">
-                {SUGGESTIONS.map((s) => (
+              <div className="pv-chat-panel__suggestions" aria-label={t('suggestionsAria')}>
+                {suggestions.map((s) => (
                   <button
                     key={s}
                     type="button"
@@ -794,8 +798,8 @@ function ChatWidget() {
                 <button
                   className="pv-chat-panel__attach"
                   type="button"
-                  aria-label="Foto anhängen"
-                  title="Foto anhängen"
+                  aria-label={t('composer.attach')}
+                  title={t('composer.attach')}
                   disabled={sending}
                 >
                   <ConciergeIcon name="paperclip" />
@@ -805,25 +809,25 @@ function ChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={onKeyDown}
-                  placeholder="Schreiben Sie uns..."
+                  placeholder={t('composer.placeholder')}
                   rows={1}
                   disabled={sending}
-                  aria-label="Nachricht eingeben"
+                  aria-label={t('composer.messageAria')}
                 />
                 <button
                   className="pv-chat-panel__send"
                   type="submit"
                   disabled={sending || !input.trim()}
-                  aria-label="Senden"
+                  aria-label={t('composer.send')}
                 >
-                  <span>Senden</span>
+                  <span>{t('composer.send')}</span>
                   <ConciergeIcon name="send" />
                 </button>
               </div>
             </form>
             {error && <div className="pv-chat-panel__error">{error}</div>}
             <p className="pv-chat-panel__footnote">
-              <ConciergeIcon name="lock" /> Verschlüsselt und vertraulich · Sie sprechen mit dem Prima Vista Team
+              <ConciergeIcon name="lock" /> {t('footnote')}
             </p>
           </section>
         </div>

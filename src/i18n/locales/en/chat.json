@@ -1,0 +1,49 @@
+{
+  "name": "Construction Concierge",
+  "greeting": "Hello and welcome to Prima Vista. I am your Construction Concierge. Tell us briefly about your project, or pick a topic below.",
+  "suggestions": [
+    "Request a complete renovation",
+    "Fixed-price estimate",
+    "Modernise my heating",
+    "Speak with Daniel or Monica"
+  ],
+  "rail": {
+    "ariaLabel": "Prima Vista Construction Concierge",
+    "brandLabel": "Prima Vista home",
+    "eyebrow": "Construction Concierge",
+    "heading": "A concierge<br/>who listens.",
+    "paragraph": "Tell us about your project, from a single bathroom to a complete renovation. We assess your plans and show you the next sensible step.",
+    "proofResponse": "Usually an instant reply",
+    "proofMeeting": "First consultation within 48 hours",
+    "proofGuarantee": "Fixed price and site management included",
+    "location": "Frankfurt am Main · Emmenbrücke"
+  },
+  "header": {
+    "status": "Online · Reply < 5 min",
+    "human": "Talk to a person",
+    "close": "Close chat"
+  },
+  "welcome": {
+    "eyebrow": "Welcome",
+    "heading": "Hello.",
+    "paragraph": "Pick a topic or write freely. The more specific the property type, location and scope, the more precisely the concierge can guide you."
+  },
+  "typingAria": "Writing a reply",
+  "suggestionsAria": "Suggested topics",
+  "composer": {
+    "placeholder": "Write to us...",
+    "attach": "Attach a photo",
+    "messageAria": "Enter your message",
+    "send": "Send"
+  },
+  "footnote": "Encrypted and confidential · You are speaking with the Prima Vista team",
+  "launcher": {
+    "start": "Start the Construction Concierge",
+    "open": "Open the Construction Concierge",
+    "dismiss": "Dismiss notice",
+    "previewText": "Hello, would you tell us briefly about your project?"
+  },
+  "panelAria": "Prima Vista Construction Concierge",
+  "error": "The Construction Concierge is not yet configured locally.",
+  "fallbackMessage": "Sorry, we are having a technical problem right now. Please write to us directly at office@primavista-bauprojekte.com or call us on +49 1578 98 18 308."
+}

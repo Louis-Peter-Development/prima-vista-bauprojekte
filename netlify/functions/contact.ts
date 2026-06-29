@@ -1,4 +1,5 @@
 import { sendKontaktEmails, type KontaktPayload } from '../../server/mail.js';
+import { normalizeLocale } from '../../server/i18n.js';
 import { json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
@@ -25,6 +26,7 @@ export function validateKontaktPayload(body: unknown): KontaktPayload | { error:
     region: asString(b.region) || undefined,
     budget: asString(b.budget) || undefined,
     msg: asString(b.msg),
+    locale: normalizeLocale(b.locale),
   };
   if (!payload.vorname) return { error: 'vorname is required' };
   if (!payload.nachname) return { error: 'nachname is required' };

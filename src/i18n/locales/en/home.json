@@ -1,0 +1,236 @@
+{
+  "hero": {
+    "toplineLocation": "Frankfurt & Emmenbrücke",
+    "toplineTagline": "Renovation & refurbishment — building since 2014",
+    "toplineIssue": "N° 26 / Spring 2026",
+    "headline1": "<em>One</em> vision.",
+    "headline2": "<em>One</em> address.",
+    "headline3": "<em>One</em> team.",
+    "metaNum": "01 — Promise",
+    "lede": "<strong>Full renovation from a single source</strong> — from concept to handover. We own every trade: a fixed price, a firm completion date, a five-year workmanship warranty.",
+    "ctaSmall": "Appointment within 48 hours",
+    "cta": "Book an appointment"
+  },
+  "marquee": {
+    "items": ["Renovation", "Refurbishment", "Restaurant fit-out", "Bathrooms", "Kitchens", "Floors", "Electrical", "Heating", "Façades", "Painting", "Stairs", "Drywall"]
+  },
+  "heroPhotos": {
+    "aria": "A look inside our projects",
+    "eyebrow": "A look inside",
+    "title": "From bare shell to <em>handover</em>.",
+    "p": "Glimpses of projects we delivered from a single source.",
+    "rohbau": { "label": "Shell", "alt": "Bare shell with concrete walls and roughed-in services" },
+    "bad": { "label": "Bathroom", "alt": "Modernised bathroom with shower and WC" },
+    "kueche": { "label": "Kitchen", "alt": "Kitchen with island and bespoke cabinetry" },
+    "gastro": { "label": "Hospitality", "alt": "Finished hospitality project with decorative wall design" }
+  },
+  "featured": {
+    "eyebrow": "Selected projects",
+    "title": "Fresh from the<br/><em>workshop.</em>",
+    "meta": "Frankfurt · Wiesbaden · Lucerne",
+    "viewAll": "See all projects",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Zoi restaurant, Frankfurt" },
+      "proj--b": { "ttl": "Exposed-Concrete Villa", "alt": "Exposed-concrete villa, Lucerne" },
+      "proj--c": { "ttl": "Oak Kitchen", "alt": "Oak kitchen, Frankfurt" },
+      "proj--d": { "ttl": "Spa Bath — Hotel", "alt": "Spa bathroom, hotel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Office lobby, Frankfurt" }
+    }
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 stars",
+    "source": "Google review"
+  },
+  "aboutVideo": {
+    "notice": "The video is embedded via YouTube and only loads once you give your consent.",
+    "manage": "Manage cookies & services",
+    "title": "Prima Vista Bauprojekte – About us",
+    "playAria": "Play video: {{title}}",
+    "consentAria": "{{title}} – accept cookies to play"
+  },
+  "kalkLive": {
+    "label": "Calculator · Live",
+    "objektart": "Property type",
+    "flaeche": "Area",
+    "gewerke": "Trades",
+    "liveRange": "Live range",
+    "objekt": { "Haus": "House", "Wohnung": "Apartment", "Gastro": "Hospitality", "Anderes": "Other" },
+    "trade": { "Bad": "Bath", "Küche": "Kitchen", "Boden": "Floor", "Elektrik": "Electrical", "Heizung": "Heating" },
+    "states": [
+      { "price": "€ 84–112k", "note": "Average € 98k · approx. € 690 / m²" },
+      { "price": "€ 52–71k", "note": "Average € 61k · approx. € 720 / m²" },
+      { "price": "€ 145–195k", "note": "Average € 170k · approx. € 810 / m²" },
+      { "price": "€ 95–130k", "note": "Average € 112k · approx. € 930 / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Preliminary cost estimate",
+    "stamp": "In 24 h",
+    "rowProjekt": "Project",
+    "rowStandort": "Location",
+    "rowGewerke": "Trades",
+    "rowStandard": "Standard",
+    "totalLabel": "Estimated investment",
+    "totalNote": "Binding after an on-site measure-up.",
+    "sigName": "Daniel Vogel · Site management",
+    "sigPlace": "Frankfurt/Lucerne",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Apartment renovation · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bath, kitchen, electrical, painting", "standard": "Upscale", "investition": "€ 184–226k", "datum": "17 May 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "House renovation · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Roof, façade, heating, shell", "standard": "Premium", "investition": "€ 320–385k", "datum": "22 May 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Restaurant fit-out · 180 m²", "standort": "Lucerne city centre", "gewerke": "Ventilation, plumbing, drywall", "standard": "Commercial", "investition": "CHF 280–340k", "datum": "2 June 2026" }
+    ]
+  },
+  "promise": {
+    "eyebrow": "№ 01 — Our promise",
+    "title": "One hand,<br/><em>full</em><br/>responsibility.",
+    "p1": "We believe in renovation without hand-offs: a single main contractor who owns every trade — from the bare shell to the last cabinet seam. You deal with one point of contact who stands behind all of it.",
+    "p2": "That clarity isn't a luxury. It's what lets a space still feel as calm in fifteen years as it did on the first day.",
+    "list": {
+      "1": "Site management included",
+      "2": "All materials",
+      "3": "Fixed-price guarantee",
+      "4": "Appointment within 48 h",
+      "5": "Firm completion date",
+      "6": "5-year workmanship warranty"
+    }
+  },
+  "packages": {
+    "eyebrow": "Complete packages",
+    "title": "Four routes to a<br/>finished <em>space.</em>",
+    "intro": "From a one-room refresh to an office fit-out or a full renovation: every package bundles planning, site management and all trades — with a clear price and a firm completion date.",
+    "items": {
+      "haus": {
+        "num": "№ 01 — Complete",
+        "title": "House<br/>renovation",
+        "desc": "Full renovation of existing buildings — roof, façade and interiors from a single source.",
+        "alt": "House renovation"
+      },
+      "wohnung": {
+        "num": "№ 02 — Modular",
+        "title": "Apartment<br/>renovation",
+        "desc": "Bathrooms, kitchens, floors, wiring: city apartments — liveable again in 6–10 weeks.",
+        "alt": "Apartment renovation"
+      },
+      "gastronomie": {
+        "num": "№ 03 — Concept",
+        "title": "Restaurant<br/>fit-out",
+        "desc": "Restaurants, bars, hotels: from concept to opening night — turnkey.",
+        "alt": "Restaurant fit-out"
+      },
+      "buero": {
+        "num": "№ 04 — Office",
+        "title": "Office<br/>fit-out",
+        "desc": "Offices, practices and workspaces — move-in ready, with services, acoustics and finishes.",
+        "alt": "Office fit-out"
+      }
+    }
+  },
+  "stats": {
+    "title": "Twelve years. <em>One line.</em>",
+    "intro": "Numbers don't build spaces — but they show how seriously we take the brief. A plain, honest cut through our work since 2014.",
+    "since": {
+      "label": "Building since",
+      "desc": "Founded by Daniel and Monica in Frankfurt am Main."
+    },
+    "projects": {
+      "label": "Completed projects",
+      "desc": "From a granny flat to a 220-seat restaurant."
+    },
+    "trades": {
+      "label": "Trades under one roof",
+      "desc": "From the shell to the joinery — all in-house or under contract."
+    },
+    "onTime": {
+      "label": "On-time delivery",
+      "desc": "A firm completion date in the contract — or we pay a penalty."
+    }
+  },
+  "calculator": {
+    "eyebrow": "№ 05 · Calculator",
+    "title": "A live estimate.<br/>In <em>seconds.</em>",
+    "p": "Four clicks, one range: property type, area, finish level, trades. The calculator works in real time — no sign-up, no phone call. A first sense of cost, right away.",
+    "steps": {
+      "1": "Pick property type & area",
+      "2": "Add or remove trades",
+      "3": "Range updates live"
+    },
+    "toCalculator": "Open the calculator",
+    "appointment": "Book an appointment"
+  },
+  "blitz": {
+    "eyebrow": "№ 06 · Express quote",
+    "title": "A fixed price, in writing.<br/>Within <em>24 hours.</em>",
+    "p": "Something more concrete? Fill in a short form — we review it, run the numbers and send a written preliminary estimate by email, countersigned by our site management.",
+    "steps": {
+      "1": "Fill in the short form (3 minutes)",
+      "2": "Site management checks structure & trades",
+      "3": "Written quote within 24 hours"
+    },
+    "request": "Request an express quote",
+    "appointment": "Book an appointment"
+  },
+  "trades": {
+    "eyebrow": "Trades",
+    "title": "Nineteen trades,<br/><em>one hand.</em>",
+    "intro": "Every trade coordinated by our own site management — bookable on its own or as a complete package. Here's a selection of the disciplines clients ask for most.",
+    "openCalculator": "Open cost calculator",
+    "viewAll": "See all 19 trades",
+    "preview": {
+      "bad": { "name": "Bathrooms & plumbing", "lead": "Tub, shower, WC" },
+      "kueche": { "name": "Kitchens & cabinetry", "lead": "Joinery" },
+      "boden": { "name": "Floors & coverings", "lead": "Parquet, stone, vinyl" },
+      "elektro": { "name": "Electrical work", "lead": "Power, lighting, KNX" },
+      "heizung": { "name": "Heating systems", "lead": "Heat pump, underfloor" },
+      "maler": { "name": "Painting & finishing", "lead": "Paint, wallpaper" },
+      "fassade": { "name": "Façade renovation", "lead": "Render, ETICS" },
+      "trockenbau": { "name": "Drywall", "lead": "Walls, ceilings" }
+    }
+  },
+  "heating": {
+    "eyebrow": "Modern heating methods",
+    "title": "Ready for the <em>future.</em>",
+    "p": "Upgrade to modern heating with our packages — grant-eligible, quiet and free of gas.",
+    "pump": {
+      "num": "№ 01",
+      "title": "Air-source<br/>heat pump",
+      "desc": "Up to 70% energy savings. Retrofit in 7–10 days, eligible for funding.",
+      "alt": "Air-source heat pump"
+    },
+    "risers": {
+      "num": "№ 02",
+      "title": "Heating<br/>risers",
+      "desc": "Vertical risers with hydraulic balancing — precise heat distribution, lower pump load.",
+      "alt": "Heating risers"
+    },
+    "radiators": {
+      "num": "№ 03",
+      "title": "Design<br/>radiators",
+      "desc": "Architecturally integrated flat aluminium radiators — slim, quiet, low-temperature ready.",
+      "alt": "Radiators"
+    },
+    "more": "Learn more",
+    "viewAll": "See all heating methods"
+  },
+  "founders": {
+    "eyebrow": "About us",
+    "title": "A construction firm<br/>run like a<br/><em>family business.</em>",
+    "p1": "Daniel and Monica have led Prima Vista since 2014 — as a couple, as site managers, as your point of contact. Build with us and you talk not to a call centre, but to the people whose names are on the contract.",
+    "p2": "From our Frankfurt base we look after projects across Hesse; from Emmenbrücke, all of Central Switzerland. Both offices share materials, plans and standards — you get the same standard everywhere.",
+    "sigName": "Daniel & Monica",
+    "sigRole": "Founders & site management",
+    "photoAlt": "Daniel and Monica — founders of Prima Vista Bauprojekte",
+    "photoLabel": "Daniel & Monica — Frankfurt, 2026"
+  },
+  "testimonial": {
+    "quote": "We were dreading the renovation — and were taken by surprise: Prima Vista delivered on time, clean and so precisely that we moved in a month early.",
+    "name": "The Brauer family",
+    "meta": "Full apartment renovation · Sachsenhausen"
+  },
+  "finalCta": {
+    "title": "Let's talk about<br/>your <em>building project.</em>",
+    "p": "First consultation free. An appointment within 48 hours, on site or by video — in Frankfurt and Emmenbrücke.",
+    "appointment": "Book an appointment",
+    "toCalculator": "Open the calculator",
+    "expressQuote": "Express quote"
+  }
+}

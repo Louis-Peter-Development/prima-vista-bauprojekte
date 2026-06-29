@@ -1,0 +1,49 @@
+{
+  "name": "Concierge edile",
+  "greeting": "Buongiorno e benvenuto in Prima Vista. Sono il suo Concierge edile. Ci racconti brevemente il suo progetto, oppure scelga un tema qui sotto.",
+  "suggestions": [
+    "Richiedere una ristrutturazione completa",
+    "Stima a prezzo fisso",
+    "Modernizzare il riscaldamento",
+    "Parlare con Daniel o Monica"
+  ],
+  "rail": {
+    "ariaLabel": "Concierge edile di Prima Vista",
+    "brandLabel": "Pagina iniziale Prima Vista",
+    "eyebrow": "Concierge edile",
+    "heading": "Un concierge<br/>che ascolta.",
+    "paragraph": "Ci racconti il suo progetto, da un singolo bagno alla ristrutturazione completa. Valutiamo il suo progetto e le indichiamo il prossimo passo sensato.",
+    "proofResponse": "Risposta di solito immediata",
+    "proofMeeting": "Primo colloquio entro 48 ore",
+    "proofGuarantee": "Prezzo fisso e direzione lavori inclusi",
+    "location": "Frankfurt am Main · Emmenbrücke"
+  },
+  "header": {
+    "status": "Online · Risposta < 5 min",
+    "human": "Parlare con una persona",
+    "close": "Chiudi la chat"
+  },
+  "welcome": {
+    "eyebrow": "Benvenuto",
+    "heading": "Buongiorno.",
+    "paragraph": "Scelga un tema o scriva liberamente. Più precisi sono il tipo di immobile, la posizione e l'ampiezza, più precisamente il concierge potrà orientarla."
+  },
+  "typingAria": "Risposta in scrittura",
+  "suggestionsAria": "Temi suggeriti",
+  "composer": {
+    "placeholder": "Ci scriva...",
+    "attach": "Allega una foto",
+    "messageAria": "Inserisci il messaggio",
+    "send": "Invia"
+  },
+  "footnote": "Crittografato e riservato · Sta parlando con il team di Prima Vista",
+  "launcher": {
+    "start": "Avvia il Concierge edile",
+    "open": "Apri il Concierge edile",
+    "dismiss": "Chiudi l'avviso",
+    "previewText": "Buongiorno, ci racconta brevemente il suo progetto?"
+  },
+  "panelAria": "Concierge edile di Prima Vista",
+  "error": "Il Concierge edile non è ancora configurato in locale.",
+  "fallbackMessage": "Ci scusiamo, al momento c'è un problema tecnico. Ci scriva direttamente a office@primavista-bauprojekte.com oppure ci chiami al +49 1578 98 18 308."
+}

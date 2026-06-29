@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { GEWERK_PHOTO_SETS, type GewerkPhotoSetKey } from '../../data/gewerkPhotoSets';
 
 type Props = {
@@ -5,6 +6,7 @@ type Props = {
 };
 
 export default function GewerkPhotoShowcase({ photoSet }: Props) {
+  const { t } = useTranslation('pages');
   const set = GEWERK_PHOTO_SETS[photoSet];
   const imageCount = set.images.length;
 
@@ -13,15 +15,15 @@ export default function GewerkPhotoShowcase({ photoSet }: Props) {
   }
 
   return (
-    <section className="gewerk-photos" aria-label={`${set.label} in Bildern`}>
+    <section className="gewerk-photos" aria-label={t('gw.photosAria', { label: set.label })}>
       <div className="gewerk-photos__inner">
         <div className="gewerk-photos__head reveal">
-          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Einblicke</div>
+          <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('gw.photosEyebrow')}</div>
           <h2>
             {set.label}{' '}<br />
-            <em>aus der Nähe.</em>
+            <em>{t('gw.photosTitleSuffix')}</em>
           </h2>
-          <p>Ausgewählte Eindrücke aus Material, Detail und Ausführung.</p>
+          <p>{t('gw.photosIntro')}</p>
         </div>
 
         <div className="gewerk-photos__grid" data-count={imageCount}>

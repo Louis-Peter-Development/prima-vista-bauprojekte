@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Magazine",
+  "draft": "Bozza",
+  "masthead": {
+    "issue": "Numero №{{number}}",
+    "issueEmpty": "Numero №—",
+    "place": "Francoforte · Lucerna · MMXXVI",
+    "eyebrow": "Il Magazine",
+    "name": "Magazine",
+    "sub": "Idee, materiali e decisioni per spazi migliori — progettazione, processo e artigianato attorno a ristrutturazione, allestimento e rinnovo."
+  },
+  "meta": {
+    "formatLabel": "Formato",
+    "formatValue": "Guide & approfondimenti",
+    "focusLabel": "Focus",
+    "focusValue": "Residenziale · Commerciale · Ristorazione",
+    "regionLabel": "Regione",
+    "regionValue": "Francoforte · Lucerna",
+    "archiveLabel": "Archivio",
+    "archiveValue_one": "{{count}} articolo",
+    "archiveValue_other": "{{count}} articoli"
+  },
+  "divider": "Articoli recenti",
+  "loading": "Caricamento degli articoli.",
+  "loadError": "Non è stato possibile caricare gli articoli.",
+  "unknownError": "Errore sconosciuto",
+  "empty": "Nessun articolo pubblicato finora.",
+  "leadTag": "In evidenza",
+  "readingTime": "{{minutes}} min di lettura",
+  "readingTimeShort": "{{minutes}} min",
+  "readMore": "Continua a leggere",
+  "read": "Leggi",
+  "detail": {
+    "notFound": "Articolo non trovato.",
+    "back": "Torna al magazine",
+    "backShort": "Magazine",
+    "loading": "Caricamento dell'articolo.",
+    "like": "Mi piace",
+    "liked": "Salvato",
+    "share": "Condividi",
+    "linkCopied": "Link copiato.",
+    "commentsTitle": "Commenti",
+    "namePlaceholder": "Nome",
+    "commentPlaceholder": "Commento",
+    "submitComment": "Invia commento",
+    "commentError": "Non è stato possibile salvare il commento.",
+    "commentPublished": "Commento pubblicato.",
+    "moreEyebrow": "Continua a leggere",
+    "moreTitle": "Altri articoli"
+  }
+}

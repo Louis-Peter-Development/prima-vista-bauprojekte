@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
 import { useVideoActive } from '../../hooks/useVideoPlayback';
 import type { ProjectVideo } from './ProjectVideos';
@@ -11,11 +12,12 @@ type ProjectFeatureVideoProps = {
 };
 
 export default function ProjectFeatureVideo({ video, headline, poster }: ProjectFeatureVideoProps) {
+  const { t } = useTranslation('projects');
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
   useVideoActive(active);
-  const title = video.label ?? `${headline} — Film`;
+  const title = video.label ?? t('detail.featureFallback', { headline });
 
   function handleActivate() {
     if (!consented) {
@@ -28,12 +30,12 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
   return (
     <section className="pd-feature">
       <div className="pd-feature__inner">
-        <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;Der Film</div>
+        <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('detail.filmEyebrow')}</div>
         {!consented && (
           <p className="pd-videos__notice pd-feature__notice">
-            Das Video wird über YouTube eingebettet und erst nach Ihrer Zustimmung geladen.{' '}
+            {t('detail.videoNoticeOne')}{' '}
             <button type="button" className="pd-videos__notice-btn" onClick={openConsentBanner}>
-              Cookies &amp; Dienste verwalten
+              {t('detail.videoManage')}
             </button>
           </p>
         )}
@@ -52,7 +54,7 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
             type="button"
             className="pd-video pd-video--facade pd-feature__media"
             onClick={handleActivate}
-            aria-label={consented ? `Video abspielen: ${title}` : `${title} — Cookies akzeptieren, um abzuspielen`}
+            aria-label={consented ? t('detail.videoPlayAria', { title }) : t('detail.videoConsentAria', { title })}
           >
             <img
               className="pd-video__poster"

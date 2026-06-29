@@ -1125,6 +1125,41 @@
   border-color: var(--pv-copper);
 }
 
+/* Functional language tabs (DE/EN/IT) on the editor — admin tooling, German UI. */
+.blog-admin-langs {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--mag-rule);
+  border-radius: var(--pv-radius-md);
+  background: var(--mag-paper);
+}
+.blog-admin-langs button {
+  min-height: 44px;
+  min-width: 72px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: var(--pv-radius-sm);
+  background: transparent;
+  color: var(--mag-muted);
+  font-family: var(--pv-font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, color .2s;
+}
+.blog-admin-langs button:hover { color: var(--mag-text); border-color: rgba(130,97,64,.35); }
+.blog-admin-langs button.is-active {
+  color: var(--pv-white);
+  background: var(--pv-copper);
+  border-color: var(--pv-copper);
+}
+
 .blog-admin-form__actions {
   display: flex;
   align-items: center;

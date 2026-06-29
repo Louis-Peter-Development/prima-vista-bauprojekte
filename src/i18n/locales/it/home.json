@@ -1,0 +1,236 @@
+{
+  "hero": {
+    "toplineLocation": "Francoforte & Emmenbrücke",
+    "toplineTagline": "Ristrutturazione & rinnovo — progetti edilizi dal 2014",
+    "toplineIssue": "N° 26 / Primavera 2026",
+    "headline1": "<em>Una</em> visione.",
+    "headline2": "<em>Un</em> indirizzo.",
+    "headline3": "<em>Una</em> squadra.",
+    "metaNum": "01 — Promessa",
+    "lede": "<strong>Ristrutturazione completa da un unico interlocutore</strong> — dal concept alla consegna delle chiavi. Rispondiamo di ogni lavorazione: prezzo fisso, data di consegna certa, cinque anni di garanzia.",
+    "ctaSmall": "Appuntamento entro 48 ore",
+    "cta": "Fissa un appuntamento"
+  },
+  "marquee": {
+    "items": ["Ristrutturazione", "Rinnovo", "Allestimento ristorazione", "Bagni", "Cucine", "Pavimenti", "Impianti elettrici", "Riscaldamento", "Facciate", "Imbiancatura", "Scale", "Cartongesso"]
+  },
+  "heroPhotos": {
+    "aria": "Uno sguardo ai nostri progetti",
+    "eyebrow": "Uno sguardo",
+    "title": "Dalla struttura grezza alla <em>consegna</em>.",
+    "p": "Scorci di progetti realizzati da un unico interlocutore.",
+    "rohbau": { "label": "Grezzo", "alt": "Superficie al grezzo con pareti in cemento e impianti predisposti" },
+    "bad": { "label": "Bagno", "alt": "Bagno modernizzato con doccia e WC" },
+    "kueche": { "label": "Cucina", "alt": "Cucina con isola e arredi su misura" },
+    "gastro": { "label": "Ristorazione", "alt": "Progetto di ristorazione completato con parete decorativa" }
+  },
+  "featured": {
+    "eyebrow": "Progetti selezionati",
+    "title": "Appena usciti dal<br/><em>laboratorio.</em>",
+    "meta": "Francoforte · Wiesbaden · Lucerna",
+    "viewAll": "Vedi tutti i progetti",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Ristorante", "alt": "Ristorante Zoi, Francoforte" },
+      "proj--b": { "ttl": "Villa in cemento a vista", "alt": "Villa in cemento a vista, Lucerna" },
+      "proj--c": { "ttl": "Cucina in rovere", "alt": "Cucina in rovere, Francoforte" },
+      "proj--d": { "ttl": "Bagno Spa — Hotel", "alt": "Bagno spa, hotel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Lobby ufficio, Francoforte" }
+    }
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 stelle",
+    "source": "Recensione Google"
+  },
+  "aboutVideo": {
+    "notice": "Il video è incorporato tramite YouTube e viene caricato solo dopo il suo consenso.",
+    "manage": "Gestisci cookie e servizi",
+    "title": "Prima Vista Bauprojekte – Chi siamo",
+    "playAria": "Riproduci il video: {{title}}",
+    "consentAria": "{{title}} – accetta i cookie per riprodurre"
+  },
+  "kalkLive": {
+    "label": "Preventivatore · Live",
+    "objektart": "Tipo di immobile",
+    "flaeche": "Superficie",
+    "gewerke": "Lavorazioni",
+    "liveRange": "Fascia dal vivo",
+    "objekt": { "Haus": "Casa", "Wohnung": "Appartamento", "Gastro": "Ristorazione", "Anderes": "Altro" },
+    "trade": { "Bad": "Bagno", "Küche": "Cucina", "Boden": "Pavimento", "Elektrik": "Impianti", "Heizung": "Riscaldamento" },
+    "states": [
+      { "price": "€ 84–112 mila", "note": "Media € 98 mila · ca. € 690 / m²" },
+      { "price": "€ 52–71 mila", "note": "Media € 61 mila · ca. € 720 / m²" },
+      { "price": "€ 145–195 mila", "note": "Media € 170 mila · ca. € 810 / m²" },
+      { "price": "€ 95–130 mila", "note": "Media € 112 mila · ca. € 930 / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Stima preliminare dei costi",
+    "stamp": "In 24 h",
+    "rowProjekt": "Progetto",
+    "rowStandort": "Località",
+    "rowGewerke": "Lavorazioni",
+    "rowStandard": "Standard",
+    "totalLabel": "Investimento stimato",
+    "totalNote": "Vincolante dopo il rilievo in loco.",
+    "sigName": "Daniel Vogel · Direzione lavori",
+    "sigPlace": "Francoforte/Lucerna",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Ristrutturazione appartamento · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bagno, cucina, impianti, imbianchino", "standard": "Di pregio", "investition": "€ 184–226 mila", "datum": "17 maggio 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "Ristrutturazione casa · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Tetto, facciata, riscaldamento, struttura", "standard": "Premium", "investition": "€ 320–385 mila", "datum": "22 maggio 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Allestimento ristorazione · 180 m²", "standort": "Lucerna centro", "gewerke": "Ventilazione, idraulica, cartongesso", "standard": "Commerciale", "investition": "CHF 280–340 mila", "datum": "2 giugno 2026" }
+    ]
+  },
+  "promise": {
+    "eyebrow": "№ 01 — La nostra promessa",
+    "title": "Un solo<br/>referente, <em>tutta</em><br/>la responsabilità.",
+    "p1": "Crediamo in una ristrutturazione senza passaggi di mano: un unico general contractor che risponde di ogni lavorazione — dalla struttura grezza all'ultima giunzione dei mobili. Lei parla con un solo referente, che garantisce per tutto.",
+    "p2": "Questa chiarezza non è un lusso: è la condizione perché gli ambienti trasmettano, tra quindici anni, la stessa serenità del primo giorno.",
+    "list": {
+      "1": "Direzione lavori inclusa",
+      "2": "Tutti i materiali",
+      "3": "Garanzia di prezzo fisso",
+      "4": "Appuntamento entro 48 h",
+      "5": "Data di consegna certa",
+      "6": "5 anni di garanzia"
+    }
+  },
+  "packages": {
+    "eyebrow": "Pacchetti completi",
+    "title": "Quattro strade verso<br/>uno spazio <em>finito.</em>",
+    "intro": "Dal refresh di una stanza all'allestimento di un ufficio fino alla ristrutturazione completa: ogni pacchetto riunisce progettazione, direzione lavori e tutte le lavorazioni — con un prezzo chiaro e una data di consegna certa.",
+    "items": {
+      "haus": {
+        "num": "№ 01 — Completo",
+        "title": "Ristruttura-<br/>zione casa",
+        "desc": "Ristrutturazione completa di edifici esistenti — tetto, facciata e interni da un unico interlocutore.",
+        "alt": "Ristrutturazione casa"
+      },
+      "wohnung": {
+        "num": "№ 02 — Modulare",
+        "title": "Ristruttura-<br/>zione appartamento",
+        "desc": "Bagni, cucine, pavimenti, impianti elettrici: appartamenti — di nuovo abitabili in 6–10 settimane.",
+        "alt": "Ristrutturazione appartamento"
+      },
+      "gastronomie": {
+        "num": "№ 03 — Concept",
+        "title": "Allestimento<br/>ristorazione",
+        "desc": "Ristoranti, bar, hotel: dal concept all'inaugurazione — chiavi in mano.",
+        "alt": "Allestimento ristorazione"
+      },
+      "buero": {
+        "num": "№ 04 — Ufficio",
+        "title": "Allestimento<br/>ufficio",
+        "desc": "Uffici, studi e spazi di lavoro — pronti all'uso, con impianti, acustica e finiture.",
+        "alt": "Allestimento ufficio"
+      }
+    }
+  },
+  "stats": {
+    "title": "Dodici anni. <em>Una linea.</em>",
+    "intro": "I numeri non costruiscono ambienti — ma dicono quanto sul serio prendiamo l'incarico. Uno sguardo sobrio al nostro lavoro dal 2014.",
+    "since": {
+      "label": "Sul campo dal",
+      "desc": "Fondata da Daniel e Monica a Francoforte sul Meno."
+    },
+    "projects": {
+      "label": "Progetti completati",
+      "desc": "Dal monolocale al ristorante da 220 coperti."
+    },
+    "trades": {
+      "label": "Lavorazioni da un'unica mano",
+      "desc": "Dalla struttura grezza al falegname — tutto interno o sotto contratto."
+    },
+    "onTime": {
+      "label": "Puntualità",
+      "desc": "Data di consegna certa nel contratto — altrimenti penale."
+    }
+  },
+  "calculator": {
+    "eyebrow": "№ 05 · Preventivatore",
+    "title": "Stima dal vivo.<br/>In <em>pochi secondi.</em>",
+    "p": "Quattro clic, una fascia di prezzo: tipo di immobile, superficie, livello di finitura, lavorazioni. Il preventivatore calcola in tempo reale — senza registrazione, senza telefonate. Un primo orientamento, subito.",
+    "steps": {
+      "1": "Scegli immobile e superficie",
+      "2": "Aggiungi o togli lavorazioni",
+      "3": "La fascia si aggiorna dal vivo"
+    },
+    "toCalculator": "Apri il preventivatore",
+    "appointment": "Fissa un appuntamento"
+  },
+  "blitz": {
+    "eyebrow": "№ 06 · Preventivo express",
+    "title": "Prezzo fisso, nero su bianco.<br/>In <em>24 ore.</em>",
+    "p": "Qualcosa di più concreto? Compili un breve modulo — verifichiamo, calcoliamo e inviamo una stima scritta preliminare via e-mail, controfirmata dalla nostra direzione lavori.",
+    "steps": {
+      "1": "Compila il breve modulo (3 minuti)",
+      "2": "La direzione lavori valuta struttura e lavorazioni",
+      "3": "Preventivo scritto entro 24 ore"
+    },
+    "request": "Richiedi un preventivo express",
+    "appointment": "Fissa un appuntamento"
+  },
+  "trades": {
+    "eyebrow": "Lavorazioni",
+    "title": "Diciannove lavorazioni,<br/><em>un'unica mano.</em>",
+    "intro": "Ogni lavorazione coordinata dalla nostra direzione lavori — prenotabile singolarmente o come pacchetto completo. Ecco una selezione delle discipline più richieste.",
+    "openCalculator": "Apri il preventivatore",
+    "viewAll": "Vedi tutte le 19 lavorazioni",
+    "preview": {
+      "bad": { "name": "Bagni & sanitari", "lead": "Vasca, doccia, WC" },
+      "kueche": { "name": "Cucine & mobili", "lead": "Falegnameria" },
+      "boden": { "name": "Pavimenti & rivestimenti", "lead": "Parquet, pietra, vinile" },
+      "elektro": { "name": "Impianti elettrici", "lead": "Corrente, luce, KNX" },
+      "heizung": { "name": "Riscaldamento", "lead": "Pompa di calore, a pavimento" },
+      "maler": { "name": "Imbianchino & verniciatore", "lead": "Pitture, carte da parati" },
+      "fassade": { "name": "Ristrutturazione facciata", "lead": "Intonaco, cappotto" },
+      "trockenbau": { "name": "Cartongesso", "lead": "Pareti, soffitti" }
+    }
+  },
+  "heating": {
+    "eyebrow": "Metodi di riscaldamento moderni",
+    "title": "Pronti per il <em>futuro.</em>",
+    "p": "Passi a metodi di riscaldamento innovativi con i nostri pacchetti — incentivabili, silenziosi e indipendenti dal gas.",
+    "pump": {
+      "num": "№ 01",
+      "title": "Pompa di<br/>calore ad aria",
+      "desc": "Fino al 70% di risparmio energetico. Conversione dell'esistente in 7–10 giorni, con possibilità di incentivi.",
+      "alt": "Pompa di calore ad aria"
+    },
+    "risers": {
+      "num": "№ 02",
+      "title": "Colonne di<br/>riscaldamento",
+      "desc": "Colonne verticali con bilanciamento idraulico — distribuzione precisa del calore, minore potenza della pompa.",
+      "alt": "Colonne di riscaldamento"
+    },
+    "radiators": {
+      "num": "№ 03",
+      "title": "Radiatori di<br/>design",
+      "desc": "Radiatori piatti in alluminio integrati nell'architettura — sottili, silenziosi, adatti alla bassa temperatura.",
+      "alt": "Radiatori"
+    },
+    "more": "Scopri di più",
+    "viewAll": "Vedi tutti i metodi di riscaldamento"
+  },
+  "founders": {
+    "eyebrow": "Chi siamo",
+    "title": "Un'impresa edile<br/>gestita come<br/>un'<em>azienda di famiglia.</em>",
+    "p1": "Daniel e Monica guidano Prima Vista dal 2014 — come coppia, come direttori dei lavori, come referenti. Chi costruisce con noi non parla con un call center, ma con le persone il cui nome è sul contratto.",
+    "p2": "Dalla sede di Francoforte seguiamo i progetti in Assia; da Emmenbrücke, tutta la Svizzera centrale. I due uffici condividono materiali, progetti e standard — ovunque riceve la stessa qualità.",
+    "sigName": "Daniel & Monica",
+    "sigRole": "Fondatori & direzione lavori",
+    "photoAlt": "Daniel e Monica — fondatori di Prima Vista Bauprojekte",
+    "photoLabel": "Daniel & Monica — Francoforte, 2026"
+  },
+  "testimonial": {
+    "quote": "Temevamo la ristrutturazione — e siamo stati sorpresi: Prima Vista ha consegnato puntuale, pulito e così preciso che siamo riusciti a trasferirci un mese prima.",
+    "name": "Famiglia Brauer",
+    "meta": "Ristrutturazione completa dell'appartamento · Sachsenhausen"
+  },
+  "finalCta": {
+    "title": "Parliamo del<br/>suo <em>progetto edilizio.</em>",
+    "p": "Prima consulenza gratuita. Appuntamento entro 48 ore, in loco o in videochiamata — a Francoforte ed Emmenbrücke.",
+    "appointment": "Fissa un appuntamento",
+    "toCalculator": "Apri il preventivatore",
+    "expressQuote": "Preventivo express"
+  }
+}

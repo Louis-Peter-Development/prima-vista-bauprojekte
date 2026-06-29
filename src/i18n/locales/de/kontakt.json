@@ -1,0 +1,113 @@
+{
+  "intro": {
+    "crumb": "Kontakt",
+    "title": "Sprechen wir<br/>über Ihr<br/><em>Bauprojekt.</em>",
+    "lede": "Erste Beratung kostenlos und unverbindlich. Termin in 48 Stunden, vor Ort oder per Video — wir hören erst zu, dann skizzieren wir.",
+    "phoneLabel": "Telefon",
+    "phoneMeta": "Mo–Fr · 08:00–18:00 · DE / CH",
+    "emailLabel": "E-Mail",
+    "emailMeta": "Antwort innerhalb von 24 Stunden — werktags.",
+    "consultLabel": "Erstgespräch",
+    "consultValue": "Termin in 48 Stunden",
+    "consultMeta": "Kostenlos & unverbindlich · vor Ort oder per Video.",
+    "officeDe": "Frankfurt — DE",
+    "officeCh": "Emmenbrücke — CH",
+    "countryDe": "Deutschland",
+    "countryCh": "Schweiz",
+    "mediaAlt": "Heller Besprechungsraum für die Projektberatung",
+    "mediaCaption": "Erstberatung · Frankfurt & Emmenbrücke"
+  },
+  "form": {
+    "eyebrow": "Anfrage senden",
+    "title": "Erzählen Sie uns von<br/>Ihrem <em>Vorhaben.</em>",
+    "vorname": "Vorname",
+    "nachname": "Nachname",
+    "email": "E-Mail",
+    "emailPlaceholder": "ihre@email.de",
+    "tel": "Telefon",
+    "telOptional": "(optional)",
+    "telPlaceholder": "+49 …",
+    "artLabel": "Art des Vorhabens",
+    "art": {
+      "haus": "Haus-Sanierung",
+      "wohnung": "Wohnung",
+      "gastro": "Gastronomie",
+      "buero": "Büro",
+      "einzel": "Einzelgewerk",
+      "andere": "Andere"
+    },
+    "regionLabel": "Region",
+    "regions": {
+      "frankfurt": "Frankfurt & Hessen",
+      "innerschweiz": "Innerschweiz",
+      "ausserhalb": "Außerhalb"
+    },
+    "budgetLabel": "Budget-Rahmen",
+    "budget": {
+      "unset": "Bitte wählen",
+      "lt50": "Unter € 50.000",
+      "mid1": "€ 50.000 – € 150.000",
+      "mid2": "€ 150.000 – € 500.000",
+      "gt500": "Über € 500.000"
+    },
+    "msgLabel": "Worum geht es?",
+    "msgPlaceholder": "Beschreiben Sie Ihr Vorhaben in ein paar Sätzen — wir melden uns innerhalb von 24 Stunden.",
+    "consent": "Ich bin damit einverstanden, dass meine Angaben zur Beantwortung verwendet werden. Eine Weitergabe an Dritte erfolgt nicht.",
+    "consentLink": "Datenschutz",
+    "note": "Antwort in 24 Std.",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet…",
+    "errors": {
+      "vorname": "Bitte geben Sie Ihren Vornamen an.",
+      "nachname": "Bitte geben Sie Ihren Nachnamen an.",
+      "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse an.",
+      "emailFormat": "Bitte prüfen Sie das Format der E-Mail-Adresse.",
+      "msg": "Bitte beschreiben Sie kurz Ihr Vorhaben.",
+      "dsgvo": "Bitte bestätigen Sie die Datenschutzhinweise.",
+      "unknown": "Unbekannter Fehler",
+      "submit": "Ihre Anfrage konnte nicht gesendet werden ({{error}}). Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@primavista-bauprojekte.com."
+    },
+    "success": {
+      "eyebrow": "Gesendet",
+      "title": "Vielen Dank",
+      "body": "Ihre Anfrage ist bei uns eingegangen. Wir prüfen Ihr Vorhaben und melden uns innerhalb von <s>24 Stunden</s> bei Ihnen — per E-Mail an <s>{{email}}</s>",
+      "bodyPhone": " oder telefonisch unter <s>{{tel}}</s>",
+      "step1": "Wir lesen Ihre Angaben und bereiten erste Fragen vor.",
+      "step2": "Sie erhalten eine schriftliche Antwort oder einen Rückruf.",
+      "step3": "Auf Wunsch vereinbaren wir einen Termin vor Ort.",
+      "toHome": "Zur Startseite",
+      "toProjects": "Projekte ansehen"
+    }
+  },
+  "faqSection": {
+    "eyebrow": "Häufige Fragen",
+    "title": "Was<br/>Auftraggeber<br/>am häufigsten<br/><em>fragen.</em>",
+    "intro": "Antworten zu Festpreis, Bauzeit, Material und Garantie. Weitere Fragen klären wir gern persönlich."
+  },
+  "faq": [
+    {
+      "q": "Wie kommt ein verbindlicher Festpreis zustande?",
+      "a": "Nach dem Erstgespräch nehmen wir vor Ort auf, prüfen Statik und Substanz und erstellen ein detailliertes Leistungsverzeichnis. Innerhalb von 14 Tagen erhalten Sie einen schriftlichen Festpreis — gültig für 60 Tage, verbindlich nach Vertragsunterzeichnung."
+    },
+    {
+      "q": "Wie schnell können Sie mit den Arbeiten beginnen?",
+      "a": "In der Regel 4–8 Wochen nach Vertragsabschluss. Bei Wohnungssanierungen oft schneller, bei genehmigungspflichtigen Vorhaben (Statik, Dach, Fassade) entsprechend länger. Wir kommunizieren das Startdatum verbindlich."
+    },
+    {
+      "q": "Arbeiten Sie mit Subunternehmern?",
+      "a": "Unsere Bauleitung, Elektrik, Sanitär, Trockenbau, Maler, Schreinerei sind inhouse. Fliesenleger, Dachdecker und Fassade sind langjährige, vertraglich gebundene Partnerbetriebe — keine Tagelöhner, keine Mehrfach-Übergaben."
+    },
+    {
+      "q": "Was ist im Festpreis enthalten?",
+      "a": "Alle Materialien laut Auswahl, alle Gewerke, Bauleitung, Bauschuttentsorgung, Reinigung, Behördengänge sowie Versicherung. Nicht enthalten: Sonderwünsche nach Vertragsabschluss (separat ausgewiesen) und Eigentumsabgaben."
+    },
+    {
+      "q": "Kann ich während der Sanierung in der Wohnung bleiben?",
+      "a": "Bei Etagenwohnungen mit Teilsanierung (z. B. nur Bad oder Küche): ja, mit eingeschränkter Nutzung. Bei Vollsanierungen empfehlen wir den Auszug — wir helfen bei Übergangs-Möblierung und Logistik."
+    },
+    {
+      "q": "Welche Garantie geben Sie?",
+      "a": "Fünf Jahre Werksgewähr auf alle ausgeführten Arbeiten — das ist mehr als die gesetzliche Pflicht. Auf Material gilt die Herstellergarantie, die wir für Sie geltend machen."
+    }
+  ]
+}

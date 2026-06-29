@@ -1,42 +1,10 @@
-import PageIntro from '../components/common/PageIntro';
-import GewerkPhotoShowcase from '../components/common/GewerkPhotoShowcase';
-import EndCtaLocal from '../components/common/EndCtaLocal';
+import GewerkePage from '../components/gewerke/GewerkePage';
 import DachConfigurator from '../components/gewerke/DachConfigurator';
-import { usePageTitle } from '../hooks/usePageTitle';
-import '../styles/pages/kalkulator.css';
-import '../styles/pages/haus-sanierung.css';
 
 export default function Dachsanierung() {
-  usePageTitle('Dachsanierung Kostenrechner');
-
   return (
-    <>
-      <PageIntro
-        className="kalk-intro"
-        backgroundImage="/assets/img/leistungen/dachsanierung-01.webp"
-        crumbNumber="05"
-        crumbLabel="Gewerke · Dachsanierung"
-        title={<>Dach &<br /><em>Ausbau kalkulieren.</em></>}
-        lede="Vom neuen Dachstuhl über die Dacheindeckung bis zum Innenausbau oder der Dämmung: Berechnen Sie die Kosten für Ihr Dachprojekt."
-        meta={[
-          { label: 'Varianten', value: '10 Konzepte' },
-          { label: 'Gewerke', value: 'Dach & Holzbau' },
-          { label: 'Aufmaß', value: 'Vor Ort' },
-          { label: 'Angebot', value: 'Festpreisfähig' },
-        ]}
-      />
-
-      <GewerkPhotoShowcase photoSet="dach" />
-
-      <section className="kalkulator">
-        <DachConfigurator />
-      </section>
-
-      <EndCtaLocal
-        eyebrow="Dachprojekt planen?"
-        title={<>Wir prüfen Zustand<br />und <em>Möglichkeiten</em> vor Ort.</>}
-        ctaLabel="Dachsanierung anfragen"
-      />
-    </>
+    <GewerkePage tradeKey="dach" crumbNumber="05" backgroundImage="/assets/img/leistungen/dachsanierung-01.webp" photoSet="dach" className="kalk-intro">
+      <DachConfigurator />
+    </GewerkePage>
   );
 }

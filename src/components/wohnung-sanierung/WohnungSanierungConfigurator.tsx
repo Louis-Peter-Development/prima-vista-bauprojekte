@@ -6,27 +6,26 @@ import {
   type WohnungType,
 } from '../../data/wohnungSanierung';
 
+const DEFAULT_WOHNUNG_TYPE: WohnungType = '2zi';
+
+function getWohnungTypeOption(value: WohnungType) {
+  return WOHNUNG_TYPES.find((type) => type.value === value);
+}
+
 type Props = {
   embedded?: boolean;
 };
 
 export default function WohnungSanierungConfigurator({ embedded }: Props) {
-  const [wohnungType, setWohnungType] = useState<WohnungType>('2zi');
-  
-  const defaultAreas: Record<WohnungType, number> = {
-    'studio': 10,
-    '2zi': 10,
-    '3zi': 10,
-    'maisonette': 10
-  };
-  
-  const [area, setArea] = useState<number>(defaultAreas['2zi']);
+  const [wohnungType, setWohnungType] = useState<WohnungType>(DEFAULT_WOHNUNG_TYPE);
+  const [area, setArea] = useState<number>(() => getWohnungTypeOption(DEFAULT_WOHNUNG_TYPE)?.defaultArea ?? 100);
 
-  const selectedType = WOHNUNG_TYPES.find((type) => type.value === wohnungType);
+  const selectedType = getWohnungTypeOption(wohnungType);
 
   function changeWohnungType(value: WohnungType) {
+    const nextType = getWohnungTypeOption(value);
     setWohnungType(value);
-    setArea(defaultAreas[value] || defaultAreas['2zi']);
+    if (nextType) setArea(nextType.defaultArea);
   }
 
   return (

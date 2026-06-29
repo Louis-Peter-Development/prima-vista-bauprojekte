@@ -1,7 +1,10 @@
 import { useEffect, useId, useMemo, useState, type FormEvent } from 'react';
 import { createPortal } from 'react-dom';
+import { useTranslation } from 'react-i18next';
+import { useLocale } from '../../i18n/useLocale';
+import { formatEuroLocalized } from '../../i18n/calculatorCatalog';
+import type { Locale } from '../../i18n/routes';
 import type { KalkulatorHandoff, KalkulatorPick, KalkulatorRow } from '../../data/blitzAngebot';
-import { formatEuro } from '../../data/calculator/engine';
 import { CloseIcon, MailIcon, PreviewIcon } from '../icons';
 import '../../styles/components/calculator-pdf.css';
 
@@ -84,9 +87,10 @@ function buildPreviewGroups(handoff: KalkulatorHandoff | null): PreviewGroup[] {
   });
 }
 
-function formatQuantity(quantity?: number, unit?: string): string {
+function formatQuantity(quantity: number | undefined, unit: string | undefined, locale: Locale): string {
   if (typeof quantity !== 'number' || !Number.isFinite(quantity)) return '1';
-  const value = new Intl.NumberFormat('de-DE', {
+  const tag = locale === 'de' ? 'de-DE' : locale === 'it' ? 'it-IT' : 'en-US';
+  const value = new Intl.NumberFormat(tag, {
     maximumFractionDigits: 2,
   }).format(quantity);
   return [value, unit].filter(Boolean).join(' ');
@@ -123,6 +127,9 @@ function PreviewThumb({ item }: { item: PreviewItem }) {
 }
 
 export default function CalculatorPdfSender({ handoff, disabled }: Props) {
+  const { t } = useTranslation('kalk');
+  const locale = useLocale();
+  const formatEuro = (value: number) => formatEuroLocalized(value, locale);
   const emailId = useId();
   const consentId = useId();
   const panelId = useId();
@@ -159,12 +166,12 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
     const normalizedEmail = email.trim();
     if (!EMAIL_RE.test(normalizedEmail)) {
       setStatus('error');
-      setMessage('Bitte eine gültige E-Mail-Adresse eingeben.');
+      setMessage(t('pdf.errorEmail'));
       return;
     }
     if (!consent) {
       setStatus('error');
-      setMessage('Bitte bestätigen Sie den PDF-Versand per E-Mail.');
+      setMessage(t('pdf.errorConsent'));
       return;
     }
 
@@ -180,15 +187,16 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
           consent,
           kalkulator: handoff,
           sourceUrl: window.location.href,
+          locale,
         }),
       });
 
-      if (!response.ok) throw new Error('PDF konnte nicht versendet werden.');
+      if (!response.ok) throw new Error('PDF could not be sent.');
       setStatus('sent');
-      setMessage('PDF wurde versendet.');
+      setMessage(t('pdf.sent'));
     } catch {
       setStatus('error');
-      setMessage('PDF konnte nicht versendet werden. Bitte später erneut versuchen.');
+      setMessage(t('pdf.errorSend'));
     }
   }
 
@@ -203,7 +211,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
         disabled={unavailable}
       >
         <PreviewIcon aria-hidden="true" />
-        PDF-Vorschau
+        {t('pdf.trigger')}
       </button>
 
       {open && !unavailable && createPortal(
@@ -219,18 +227,18 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
             className="calculator-pdf__panel calculator-pdf__preview"
             role="dialog"
             aria-modal="true"
-            aria-label="PDF-Vorschau"
+            aria-label={t('pdf.dialogAria')}
           >
             <form className="calculator-pdf__send" onSubmit={onSubmit}>
               <div className="calculator-pdf__send-top">
                 <div className="calculator-pdf__send-head">
                   <MailIcon aria-hidden="true" />
-                  <span>Als PDF versenden</span>
+                  <span>{t('pdf.sendHead')}</span>
                 </div>
                 <button
                   type="button"
                   className="calculator-pdf__close"
-                  aria-label="Vorschau schließen"
+                  aria-label={t('pdf.close')}
                   onClick={() => setOpen(false)}
                 >
                   <CloseIcon aria-hidden="true" />
@@ -238,7 +246,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
               </div>
 
               <div className="calculator-pdf__send-body">
-                <label className="calculator-pdf__label" htmlFor={emailId}>Bitte E-Mail-Adresse eingeben</label>
+                <label className="calculator-pdf__label" htmlFor={emailId}>{t('pdf.emailLabel')}</label>
                 <input
                   id={emailId}
                   type="email"
@@ -249,10 +257,10 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
                     setEmail(event.currentTarget.value);
                     if (status !== 'sending') setStatus('idle');
                   }}
-                  placeholder="E-Mail-Adresse eingeben"
+                  placeholder={t('pdf.emailPlaceholder')}
                 />
                 <button type="submit" className="calculator-pdf__submit" disabled={status === 'sending'}>
-                  {status === 'sending' ? 'Wird gesendet' : 'Jetzt senden'}
+                  {status === 'sending' ? t('pdf.submitting') : t('pdf.submit')}
                 </button>
                 <label className="calculator-pdf__check" htmlFor={consentId}>
                   <input
@@ -265,7 +273,7 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
                     }}
                   />
                   <span aria-hidden="true" />
-                  <em>Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.</em>
+                  <em>{t('pdf.consent')}</em>
                 </label>
                 {message && (
                   <p className={`calculator-pdf__message calculator-pdf__message--${status}`} role={status === 'error' ? 'alert' : 'status'}>
@@ -276,18 +284,18 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
             </form>
 
             <header className="calculator-pdf__preview-head">
-              <span>PDF-Vorschau</span>
-              <h3>Details der Auswahl</h3>
+              <span>{t('pdf.previewEyebrow')}</span>
+              <h3>{t('pdf.previewTitle')}</h3>
               <p>{handoff.kindLabel}{handoff.scopeLabel ? ` · ${handoff.scopeLabel}` : ''}</p>
             </header>
 
             <dl className="calculator-pdf__summary">
               <div>
-                <dt>Positionen</dt>
+                <dt>{t('pdf.summaryPositions')}</dt>
                 <dd>{previewCount}</dd>
               </div>
               <div>
-                <dt>Gesamt netto</dt>
+                <dt>{t('pdf.summaryTotalNet')}</dt>
                 <dd>{formatEuro(handoff.totalMid)}</dd>
               </div>
             </dl>
@@ -313,15 +321,15 @@ export default function CalculatorPdfSender({ handoff, disabled }: Props) {
                           )}
                           <dl className="calculator-pdf__item-totals">
                             <div>
-                              <dt>Menge</dt>
-                              <dd>{formatQuantity(item.quantity, item.unit)}</dd>
+                              <dt>{t('pdf.itemQuantity')}</dt>
+                              <dd>{formatQuantity(item.quantity, item.unit, locale)}</dd>
                             </div>
                             <div>
-                              <dt>Einzel</dt>
+                              <dt>{t('pdf.itemUnit')}</dt>
                               <dd>{formatEuro(item.unitPrice ?? item.subtotal)}</dd>
                             </div>
                             <div>
-                              <dt>Gesamt</dt>
+                              <dt>{t('pdf.itemTotal')}</dt>
                               <dd>{formatEuro(item.subtotal)}</dd>
                             </div>
                           </dl>

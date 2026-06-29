@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   WOHNUNG_TYPES,
   type WohnungType,
@@ -13,6 +14,7 @@ export default function WohnungSanierungBoard({
   wohnungType,
   onWohnungTypeChange,
 }: Props) {
+  const { t } = useTranslation('kalk');
   function chooseWohnungType(value: WohnungType) {
     onWohnungTypeChange(value);
     scrollToCalculatorResult();
@@ -23,21 +25,21 @@ export default function WohnungSanierungBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Wohnungstyp</span>
-          <span className="kalk-board__hint">Bestimmt Komplexität & Trennwände</span>
+          <span className="kalk-board__label">{t('board.wohnungType')}</span>
+          <span className="kalk-board__hint">{t('board.wohnungTypeHint')}</span>
         </div>
         <div className="haus-types">
-          {WOHNUNG_TYPES.map((t) => (
+          {WOHNUNG_TYPES.map((option) => (
             <button
-              key={t.value}
+              key={option.value}
               type="button"
-              className={`haus-types__opt${t.value === wohnungType ? ' is-on' : ''}`}
-              onClick={() => chooseWohnungType(t.value)}
-              aria-pressed={t.value === wohnungType}
+              className={`haus-types__opt${option.value === wohnungType ? ' is-on' : ''}`}
+              onClick={() => chooseWohnungType(option.value)}
+              aria-pressed={option.value === wohnungType}
             >
-              <span className="haus-types__factor">× {t.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{t.label}</span>
-              <span className="haus-types__detail">{t.detail}</span>
+              <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
+              <span className="haus-types__label">{t(`wohnung.types.${option.value}.label`, { defaultValue: option.label })}</span>
+              <span className="haus-types__detail">{t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
             </button>
           ))}
         </div>

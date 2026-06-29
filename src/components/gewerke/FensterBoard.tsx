@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { scrollToCalculatorResult } from '../../utils/scrollToCalculatorResult';
 
 export type FensterType =
@@ -43,6 +44,7 @@ export default function FensterBoard({
   activeType,
   onTypeChange,
 }: Props) {
+  const { t } = useTranslation('kalk');
   function chooseType(value: FensterType) {
     onTypeChange(value);
     scrollToCalculatorResult();
@@ -53,8 +55,8 @@ export default function FensterBoard({
       <div className="kalk-board__field reveal">
         <div className="kalk-board__field-head">
           <span className="kalk-board__num">01</span>
-          <span className="kalk-board__label">Fensterleistung</span>
-          <span className="kalk-board__hint">Wählen Sie den gewünschten Kalkulator</span>
+          <span className="kalk-board__label">{t('gw.fenster.field')}</span>
+          <span className="kalk-board__hint">{t('gw.fenster.hint')}</span>
         </div>
         <div className="haus-types" style={{ flexWrap: 'wrap', gap: '12px' }}>
           {TYPES.map((type) => (
@@ -66,8 +68,8 @@ export default function FensterBoard({
               aria-pressed={type.value === activeType}
               style={{ flex: '1 1 calc(33.333% - 12px)', minWidth: '180px' }}
             >
-              <span className="haus-types__label">{type.label}</span>
-              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{type.detail}</span>
+              <span className="haus-types__label">{t(`gw.fenster.types.${type.value}.label`, { defaultValue: type.label })}</span>
+              <span className="haus-types__detail" style={{ fontSize: '13px', lineHeight: '1.4' }}>{t(`gw.fenster.types.${type.value}.detail`, { defaultValue: type.detail })}</span>
             </button>
           ))}
         </div>

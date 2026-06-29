@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
-import { BUERO_GEWERKE, formatTsd } from '../../data/bueroAusbau';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
+import { formatTsd, formatGroupedInt } from '../../i18n/calculatorCatalog';
+import { BUERO_GEWERKE } from '../../data/bueroAusbau';
 import type { KalkulatorHandoff } from '../../data/blitzAngebot';
 import CalculatorPdfSender from '../calculator-pdf/CalculatorPdfSender';
 
@@ -26,6 +29,8 @@ export default function BueroAusbauResult({
   factor,
   kindLabel,
 }: Props) {
+  const { t } = useTranslation('kalk');
+  const locale = useLocale();
   const pickedGewerke = BUERO_GEWERKE.filter((gewerk) => picked.includes(gewerk.key));
   const handoff: KalkulatorHandoff | null = hasPicks
     ? {
@@ -54,31 +59,31 @@ export default function BueroAusbauResult({
         <div className="kalk-result__head">
           <div className="kalk-result__eyebrow">
             <span className="rule-red"></span>
-            Live-Schätzung
+            {t('result.liveEstimate')}
           </div>
           {hasPicks ? (
             <>
               <div className="kalk-result__range">
                 <span className="kalk-result__from">
-                  <small>ab</small>
-                  <strong>€ {formatTsd(totalMin)}</strong>
+                  <small>{t('result.from')}</small>
+                  <strong>€ {formatTsd(totalMin, locale)}</strong>
                 </span>
                 <span className="kalk-result__dash">—</span>
                 <span className="kalk-result__to">
-                  <small>bis</small>
-                  <strong>€ {formatTsd(totalMax)}</strong>
+                  <small>{t('result.to')}</small>
+                  <strong>€ {formatTsd(totalMax, locale)}</strong>
                 </span>
               </div>
               <div className="kalk-result__meta">
-                <span><small>Mittelwert netto</small> € {formatTsd(totalMid)}</span>
-                <span><small>pro m² netto</small> € {Math.round(perM2).toLocaleString('de-DE')}</span>
+                <span><small>{t('result.meanNet')}</small> € {formatTsd(totalMid, locale)}</span>
+                <span><small>{t('result.perM2Net')}</small> € {formatGroupedInt(perM2, locale)}</span>
               </div>
-              <p className="kalk-result__vat-note">Alle Beträge netto · zzgl. 19 % MwSt.</p>
+              <p className="kalk-result__vat-note">{t('result.vatNote')}</p>
             </>
           ) : (
             <div className="kalk-result__empty-state">
-              <div className="kalk-result__placeholder">— — —</div>
-              <p>Wählen Sie mindestens ein Gewerk, um eine erste Spanne zu sehen.</p>
+              <div className="kalk-result__placeholder">{t('result.emptyPlaceholder')}</div>
+              <p>{t('result.emptyHint')}</p>
             </div>
           )}
         </div>
@@ -86,8 +91,8 @@ export default function BueroAusbauResult({
         {hasPicks && (
           <div className="kalk-result__breakdown">
             <div className="kalk-result__breakdown-head">
-              <span>Aufstellung</span>
-              <span>nach Gewerk</span>
+              <span>{t('result.breakdownTitle')}</span>
+              <span>{t('result.breakdownSub')}</span>
             </div>
             <ul>
               {pickedGewerke.map((gewerk) => {
@@ -95,8 +100,8 @@ export default function BueroAusbauResult({
                 return (
                   <li key={gewerk.key}>
                     <span className="kalk-result__row-num">{gewerk.num}</span>
-                    <span className="kalk-result__row-name">{gewerk.label}</span>
-                    <span className="kalk-result__row-value">€ {formatTsd(sub)}</span>
+                    <span className="kalk-result__row-name">{t(`buero.gewerke.${gewerk.key}.label`, { defaultValue: gewerk.label })}</span>
+                    <span className="kalk-result__row-value">€ {formatTsd(sub, locale)}</span>
                   </li>
                 );
               })}
@@ -105,7 +110,7 @@ export default function BueroAusbauResult({
         )}
 
         <p className="kalk-result__disclaimer">
-          Vorab-Schätzung für die gewählten Bürotyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen, Mobiliar-Einzelpreise und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung.
+          {t('result.disclaimerBuero')}
         </p>
 
         <div className="kalk-result__actions">
@@ -115,10 +120,10 @@ export default function BueroAusbauResult({
             to="/blitz-angebot"
             state={handoff ? { kalkulator: handoff } : undefined}
           >
-            Verbindliches Angebot <span className="arrow">&gt;</span>
+            {t('result.bindingOffer')} <span className="arrow">&gt;</span>
           </Link>
           <Link className="btn btn--light kalk-result__btn-light" to="/kontakt">
-            Termin vereinbaren <span className="arrow">&gt;</span>
+            {t('result.appointment')} <span className="arrow">&gt;</span>
           </Link>
         </div>
       </div>

@@ -1,5 +1,8 @@
-import { Fragment, useEffect, useMemo, useState, type ChangeEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Fragment, useCallback, useEffect, useMemo, useState, type ChangeEvent } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from '../../i18n/Link';
+import { useLocale } from '../../i18n/useLocale';
+import { localizeCatalog, formatEuroLocalized } from '../../i18n/calculatorCatalog';
 import {
   ChevronDownIcon,
   CopyIcon,
@@ -9,7 +12,6 @@ import {
   SwapIcon,
   TrashIcon,
 } from '../icons';
-import { formatEuro } from '../../data/calculator/engine';
 import type { RenovationProduct, RenovationProductAlternative } from '../../data/calculator/types';
 import { inferTradeFromSku, type BlitzFormState, type KalkulatorHandoff } from '../../data/blitzAngebot';
 import { useRenovationCalculator } from '../../hooks/useRenovationCalculator';
@@ -61,7 +63,25 @@ function rowTotal(row: RenovationProduct): number {
   return row.quantity * row.basePrice;
 }
 
-function typeLabel(type: RenovationProduct['type']): string {
+// Map the catalog line type to its kalk.types.* i18n key. 'service' (and any
+// other value) falls through to the "Montage" label, matching the original
+// German default branch.
+function typeLabelKey(type: RenovationProduct['type']): string {
+  switch (type) {
+    case 'material':
+      return 'types.material';
+    case 'extra':
+      return 'types.extra';
+    case 'optional':
+      return 'types.optional';
+    default:
+      return 'types.montage';
+  }
+}
+
+// Canonical GERMAN line-type label. Used for the handoff payload that is POSTed
+// to the server PDF, which keys on the German strings — must NOT be localized.
+function typeLabelDe(type: RenovationProduct['type']): string {
   switch (type) {
     case 'material':
       return 'Material';
@@ -93,9 +113,26 @@ export default function RenovationCalculator({
   kindLabel = '1 Etage ohne Dach',
   customAreaLabel,
 }: Props = {}) {
+  const { t } = useTranslation('kalk');
+  const locale = useLocale();
   const { state, rowsByCategory, totals, dispatch } = useRenovationCalculator(packageId);
   const [replaceRowId, setReplaceRowId] = useState<string | null>(null);
   const areaMinimum = Math.max(0, minimumArea ?? 0);
+
+  // Render-only localizers. The German title/lead strings stay the canonical
+  // data the engine and PDF key on; only the DISPLAYED text is swapped.
+  const localizeTitle = useCallback(
+    (title: string) => localizeCatalog(title, title, locale),
+    [locale],
+  );
+  const formatEuro = useCallback(
+    (value: number) => formatEuroLocalized(value, locale),
+    [locale],
+  );
+  const typeLabel = useCallback(
+    (type: RenovationProduct['type']) => t(typeLabelKey(type)),
+    [t],
+  );
 
   const livingAreaForEffect = state.status === 'ready' ? state.livingArea : null;
   useEffect(() => {
@@ -127,7 +164,7 @@ export default function RenovationCalculator({
             image: row.image,
             category: category.title,
             subcategory: subsection?.title ?? row.subcategory,
-            type: typeLabel(row.type),
+            type: typeLabelDe(row.type),
           };
         });
 
@@ -201,10 +238,10 @@ export default function RenovationCalculator({
     return (
       <section
         className={`renocalc renocalc--loading${embedded ? ' renocalc--embedded' : ''}`}
-        aria-label="Renovierung Konfigurator"
+        aria-label={t('reno.aria')}
         aria-busy="true"
       >
-        <div className="renocalc__loading">Konfigurator wird geladen …</div>
+        <div className="renocalc__loading">{t('reno.loading')}</div>
       </section>
     );
   }
@@ -219,14 +256,14 @@ export default function RenovationCalculator({
   return (
     <section
       className={`renocalc${embedded ? ' renocalc--embedded' : ''}`}
-      aria-label="Renovierung Konfigurator"
+      aria-label={t('reno.aria')}
       data-calculator-result
     >
       <div className="renocalc__workspace">
         <div className="renocalc__main">
           <div className="renocalc__toolbar">
             <div className="renocalc__area">
-              <label htmlFor="renocalc-area">{customAreaLabel || 'Wohnfläche in qm'}</label>
+              <label htmlFor="renocalc-area">{customAreaLabel ? localizeTitle(customAreaLabel) : t('reno.areaLabel')}</label>
               <input
                 id="renocalc-area"
                 type="number"
@@ -240,9 +277,9 @@ export default function RenovationCalculator({
           </div>
 
           <div className="renocalc__meta">
-            <span>{totals.activeCount} von {totals.totalCount} Positionen aktiv</span>
-            <span>{formatEuro(totals.perM2)} netto / qm</span>
-            <button type="button" onClick={() => dispatch({ type: 'reset' })} title="Konfiguration zuruecksetzen" aria-label="Konfiguration zuruecksetzen">
+            <span>{t('reno.itemsActive', { active: totals.activeCount, total: totals.totalCount })}</span>
+            <span>{t('reno.netPerM2', { value: formatEuro(totals.perM2) })}</span>
+            <button type="button" onClick={() => dispatch({ type: 'reset' })} title={t('reno.reset')} aria-label={t('reno.reset')}>
               <ResetIcon aria-hidden="true" />
             </button>
           </div>
@@ -251,12 +288,12 @@ export default function RenovationCalculator({
             <table className="renocalc-table">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Menge</th>
-                  <th>VPE</th>
-                  <th>Preis</th>
-                  <th>Gesamt</th>
-                  <th>Aktionen</th>
+                  <th>{t('reno.colName')}</th>
+                  <th>{t('reno.colQuantity')}</th>
+                  <th>{t('reno.colUnit')}</th>
+                  <th>{t('reno.colPrice')}</th>
+                  <th>{t('reno.colTotal')}</th>
+                  <th>{t('reno.colActions')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -277,8 +314,8 @@ export default function RenovationCalculator({
                           >
                             <ChevronDownIcon aria-hidden="true" className={categoryCollapsed ? '' : 'is-open'} />
                             <span>
-                              {category.title}
-                              <small>{category.lead}</small>
+                              {localizeTitle(category.title)}
+                              <small>{localizeTitle(category.lead)}</small>
                             </span>
                             <em>{activeRows}/{categoryRows.length}</em>
                             <strong>{formatEuro(categoryTotal)}</strong>
@@ -293,13 +330,13 @@ export default function RenovationCalculator({
                           <Fragment key={`${category.id}:${subsection.id}`}>
                             <tr className="renocalc-table__subhead">
                               <th colSpan={6}>
-                                <span>{subsection.title}</span>
+                                <span>{localizeTitle(subsection.title)}</span>
                                 {disabledOptionalCount > 0 && (
                                   <button
                                     type="button"
                                     onClick={() => dispatch({ type: 'enableSubsection', category: category.id, subcategory: subsection.id })}
-                                    title="Optionale Positionen aktivieren"
-                                    aria-label="Optionale Positionen aktivieren"
+                                    title={t('reno.enableOptional')}
+                                    aria-label={t('reno.enableOptional')}
                                   >
                                     <PlusIcon aria-hidden="true" />
                                   </button>
@@ -307,21 +344,23 @@ export default function RenovationCalculator({
                               </th>
                             </tr>
 
-                            {subsection.rows.map((row) => (
+                            {subsection.rows.map((row) => {
+                              const rowTitle = localizeCatalog(row.sku, row.title, locale);
+                              return (
                               <tr className={`renocalc-table__row${row.enabled ? '' : ' is-off'}${row.optional ? ' is-optional' : ''}`} key={row.id}>
-                                <td data-label="Name">
+                                <td data-label={t('reno.colName')}>
                                   <label className="renocalc-row-name">
                                     <input
                                       type="checkbox"
                                       checked={row.enabled}
                                       onChange={() => dispatch({ type: 'toggleRow', id: row.id })}
-                                      aria-label={`${row.title} aktivieren`}
+                                      aria-label={t('reno.toggleRow', { name: rowTitle })}
                                     />
                                     <span className="renocalc-row-name__check" aria-hidden="true" />
                                     <span className="renocalc-row-name__text">
                                       <em>{typeLabel(row.type)}</em>
-                                      <strong>{row.title}</strong>
-                                      <small>{row.description}</small>
+                                      <strong>{rowTitle}</strong>
+                                      <small>{localizeCatalog(row.description, row.description, locale)}</small>
                                     </span>
                                   </label>
                                   {replaceRowId === row.id && (
@@ -329,24 +368,24 @@ export default function RenovationCalculator({
                                       className="renocalc-replace"
                                       value={row.alternatives.find((item) => item.sku === row.sku)?.id ?? row.alternatives[0]?.id}
                                       onChange={(event) => replaceRow(row.id, event.target.value)}
-                                      aria-label={`${row.title} ersetzen`}
+                                      aria-label={t('reno.replaceRow', { name: rowTitle })}
                                     >
                                       {row.alternatives.map((alternative: RenovationProductAlternative) => (
                                         <option key={alternative.id} value={alternative.id}>
-                                          {alternative.title} · {formatEuro(alternative.basePrice)}
+                                          {localizeCatalog(alternative.sku, alternative.title, locale)} · {formatEuro(alternative.basePrice)}
                                         </option>
                                       ))}
                                     </select>
                                   )}
                                 </td>
-                                <td data-label="Menge">
+                                <td data-label={t('reno.colQuantity')}>
                                   <div className="renocalc-stepper">
                                     <button
                                       type="button"
                                       onClick={() => stepRowQuantity(row, -1)}
                                       disabled={row.quantity <= 0}
-                                      title="Menge verringern"
-                                      aria-label={`Menge ${row.title} verringern`}
+                                      title={t('reno.qtyDecrease')}
+                                      aria-label={t('reno.qtyDecreaseRow', { name: rowTitle })}
                                     >
                                       <MinusIcon aria-hidden="true" />
                                     </button>
@@ -360,28 +399,28 @@ export default function RenovationCalculator({
                                         id: row.id,
                                         value: Number(event.target.value),
                                       })}
-                                      aria-label={`Menge ${row.title}`}
+                                      aria-label={t('reno.qtyRow', { name: rowTitle })}
                                     />
                                     <button
                                       type="button"
                                       onClick={() => stepRowQuantity(row, 1)}
-                                      title="Menge erhoehen"
-                                      aria-label={`Menge ${row.title} erhoehen`}
+                                      title={t('reno.qtyIncrease')}
+                                      aria-label={t('reno.qtyIncreaseRow', { name: rowTitle })}
                                     >
                                       <PlusIcon aria-hidden="true" />
                                     </button>
                                   </div>
                                 </td>
-                                <td data-label="VPE">{row.unit}</td>
-                                <td data-label="Preis">{formatEuro(row.basePrice)}</td>
-                                <td data-label="Gesamt">{formatEuro(rowTotal(row))}</td>
-                                <td data-label="Aktionen">
+                                <td data-label={t('reno.colUnit')}>{row.unit}</td>
+                                <td data-label={t('reno.colPrice')}>{formatEuro(row.basePrice)}</td>
+                                <td data-label={t('reno.colTotal')}>{formatEuro(rowTotal(row))}</td>
+                                <td data-label={t('reno.colActions')}>
                                   <div className="renocalc-actions">
                                     <button
                                       type="button"
                                       onClick={() => setReplaceRowId(replaceRowId === row.id ? null : row.id)}
-                                      title={row.canReplace && row.alternatives.length > 0 ? 'Produkt tauschen' : 'Produkt kann nicht getauscht werden'}
-                                      aria-label={row.canReplace && row.alternatives.length > 0 ? 'Produkt tauschen' : 'Produkt kann nicht getauscht werden'}
+                                      title={row.canReplace && row.alternatives.length > 0 ? t('reno.swap') : t('reno.swapDisabled')}
+                                      aria-label={row.canReplace && row.alternatives.length > 0 ? t('reno.swap') : t('reno.swapDisabled')}
                                       disabled={!row.canReplace || row.alternatives.length === 0}
                                     >
                                       <SwapIcon aria-hidden="true" />
@@ -389,8 +428,8 @@ export default function RenovationCalculator({
                                     <button
                                       type="button"
                                       onClick={() => dispatch({ type: 'duplicateRow', id: row.id })}
-                                      title={row.canDuplicate ? 'Produkt duplizieren' : 'Produkt kann nicht dupliziert werden'}
-                                      aria-label={row.canDuplicate ? 'Produkt duplizieren' : 'Produkt kann nicht dupliziert werden'}
+                                      title={row.canDuplicate ? t('reno.duplicate') : t('reno.duplicateDisabled')}
+                                      aria-label={row.canDuplicate ? t('reno.duplicate') : t('reno.duplicateDisabled')}
                                       disabled={!row.canDuplicate}
                                     >
                                       <CopyIcon aria-hidden="true" />
@@ -398,8 +437,8 @@ export default function RenovationCalculator({
                                     <button
                                       type="button"
                                       onClick={() => dispatch({ type: 'removeRow', id: row.id })}
-                                      title={row.canRemove ? 'Produkt entfernen' : 'Produkt kann nicht entfernt werden'}
-                                      aria-label={row.canRemove ? 'Produkt entfernen' : 'Produkt kann nicht entfernt werden'}
+                                      title={row.canRemove ? t('reno.remove') : t('reno.removeDisabled')}
+                                      aria-label={row.canRemove ? t('reno.remove') : t('reno.removeDisabled')}
                                       disabled={!row.canRemove}
                                     >
                                       <TrashIcon aria-hidden="true" />
@@ -407,7 +446,8 @@ export default function RenovationCalculator({
                                   </div>
                                 </td>
                               </tr>
-                            ))}
+                              );
+                            })}
                           </Fragment>
                         );
                       })}
@@ -419,51 +459,51 @@ export default function RenovationCalculator({
           </div>
         </div>
 
-        <aside className="renocalc-live" aria-label="Live-Angebot" aria-live="polite">
+        <aside className="renocalc-live" aria-label={t('reno.liveOffer')} aria-live="polite">
           <div className="renocalc-live__sticky">
-            <span className="renocalc-live__eyebrow">Live-Angebot</span>
+            <span className="renocalc-live__eyebrow">{t('reno.liveOffer')}</span>
             <strong className="renocalc-live__gross">{formatEuro(totals.gross)}</strong>
-            <span className="renocalc-live__vat-note">inkl. 19 % MwSt.</span>
+            <span className="renocalc-live__vat-note">{t('reno.vatInclNote')}</span>
 
             <dl className="renocalc-live__totals">
               <div>
-                <dt>Gesamtnettosumme</dt>
+                <dt>{t('reno.totalNet')}</dt>
                 <dd>{formatEuro(totals.net)}</dd>
               </div>
               <div>
-                <dt>zzgl. 19 % MwSt.</dt>
+                <dt>{t('reno.vatLine')}</dt>
                 <dd>{formatEuro(totals.vat)}</dd>
               </div>
               <div>
-                <dt>Gesamtsumme</dt>
+                <dt>{t('reno.totalGross')}</dt>
                 <dd>{formatEuro(totals.gross)}</dd>
               </div>
             </dl>
 
             <div className="renocalc-live__meta">
-              <span>{totals.activeCount} Positionen</span>
-              <span>{state.livingArea} qm</span>
-              <span>{formatEuro(totals.perM2)} netto / qm</span>
+              <span>{t('reno.itemsCount', { count: totals.activeCount })}</span>
+              <span>{state.livingArea} {t('reno.areaUnit')}</span>
+              <span>{t('reno.netPerM2', { value: formatEuro(totals.perM2) })}</span>
             </div>
 
             <div className="renocalc-live__breakdown">
               {categoryBreakdown.slice(0, 6).map((category) => (
                 <div className="renocalc-live__row" key={category.id}>
                   <span>
-                    <strong>{category.label}</strong>
-                    <small>{category.activeCount} von {category.totalCount} Positionen</small>
+                    <strong>{localizeTitle(category.label)}</strong>
+                    <small>{t('reno.itemsOf', { active: category.activeCount, total: category.totalCount })}</small>
                   </span>
                   <em>{formatEuro(category.subtotal)}</em>
                 </div>
               ))}
             </div>
 
-            <p>Vorab-Schätzung auf Basis der ausgewählten Positionen. Verbindliche Preise nach Aufmaß, Prüfung und Materialbemusterung.</p>
+            <p>{t('reno.disclaimer')}</p>
 
             <CalculatorPdfSender handoff={handoff} />
 
             <Link className="btn btn--solid" to="/blitz-angebot" state={{ kalkulator: handoff }}>
-              Als Angebot anfragen <span className="arrow">&gt;</span>
+              {t('reno.requestOffer')} <span className="arrow">&gt;</span>
             </Link>
           </div>
         </aside>

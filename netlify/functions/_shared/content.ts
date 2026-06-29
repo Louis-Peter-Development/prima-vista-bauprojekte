@@ -3,6 +3,21 @@ import type { PostModel } from './db';
 export type PostStatus = 'draft' | 'published';
 export type TiptapDoc = Record<string, unknown>;
 
+/** One language's resolved content (en/it). German lives in the post top-level. */
+export type LocalizedContent = {
+  title: string;
+  body: TiptapDoc;
+  excerpt: string;
+  readingTime: number;
+};
+
+/** Optional per-language overrides on a post. Absent ⇒ German fallback. */
+export type PostTranslations = {
+  en?: LocalizedContent;
+  it?: LocalizedContent;
+  fr?: LocalizedContent;
+};
+
 export function sanitizePlainText(value: string, max = 4000): string {
   return value
     .replace(/<[^>]*>/g, '')
