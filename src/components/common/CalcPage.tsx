@@ -33,7 +33,7 @@ export default function CalcPage({ pageKey, crumbNumber, backgroundImage, classN
   const { t } = useTranslation('pages');
   const base = `calc.${pageKey}`;
   const meta = t(`${base}.meta`, { returnObjects: true }) as MetaItem[];
-  usePageTitle(t(`${base}.metaTitle`));
+  usePageTitle(t(`${base}.metaTitle`), t(`${base}.lede`));
 
   return (
     <>

@@ -27,7 +27,7 @@ type Props = {
 export default function GewerkePage({ tradeKey, crumbNumber, backgroundImage, photoSet, className, children }: Props) {
   const { t } = useTranslation('pages');
   const base = `trade.${tradeKey}`;
-  usePageTitle(t(`${base}.metaTitle`));
+  usePageTitle(t(`${base}.metaTitle`), t(`${base}.lede`));
 
   return (
     <>
