@@ -202,7 +202,9 @@
     "gewerke": "Trades",
     "gewerkeCount": "<em>{{count}}</em> of {{total}} selected",
     "multiLevelOnly": "For multi-storey premises only",
-    "configHint": "Choose your preferred configuration"
+    "configHint": "Choose your preferred configuration",
+    "floorplanAlt": "Example floor plan: {{label}}",
+    "floorplanCaption": "Example floor plan — {{area}} m² living area"
   },
   "reno": {
     "aria": "Renovation configurator",
@@ -497,271 +499,763 @@
       "field": "Waterproofing system",
       "hint": "Choose your waterproofing method",
       "types": {
-        "abdichtung": { "label": "Complete waterproofing", "detail": "Full package" },
-        "abdichtungHorizontal": { "label": "Horizontal waterproofing", "detail": "Horizontal barrier" },
-        "abdichtungPerimeter": { "label": "Perimeter waterproofing", "detail": "External waterproofing" },
-        "abdichtungKeller": { "label": "Basement waterproofing (internal)", "detail": "Internal waterproofing" }
+        "abdichtung": {
+          "label": "Complete waterproofing",
+          "detail": "Full package"
+        },
+        "abdichtungHorizontal": {
+          "label": "Horizontal waterproofing",
+          "detail": "Horizontal barrier"
+        },
+        "abdichtungPerimeter": {
+          "label": "Perimeter waterproofing",
+          "detail": "External waterproofing"
+        },
+        "abdichtungKeller": {
+          "label": "Basement waterproofing (internal)",
+          "detail": "Internal waterproofing"
+        }
       }
     },
     "bad": {
       "field": "Bathroom configuration",
       "types": {
-        "badGaeste": { "label": "Guest WC", "detail": "All variants" },
-        "badKomplett": { "label": "Tub & shower", "detail": "Complete bathroom" },
-        "badWanne": { "label": "Bathroom with tub", "detail": "Tub only" },
-        "badDusche": { "label": "Bathroom with shower", "detail": "Shower only" },
-        "badWhirlpool": { "label": "Bathroom with whirlpool", "detail": "Whirlpool only" },
-        "badWhirlpoolDusche": { "label": "Whirlpool & shower", "detail": "Luxury complete bathroom" },
-        "badBarrierefrei": { "label": "Accessible bathroom", "detail": "Wheelchair-accessible" }
+        "badGaeste": {
+          "label": "Guest WC",
+          "detail": "All variants"
+        },
+        "badKomplett": {
+          "label": "Tub & shower",
+          "detail": "Complete bathroom"
+        },
+        "badWanne": {
+          "label": "Bathroom with tub",
+          "detail": "Tub only"
+        },
+        "badDusche": {
+          "label": "Bathroom with shower",
+          "detail": "Shower only"
+        },
+        "badWhirlpool": {
+          "label": "Bathroom with whirlpool",
+          "detail": "Whirlpool only"
+        },
+        "badWhirlpoolDusche": {
+          "label": "Whirlpool & shower",
+          "detail": "Luxury complete bathroom"
+        },
+        "badBarrierefrei": {
+          "label": "Accessible bathroom",
+          "detail": "Wheelchair-accessible"
+        }
       }
     },
     "barrierefrei": {
       "field": "Requirement",
       "hint": "Choose your preferred concept",
       "types": {
-        "barrierefreiDusche": { "label": "Level-access shower", "detail": "Conversion to a flush shower" },
-        "barrierefreiWc": { "label": "WC & washbasin", "detail": "Roll-under & wheelchair-accessible" },
-        "barrierefreiSenioren": { "label": "Senior-friendly bathroom", "detail": "Non-slip, grab rails & partial renovation" },
-        "barrierefreiRollstuhl": { "label": "Wheelchair-accessible", "detail": "Full conversion to DIN 18040-2" }
+        "barrierefreiDusche": {
+          "label": "Level-access shower",
+          "detail": "Conversion to a flush shower"
+        },
+        "barrierefreiWc": {
+          "label": "WC & washbasin",
+          "detail": "Roll-under & wheelchair-accessible"
+        },
+        "barrierefreiSenioren": {
+          "label": "Senior-friendly bathroom",
+          "detail": "Non-slip, grab rails & partial renovation"
+        },
+        "barrierefreiRollstuhl": {
+          "label": "Wheelchair-accessible",
+          "detail": "Full conversion to DIN 18040-2"
+        }
       }
     },
     "boden": {
       "field": "Floor covering",
       "hint": "Choose the calculator you need",
       "types": {
-        "boedenParkettVerlegung": { "label": "Parquet", "detail": "Laying" },
-        "boedenLaminatVerlegung": { "label": "Laminate", "detail": "Laying" },
-        "boedenFliesenVerlegung": { "label": "Tiles", "detail": "Laying" },
-        "boedenSockelleisten": { "label": "Skirting boards", "detail": "Laying" },
-        "boedenParkettAufbereiten": { "label": "Parquet", "detail": "Refinishing" },
-        "boedenKorkboden": { "label": "Cork flooring", "detail": "Laying" },
-        "boedenVinyl": { "label": "Vinyl or linoleum", "detail": "Laying" },
-        "boedenEstrichplatten": { "label": "Screed panels", "detail": "Laying" },
-        "boedenSichtestrich": { "label": "Exposed screed", "detail": "Laying" },
-        "boedenTeppich": { "label": "Carpet", "detail": "Laying" },
-        "boedenAlles": { "label": "All flooring work", "detail": "Lump sum" }
+        "boedenParkettVerlegung": {
+          "label": "Parquet",
+          "detail": "Laying"
+        },
+        "boedenLaminatVerlegung": {
+          "label": "Laminate",
+          "detail": "Laying"
+        },
+        "boedenFliesenVerlegung": {
+          "label": "Tiles",
+          "detail": "Laying"
+        },
+        "boedenSockelleisten": {
+          "label": "Skirting boards",
+          "detail": "Laying"
+        },
+        "boedenParkettAufbereiten": {
+          "label": "Parquet",
+          "detail": "Refinishing"
+        },
+        "boedenKorkboden": {
+          "label": "Cork flooring",
+          "detail": "Laying"
+        },
+        "boedenVinyl": {
+          "label": "Vinyl or linoleum",
+          "detail": "Laying"
+        },
+        "boedenEstrichplatten": {
+          "label": "Screed panels",
+          "detail": "Laying"
+        },
+        "boedenSichtestrich": {
+          "label": "Exposed screed",
+          "detail": "Laying"
+        },
+        "boedenTeppich": {
+          "label": "Carpet",
+          "detail": "Laying"
+        },
+        "boedenAlles": {
+          "label": "All flooring work",
+          "detail": "Lump sum"
+        }
       }
     },
     "dach": {
       "field": "Roof variant",
       "hint": "Choose the calculator you need",
       "types": {
-        "dachAlles": { "label": "All roof renovation", "detail": "Complete roof" },
-        "dachNeubedachung": { "label": "Re-roofing", "detail": "Roof covering" },
-        "dachDachstuhl": { "label": "Roof truss", "detail": "Structure" },
-        "dachInnenausbau": { "label": "Roof interior fit-out", "detail": "Roof space" },
-        "dachDaemmung": { "label": "Roof insulation", "detail": "Energy efficiency" },
-        "dachGauben": { "label": "Dormers", "detail": "More space" },
-        "dachFenster": { "label": "Roof windows", "detail": "Daylight" },
-        "dachanhebung": { "label": "Hydraulic roof raising", "detail": "Storey addition" },
-        "flachdach": { "label": "Flat-roof coating", "detail": "Flat roof" },
-        "dachbodenDaemmung": { "label": "Loft floor insulation", "detail": "Top-floor ceiling" }
+        "dachAlles": {
+          "label": "All roof renovation",
+          "detail": "Complete roof"
+        },
+        "dachNeubedachung": {
+          "label": "Re-roofing",
+          "detail": "Roof covering"
+        },
+        "dachDachstuhl": {
+          "label": "Roof truss",
+          "detail": "Structure"
+        },
+        "dachInnenausbau": {
+          "label": "Roof interior fit-out",
+          "detail": "Roof space"
+        },
+        "dachDaemmung": {
+          "label": "Roof insulation",
+          "detail": "Energy efficiency"
+        },
+        "dachGauben": {
+          "label": "Dormers",
+          "detail": "More space"
+        },
+        "dachFenster": {
+          "label": "Roof windows",
+          "detail": "Daylight"
+        },
+        "dachanhebung": {
+          "label": "Hydraulic roof raising",
+          "detail": "Storey addition"
+        },
+        "flachdach": {
+          "label": "Flat-roof coating",
+          "detail": "Flat roof"
+        },
+        "dachbodenDaemmung": {
+          "label": "Loft floor insulation",
+          "detail": "Top-floor ceiling"
+        }
       }
     },
     "elektro": {
       "field": "Electrical work",
       "hint": "Choose the calculator you need",
       "types": {
-        "elektroAlles": { "label": "All electrical work", "detail": "Full package" },
-        "elektroNeuinstallation": { "label": "New installation", "detail": "Per floor" },
-        "elektroSicherungskasten": { "label": "Fuse box", "detail": "Distribution" },
-        "elektroNetzwerk": { "label": "Network & bus", "detail": "Data & KNX" },
-        "elektroEinzelinstallation": { "label": "Single installation", "detail": "Feed line & element" },
-        "elektroLichttechnik": { "label": "Lighting technology", "detail": "Lighting" },
-        "elektroFreeHome": { "label": "Free Home", "detail": "Smart home" },
-        "elektroRolladen": { "label": "Roller-shutter control", "detail": "Shading" },
-        "elektroSprechanlagen": { "label": "Intercom systems", "detail": "Door communication" }
+        "elektroAlles": {
+          "label": "All electrical work",
+          "detail": "Full package"
+        },
+        "elektroNeuinstallation": {
+          "label": "New installation",
+          "detail": "Per floor"
+        },
+        "elektroSicherungskasten": {
+          "label": "Fuse box",
+          "detail": "Distribution"
+        },
+        "elektroNetzwerk": {
+          "label": "Network & bus",
+          "detail": "Data & KNX"
+        },
+        "elektroEinzelinstallation": {
+          "label": "Single installation",
+          "detail": "Feed line & element"
+        },
+        "elektroLichttechnik": {
+          "label": "Lighting technology",
+          "detail": "Lighting"
+        },
+        "elektroFreeHome": {
+          "label": "Free Home",
+          "detail": "Smart home"
+        },
+        "elektroRolladen": {
+          "label": "Roller-shutter control",
+          "detail": "Shading"
+        },
+        "elektroSprechanlagen": {
+          "label": "Intercom systems",
+          "detail": "Door communication"
+        }
       }
     },
     "fassade": {
       "field": "Façade work",
       "hint": "Choose the calculator you need",
       "types": {
-        "fassadeAlles": { "label": "All façade work", "detail": "All variants" },
-        "fassadeDaemmung": { "label": "Insulation & coating", "detail": "ETICS" },
-        "fassadeAnstrich": { "label": "Coating", "detail": "Façade" },
-        "fassadeHolzverkleidung": { "label": "Timber cladding", "detail": "Façade" },
-        "fassadeSockeldaemmung": { "label": "Plinth insulation", "detail": "Plinth" },
-        "fassadeKlinkerSteinriemchen": { "label": "Brick slips", "detail": "Cladding" },
-        "fassadePlattenverkleidung": { "label": "Panel cladding", "detail": "Façade" },
-        "fassadeNatursteinverkleidung": { "label": "Natural stone", "detail": "Cladding" },
-        "fassadeVorhangfassade": { "label": "Curtain wall", "detail": "Façade" },
-        "fassadeVerblendmauerwerk": { "label": "Facing masonry", "detail": "Façade" }
+        "fassadeAlles": {
+          "label": "All façade work",
+          "detail": "All variants"
+        },
+        "fassadeDaemmung": {
+          "label": "Insulation & coating",
+          "detail": "ETICS"
+        },
+        "fassadeAnstrich": {
+          "label": "Coating",
+          "detail": "Façade"
+        },
+        "fassadeHolzverkleidung": {
+          "label": "Timber cladding",
+          "detail": "Façade"
+        },
+        "fassadeSockeldaemmung": {
+          "label": "Plinth insulation",
+          "detail": "Plinth"
+        },
+        "fassadeKlinkerSteinriemchen": {
+          "label": "Brick slips",
+          "detail": "Cladding"
+        },
+        "fassadePlattenverkleidung": {
+          "label": "Panel cladding",
+          "detail": "Façade"
+        },
+        "fassadeNatursteinverkleidung": {
+          "label": "Natural stone",
+          "detail": "Cladding"
+        },
+        "fassadeVorhangfassade": {
+          "label": "Curtain wall",
+          "detail": "Façade"
+        },
+        "fassadeVerblendmauerwerk": {
+          "label": "Facing masonry",
+          "detail": "Façade"
+        }
       }
     },
     "fenster": {
       "field": "Window work",
       "hint": "Choose the calculator you need",
       "types": {
-        "fensterAlles": { "label": "All window work", "detail": "All variants" },
-        "fensterKunststoff": { "label": "PVC windows", "detail": "Installation" },
-        "fensterHolz": { "label": "Timber windows", "detail": "Installation" },
-        "fensterAluminium": { "label": "Aluminium windows", "detail": "Installation" },
-        "fensterFensterlaeden": { "label": "Shutters", "detail": "Installation" },
-        "fensterRolladen": { "label": "Roller shutter", "detail": "Installation" },
-        "fensterDachfenster": { "label": "Roof windows", "detail": "Installation" },
-        "fensterBalkontueren": { "label": "Balcony doors", "detail": "Installation" },
-        "fensterCarportGaragentore": { "label": "Garage doors", "detail": "Carport" },
-        "fensterFensterLackierung": { "label": "Window painting", "detail": "Painting" },
-        "fensterMarkisen": { "label": "Awnings", "detail": "Installation" }
+        "fensterAlles": {
+          "label": "All window work",
+          "detail": "All variants"
+        },
+        "fensterKunststoff": {
+          "label": "PVC windows",
+          "detail": "Installation"
+        },
+        "fensterHolz": {
+          "label": "Timber windows",
+          "detail": "Installation"
+        },
+        "fensterAluminium": {
+          "label": "Aluminium windows",
+          "detail": "Installation"
+        },
+        "fensterFensterlaeden": {
+          "label": "Shutters",
+          "detail": "Installation"
+        },
+        "fensterRolladen": {
+          "label": "Roller shutter",
+          "detail": "Installation"
+        },
+        "fensterDachfenster": {
+          "label": "Roof windows",
+          "detail": "Installation"
+        },
+        "fensterBalkontueren": {
+          "label": "Balcony doors",
+          "detail": "Installation"
+        },
+        "fensterCarportGaragentore": {
+          "label": "Garage doors",
+          "detail": "Carport"
+        },
+        "fensterFensterLackierung": {
+          "label": "Window painting",
+          "detail": "Painting"
+        },
+        "fensterMarkisen": {
+          "label": "Awnings",
+          "detail": "Installation"
+        }
       }
     },
     "garten": {
       "field": "Outdoor work",
       "hint": "Choose the calculator you need",
       "types": {
-        "gartenAlles": { "label": "All garden work", "detail": "All variants" },
-        "gartenBeleuchtung": { "label": "Lighting", "detail": "Outdoors" },
-        "gartenBlockstufen": { "label": "Block steps", "detail": "Outdoors" },
-        "gartenCarport": { "label": "Carport", "detail": "Installation" },
-        "gartenHochbeete": { "label": "Raised beds", "detail": "Garden" },
-        "gartenGartenhaus": { "label": "Garden house", "detail": "Installation" },
-        "gartenGartenmauern": { "label": "Garden walls", "detail": "Masonry" },
-        "gartenGeraetehaus": { "label": "Tool shed", "detail": "Installation" },
-        "gartenPavillon": { "label": "Pavilion", "detail": "Installation" },
-        "gartenTerrassenHolz": { "label": "Timber terrace", "detail": "Decking" },
-        "gartenTerrassenStein": { "label": "Stone terrace", "detail": "Paving" },
-        "gartenUeberdachung": { "label": "Roofing", "detail": "Terrace" },
-        "gartenWintergarten": { "label": "Conservatory", "detail": "Installation" },
-        "gartenZaunanlagen": { "label": "Fencing systems", "detail": "Outdoors" },
-        "gartenWasserwirtschaft": { "label": "Water management", "detail": "Connections" }
+        "gartenAlles": {
+          "label": "All garden work",
+          "detail": "All variants"
+        },
+        "gartenBeleuchtung": {
+          "label": "Lighting",
+          "detail": "Outdoors"
+        },
+        "gartenBlockstufen": {
+          "label": "Block steps",
+          "detail": "Outdoors"
+        },
+        "gartenCarport": {
+          "label": "Carport",
+          "detail": "Installation"
+        },
+        "gartenHochbeete": {
+          "label": "Raised beds",
+          "detail": "Garden"
+        },
+        "gartenGartenhaus": {
+          "label": "Garden house",
+          "detail": "Installation"
+        },
+        "gartenGartenmauern": {
+          "label": "Garden walls",
+          "detail": "Masonry"
+        },
+        "gartenGeraetehaus": {
+          "label": "Tool shed",
+          "detail": "Installation"
+        },
+        "gartenPavillon": {
+          "label": "Pavilion",
+          "detail": "Installation"
+        },
+        "gartenTerrassenHolz": {
+          "label": "Timber terrace",
+          "detail": "Decking"
+        },
+        "gartenTerrassenStein": {
+          "label": "Stone terrace",
+          "detail": "Paving"
+        },
+        "gartenUeberdachung": {
+          "label": "Roofing",
+          "detail": "Terrace"
+        },
+        "gartenWintergarten": {
+          "label": "Conservatory",
+          "detail": "Installation"
+        },
+        "gartenZaunanlagen": {
+          "label": "Fencing systems",
+          "detail": "Outdoors"
+        },
+        "gartenWasserwirtschaft": {
+          "label": "Water management",
+          "detail": "Connections"
+        }
       }
     },
     "heiz": {
       "field": "Heating work",
       "hint": "Choose the calculator you need",
       "types": {
-        "heizmethodenHeizkoerper": { "label": "Radiators", "detail": "Installation & material" },
-        "heizmethodenHeizstraenge": { "label": "Heating risers", "detail": "Surface / concealed" },
-        "heizmethodenFussbodenheizung": { "label": "Underfloor heating", "detail": "Surface heating" },
-        "heizmethodenWaermepumpe": { "label": "Heat pump", "detail": "Air-source heat pump" },
-        "heizmethodenGasHeizung": { "label": "Gas heating", "detail": "Condensing technology" },
-        "heizmethodenPelletofen": { "label": "Pellet stove", "detail": "Pellet heat" },
-        "heizmethodenSaunaofen": { "label": "Sauna heater", "detail": "Sauna & accessories" }
+        "heizmethodenHeizkoerper": {
+          "label": "Radiators",
+          "detail": "Installation & material"
+        },
+        "heizmethodenHeizstraenge": {
+          "label": "Heating risers",
+          "detail": "Surface / concealed"
+        },
+        "heizmethodenFussbodenheizung": {
+          "label": "Underfloor heating",
+          "detail": "Surface heating"
+        },
+        "heizmethodenWaermepumpe": {
+          "label": "Heat pump",
+          "detail": "Air-source heat pump"
+        },
+        "heizmethodenGasHeizung": {
+          "label": "Gas heating",
+          "detail": "Condensing technology"
+        },
+        "heizmethodenPelletofen": {
+          "label": "Pellet stove",
+          "detail": "Pellet heat"
+        },
+        "heizmethodenSaunaofen": {
+          "label": "Sauna heater",
+          "detail": "Sauna & accessories"
+        }
       }
     },
     "kueche": {
       "field": "Kitchen work",
       "hint": "Choose the calculator you need",
       "types": {
-        "kuecheAlles": { "label": "All kitchen work", "detail": "All variants" },
-        "kuecheKomplettkueche": { "label": "Complete kitchen", "detail": "Installation" },
-        "kuecheSingleMinikuechen": { "label": "Single / mini kitchen", "detail": "Installation" },
-        "kuecheBuerokueche": { "label": "Office kitchen", "detail": "Installation" },
-        "kuecheEinbaukueche": { "label": "Fitted kitchen", "detail": "Installation" },
-        "kuecheKuechenzeile": { "label": "Kitchenette", "detail": "Installation" },
-        "kuecheArbeitsplatteSpuele": { "label": "Worktop & sink", "detail": "Add-on service" },
-        "kuecheDunstabzugshaube": { "label": "Extractor hood", "detail": "Installation" },
-        "kuecheBodenDecken": { "label": "Floor & ceilings", "detail": "Kitchen" },
-        "kuecheElektroBeleuchtung": { "label": "Electrics & lighting", "detail": "Kitchen" },
-        "kuecheWasserinstallation": { "label": "Water installation", "detail": "Kitchen" }
+        "kuecheAlles": {
+          "label": "All kitchen work",
+          "detail": "All variants"
+        },
+        "kuecheKomplettkueche": {
+          "label": "Complete kitchen",
+          "detail": "Installation"
+        },
+        "kuecheSingleMinikuechen": {
+          "label": "Single / mini kitchen",
+          "detail": "Installation"
+        },
+        "kuecheBuerokueche": {
+          "label": "Office kitchen",
+          "detail": "Installation"
+        },
+        "kuecheEinbaukueche": {
+          "label": "Fitted kitchen",
+          "detail": "Installation"
+        },
+        "kuecheKuechenzeile": {
+          "label": "Kitchenette",
+          "detail": "Installation"
+        },
+        "kuecheArbeitsplatteSpuele": {
+          "label": "Worktop & sink",
+          "detail": "Add-on service"
+        },
+        "kuecheDunstabzugshaube": {
+          "label": "Extractor hood",
+          "detail": "Installation"
+        },
+        "kuecheBodenDecken": {
+          "label": "Floor & ceilings",
+          "detail": "Kitchen"
+        },
+        "kuecheElektroBeleuchtung": {
+          "label": "Electrics & lighting",
+          "detail": "Kitchen"
+        },
+        "kuecheWasserinstallation": {
+          "label": "Water installation",
+          "detail": "Kitchen"
+        }
       }
     },
     "maler": {
       "field": "Painting work",
       "hint": "Choose the calculator you need",
       "types": {
-        "malerAlles": { "label": "All painting work", "detail": "All variants" },
-        "malerAnstrich": { "label": "Coating", "detail": "Wall surfaces" },
-        "malerGlaettenAnstrich": { "label": "Smoothing & coating", "detail": "Walls" },
-        "malerTapezieren": { "label": "Wallpapering", "detail": "Wall surfaces" },
-        "malerDeckenLackierung": { "label": "Timber ceilings", "detail": "Painting" },
-        "malerHeizkoerperLackierung": { "label": "Radiators", "detail": "Painting" },
-        "malerFensterLackierung": { "label": "Windows", "detail": "Painting" },
-        "malerTuerenLackierung": { "label": "Doors", "detail": "Painting" },
-        "malerTreppenGelaenderLackierung": { "label": "Stairs/railings", "detail": "Painting" },
-        "malerFassadenAnstrich": { "label": "Façade coating", "detail": "External surfaces" }
+        "malerAlles": {
+          "label": "All painting work",
+          "detail": "All variants"
+        },
+        "malerAnstrich": {
+          "label": "Coating",
+          "detail": "Wall surfaces"
+        },
+        "malerGlaettenAnstrich": {
+          "label": "Smoothing & coating",
+          "detail": "Walls"
+        },
+        "malerTapezieren": {
+          "label": "Wallpapering",
+          "detail": "Wall surfaces"
+        },
+        "malerDeckenLackierung": {
+          "label": "Timber ceilings",
+          "detail": "Painting"
+        },
+        "malerHeizkoerperLackierung": {
+          "label": "Radiators",
+          "detail": "Painting"
+        },
+        "malerFensterLackierung": {
+          "label": "Windows",
+          "detail": "Painting"
+        },
+        "malerTuerenLackierung": {
+          "label": "Doors",
+          "detail": "Painting"
+        },
+        "malerTreppenGelaenderLackierung": {
+          "label": "Stairs/railings",
+          "detail": "Painting"
+        },
+        "malerFassadenAnstrich": {
+          "label": "Façade coating",
+          "detail": "External surfaces"
+        }
       }
     },
     "rohbau": {
       "field": "Shell construction",
       "hint": "Choose the calculator you need",
       "types": {
-        "rohbauAlles": { "label": "All shell construction", "detail": "All variants" },
-        "rohbauAbbruch": { "label": "Demolition", "detail": "Services" },
-        "rohbauEstrich": { "label": "Screed", "detail": "Laying" },
-        "rohbauStahltraeger": { "label": "Steel beam", "detail": "Installation" },
-        "rohbauVerputzen": { "label": "Plastering", "detail": "Walls" },
-        "rohbauLichtschaechte": { "label": "Light wells", "detail": "Installation" },
-        "rohbauSchornstein": { "label": "Chimney", "detail": "Construction" },
-        "rohbauMauerwerk": { "label": "Masonry", "detail": "Building" },
-        "rohbauPflastern": { "label": "Paving", "detail": "Outdoors" }
+        "rohbauAlles": {
+          "label": "All shell construction",
+          "detail": "All variants"
+        },
+        "rohbauAbbruch": {
+          "label": "Demolition",
+          "detail": "Services"
+        },
+        "rohbauEstrich": {
+          "label": "Screed",
+          "detail": "Laying"
+        },
+        "rohbauStahltraeger": {
+          "label": "Steel beam",
+          "detail": "Installation"
+        },
+        "rohbauVerputzen": {
+          "label": "Plastering",
+          "detail": "Walls"
+        },
+        "rohbauLichtschaechte": {
+          "label": "Light wells",
+          "detail": "Installation"
+        },
+        "rohbauSchornstein": {
+          "label": "Chimney",
+          "detail": "Construction"
+        },
+        "rohbauMauerwerk": {
+          "label": "Masonry",
+          "detail": "Building"
+        },
+        "rohbauPflastern": {
+          "label": "Paving",
+          "detail": "Outdoors"
+        }
       }
     },
     "treppen": {
       "field": "Stairs work",
       "hint": "Choose the calculator you need",
       "types": {
-        "treppenAlles": { "label": "All stairs work", "detail": "All variants" },
-        "treppenHolztreppe": { "label": "Timber staircase", "detail": "Installation" },
-        "treppenBetontreppe": { "label": "Concrete staircase", "detail": "Installation" },
-        "treppenDurchbruch": { "label": "Stairwell opening", "detail": "Breakthrough" },
-        "treppenGelaender": { "label": "Railing", "detail": "Installation" },
-        "treppenAussentreppe": { "label": "External staircase", "detail": "Installation" },
-        "treppenRaumspartreppe": { "label": "Space-saving staircase", "detail": "Installation" },
-        "treppenDachbodentreppe": { "label": "Loft ladder", "detail": "Installation" },
-        "treppenSpindeltreppe": { "label": "Spiral staircase", "detail": "Installation" },
-        "treppenAufbereiten": { "label": "Stair refurbishment", "detail": "Renovation" },
-        "treppenBelegung": { "label": "Stair covering", "detail": "Covering" }
+        "treppenAlles": {
+          "label": "All stairs work",
+          "detail": "All variants"
+        },
+        "treppenHolztreppe": {
+          "label": "Timber staircase",
+          "detail": "Installation"
+        },
+        "treppenBetontreppe": {
+          "label": "Concrete staircase",
+          "detail": "Installation"
+        },
+        "treppenDurchbruch": {
+          "label": "Stairwell opening",
+          "detail": "Breakthrough"
+        },
+        "treppenGelaender": {
+          "label": "Railing",
+          "detail": "Installation"
+        },
+        "treppenAussentreppe": {
+          "label": "External staircase",
+          "detail": "Installation"
+        },
+        "treppenRaumspartreppe": {
+          "label": "Space-saving staircase",
+          "detail": "Installation"
+        },
+        "treppenDachbodentreppe": {
+          "label": "Loft ladder",
+          "detail": "Installation"
+        },
+        "treppenSpindeltreppe": {
+          "label": "Spiral staircase",
+          "detail": "Installation"
+        },
+        "treppenAufbereiten": {
+          "label": "Stair refurbishment",
+          "detail": "Renovation"
+        },
+        "treppenBelegung": {
+          "label": "Stair covering",
+          "detail": "Covering"
+        }
       }
     },
     "trockenbau": {
       "field": "Drywall work",
       "hint": "Choose the calculator you need",
       "types": {
-        "trockenbauAlles": { "label": "All drywall work", "detail": "All variants" },
-        "trockenbauDecken": { "label": "Suspended ceilings", "detail": "Ceilings" },
-        "trockenbauWaendeStellen": { "label": "Erecting walls", "detail": "Stud framing" },
-        "trockenbauWaendeVerkleiden": { "label": "Cladding walls", "detail": "Boarding" },
-        "trockenbauEstrich": { "label": "Screed/floor", "detail": "Drywall" },
-        "trockenbauDachschraegen": { "label": "Sloped ceilings", "detail": "Fit-out" }
+        "trockenbauAlles": {
+          "label": "All drywall work",
+          "detail": "All variants"
+        },
+        "trockenbauDecken": {
+          "label": "Suspended ceilings",
+          "detail": "Ceilings"
+        },
+        "trockenbauWaendeStellen": {
+          "label": "Erecting walls",
+          "detail": "Stud framing"
+        },
+        "trockenbauWaendeVerkleiden": {
+          "label": "Cladding walls",
+          "detail": "Boarding"
+        },
+        "trockenbauEstrich": {
+          "label": "Screed/floor",
+          "detail": "Drywall"
+        },
+        "trockenbauDachschraegen": {
+          "label": "Sloped ceilings",
+          "detail": "Fit-out"
+        }
       }
     },
     "tueren": {
       "field": "Door work",
       "hint": "Choose the calculator you need",
       "types": {
-        "tuerenAlles": { "label": "All door work", "detail": "All variants" },
-        "tuerenZimmertueren": { "label": "Interior doors", "detail": "Installation" },
-        "tuerenSchiebetueren": { "label": "Sliding doors", "detail": "Installation" },
-        "tuerenGlastueren": { "label": "Glass doors", "detail": "Installation" },
-        "tuerenBalkonTerrassen": { "label": "Balcony/terrace", "detail": "Doors" },
-        "tuerenHaustueren": { "label": "Front doors", "detail": "Installation" },
-        "tuerenKellertueren": { "label": "Basement doors", "detail": "Installation" },
-        "tuerenGaragentore": { "label": "Garage doors", "detail": "Installation" },
-        "tuerenToreEinfahrt": { "label": "Gates/driveway", "detail": "Installation" }
+        "tuerenAlles": {
+          "label": "All door work",
+          "detail": "All variants"
+        },
+        "tuerenZimmertueren": {
+          "label": "Interior doors",
+          "detail": "Installation"
+        },
+        "tuerenSchiebetueren": {
+          "label": "Sliding doors",
+          "detail": "Installation"
+        },
+        "tuerenGlastueren": {
+          "label": "Glass doors",
+          "detail": "Installation"
+        },
+        "tuerenBalkonTerrassen": {
+          "label": "Balcony/terrace",
+          "detail": "Doors"
+        },
+        "tuerenHaustueren": {
+          "label": "Front doors",
+          "detail": "Installation"
+        },
+        "tuerenKellertueren": {
+          "label": "Basement doors",
+          "detail": "Installation"
+        },
+        "tuerenGaragentore": {
+          "label": "Garage doors",
+          "detail": "Installation"
+        },
+        "tuerenToreEinfahrt": {
+          "label": "Gates/driveway",
+          "detail": "Installation"
+        }
       }
     },
     "wasser": {
       "field": "Plumbing work",
       "hint": "Choose the calculator you need",
       "types": {
-        "wasserAlles": { "label": "All water work", "detail": "All variants" },
-        "wasserBadezimmer": { "label": "Bathroom", "detail": "Water installation" },
-        "wasserGaesteWc": { "label": "Guest WC", "detail": "Water installation" },
-        "wasserKueche": { "label": "Kitchen", "detail": "Water installation" },
-        "wasserWaschmaschine": { "label": "Washing machine", "detail": "Connection" },
-        "wasserKeller": { "label": "Basement", "detail": "Water installation" },
-        "wasserGarten": { "label": "Garden", "detail": "Water installation" },
-        "wasserSpuelkasten": { "label": "Cistern", "detail": "Replacement" },
-        "wasserHauptstrang": { "label": "Main riser", "detail": "Pipe" }
+        "wasserAlles": {
+          "label": "All water work",
+          "detail": "All variants"
+        },
+        "wasserBadezimmer": {
+          "label": "Bathroom",
+          "detail": "Water installation"
+        },
+        "wasserGaesteWc": {
+          "label": "Guest WC",
+          "detail": "Water installation"
+        },
+        "wasserKueche": {
+          "label": "Kitchen",
+          "detail": "Water installation"
+        },
+        "wasserWaschmaschine": {
+          "label": "Washing machine",
+          "detail": "Connection"
+        },
+        "wasserKeller": {
+          "label": "Basement",
+          "detail": "Water installation"
+        },
+        "wasserGarten": {
+          "label": "Garden",
+          "detail": "Water installation"
+        },
+        "wasserSpuelkasten": {
+          "label": "Cistern",
+          "detail": "Replacement"
+        },
+        "wasserHauptstrang": {
+          "label": "Main riser",
+          "detail": "Pipe"
+        }
       }
     },
     "zaeune": {
       "field": "Fencing work",
       "hint": "Choose the calculator you need",
       "types": {
-        "zaeuneAluminium": { "label": "Aluminium fence", "detail": "Installation" },
-        "zaeuneHolz": { "label": "Timber fence", "detail": "Installation" },
-        "zaeuneGlas": { "label": "Glass fence", "detail": "Installation" },
-        "zaeuneMetall": { "label": "Metal fence", "detail": "Installation" },
-        "zaeuneDoppelstab": { "label": "Double-bar panels", "detail": "Installation" },
-        "zaeuneGabionen": { "label": "Gabion fence", "detail": "Installation" },
-        "zaeuneSichtschutz": { "label": "Privacy fence", "detail": "Installation" },
-        "zaeuneMaschendraht": { "label": "Chain-link fence", "detail": "Installation" },
-        "zaeuneSteck": { "label": "Plug-in fence", "detail": "Installation" },
-        "zaeuneVorgarten": { "label": "Front-garden fence", "detail": "Installation" },
-        "zaeuneSichtschutzstreifen": { "label": "Privacy strips", "detail": "Installation" }
+        "zaeuneAluminium": {
+          "label": "Aluminium fence",
+          "detail": "Installation"
+        },
+        "zaeuneHolz": {
+          "label": "Timber fence",
+          "detail": "Installation"
+        },
+        "zaeuneGlas": {
+          "label": "Glass fence",
+          "detail": "Installation"
+        },
+        "zaeuneMetall": {
+          "label": "Metal fence",
+          "detail": "Installation"
+        },
+        "zaeuneDoppelstab": {
+          "label": "Double-bar panels",
+          "detail": "Installation"
+        },
+        "zaeuneGabionen": {
+          "label": "Gabion fence",
+          "detail": "Installation"
+        },
+        "zaeuneSichtschutz": {
+          "label": "Privacy fence",
+          "detail": "Installation"
+        },
+        "zaeuneMaschendraht": {
+          "label": "Chain-link fence",
+          "detail": "Installation"
+        },
+        "zaeuneSteck": {
+          "label": "Plug-in fence",
+          "detail": "Installation"
+        },
+        "zaeuneVorgarten": {
+          "label": "Front-garden fence",
+          "detail": "Installation"
+        },
+        "zaeuneSichtschutzstreifen": {
+          "label": "Privacy strips",
+          "detail": "Installation"
+        }
       }
     }
   },

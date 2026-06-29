@@ -202,7 +202,9 @@
     "gewerke": "Gewerke",
     "gewerkeCount": "<em>{{count}}</em> von {{total}} gewählt",
     "multiLevelOnly": "Nur für mehrgeschossige Objekte",
-    "configHint": "Wählen Sie Ihre gewünschte Konfiguration"
+    "configHint": "Wählen Sie Ihre gewünschte Konfiguration",
+    "floorplanAlt": "Beispiel-Grundriss: {{label}}",
+    "floorplanCaption": "Beispielhafter Grundriss — {{area}} m² Wohnfläche"
   },
   "reno": {
     "aria": "Renovierung Konfigurator",
@@ -497,271 +499,763 @@
       "field": "Abdichtungssystem",
       "hint": "Wählen Sie Ihre Abdichtungsart",
       "types": {
-        "abdichtung": { "label": "Komplette Abdichtung", "detail": "Komplettpaket" },
-        "abdichtungHorizontal": { "label": "Horizontal-Abdichtung", "detail": "Horizontalsperre" },
-        "abdichtungPerimeter": { "label": "Perimeter-Abdichtung", "detail": "Außenabdichtung" },
-        "abdichtungKeller": { "label": "Keller-Abdichtung (Innen)", "detail": "Innenabdichtung" }
+        "abdichtung": {
+          "label": "Komplette Abdichtung",
+          "detail": "Komplettpaket"
+        },
+        "abdichtungHorizontal": {
+          "label": "Horizontal-Abdichtung",
+          "detail": "Horizontalsperre"
+        },
+        "abdichtungPerimeter": {
+          "label": "Perimeter-Abdichtung",
+          "detail": "Außenabdichtung"
+        },
+        "abdichtungKeller": {
+          "label": "Keller-Abdichtung (Innen)",
+          "detail": "Innenabdichtung"
+        }
       }
     },
     "bad": {
       "field": "Badausstattung",
       "types": {
-        "badGaeste": { "label": "Gäste-WC", "detail": "Alle Varianten" },
-        "badKomplett": { "label": "Wanne & Dusche", "detail": "Komplettbad" },
-        "badWanne": { "label": "Bad mit Wanne", "detail": "Nur mit Badewanne" },
-        "badDusche": { "label": "Bad mit Dusche", "detail": "Nur mit Dusche" },
-        "badWhirlpool": { "label": "Bad mit Whirlpool", "detail": "Nur mit Whirlpool" },
-        "badWhirlpoolDusche": { "label": "Whirlpool & Dusche", "detail": "Luxus Komplettbad" },
-        "badBarrierefrei": { "label": "Barrierefreies Bad", "detail": "Rollstuhlgerecht" }
+        "badGaeste": {
+          "label": "Gäste-WC",
+          "detail": "Alle Varianten"
+        },
+        "badKomplett": {
+          "label": "Wanne & Dusche",
+          "detail": "Komplettbad"
+        },
+        "badWanne": {
+          "label": "Bad mit Wanne",
+          "detail": "Nur mit Badewanne"
+        },
+        "badDusche": {
+          "label": "Bad mit Dusche",
+          "detail": "Nur mit Dusche"
+        },
+        "badWhirlpool": {
+          "label": "Bad mit Whirlpool",
+          "detail": "Nur mit Whirlpool"
+        },
+        "badWhirlpoolDusche": {
+          "label": "Whirlpool & Dusche",
+          "detail": "Luxus Komplettbad"
+        },
+        "badBarrierefrei": {
+          "label": "Barrierefreies Bad",
+          "detail": "Rollstuhlgerecht"
+        }
       }
     },
     "barrierefrei": {
       "field": "Anforderung",
       "hint": "Wählen Sie das gewünschte Konzept",
       "types": {
-        "barrierefreiDusche": { "label": "Ebenerdige Dusche", "detail": "Umbau zur bodengleichen Dusche" },
-        "barrierefreiWc": { "label": "WC & Waschtisch", "detail": "Unterfahrbar & rollstuhlgerecht" },
-        "barrierefreiSenioren": { "label": "Seniorengerechtes Bad", "detail": "Rutschfest, Griffe & Teilsanierung" },
-        "barrierefreiRollstuhl": { "label": "Rollstuhlgerecht", "detail": "Komplettumbau nach DIN 18040-2" }
+        "barrierefreiDusche": {
+          "label": "Ebenerdige Dusche",
+          "detail": "Umbau zur bodengleichen Dusche"
+        },
+        "barrierefreiWc": {
+          "label": "WC & Waschtisch",
+          "detail": "Unterfahrbar & rollstuhlgerecht"
+        },
+        "barrierefreiSenioren": {
+          "label": "Seniorengerechtes Bad",
+          "detail": "Rutschfest, Griffe & Teilsanierung"
+        },
+        "barrierefreiRollstuhl": {
+          "label": "Rollstuhlgerecht",
+          "detail": "Komplettumbau nach DIN 18040-2"
+        }
       }
     },
     "boden": {
       "field": "Belagsart",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "boedenParkettVerlegung": { "label": "Parkett", "detail": "Verlegung" },
-        "boedenLaminatVerlegung": { "label": "Laminat", "detail": "Verlegung" },
-        "boedenFliesenVerlegung": { "label": "Fliesen", "detail": "Verlegung" },
-        "boedenSockelleisten": { "label": "Sockelleisten", "detail": "Verlegung" },
-        "boedenParkettAufbereiten": { "label": "Parkett", "detail": "Aufbereiten" },
-        "boedenKorkboden": { "label": "Korkboden", "detail": "Verlegung" },
-        "boedenVinyl": { "label": "Vinyl o. Linoleum", "detail": "Verlegung" },
-        "boedenEstrichplatten": { "label": "Estrichplatten", "detail": "Verlegung" },
-        "boedenSichtestrich": { "label": "Sichtestrich", "detail": "Verlegung" },
-        "boedenTeppich": { "label": "Teppich", "detail": "Verlegung" },
-        "boedenAlles": { "label": "Alles zu Böden", "detail": "Pauschal" }
+        "boedenParkettVerlegung": {
+          "label": "Parkett",
+          "detail": "Verlegung"
+        },
+        "boedenLaminatVerlegung": {
+          "label": "Laminat",
+          "detail": "Verlegung"
+        },
+        "boedenFliesenVerlegung": {
+          "label": "Fliesen",
+          "detail": "Verlegung"
+        },
+        "boedenSockelleisten": {
+          "label": "Sockelleisten",
+          "detail": "Verlegung"
+        },
+        "boedenParkettAufbereiten": {
+          "label": "Parkett",
+          "detail": "Aufbereiten"
+        },
+        "boedenKorkboden": {
+          "label": "Korkboden",
+          "detail": "Verlegung"
+        },
+        "boedenVinyl": {
+          "label": "Vinyl o. Linoleum",
+          "detail": "Verlegung"
+        },
+        "boedenEstrichplatten": {
+          "label": "Estrichplatten",
+          "detail": "Verlegung"
+        },
+        "boedenSichtestrich": {
+          "label": "Sichtestrich",
+          "detail": "Verlegung"
+        },
+        "boedenTeppich": {
+          "label": "Teppich",
+          "detail": "Verlegung"
+        },
+        "boedenAlles": {
+          "label": "Alles zu Böden",
+          "detail": "Pauschal"
+        }
       }
     },
     "dach": {
       "field": "Dachvariante",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "dachAlles": { "label": "Alles zu Dachsanierung", "detail": "Komplettdach" },
-        "dachNeubedachung": { "label": "Neubedachung", "detail": "Dacheindeckung" },
-        "dachDachstuhl": { "label": "Dachstuhl", "detail": "Konstruktion" },
-        "dachInnenausbau": { "label": "Dach-Innenausbau", "detail": "Dachraum" },
-        "dachDaemmung": { "label": "Dachdämmung", "detail": "Energieeffizienz" },
-        "dachGauben": { "label": "Gauben", "detail": "Mehr Raum" },
-        "dachFenster": { "label": "Dachfenster", "detail": "Belichtung" },
-        "dachanhebung": { "label": "Dachanhebung hydraulisch", "detail": "Aufstockung" },
-        "flachdach": { "label": "Flachdach-Beschichtung", "detail": "Flachdach" },
-        "dachbodenDaemmung": { "label": "Dachboden-Dämmung", "detail": "Geschossdecke" }
+        "dachAlles": {
+          "label": "Alles zu Dachsanierung",
+          "detail": "Komplettdach"
+        },
+        "dachNeubedachung": {
+          "label": "Neubedachung",
+          "detail": "Dacheindeckung"
+        },
+        "dachDachstuhl": {
+          "label": "Dachstuhl",
+          "detail": "Konstruktion"
+        },
+        "dachInnenausbau": {
+          "label": "Dach-Innenausbau",
+          "detail": "Dachraum"
+        },
+        "dachDaemmung": {
+          "label": "Dachdämmung",
+          "detail": "Energieeffizienz"
+        },
+        "dachGauben": {
+          "label": "Gauben",
+          "detail": "Mehr Raum"
+        },
+        "dachFenster": {
+          "label": "Dachfenster",
+          "detail": "Belichtung"
+        },
+        "dachanhebung": {
+          "label": "Dachanhebung hydraulisch",
+          "detail": "Aufstockung"
+        },
+        "flachdach": {
+          "label": "Flachdach-Beschichtung",
+          "detail": "Flachdach"
+        },
+        "dachbodenDaemmung": {
+          "label": "Dachboden-Dämmung",
+          "detail": "Geschossdecke"
+        }
       }
     },
     "elektro": {
       "field": "Elektroleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "elektroAlles": { "label": "Alles zu Elektro", "detail": "Komplettpaket" },
-        "elektroNeuinstallation": { "label": "Neuinstallation", "detail": "Pro Etage" },
-        "elektroSicherungskasten": { "label": "Sicherungskasten", "detail": "Verteilung" },
-        "elektroNetzwerk": { "label": "Netzwerk & Bus", "detail": "Daten & KNX" },
-        "elektroEinzelinstallation": { "label": "Einzelinstallation", "detail": "Zuleitung & Element" },
-        "elektroLichttechnik": { "label": "Lichttechnik", "detail": "Beleuchtung" },
-        "elektroFreeHome": { "label": "Free Home", "detail": "Smart Home" },
-        "elektroRolladen": { "label": "Rolladen-Steuerung", "detail": "Beschattung" },
-        "elektroSprechanlagen": { "label": "Sprechanlagen", "detail": "Türkommunikation" }
+        "elektroAlles": {
+          "label": "Alles zu Elektro",
+          "detail": "Komplettpaket"
+        },
+        "elektroNeuinstallation": {
+          "label": "Neuinstallation",
+          "detail": "Pro Etage"
+        },
+        "elektroSicherungskasten": {
+          "label": "Sicherungskasten",
+          "detail": "Verteilung"
+        },
+        "elektroNetzwerk": {
+          "label": "Netzwerk & Bus",
+          "detail": "Daten & KNX"
+        },
+        "elektroEinzelinstallation": {
+          "label": "Einzelinstallation",
+          "detail": "Zuleitung & Element"
+        },
+        "elektroLichttechnik": {
+          "label": "Lichttechnik",
+          "detail": "Beleuchtung"
+        },
+        "elektroFreeHome": {
+          "label": "Free Home",
+          "detail": "Smart Home"
+        },
+        "elektroRolladen": {
+          "label": "Rolladen-Steuerung",
+          "detail": "Beschattung"
+        },
+        "elektroSprechanlagen": {
+          "label": "Sprechanlagen",
+          "detail": "Türkommunikation"
+        }
       }
     },
     "fassade": {
       "field": "Fassadenleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "fassadeAlles": { "label": "Alles zu Fassade", "detail": "Alle Varianten" },
-        "fassadeDaemmung": { "label": "Dämmung & Anstrich", "detail": "WDVS" },
-        "fassadeAnstrich": { "label": "Anstrich", "detail": "Fassade" },
-        "fassadeHolzverkleidung": { "label": "Holzverkleidung", "detail": "Fassade" },
-        "fassadeSockeldaemmung": { "label": "Sockeldämmung", "detail": "Sockel" },
-        "fassadeKlinkerSteinriemchen": { "label": "Klinkerriemchen", "detail": "Verkleidung" },
-        "fassadePlattenverkleidung": { "label": "Plattenverkleidung", "detail": "Fassade" },
-        "fassadeNatursteinverkleidung": { "label": "Naturstein", "detail": "Verkleidung" },
-        "fassadeVorhangfassade": { "label": "Vorhangfassade", "detail": "Fassade" },
-        "fassadeVerblendmauerwerk": { "label": "Verblendmauerwerk", "detail": "Fassade" }
+        "fassadeAlles": {
+          "label": "Alles zu Fassade",
+          "detail": "Alle Varianten"
+        },
+        "fassadeDaemmung": {
+          "label": "Dämmung & Anstrich",
+          "detail": "WDVS"
+        },
+        "fassadeAnstrich": {
+          "label": "Anstrich",
+          "detail": "Fassade"
+        },
+        "fassadeHolzverkleidung": {
+          "label": "Holzverkleidung",
+          "detail": "Fassade"
+        },
+        "fassadeSockeldaemmung": {
+          "label": "Sockeldämmung",
+          "detail": "Sockel"
+        },
+        "fassadeKlinkerSteinriemchen": {
+          "label": "Klinkerriemchen",
+          "detail": "Verkleidung"
+        },
+        "fassadePlattenverkleidung": {
+          "label": "Plattenverkleidung",
+          "detail": "Fassade"
+        },
+        "fassadeNatursteinverkleidung": {
+          "label": "Naturstein",
+          "detail": "Verkleidung"
+        },
+        "fassadeVorhangfassade": {
+          "label": "Vorhangfassade",
+          "detail": "Fassade"
+        },
+        "fassadeVerblendmauerwerk": {
+          "label": "Verblendmauerwerk",
+          "detail": "Fassade"
+        }
       }
     },
     "fenster": {
       "field": "Fensterleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "fensterAlles": { "label": "Alles zu Fenster", "detail": "Alle Varianten" },
-        "fensterKunststoff": { "label": "Kunststofffenster", "detail": "Montage" },
-        "fensterHolz": { "label": "Holzfenster", "detail": "Montage" },
-        "fensterAluminium": { "label": "Aluminiumfenster", "detail": "Montage" },
-        "fensterFensterlaeden": { "label": "Fensterläden", "detail": "Montage" },
-        "fensterRolladen": { "label": "Rollladen", "detail": "Montage" },
-        "fensterDachfenster": { "label": "Dachfenster", "detail": "Montage" },
-        "fensterBalkontueren": { "label": "Balkontüren", "detail": "Montage" },
-        "fensterCarportGaragentore": { "label": "Garagentore", "detail": "Carport" },
-        "fensterFensterLackierung": { "label": "Fensterlackierung", "detail": "Maler" },
-        "fensterMarkisen": { "label": "Markisen", "detail": "Montage" }
+        "fensterAlles": {
+          "label": "Alles zu Fenster",
+          "detail": "Alle Varianten"
+        },
+        "fensterKunststoff": {
+          "label": "Kunststofffenster",
+          "detail": "Montage"
+        },
+        "fensterHolz": {
+          "label": "Holzfenster",
+          "detail": "Montage"
+        },
+        "fensterAluminium": {
+          "label": "Aluminiumfenster",
+          "detail": "Montage"
+        },
+        "fensterFensterlaeden": {
+          "label": "Fensterläden",
+          "detail": "Montage"
+        },
+        "fensterRolladen": {
+          "label": "Rollladen",
+          "detail": "Montage"
+        },
+        "fensterDachfenster": {
+          "label": "Dachfenster",
+          "detail": "Montage"
+        },
+        "fensterBalkontueren": {
+          "label": "Balkontüren",
+          "detail": "Montage"
+        },
+        "fensterCarportGaragentore": {
+          "label": "Garagentore",
+          "detail": "Carport"
+        },
+        "fensterFensterLackierung": {
+          "label": "Fensterlackierung",
+          "detail": "Maler"
+        },
+        "fensterMarkisen": {
+          "label": "Markisen",
+          "detail": "Montage"
+        }
       }
     },
     "garten": {
       "field": "Außenleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "gartenAlles": { "label": "Alles zu Garten", "detail": "Alle Varianten" },
-        "gartenBeleuchtung": { "label": "Beleuchtung", "detail": "Außenbereich" },
-        "gartenBlockstufen": { "label": "Blockstufen", "detail": "Außenbereich" },
-        "gartenCarport": { "label": "Carport", "detail": "Montage" },
-        "gartenHochbeete": { "label": "Hochbeete", "detail": "Garten" },
-        "gartenGartenhaus": { "label": "Gartenhaus", "detail": "Montage" },
-        "gartenGartenmauern": { "label": "Gartenmauern", "detail": "Mauerwerk" },
-        "gartenGeraetehaus": { "label": "Gerätehaus", "detail": "Montage" },
-        "gartenPavillon": { "label": "Pavillon", "detail": "Montage" },
-        "gartenTerrassenHolz": { "label": "Terrasse Holz", "detail": "Belag" },
-        "gartenTerrassenStein": { "label": "Terrasse Stein", "detail": "Belag" },
-        "gartenUeberdachung": { "label": "Überdachung", "detail": "Terrasse" },
-        "gartenWintergarten": { "label": "Wintergarten", "detail": "Montage" },
-        "gartenZaunanlagen": { "label": "Zaunanlagen", "detail": "Außenbereich" },
-        "gartenWasserwirtschaft": { "label": "Wasserwirtschaft", "detail": "Anschlüsse" }
+        "gartenAlles": {
+          "label": "Alles zu Garten",
+          "detail": "Alle Varianten"
+        },
+        "gartenBeleuchtung": {
+          "label": "Beleuchtung",
+          "detail": "Außenbereich"
+        },
+        "gartenBlockstufen": {
+          "label": "Blockstufen",
+          "detail": "Außenbereich"
+        },
+        "gartenCarport": {
+          "label": "Carport",
+          "detail": "Montage"
+        },
+        "gartenHochbeete": {
+          "label": "Hochbeete",
+          "detail": "Garten"
+        },
+        "gartenGartenhaus": {
+          "label": "Gartenhaus",
+          "detail": "Montage"
+        },
+        "gartenGartenmauern": {
+          "label": "Gartenmauern",
+          "detail": "Mauerwerk"
+        },
+        "gartenGeraetehaus": {
+          "label": "Gerätehaus",
+          "detail": "Montage"
+        },
+        "gartenPavillon": {
+          "label": "Pavillon",
+          "detail": "Montage"
+        },
+        "gartenTerrassenHolz": {
+          "label": "Terrasse Holz",
+          "detail": "Belag"
+        },
+        "gartenTerrassenStein": {
+          "label": "Terrasse Stein",
+          "detail": "Belag"
+        },
+        "gartenUeberdachung": {
+          "label": "Überdachung",
+          "detail": "Terrasse"
+        },
+        "gartenWintergarten": {
+          "label": "Wintergarten",
+          "detail": "Montage"
+        },
+        "gartenZaunanlagen": {
+          "label": "Zaunanlagen",
+          "detail": "Außenbereich"
+        },
+        "gartenWasserwirtschaft": {
+          "label": "Wasserwirtschaft",
+          "detail": "Anschlüsse"
+        }
       }
     },
     "heiz": {
       "field": "Heizleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "heizmethodenHeizkoerper": { "label": "Heizkörper", "detail": "Montage & Material" },
-        "heizmethodenHeizstraenge": { "label": "Heizstränge", "detail": "Aufputz / Unterputz" },
-        "heizmethodenFussbodenheizung": { "label": "Fußbodenheizung", "detail": "Flächenheizung" },
-        "heizmethodenWaermepumpe": { "label": "Wärmepumpe", "detail": "Luft-Wärmepumpe" },
-        "heizmethodenGasHeizung": { "label": "Gas-Heizung", "detail": "Brennwerttechnik" },
-        "heizmethodenPelletofen": { "label": "Pelletofen", "detail": "Pelletwärme" },
-        "heizmethodenSaunaofen": { "label": "Saunaofen", "detail": "Sauna & Zubehör" }
+        "heizmethodenHeizkoerper": {
+          "label": "Heizkörper",
+          "detail": "Montage & Material"
+        },
+        "heizmethodenHeizstraenge": {
+          "label": "Heizstränge",
+          "detail": "Aufputz / Unterputz"
+        },
+        "heizmethodenFussbodenheizung": {
+          "label": "Fußbodenheizung",
+          "detail": "Flächenheizung"
+        },
+        "heizmethodenWaermepumpe": {
+          "label": "Wärmepumpe",
+          "detail": "Luft-Wärmepumpe"
+        },
+        "heizmethodenGasHeizung": {
+          "label": "Gas-Heizung",
+          "detail": "Brennwerttechnik"
+        },
+        "heizmethodenPelletofen": {
+          "label": "Pelletofen",
+          "detail": "Pelletwärme"
+        },
+        "heizmethodenSaunaofen": {
+          "label": "Saunaofen",
+          "detail": "Sauna & Zubehör"
+        }
       }
     },
     "kueche": {
       "field": "Küchenleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "kuecheAlles": { "label": "Alles zu Küchen", "detail": "Alle Varianten" },
-        "kuecheKomplettkueche": { "label": "Komplettküche", "detail": "Montage" },
-        "kuecheSingleMinikuechen": { "label": "Single-/Miniküche", "detail": "Montage" },
-        "kuecheBuerokueche": { "label": "Büroküche", "detail": "Montage" },
-        "kuecheEinbaukueche": { "label": "Einbauküche", "detail": "Montage" },
-        "kuecheKuechenzeile": { "label": "Küchenzeile", "detail": "Montage" },
-        "kuecheArbeitsplatteSpuele": { "label": "Arbeitsplatte & Spüle", "detail": "Zusatzleistung" },
-        "kuecheDunstabzugshaube": { "label": "Dunstabzugshaube", "detail": "Montage" },
-        "kuecheBodenDecken": { "label": "Boden & Decken", "detail": "Küche" },
-        "kuecheElektroBeleuchtung": { "label": "Elektro & Beleuchtung", "detail": "Küche" },
-        "kuecheWasserinstallation": { "label": "Wasserinstallation", "detail": "Küche" }
+        "kuecheAlles": {
+          "label": "Alles zu Küchen",
+          "detail": "Alle Varianten"
+        },
+        "kuecheKomplettkueche": {
+          "label": "Komplettküche",
+          "detail": "Montage"
+        },
+        "kuecheSingleMinikuechen": {
+          "label": "Single-/Miniküche",
+          "detail": "Montage"
+        },
+        "kuecheBuerokueche": {
+          "label": "Büroküche",
+          "detail": "Montage"
+        },
+        "kuecheEinbaukueche": {
+          "label": "Einbauküche",
+          "detail": "Montage"
+        },
+        "kuecheKuechenzeile": {
+          "label": "Küchenzeile",
+          "detail": "Montage"
+        },
+        "kuecheArbeitsplatteSpuele": {
+          "label": "Arbeitsplatte & Spüle",
+          "detail": "Zusatzleistung"
+        },
+        "kuecheDunstabzugshaube": {
+          "label": "Dunstabzugshaube",
+          "detail": "Montage"
+        },
+        "kuecheBodenDecken": {
+          "label": "Boden & Decken",
+          "detail": "Küche"
+        },
+        "kuecheElektroBeleuchtung": {
+          "label": "Elektro & Beleuchtung",
+          "detail": "Küche"
+        },
+        "kuecheWasserinstallation": {
+          "label": "Wasserinstallation",
+          "detail": "Küche"
+        }
       }
     },
     "maler": {
       "field": "Malerleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "malerAlles": { "label": "Alles zu Maler", "detail": "Alle Varianten" },
-        "malerAnstrich": { "label": "Anstrich", "detail": "Wandflächen" },
-        "malerGlaettenAnstrich": { "label": "Glätten & Anstrich", "detail": "Wände" },
-        "malerTapezieren": { "label": "Tapezieren", "detail": "Wandflächen" },
-        "malerDeckenLackierung": { "label": "Holzdecken", "detail": "Lackierung" },
-        "malerHeizkoerperLackierung": { "label": "Heizkörper", "detail": "Lackierung" },
-        "malerFensterLackierung": { "label": "Fenster", "detail": "Lackierung" },
-        "malerTuerenLackierung": { "label": "Türen", "detail": "Lackierung" },
-        "malerTreppenGelaenderLackierung": { "label": "Treppen/Geländer", "detail": "Lackierung" },
-        "malerFassadenAnstrich": { "label": "Fassadenanstrich", "detail": "Außenflächen" }
+        "malerAlles": {
+          "label": "Alles zu Maler",
+          "detail": "Alle Varianten"
+        },
+        "malerAnstrich": {
+          "label": "Anstrich",
+          "detail": "Wandflächen"
+        },
+        "malerGlaettenAnstrich": {
+          "label": "Glätten & Anstrich",
+          "detail": "Wände"
+        },
+        "malerTapezieren": {
+          "label": "Tapezieren",
+          "detail": "Wandflächen"
+        },
+        "malerDeckenLackierung": {
+          "label": "Holzdecken",
+          "detail": "Lackierung"
+        },
+        "malerHeizkoerperLackierung": {
+          "label": "Heizkörper",
+          "detail": "Lackierung"
+        },
+        "malerFensterLackierung": {
+          "label": "Fenster",
+          "detail": "Lackierung"
+        },
+        "malerTuerenLackierung": {
+          "label": "Türen",
+          "detail": "Lackierung"
+        },
+        "malerTreppenGelaenderLackierung": {
+          "label": "Treppen/Geländer",
+          "detail": "Lackierung"
+        },
+        "malerFassadenAnstrich": {
+          "label": "Fassadenanstrich",
+          "detail": "Außenflächen"
+        }
       }
     },
     "rohbau": {
       "field": "Rohbauleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "rohbauAlles": { "label": "Alles zu Rohbau", "detail": "Alle Varianten" },
-        "rohbauAbbruch": { "label": "Abbruch", "detail": "Leistungen" },
-        "rohbauEstrich": { "label": "Estrich", "detail": "Verlegung" },
-        "rohbauStahltraeger": { "label": "Stahlträger", "detail": "Einbau" },
-        "rohbauVerputzen": { "label": "Verputzen", "detail": "Wände" },
-        "rohbauLichtschaechte": { "label": "Lichtschächte", "detail": "Montage" },
-        "rohbauSchornstein": { "label": "Schornstein", "detail": "Bau" },
-        "rohbauMauerwerk": { "label": "Mauerwerk", "detail": "Herstellen" },
-        "rohbauPflastern": { "label": "Pflastern", "detail": "Außenbereich" }
+        "rohbauAlles": {
+          "label": "Alles zu Rohbau",
+          "detail": "Alle Varianten"
+        },
+        "rohbauAbbruch": {
+          "label": "Abbruch",
+          "detail": "Leistungen"
+        },
+        "rohbauEstrich": {
+          "label": "Estrich",
+          "detail": "Verlegung"
+        },
+        "rohbauStahltraeger": {
+          "label": "Stahlträger",
+          "detail": "Einbau"
+        },
+        "rohbauVerputzen": {
+          "label": "Verputzen",
+          "detail": "Wände"
+        },
+        "rohbauLichtschaechte": {
+          "label": "Lichtschächte",
+          "detail": "Montage"
+        },
+        "rohbauSchornstein": {
+          "label": "Schornstein",
+          "detail": "Bau"
+        },
+        "rohbauMauerwerk": {
+          "label": "Mauerwerk",
+          "detail": "Herstellen"
+        },
+        "rohbauPflastern": {
+          "label": "Pflastern",
+          "detail": "Außenbereich"
+        }
       }
     },
     "treppen": {
       "field": "Treppenleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "treppenAlles": { "label": "Alles zu Treppen", "detail": "Alle Varianten" },
-        "treppenHolztreppe": { "label": "Holztreppe", "detail": "Montage" },
-        "treppenBetontreppe": { "label": "Betontreppe", "detail": "Montage" },
-        "treppenDurchbruch": { "label": "Treppenauge", "detail": "Durchbruch" },
-        "treppenGelaender": { "label": "Geländer", "detail": "Montage" },
-        "treppenAussentreppe": { "label": "Außentreppe", "detail": "Montage" },
-        "treppenRaumspartreppe": { "label": "Raumspartreppe", "detail": "Montage" },
-        "treppenDachbodentreppe": { "label": "Dachbodentreppe", "detail": "Montage" },
-        "treppenSpindeltreppe": { "label": "Spindeltreppe", "detail": "Montage" },
-        "treppenAufbereiten": { "label": "Treppen aufbereiten", "detail": "Sanierung" },
-        "treppenBelegung": { "label": "Treppenbelegung", "detail": "Belag" }
+        "treppenAlles": {
+          "label": "Alles zu Treppen",
+          "detail": "Alle Varianten"
+        },
+        "treppenHolztreppe": {
+          "label": "Holztreppe",
+          "detail": "Montage"
+        },
+        "treppenBetontreppe": {
+          "label": "Betontreppe",
+          "detail": "Montage"
+        },
+        "treppenDurchbruch": {
+          "label": "Treppenauge",
+          "detail": "Durchbruch"
+        },
+        "treppenGelaender": {
+          "label": "Geländer",
+          "detail": "Montage"
+        },
+        "treppenAussentreppe": {
+          "label": "Außentreppe",
+          "detail": "Montage"
+        },
+        "treppenRaumspartreppe": {
+          "label": "Raumspartreppe",
+          "detail": "Montage"
+        },
+        "treppenDachbodentreppe": {
+          "label": "Dachbodentreppe",
+          "detail": "Montage"
+        },
+        "treppenSpindeltreppe": {
+          "label": "Spindeltreppe",
+          "detail": "Montage"
+        },
+        "treppenAufbereiten": {
+          "label": "Treppen aufbereiten",
+          "detail": "Sanierung"
+        },
+        "treppenBelegung": {
+          "label": "Treppenbelegung",
+          "detail": "Belag"
+        }
       }
     },
     "trockenbau": {
       "field": "Trockenbauleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "trockenbauAlles": { "label": "Alles zu Trockenbau", "detail": "Alle Varianten" },
-        "trockenbauDecken": { "label": "Decken abhängen", "detail": "Decken" },
-        "trockenbauWaendeStellen": { "label": "Wände stellen", "detail": "Ständerwerk" },
-        "trockenbauWaendeVerkleiden": { "label": "Wände verkleiden", "detail": "Beplankung" },
-        "trockenbauEstrich": { "label": "Estrich/Boden", "detail": "Trockenbau" },
-        "trockenbauDachschraegen": { "label": "Dachschrägen", "detail": "Ausbau" }
+        "trockenbauAlles": {
+          "label": "Alles zu Trockenbau",
+          "detail": "Alle Varianten"
+        },
+        "trockenbauDecken": {
+          "label": "Decken abhängen",
+          "detail": "Decken"
+        },
+        "trockenbauWaendeStellen": {
+          "label": "Wände stellen",
+          "detail": "Ständerwerk"
+        },
+        "trockenbauWaendeVerkleiden": {
+          "label": "Wände verkleiden",
+          "detail": "Beplankung"
+        },
+        "trockenbauEstrich": {
+          "label": "Estrich/Boden",
+          "detail": "Trockenbau"
+        },
+        "trockenbauDachschraegen": {
+          "label": "Dachschrägen",
+          "detail": "Ausbau"
+        }
       }
     },
     "tueren": {
       "field": "Türleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "tuerenAlles": { "label": "Alles zu Türen", "detail": "Alle Varianten" },
-        "tuerenZimmertueren": { "label": "Zimmertüren", "detail": "Montage" },
-        "tuerenSchiebetueren": { "label": "Schiebetüren", "detail": "Montage" },
-        "tuerenGlastueren": { "label": "Glastüren", "detail": "Montage" },
-        "tuerenBalkonTerrassen": { "label": "Balkon/Terrasse", "detail": "Türen" },
-        "tuerenHaustueren": { "label": "Haustüren", "detail": "Montage" },
-        "tuerenKellertueren": { "label": "Kellertüren", "detail": "Montage" },
-        "tuerenGaragentore": { "label": "Garagentore", "detail": "Montage" },
-        "tuerenToreEinfahrt": { "label": "Tore/Einfahrt", "detail": "Montage" }
+        "tuerenAlles": {
+          "label": "Alles zu Türen",
+          "detail": "Alle Varianten"
+        },
+        "tuerenZimmertueren": {
+          "label": "Zimmertüren",
+          "detail": "Montage"
+        },
+        "tuerenSchiebetueren": {
+          "label": "Schiebetüren",
+          "detail": "Montage"
+        },
+        "tuerenGlastueren": {
+          "label": "Glastüren",
+          "detail": "Montage"
+        },
+        "tuerenBalkonTerrassen": {
+          "label": "Balkon/Terrasse",
+          "detail": "Türen"
+        },
+        "tuerenHaustueren": {
+          "label": "Haustüren",
+          "detail": "Montage"
+        },
+        "tuerenKellertueren": {
+          "label": "Kellertüren",
+          "detail": "Montage"
+        },
+        "tuerenGaragentore": {
+          "label": "Garagentore",
+          "detail": "Montage"
+        },
+        "tuerenToreEinfahrt": {
+          "label": "Tore/Einfahrt",
+          "detail": "Montage"
+        }
       }
     },
     "wasser": {
       "field": "Sanitärleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "wasserAlles": { "label": "Alles zu Wasser", "detail": "Alle Varianten" },
-        "wasserBadezimmer": { "label": "Badezimmer", "detail": "Wasserinstallation" },
-        "wasserGaesteWc": { "label": "Gäste-WC", "detail": "Wasserinstallation" },
-        "wasserKueche": { "label": "Küche", "detail": "Wasserinstallation" },
-        "wasserWaschmaschine": { "label": "Waschmaschine", "detail": "Anschluss" },
-        "wasserKeller": { "label": "Keller", "detail": "Wasserinstallation" },
-        "wasserGarten": { "label": "Garten", "detail": "Wasserinstallation" },
-        "wasserSpuelkasten": { "label": "Spülkasten", "detail": "Austausch" },
-        "wasserHauptstrang": { "label": "Hauptstrang", "detail": "Leitung" }
+        "wasserAlles": {
+          "label": "Alles zu Wasser",
+          "detail": "Alle Varianten"
+        },
+        "wasserBadezimmer": {
+          "label": "Badezimmer",
+          "detail": "Wasserinstallation"
+        },
+        "wasserGaesteWc": {
+          "label": "Gäste-WC",
+          "detail": "Wasserinstallation"
+        },
+        "wasserKueche": {
+          "label": "Küche",
+          "detail": "Wasserinstallation"
+        },
+        "wasserWaschmaschine": {
+          "label": "Waschmaschine",
+          "detail": "Anschluss"
+        },
+        "wasserKeller": {
+          "label": "Keller",
+          "detail": "Wasserinstallation"
+        },
+        "wasserGarten": {
+          "label": "Garten",
+          "detail": "Wasserinstallation"
+        },
+        "wasserSpuelkasten": {
+          "label": "Spülkasten",
+          "detail": "Austausch"
+        },
+        "wasserHauptstrang": {
+          "label": "Hauptstrang",
+          "detail": "Leitung"
+        }
       }
     },
     "zaeune": {
       "field": "Zaunleistung",
       "hint": "Wählen Sie den gewünschten Kalkulator",
       "types": {
-        "zaeuneAluminium": { "label": "Aluminiumzaun", "detail": "Montage" },
-        "zaeuneHolz": { "label": "Holzzaun", "detail": "Montage" },
-        "zaeuneGlas": { "label": "Glaszaun", "detail": "Montage" },
-        "zaeuneMetall": { "label": "Metallzaun", "detail": "Montage" },
-        "zaeuneDoppelstab": { "label": "Doppelstabmatten", "detail": "Montage" },
-        "zaeuneGabionen": { "label": "Gabionenzaun", "detail": "Montage" },
-        "zaeuneSichtschutz": { "label": "Sichtschutzzaun", "detail": "Montage" },
-        "zaeuneMaschendraht": { "label": "Maschendrahtzaun", "detail": "Montage" },
-        "zaeuneSteck": { "label": "Steckzaun", "detail": "Montage" },
-        "zaeuneVorgarten": { "label": "Vorgartenzaun", "detail": "Montage" },
-        "zaeuneSichtschutzstreifen": { "label": "Sichtschutzstreifen", "detail": "Montage" }
+        "zaeuneAluminium": {
+          "label": "Aluminiumzaun",
+          "detail": "Montage"
+        },
+        "zaeuneHolz": {
+          "label": "Holzzaun",
+          "detail": "Montage"
+        },
+        "zaeuneGlas": {
+          "label": "Glaszaun",
+          "detail": "Montage"
+        },
+        "zaeuneMetall": {
+          "label": "Metallzaun",
+          "detail": "Montage"
+        },
+        "zaeuneDoppelstab": {
+          "label": "Doppelstabmatten",
+          "detail": "Montage"
+        },
+        "zaeuneGabionen": {
+          "label": "Gabionenzaun",
+          "detail": "Montage"
+        },
+        "zaeuneSichtschutz": {
+          "label": "Sichtschutzzaun",
+          "detail": "Montage"
+        },
+        "zaeuneMaschendraht": {
+          "label": "Maschendrahtzaun",
+          "detail": "Montage"
+        },
+        "zaeuneSteck": {
+          "label": "Steckzaun",
+          "detail": "Montage"
+        },
+        "zaeuneVorgarten": {
+          "label": "Vorgartenzaun",
+          "detail": "Montage"
+        },
+        "zaeuneSichtschutzstreifen": {
+          "label": "Sichtschutzstreifen",
+          "detail": "Montage"
+        }
       }
     }
   },

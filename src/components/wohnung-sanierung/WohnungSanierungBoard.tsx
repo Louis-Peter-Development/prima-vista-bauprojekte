@@ -15,6 +15,8 @@ export default function WohnungSanierungBoard({
   onWohnungTypeChange,
 }: Props) {
   const { t } = useTranslation('kalk');
+  const selected = WOHNUNG_TYPES.find((option) => option.value === wohnungType) ?? WOHNUNG_TYPES[0];
+  const selectedLabel = t(`wohnung.types.${selected.value}.label`, { defaultValue: selected.label });
   function chooseWohnungType(value: WohnungType) {
     onWohnungTypeChange(value);
     scrollToCalculatorResult();
@@ -43,6 +45,17 @@ export default function WohnungSanierungBoard({
             </button>
           ))}
         </div>
+        <figure className="kalk-board__floorplan">
+          <img
+            key={selected.value}
+            src={selected.floorplan}
+            alt={t('board.floorplanAlt', { label: selectedLabel })}
+            width="1000"
+            height="880"
+            loading="lazy"
+          />
+          <figcaption>{t('board.floorplanCaption', { area: selected.defaultArea })}</figcaption>
+        </figure>
       </div>
     </div>
   );
