@@ -16,9 +16,9 @@
  * file outside the project graph. The union is kept in sync with that source.
  */
 
-export type Locale = 'de' | 'en' | 'it';
+export type Locale = 'de' | 'en' | 'it' | 'fr';
 
-const LOCALES: readonly Locale[] = ['de', 'en', 'it'];
+const LOCALES: readonly Locale[] = ['de', 'en', 'it', 'fr'];
 const DEFAULT_LOCALE: Locale = 'de';
 
 /** Coerce any untrusted input into a known Locale, defaulting to `de`. */
@@ -32,6 +32,7 @@ const LOCALE_TO_BCP47: Record<Locale, string> = {
   de: 'de-DE',
   en: 'en-US',
   it: 'it-IT',
+  fr: 'fr-FR',
 };
 
 // ----- Locale-aware formatters (mirror the originals, parameterized) -----
@@ -106,6 +107,12 @@ const BLITZ_ART_LABELS: CodeLabelMap = {
     heizung: 'Metodi di riscaldamento',
     anderes: 'Altro',
   },
+  fr: {
+    pakete: 'Forfaits complets',
+    gewerke: 'Corps de métier',
+    heizung: 'Méthodes de chauffage',
+    anderes: 'Autre',
+  },
 };
 
 // Blitz `starttermin` codes.
@@ -127,6 +134,12 @@ const STARTTERMIN_LABELS: CodeLabelMap = {
     '1-3m': 'Tra 1 – 3 mesi',
     '3-6m': 'Tra 3 – 6 mesi',
     spaeter: 'Ancora da definire / il prossimo anno',
+  },
+  fr: {
+    sofort: 'Dès que possible',
+    '1-3m': 'Dans 1 à 3 mois',
+    '3-6m': 'Dans 3 à 6 mois',
+    spaeter: 'Encore incertain / l’an prochain',
   },
 };
 
@@ -157,6 +170,14 @@ const KONTAKT_ART_LABELS: CodeLabelMap = {
     einzel: 'Singola lavorazione',
     andere: 'Altro',
   },
+  fr: {
+    haus: 'Rénovation de maison',
+    wohnung: 'Appartement',
+    gastro: 'Restauration',
+    buero: 'Bureau',
+    einzel: 'Corps de métier unique',
+    andere: 'Autre',
+  },
 };
 
 // Kontakt `region` — POSTed as a canonical German string value.
@@ -175,6 +196,11 @@ const REGION_LABELS: CodeLabelMap = {
     'Frankfurt & Hessen': 'Francoforte & Assia',
     Innerschweiz: 'Svizzera centrale',
     Außerhalb: 'Altrove',
+  },
+  fr: {
+    'Frankfurt & Hessen': 'Francfort & Hesse',
+    Innerschweiz: 'Suisse centrale',
+    Außerhalb: 'Ailleurs',
   },
 };
 
@@ -200,6 +226,13 @@ const BUDGET_LABELS: CodeLabelMap = {
     '€ 50.000 – € 150.000': '€ 50.000 – € 150.000',
     '€ 150.000 – € 500.000': '€ 150.000 – € 500.000',
     'Über € 500.000': 'Oltre € 500.000',
+  },
+  fr: {
+    'Bitte wählen': 'À sélectionner',
+    'Unter € 50.000': 'Moins de € 50.000',
+    '€ 50.000 – € 150.000': '€ 50.000 – € 150.000',
+    '€ 150.000 – € 500.000': '€ 150.000 – € 500.000',
+    'Über € 500.000': 'Plus de € 500.000',
   },
 };
 
@@ -295,6 +328,36 @@ const GEWERKE_LABELS: CodeLabelMap = {
     'Gas-Heizung': 'Riscaldamento a gas',
     Pelletofen: 'Stufa a pellet',
     Saunaofen: 'Stufa per sauna',
+  },
+  fr: {
+    'Haus-Sanierung': 'Rénovation de maison',
+    'Wohnung-Sanierung': 'Rénovation d’appartement',
+    'Gastronomie-Ausbau': 'Aménagement de restauration',
+    'Büro-Ausbau': 'Aménagement de bureau',
+    'Bäder & Sanitär': 'Salles de bains & sanitaires',
+    'Küchen & Möbelbau': 'Cuisines & agencement',
+    'Böden & Beläge': 'Sols & revêtements',
+    Elektroinstallation: 'Installation électrique',
+    Sanitärinstallation: 'Installation sanitaire',
+    Trockenbau: 'Cloisons sèches',
+    'Maler & Lackierer': 'Peinture & laquage',
+    Fassadensanierung: 'Rénovation de façade',
+    Dachsanierung: 'Rénovation de toiture',
+    'Abdichtung & Keller': 'Étanchéité & sous-sol',
+    'Treppen & Geländer': 'Escaliers & garde-corps',
+    'Garten & Außenanlagen': 'Jardin & aménagements extérieurs',
+    Barrierefreiheit: 'Accessibilité',
+    Fenstertechnik: 'Fenêtres',
+    'Rohbau & Abbruch': 'Gros œuvre & démolition',
+    'Türen & Zargen': 'Portes & huisseries',
+    'Zäune & Tore': 'Clôtures & portails',
+    Heizkörper: 'Radiateurs',
+    Heizstränge: 'Colonnes de chauffage',
+    'Fußboden-Heizung': 'Chauffage au sol',
+    'Luft-Wärmepumpe': 'Pompe à chaleur air',
+    'Gas-Heizung': 'Chauffage au gaz',
+    Pelletofen: 'Poêle à granulés',
+    Saunaofen: 'Poêle de sauna',
   },
 };
 
@@ -770,6 +833,157 @@ const STRINGS = {
     pdfSignSignature: 'Firma del committente',
 
     pdfScopeDefault: 'Entità',
+  },
+
+  fr: {
+    // --- shared ---
+    signature: 'Cordialement,\nDaniel & Monica Irimia · Prima Vista Bauprojekte',
+    signatureLine1: 'Cordialement,',
+    signatureName: 'Daniel & Monica Irimia',
+    company: 'Prima Vista Bauprojekte',
+    unitFallback: 'pce',
+    scopeArea: 'Surface',
+    scopeExtent: 'Ampleur',
+    scopeAreaOrExtent: 'Surface / ampleur',
+    nextSteps: 'Les prochaines étapes',
+
+    // --- kontakt customer confirmation ---
+    kontaktSubject: 'Merci pour votre demande — Prima Vista Bauprojekte',
+    kontaktTitle: 'Merci, {name}.',
+    kontaktEyebrow: 'Accusé de réception · Demande de contact',
+    kontaktIntro: 'Nous avons bien reçu votre demande. Nous étudions votre projet et revenons vers vous sous 24 heures — par e-mail à {email}{phone}.',
+    kontaktIntroText: 'Nous avons bien reçu votre demande. Nous revenons vers vous sous 24 heures — par e-mail à {email}{phone}.',
+    kontaktPhoneSuffix: ' ou par téléphone au {tel}',
+    kontaktRowEmail: 'Votre e-mail',
+    kontaktRowTel: 'Téléphone',
+    kontaktRowArt: 'Type',
+    kontaktStep1: 'Nous étudions vos informations et préparons les premières questions.',
+    kontaktStep2: 'Vous recevez une réponse écrite ou un rappel téléphonique.',
+    kontaktStep3: 'Sur demande, nous convenons d’un rendez-vous sur place.',
+
+    // --- blitz customer confirmation ---
+    blitzSubject: 'Nous avons bien reçu votre demande express — Prima Vista Bauprojekte',
+    blitzTitle: 'Merci, {name}.',
+    blitzEyebrow: 'Accusé de réception · Offre express',
+    blitzIntro: 'Nous avons bien reçu votre demande express. Nous analysons votre projet et vous transmettons une première estimation de coûts sous 24 heures — par e-mail à {email}{phone}.',
+    blitzIntroText: 'Nous avons bien reçu votre demande express. Vous recevez une première estimation de coûts sous 24 heures par e-mail à {email}{phone}.',
+    blitzYourDetails: 'Vos informations',
+    blitzYourServices: 'Les prestations que vous avez sélectionnées',
+    blitzYourNote: 'Votre remarque',
+    blitzCalcHeading: 'Votre calcul repris',
+    blitzStep1: 'La direction de chantier vérifie la surface ou l’ampleur, le site et les prestations souhaitées.',
+    blitzStep2: 'Vous recevez une estimation de coûts préliminaire par écrit.',
+    blitzStep3: 'Sur demande, nous affinons l’offre sur place — ferme après métré.',
+    blitzStep3Text: 'Sur demande, nous affinons l’offre sur place.',
+
+    // blitz project rows / calculator summary (customer)
+    rowRequest: 'Demande',
+    rowRequestValue: 'Repris du calculateur',
+    rowCalculator: 'Calculateur',
+    rowEstimate: 'Estimation préliminaire',
+    rowStart: 'Début des travaux',
+    rowObjectType: 'Type de bien',
+    rowMid: 'Valeur moyenne',
+    rowGuideValue: 'Valeur indicative',
+    calcFromCalculator: 'Repris du calculateur',
+    calcChosenServices: 'Prestations sélectionnées :',
+    emptyPreselection: 'Aucune présélection pour l’instant',
+    calcColPosition: 'Poste',
+    calcColQuantity: 'Quantité',
+    calcColTotal: 'Total',
+    calcNPositions: '{n} postes',
+
+    // --- calculator-pdf covering email ---
+    pdfMailSubject: 'Votre récapitulatif PDF · {kind}',
+    pdfMailTitle: 'Votre récapitulatif PDF est disponible.',
+    pdfMailEyebrow: 'Calculateur · Récapitulatif PDF',
+    pdfMailIntro: 'Vous trouverez en pièce jointe votre récapitulatif PDF issu du calculateur Prima Vista pour {kind}. Tous les montants, postes et remarques y sont résumés de manière compacte.',
+    pdfMailIntroText1: 'Vous trouverez en pièce jointe votre récapitulatif PDF issu du calculateur Prima Vista pour {kind}.',
+    pdfMailIntroText2: 'Tous les montants, postes et remarques y sont résumés de manière compacte.',
+    pdfMailStep1: 'Ouvrez le PDF joint pour consulter le récapitulatif complet.',
+    pdfMailStep2: 'Pour une offre ferme, nous vérifions le métré, l’existant et le choix des matériaux.',
+    pdfMailStep3: 'Répondez directement à cet e-mail si vous souhaitez que nous affinions l’estimation.',
+
+    // --- PDF document (calculatorPdf.ts) ---
+    pdfDocTitle: 'Devis Prima Vista - {kind}',
+    pdfDocSubject: 'Estimation préliminaire issue du calculateur',
+    pdfHeaderTagline: 'RÉNOVATION & CONSTRUCTION · ESTIMATION PRÉLIMINAIRE',
+    pdfBandTagline: 'RÉNOVATION & CONSTRUCTION · DOCUMENTS DE COMMANDE',
+    pdfTitleEstimate: 'Devis',
+    pdfTitleProductDetails: 'Détails des produits',
+
+    pdfAddrFirma: 'Société',
+    pdfAddrName: 'Nom et prénom',
+    pdfAddrStreet: 'Rue',
+    pdfAddrZipCity: 'Code postal et ville',
+    pdfAddrState: 'Région',
+    pdfAddrCountry: 'Pays',
+    pdfAddrTaxId: 'N° de TVA / numéro fiscal',
+
+    pdfProjectDataTitle: 'Données de projet et de facturation',
+    pdfProjectDataIntro: 'À compléter lors de la passation de commande. La sélection du calculateur reste consultable en pièce jointe.',
+    pdfLinkLabel: 'Lien vers la sélection du calculateur :',
+    pdfBillingAddress: 'Adresse de facturation',
+    pdfProjectAddress: 'Adresse de projet / de livraison',
+    pdfAddressHint: 'Remarque : si l’adresse de facturation et l’adresse de projet sont identiques, une seule saisie à gauche suffit. Veuillez indiquer à droite toute adresse de livraison ou de chantier différente.',
+
+    pdfFooterOfficeTitle: 'Siège social',
+    pdfFooterContactTitle: 'Contact',
+    pdfFooterLegalTitle: 'Mentions légales',
+    pdfFooterSwitzerlandTitle: 'Suisse',
+    pdfFooterPage: 'Page {n} / {total}',
+    pdfFooterPhone: 'Téléphone : +49 1578 98 18 308',
+    pdfFooterEmail: 'E-mail : office@primavista-bauprojekte.com',
+    pdfFooterTaxNr: 'N° fiscal : 01483039527',
+    pdfFooterVatId: 'N° de TVA : DE 358812805',
+    pdfFooterCourt: 'Tribunal d’instance de Frankfurt am Main',
+
+    pdfSummaryEyebrow: 'ISSU DU CALCULATEUR',
+    pdfSummaryTotal: 'MONTANT TOTAL',
+    pdfSummaryNet: 'Net {value}',
+    pdfSummaryVat: 'hors TVA (TVA 19 % en sus) {value}',
+    pdfSummaryScope: '{label} : {value}',
+    pdfSummaryEstimate: 'Estimation préliminaire : {min} - {max}',
+    pdfSummaryGuide: 'Valeur indicative : {value} / m²',
+
+    pdfTableProduct: 'Produit / prestation',
+    pdfTableCount: 'Quantité',
+    pdfTableUnitPrice: 'Prix unitaire net',
+    pdfTableTotalNet: 'Total net',
+
+    pdfPositionsTitle: 'Récapitulatif des postes sélectionnés',
+    pdfNoPositions: 'Aucun poste actif sélectionné.',
+
+    pdfTotalNetSum: 'Total net',
+    pdfTotalVat: 'hors TVA (TVA 19 % en sus)',
+    pdfTotalGross: 'Montant total',
+    pdfDisclaimer: 'Cette estimation préliminaire repose sur les postes sélectionnés dans le calculateur en ligne. Les prix fermes sont établis après métré, vérification de la situation du bâti et échantillonnage des matériaux.',
+
+    pdfProductDetailsIntro: 'Détails des postes sélectionnés dans le calculateur. Les quantités, l’exécution et le choix des matériaux sont vérifiés sur place et confirmés dans l’offre finale.',
+    pdfProductProdNr: 'N° prod. : {sku}',
+    pdfProductType: 'Type : {type}',
+    pdfProductQuantity: 'Quantité : {value}',
+    pdfProductUnitPrice: 'Prix unitaire net : {value}',
+    pdfProductTotalNet: 'Total net : {value}',
+    pdfProductGenericDescription: '{label} fait partie du calcul sélectionné dans le domaine {category}. Les quantités, l’exécution et le choix des matériaux sont vérifiés sur place et confirmés dans l’offre finale.',
+
+    pdfSignTitle: 'Passation de commande et confirmations',
+    pdfSignIntro: 'Cette page est destinée à la passation de commande ultérieure. Le récapitulatif PDF est une estimation préliminaire. La commande ne devient ferme qu’après le métré, l’offre finale et la signature.',
+    pdfSignCard1Title: 'Commande après l’offre finale',
+    pdfSignCard1Body: 'Je confie la mission à Prima Vista Bauprojekte sur la base de l’offre finalisée et de la date d’exécution convenue ensemble.',
+    pdfSignCard2Title: 'Conditions contractuelles lues',
+    pdfSignCard2Body: 'Je confirme avoir reçu, lu et accepté les conditions générales et les conditions contractuelles.',
+    pdfSignCard3Title: 'Étendue des prestations et base des matériaux',
+    pdfSignCard3Body: 'Les prestations, quantités et matériaux indiqués constituent la base de la vérification, de la planification et de l’offre. Toute modification est indiquée séparément.',
+    pdfSignCard4Title: 'Rétractation et résiliation',
+    pdfSignCard4Body: 'Je confirme avoir reçu et lu les informations sur le droit de rétractation et de résiliation, formulaire inclus, dans la mesure où elles s’appliquent.',
+    pdfSignConfirmed: 'confirmé',
+    pdfSignFinalTitle: 'Conclusion de la passation de commande',
+    pdfSignFinalBody: 'Avec la date et la signature, les confirmations indiquées ci-dessus sont confirmées conjointement.',
+    pdfSignDatePlace: 'Date, lieu',
+    pdfSignSignature: 'Signature du donneur d’ordre',
+
+    pdfScopeDefault: 'Ampleur',
   },
 } as const;
 

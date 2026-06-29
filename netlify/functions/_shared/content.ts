@@ -15,6 +15,7 @@ export type LocalizedContent = {
 export type PostTranslations = {
   en?: LocalizedContent;
   it?: LocalizedContent;
+  fr?: LocalizedContent;
 };
 
 export function sanitizePlainText(value: string, max = 4000): string {

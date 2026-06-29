@@ -12,7 +12,7 @@
 // <Link> wrapper rewrites them to the active locale. Routing, the language
 // switcher and hreflang tags are all generated from the table below.
 
-export const LOCALES = ['de', 'en', 'it'] as const;
+export const LOCALES = ['de', 'en', 'it', 'fr'] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = 'de';
 
@@ -20,6 +20,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   de: 'Deutsch',
   en: 'English',
   it: 'Italiano',
+  fr: 'Français',
 };
 
 /** Short label shown inside the language switcher. */
@@ -27,6 +28,7 @@ export const LOCALE_SHORT: Record<Locale, string> = {
   de: 'DE',
   en: 'EN',
   it: 'IT',
+  fr: 'FR',
 };
 
 /** `<html lang>` / hreflang attribute value for each locale. */
@@ -34,55 +36,56 @@ export const LOCALE_HTML_LANG: Record<Locale, string> = {
   de: 'de',
   en: 'en',
   it: 'it',
+  fr: 'fr',
 };
 
-type SlugMap = { en: string; it: string };
+type SlugMap = Record<Exclude<Locale, 'de'>, string>;
 
 // canonical German path (without leading slash) -> { en, it } slug.
 // Dynamic segments keep their `:param` placeholder; only the static prefix is
 // translated, the content slug tail is preserved as-is.
 const SLUGS: Record<string, SlugMap> = {
-  'gewerke': { en: 'trades', it: 'mestieri' },
-  'badsanierung': { en: 'bathroom-renovation', it: 'ristrutturazione-bagno' },
-  'badsanierung-gaeste-wc': { en: 'bathroom-guest-wc', it: 'bagno-ospiti' },
-  'kuechen-moebelbau': { en: 'kitchens-cabinetry', it: 'cucine-mobili' },
-  'boeden-belaege': { en: 'floors-coverings', it: 'pavimenti-rivestimenti' },
-  'elektroinstallation': { en: 'electrical-installation', it: 'impianto-elettrico' },
-  'trockenbau': { en: 'drywall', it: 'cartongesso' },
-  'maler-lackierer': { en: 'painting-decorating', it: 'pittura-verniciatura' },
-  'fassadensanierung': { en: 'facade-renovation', it: 'ristrutturazione-facciata' },
-  'abdichtung-keller': { en: 'waterproofing-basement', it: 'impermeabilizzazione-cantina' },
-  'dachsanierung': { en: 'roof-renovation', it: 'ristrutturazione-tetto' },
-  'treppen-gelaender': { en: 'stairs-railings', it: 'scale-ringhiere' },
-  'garten-aussenanlagen': { en: 'garden-landscaping', it: 'giardino-esterni' },
-  'barrierefreiheit': { en: 'accessibility', it: 'accessibilita' },
-  'fenstertechnik': { en: 'windows', it: 'serramenti' },
-  'rohbau-abbruch': { en: 'shell-demolition', it: 'struttura-demolizione' },
-  'tueren-zargen': { en: 'doors-frames', it: 'porte-telai' },
-  'sanitaerinstallation': { en: 'plumbing', it: 'impianto-idraulico' },
-  'zaeune': { en: 'fences', it: 'recinzioni' },
-  'komplett-pakete': { en: 'complete-packages', it: 'pacchetti-completi' },
-  'projekte': { en: 'projects', it: 'progetti' },
-  'projekte/:slug': { en: 'projects/:slug', it: 'progetti/:slug' },
-  'blog': { en: 'magazine', it: 'magazine' },
-  'blog/:slug': { en: 'magazine/:slug', it: 'magazine/:slug' },
-  'kontakt': { en: 'contact', it: 'contatto' },
-  'blitz-angebot': { en: 'express-quote', it: 'preventivo-express' },
-  'kalkulator': { en: 'calculator', it: 'calcolatore' },
-  'haus-sanierung': { en: 'house-renovation', it: 'ristrutturazione-casa' },
-  'wohnung-sanierung': { en: 'apartment-renovation', it: 'ristrutturazione-appartamento' },
-  'gastronomie-ausbau': { en: 'restaurant-fit-out', it: 'allestimento-ristorazione' },
-  'buero-ausbau': { en: 'office-fit-out', it: 'allestimento-ufficio' },
-  'heizmethoden': { en: 'heating-methods', it: 'metodi-riscaldamento' },
-  'heizkoerper': { en: 'radiators', it: 'radiatori' },
-  'heizstraenge': { en: 'heating-risers', it: 'colonne-riscaldamento' },
-  'fussbodenheizung': { en: 'underfloor-heating', it: 'riscaldamento-a-pavimento' },
-  'waermepumpe': { en: 'heat-pump', it: 'pompa-di-calore' },
-  'gas-heizung': { en: 'gas-heating', it: 'riscaldamento-a-gas' },
-  'pelletofen': { en: 'pellet-stove', it: 'stufa-a-pellet' },
-  'saunaofen': { en: 'sauna-heater', it: 'stufa-per-sauna' },
-  'impressum': { en: 'imprint', it: 'note-legali' },
-  'datenschutz': { en: 'privacy-policy', it: 'privacy' },
+  'gewerke': { en: 'trades', it: 'mestieri', fr: 'travaux' },
+  'badsanierung': { en: 'bathroom-renovation', it: 'ristrutturazione-bagno', fr: 'renovation-salle-de-bain' },
+  'badsanierung-gaeste-wc': { en: 'bathroom-guest-wc', it: 'bagno-ospiti', fr: 'salle-de-bain-wc-invites' },
+  'kuechen-moebelbau': { en: 'kitchens-cabinetry', it: 'cucine-mobili', fr: 'cuisines-menuiserie' },
+  'boeden-belaege': { en: 'floors-coverings', it: 'pavimenti-rivestimenti', fr: 'sols-revetements' },
+  'elektroinstallation': { en: 'electrical-installation', it: 'impianto-elettrico', fr: 'installation-electrique' },
+  'trockenbau': { en: 'drywall', it: 'cartongesso', fr: 'cloisons-seches' },
+  'maler-lackierer': { en: 'painting-decorating', it: 'pittura-verniciatura', fr: 'peinture-laquage' },
+  'fassadensanierung': { en: 'facade-renovation', it: 'ristrutturazione-facciata', fr: 'renovation-facade' },
+  'abdichtung-keller': { en: 'waterproofing-basement', it: 'impermeabilizzazione-cantina', fr: 'etancheite-cave' },
+  'dachsanierung': { en: 'roof-renovation', it: 'ristrutturazione-tetto', fr: 'renovation-toiture' },
+  'treppen-gelaender': { en: 'stairs-railings', it: 'scale-ringhiere', fr: 'escaliers-garde-corps' },
+  'garten-aussenanlagen': { en: 'garden-landscaping', it: 'giardino-esterni', fr: 'jardin-exterieurs' },
+  'barrierefreiheit': { en: 'accessibility', it: 'accessibilita', fr: 'accessibilite' },
+  'fenstertechnik': { en: 'windows', it: 'serramenti', fr: 'fenetres' },
+  'rohbau-abbruch': { en: 'shell-demolition', it: 'struttura-demolizione', fr: 'gros-oeuvre-demolition' },
+  'tueren-zargen': { en: 'doors-frames', it: 'porte-telai', fr: 'portes-huisseries' },
+  'sanitaerinstallation': { en: 'plumbing', it: 'impianto-idraulico', fr: 'plomberie' },
+  'zaeune': { en: 'fences', it: 'recinzioni', fr: 'clotures' },
+  'komplett-pakete': { en: 'complete-packages', it: 'pacchetti-completi', fr: 'forfaits-complets' },
+  'projekte': { en: 'projects', it: 'progetti', fr: 'projets' },
+  'projekte/:slug': { en: 'projects/:slug', it: 'progetti/:slug', fr: 'projets/:slug' },
+  'blog': { en: 'magazine', it: 'magazine', fr: 'magazine' },
+  'blog/:slug': { en: 'magazine/:slug', it: 'magazine/:slug', fr: 'magazine/:slug' },
+  'kontakt': { en: 'contact', it: 'contatto', fr: 'contact' },
+  'blitz-angebot': { en: 'express-quote', it: 'preventivo-express', fr: 'devis-express' },
+  'kalkulator': { en: 'calculator', it: 'calcolatore', fr: 'calculateur' },
+  'haus-sanierung': { en: 'house-renovation', it: 'ristrutturazione-casa', fr: 'renovation-maison' },
+  'wohnung-sanierung': { en: 'apartment-renovation', it: 'ristrutturazione-appartamento', fr: 'renovation-appartement' },
+  'gastronomie-ausbau': { en: 'restaurant-fit-out', it: 'allestimento-ristorazione', fr: 'amenagement-restaurant' },
+  'buero-ausbau': { en: 'office-fit-out', it: 'allestimento-ufficio', fr: 'amenagement-bureau' },
+  'heizmethoden': { en: 'heating-methods', it: 'metodi-riscaldamento', fr: 'methodes-chauffage' },
+  'heizkoerper': { en: 'radiators', it: 'radiatori', fr: 'radiateurs' },
+  'heizstraenge': { en: 'heating-risers', it: 'colonne-riscaldamento', fr: 'colonnes-chauffage' },
+  'fussbodenheizung': { en: 'underfloor-heating', it: 'riscaldamento-a-pavimento', fr: 'chauffage-au-sol' },
+  'waermepumpe': { en: 'heat-pump', it: 'pompa-di-calore', fr: 'pompe-a-chaleur' },
+  'gas-heizung': { en: 'gas-heating', it: 'riscaldamento-a-gas', fr: 'chauffage-gaz' },
+  'pelletofen': { en: 'pellet-stove', it: 'stufa-a-pellet', fr: 'poele-a-pellets' },
+  'saunaofen': { en: 'sauna-heater', it: 'stufa-per-sauna', fr: 'poele-sauna' },
+  'impressum': { en: 'imprint', it: 'note-legali', fr: 'mentions-legales' },
+  'datenschutz': { en: 'privacy-policy', it: 'privacy', fr: 'confidentialite' },
 };
 
 export type RouteKey = string; // canonical German path WITHOUT leading slash ('' === home)
@@ -101,11 +104,13 @@ function splitTrailing(path: string): { base: string; tail: string } {
   return { base: match?.[1] ?? path, tail: match?.[2] ?? '' };
 }
 
-/** Strip a leading `/en` or `/it` locale prefix; returns the locale + remainder. */
+/** Strip a leading locale prefix (e.g. `/en`, `/fr`); returns the active locale. */
 export function localeFromPathname(pathname: string): Locale {
-  if (pathname === '/en' || pathname.startsWith('/en/')) return 'en';
-  if (pathname === '/it' || pathname.startsWith('/it/')) return 'it';
-  return 'de';
+  for (const locale of LOCALES) {
+    if (locale === DEFAULT_LOCALE) continue;
+    if (pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)) return locale;
+  }
+  return DEFAULT_LOCALE;
 }
 
 function stripLocalePrefix(pathname: string): { locale: Locale; rest: string } {

@@ -8,7 +8,7 @@ import '../styles/pages/blog.css';
 // The admin editor lives outside the localized URL space, so its UI/labels stay
 // German on purpose. The DE/EN/IT tabs below are a *functional* control for
 // authoring the per-language post content — not a localization of the chrome.
-type EditLang = 'de' | 'en' | 'it';
+type EditLang = 'de' | 'en' | 'it' | 'fr';
 
 // Per-language title + body. German maps to the canonical top-level post
 // fields; en/it map to translations.en/.it (optional, German fallback).
@@ -30,6 +30,7 @@ export default function AdminEditor() {
     de: { ...EMPTY_LANG },
     en: { ...EMPTY_LANG },
     it: { ...EMPTY_LANG },
+    fr: { ...EMPTY_LANG },
   });
   const [lang, setLang] = useState<EditLang>('de');
   const [message, setMessage] = useState('');
@@ -75,6 +76,9 @@ export default function AdminEditor() {
           it: post.translations?.it
             ? { title: post.translations.it.title, body: post.translations.it.body }
             : { ...EMPTY_LANG },
+          fr: post.translations?.fr
+            ? { title: post.translations.fr.title, body: post.translations.fr.body }
+            : { ...EMPTY_LANG },
         });
       })
       .catch((err: unknown) => {
@@ -89,7 +93,7 @@ export default function AdminEditor() {
     // Include en/it only when they have a title (the server further requires a
     // valid body); absent languages fall back to German on the public site.
     const translations: Record<string, LangContent> = {};
-    (['en', 'it'] as const).forEach((code) => {
+    (['en', 'it', 'fr'] as const).forEach((code) => {
       if (content[code].title.trim()) translations[code] = content[code];
     });
     const res = await fetch(isNew ? '/api/posts' : `/api/posts/${slug}`, {
@@ -164,7 +168,7 @@ export default function AdminEditor() {
         {/* Functional language tabs (admin tooling, kept German). DE edits the
             canonical post; EN/IT edit optional translations. */}
         <div className="blog-admin-langs" role="group" aria-label="Sprache">
-          {(['de', 'en', 'it'] as const).map((code) => (
+          {(['de', 'en', 'it', 'fr'] as const).map((code) => (
             <button
               key={code}
               type="button"

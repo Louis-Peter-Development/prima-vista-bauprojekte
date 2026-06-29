@@ -13,7 +13,7 @@ type ErrorStrings = {
 // Self-contained copy (no i18next dependency): this fallback may render when the
 // app — including the i18n provider — has failed to load. Locale is derived from
 // the URL prefix.
-const ERROR_STRINGS: Record<'de' | 'en' | 'it', ErrorStrings> = {
+const ERROR_STRINGS: Record<'de' | 'en' | 'it' | 'fr', ErrorStrings> = {
   de: {
     eyebrow: 'Fehler beim Laden',
     title: 'Diese Seite konnte nicht sauber geladen werden.',
@@ -34,6 +34,13 @@ const ERROR_STRINGS: Record<'de' | 'en' | 'it', ErrorStrings> = {
     lede: 'Probabilmente è ancora attiva una versione precedente del sito nella cache. Ricarichi la pagina così Chrome o Safari recuperano la versione aggiornata.',
     reload: 'Ricarica',
     home: 'Alla home page',
+  },
+  fr: {
+    eyebrow: 'Erreur de chargement',
+    title: "Cette page n'a pas pu se charger correctement.",
+    lede: "Une ancienne version du site est probablement encore active dans le cache. Rechargez la page pour que Chrome ou Safari récupèrent la version actuelle.",
+    reload: 'Recharger',
+    home: "Retour à l'accueil",
   },
 };
 
@@ -111,7 +118,9 @@ export default function ErrorBoundary({ children }: { children: ReactNode }) {
     ? 'en'
     : location.pathname.startsWith('/it')
       ? 'it'
-      : 'de';
+      : location.pathname.startsWith('/fr')
+        ? 'fr'
+        : 'de';
   const homeHref = locale === 'de' ? '/' : `/${locale}`;
   return (
     <ErrorBoundaryInner

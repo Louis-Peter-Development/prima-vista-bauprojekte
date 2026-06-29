@@ -1,0 +1,113 @@
+{
+  "intro": {
+    "crumb": "Contact",
+    "title": "Parlons de<br/>votre<br/><em>projet de construction.</em>",
+    "lede": "Première consultation gratuite et sans engagement. Rendez-vous sous 48 heures, sur place ou en visioconférence — nous écoutons d'abord, puis nous esquissons.",
+    "phoneLabel": "Téléphone",
+    "phoneMeta": "Lun–Ven · 08h00–18h00 · DE / CH",
+    "emailLabel": "E-mail",
+    "emailMeta": "Réponse sous 24 heures — les jours ouvrés.",
+    "consultLabel": "Premier entretien",
+    "consultValue": "Rendez-vous sous 48 heures",
+    "consultMeta": "Gratuit et sans engagement · sur place ou en visioconférence.",
+    "officeDe": "Francfort — DE",
+    "officeCh": "Emmenbrücke — CH",
+    "countryDe": "Allemagne",
+    "countryCh": "Suisse",
+    "mediaAlt": "Salle de réunion lumineuse pour les consultations de projet",
+    "mediaCaption": "Première consultation · Francfort et Emmenbrücke"
+  },
+  "form": {
+    "eyebrow": "Envoyer une demande",
+    "title": "Parlez-nous de<br/>votre <em>projet.</em>",
+    "vorname": "Prénom",
+    "nachname": "Nom",
+    "email": "E-mail",
+    "emailPlaceholder": "vous@email.com",
+    "tel": "Téléphone",
+    "telOptional": "(facultatif)",
+    "telPlaceholder": "+33 …",
+    "artLabel": "Type de projet",
+    "art": {
+      "haus": "Rénovation de maison",
+      "wohnung": "Appartement",
+      "gastro": "Restauration",
+      "buero": "Bureau",
+      "einzel": "Travaux isolés",
+      "andere": "Autre"
+    },
+    "regionLabel": "Région",
+    "regions": {
+      "frankfurt": "Francfort et Hesse",
+      "innerschweiz": "Suisse centrale",
+      "ausserhalb": "Ailleurs"
+    },
+    "budgetLabel": "Fourchette de budget",
+    "budget": {
+      "unset": "Veuillez choisir",
+      "lt50": "Moins de 50 000 €",
+      "mid1": "50 000 € – 150 000 €",
+      "mid2": "150 000 € – 500 000 €",
+      "gt500": "Plus de 500 000 €"
+    },
+    "msgLabel": "De quoi s'agit-il ?",
+    "msgPlaceholder": "Décrivez votre projet en quelques phrases — nous vous recontactons sous 24 heures.",
+    "consent": "J'accepte que mes données soient utilisées pour répondre à ma demande. Elles ne seront pas transmises à des tiers.",
+    "consentLink": "Confidentialité",
+    "note": "Réponse sous 24 h",
+    "submit": "Envoyer",
+    "submitting": "Envoi en cours…",
+    "errors": {
+      "vorname": "Veuillez indiquer votre prénom.",
+      "nachname": "Veuillez indiquer votre nom.",
+      "emailRequired": "Veuillez indiquer votre adresse e-mail.",
+      "emailFormat": "Veuillez vérifier le format de l'adresse e-mail.",
+      "msg": "Veuillez décrire brièvement votre projet.",
+      "dsgvo": "Veuillez confirmer la politique de confidentialité.",
+      "unknown": "Erreur inconnue",
+      "submit": "Votre demande n'a pas pu être envoyée ({{error}}). Veuillez réessayer ou nous écrire directement à office@primavista-bauprojekte.com."
+    },
+    "success": {
+      "eyebrow": "Envoyée",
+      "title": "Merci",
+      "body": "Votre demande nous est bien parvenue. Nous étudions votre projet et vous recontactons sous <s>24 heures</s> — par e-mail à <s>{{email}}</s>",
+      "bodyPhone": " ou par téléphone au <s>{{tel}}</s>",
+      "step1": "Nous lisons vos informations et préparons les premières questions.",
+      "step2": "Vous recevez une réponse écrite ou un rappel.",
+      "step3": "Si vous le souhaitez, nous fixons un rendez-vous sur place.",
+      "toHome": "Aller à l'accueil",
+      "toProjects": "Voir les projets"
+    }
+  },
+  "faqSection": {
+    "eyebrow": "Questions fréquentes",
+    "title": "Ce que les<br/>maîtres d'ouvrage<br/>demandent<br/>le plus <em>souvent.</em>",
+    "intro": "Réponses sur le prix fixe, les délais, les matériaux et la garantie. Nous clarifions volontiers vos autres questions en personne."
+  },
+  "faq": [
+    {
+      "q": "Comment un prix fixe contractuel est-il établi ?",
+      "a": "Après le premier entretien, nous effectuons un relevé sur place, vérifions la structure et l'existant, puis établissons un descriptif détaillé des prestations. Sous 14 jours, vous recevez un prix fixe écrit — valable 60 jours et contractuel après la signature du contrat."
+    },
+    {
+      "q": "Sous quel délai pouvez-vous commencer les travaux ?",
+      "a": "En règle générale 4 à 8 semaines après la conclusion du contrat. Souvent plus tôt pour les rénovations d'appartement, plus tard pour les projets soumis à autorisation (structure, toiture, façade). Nous communiquons la date de début de manière ferme."
+    },
+    {
+      "q": "Travaillez-vous avec des sous-traitants ?",
+      "a": "Notre direction de chantier, l'électricité, le sanitaire, les cloisons sèches, la peinture et la menuiserie sont internes. Les carreleurs, les couvreurs et la façade sont des entreprises partenaires de longue date, liées par contrat — pas de journaliers, pas de transferts multiples."
+    },
+    {
+      "q": "Qu'est-ce qui est inclus dans le prix fixe ?",
+      "a": "Tous les matériaux selon votre choix, tous les corps de métier, la direction de chantier, l'évacuation des gravats, le nettoyage, les démarches administratives ainsi que l'assurance. Non inclus : les demandes particulières après la signature du contrat (indiquées séparément) et les charges de propriété."
+    },
+    {
+      "q": "Puis-je rester dans le logement pendant la rénovation ?",
+      "a": "Pour les appartements en rénovation partielle (p. ex. salle de bains ou cuisine uniquement) : oui, avec un usage restreint. Pour les rénovations complètes, nous recommandons de déménager — nous aidons à l'ameublement transitoire et à la logistique."
+    },
+    {
+      "q": "Quelle garantie offrez-vous ?",
+      "a": "Cinq ans de garantie sur tous les travaux réalisés — c'est plus que l'obligation légale. Sur les matériaux s'applique la garantie du fabricant, que nous faisons valoir pour vous."
+    }
+  ]
+}

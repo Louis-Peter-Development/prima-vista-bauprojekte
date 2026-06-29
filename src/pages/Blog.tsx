@@ -12,6 +12,7 @@ const DATE_LOCALE: Record<Locale, string> = {
   de: 'de-DE',
   en: 'en-GB',
   it: 'it-IT',
+  fr: 'fr-FR',
 };
 
 function formatDate(value: string | null, locale: Locale, draft: string) {

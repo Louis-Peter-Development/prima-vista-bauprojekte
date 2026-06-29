@@ -1,39 +1,40 @@
 # Translation glossary & i18n guide
 
-Prima Vista is a German construction company. The site is **trilingual**:
-German (default), English and Italian. This file keeps terminology, tone and
-the technical conventions consistent as translation rolls out across the site.
+Prima Vista is a German construction company. The site is **quadrilingual**:
+German (default), English, Italian and French. This file keeps terminology, tone
+and the technical conventions consistent across the site.
 
 ## Tone of voice
 Premium, confident, understated. Short declarative sentences. Avoid hype and
 exclamation marks. The German copy addresses the customer formally (Sie); keep
-English neutral-professional and Italian formal (Lei / "il suo progetto").
+English neutral-professional, Italian formal (Lei / "il suo progetto") and
+French formal (vous / "votre projet").
 
-## Domain glossary (DE → EN → IT)
+## Domain glossary (DE → EN → IT → FR)
 Keep these consistent everywhere. Where a term is a Prima Vista product name it
 is translated, not left in German.
 
-| German | English | Italian |
-| --- | --- | --- |
-| Sanierung | renovation | ristrutturazione |
-| Renovierung | refurbishment | rinnovo |
-| Gewerk / Gewerke | trade / trades | lavorazione / lavorazioni (nav: Lavori) |
-| Komplett-Pakete | complete packages | pacchetti completi |
-| Blitz-Angebot | express quote | preventivo express |
-| Kalkulator | calculator | preventivatore |
-| Festpreisgarantie | fixed-price guarantee | garanzia di prezzo fisso |
-| Bauleitung | site management | direzione lavori |
-| Generalunternehmer | main contractor | general contractor |
-| aus einer Hand | from a single source | da un unico interlocutore |
-| Werksgewähr | workmanship warranty | garanzia |
-| Haus-Sanierung | house renovation | ristrutturazione casa |
-| Wohnung-Sanierung | apartment renovation | ristrutturazione appartamento |
-| Gastronomie-Ausbau | restaurant fit-out | allestimento ristorazione |
-| Büro-Ausbau | office fit-out | allestimento ufficio |
-| Wärmepumpe | heat pump | pompa di calore |
-| Heizkörper | radiator | radiatore |
-| Fußbodenheizung | underfloor heating | riscaldamento a pavimento |
-| Termin vereinbaren | book an appointment | fissa un appuntamento |
+| German | English | Italian | French |
+| --- | --- | --- | --- |
+| Sanierung | renovation | ristrutturazione | rénovation |
+| Renovierung | refurbishment | rinnovo | réfection |
+| Gewerk / Gewerke | trade / trades | lavorazione / lavorazioni (nav: Lavori) | corps de métier (nav: Travaux) |
+| Komplett-Pakete | complete packages | pacchetti completi | forfaits complets |
+| Blitz-Angebot | express quote | preventivo express | devis express |
+| Kalkulator | calculator | preventivatore | calculateur |
+| Festpreisgarantie | fixed-price guarantee | garanzia di prezzo fisso | garantie de prix fixe |
+| Bauleitung | site management | direzione lavori | direction de chantier |
+| Generalunternehmer | main contractor | general contractor | entreprise générale |
+| aus einer Hand | from a single source | da un unico interlocutore | clé en main |
+| Werksgewähr | workmanship warranty | garanzia | garantie de l'ouvrage |
+| Haus-Sanierung | house renovation | ristrutturazione casa | rénovation de maison |
+| Wohnung-Sanierung | apartment renovation | ristrutturazione appartamento | rénovation d'appartement |
+| Gastronomie-Ausbau | restaurant fit-out | allestimento ristorazione | aménagement de restaurant |
+| Büro-Ausbau | office fit-out | allestimento ufficio | aménagement de bureau |
+| Wärmepumpe | heat pump | pompa di calore | pompe à chaleur |
+| Heizkörper | radiator | radiatore | radiateur |
+| Fußbodenheizung | underfloor heating | riscaldamento a pavimento | chauffage au sol |
+| Termin vereinbaren | book an appointment | fissa un appuntamento | prendre rendez-vous |
 
 Proper nouns stay unchanged: **Prima Vista**, **Bauprojekte**, **Frankfurt**,
 **Emmenbrücke**, founder names (Daniel & Monica), phone numbers, addresses,
@@ -41,10 +42,13 @@ email addresses. City names may be localized in body copy (Francoforte) but not
 in addresses.
 
 ## Architecture (how it works)
-- **Locales & default**: `de` (default, un-prefixed URLs), `en`, `it`.
-  Defined in `src/i18n/routes.ts`.
-- **URLs**: German keeps its original slugs (`/gewerke`). English and Italian
-  use a locale prefix **and** translated slugs (`/en/trades`, `/it/mestieri`).
+- **Locales & default**: `de` (default, un-prefixed URLs), `en`, `it`, `fr`.
+  Defined in `src/i18n/routes.ts` (`LOCALES`). Locale detection, `OG_LOCALE` and
+  `SlugMap` are generic over `LOCALES`, so a further language needs no code edits
+  beyond the data.
+- **URLs**: German keeps its original slugs (`/gewerke`). English, Italian and
+  French use a locale prefix **and** translated slugs (`/en/trades`,
+  `/it/mestieri`, `/fr/travaux`).
   The slug table lives in `src/i18n/routes.ts` (`SLUGS`).
 - **Canonical path = the German path.** Components link with German paths
   (`to="/gewerke"`); the localized `<Link>`/`<NavLink>` in `src/i18n/Link.tsx`

@@ -20,6 +20,7 @@ const OG_LOCALE: Record<Locale, string> = {
   de: 'de_DE',
   en: 'en_US',
   it: 'it_IT',
+  fr: 'fr_FR',
 };
 
 function upsertMeta(selector: string, attribute: 'name' | 'property', key: string, content: string) {

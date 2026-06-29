@@ -21,7 +21,7 @@ import type { Locale } from './routes';
 // in German until the per-product catalog is filled in.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const CATALOG_TRANSLATIONS: Map<string, { en: string; it: string }> = new Map([
+export const CATALOG_TRANSLATIONS: Map<string, Partial<Record<Exclude<Locale, 'de'>, string>>> = new Map([
   // ── Generic section / subsection names ──────────────────────────────────────
   ['Leistungen & Materialien', { en: 'Services & materials', it: 'Prestazioni e materiali' }],
   ['Ausgewählte Leistungen und Materialien.', {
@@ -134,8 +134,9 @@ export const CATALOG_TRANSLATIONS: Map<string, { en: string; it: string }> = new
 export function localizeCatalog(key: string, german: string, locale: Locale): string {
   if (locale === 'de') return german;
   const entry = CATALOG_TRANSLATIONS.get(key) ?? CATALOG_TRANSLATIONS.get(german);
-  if (!entry) return german;
-  return locale === 'en' ? entry.en : entry.it;
+  // Falls back to German for any locale not seeded (e.g. fr), matching the
+  // per-product catalog behaviour.
+  return entry?.[locale] ?? german;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -145,7 +146,7 @@ export function localizeCatalog(key: string, german: string, locale: Locale): st
 // both the grouping and the suffix while keeping the German output identical.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const LOCALE_TAG: Record<Locale, string> = { de: 'de-DE', en: 'en-US', it: 'it-IT' };
+const LOCALE_TAG: Record<Locale, string> = { de: 'de-DE', en: 'en-US', it: 'it-IT', fr: 'fr-FR' };
 
 /** Compact currency magnitude, e.g. DE "93 Tsd." / EN "93k" / IT "93 mila". */
 export function formatTsd(n: number, locale: Locale): string {
@@ -155,11 +156,11 @@ export function formatTsd(n: number, locale: Locale): string {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
-    const suffix = locale === 'en' ? 'M' : locale === 'it' ? 'mln' : 'Mio.';
+    const suffix = locale === 'en' ? 'M' : locale === 'it' ? 'mln' : locale === 'fr' ? 'M' : 'Mio.';
     return locale === 'en' ? `${value}${suffix}` : `${value} ${suffix}`;
   }
   const value = Math.round(n / 1000).toLocaleString(tag);
-  const suffix = locale === 'en' ? 'k' : locale === 'it' ? 'mila' : 'Tsd.';
+  const suffix = locale === 'en' ? 'k' : locale === 'it' ? 'mila' : locale === 'fr' ? 'k' : 'Tsd.';
   return locale === 'en' ? `${value}${suffix}` : `${value} ${suffix}`;
 }
 

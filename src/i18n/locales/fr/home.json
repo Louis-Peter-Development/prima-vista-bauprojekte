@@ -1,0 +1,236 @@
+{
+  "hero": {
+    "toplineLocation": "Francfort & Emmenbrücke",
+    "toplineTagline": "Rénovation & réfection — projets de construction depuis 2014",
+    "toplineIssue": "N° 26 / Printemps 2026",
+    "headline1": "<em>Une</em> vision.",
+    "headline2": "<em>Une</em> adresse.",
+    "headline3": "<em>Une</em> équipe.",
+    "metaNum": "01 — Promesse",
+    "lede": "<strong>Rénovation complète clé en main</strong> — du concept à la remise des clés. Nous répondons de chaque corps de métier : prix fixe, date de livraison ferme, cinq ans de garantie.",
+    "ctaSmall": "Rendez-vous sous 48 heures",
+    "cta": "Prendre rendez-vous"
+  },
+  "marquee": {
+    "items": ["Rénovation", "Réfection", "Aménagement de restaurant", "Salles de bains", "Cuisines", "Sols", "Électricité", "Chauffage", "Façade", "Peinture & laque", "Escaliers", "Cloisons sèches"]
+  },
+  "heroPhotos": {
+    "aria": "Aperçus de nos projets",
+    "eyebrow": "Aperçus",
+    "title": "Du gros œuvre à la <em>remise</em>.",
+    "p": "Extraits de projets que nous avons réalisés clé en main.",
+    "rohbau": { "label": "Gros œuvre", "alt": "Surface de gros œuvre avec murs en béton et gaines préparées" },
+    "bad": { "label": "Salle de bains", "alt": "Salle de bains modernisée avec douche et WC" },
+    "kueche": { "label": "Cuisine", "alt": "Cuisine avec îlot et aménagements sur mesure" },
+    "gastro": { "label": "Restauration", "alt": "Projet de restauration aménagé avec habillage mural décoratif" }
+  },
+  "featured": {
+    "eyebrow": "Projets sélectionnés",
+    "title": "Tout juste sortis de<br/>l'<em>atelier.</em>",
+    "meta": "Francfort · Wiesbaden · Lucerne",
+    "viewAll": "Voir tous les projets",
+    "projects": {
+      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Restaurant Zoi, Francfort" },
+      "proj--b": { "ttl": "Villa béton apparent", "alt": "Villa béton apparent, Lucerne" },
+      "proj--c": { "ttl": "Cuisine en chêne", "alt": "Cuisine en chêne, Francfort" },
+      "proj--d": { "ttl": "Salle de bains spa — Hôtel", "alt": "Salle de bains spa, hôtel" },
+      "proj--e": { "ttl": "Office Lobby", "alt": "Hall de bureaux, Francfort" }
+    }
+  },
+  "reviews": {
+    "starsSuffix": "/ 5 étoiles",
+    "source": "Avis Google"
+  },
+  "aboutVideo": {
+    "notice": "La vidéo est intégrée via YouTube et n'est chargée qu'après votre consentement.",
+    "manage": "Gérer les cookies et services",
+    "title": "Prima Vista Bauprojekte – À propos",
+    "playAria": "Lire la vidéo : {{title}}",
+    "consentAria": "{{title}} – acceptez les cookies pour lire"
+  },
+  "kalkLive": {
+    "label": "Calculateur · En direct",
+    "objektart": "Type de bien",
+    "flaeche": "Surface",
+    "gewerke": "Travaux",
+    "liveRange": "Fourchette en direct",
+    "objekt": { "Haus": "Maison", "Wohnung": "Appartement", "Gastro": "Restauration", "Anderes": "Autre" },
+    "trade": { "Bad": "Salle de bains", "Küche": "Cuisine", "Boden": "Sol", "Elektrik": "Électricité", "Heizung": "Chauffage" },
+    "states": [
+      { "price": "84 – 112 k €", "note": "Moyenne 98 k € · env. 690 € / m²" },
+      { "price": "52 – 71 k €", "note": "Moyenne 61 k € · env. 720 € / m²" },
+      { "price": "145 – 195 k €", "note": "Moyenne 170 k € · env. 810 € / m²" },
+      { "price": "95 – 130 k €", "note": "Moyenne 112 k € · env. 930 € / m²" }
+    ]
+  },
+  "blitzLive": {
+    "label": "Estimation préalable des coûts",
+    "stamp": "Sous 24 h",
+    "rowProjekt": "Projet",
+    "rowStandort": "Emplacement",
+    "rowGewerke": "Travaux",
+    "rowStandard": "Standard",
+    "totalLabel": "Investissement estimé",
+    "totalNote": "Contractuel après relevé sur place.",
+    "sigName": "Daniel Vogel · Direction de chantier",
+    "sigPlace": "Francfort/Lucerne",
+    "docs": [
+      { "num": "№ 06 / BA-2026-142", "projekt": "Rénovation d'appartement · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Salle de bains, cuisine, électricité, peinture", "standard": "Haut de gamme", "investition": "184 – 226 k €", "datum": "17 mai 2026" },
+      { "num": "№ 06 / BA-2026-089", "projekt": "Rénovation de maison · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Toiture, façade, chauffage, gros œuvre", "standard": "Premium", "investition": "320 – 385 k €", "datum": "22 mai 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Aménagement de restaurant · 180 m²", "standort": "Lucerne centre", "gewerke": "Ventilation, sanitaire, cloisons sèches", "standard": "Bâtiment / Commerce", "investition": "CHF 280 – 340 k", "datum": "2 juin 2026" }
+    ]
+  },
+  "promise": {
+    "eyebrow": "№ 01 — Promesse",
+    "title": "La responsabilité<br/><em>en une seule</em><br/>main.",
+    "p1": "Nous croyons à une rénovation sans transferts : un entrepreneur général qui assume la responsabilité de chaque corps de métier — du gros œuvre au dernier joint de meuble. Vous parlez à un seul interlocuteur, garant de tout.",
+    "p2": "Cette clarté n'est pas un confort, mais la condition d'espaces qui, dans quinze ans, dégageront encore la même sérénité qu'au premier jour.",
+    "list": {
+      "1": "Direction de chantier incl.",
+      "2": "Tous les matériaux",
+      "3": "Garantie de prix fixe",
+      "4": "Rendez-vous sous 48 h",
+      "5": "Date de livraison ferme",
+      "6": "5 ans de garantie"
+    }
+  },
+  "packages": {
+    "eyebrow": "Forfaits complets",
+    "title": "Quatre voies vers<br/>un espace <em>fini.</em>",
+    "intro": "Du rafraîchissement d'une pièce à l'aménagement de bureaux jusqu'à la rénovation complète : chaque forfait réunit conception, direction de chantier et tous les corps de métier — avec un prix clair et une date de livraison ferme.",
+    "items": {
+      "haus": {
+        "num": "№ 01 — Complet",
+        "title": "Rénovation<br/>de maison",
+        "desc": "Rénovation complète de bâtiments existants — toiture, façade, aménagement intérieur clé en main.",
+        "alt": "Rénovation de maison"
+      },
+      "wohnung": {
+        "num": "№ 02 — Modulaire",
+        "title": "Rénovation<br/>d'appartement",
+        "desc": "Salles de bains, cuisines, sols, électricité : appartements — habitables en 6 à 10 semaines.",
+        "alt": "Rénovation d'appartement"
+      },
+      "gastronomie": {
+        "num": "№ 03 — Concept",
+        "title": "Aménagement<br/>de restaurant",
+        "desc": "Restaurants, bars, hôtels : de la phase concept à l'ouverture — clé en main.",
+        "alt": "Aménagement de restaurant"
+      },
+      "buero": {
+        "num": "№ 04 — Bureau",
+        "title": "Aménagement<br/>de bureau",
+        "desc": "Espaces de bureaux, cabinets et environnements de travail — prêts à l'emploi avec technique, acoustique et finitions.",
+        "alt": "Aménagement de bureau"
+      }
+    }
+  },
+  "stats": {
+    "title": "Douze ans. <em>Une ligne.</em>",
+    "intro": "Les chiffres ne créent pas d'espaces — mais ils disent avec quel sérieux nous prenons la mission. Voici un aperçu sobre de notre travail depuis 2014.",
+    "since": {
+      "label": "Direction de chantier depuis",
+      "desc": "Fondée par Daniel et Monica à Frankfurt am Main."
+    },
+    "projects": {
+      "label": "Projets achevés",
+      "desc": "Du studio annexe au restaurant de 220 couverts."
+    },
+    "trades": {
+      "label": "Corps de métier clé en main",
+      "desc": "Du gros œuvre au menuisier — tout en interne ou sous contrat."
+    },
+    "onTime": {
+      "label": "Respect des délais",
+      "desc": "Date de livraison ferme au contrat — sinon pénalité de retard."
+    }
+  },
+  "calculator": {
+    "eyebrow": "№ 05 · Calculateur",
+    "title": "Estimation en direct.<br/>En <em>quelques secondes.</em>",
+    "p": "Quatre clics, une fourchette : type de bien, surface, niveau de finition, corps de métier. Le calculateur calcule en temps réel — sans inscription, sans appel. Un premier repère, immédiatement.",
+    "steps": {
+      "1": "Choisir le type de bien et la surface",
+      "2": "Cocher et décocher les corps de métier",
+      "3": "La fourchette s'actualise en direct"
+    },
+    "toCalculator": "Ouvrir le calculateur",
+    "appointment": "Prendre rendez-vous"
+  },
+  "blitz": {
+    "eyebrow": "№ 06 · Devis express",
+    "title": "Prix fixe, noir sur blanc.<br/>En <em>24 heures.</em>",
+    "p": "Quelque chose de plus concret ? Remplissez un court formulaire — nous vérifions, calculons et envoyons une estimation de coûts écrite et préalable, par e-mail, contresignée par notre direction de chantier.",
+    "steps": {
+      "1": "Remplir le court formulaire (3 minutes)",
+      "2": "La direction de chantier vérifie l'existant et les corps de métier",
+      "3": "Devis écrit en 24 heures"
+    },
+    "request": "Demander un devis express",
+    "appointment": "Prendre rendez-vous"
+  },
+  "trades": {
+    "eyebrow": "Travaux",
+    "title": "Dix-neuf corps de métier,<br/><em>une seule main.</em>",
+    "intro": "Chaque corps de métier coordonné par notre propre direction de chantier — réservable séparément ou en forfait complet. Voici un aperçu des disciplines les plus demandées.",
+    "openCalculator": "Ouvrir le calculateur de coûts",
+    "viewAll": "Voir les 19 corps de métier",
+    "preview": {
+      "bad": { "name": "Salles de bains & sanitaire", "lead": "Baignoire, douche, WC" },
+      "kueche": { "name": "Cuisines & agencement", "lead": "Menuiserie" },
+      "boden": { "name": "Sols & revêtements", "lead": "Parquet, pierre, vinyle" },
+      "elektro": { "name": "Installation électrique", "lead": "Courant, éclairage, KNX" },
+      "heizung": { "name": "Chauffage", "lead": "Pompe à chaleur, chauffage au sol" },
+      "maler": { "name": "Peintre & laqueur", "lead": "Peintures, papiers peints" },
+      "fassade": { "name": "Rénovation de façade", "lead": "Enduit, ITE" },
+      "trockenbau": { "name": "Cloisons sèches", "lead": "Murs, plafonds" }
+    }
+  },
+  "heating": {
+    "eyebrow": "Méthodes de chauffage modernes",
+    "title": "Prêt pour l'<em>avenir.</em>",
+    "p": "Passez avec nos forfaits à des méthodes de chauffage innovantes — éligibles aux aides, silencieuses et indépendantes du gaz.",
+    "pump": {
+      "num": "№ 01",
+      "title": "Pompe à<br/>chaleur air",
+      "desc": "Jusqu'à 70 % d'économies d'énergie. Conversion de l'existant en 7 à 10 jours, éligible aux aides BAFA.",
+      "alt": "Pompe à chaleur air"
+    },
+    "risers": {
+      "num": "№ 02",
+      "title": "Colonnes de<br/>chauffage",
+      "desc": "Colonnes verticales avec équilibrage hydraulique — distribution précise de la chaleur, puissance de pompe réduite.",
+      "alt": "Colonnes de chauffage"
+    },
+    "radiators": {
+      "num": "№ 03",
+      "title": "Radiateurs<br/>design",
+      "desc": "Radiateurs plats en aluminium intégrés à l'architecture — fins, silencieux, adaptés à la basse température.",
+      "alt": "Radiateurs"
+    },
+    "more": "En savoir plus",
+    "viewAll": "Voir toutes les méthodes de chauffage"
+  },
+  "founders": {
+    "eyebrow": "À propos",
+    "title": "Une entreprise de construction<br/>gérée comme une<br/><em>entreprise familiale.</em>",
+    "p1": "Daniel et Monica dirigent Prima Vista depuis 2014 — en couple, en directeurs de chantier, en interlocuteurs. Qui construit ici ne parle pas à un centre d'appels, mais aux personnes dont le nom figure sur le contrat.",
+    "p2": "Depuis le siège de Francfort, nous suivons des projets en Hesse ; depuis Emmenbrücke, toute la Suisse centrale. Les deux bureaux partagent matériaux, plans et standards — vous bénéficiez partout de la même exigence.",
+    "sigName": "Daniel & Monica",
+    "sigRole": "Fondateurs & direction de chantier",
+    "photoAlt": "Daniel et Monica — fondateurs de Prima Vista Bauprojekte",
+    "photoLabel": "Daniel & Monica — Francfort, 2026"
+  },
+  "testimonial": {
+    "quote": "Nous appréhendions la rénovation — et nous avons été surpris : Prima Vista a livré dans les délais, proprement et avec une telle précision que nous avons pu emménager un mois plus tôt.",
+    "name": "Famille Brauer",
+    "meta": "Rénovation complète d'un appartement en copropriété · Sachsenhausen"
+  },
+  "finalCta": {
+    "title": "Parlons de<br/>votre <em>projet de construction.</em>",
+    "p": "Première consultation gratuite. Rendez-vous sous 48 heures, sur place ou en visioconférence — à Francfort et à Emmenbrücke.",
+    "appointment": "Prendre rendez-vous",
+    "toCalculator": "Ouvrir le calculateur",
+    "expressQuote": "Devis express"
+  }
+}

@@ -2,9 +2,11 @@ import type { Locale } from '../i18n/routes';
 import deBlog from '../i18n/locales/de/blog.json';
 import enBlog from '../i18n/locales/en/blog.json';
 import itBlog from '../i18n/locales/it/blog.json';
+import frBlog from '../i18n/locales/fr/blog.json';
 import dePages from '../i18n/locales/de/pages.json';
 import enPages from '../i18n/locales/en/pages.json';
 import itPages from '../i18n/locales/it/pages.json';
+import frPages from '../i18n/locales/fr/pages.json';
 
 export type RouteMeta = {
   title: string;
@@ -108,6 +110,7 @@ const SERVICE_ROUTE_META: Record<Locale, Record<string, RouteMeta>> = {
   de: localizedServiceMeta(dePages, deBlog),
   en: localizedServiceMeta(enPages, enBlog),
   it: localizedServiceMeta(itPages, itBlog),
+  fr: localizedServiceMeta(frPages, frBlog),
 };
 
 export const ROUTE_META: Record<string, RouteMeta> = {
@@ -330,12 +333,57 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
     },
     ...SERVICE_ROUTE_META.it,
   },
+  fr: {
+    '/': {
+      title: 'Rénovation & construction premium à Francfort et Emmenbrücke',
+      description:
+        'Prima Vista Bauprojekte conçoit et réalise rénovation, réfection et aménagement clé en main à Francfort, Emmenbrücke et alentours.',
+    },
+    '/impressum': {
+      title: 'Mentions légales',
+      description: "Mentions légales et identification de l'éditeur du site Prima Vista Bauprojekte.",
+    },
+    '/datenschutz': {
+      title: 'Politique de confidentialité',
+      description: 'Politique de confidentialité avec informations sur le traitement des données personnelles sur ce site.',
+    },
+    '/kontakt': {
+      title: 'Contact – faire une demande',
+      description: 'Contactez Prima Vista Bauprojekte pour vos projets de rénovation, réfection, aménagement et construction en Allemagne et en Suisse.',
+    },
+    '/heizmethoden': {
+      title: 'Méthodes de chauffage modernes – pompe à chaleur, gaz, pellets et plus',
+      description: 'Comparez les méthodes de chauffage : pompe à chaleur, chauffage au gaz, pellets, chauffage au sol, radiateurs et eau chaude.',
+    },
+    '/gewerke': {
+      title: "Travaux – tous les services en un coup d'œil",
+      description: 'Tous les corps de métier pour rénovation, aménagement et réfection : salle de bain, cuisine, sols, électricité, gros œuvre, façade, toiture et plus.',
+    },
+    '/komplett-pakete': {
+      title: 'Forfaits complets pour rénovation & construction',
+      description: 'Forfaits complets pour maison, appartement, restauration et bureau avec corps de métier coordonnés et un cadre de coûts transparent.',
+    },
+    '/projekte': {
+      title: 'Projets & références',
+      description: 'Références et exemples de projets de Prima Vista Bauprojekte pour habitations, restauration, hôtels et espaces commerciaux.',
+    },
+    '/kalkulator': {
+      title: 'Calculateur de coûts pour rénovation & construction',
+      description: 'Calculateur de coûts interactif pour maison, appartement, corps de métier et méthodes de chauffage avec prix indicatifs transparents.',
+    },
+    '/blitz-angebot': {
+      title: 'Devis express sous 24 heures',
+      description: 'Une demande de projet rapide pour rénovation et aménagement avec une réponse sous 24 heures les jours ouvrés.',
+    },
+    ...SERVICE_ROUTE_META.fr,
+  },
 };
 
 const DYNAMIC_TITLES: Record<Locale, { blog: string; project: string }> = {
   de: { blog: 'Magazinbeitrag', project: 'Projekt' },
   en: { blog: 'Magazine article', project: 'Project' },
   it: { blog: 'Articolo del magazine', project: 'Progetto' },
+  fr: { blog: 'Article du magazine', project: 'Projet' },
 };
 
 /**

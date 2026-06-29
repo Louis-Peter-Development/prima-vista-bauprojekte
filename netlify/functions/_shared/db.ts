@@ -85,6 +85,7 @@ const postSchema = new Schema<PostDocument>(
         {
           en: { type: localizedSchema, default: undefined },
           it: { type: localizedSchema, default: undefined },
+          fr: { type: localizedSchema, default: undefined },
         },
         { _id: false },
       ),

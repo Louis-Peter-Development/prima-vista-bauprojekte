@@ -61,6 +61,7 @@ function serialize(
     translations: {
       en: post.translations?.en ?? null,
       it: post.translations?.it ?? null,
+      fr: post.translations?.fr ?? null,
     },
   };
 }
@@ -109,8 +110,10 @@ function translationsFrom(value: unknown): PostTranslations {
   const translations: PostTranslations = {};
   const en = localizedFrom(record.en);
   const it = localizedFrom(record.it);
+  const fr = localizedFrom(record.fr);
   if (en) translations.en = en;
   if (it) translations.it = it;
+  if (fr) translations.fr = fr;
   return translations;
 }
 

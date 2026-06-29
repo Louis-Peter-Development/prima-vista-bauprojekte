@@ -33,6 +33,16 @@ import itBlog from './locales/it/blog.json';
 import deChat from './locales/de/chat.json';
 import enChat from './locales/en/chat.json';
 import itChat from './locales/it/chat.json';
+import frCommon from './locales/fr/common.json';
+import frHome from './locales/fr/home.json';
+import frLegal from './locales/fr/legal.json';
+import frKontakt from './locales/fr/kontakt.json';
+import frPages from './locales/fr/pages.json';
+import frProjects from './locales/fr/projects.json';
+import frKalk from './locales/fr/kalk.json';
+import frBlitz from './locales/fr/blitz.json';
+import frBlog from './locales/fr/blog.json';
+import frChat from './locales/fr/chat.json';
 
 export const NAMESPACES = ['common', 'home', 'legal', 'kontakt', 'pages', 'projects', 'kalk', 'blitz', 'blog', 'chat'] as const;
 
@@ -40,6 +50,7 @@ const resources = {
   de: { common: deCommon, home: deHome, legal: deLegal, kontakt: deKontakt, pages: dePages, projects: deProjects, kalk: deKalk, blitz: deBlitz, blog: deBlog, chat: deChat },
   en: { common: enCommon, home: enHome, legal: enLegal, kontakt: enKontakt, pages: enPages, projects: enProjects, kalk: enKalk, blitz: enBlitz, blog: enBlog, chat: enChat },
   it: { common: itCommon, home: itHome, legal: itLegal, kontakt: itKontakt, pages: itPages, projects: itProjects, kalk: itKalk, blitz: itBlitz, blog: itBlog, chat: itChat },
+  fr: { common: frCommon, home: frHome, legal: frLegal, kontakt: frKontakt, pages: frPages, projects: frProjects, kalk: frKalk, blitz: frBlitz, blog: frBlog, chat: frChat },
 } as const;
 
 i18n.use(initReactI18next).init({

@@ -46,6 +46,7 @@ export type BlogPost = {
   translations?: {
     en: LocalizedContent | null;
     it: LocalizedContent | null;
+    fr: LocalizedContent | null;
   };
 };
 

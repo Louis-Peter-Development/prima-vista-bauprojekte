@@ -9,8 +9,9 @@ the higher-level "where things stand + how to continue + how to ship".
 
 ## 1. TL;DR
 
-- The site was **German-only**; it is now **trilingual: German (default) +
-  English + Italian**, with localized URLs.
+- The site was **German-only**; it is now **quadrilingual: German (default) +
+  English + Italian + French**, with localized URLs. (French was added last,
+  following the recipe in §3; the compact language switcher reads `LOCALES`.)
 - **The entire navigable site is translated** — every page header/intro, every
   form's interface, the calculator hub, navigation, footer, legal pages, the
   cookie banner and all CTAs — in DE/EN/IT, verified live in the browser.
@@ -51,7 +52,7 @@ Stack: **i18next + react-i18next**, JSON resource files, all under `src/i18n/`.
 | `src/i18n/Link.tsx` | Drop-in `Link`/`NavLink` that localize their `to`. **Import these, not react-router's.** |
 | `src/i18n/useLocale.ts` | `useLocale()`, `useLocalizedPath()`, `useSwitchLocale()`. |
 | `src/i18n/LocaleSync.tsx` | Keeps `<html lang>` + i18next language in sync with the URL. |
-| `src/i18n/locales/{de,en,it}/*.json` | The translations (8 namespaces × 3 locales = 24 files). |
+| `src/i18n/locales/{de,en,it,fr}/*.json` | The translations (10 namespaces × 4 locales = 40 files). |
 
 **Locales & URLs.** German is the default and keeps its **original, un-prefixed
 URLs** (`/gewerke`) so existing SEO/bookmarks never break. English and Italian
@@ -79,12 +80,23 @@ German, `ROUTE_META_I18N` = en/it overrides).
 Each real page is a thin call passing structural props (`crumbNumber`,
 `backgroundImage`, `photoSet`, configurator) + a translation `key`.
 
-### Adding a 4th language later
-1. Add the code to `LOCALES` + the label maps in `routes.ts`, and an `en`/`it`
-   sibling for every slug in `SLUGS`.
-2. Add a `<locale>/` folder with the 8 JSON files.
-3. Register it in `config.ts` and add a `ROUTE_META_I18N` block.
-Everything else (routing, switcher, hreflang) is generated.
+### Adding a language (French `fr` was added this way — DONE)
+1. Add the code to `LOCALES` + the label maps (`LOCALE_LABELS`, `LOCALE_SHORT`,
+   `LOCALE_HTML_LANG`) in `routes.ts`, and a slug for every entry in `SLUGS`
+   (`SlugMap` is `Record<Exclude<Locale,'de'>, string>`, so the compiler forces
+   you to fill them all).
+2. Add a `<locale>/` folder with all 10 namespace JSON files (translate from
+   `de`, using `en`/`it` as reference).
+3. Register it in `config.ts` (imports + `resources`), add a `ROUTE_META_I18N`
+   block + `DYNAMIC_TITLES` entry in `routeMeta.ts`, add `OG_LOCALE` in
+   `metadata.ts`, and extend the catalogue/formatters in
+   `src/i18n/calculatorCatalog.ts` + `server/i18n.ts` (customer emails/PDF) +
+   `ErrorBoundary.tsx`. The blog supports the language too: add it to
+   `PostTranslations` (`content.ts`/`types/blog.ts`), the `db.ts` schema, the
+   `posts.ts` serializer, and the `AdminEditor` tabs.
+Routing, the language switcher (reads `LOCALES`), hreflang and the search index
+are generated automatically. Seeded calculator catalog labels + the ~5.7k
+product titles fall back to German for any locale not filled in.
 
 ---
 

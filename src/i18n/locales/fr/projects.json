@@ -1,0 +1,336 @@
+{
+  "overview": {
+    "crumbLabel": "Projets · Réalisations",
+    "title": "Des espaces sortis<br/>de l'<em>atelier.</em>",
+    "lede": "Une sélection des projets que nous avons achevés entre 2024 et 2026 — résidences, restauration et usages mixtes en Hesse et en Suisse centrale.",
+    "metaShownLabel": "Affichés",
+    "metaShownValue": "{{count}} projets",
+    "metaPeriodLabel": "Période",
+    "metaPeriodValue": "2024–2026",
+    "metaRegionLabel": "Région",
+    "metaRegionValue": "DE Francfort · CH Lucerne",
+    "metaPortfolioLabel": "Portefeuille complet",
+    "metaPortfolioValue": "Sur demande",
+    "endEyebrow": "Votre projet",
+    "endTitle": "Parlez-nous de<br/>votre <em>prochain espace.</em>",
+    "endCta": "Prendre rendez-vous"
+  },
+  "filter": {
+    "label": "Filtrer par",
+    "all": "Tous",
+    "wohnsitz": "Résidence",
+    "gastro": "Restauration",
+    "bad": "Salles de bain",
+    "kueche": "Cuisines",
+    "commercial": "Commercial"
+  },
+  "map": {
+    "eyebrow": "Sites",
+    "title": "Construit dans deux<br/>pays, avec la même<br/><em>exigence.</em>",
+    "intro": "Depuis le siège de Francfort, nous suivons des projets dans toute la Hesse. Depuis Emmenbrücke, la Suisse centrale. Les deux bureaux partagent directeurs de chantier, fournisseurs et standards.",
+    "cities": {
+      "frankfurt": "Francfort-sur-le-Main",
+      "emmenbruecke": "Emmenbrücke / Lucerne",
+      "wiesbaden": "Wiesbaden",
+      "zug": "Zoug, Zurich",
+      "darmstadt": "Darmstadt, Offenbach",
+      "innerschweiz": "Suisse centrale"
+    },
+    "photoAlt": "L'équipe Prima Vista sur le chantier",
+    "photoLabel": "Équipe Francfort — 2026"
+  },
+  "gallery": {
+    "more": "En savoir plus"
+  },
+  "detail": {
+    "back": "Tous les projets",
+    "factLocation": "Lieu",
+    "factYear": "Année",
+    "factArea": "Surface",
+    "factDuration": "Durée des travaux",
+    "factScope": "Prestation",
+    "aboutEyebrow": "À propos du projet",
+    "aboutTitleSuffix": "en détail.",
+    "gewerkeHeading": "Corps de métier impliqués",
+    "galleryEyebrow": "Galerie",
+    "imageAlt": "{{headline}} — image {{n}}",
+    "prev": "Projet précédent",
+    "next": "Projet suivant",
+    "ctaTitle": "Un <em>projet</em> similaire ?",
+    "ctaText": "Parlez-nous-en — première consultation gratuite, rendez-vous sous 48 heures.",
+    "ctaExpress": "Estimation express",
+    "ctaAppointment": "Prendre rendez-vous",
+    "notFound": "Projet introuvable.",
+    "notFoundBack": "Retour à l'aperçu",
+    "metaTitleSuffix": "Projet",
+    "filmEyebrow": "Le film",
+    "tourEyebrow": "Visite",
+    "videoNoticeOne": "La vidéo est intégrée via YouTube et n'est chargée qu'après votre consentement.",
+    "videoNoticeMany": "Les vidéos sont intégrées via YouTube et ne sont chargées qu'après votre consentement.",
+    "videoManage": "Gérer les cookies et services",
+    "videoPlayAria": "Lire la vidéo : {{title}}",
+    "videoConsentAria": "{{title}} — acceptez les cookies pour lire",
+    "featureFallback": "{{headline}} — film",
+    "videoFallback": "{{headline}} — vidéo {{n}}"
+  },
+  "items": {
+    "zoi-restaurant": {
+      "title": "Zoi — Restaurant · Francfort · 2026",
+      "ttl": "Zoi Restaurant",
+      "meta": "Restauration · Francfort · 2026",
+      "headline": "Zoi Restaurant",
+      "location": "Francfort",
+      "area": "240 m²",
+      "duration": "16 semaines",
+      "scope": "Aménagement complet",
+      "videoLabel": "Rénover un restaurant en un temps record — le film",
+      "description": [
+        "Un restaurant gréco-méditerranéen — Zoi (« vie » en grec) — du local commercial brut à l'ouverture clés en main, d'une seule main.",
+        "Le concept d'espace se nourrit d'arches sculpturales et de niches en plein cintre : de profonds murs terracotta avec niches encastrées, des boiseries sombres et un bar sur mesure au comptoir en mosaïque forment l'ossature esthétique de la salle.",
+        "Des fresques botaniques peintes à la main et un concept d'éclairage coordonné apportent des accents chaleureux, tandis que tous les corps de métier — y compris la ventilation de restauration et l'installation complète de la cuisine — s'imbriquent de manière coordonnée."
+      ],
+      "gewerke": ["Cloisons sèches", "Installation électrique", "Sanitaire", "Ventilation", "Revêtement de sol", "Carrelage", "Peinture et laquage", "Menuiserie", "Mobilier sur mesure", "Éclairage"]
+    },
+    "riad-restaurant": {
+      "title": "Riad — Restaurant · Francfort · 2025",
+      "ttl": "Riad Restaurant",
+      "meta": "Restauration · Francfort · 2025",
+      "headline": "Riad Restaurant",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "320 m²",
+      "duration": "14 semaines",
+      "scope": "Aménagement complet",
+      "description": [
+        "Un restaurant d'inspiration marocaine au cœur de Sachsenhausen — du local commercial brut à l'ouverture clés en main en 14 semaines.",
+        "Le concept allie l'architecture traditionnelle du riad à l'exigence moderne de Francfort : carreaux zellige faits main, cuisine ouverte, accents en cuivre et un système d'éclairage qui accompagne le client tout au long de la soirée.",
+        "L'ensemble des 20 corps de métier a été coordonné d'une seule main — y compris l'installation de ventilation conforme aux normes de restauration et l'installation complète de la cuisine."
+      ],
+      "gewerke": ["Cloisons sèches", "Installation électrique", "Sanitaire", "Ventilation", "Revêtement de sol", "Peinture et laquage", "Cuisine", "Mobilier sur mesure", "Éclairage"]
+    },
+    "villa-sichtbeton": {
+      "title": "Villa en béton apparent · Lucerne · 2024",
+      "ttl": "Villa en béton apparent",
+      "meta": "Résidence · Lucerne · 2024",
+      "headline": "Villa en béton apparent",
+      "location": "Lucerne, Suisse centrale",
+      "area": "280 m²",
+      "duration": "18 semaines",
+      "scope": "Rénovation générale",
+      "description": [
+        "Rénovation complète d'une villa des années 1970 au béton apparent dégagé et à l'aménagement sculptural des espaces.",
+        "La substance existante a été conservée et complétée par des aménagements modernes : escaliers en béton apparent, un séjour-salle à manger ouvert doté de fenêtres toute hauteur et un concept de salle de bain en pierre naturelle.",
+        "Une attention particulière a été portée à l'assainissement thermique de l'enveloppe du bâtiment, tout en préservant son caractère brutaliste."
+      ],
+      "gewerke": ["Gros œuvre", "Façade et ITE", "Fenêtres", "Cloisons sèches", "Électricité", "Sanitaire", "Sols", "Peinture"]
+    },
+    "kueche-eichenholz": {
+      "title": "Cuisine en chêne · Francfort · 2025",
+      "ttl": "Cuisine en chêne",
+      "meta": "Résidence · Francfort · 2025",
+      "headline": "Cuisine en chêne",
+      "location": "Frankfurt-Nordend",
+      "area": "42 m²",
+      "duration": "6 semaines",
+      "scope": "Cuisine et salle à manger",
+      "description": [
+        "Cuisine équipée sur mesure en chêne massif, avec façade sans poignée et îlot de cuisson intégré.",
+        "L'ensemble de l'espace cuisine et repas a été restructuré : nouveaux raccordements électriques et d'eau, chauffage au sol, bandeau LED et une transition sans rupture vers le séjour."
+      ],
+      "gewerke": ["Menuiserie", "Électricité", "Sanitaire", "Revêtement de sol", "Peinture"]
+    },
+    "spa-bad-hotel": {
+      "title": "Salle de bain spa — Hôtel · Emmenbrücke · 2025",
+      "ttl": "Salle de bain spa",
+      "meta": "Hôtel · Emmenbrücke · 2025",
+      "headline": "Salle de bain spa Hôtel",
+      "location": "Emmenbrücke, Suisse centrale",
+      "area": "86 m²",
+      "duration": "8 semaines",
+      "scope": "Salle de bain wellness",
+      "description": [
+        "Transformation d'une salle de bain d'hôtel classique en un espace spa moderne, avec baignoire îlot, douche de pluie et pierre naturelle.",
+        "Le concept d'éclairage mise sur des bandes LED indirectes et un ciel étoilé au-dessus de la baignoire — variable via KNX."
+      ],
+      "gewerke": ["Sanitaire", "Électricité et KNX", "Pierre naturelle", "Cloisons sèches", "Peinture"]
+    },
+    "office-lobby": {
+      "title": "Office Lobby · Francfort · 2026",
+      "ttl": "Office Lobby",
+      "meta": "Commercial · Francfort · 2026",
+      "headline": "Office Lobby",
+      "location": "Francfort centre",
+      "area": "160 m²",
+      "duration": "10 semaines",
+      "scope": "Espace d'accueil",
+      "description": [
+        "Réaménagement du hall d'un immeuble de bureaux avec un arbre vivant en séparation d'espace, un comptoir d'accueil en pierre naturelle et des panneaux de plafond acoustiques.",
+        "Le traitement du sol associe des dalles en grès cérame grand format à des bandes métalliques encastrées — un système de guidage visuel qui mène intuitivement les visiteurs vers l'accueil."
+      ],
+      "gewerke": ["Cloisons sèches", "Revêtement de sol", "Électricité", "Peinture", "Mobilier sur mesure", "Végétalisation"]
+    },
+    "sushi-counter": {
+      "title": "Sushi Counter · Wiesbaden · 2025",
+      "ttl": "Sushi Counter",
+      "meta": "Restauration · Wiesbaden · 2025",
+      "headline": "Sushi Counter",
+      "location": "Wiesbaden centre",
+      "area": "110 m²",
+      "duration": "9 semaines",
+      "scope": "Aménagement de restauration",
+      "description": [
+        "Un comptoir de 16 places en chêne huilé avec réfrigération intégrée et zone de préparation à la vue.",
+        "L'espace compact a été pensé jusque dans le moindre détail : installation de ventilation, traitement de l'eau, vitrine d'exposition à sushis et un habillage en bois minimaliste qui marie la sobriété japonaise au Gründerzeit de Wiesbaden."
+      ],
+      "gewerke": ["Menuiserie", "Ventilation", "Réfrigération", "Sanitaire", "Électricité", "Revêtement de sol"]
+    },
+    "treppenhaus-sichtbeton": {
+      "title": "Escalier en béton apparent · Lucerne · 2024",
+      "ttl": "Cage d'escalier",
+      "meta": "Commercial · Lucerne · 2024",
+      "headline": "Escalier en béton apparent",
+      "location": "Lucerne, Suisse centrale",
+      "area": "65 m²",
+      "duration": "6 semaines",
+      "scope": "Escalier",
+      "description": [
+        "Escalier hélicoïdal autoportant en béton apparent sur trois niveaux, avec main courante LED encastrée et garde-corps en acier inoxydable.",
+        "L'escalier en bois existant a été déposé et remplacé par une construction monolithique en béton — coulée sur place, poncée et scellée."
+      ],
+      "gewerke": ["Gros œuvre", "Escaliers et garde-corps", "Électricité", "Peinture"]
+    },
+    "doppelbad": {
+      "title": "Double salle de bain · Francfort · 2025",
+      "ttl": "Double salle de bain",
+      "meta": "Résidence · Francfort · 2025",
+      "headline": "Double salle de bain",
+      "location": "Frankfurt-Westend",
+      "area": "28 m²",
+      "duration": "5 semaines",
+      "scope": "Rénovation de salle de bain",
+      "description": [
+        "Deux salles de bain reliées entre elles — une salle de bain principale avec baignoire îlot et des toilettes invités avec douche — dans un concept de matériaux continu en pierre naturelle grise.",
+        "Douches de plain-pied, WC suspendus et un double plan vasque sur mesure en Corian."
+      ],
+      "gewerke": ["Sanitaire", "Carrelage", "Électricité", "Cloisons sèches", "Peinture"]
+    },
+    "naturstein-bad": {
+      "title": "Salle de bain en pierre naturelle · Sachsenhausen · 2024",
+      "ttl": "Salle de bain en pierre naturelle",
+      "meta": "Résidence · Sachsenhausen · 2024",
+      "headline": "Salle de bain en pierre naturelle",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "18 m²",
+      "duration": "4 semaines",
+      "scope": "Rénovation de salle de bain",
+      "description": [
+        "Rénovation complète d'une salle de bain d'immeuble ancien, avec un revêtement continu en pierre calcaire sur les murs et au sol.",
+        "Posé joint contre joint, avec des joints de dilatation minimes — le résultat semble taillé d'un seul bloc."
+      ],
+      "gewerke": ["Sanitaire", "Pierre naturelle", "Électricité", "Étanchéité"]
+    },
+    "riad-bar-ecke": {
+      "title": "Riad — Coin bar · Francfort · 2025",
+      "ttl": "Riad Coin bar",
+      "meta": "Restauration · Francfort · 2025",
+      "headline": "Riad Coin bar",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "45 m²",
+      "duration": "Partie du projet Riad",
+      "scope": "Bar et lounge",
+      "description": [
+        "L'intime coin bar du restaurant Riad — avec un comptoir sur mesure en noyer sombre, des carreaux marocains et une lumière cuivrée chaleureuse.",
+        "L'espace est isolé acoustiquement de la salle principale et peut accueillir 18 convives."
+      ],
+      "gewerke": ["Menuiserie", "Électricité", "Carrelage", "Peinture"]
+    },
+    "concrete-corner": {
+      "title": "Concrete Corner · Lucerne · 2024",
+      "ttl": "Concrete Corner",
+      "meta": "Résidence · Lucerne · 2024",
+      "headline": "Concrete Corner",
+      "location": "Lucerne, Suisse centrale",
+      "area": "Partie de la Villa en béton apparent",
+      "duration": "Partie du projet villa",
+      "scope": "Espace de séjour",
+      "description": [
+        "L'espace de séjour ouvert de la Villa en béton apparent — avec des fenêtres toute hauteur, une cheminée encastrée et une transition sans rupture vers la terrasse.",
+        "Les murs en béton apparent ont été poncés et protégés par un scellant transparent."
+      ],
+      "gewerke": ["Gros œuvre", "Fenêtres", "Électricité", "Revêtement de sol"]
+    },
+    "wine-bar": {
+      "title": "Wine Bar · Francfort · 2026",
+      "ttl": "Wine Bar",
+      "meta": "Restauration · Francfort · 2026",
+      "headline": "Wine Bar",
+      "location": "Francfort centre",
+      "area": "95 m²",
+      "duration": "8 semaines",
+      "scope": "Aménagement de restauration",
+      "description": [
+        "Un bar à vin élégant doté d'une cave à température contrôlée derrière une vitre, d'un comptoir rustique en chêne et d'un éclairage suspendu d'ambiance.",
+        "La climatisation a été dimensionnée spécialement pour la conservation du vin — des zones séparées pour le rouge et le blanc."
+      ],
+      "gewerke": ["Menuiserie", "Réfrigération", "Électricité", "Sanitaire", "Revêtement de sol", "Peinture"]
+    },
+    "spa-korridor": {
+      "title": "Couloir spa · Emmenbrücke · 2025",
+      "ttl": "Couloir spa",
+      "meta": "Hôtel · Emmenbrücke · 2025",
+      "headline": "Couloir spa",
+      "location": "Emmenbrücke, Suisse centrale",
+      "area": "40 m²",
+      "duration": "Partie du projet spa",
+      "scope": "Couloir d'hôtel",
+      "description": [
+        "L'espace de transition entre les chambres de l'hôtel et l'espace spa — conçu comme un couloir méditatif avec une lumière indirecte, des lamelles en chêne et un jeu d'eau au bout du passage."
+      ],
+      "gewerke": ["Cloisons sèches", "Électricité", "Revêtement de sol", "Peinture", "Menuiserie"]
+    },
+    "eiche-parkett": {
+      "title": "Parquet en chêne · Wiesbaden · 2025",
+      "ttl": "Parquet en chêne",
+      "meta": "Résidence · Wiesbaden · 2025",
+      "headline": "Parquet en chêne",
+      "location": "Wiesbaden",
+      "area": "120 m²",
+      "duration": "3 semaines",
+      "scope": "Revêtement de sol",
+      "description": [
+        "Pose de lames en chêne massif en point de Hongrie dans un appartement ancien — y compris la préparation du sous-plancher, l'isolation aux bruits de pas et les plinthes.",
+        "Les lames ont été poncées sur place et huilées en trois couches pour un toucher naturel et chaleureux."
+      ],
+      "gewerke": ["Revêtement de sol", "Cloisons sèches", "Peinture"]
+    },
+    "lobby-garden": {
+      "title": "Lobby Garden · Francfort · 2026",
+      "ttl": "Lobby Garden",
+      "meta": "Commercial · Francfort · 2026",
+      "headline": "Lobby Garden",
+      "location": "Francfort centre",
+      "area": "80 m²",
+      "duration": "Partie du projet lobby",
+      "scope": "Végétalisation intérieure",
+      "description": [
+        "L'espace végétalisé de l'Office Lobby — un olivier vivant entouré d'îlots de sièges en béton brossé et de jardinières intégrées.",
+        "L'arrosage et le drainage ont été dissimulés sous le revêtement de sol, la lumière pilotée par un cycle de lumière du jour automatisé."
+      ],
+      "gewerke": ["Végétalisation", "Sanitaire", "Électricité", "Revêtement de sol", "Mobilier sur mesure"]
+    },
+    "riad-lampen": {
+      "title": "Riad — Lampes · Francfort · 2025",
+      "ttl": "Riad Lampes",
+      "meta": "Restauration · Francfort · 2025",
+      "headline": "Riad Lampes",
+      "location": "Frankfurt-Sachsenhausen",
+      "area": "Partie du projet Riad",
+      "duration": "Partie du projet Riad",
+      "scope": "Concept d'éclairage",
+      "description": [
+        "Des lampes marocaines en laiton faites main, importées une à une et raccordées sur place à un système LED variable.",
+        "Chaque lampe projette son propre motif d'ombres sur le mur — un jeu de lumière et d'ornement qui parcourt l'ensemble de la salle."
+      ],
+      "gewerke": ["Électricité", "Éclairage", "Menuiserie"]
+    }
+  }
+}

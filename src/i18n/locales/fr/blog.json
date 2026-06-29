@@ -1,0 +1,51 @@
+{
+  "pageTitle": "Magazine",
+  "draft": "Brouillon",
+  "masthead": {
+    "issue": "Numéro №{{number}}",
+    "issueEmpty": "Numéro №—",
+    "place": "Francfort · Lucerne · MMXXVI",
+    "eyebrow": "Le Magazine",
+    "name": "Magazine",
+    "sub": "Idées, matériaux et décisions pour de meilleurs espaces — conception, déroulement et savoir-faire autour de la rénovation, de l'aménagement et de la réfection."
+  },
+  "meta": {
+    "formatLabel": "Format",
+    "formatValue": "Conseils et éclairages",
+    "focusLabel": "Focus",
+    "focusValue": "Habitat · Commerce · Restauration",
+    "regionLabel": "Région",
+    "regionValue": "Francfort · Lucerne",
+    "archiveLabel": "Archives",
+    "archiveValue_one": "{{count}} article",
+    "archiveValue_other": "{{count}} articles"
+  },
+  "divider": "Articles récents",
+  "loading": "Chargement des articles.",
+  "loadError": "Impossible de charger les articles.",
+  "unknownError": "Erreur inconnue",
+  "empty": "Aucun article publié pour le moment.",
+  "leadTag": "À la une",
+  "readingTime": "{{minutes}} min de lecture",
+  "readingTimeShort": "{{minutes}} min",
+  "readMore": "Lire la suite",
+  "read": "Lire",
+  "detail": {
+    "notFound": "Article introuvable.",
+    "back": "Retour au magazine",
+    "backShort": "Magazine",
+    "loading": "Chargement de l'article.",
+    "like": "J'aime",
+    "liked": "Enregistré",
+    "share": "Partager",
+    "linkCopied": "Lien copié.",
+    "commentsTitle": "Commentaires",
+    "namePlaceholder": "Nom",
+    "commentPlaceholder": "Commentaire",
+    "submitComment": "Envoyer le commentaire",
+    "commentError": "Impossible d'enregistrer le commentaire.",
+    "commentPublished": "Commentaire publié.",
+    "moreEyebrow": "Lire la suite",
+    "moreTitle": "Autres articles"
+  }
+}

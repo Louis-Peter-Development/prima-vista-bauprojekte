@@ -1,0 +1,790 @@
+{
+  "intro": {
+    "metaTitle": "Calculateur de coûts pour rénovation & construction",
+    "crumbLabel": "Calculateur · Estimation en direct",
+    "title": "Combien coûte<br/>votre <em>projet de construction ?</em>",
+    "lede": "Quelques clics. Une fourchette honnête. Sur la base de données issues de plus de 400 projets achevés en Hesse et en Suisse centrale — sans inscription, sans tactique de vente.",
+    "meta": [
+      {
+        "label": "Calcul",
+        "value": "En direct, en temps réel"
+      },
+      {
+        "label": "Base de données",
+        "value": "412 projets réels"
+      },
+      {
+        "label": "Précision",
+        "value": "−15 % / +20 % fourchette préliminaire"
+      },
+      {
+        "label": "Prix fixe",
+        "value": "Sur demande sous 24 h"
+      }
+    ],
+    "loading": "Chargement …"
+  },
+  "picker": {
+    "categoryLabel": "Catégorie",
+    "categoryHint": "Choisissez le domaine qui correspond à votre projet",
+    "optionCount": "{{count}} options",
+    "leafHint": "Sélectionner un calculateur détaillé"
+  },
+  "categories": {
+    "pakete": {
+      "label": "Forfaits complets",
+      "description": "Rénovation clé en main — habitation, restaurant ou bureau"
+    },
+    "gewerke": {
+      "label": "Corps de métier",
+      "description": "Calculer en détail des corps de métier individuels"
+    },
+    "heizung": {
+      "label": "Méthodes de chauffage",
+      "description": "Configurer et calculer un système de chauffage"
+    }
+  },
+  "leaves": {
+    "pakete": {
+      "haus": {
+        "label": "Rénovation de maison",
+        "lead": "Rénovation complète — du toit au jardin"
+      },
+      "wohnung": {
+        "label": "Rénovation d'appartement",
+        "lead": "Salles de bain, cuisines, sols, électricité"
+      },
+      "gastronomie": {
+        "label": "Aménagement de restaurant",
+        "lead": "Restaurant, café, bar ou club"
+      },
+      "buero": {
+        "label": "Aménagement de bureau",
+        "lead": "Bureau, cabinet, open space"
+      }
+    },
+    "gewerke": {
+      "bad": {
+        "label": "Salles de bain & sanitaires",
+        "lead": "Baignoire, douche, WC"
+      },
+      "kueche": {
+        "label": "Cuisines & menuiserie",
+        "lead": "Menuiserie, appareils"
+      },
+      "boden": {
+        "label": "Sols & revêtements",
+        "lead": "Parquet, pierre, vinyle"
+      },
+      "elektro": {
+        "label": "Installation électrique",
+        "lead": "Courant, éclairage, KNX"
+      },
+      "sanitaer": {
+        "label": "Plomberie",
+        "lead": "Eau, eaux usées"
+      },
+      "trockenbau": {
+        "label": "Cloisons sèches",
+        "lead": "Murs, plafonds"
+      },
+      "maler": {
+        "label": "Peinture & laquage",
+        "lead": "Peintures, papiers peints"
+      },
+      "fassade": {
+        "label": "Rénovation de façade",
+        "lead": "Enduit, ITE"
+      },
+      "dach": {
+        "label": "Rénovation de toiture",
+        "lead": "Couverture, isolation"
+      },
+      "abdichtung": {
+        "label": "Étanchéité & cave",
+        "lead": "Humidité"
+      },
+      "treppen": {
+        "label": "Escaliers & garde-corps",
+        "lead": "Bois, béton, acier"
+      },
+      "garten": {
+        "label": "Jardin & extérieurs",
+        "lead": "Terrasse, allées"
+      },
+      "barrierefreiheit": {
+        "label": "Accessibilité",
+        "lead": "Salle de bain, portes, accès"
+      },
+      "fenster": {
+        "label": "Fenêtres",
+        "lead": "PVC, bois, aluminium"
+      },
+      "rohbau": {
+        "label": "Gros œuvre & démolition",
+        "lead": "Fondation, maçonnerie"
+      },
+      "tueren": {
+        "label": "Portes & huisseries",
+        "lead": "Intérieures, d'entrée, coulissantes"
+      },
+      "zaeune": {
+        "label": "Clôtures & portails",
+        "lead": "Double fil, bois, brise-vue"
+      }
+    },
+    "heizung": {
+      "heizkoerper": {
+        "label": "Radiateurs",
+        "lead": "Remplacement & laquage"
+      },
+      "heizstraenge": {
+        "label": "Colonnes de chauffage",
+        "lead": "Colonnes montantes & de distribution"
+      },
+      "fussboden": {
+        "label": "Chauffage au sol",
+        "lead": "À eau ou électrique"
+      },
+      "waermepumpe": {
+        "label": "Pompe à chaleur air",
+        "lead": "Source de chaleur subventionnable"
+      },
+      "gas": {
+        "label": "Chauffage au gaz",
+        "lead": "Condensation"
+      },
+      "pellet": {
+        "label": "Poêle à pellets",
+        "lead": "Alternative neutre en CO₂"
+      },
+      "sauna": {
+        "label": "Poêle de sauna",
+        "lead": "Thermes & poêles"
+      }
+    }
+  },
+  "result": {
+    "liveEstimate": "Estimation en direct",
+    "from": "à partir de",
+    "to": "jusqu'à",
+    "mean": "Valeur moyenne",
+    "meanNet": "Valeur moyenne nette",
+    "perM2": "par m²",
+    "perM2Net": "par m² net",
+    "vatNote": "Tous les montants nets · hors TVA (TVA 19 % en sus).",
+    "emptyPlaceholder": "— — —",
+    "emptyHint": "Sélectionnez au moins un corps de métier pour voir une première fourchette.",
+    "breakdownTitle": "Détail",
+    "breakdownSub": "par corps de métier",
+    "bindingOffer": "Devis ferme",
+    "appointment": "Prendre rendez-vous",
+    "disclaimerHaus": "Estimation préliminaire pour le type de maison et les corps de métier sélectionnés — hors corps de métier spéciaux, autorisations et forfait de direction de chantier. Prix fermes après métré sur place.",
+    "disclaimerGastro": "Estimation préliminaire pour le type et les corps de métier sélectionnés — hors corps de métier spéciaux, licences de restauration et forfait de direction de chantier. Prix fermes après métré et étude technique.",
+    "disclaimerBuero": "Estimation préliminaire pour le type de bureau et les corps de métier sélectionnés — hors corps de métier spéciaux, autorisations, prix unitaires du mobilier et forfait de direction de chantier. Prix fermes après métré et étude technique."
+  },
+  "types": {
+    "material": "Matériel",
+    "extra": "Extra",
+    "optional": "Optionnel",
+    "montage": "Montage"
+  },
+  "board": {
+    "houseType": "Type de maison",
+    "houseTypeHint": "Détermine la charge & la logistique",
+    "gastroType": "Type d'établissement",
+    "gastroTypeHint": "Détermine la complexité & les exigences",
+    "bueroType": "Type de bureau",
+    "bueroTypeHint": "Détermine le niveau d'aménagement & la technique",
+    "wohnungType": "Type d'appartement",
+    "wohnungTypeHint": "Détermine la complexité & les cloisons",
+    "area": "Surface",
+    "gewerke": "Corps de métier",
+    "gewerkeCount": "<em>{{count}}</em> sur {{total}} sélectionnés",
+    "multiLevelOnly": "Uniquement pour les biens à plusieurs niveaux",
+    "configHint": "Choisissez la configuration souhaitée"
+  },
+  "reno": {
+    "aria": "Configurateur de rénovation",
+    "loading": "Chargement du configurateur …",
+    "areaLabel": "Surface habitable en m²",
+    "itemsActive": "{{active}} sur {{total}} postes actifs",
+    "netPerM2": "{{value}} net / m²",
+    "reset": "Réinitialiser la configuration",
+    "colName": "Nom",
+    "colQuantity": "Qté",
+    "colUnit": "UV",
+    "colPrice": "Prix",
+    "colTotal": "Total",
+    "colActions": "Actions",
+    "enableOptional": "Activer les postes optionnels",
+    "toggleRow": "Activer {{name}}",
+    "replaceRow": "Remplacer {{name}}",
+    "qtyDecrease": "Diminuer la quantité",
+    "qtyIncrease": "Augmenter la quantité",
+    "qtyDecreaseRow": "Diminuer la quantité de {{name}}",
+    "qtyIncreaseRow": "Augmenter la quantité de {{name}}",
+    "qtyRow": "Quantité de {{name}}",
+    "swap": "Échanger le produit",
+    "swapDisabled": "Ce produit ne peut pas être échangé",
+    "duplicate": "Dupliquer le produit",
+    "duplicateDisabled": "Ce produit ne peut pas être dupliqué",
+    "remove": "Supprimer le produit",
+    "removeDisabled": "Ce produit ne peut pas être supprimé",
+    "liveOffer": "Devis en direct",
+    "vatInclNote": "TVA 19 % incluse",
+    "totalNet": "Total net",
+    "vatLine": "hors TVA (TVA 19 % en sus)",
+    "totalGross": "Total",
+    "itemsCount": "{{count}} postes",
+    "itemsOf": "{{active}} sur {{total}} postes",
+    "disclaimer": "Estimation préliminaire sur la base des postes sélectionnés. Prix fermes après métré, vérification et échantillonnage des matériaux.",
+    "requestOffer": "Demander un devis",
+    "areaUnit": "m²"
+  },
+  "haus": {
+    "types": {
+      "1e": {
+        "label": "1 étage sans toit",
+        "detail": "Bungalow · rez-de-chaussée"
+      },
+      "1e-d": {
+        "label": "1 étage + toit",
+        "detail": "Rez-de-chaussée avec couverture"
+      },
+      "2e": {
+        "label": "2 étages sans toit",
+        "detail": "Plusieurs niveaux · sans rénovation de toiture"
+      },
+      "2e-d": {
+        "label": "2 étages + toit",
+        "detail": "Maison complète avec toit"
+      }
+    },
+    "gewerke": {
+      "abdichtung": {
+        "label": "Étanchéité maison & cave",
+        "lead": "Étanchéité horizontale, périmétrique, de cave"
+      },
+      "bad": {
+        "label": "Rénovation de salle de bain & WC invités",
+        "lead": "Baignoire, douche, appareils sanitaires"
+      },
+      "boeden": {
+        "label": "Sols & planchers",
+        "lead": "Parquet, carrelage, vinyle, chape"
+      },
+      "dach": {
+        "label": "Rénovation de toiture",
+        "lead": "Couverture, isolation, charpente"
+      },
+      "elektro": {
+        "label": "Installation électrique",
+        "lead": "Distribution, câblage, KNX, éclairage"
+      },
+      "fassade": {
+        "label": "Façades & isolation",
+        "lead": "ITE, enduit, soubassement, peinture"
+      },
+      "fenster": {
+        "label": "Fenêtres & portes-fenêtres",
+        "lead": "PVC, bois, aluminium"
+      },
+      "heizflaechen": {
+        "label": "Radiateurs & chauffage au sol",
+        "lead": "Chauffage surfacique, radiateurs, colonnes"
+      },
+      "maler": {
+        "label": "Peinture & laquage",
+        "lead": "Murs, plafonds, radiateurs, portes"
+      },
+      "planung": {
+        "label": "Étude & direction de chantier",
+        "lead": "Structure, autorisations, coordination"
+      },
+      "rohbau": {
+        "label": "Prestations de gros œuvre",
+        "lead": "Démolition, maçonnerie, poutres, chape"
+      },
+      "thermen": {
+        "label": "Chaudières & poêles",
+        "lead": "Chaudière gaz/fioul, pompe à chaleur, cheminée"
+      },
+      "treppen": {
+        "label": "Escaliers & garde-corps",
+        "lead": "Bois, béton, réfection"
+      },
+      "tueren": {
+        "label": "Portes & portails",
+        "lead": "Intérieures, d'entrée, coulissantes, portails"
+      },
+      "trockenbau": {
+        "label": "Cloisons sèches",
+        "lead": "Murs, plafonds, contre-cloisons"
+      },
+      "wasser": {
+        "label": "Installation d'eau",
+        "lead": "Adduction et évacuation, colonne principale"
+      }
+    }
+  },
+  "wohnung": {
+    "types": {
+      "studio": {
+        "label": "1 pièce · studio",
+        "detail": "Appartement compact de plain-pied"
+      },
+      "2zi": {
+        "label": "Appartement 2 pièces",
+        "detail": "Appartement standard de plain-pied"
+      },
+      "3zi": {
+        "label": "Appartement 3 pièces",
+        "detail": "Appartement familial avec davantage de cloisons"
+      },
+      "maisonette": {
+        "label": "Duplex · 4 pièces et plus",
+        "detail": "Sur plusieurs niveaux ou penthouse"
+      }
+    }
+  },
+  "buero": {
+    "types": {
+      "refresh": {
+        "label": "Rafraîchissement de bureau",
+        "detail": "Sol, peinture, éclairage, petits ajustements"
+      },
+      "klassisch": {
+        "label": "Bureau classique",
+        "detail": "Bureaux cloisonnés, salles de réunion et kitchenette"
+      },
+      "open-space": {
+        "label": "Open space",
+        "detail": "Acoustique, zones d'éclairage et postes de travail flexibles"
+      },
+      "praxis": {
+        "label": "Cabinet / conseil",
+        "detail": "Accueil, sanitaires, discrétion et protection incendie"
+      }
+    },
+    "gewerke": {
+      "abbruch": {
+        "label": "Dépose & curage",
+        "lede": "Existant, sol, ouverture des plafonds"
+      },
+      "trockenbau": {
+        "label": "Cloisons sèches & espaces",
+        "lede": "Cloisons, contre-cloisons, plafonds"
+      },
+      "akustik": {
+        "label": "Acoustique",
+        "lede": "Plafonds acoustiques, absorbeurs, cabines téléphoniques"
+      },
+      "elektro": {
+        "label": "Installation électrique",
+        "lede": "Prises, tableau divisionnaire, sécurité"
+      },
+      "netzwerk": {
+        "label": "Réseau & données",
+        "lede": "LAN, Wi-Fi, baie serveur/brassage"
+      },
+      "licht": {
+        "label": "Conception d'éclairage",
+        "lede": "Éclairage de poste, rails, commande"
+      },
+      "boeden": {
+        "label": "Revêtements de sol",
+        "lede": "Vinyle, dalle de moquette, parquet, plinthes"
+      },
+      "maler": {
+        "label": "Travaux de peinture",
+        "lede": "Enduisage, peinture, détails de laquage"
+      },
+      "sanitaer": {
+        "label": "Sanitaires & WC",
+        "lede": "WC personnel, WC invités, raccordements"
+      },
+      "teekueche": {
+        "label": "Kitchenette",
+        "lede": "Raccordements, pose, plans de travail"
+      },
+      "brandschutz": {
+        "label": "Protection incendie",
+        "lede": "Issues de secours, portes, signalétique"
+      },
+      "moebel": {
+        "label": "Agencements & mobilier",
+        "lede": "Accueil, rangements, réunion"
+      },
+      "klima": {
+        "label": "Climatisation & ventilation",
+        "lede": "Unités split, distribution d'air, rénovation"
+      }
+    }
+  },
+  "gastro": {
+    "types": {
+      "cafe": {
+        "label": "Café / bistrot",
+        "detail": "Aménagement simple sans cuisine professionnelle"
+      },
+      "restaurant": {
+        "label": "Restaurant",
+        "detail": "Aménagement complet avec cuisine professionnelle"
+      },
+      "bar": {
+        "label": "Bar / club",
+        "detail": "Technique de bar et de ventilation élaborée"
+      },
+      "systemgastro": {
+        "label": "Restauration de chaîne",
+        "detail": "Aménagement multi-niveaux standardisé"
+      }
+    },
+    "gewerke": {
+      "abbruch": {
+        "label": "Démolition & curage",
+        "lede": "Retrait de l'existant"
+      },
+      "lueftung": {
+        "label": "Ventilation & climatisation",
+        "lede": "Ventilation de restauration, climatisation"
+      },
+      "kueche": {
+        "label": "Cuisine professionnelle",
+        "lede": "Équipements de cuisine professionnelle, mobilier inox"
+      },
+      "kuehlung": {
+        "label": "Réfrigération & tirage",
+        "lede": "Chambres froides, installation de comptoir"
+      },
+      "sanitaer": {
+        "label": "Sanitaires & WC invités",
+        "lede": "WC invités, WC du personnel"
+      },
+      "elektro": {
+        "label": "Électricité & éclairage",
+        "lede": "Courant fort, conception d'éclairage"
+      },
+      "boeden": {
+        "label": "Revêtements de sol",
+        "lede": "Carrelage antidérapant, sol de salle"
+      },
+      "trockenbau": {
+        "label": "Cloisons sèches & acoustique",
+        "lede": "Plafonds acoustiques, cloisons"
+      },
+      "maler": {
+        "label": "Travaux de peinture",
+        "lede": "Décoration murale, laquages"
+      },
+      "brandschutz": {
+        "label": "Protection incendie & sécurité",
+        "lede": "Détecteurs de fumée, issues de secours"
+      },
+      "moebel": {
+        "label": "Mobilier & agencement intérieur",
+        "lede": "Banquettes, tables, réalisation du comptoir"
+      },
+      "treppen": {
+        "label": "Escaliers & garde-corps",
+        "lede": "Escaliers de liaison internes"
+      }
+    }
+  },
+  "gw": {
+    "abdichtung": {
+      "field": "Système d'étanchéité",
+      "hint": "Choisissez votre type d'étanchéité",
+      "types": {
+        "abdichtung": { "label": "Étanchéité complète", "detail": "Forfait complet" },
+        "abdichtungHorizontal": { "label": "Étanchéité horizontale", "detail": "Barrière horizontale" },
+        "abdichtungPerimeter": { "label": "Étanchéité périmétrique", "detail": "Étanchéité extérieure" },
+        "abdichtungKeller": { "label": "Étanchéité de cave (intérieure)", "detail": "Étanchéité intérieure" }
+      }
+    },
+    "bad": {
+      "field": "Équipement de salle de bain",
+      "types": {
+        "badGaeste": { "label": "WC invités", "detail": "Toutes les variantes" },
+        "badKomplett": { "label": "Baignoire & douche", "detail": "Salle de bain complète" },
+        "badWanne": { "label": "Salle de bain avec baignoire", "detail": "Avec baignoire uniquement" },
+        "badDusche": { "label": "Salle de bain avec douche", "detail": "Avec douche uniquement" },
+        "badWhirlpool": { "label": "Salle de bain avec balnéo", "detail": "Avec balnéo uniquement" },
+        "badWhirlpoolDusche": { "label": "Balnéo & douche", "detail": "Salle de bain complète de luxe" },
+        "badBarrierefrei": { "label": "Salle de bain accessible", "detail": "Adaptée aux fauteuils roulants" }
+      }
+    },
+    "barrierefrei": {
+      "field": "Exigence",
+      "hint": "Choisissez le concept souhaité",
+      "types": {
+        "barrierefreiDusche": { "label": "Douche de plain-pied", "detail": "Transformation en douche à l'italienne" },
+        "barrierefreiWc": { "label": "WC & lavabo", "detail": "Accessible & adapté aux fauteuils roulants" },
+        "barrierefreiSenioren": { "label": "Salle de bain pour seniors", "detail": "Antidérapant, barres d'appui & rénovation partielle" },
+        "barrierefreiRollstuhl": { "label": "Adapté aux fauteuils roulants", "detail": "Transformation complète selon DIN 18040-2" }
+      }
+    },
+    "boden": {
+      "field": "Type de revêtement",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "boedenParkettVerlegung": { "label": "Parquet", "detail": "Pose" },
+        "boedenLaminatVerlegung": { "label": "Stratifié", "detail": "Pose" },
+        "boedenFliesenVerlegung": { "label": "Carrelage", "detail": "Pose" },
+        "boedenSockelleisten": { "label": "Plinthes", "detail": "Pose" },
+        "boedenParkettAufbereiten": { "label": "Parquet", "detail": "Rénovation" },
+        "boedenKorkboden": { "label": "Sol en liège", "detail": "Pose" },
+        "boedenVinyl": { "label": "Vinyle ou linoléum", "detail": "Pose" },
+        "boedenEstrichplatten": { "label": "Plaques de chape", "detail": "Pose" },
+        "boedenSichtestrich": { "label": "Chape apparente", "detail": "Pose" },
+        "boedenTeppich": { "label": "Moquette", "detail": "Pose" },
+        "boedenAlles": { "label": "Tout pour les sols", "detail": "Forfait" }
+      }
+    },
+    "dach": {
+      "field": "Variante de toiture",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "dachAlles": { "label": "Tout pour la rénovation de toiture", "detail": "Toiture complète" },
+        "dachNeubedachung": { "label": "Nouvelle couverture", "detail": "Couverture de toit" },
+        "dachDachstuhl": { "label": "Charpente", "detail": "Structure" },
+        "dachInnenausbau": { "label": "Aménagement intérieur des combles", "detail": "Combles" },
+        "dachDaemmung": { "label": "Isolation de toiture", "detail": "Efficacité énergétique" },
+        "dachGauben": { "label": "Lucarnes", "detail": "Plus d'espace" },
+        "dachFenster": { "label": "Fenêtres de toit", "detail": "Éclairage naturel" },
+        "dachanhebung": { "label": "Rehaussement hydraulique de toiture", "detail": "Surélévation" },
+        "flachdach": { "label": "Revêtement de toit plat", "detail": "Toit plat" },
+        "dachbodenDaemmung": { "label": "Isolation des combles", "detail": "Plancher de comble" }
+      }
+    },
+    "elektro": {
+      "field": "Prestation électrique",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "elektroAlles": { "label": "Tout pour l'électricité", "detail": "Forfait complet" },
+        "elektroNeuinstallation": { "label": "Nouvelle installation", "detail": "Par étage" },
+        "elektroSicherungskasten": { "label": "Tableau électrique", "detail": "Distribution" },
+        "elektroNetzwerk": { "label": "Réseau & bus", "detail": "Données & KNX" },
+        "elektroEinzelinstallation": { "label": "Installation individuelle", "detail": "Alimentation & élément" },
+        "elektroLichttechnik": { "label": "Technique d'éclairage", "detail": "Éclairage" },
+        "elektroFreeHome": { "label": "Free Home", "detail": "Maison connectée" },
+        "elektroRolladen": { "label": "Commande de volets roulants", "detail": "Occultation" },
+        "elektroSprechanlagen": { "label": "Interphones", "detail": "Communication de porte" }
+      }
+    },
+    "fassade": {
+      "field": "Prestation de façade",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "fassadeAlles": { "label": "Tout pour la façade", "detail": "Toutes les variantes" },
+        "fassadeDaemmung": { "label": "Isolation & peinture", "detail": "ITE" },
+        "fassadeAnstrich": { "label": "Peinture", "detail": "Façade" },
+        "fassadeHolzverkleidung": { "label": "Bardage bois", "detail": "Façade" },
+        "fassadeSockeldaemmung": { "label": "Isolation du soubassement", "detail": "Soubassement" },
+        "fassadeKlinkerSteinriemchen": { "label": "Plaquettes de parement", "detail": "Habillage" },
+        "fassadePlattenverkleidung": { "label": "Bardage en panneaux", "detail": "Façade" },
+        "fassadeNatursteinverkleidung": { "label": "Pierre naturelle", "detail": "Habillage" },
+        "fassadeVorhangfassade": { "label": "Façade ventilée", "detail": "Façade" },
+        "fassadeVerblendmauerwerk": { "label": "Mur de parement", "detail": "Façade" }
+      }
+    },
+    "fenster": {
+      "field": "Prestation de fenêtres",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "fensterAlles": { "label": "Tout pour les fenêtres", "detail": "Toutes les variantes" },
+        "fensterKunststoff": { "label": "Fenêtres PVC", "detail": "Montage" },
+        "fensterHolz": { "label": "Fenêtres bois", "detail": "Montage" },
+        "fensterAluminium": { "label": "Fenêtres aluminium", "detail": "Montage" },
+        "fensterFensterlaeden": { "label": "Volets battants", "detail": "Montage" },
+        "fensterRolladen": { "label": "Volet roulant", "detail": "Montage" },
+        "fensterDachfenster": { "label": "Fenêtres de toit", "detail": "Montage" },
+        "fensterBalkontueren": { "label": "Portes-fenêtres de balcon", "detail": "Montage" },
+        "fensterCarportGaragentore": { "label": "Portes de garage", "detail": "Carport" },
+        "fensterFensterLackierung": { "label": "Laquage de fenêtres", "detail": "Peinture" },
+        "fensterMarkisen": { "label": "Stores bannes", "detail": "Montage" }
+      }
+    },
+    "garten": {
+      "field": "Prestation extérieure",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "gartenAlles": { "label": "Tout pour le jardin", "detail": "Toutes les variantes" },
+        "gartenBeleuchtung": { "label": "Éclairage", "detail": "Extérieur" },
+        "gartenBlockstufen": { "label": "Marches monobloc", "detail": "Extérieur" },
+        "gartenCarport": { "label": "Carport", "detail": "Montage" },
+        "gartenHochbeete": { "label": "Bacs surélevés", "detail": "Jardin" },
+        "gartenGartenhaus": { "label": "Abri de jardin", "detail": "Montage" },
+        "gartenGartenmauern": { "label": "Murs de jardin", "detail": "Maçonnerie" },
+        "gartenGeraetehaus": { "label": "Abri à outils", "detail": "Montage" },
+        "gartenPavillon": { "label": "Pavillon", "detail": "Montage" },
+        "gartenTerrassenHolz": { "label": "Terrasse en bois", "detail": "Revêtement" },
+        "gartenTerrassenStein": { "label": "Terrasse en pierre", "detail": "Revêtement" },
+        "gartenUeberdachung": { "label": "Couverture", "detail": "Terrasse" },
+        "gartenWintergarten": { "label": "Jardin d'hiver", "detail": "Montage" },
+        "gartenZaunanlagen": { "label": "Clôtures", "detail": "Extérieur" },
+        "gartenWasserwirtschaft": { "label": "Gestion de l'eau", "detail": "Raccordements" }
+      }
+    },
+    "heiz": {
+      "field": "Prestation de chauffage",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "heizmethodenHeizkoerper": { "label": "Radiateurs", "detail": "Montage & matériel" },
+        "heizmethodenHeizstraenge": { "label": "Colonnes de chauffage", "detail": "Apparent / encastré" },
+        "heizmethodenFussbodenheizung": { "label": "Chauffage au sol", "detail": "Chauffage surfacique" },
+        "heizmethodenWaermepumpe": { "label": "Pompe à chaleur", "detail": "Pompe à chaleur air" },
+        "heizmethodenGasHeizung": { "label": "Chauffage au gaz", "detail": "Technique à condensation" },
+        "heizmethodenPelletofen": { "label": "Poêle à pellets", "detail": "Chaleur à pellets" },
+        "heizmethodenSaunaofen": { "label": "Poêle de sauna", "detail": "Sauna & accessoires" }
+      }
+    },
+    "kueche": {
+      "field": "Prestation de cuisine",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "kuecheAlles": { "label": "Tout pour les cuisines", "detail": "Toutes les variantes" },
+        "kuecheKomplettkueche": { "label": "Cuisine complète", "detail": "Montage" },
+        "kuecheSingleMinikuechen": { "label": "Kitchenette / mini-cuisine", "detail": "Montage" },
+        "kuecheBuerokueche": { "label": "Cuisine de bureau", "detail": "Montage" },
+        "kuecheEinbaukueche": { "label": "Cuisine intégrée", "detail": "Montage" },
+        "kuecheKuechenzeile": { "label": "Cuisine linéaire", "detail": "Montage" },
+        "kuecheArbeitsplatteSpuele": { "label": "Plan de travail & évier", "detail": "Prestation supplémentaire" },
+        "kuecheDunstabzugshaube": { "label": "Hotte aspirante", "detail": "Montage" },
+        "kuecheBodenDecken": { "label": "Sol & plafonds", "detail": "Cuisine" },
+        "kuecheElektroBeleuchtung": { "label": "Électricité & éclairage", "detail": "Cuisine" },
+        "kuecheWasserinstallation": { "label": "Installation d'eau", "detail": "Cuisine" }
+      }
+    },
+    "maler": {
+      "field": "Prestation de peinture",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "malerAlles": { "label": "Tout pour la peinture", "detail": "Toutes les variantes" },
+        "malerAnstrich": { "label": "Peinture", "detail": "Surfaces murales" },
+        "malerGlaettenAnstrich": { "label": "Lissage & peinture", "detail": "Murs" },
+        "malerTapezieren": { "label": "Pose de papier peint", "detail": "Surfaces murales" },
+        "malerDeckenLackierung": { "label": "Plafonds bois", "detail": "Laquage" },
+        "malerHeizkoerperLackierung": { "label": "Radiateurs", "detail": "Laquage" },
+        "malerFensterLackierung": { "label": "Fenêtres", "detail": "Laquage" },
+        "malerTuerenLackierung": { "label": "Portes", "detail": "Laquage" },
+        "malerTreppenGelaenderLackierung": { "label": "Escaliers/garde-corps", "detail": "Laquage" },
+        "malerFassadenAnstrich": { "label": "Peinture de façade", "detail": "Surfaces extérieures" }
+      }
+    },
+    "rohbau": {
+      "field": "Prestation de gros œuvre",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "rohbauAlles": { "label": "Tout pour le gros œuvre", "detail": "Toutes les variantes" },
+        "rohbauAbbruch": { "label": "Démolition", "detail": "Prestations" },
+        "rohbauEstrich": { "label": "Chape", "detail": "Pose" },
+        "rohbauStahltraeger": { "label": "Poutre en acier", "detail": "Installation" },
+        "rohbauVerputzen": { "label": "Enduisage", "detail": "Murs" },
+        "rohbauLichtschaechte": { "label": "Saut-de-loup", "detail": "Montage" },
+        "rohbauSchornstein": { "label": "Cheminée", "detail": "Construction" },
+        "rohbauMauerwerk": { "label": "Maçonnerie", "detail": "Réalisation" },
+        "rohbauPflastern": { "label": "Pavage", "detail": "Extérieur" }
+      }
+    },
+    "treppen": {
+      "field": "Prestation d'escaliers",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "treppenAlles": { "label": "Tout pour les escaliers", "detail": "Toutes les variantes" },
+        "treppenHolztreppe": { "label": "Escalier en bois", "detail": "Montage" },
+        "treppenBetontreppe": { "label": "Escalier en béton", "detail": "Montage" },
+        "treppenDurchbruch": { "label": "Trémie d'escalier", "detail": "Percement" },
+        "treppenGelaender": { "label": "Garde-corps", "detail": "Montage" },
+        "treppenAussentreppe": { "label": "Escalier extérieur", "detail": "Montage" },
+        "treppenRaumspartreppe": { "label": "Escalier gain de place", "detail": "Montage" },
+        "treppenDachbodentreppe": { "label": "Escalier escamotable", "detail": "Montage" },
+        "treppenSpindeltreppe": { "label": "Escalier hélicoïdal", "detail": "Montage" },
+        "treppenAufbereiten": { "label": "Réfection d'escaliers", "detail": "Rénovation" },
+        "treppenBelegung": { "label": "Revêtement d'escalier", "detail": "Revêtement" }
+      }
+    },
+    "trockenbau": {
+      "field": "Prestation de cloisons sèches",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "trockenbauAlles": { "label": "Tout pour les cloisons sèches", "detail": "Toutes les variantes" },
+        "trockenbauDecken": { "label": "Plafonds suspendus", "detail": "Plafonds" },
+        "trockenbauWaendeStellen": { "label": "Pose de cloisons", "detail": "Ossature" },
+        "trockenbauWaendeVerkleiden": { "label": "Habillage de murs", "detail": "Habillage" },
+        "trockenbauEstrich": { "label": "Chape/sol", "detail": "Cloisons sèches" },
+        "trockenbauDachschraegen": { "label": "Rampants", "detail": "Aménagement" }
+      }
+    },
+    "tueren": {
+      "field": "Prestation de portes",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "tuerenAlles": { "label": "Tout pour les portes", "detail": "Toutes les variantes" },
+        "tuerenZimmertueren": { "label": "Portes intérieures", "detail": "Montage" },
+        "tuerenSchiebetueren": { "label": "Portes coulissantes", "detail": "Montage" },
+        "tuerenGlastueren": { "label": "Portes en verre", "detail": "Montage" },
+        "tuerenBalkonTerrassen": { "label": "Balcon/terrasse", "detail": "Portes" },
+        "tuerenHaustueren": { "label": "Portes d'entrée", "detail": "Montage" },
+        "tuerenKellertueren": { "label": "Portes de cave", "detail": "Montage" },
+        "tuerenGaragentore": { "label": "Portes de garage", "detail": "Montage" },
+        "tuerenToreEinfahrt": { "label": "Portails/entrée", "detail": "Montage" }
+      }
+    },
+    "wasser": {
+      "field": "Prestation de plomberie",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "wasserAlles": { "label": "Tout pour l'eau", "detail": "Toutes les variantes" },
+        "wasserBadezimmer": { "label": "Salle de bain", "detail": "Installation d'eau" },
+        "wasserGaesteWc": { "label": "WC invités", "detail": "Installation d'eau" },
+        "wasserKueche": { "label": "Cuisine", "detail": "Installation d'eau" },
+        "wasserWaschmaschine": { "label": "Lave-linge", "detail": "Raccordement" },
+        "wasserKeller": { "label": "Cave", "detail": "Installation d'eau" },
+        "wasserGarten": { "label": "Jardin", "detail": "Installation d'eau" },
+        "wasserSpuelkasten": { "label": "Réservoir de chasse", "detail": "Remplacement" },
+        "wasserHauptstrang": { "label": "Colonne principale", "detail": "Conduite" }
+      }
+    },
+    "zaeune": {
+      "field": "Prestation de clôtures",
+      "hint": "Choisissez le calculateur souhaité",
+      "types": {
+        "zaeuneAluminium": { "label": "Clôture en aluminium", "detail": "Montage" },
+        "zaeuneHolz": { "label": "Clôture en bois", "detail": "Montage" },
+        "zaeuneGlas": { "label": "Clôture en verre", "detail": "Montage" },
+        "zaeuneMetall": { "label": "Clôture en métal", "detail": "Montage" },
+        "zaeuneDoppelstab": { "label": "Panneaux double fil", "detail": "Montage" },
+        "zaeuneGabionen": { "label": "Clôture en gabions", "detail": "Montage" },
+        "zaeuneSichtschutz": { "label": "Clôture brise-vue", "detail": "Montage" },
+        "zaeuneMaschendraht": { "label": "Clôture grillagée", "detail": "Montage" },
+        "zaeuneSteck": { "label": "Clôture à emboîtement", "detail": "Montage" },
+        "zaeuneVorgarten": { "label": "Clôture de jardinet", "detail": "Montage" },
+        "zaeuneSichtschutzstreifen": { "label": "Lamelles brise-vue", "detail": "Montage" }
+      }
+    }
+  },
+  "pdf": {
+    "trigger": "Aperçu PDF",
+    "dialogAria": "Aperçu PDF",
+    "sendHead": "Envoyer en PDF",
+    "close": "Fermer l'aperçu",
+    "emailLabel": "Veuillez saisir votre adresse e-mail",
+    "emailPlaceholder": "Saisir l'adresse e-mail",
+    "submit": "Envoyer maintenant",
+    "submitting": "Envoi en cours",
+    "consent": "Je confirme par la présente recevoir le PDF par e-mail et souhaite recevoir des informations en lien avec le sujet.",
+    "previewEyebrow": "Aperçu PDF",
+    "previewTitle": "Détails de la sélection",
+    "summaryPositions": "Postes",
+    "summaryTotalNet": "Total net",
+    "itemQuantity": "Quantité",
+    "itemUnit": "Unitaire",
+    "itemTotal": "Total",
+    "errorEmail": "Veuillez saisir une adresse e-mail valide.",
+    "errorConsent": "Veuillez confirmer l'envoi du PDF par e-mail.",
+    "errorSend": "Le PDF n'a pas pu être envoyé. Veuillez réessayer plus tard.",
+    "sent": "Le PDF a été envoyé."
+  }
+}
