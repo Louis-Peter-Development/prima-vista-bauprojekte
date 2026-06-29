@@ -21,10 +21,13 @@ const SERVICE_ITEMS: NavItem[] = [
   { to: '/heizmethoden', labelKey: 'nav.heating', activeOn: HEATING_ACTIVE },
 ];
 
-// Standalone items after the Services dropdown (desktop order).
+// Standalone items after the Services dropdown (desktop order). "About us"
+// is an in-page anchor to the founders section on the home page (same target
+// the footer uses).
 const TRAILING_NAV: NavItem[] = [
   { to: '/projekte', labelKey: 'nav.projects' },
   { to: '/blog', labelKey: 'nav.magazine' },
+  { to: '/#ueber-uns', labelKey: 'nav.about' },
   { to: '/kontakt', labelKey: 'nav.contact' },
 ];
 
