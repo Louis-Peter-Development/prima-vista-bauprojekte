@@ -203,8 +203,7 @@
     "gewerkeCount": "<em>{{count}}</em> di {{total}} selezionate",
     "multiLevelOnly": "Solo per immobili su più livelli",
     "configHint": "Scelga la configurazione desiderata",
-    "floorplanAlt": "Planimetria di esempio: {{label}}",
-    "floorplanCaption": "Planimetria di esempio — {{area}} m² di superficie"
+    "floorplanAlt": "Planimetria di esempio: {{label}}"
   },
   "reno": {
     "aria": "Configuratore di ristrutturazione",

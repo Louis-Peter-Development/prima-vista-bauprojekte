@@ -15,8 +15,6 @@ export default function WohnungSanierungBoard({
   onWohnungTypeChange,
 }: Props) {
   const { t } = useTranslation('kalk');
-  const selected = WOHNUNG_TYPES.find((option) => option.value === wohnungType) ?? WOHNUNG_TYPES[0];
-  const selectedLabel = t(`wohnung.types.${selected.value}.label`, { defaultValue: selected.label });
   function chooseWohnungType(value: WohnungType) {
     onWohnungTypeChange(value);
     scrollToCalculatorResult();
@@ -30,32 +28,32 @@ export default function WohnungSanierungBoard({
           <span className="kalk-board__label">{t('board.wohnungType')}</span>
           <span className="kalk-board__hint">{t('board.wohnungTypeHint')}</span>
         </div>
-        <div className="haus-types">
-          {WOHNUNG_TYPES.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              className={`haus-types__opt${option.value === wohnungType ? ' is-on' : ''}`}
-              onClick={() => chooseWohnungType(option.value)}
-              aria-pressed={option.value === wohnungType}
-            >
-              <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{t(`wohnung.types.${option.value}.label`, { defaultValue: option.label })}</span>
-              <span className="haus-types__detail">{t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
-            </button>
-          ))}
+        <div className="haus-types haus-types--withthumb">
+          {WOHNUNG_TYPES.map((option) => {
+            const label = t(`wohnung.types.${option.value}.label`, { defaultValue: option.label });
+            return (
+              <button
+                key={option.value}
+                type="button"
+                className={`haus-types__opt${option.value === wohnungType ? ' is-on' : ''}`}
+                onClick={() => chooseWohnungType(option.value)}
+                aria-pressed={option.value === wohnungType}
+              >
+                <img
+                  className="haus-types__thumb"
+                  src={option.floorplan}
+                  alt={t('board.floorplanAlt', { label })}
+                  width="640"
+                  height="340"
+                  loading="lazy"
+                />
+                <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
+                <span className="haus-types__label">{label}</span>
+                <span className="haus-types__detail">{t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
+              </button>
+            );
+          })}
         </div>
-        <figure className="kalk-board__floorplan">
-          <img
-            key={selected.value}
-            src={selected.floorplan}
-            alt={t('board.floorplanAlt', { label: selectedLabel })}
-            width="1000"
-            height="880"
-            loading="lazy"
-          />
-          <figcaption>{t('board.floorplanCaption', { area: selected.defaultArea })}</figcaption>
-        </figure>
       </div>
     </div>
   );

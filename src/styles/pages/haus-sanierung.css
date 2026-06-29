@@ -62,33 +62,19 @@
   color: var(--pv-text-on-dark-muted);
 }
 
-/* Live floor-plan preview under the apartment-type picker */
-.kalk-board__floorplan {
-  margin: 18px 0 0;
-  border: 1px solid var(--pv-border-hair, rgba(20, 19, 18, .14));
-  background: var(--pv-cream-soft, #f4ede4);
-  overflow: hidden;
-}
-.kalk-board__floorplan img {
+/* Floor-plan thumbnail shown on each apartment-type choice (all four visible).
+   Bleeds to the button's edges as a banner above the label. */
+.haus-types__thumb {
   display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1000 / 880;
+  width: calc(100% + 36px);
+  height: 92px;
+  margin: -18px -18px 14px;
   object-fit: cover;
-  animation: pv-floorplan-fade 320ms var(--pv-ease-out, ease);
+  background: var(--pv-cream-soft, #f4ede4);
+  border-bottom: 1px solid rgba(20, 19, 18, .12);
 }
-.kalk-board__floorplan figcaption {
-  padding: 10px 14px;
-  font-family: var(--pv-font-mono);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--pv-text-on-light-muted);
-  border-top: 1px solid var(--pv-border-hair, rgba(20, 19, 18, .1));
-}
-@keyframes pv-floorplan-fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.haus-types__opt.is-on .haus-types__thumb {
+  border-bottom-color: rgba(255, 255, 255, .16);
 }
 
 /* Equal-width chip row for fixed area buckets */
