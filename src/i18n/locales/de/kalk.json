@@ -203,7 +203,8 @@
     "gewerkeCount": "<em>{{count}}</em> von {{total}} gewählt",
     "multiLevelOnly": "Nur für mehrgeschossige Objekte",
     "configHint": "Wählen Sie Ihre gewünschte Konfiguration",
-    "floorplanAlt": "Beispiel-Grundriss: {{label}}"
+    "floorplanAlt": "Beispiel-Grundriss: {{label}}",
+    "livingArea": "Wohnfläche"
   },
   "reno": {
     "aria": "Renovierung Konfigurator",

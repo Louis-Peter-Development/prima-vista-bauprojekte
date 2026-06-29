@@ -203,7 +203,8 @@
     "gewerkeCount": "<em>{{count}}</em> sur {{total}} sélectionnés",
     "multiLevelOnly": "Uniquement pour les biens à plusieurs niveaux",
     "configHint": "Choisissez la configuration souhaitée",
-    "floorplanAlt": "Plan d’étage exemple : {{label}}"
+    "floorplanAlt": "Plan d’étage exemple : {{label}}",
+    "livingArea": "Surface"
   },
   "reno": {
     "aria": "Configurateur de rénovation",

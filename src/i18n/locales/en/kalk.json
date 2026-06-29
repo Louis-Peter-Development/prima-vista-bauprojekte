@@ -203,7 +203,8 @@
     "gewerkeCount": "<em>{{count}}</em> of {{total}} selected",
     "multiLevelOnly": "For multi-storey premises only",
     "configHint": "Choose your preferred configuration",
-    "floorplanAlt": "Example floor plan: {{label}}"
+    "floorplanAlt": "Example floor plan: {{label}}",
+    "livingArea": "Living area"
   },
   "reno": {
     "aria": "Renovation configurator",

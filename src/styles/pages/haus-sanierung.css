@@ -62,19 +62,79 @@
   color: var(--pv-text-on-dark-muted);
 }
 
-/* Floor-plan thumbnail shown on each apartment-type choice (all four visible).
-   Bleeds to the button's edges as a banner above the label. */
-.haus-types__thumb {
-  display: block;
-  width: calc(100% + 36px);
-  height: 92px;
-  margin: -18px -18px 14px;
-  object-fit: cover;
-  background: var(--pv-cream-soft, #f4ede4);
-  border-bottom: 1px solid rgba(20, 19, 18, .12);
+/* Apartment-type picker: floor-plan cards with a localized area label
+   overlaid on a gradient (text cropped out of the renders themselves). */
+.aptplan {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
-.haus-types__opt.is-on .haus-types__thumb {
-  border-bottom-color: rgba(255, 255, 255, .16);
+.aptplan__card {
+  position: relative;
+  display: block;
+  padding: 0;
+  aspect-ratio: 3 / 2;
+  border: 1px solid rgba(20, 19, 18, .18);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--pv-cream-soft, #f4ede4);
+  cursor: pointer;
+  transition:
+    border-color 180ms var(--pv-ease-out),
+    transform 180ms var(--pv-ease-out),
+    box-shadow 180ms var(--pv-ease-out);
+}
+.aptplan__card:hover {
+  border-color: var(--pv-copper);
+  transform: translateY(-2px);
+}
+.aptplan__card.is-on {
+  border-color: var(--pv-copper);
+  box-shadow: 0 0 0 2px var(--pv-copper), 0 12px 26px -16px rgba(20, 19, 18, .55);
+}
+.aptplan__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aptplan__cap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 14px 10px 14px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(18, 17, 16, .78) 0%,
+    rgba(18, 17, 16, .42) 34%,
+    rgba(18, 17, 16, 0) 66%
+  );
+}
+.aptplan__area {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 1.5vw, 23px);
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .35);
+}
+.aptplan__label {
+  font-family: var(--pv-font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+@media (max-width: 720px) {
+  .aptplan { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Equal-width chip row for fixed area buckets */
