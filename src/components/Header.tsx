@@ -31,27 +31,11 @@ const TRAILING_NAV: NavItem[] = [
   { to: '/kontakt', labelKey: 'nav.contact' },
 ];
 
-// Flat list for the mobile menu (every page reachable, Services expanded).
-const MOBILE_NAV: NavItem[] = [
-  { to: '/', labelKey: 'nav.home' },
-  ...SERVICE_ITEMS,
-  ...TRAILING_NAV,
-];
-
 function itemMatches(item: NavItem, pathname: string): boolean {
   if (item.to === '/') return pathname === '/';
   if (pathname === item.to || pathname.startsWith(`${item.to}/`)) return true;
   return item.activeOn?.some((p) => pathname === p || pathname.startsWith(`${p}/`)) ?? false;
 }
-
-const FEATURED_PROJECT = {
-  src: '/assets/img/proj-spa-bath.webp',
-  num: '№ 141',
-  titleLead: 'Spa-Bad —',
-  titleAccent: 'Hotel.',
-  loc: 'Emmenbrücke',
-  year: '2025',
-};
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -70,10 +54,13 @@ export default function Header() {
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
     document.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow;
+    const prevRoot = document.documentElement.style.overflow;
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = prev;
+      document.documentElement.style.overflow = prevRoot;
     };
   }, [open]);
 
@@ -167,7 +154,7 @@ export default function Header() {
               ))}
             </ul>
 
-            <SearchBar className="pv-nav__search" />
+            <SearchBar className="pv-nav__search pv-search--header" />
 
             <LanguageSwitcher className="pv-nav__lang" />
             <button
@@ -211,36 +198,47 @@ export default function Header() {
         aria-label={t('nav.ariaPrimary')}
         hidden={!open}
       >
-        <Link to="/projekte" className="pv-mobile-menu__feature" onClick={() => setOpen(false)}>
-          <img src={FEATURED_PROJECT.src} alt="" width="1500" height="1125" loading="lazy" />
-          <span className="pv-mobile-menu__feature-overlay" aria-hidden="true" />
-          <span className="pv-mobile-menu__feature-eyebrow">
-            {t('mobileMenu.focus')} <span className="pv-mobile-menu__feature-sep">·</span> {FEATURED_PROJECT.num}
-          </span>
-          <span className="pv-mobile-menu__feature-body">
-            <span className="pv-mobile-menu__feature-title">
-              {FEATURED_PROJECT.titleLead}{' '}
-              <em>{FEATURED_PROJECT.titleAccent}</em>
-            </span>
-            <span className="pv-mobile-menu__feature-meta">
-              <span>{FEATURED_PROJECT.loc}</span>
-              <span className="pv-mobile-menu__feature-dot">·</span>
-              <span>{FEATURED_PROJECT.year}</span>
-            </span>
-          </span>
-        </Link>
-
-        <SearchBar className="pv-search--mobile" />
-
         <nav className="pv-mobile-menu__nav" aria-label={t('nav.ariaMobile')}>
           <ul className="pv-mobile-menu__list">
-            {MOBILE_NAV.map((item, i) => {
+            <li style={{ ['--i' as string]: 0 }}>
+              <NavLink
+                to="/"
+                end
+                className={`pv-mobile-menu__link${pathname === '/' ? ' is-active' : ''}`}
+                onClick={() => {
+                  homeClick('/');
+                  setOpen(false);
+                }}
+              >
+                <span className="pv-mobile-menu__label">{t('nav.home')}</span>
+                <span className="pv-mobile-menu__num">01</span>
+              </NavLink>
+            </li>
+            <li className={`pv-mobile-menu__group${servicesActive ? ' is-active' : ''}`} style={{ ['--i' as string]: 1 }}>
+              <div className="pv-mobile-menu__group-head">
+                <span className="pv-mobile-menu__label">{t('nav.services')}</span>
+                <span className="pv-mobile-menu__num">02</span>
+              </div>
+              <div className="pv-mobile-menu__subgrid">
+                {SERVICE_ITEMS.map((item) => (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={`pv-mobile-menu__sublink${itemMatches(item, pathname) ? ' is-active' : ''}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(item.labelKey)}
+                  </NavLink>
+                ))}
+              </div>
+            </li>
+            {TRAILING_NAV.map((item, i) => {
               const active = itemMatches(item, pathname);
+              const number = String(i + 3).padStart(2, '0');
               return (
-              <li key={item.to} style={{ ['--i' as string]: i }}>
+              <li key={item.to} style={{ ['--i' as string]: i + 2 }}>
                 <NavLink
                   to={item.to}
-                  end={item.to === '/'}
                   className={`pv-mobile-menu__link${active ? ' is-active' : ''}`}
                   onClick={() => {
                     homeClick(item.to);
@@ -248,7 +246,7 @@ export default function Header() {
                   }}
                 >
                   <span className="pv-mobile-menu__label">{t(item.labelKey)}</span>
-                  <span className="pv-mobile-menu__num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="pv-mobile-menu__num">{number}</span>
                 </NavLink>
               </li>
               );
@@ -257,17 +255,29 @@ export default function Header() {
         </nav>
 
         <div className="pv-mobile-menu__foot">
-          <LanguageSwitcher className="pv-lang--mobile pv-mobile-menu__lang" />
+          <div className="pv-mobile-menu__controls">
+            <LanguageSwitcher className="pv-lang--mobile pv-mobile-menu__lang" />
+            <button
+              type="button"
+              className="pv-theme-toggle pv-theme-toggle--mobile"
+              aria-label={theme === 'dark' ? t('header.themeToLight') : t('header.themeToDark')}
+              aria-pressed={theme === 'dark'}
+              title={theme === 'dark' ? t('header.themeLightTitle') : t('header.themeDarkTitle')}
+              onClick={toggleTheme}
+            >
+              <span className="pv-theme-toggle__track" aria-hidden="true">
+                <span className="pv-theme-toggle__sun" />
+                <span className="pv-theme-toggle__moon" />
+                <span className="pv-theme-toggle__knob" />
+              </span>
+              <span className="pv-mobile-menu__control-label">
+                {theme === 'dark' ? t('header.themeLightTitle') : t('header.themeDarkTitle')}
+              </span>
+            </button>
+          </div>
           <Link to="/blitz-angebot" className="pv-mobile-menu__cta" onClick={() => setOpen(false)}>
             {t('cta.expressQuote')} <span className="arrow">&gt;</span>
           </Link>
-          <Link to="/kontakt" className="pv-mobile-menu__cta pv-mobile-menu__cta--ghost" onClick={() => setOpen(false)}>
-            {t('cta.appointment')} <span className="arrow">&gt;</span>
-          </Link>
-          <div className="pv-mobile-menu__phone">
-            {t('mobileMenu.callPrefix')} <span className="pv-mobile-menu__phone-sep">·</span>{' '}
-            <a href="tel:+4915789818308">+49 1578 98 18 308</a>
-          </div>
         </div>
       </div>
     </>

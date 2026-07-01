@@ -24,7 +24,7 @@ export const INITIAL_CONTACT_FORM: ContactFormState = {
   email: '',
   tel: '',
   art: 'haus',
-  region: 'Frankfurt & Hessen',
+  region: 'Deutschland',
   budget: 'Bitte wählen',
   msg: '',
   dsgvo: false,

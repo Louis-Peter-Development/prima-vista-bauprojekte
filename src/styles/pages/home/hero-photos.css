@@ -1,7 +1,7 @@
 /* ---- Hero end photo band ---- */
 .home-hero-photos {
   background: var(--pv-cream);
-  padding: clamp(72px, 8vw, 132px) 0 clamp(12px, 1.5vw, 24px);
+  padding: clamp(86px, 8vw, 128px) 0 clamp(28px, 3vw, 48px);
   overflow: hidden;
 }
 .home-hero-photos__head {
@@ -41,16 +41,17 @@
   padding: 0 var(--pv-shell-gutter);
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.2vw, 20px);
+  gap: clamp(14px, 1.4vw, 24px);
 }
 .home-hero-photos__tile {
   position: relative;
   min-width: 0;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 4.6;
   overflow: hidden;
   background: rgba(20, 19, 18, .22);
-  border: 1px solid rgba(255, 255, 255, .28);
-  box-shadow: 0 18px 48px rgba(20, 19, 18, .16);
+  border: 1px solid rgba(26, 26, 26, .10);
+  border-radius: 0;
+  box-shadow: 0 18px 48px rgba(20, 19, 18, .12);
   transition: transform .5s var(--pv-ease-out), box-shadow .5s var(--pv-ease-out);
 }
 .home-hero-photos__link {

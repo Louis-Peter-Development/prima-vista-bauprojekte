@@ -137,14 +137,16 @@
 }
 
 /* Keep a three-card final row centered under the four-card opening row. */
-.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) {
-  grid-column: 2 / span 2;
-}
-.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card {
-  grid-column: 4 / span 2;
-}
-.heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card + .heiz-card {
-  grid-column: 6 / span 2;
+@media (min-width: 1181px) {
+  .heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) {
+    grid-column: 2 / span 2;
+  }
+  .heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card {
+    grid-column: 4 / span 2;
+  }
+  .heiz__grid > .heiz-card:nth-last-child(3):nth-child(4n + 1) + .heiz-card + .heiz-card {
+    grid-column: 6 / span 2;
+  }
 }
 
 /* Foot CTA row */
@@ -185,6 +187,24 @@
 }
 @media (max-width: 540px) {
   .heiz__grid { grid-template-columns: 1fr; gap: 18px; }
+  .heiz-card,
+  .heiz-card__link,
+  .heiz-card__body {
+    min-width: 0;
+    width: 100%;
+  }
+  .heiz__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .heiz__actions .btn {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+  }
 }
 
 /* Center a lone card left in the final row instead of leaving it left-aligned. */

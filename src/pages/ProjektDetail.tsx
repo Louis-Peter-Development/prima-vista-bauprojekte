@@ -182,7 +182,7 @@ export default function ProjektDetail() {
             <Link className="btn btn--solid" to="/blitz-angebot">
               {t('detail.ctaExpress')} <span className="arrow">&gt;</span>
             </Link>
-            <Link className="btn btn--light" to="/kontakt">
+            <Link className="btn btn--appointment" to="/kontakt">
               {t('detail.ctaAppointment')} <span className="arrow">&gt;</span>
             </Link>
           </div>

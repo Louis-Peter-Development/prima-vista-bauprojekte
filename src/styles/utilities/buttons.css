@@ -44,6 +44,23 @@
   background: var(--pv-copper-warm);
   border-color: var(--pv-copper-warm);
 }
+.btn--appointment {
+  color: var(--pv-bone);
+  border-color: rgba(92, 18, 14, .95);
+  background: linear-gradient(135deg, var(--pv-red) 0%, #7d2118 52%, var(--pv-copper) 100%);
+  box-shadow: 0 18px 42px rgba(72, 20, 15, .28), inset 0 1px 0 rgba(255, 255, 255, .22);
+}
+.btn--appointment:hover {
+  color: var(--pv-white);
+  border-color: var(--pv-copper-warm);
+  background: linear-gradient(135deg, #7d2118 0%, var(--pv-red) 52%, var(--pv-copper-warm) 100%);
+  box-shadow: 0 22px 48px rgba(72, 20, 15, .34), inset 0 1px 0 rgba(255, 255, 255, .28);
+  transform: translateY(-1px);
+}
+.btn--appointment:focus-visible {
+  outline: 2px solid var(--pv-copper-bright);
+  outline-offset: 4px;
+}
 
 /* Slow copper sheen sweep — for primary CTAs */
 .btn--shimmer {
@@ -75,6 +92,14 @@
     transparent 35%,
     rgba(200, 154, 106, 0.18) 50%,
     transparent 65%
+  );
+}
+.btn--appointment.btn--shimmer::before {
+  background: linear-gradient(
+    115deg,
+    transparent 34%,
+    rgba(255, 244, 228, 0.32) 50%,
+    transparent 66%
   );
 }
 @keyframes btn-shimmer {

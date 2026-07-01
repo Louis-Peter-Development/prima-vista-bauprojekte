@@ -10,9 +10,9 @@ export default function BlitzIntro() {
       </h1>
       <p>{t('intro.lede')}</p>
       <ul className="promise__list" style={{ marginTop: '48px', paddingTop: '32px' }}>
-        <li style={{ color: 'var(--pv-bone)' }}><span className="num">01</span>{t('intro.list1')}</li>
-        <li style={{ color: 'var(--pv-bone)' }}><span className="num">02</span>{t('intro.list2')}</li>
-        <li style={{ color: 'var(--pv-bone)' }}><span className="num">03</span>{t('intro.list3')}</li>
+        <li style={{ color: 'var(--pv-bone)' }}><span className="num">01</span><span className="promise__list-copy"><strong>{t('intro.list1')}</strong></span></li>
+        <li style={{ color: 'var(--pv-bone)' }}><span className="num">02</span><span className="promise__list-copy"><strong>{t('intro.list2')}</strong></span></li>
+        <li style={{ color: 'var(--pv-bone)' }}><span className="num">03</span><span className="promise__list-copy"><strong>{t('intro.list3')}</strong></span></li>
       </ul>
 
       <figure className="kontakt__media kontakt__media--blitz">

@@ -28,7 +28,7 @@ export default function HausSanierungBoard({
           <span className="kalk-board__label">{t('board.houseType')}</span>
           <span className="kalk-board__hint">{t('board.houseTypeHint')}</span>
         </div>
-        <div className="haus-types">
+        <div className="haus-types haus-types--photos">
           {HOUSE_TYPES.map((option) => (
             <button
               key={option.value}
@@ -37,9 +37,20 @@ export default function HausSanierungBoard({
               onClick={() => chooseHouseType(option.value)}
               aria-pressed={option.value === houseType}
             >
-              <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{t(`haus.types.${option.value}.label`, { defaultValue: option.label })}</span>
-              <span className="haus-types__detail">{t(`haus.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
+              <span className="haus-types__media">
+                <img
+                  className="haus-types__img"
+                  src={option.previewImage}
+                  alt=""
+                  loading="lazy"
+                  aria-hidden="true"
+                />
+              </span>
+              <span className="haus-types__body">
+                <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
+                <span className="haus-types__label">{t(`haus.types.${option.value}.label`, { defaultValue: option.label })}</span>
+                <span className="haus-types__detail">{t(`haus.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
+              </span>
             </button>
           ))}
         </div>

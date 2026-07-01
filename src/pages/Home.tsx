@@ -15,6 +15,7 @@ import '../styles/pages/home.css';
 
 // Inline-markup map for stylized headings (line breaks + emphasis).
 const RICH = { em: <em />, br: <br /> } as const;
+const PROMISE_STEP_KEYS = ['1', '2', '3', '4', '5', '6'] as const;
 
 export default function Home() {
   const { t } = useTranslation(['home', 'common']);
@@ -22,6 +23,131 @@ export default function Home() {
     <>
       <HomeHero />
       <HomeMarquee />
+
+      {/* PACKAGES */}
+      <section className="packages">
+        <div className="packages__head">
+          <div className="reveal">
+            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('packages.eyebrow')}</div>
+            <h2>
+              <Trans i18nKey="home:packages.title" components={RICH} />
+            </h2>
+          </div>
+          <div className="packages__intro reveal" data-delay="1">
+            <p>{t('packages.intro')}</p>
+            <Link className="btn btn--appointment btn--shimmer packages__appointment" to="/kontakt">
+              {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+            </Link>
+          </div>
+        </div>
+        <div className="packages__grid">
+          <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
+            <img src="/assets/img/photo-haus-exterior.webp" alt={t('packages.items.haus.alt')} width="1500" height="682" loading="lazy" />
+            <div className="pkg-card__body">
+              <span className="pkg-card__num">{t('packages.items.haus.num')}</span>
+              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.haus.title" components={RICH} /></h3>
+              <p className="pkg-card__desc">{t('packages.items.haus.desc')}</p>
+              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
+            </div>
+          </Link>
+          <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
+            <img src="/assets/img/projects/eiche-parkett-01.webp" alt={t('packages.items.wohnung.alt')} width="1448" height="1086" loading="lazy" />
+            <div className="pkg-card__body">
+              <span className="pkg-card__num">{t('packages.items.wohnung.num')}</span>
+              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.wohnung.title" components={RICH} /></h3>
+              <p className="pkg-card__desc">{t('packages.items.wohnung.desc')}</p>
+              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
+            </div>
+          </Link>
+          <Link className="pkg-card reveal" data-delay="3" to="/gastronomie-ausbau">
+            <img src="/assets/img/proj-restaurant-dining.webp" alt={t('packages.items.gastronomie.alt')} width="1448" height="1086" loading="lazy" />
+            <div className="pkg-card__body">
+              <span className="pkg-card__num">{t('packages.items.gastronomie.num')}</span>
+              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.gastronomie.title" components={RICH} /></h3>
+              <p className="pkg-card__desc">{t('packages.items.gastronomie.desc')}</p>
+              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
+            </div>
+          </Link>
+          <Link className="pkg-card reveal" data-delay="4" to="/buero-ausbau">
+            <img src="/assets/img/photo-office-modern.webp" alt={t('packages.items.buero.alt')} width="1536" height="1024" loading="lazy" />
+            <div className="pkg-card__body">
+              <span className="pkg-card__num">{t('packages.items.buero.num')}</span>
+              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.buero.title" components={RICH} /></h3>
+              <p className="pkg-card__desc">{t('packages.items.buero.desc')}</p>
+              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* SERVICES OVERVIEW */}
+      <section className="packages-showcase">
+        <div className="packages-showcase__head">
+          <div className="reveal">
+            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('trades.eyebrow')}</div>
+            <h2>
+              <Trans i18nKey="home:trades.title" components={RICH} />
+            </h2>
+          </div>
+          <div className="packages-showcase__aside reveal" data-delay="1">
+            <p>{t('trades.intro')}</p>
+            <Link className="btn btn--light packages-showcase__head-cta" to="/gewerke">
+              {t('trades.viewAll')} <span className="arrow">&gt;</span>
+            </Link>
+          </div>
+        </div>
+        <div className="packages-showcase__grid" aria-label={t('trades.eyebrow')}>
+          {TRADES_PREVIEW.map((tr, i) => (
+            <Link className="packages-showcase-card reveal" data-delay={(i % 4) + 1} to={tr.detailTo ?? '/gewerke'} key={tr.num}>
+              <span className="packages-showcase-card__media">
+                <img src={PREVIEW_IMAGES[tr.key]} alt="" width="400" height="300" loading="lazy" />
+                <span className="packages-showcase-card__badge" aria-hidden="true">{tr.num}</span>
+              </span>
+              <span className="packages-showcase-card__body">
+                <span className="packages-showcase-card__num">№ {tr.num}</span>
+                <span className="packages-showcase-card__title">{t(`trades.preview.${tr.key}.name`)}</span>
+                <span className="packages-showcase-card__desc">{t(`trades.preview.${tr.key}.lead`)}</span>
+                <span className="packages-showcase-card__more">
+                  <span>{t('common:cta.learnMore')}</span>
+                  <span aria-hidden="true">&gt;</span>
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="packages-showcase__process reveal" data-delay="2">
+          <div className="packages-showcase__process-title">
+            <span className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('promise.eyebrow')}</span>
+            <strong><Trans i18nKey="home:promise.title" components={RICH} /></strong>
+          </div>
+        <div className="packages-showcase__steps">
+          {PROMISE_STEP_KEYS.map((stepKey, index) => (
+              <div className="packages-showcase__step" key={stepKey}>
+                <span className="packages-showcase__step-icon" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <span className="packages-showcase__step-copy">
+                  <span>{t(`promise.list.${stepKey}.title`)}</span>
+                  <small>{t(`promise.list.${stepKey}.desc`)}</small>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="packages-showcase__cta-strip reveal" data-delay="3">
+          <div className="packages-showcase__cta-copy">
+            <strong>{t('finalCta.appointment')}</strong>
+            <span>{t('finalCta.p')}</span>
+          </div>
+          <div className="packages-showcase__cta-actions">
+            <Link className="btn btn--appointment btn--shimmer" to="/kontakt">
+              {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+            </Link>
+            <Link className="btn btn--solid" to="/blitz-angebot">
+              {t('finalCta.expressQuote')} <span className="arrow">&gt;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <HomeHeroPhotos />
 
       {/* PROMISE */}
@@ -37,65 +163,22 @@ export default function Home() {
             <p>{t('promise.p1')}</p>
             <p>{t('promise.p2')}</p>
             <ul className="promise__list">
-              <li><span className="num">01</span>{t('promise.list.1')}</li>
-              <li><span className="num">02</span>{t('promise.list.2')}</li>
-              <li><span className="num">03</span>{t('promise.list.3')}</li>
-              <li><span className="num">04</span>{t('promise.list.4')}</li>
-              <li><span className="num">05</span>{t('promise.list.5')}</li>
-              <li><span className="num">06</span>{t('promise.list.6')}</li>
+              {PROMISE_STEP_KEYS.map((stepKey, index) => (
+                <li key={stepKey}>
+                  <span className="num">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="promise__list-copy">
+                    <strong>{t(`promise.list.${stepKey}.title`)}</strong>
+                    <small>{t(`promise.list.${stepKey}.desc`)}</small>
+                  </span>
+                </li>
+              ))}
             </ul>
+            <div className="promise__actions">
+              <Link className="btn btn--appointment btn--shimmer promise__appointment" to="/kontakt">
+                {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* PACKAGES */}
-      <section className="packages">
-        <div className="packages__head">
-          <div className="reveal">
-            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('packages.eyebrow')}</div>
-            <h2>
-              <Trans i18nKey="home:packages.title" components={RICH} />
-            </h2>
-          </div>
-          <p className="reveal" data-delay="1">{t('packages.intro')}</p>
-        </div>
-        <div className="packages__grid">
-          <Link className="pkg-card reveal" data-delay="1" to="/haus-sanierung">
-            <img src="/assets/img/photo-haus-exterior-thumb.webp" alt={t('packages.items.haus.alt')} width="800" height="364" loading="lazy" />
-            <div className="pkg-card__body">
-              <span className="pkg-card__num">{t('packages.items.haus.num')}</span>
-              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.haus.title" components={RICH} /></h3>
-              <p className="pkg-card__desc">{t('packages.items.haus.desc')}</p>
-              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
-            </div>
-          </Link>
-          <Link className="pkg-card reveal" data-delay="2" to="/wohnung-sanierung">
-            <img src="/assets/img/photo-parkett-altbau-thumb.webp" alt={t('packages.items.wohnung.alt')} width="800" height="534" loading="lazy" />
-            <div className="pkg-card__body">
-              <span className="pkg-card__num">{t('packages.items.wohnung.num')}</span>
-              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.wohnung.title" components={RICH} /></h3>
-              <p className="pkg-card__desc">{t('packages.items.wohnung.desc')}</p>
-              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
-            </div>
-          </Link>
-          <Link className="pkg-card reveal" data-delay="3" to="/gastronomie-ausbau">
-            <img src="/assets/img/proj-moroccan-corner-thumb.webp" alt={t('packages.items.gastronomie.alt')} width="800" height="374" loading="lazy" />
-            <div className="pkg-card__body">
-              <span className="pkg-card__num">{t('packages.items.gastronomie.num')}</span>
-              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.gastronomie.title" components={RICH} /></h3>
-              <p className="pkg-card__desc">{t('packages.items.gastronomie.desc')}</p>
-              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
-            </div>
-          </Link>
-          <Link className="pkg-card reveal" data-delay="4" to="/buero-ausbau">
-            <img src="/assets/img/photo-office-light.webp" alt={t('packages.items.buero.alt')} width="1600" height="1200" loading="lazy" />
-            <div className="pkg-card__body">
-              <span className="pkg-card__num">{t('packages.items.buero.num')}</span>
-              <h3 className="pkg-card__title"><Trans i18nKey="home:packages.items.buero.title" components={RICH} /></h3>
-              <p className="pkg-card__desc">{t('packages.items.buero.desc')}</p>
-              <span className="pkg-card__more">{t('common:cta.learnMore')} <span>&gt;</span></span>
-            </div>
-          </Link>
         </div>
       </section>
 
@@ -153,7 +236,7 @@ export default function Home() {
               <Link className="btn btn--solid" to="/kalkulator">
                 {t('calculator.toCalculator')} <span className="arrow">&gt;</span>
               </Link>
-              <Link className="btn btn--dark" to="/kontakt">
+              <Link className="btn btn--appointment" to="/kontakt">
                 {t('calculator.appointment')} <span className="arrow">&gt;</span>
               </Link>
             </div>
@@ -181,46 +264,11 @@ export default function Home() {
               <Link className="btn btn--solid" to="/blitz-angebot">
                 {t('blitz.request')} <span className="arrow">&gt;</span>
               </Link>
-              <Link className="btn btn--light" to="/kontakt">
+              <Link className="btn btn--appointment" to="/kontakt">
                 {t('blitz.appointment')} <span className="arrow">&gt;</span>
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TRADES PREVIEW */}
-      <section className="trades-preview">
-        <div className="trades-preview__head">
-          <div className="reveal">
-            <div className="eyebrow"><span className="rule-red"></span>&nbsp;&nbsp;{t('trades.eyebrow')}</div>
-            <h2>
-              <Trans i18nKey="home:trades.title" components={RICH} />
-            </h2>
-          </div>
-          <p className="reveal" data-delay="1">{t('trades.intro')}</p>
-        </div>
-        <ul className="trades-preview__grid">
-          {TRADES_PREVIEW.map((tr, i) => (
-            <li key={tr.num} className="trade-chip reveal" data-delay={i % 4 || undefined}>
-              <Link className="trade-chip__link" to={tr.detailTo ?? '/gewerke'}>
-                <span className="trade-chip__thumb">
-                  <img src={PREVIEW_IMAGES[tr.key]} alt="" width="400" height="300" loading="lazy" />
-                </span>
-                <span className="trade-chip__body">
-                  <span className="trade-chip__num">{tr.num}</span>
-                  <span className="trade-chip__name">{t(`trades.preview.${tr.key}.name`)}</span>
-                  <span className="trade-chip__lead">{t(`trades.preview.${tr.key}.lead`)}</span>
-                  {tr.detailTo ? <span className="trade-chip__more">{t('trades.openCalculator')} ›</span> : null}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="trades-preview__more reveal">
-          <Link className="btn btn--light" to="/gewerke">
-            {t('trades.viewAll')} <span className="arrow">&gt;</span>
-          </Link>
         </div>
       </section>
 
@@ -272,17 +320,25 @@ export default function Home() {
           <Link className="btn btn--light" to="/heizmethoden">
             {t('heating.viewAll')} <span className="arrow">&gt;</span>
           </Link>
+          <Link className="btn btn--appointment" to="/kontakt">
+            {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+          </Link>
         </div>
       </section>
 
       {/* FOUNDERS */}
       <section className="founders" id="ueber-uns">
         <div className="founders__inner">
-          <div className="founders__photo reveal reveal--left">
-            <img src="/assets/img/founders.webp" alt={t('founders.photoAlt')} width="1500" height="1000" loading="lazy" />
-            <div className="founders__photo-label">
-              <span>{t('founders.photoLabel')}</span>
+          <div className="founders__media reveal reveal--left">
+            <div className="founders__photo">
+              <img src="/assets/img/founders.webp" alt={t('founders.photoAlt')} width="1500" height="1000" loading="lazy" />
+              <div className="founders__photo-label">
+                <span>{t('founders.photoLabel')}</span>
+              </div>
             </div>
+            <Link className="btn btn--appointment btn--shimmer founders__appointment" to="/kontakt">
+              {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+            </Link>
           </div>
           <div className="founders__body reveal reveal--right" data-delay="1">
             <div className="eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 12 }}>
@@ -319,7 +375,7 @@ export default function Home() {
           </h2>
           <p>{t('finalCta.p')}</p>
           <div className="end-cta__buttons">
-            <Link className="btn btn--dark btn--shimmer" to="/kontakt">
+            <Link className="btn btn--appointment btn--shimmer" to="/kontakt">
               {t('finalCta.appointment')} <span className="arrow">&gt;</span>
             </Link>
             <Link className="btn btn--dark" to="/kalkulator">

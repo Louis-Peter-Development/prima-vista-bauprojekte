@@ -17,9 +17,9 @@ export const SITE_NAME = 'Prima Vista Bauprojekte';
 export const SITE_ORIGIN = 'https://www.primavista-bauprojekte.com';
 
 export const DEFAULT_ROUTE_META: RouteMeta = {
-  title: 'Premium Sanierung & Bau in Frankfurt und Emmenbrücke',
+  title: 'Premium Sanierung & Bau in Deutschland und der Schweiz',
   description:
-    'Prima Vista Bauprojekte plant und realisiert Sanierung, Renovierung und Ausbau aus einer Hand in Frankfurt, Emmenbrücke und Umgebung.',
+    'Prima Vista Bauprojekte plant und realisiert Sanierung, Renovierung und Ausbau aus einer Hand in Deutschland und der Schweiz.',
 };
 
 type MetaSource = { metaTitle: string; lede: string };
@@ -247,9 +247,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> = {
   en: {
     '/': {
-      title: 'Premium renovation & construction in Frankfurt and Emmenbrücke',
+      title: 'Premium renovation & construction in Germany and Switzerland',
       description:
-        'Prima Vista Bauprojekte plans and delivers renovation, refurbishment and fit-out from a single source in Frankfurt, Emmenbrücke and the surrounding area.',
+        'Prima Vista Bauprojekte plans and delivers renovation, refurbishment and fit-out from a single source in Germany and Switzerland.',
     },
     '/impressum': {
       title: 'Legal notice',
@@ -291,9 +291,9 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
   },
   it: {
     '/': {
-      title: 'Ristrutturazione e costruzione premium a Francoforte ed Emmenbrücke',
+      title: 'Ristrutturazione e costruzione premium in Germania e Svizzera',
       description:
-        'Prima Vista Bauprojekte progetta e realizza ristrutturazione, rinnovo e allestimento da un unico interlocutore a Francoforte, Emmenbrücke e dintorni.',
+        'Prima Vista Bauprojekte progetta e realizza ristrutturazione, rinnovo e allestimento da un unico interlocutore in Germania e Svizzera.',
     },
     '/impressum': {
       title: 'Note legali',
@@ -335,9 +335,9 @@ const ROUTE_META_I18N: Record<Exclude<Locale, 'de'>, Record<string, RouteMeta>> 
   },
   fr: {
     '/': {
-      title: 'Rénovation & construction premium à Francfort et Emmenbrücke',
+      title: 'Rénovation & construction premium en Allemagne et en Suisse',
       description:
-        'Prima Vista Bauprojekte conçoit et réalise rénovation, réfection et aménagement clé en main à Francfort, Emmenbrücke et alentours.',
+        'Prima Vista Bauprojekte conçoit et réalise rénovation, réfection et aménagement clé en main en Allemagne et en Suisse.',
     },
     '/impressum': {
       title: 'Mentions légales',

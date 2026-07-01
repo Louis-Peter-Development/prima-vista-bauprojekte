@@ -3,7 +3,7 @@
     "metaTitle": "Preventivatore per ristrutturazione e costruzione",
     "crumbLabel": "Preventivatore · Stima dal vivo",
     "title": "Quanto costa il<br/>suo <em>progetto edilizio?</em>",
-    "lede": "Pochi clic. Una fascia onesta. Sulla base dei dati di oltre 400 progetti completati in Assia e nella Svizzera centrale — senza registrazione, senza tattiche di vendita.",
+    "lede": "Pochi clic. Una fascia onesta. Sulla base dei dati di oltre 400 progetti completati in Germania e Svizzera — senza registrazione, senza tattiche di vendita.",
     "meta": [
       {
         "label": "Calcolo",
@@ -203,7 +203,7 @@
     "gewerkeCount": "<em>{{count}}</em> di {{total}} selezionate",
     "multiLevelOnly": "Solo per immobili su più livelli",
     "configHint": "Scelga la configurazione desiderata",
-    "floorplanAlt": "Planimetria di esempio: {{label}}",
+    "floorplanAlt": "Immagine di esempio: {{label}}",
     "livingArea": "Superficie"
   },
   "reno": {
@@ -342,7 +342,7 @@
       },
       "3zi": {
         "label": "Appartamento trilocale",
-        "detail": "Appartamento familiare con più pareti divisorie"
+        "detail": "Ampio appartamento familiare"
       },
       "maisonette": {
         "label": "Maisonette · 4+ locali",

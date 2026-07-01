@@ -40,8 +40,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(232, 223, 223, .82) 0%, rgba(232, 223, 223, .64) 42%, rgba(232, 223, 223, .28) 74%, rgba(232, 223, 223, .16) 100%),
-    linear-gradient(to top, rgba(232, 223, 223, .58) 0%, rgba(232, 223, 223, .34) 48%, rgba(232, 223, 223, .68) 100%);
+    linear-gradient(90deg, rgba(232, 223, 223, .44) 0%, rgba(232, 223, 223, .28) 42%, rgba(232, 223, 223, .10) 74%, rgba(232, 223, 223, .02) 100%),
+    linear-gradient(to top, rgba(232, 223, 223, .24) 0%, rgba(232, 223, 223, .10) 48%, rgba(232, 223, 223, .28) 100%);
 }
 .hero__inner {
   position: relative;
@@ -61,7 +61,7 @@
   inset: -28px auto -28px 0;
   width: min(820px, 62vw);
   z-index: -1;
-  background: linear-gradient(90deg, rgba(232, 223, 223, .58) 0%, rgba(232, 223, 223, .34) 58%, rgba(232, 223, 223, 0) 100%);
+  background: linear-gradient(90deg, rgba(232, 223, 223, .32) 0%, rgba(232, 223, 223, .12) 58%, rgba(232, 223, 223, 0) 100%);
   filter: blur(12px);
   pointer-events: none;
 }
@@ -160,6 +160,78 @@
   text-transform: uppercase;
   color: rgba(44, 38, 34, .76);
   text-shadow: 0 1px 12px rgba(232, 223, 223, .76);
+}
+.hero__proof-cards {
+  width: min(420px, 100%);
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.hero__proof-card {
+  --hero-proof-bg: rgba(247, 242, 238, .88);
+  --hero-proof-text: #141312;
+  --hero-proof-border: rgba(26, 26, 26, .10);
+  --hero-proof-kicker: #7a5b37;
+  --hero-proof-muted: #5b5752;
+
+  min-height: 132px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  border-radius: 0;
+  background: var(--hero-proof-bg);
+  color: var(--hero-proof-text);
+  border: 1px solid var(--hero-proof-border);
+  box-shadow: 0 20px 54px rgba(36, 28, 24, .18);
+  backdrop-filter: blur(14px);
+}
+:root[data-theme='dark'] .hero__proof-card {
+  --hero-proof-bg: rgba(24, 21, 19, .9);
+  --hero-proof-text: var(--pv-bone);
+  --hero-proof-border: rgba(241, 233, 226, .14);
+  --hero-proof-kicker: var(--pv-copper-bright);
+  --hero-proof-muted: var(--pv-text-on-dark-muted);
+}
+.hero__proof-card--dark {
+  background: rgba(20, 19, 18, .88);
+  color: var(--pv-bone);
+  border-color: rgba(236, 229, 223, .16);
+}
+.hero__proof-card span {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--hero-proof-kicker);
+}
+.hero__proof-card--dark span {
+  color: var(--pv-copper-bright);
+}
+.hero__proof-card strong {
+  display: block;
+  font-family: var(--pv-font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(34px, 3.2vw, 52px);
+  line-height: .9;
+  letter-spacing: 0;
+}
+.hero__proof-card small {
+  display: block;
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--hero-proof-muted);
+  text-shadow: none;
+}
+.hero__proof-card--dark small {
+  color: var(--pv-text-on-dark-muted);
 }
 @keyframes pvHeroImageIn {
   from {

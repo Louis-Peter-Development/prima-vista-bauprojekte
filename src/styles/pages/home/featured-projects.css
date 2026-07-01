@@ -91,6 +91,18 @@
 .proj--d { grid-column: 5 / span 4; grid-row: span 4; }
 .proj--e { grid-column: 9 / span 4; grid-row: span 4; }
 .featured__more {
-  text-align: center;
   margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 0 var(--pv-shell-gutter);
+}
+
+@media (max-width: 620px) {
+  .featured__more .btn {
+    justify-content: center;
+    width: 100%;
+    max-width: 340px;
+  }
 }

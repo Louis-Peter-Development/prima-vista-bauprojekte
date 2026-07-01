@@ -3,7 +3,7 @@
     "metaTitle": "Calculateur de coûts pour rénovation & construction",
     "crumbLabel": "Calculateur · Estimation en direct",
     "title": "Combien coûte<br/>votre <em>projet de construction ?</em>",
-    "lede": "Quelques clics. Une fourchette honnête. Sur la base de données issues de plus de 400 projets achevés en Hesse et en Suisse centrale — sans inscription, sans tactique de vente.",
+    "lede": "Quelques clics. Une fourchette honnête. Sur la base de données issues de plus de 400 projets achevés en Allemagne et en Suisse — sans inscription, sans tactique de vente.",
     "meta": [
       {
         "label": "Calcul",
@@ -203,7 +203,7 @@
     "gewerkeCount": "<em>{{count}}</em> sur {{total}} sélectionnés",
     "multiLevelOnly": "Uniquement pour les biens à plusieurs niveaux",
     "configHint": "Choisissez la configuration souhaitée",
-    "floorplanAlt": "Plan d’étage exemple : {{label}}",
+    "floorplanAlt": "Image exemple : {{label}}",
     "livingArea": "Surface"
   },
   "reno": {
@@ -342,7 +342,7 @@
       },
       "3zi": {
         "label": "Appartement 3 pièces",
-        "detail": "Appartement familial avec davantage de cloisons"
+        "detail": "Appartement familial spacieux"
       },
       "maisonette": {
         "label": "Duplex · 4 pièces et plus",

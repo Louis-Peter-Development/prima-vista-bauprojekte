@@ -22,7 +22,31 @@
     "photosEyebrow": "Einblicke",
     "photosTitleSuffix": "aus der Nähe.",
     "photosIntro": "Ausgewählte Eindrücke aus Material, Detail und Ausführung.",
-    "photosAria": "{{label}} in Bildern"
+    "photosAria": "{{label}} in Bildern",
+    "photoSets": {
+      "abdichtung": { "label": "Abdichtungen", "images": [{ "alt": "Abdichtungsarbeiten im Nassbereich" }] },
+      "badsanierung": { "label": "Badsanierung", "images": [{ "alt": "Fertig saniertes Bad mit freistehender Wanne und bodengleicher Dusche" }, { "alt": "Badumbau im Ausbau mit vorbereiteten Sanitäranschlüssen" }, { "alt": "Montage eines Wand-WCs während der Badsanierung" }] },
+      "barrierefreiheit": { "label": "Barrierefreiheit", "images": [{ "alt": "Kompaktes barrierearmes Bad mit bodennaher Dusche" }, { "alt": "Badumbau mit freier Bewegungsfläche" }] },
+      "boeden": { "label": "Böden & Beläge", "images": [{ "alt": "Wohnbereich mit großformatigem Bodenbelag" }, { "alt": "Heller Holzfußboden mit sauberem Wandanschluss" }, { "alt": "Polierte Bodenfläche in offenem Wohnraum" }] },
+      "dach": { "label": "Dachsanierung", "images": [{ "alt": "Dachsanierung mit Gerüst und neuen Dachflächenfenstern" }] },
+      "elektro": { "label": "Elektroinstallation", "images": [{ "alt": "Elektrodetails mit Schaltern, Steckdosen und Licht" }, { "alt": "Geöffneter Sicherungskasten mit sauberer Verdrahtung" }, { "alt": "Innenraum mit Akzentbeleuchtung und Wandleuchten" }] },
+      "fassade": { "label": "Fassaden & Dämmung", "images": [{ "alt": "Sanierte helle Fassade mit Fenstern und Rollläden" }, { "alt": "Fassadenaufbau mit Dämmung und moderner Außenansicht" }] },
+      "fenster": { "label": "Fenstertechnik", "images": [{ "alt": "Eingebautes Fenster mit gedämmten Laibungen" }, { "alt": "Fensterarbeiten im Innenausbau mit Leiter" }, { "alt": "Fensterband im Trockenbau vor der Übergabe" }] },
+      "garten": { "label": "Garten & Außenanlagen", "images": [{ "alt": "Terrasse mit Pergola und Steinplatten" }, { "alt": "Gartenbeleuchtung mit bepflanzter Außenfläche" }, { "alt": "Terrassenunterbau vor der fertigen Oberfläche" }] },
+      "kueche": { "label": "Küchen & Möbelbau", "images": [{ "alt": "Küche mit Insel, Pendelleuchten und Einbauten" }, { "alt": "Küchenzeile mit Spüle und großem Fenster" }, { "alt": "Küchenmontage mit Arbeitsplatte und Wasseranschluss" }] },
+      "maler": { "label": "Maler & Lackierer", "images": [{ "alt": "Maler beim Streichen einer Innenwand im sanierten Wohnraum" }, { "alt": "Lackierarbeiten mit Sprühgerät" }, { "alt": "Akzentwand mit Malerwerkzeug im Raum" }] },
+      "rohbau": { "label": "Rohbau Leistungen", "images": [{ "alt": "Rohbaufläche mit Betonwänden und vorbereiteten Leitungswegen" }, { "alt": "Rohbau mit Metallständerwand und vorbereiteten Installationen" }] },
+      "trockenbau": { "label": "Trockenbau", "images": [{ "alt": "Trockenbau-Unterkonstruktion an der Decke mit vorbereiteten Leitungen" }, { "alt": "Trockenbauwand mit Metallprofilen und Holzwerkstoffplatten im Aufbau" }, { "alt": "Abgehängte Deckenunterkonstruktion im Innenausbau" }] },
+      "treppen": { "label": "Treppen & Geländer", "images": [{ "alt": "Helle Innentreppe mit Geländer" }, { "alt": "Außentreppe aus Metall an einem Gebäude" }, { "alt": "Betontreppe mit sauberer Wandführung" }] },
+      "tueren": { "label": "Türen & Zargen", "images": [{ "alt": "Flur mit montierten Innentüren und Zargen" }, { "alt": "Moderne Haustür und Fensterfront" }, { "alt": "Balkon- und Glastürdetail an moderner Fassade" }] },
+      "wasser": { "label": "Wasser & Sanitär", "images": [{ "alt": "Sanitärinstallation mit Vorwandmodul" }, { "alt": "Vorwandinstallation für WC und Wasseranschlüsse" }, { "alt": "Wasserzähler und Rohrinstallation im Ausbau" }] },
+      "heizkoerper": { "label": "Heizkörper", "images": [{ "alt": "Moderner Heizkörper in einem sanierten Wohnraum" }, { "alt": "Heizkörper im Wohnraum nach Heizungsmodernisierung" }] },
+      "fussbodenheizung": { "label": "Fußbodenheizung", "images": [{ "alt": "Verlegte Fußbodenheizung im Dachgeschoss während der Sanierung" }, { "alt": "Fußbodenheizung im Dachgeschoss vor dem Estrich" }, { "alt": "Fertig ausgebautes Dachgeschoss nach der Fußbodenheizung" }] },
+      "waermepumpe": { "label": "Wärmepumpe", "images": [{ "alt": "Außeneinheit einer Luft-Wärmepumpe am Gebäude" }] },
+      "gasHeizung": { "label": "Gas-Heizung", "images": [{ "alt": "Heizkörper im Wohnraum nach Heizungsmodernisierung" }] },
+      "saunaofen": { "label": "Saunaofen", "images": [{ "alt": "Wellnessbad als Umfeld für Saunaofen und Ofentechnik" }] },
+      "zaeune": { "label": "Zäune & Tore", "images": [{ "alt": "Moderner Metallzaun mit Einfahrtstor" }, { "alt": "Holzzaun mit Sichtschutz entlang eines Hauses" }] }
+    }
   },
   "trade": {
     "badsanierung": { "metaTitle": "Badsanierung & Gäste-WC", "crumbLabel": "Gewerke · Badsanierung", "title": "Badsanierung<br/><em>kalkulieren.</em>", "lede": "Vom modernen Gäste-WC bis zum exklusiven Komplettbad: Konfigurieren Sie Ihre Sanierung und erhalten Sie transparente Kosten für Sanitär, Fliesen und Objekte.", "variants": "4 Konzepte", "trades": "Sanitär & Fliesen", "endEyebrow": "Zeit für ein neues Bad?", "endTitle": "Wir planen <em>Sanitär</em><br/>und Design vor Ort.", "endCta": "Badsanierung anfragen" },
@@ -135,7 +159,7 @@
   "gewerke": {
     "crumbLabel": "Gewerke · Bauleistungen",
     "title": "Neunzehn<br/>Gewerke,<br/><em>eine Hand.</em>",
-    "lede": "Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Frankfurt und Emmenbrücke.",
+    "lede": "Entdecken Sie individuelle Produkte, Baumaterialien und Komplettpakete für alle Gewerke — koordiniert durch unsere Bauleitung in Deutschland und der Schweiz.",
     "metaSelectionLabel": "Auswahl",
     "metaSelectionValue": "19 Gewerke",
     "metaCoordLabel": "Koordination",

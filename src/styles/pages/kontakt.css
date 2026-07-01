@@ -23,12 +23,12 @@
   --kontakt-summary-bg: rgba(20, 19, 18, .035);
   --kontakt-summary-rule: rgba(20, 19, 18, .12);
   --kontakt-summary-rule-soft: rgba(20, 19, 18, .08);
-  --kontakt-photo-opacity: .18;
-  --kontakt-photo-filter: saturate(.74) contrast(1.02) brightness(1.08);
+  --kontakt-photo-opacity: .34;
+  --kontakt-photo-filter: brightness(1.03) saturate(1.04) contrast(1.02);
   --kontakt-overlay:
-    linear-gradient(90deg, rgba(232, 223, 223, .92) 0%, rgba(232, 223, 223, .88) 44%, rgba(232, 223, 223, .78) 100%),
-    linear-gradient(180deg, rgba(247, 242, 238, .38) 0%, rgba(232, 223, 223, .94) 100%);
-  --kontakt-media-scrim: linear-gradient(to top, rgba(20, 19, 18, .66), rgba(20, 19, 18, .06) 62%);
+    linear-gradient(90deg, rgba(232, 223, 223, .82) 0%, rgba(232, 223, 223, .74) 44%, rgba(232, 223, 223, .58) 100%),
+    linear-gradient(180deg, rgba(247, 242, 238, .22) 0%, rgba(232, 223, 223, .78) 100%);
+  --kontakt-media-scrim: linear-gradient(to top, rgba(20, 19, 18, .48), rgba(20, 19, 18, .04) 62%);
   --kontakt-shadow: 0 24px 64px -42px rgba(20, 19, 18, .38);
   background: var(--kontakt-surface);
   color: var(--kontakt-text);
@@ -61,12 +61,12 @@
   --kontakt-summary-bg: rgba(241, 233, 226, .045);
   --kontakt-summary-rule: rgba(241, 233, 226, .14);
   --kontakt-summary-rule-soft: rgba(241, 233, 226, .1);
-  --kontakt-photo-opacity: .16;
-  --kontakt-photo-filter: saturate(.82) contrast(1.04);
+  --kontakt-photo-opacity: .30;
+  --kontakt-photo-filter: brightness(1.04) saturate(1.06) contrast(1.02);
   --kontakt-overlay:
-    linear-gradient(90deg, rgba(20, 19, 18, .94) 0%, rgba(20, 19, 18, .88) 42%, rgba(20, 19, 18, .72) 100%),
-    linear-gradient(180deg, rgba(20, 19, 18, .22) 0%, rgba(20, 19, 18, .86) 100%);
-  --kontakt-media-scrim: linear-gradient(to top, rgba(20, 19, 18, .62), rgba(20, 19, 18, .04) 62%);
+    linear-gradient(90deg, rgba(20, 19, 18, .70) 0%, rgba(20, 19, 18, .58) 42%, rgba(20, 19, 18, .44) 100%),
+    linear-gradient(180deg, rgba(20, 19, 18, .16) 0%, rgba(20, 19, 18, .68) 100%);
+  --kontakt-media-scrim: linear-gradient(to top, rgba(20, 19, 18, .48), rgba(20, 19, 18, .04) 62%);
   --kontakt-shadow: none;
 }
 
@@ -225,7 +225,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  filter: saturate(.86) contrast(1.03);
+  filter: brightness(1.04) saturate(1.05) contrast(1.02);
 }
 .kontakt__media::after {
   content: '';

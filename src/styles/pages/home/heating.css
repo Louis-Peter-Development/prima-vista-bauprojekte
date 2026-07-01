@@ -105,4 +105,14 @@
   padding: 0 var(--pv-shell-gutter);
   display: flex;
   justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 620px) {
+  .heating__more .btn {
+    justify-content: center;
+    width: 100%;
+    max-width: 340px;
+  }
 }

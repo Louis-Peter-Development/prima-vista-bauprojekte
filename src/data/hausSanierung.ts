@@ -4,6 +4,7 @@ export type HouseTypeOption = {
   value: HouseType;
   label: string;
   detail: string;
+  previewImage: string;
   defaultArea: number;
   factor: number;
   includesDach: boolean;
@@ -24,10 +25,10 @@ export type HausGewerk = {
 };
 
 export const HOUSE_TYPES: HouseTypeOption[] = [
-  { value: '1e', label: '1× Etage ohne Dach', detail: 'Bungalow · Erdgeschoss', defaultArea: 60, factor: 1.00, includesDach: false },
-  { value: '1e-d', label: '1× Etage + Dach', detail: 'Erdgeschoss mit Bedachung', defaultArea: 60, factor: 1.12, includesDach: true },
-  { value: '2e', label: '2× Etagen ohne Dach', detail: 'Mehrgeschossig · ohne Dachsanierung', defaultArea: 120, factor: 1.08, includesDach: false },
-  { value: '2e-d', label: '2× Etagen + Dach', detail: 'Komplettes Wohnhaus mit Dach', defaultArea: 120, factor: 1.18, includesDach: true },
+  { value: '1e', label: '1× Etage ohne Dach', detail: 'Bungalow · Erdgeschoss', previewImage: '/assets/img/leistungen/haus-sanierung-1e.webp', defaultArea: 60, factor: 1.00, includesDach: false },
+  { value: '1e-d', label: '1× Etage + Dach', detail: 'Erdgeschoss mit Bedachung', previewImage: '/assets/img/leistungen/haus-sanierung-1e-dach.webp', defaultArea: 60, factor: 1.12, includesDach: true },
+  { value: '2e', label: '2× Etagen ohne Dach', detail: 'Mehrgeschossig · ohne Dachsanierung', previewImage: '/assets/img/leistungen/haus-sanierung-2e.webp', defaultArea: 120, factor: 1.08, includesDach: false },
+  { value: '2e-d', label: '2× Etagen + Dach', detail: 'Komplettes Wohnhaus mit Dach', previewImage: '/assets/img/leistungen/haus-sanierung-2e-dach.webp', defaultArea: 120, factor: 1.18, includesDach: true },
 ];
 
 export const AREA_OPTIONS: AreaOption[] = [

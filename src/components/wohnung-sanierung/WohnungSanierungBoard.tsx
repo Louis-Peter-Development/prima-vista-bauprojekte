@@ -32,6 +32,7 @@ export default function WohnungSanierungBoard({
         <div className="aptplan">
           {WOHNUNG_TYPES.map((option) => {
             const label = t(`wohnung.types.${option.value}.label`, { defaultValue: option.label });
+            const detail = t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail });
             return (
               <button
                 key={option.value}
@@ -41,17 +42,23 @@ export default function WohnungSanierungBoard({
                 aria-pressed={option.value === wohnungType}
                 aria-label={t('board.floorplanAlt', { label })}
               >
-                <img
-                  className="aptplan__img"
-                  src={option.floorplan}
-                  alt=""
-                  width="640"
-                  height="340"
-                  loading="lazy"
-                />
-                <span className="aptplan__cap">
-                  <span className="aptplan__area">{option.defaultArea} {unit}</span>
-                  <span className="aptplan__label">{t('board.livingArea')}</span>
+                <span className="aptplan__media">
+                  <img
+                    className="aptplan__img"
+                    src={option.previewImage}
+                    alt=""
+                    width="640"
+                    height="340"
+                    loading="lazy"
+                  />
+                  <span className="aptplan__cap">
+                    <span className="aptplan__area">{option.defaultArea} {unit}</span>
+                    <span className="aptplan__label">{t('board.livingArea')}</span>
+                  </span>
+                </span>
+                <span className="aptplan__foot">
+                  <span className="aptplan__type">{label}</span>
+                  <span className="aptplan__detail">{detail}</span>
                 </span>
               </button>
             );

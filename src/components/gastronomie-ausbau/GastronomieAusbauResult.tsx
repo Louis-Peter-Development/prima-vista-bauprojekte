@@ -121,7 +121,7 @@ export default function GastronomieAusbauResult({
           >
             {t('result.bindingOffer')} <span className="arrow">&gt;</span>
           </Link>
-          <Link className="btn btn--light kalk-result__btn-light" to="/kontakt">
+          <Link className="btn btn--appointment kalk-result__btn-light" to="/kontakt">
             {t('result.appointment')} <span className="arrow">&gt;</span>
           </Link>
         </div>

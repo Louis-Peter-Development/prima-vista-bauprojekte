@@ -2,13 +2,13 @@
   "overview": {
     "crumbLabel": "Projects · Showcase",
     "title": "Spaces from<br/>the <em>workshop.</em>",
-    "lede": "A selection of the projects we completed between 2024 and 2026 — homes, hospitality and mixed-use spaces in Hesse and Central Switzerland.",
+    "lede": "A selection of the projects we completed between 2024 and 2026 — homes, hospitality and mixed-use spaces in Germany and Switzerland.",
     "metaShownLabel": "Shown",
     "metaShownValue": "{{count}} projects",
     "metaPeriodLabel": "Period",
     "metaPeriodValue": "2024–2026",
     "metaRegionLabel": "Region",
-    "metaRegionValue": "DE Frankfurt · CH Lucerne",
+    "metaRegionValue": "Germany · Switzerland",
     "metaPortfolioLabel": "Full portfolio",
     "metaPortfolioValue": "On request",
     "endEyebrow": "Your project",
@@ -27,17 +27,13 @@
   "map": {
     "eyebrow": "Locations",
     "title": "Built in two<br/>countries, the same<br/><em>standard.</em>",
-    "intro": "From our Frankfurt base we look after projects across Hesse. From Emmenbrücke, Central Switzerland. Both offices share site managers, suppliers and standards.",
+    "intro": "Across Germany and Switzerland, we look after projects with the same site managers, suppliers and standards.",
     "cities": {
-      "frankfurt": "Frankfurt am Main",
-      "emmenbruecke": "Emmenbrücke / Lucerne",
-      "wiesbaden": "Wiesbaden",
-      "zug": "Zug, Zurich",
-      "darmstadt": "Darmstadt, Offenbach",
-      "innerschweiz": "Central Switzerland"
+      "germany": "Germany",
+      "switzerland": "Switzerland"
     },
     "photoAlt": "Prima Vista team on site",
-    "photoLabel": "Team Frankfurt — 2026"
+    "photoLabel": "Team Prima Vista — 2026"
   },
   "gallery": {
     "more": "Learn more"
@@ -74,6 +70,22 @@
     "videoFallback": "{{headline}} — video {{n}}"
   },
   "items": {
+    "bad-soden-einfamilienhaus": {
+      "title": "Bad Soden Detached House · 2026",
+      "ttl": "Bad Soden Detached House",
+      "meta": "Residence · Bad Soden · 2026",
+      "headline": "Bad Soden Detached House",
+      "location": "Bad Soden am Taunus",
+      "area": "Detached house",
+      "duration": "Full renovation",
+      "scope": "Turnkey interior fit-out",
+      "description": [
+        "Full renovation of a detached house in Bad Soden am Taunus — from stripped-back existing fabric to a move-in-ready interior.",
+        "The fit-out included the attic level, drywall, underfloor heating with screed, high-quality floor finishes, wallpapering, painting and coordination of the interior trades.",
+        "The photo sequence shows the path from shell and facade work through technical installation to the finished living, bathroom and bedroom spaces."
+      ],
+      "gewerke": ["Attic fit-out", "Drywall", "Underfloor heating", "Screed", "Flooring", "Wallpapering", "Painting", "Bathroom renovation", "Interior fit-out"]
+    },
     "zoi-restaurant": {
       "title": "Zoi — Restaurant · Frankfurt · 2026",
       "ttl": "Zoi Restaurant",

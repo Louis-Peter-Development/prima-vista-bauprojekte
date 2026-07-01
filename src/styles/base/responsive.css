@@ -70,7 +70,7 @@
     margin-left: 0;
     font-size: 12px;
   }
-  .pv-mobile-menu { top: 80px; }
+  .pv-mobile-menu { top: var(--pv-header-height); }
 }
 @media (max-width: 1120px) {
   :root { --pv-shell-gutter: 16px; }
@@ -113,6 +113,8 @@
     margin-left: 0;
   }
   .pv-nav__list,
+  .pv-nav__lang,
+  .pv-nav > .pv-theme-toggle,
   .pv-header__cta { display: none; }
   .pv-burger { display: block; }
   .pv-social-rail,
@@ -152,8 +154,8 @@
     --pv-header-height: 72px;
     --pv-shell-gutter: 20px;
   }
-  .pv-header__inner { height: 72px; }
-  .pv-mobile-menu { top: 72px; }
+  .pv-header__inner { height: 72px; gap: 8px; }
+  .pv-mobile-menu { top: var(--pv-header-height); }
   .pv-logo img { height: 36px; }
   .pv-logo__name { font-size: 14px; letter-spacing: 0.18em; }
   .pv-logo__tag { font-size: 8px; letter-spacing: 0.26em; }
@@ -189,5 +191,17 @@
     width: 100%;
     flex-basis: auto;
     white-space: normal;
+  }
+}
+
+@media (max-width: 360px) {
+  :root { --pv-shell-gutter: 16px; }
+  .pv-logo img { height: 32px; }
+  .pv-logo__name { font-size: 12.5px; letter-spacing: 0.16em; }
+  .pv-logo__tag { font-size: 7px; letter-spacing: 0.22em; }
+  .pv-search__trigger,
+  .pv-burger {
+    width: 40px;
+    height: 40px;
   }
 }

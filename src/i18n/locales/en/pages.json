@@ -22,7 +22,31 @@
     "photosEyebrow": "A look inside",
     "photosTitleSuffix": "up close.",
     "photosIntro": "Selected impressions of material, detail and craftsmanship.",
-    "photosAria": "{{label}} in pictures"
+    "photosAria": "{{label}} in pictures",
+    "photoSets": {
+      "abdichtung": { "label": "Waterproofing", "images": [{ "alt": "Waterproofing work in a wet area" }] },
+      "badsanierung": { "label": "Bathroom renovation", "images": [{ "alt": "Finished bathroom with freestanding tub and walk-in shower" }, { "alt": "Bathroom fit-out with prepared plumbing connections" }, { "alt": "Wall-mounted WC installation during bathroom renovation" }] },
+      "barrierefreiheit": { "label": "Accessibility", "images": [{ "alt": "Compact accessible bathroom with low-level shower" }, { "alt": "Bathroom conversion with open movement space" }] },
+      "boeden": { "label": "Floors & coverings", "images": [{ "alt": "Living area with large-format flooring" }, { "alt": "Light wood floor with clean wall junction" }, { "alt": "Polished floor surface in an open living space" }] },
+      "dach": { "label": "Roof renovation", "images": [{ "alt": "Roof renovation with scaffolding and new roof windows" }] },
+      "elektro": { "label": "Electrical installation", "images": [{ "alt": "Electrical details with switches, sockets and lighting" }, { "alt": "Open fuse box with tidy wiring" }, { "alt": "Interior with accent lighting and wall lights" }] },
+      "fassade": { "label": "Facades & insulation", "images": [{ "alt": "Renovated light facade with windows and shutters" }, { "alt": "Facade build-up with insulation and modern exterior view" }] },
+      "fenster": { "label": "Windows", "images": [{ "alt": "Installed window with insulated reveals" }, { "alt": "Window work during interior fit-out with ladder" }, { "alt": "Window band in drywall construction before handover" }] },
+      "garten": { "label": "Garden & outdoor areas", "images": [{ "alt": "Terrace with pergola and stone slabs" }, { "alt": "Garden lighting with planted outdoor area" }, { "alt": "Terrace substructure before the finished surface" }] },
+      "kueche": { "label": "Kitchens & cabinetry", "images": [{ "alt": "Kitchen with island, pendant lights and built-ins" }, { "alt": "Kitchen run with sink and large window" }, { "alt": "Kitchen installation with worktop and water connection" }] },
+      "maler": { "label": "Painting & decorating", "images": [{ "alt": "Painter coating an interior wall in a renovated living space" }, { "alt": "Spray painting work" }, { "alt": "Accent wall with painting tools in the room" }] },
+      "rohbau": { "label": "Shell construction", "images": [{ "alt": "Shell area with concrete walls and prepared service routes" }, { "alt": "Shell construction with metal stud wall and prepared installations" }] },
+      "trockenbau": { "label": "Drywall", "images": [{ "alt": "Drywall ceiling substructure with prepared cables" }, { "alt": "Drywall partition with metal profiles and timber boards in progress" }, { "alt": "Suspended ceiling substructure during interior fit-out" }] },
+      "treppen": { "label": "Stairs & railings", "images": [{ "alt": "Bright interior staircase with railing" }, { "alt": "External metal staircase on a building" }, { "alt": "Concrete staircase with clean wall finish" }] },
+      "tueren": { "label": "Doors & frames", "images": [{ "alt": "Hallway with fitted interior doors and frames" }, { "alt": "Modern front door and window facade" }, { "alt": "Balcony and glass-door detail on a modern facade" }] },
+      "wasser": { "label": "Water & plumbing", "images": [{ "alt": "Plumbing installation with pre-wall module" }, { "alt": "Pre-wall installation for WC and water connections" }, { "alt": "Water meter and pipe installation during fit-out" }] },
+      "heizkoerper": { "label": "Radiators", "images": [{ "alt": "Modern radiator in a renovated living space" }, { "alt": "Radiator in a living room after heating modernisation" }] },
+      "fussbodenheizung": { "label": "Underfloor heating", "images": [{ "alt": "Installed underfloor heating in the attic during renovation" }, { "alt": "Underfloor heating in the attic before screed" }, { "alt": "Finished attic after underfloor heating installation" }] },
+      "waermepumpe": { "label": "Heat pump", "images": [{ "alt": "Outdoor unit of an air-source heat pump on a building" }] },
+      "gasHeizung": { "label": "Gas heating", "images": [{ "alt": "Radiator in a living room after heating modernisation" }] },
+      "saunaofen": { "label": "Sauna heater", "images": [{ "alt": "Wellness bathroom as setting for sauna heater and stove technology" }] },
+      "zaeune": { "label": "Fences & gates", "images": [{ "alt": "Modern metal fence with driveway gate" }, { "alt": "Wooden privacy fence alongside a house" }] }
+    }
   },
   "trade": {
     "badsanierung": { "metaTitle": "Bathroom renovation & guest WC", "crumbLabel": "Trades · Bathroom renovation", "title": "Calculate a<br/><em>bathroom renovation.</em>", "lede": "From a modern guest WC to an exclusive complete bathroom: configure your renovation and get transparent costs for plumbing, tiling and fixtures.", "variants": "4 concepts", "trades": "Plumbing & tiling", "endEyebrow": "Time for a new bathroom?", "endTitle": "We plan <em>plumbing</em><br/>and design on site.", "endCta": "Enquire about a bathroom" },
@@ -135,7 +159,7 @@
   "gewerke": {
     "crumbLabel": "Trades · Building services",
     "title": "Nineteen<br/>trades,<br/><em>one hand.</em>",
-    "lede": "Discover individual products, building materials and complete packages for every trade — coordinated by our site management in Frankfurt and Emmenbrücke.",
+    "lede": "Discover individual products, building materials and complete packages for every trade — coordinated by our site management in Germany and Switzerland.",
     "metaSelectionLabel": "Selection",
     "metaSelectionValue": "19 trades",
     "metaCoordLabel": "Coordination",

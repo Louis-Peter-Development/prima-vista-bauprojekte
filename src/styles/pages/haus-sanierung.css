@@ -1,45 +1,72 @@
 /* ---- Haus-Sanierung: house type picker ---- */
-.haus-types {
+.kalk-board .haus-types--photos {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
-.haus-types__opt {
+.kalk-board .haus-types--photos .haus-types__opt {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding: 18px 18px 16px;
-  background: transparent;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, .02);
   color: var(--pv-ink);
   border: 1px solid rgba(20, 19, 18, .18);
-  border-radius: 0;
+  border-radius: 10px;
   text-align: left;
   cursor: pointer;
   transition:
     border-color 180ms var(--pv-ease-out),
     background 180ms var(--pv-ease-out),
-    color 180ms var(--pv-ease-out),
+    box-shadow 180ms var(--pv-ease-out),
     transform 180ms var(--pv-ease-out);
 }
-.haus-types__opt:hover {
+.kalk-board .haus-types--photos .haus-types__opt:hover {
   border-color: var(--pv-copper);
+  transform: translateY(-2px);
 }
-.haus-types__opt.is-on {
-  background: var(--pv-ink);
-  border-color: var(--pv-ink);
+.kalk-board .haus-types--photos .haus-types__opt.is-on {
+  background: rgba(20, 19, 18, .92);
+  border-color: var(--pv-copper);
   color: var(--pv-bone);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px -10px rgba(20, 19, 18, .4);
+  box-shadow: 0 0 0 2px var(--pv-copper), 0 12px 26px -16px rgba(20, 19, 18, .55);
 }
-.haus-types__factor {
+.kalk-board .haus-types--photos .haus-types__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--pv-ink);
+}
+.kalk-board .haus-types--photos .haus-types__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 360ms var(--pv-ease-out);
+}
+.kalk-board .haus-types--photos .haus-types__opt:hover .haus-types__img,
+.kalk-board .haus-types--photos .haus-types__opt.is-on .haus-types__img {
+  transform: scale(1.04);
+}
+.kalk-board .haus-types--photos .haus-types__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 15px 16px 16px;
+}
+.kalk-board .haus-types--photos .haus-types__factor {
   font-family: var(--pv-font-mono);
   font-size: 11px;
   letter-spacing: 0.18em;
   color: var(--pv-copper);
 }
-.haus-types__opt.is-on .haus-types__factor { color: var(--pv-copper-bright); }
-.haus-types__label {
+.kalk-board .haus-types--photos .haus-types__opt.is-on .haus-types__factor { color: var(--pv-copper-bright); }
+.kalk-board .haus-types--photos .haus-types__label {
   font-family: var(--pv-font-display);
   font-weight: 700;
   font-size: 14px;
@@ -48,17 +75,17 @@
   color: var(--pv-ink);
   transition: color 180ms;
 }
-.haus-types__opt.is-on .haus-types__label {
+.kalk-board .haus-types--photos .haus-types__opt.is-on .haus-types__label {
   color: var(--pv-bone);
 }
-.haus-types__detail {
+.kalk-board .haus-types--photos .haus-types__detail {
   font-family: var(--pv-font-body);
   font-size: 12px;
   color: var(--pv-text-on-light-muted);
   line-height: 1.4;
   transition: color 180ms;
 }
-.haus-types__opt.is-on .haus-types__detail {
+.kalk-board .haus-types--photos .haus-types__opt.is-on .haus-types__detail {
   color: var(--pv-text-on-dark-muted);
 }
 
@@ -71,13 +98,14 @@
 }
 .aptplan__card {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: 0;
-  aspect-ratio: 3 / 2;
   border: 1px solid rgba(20, 19, 18, .18);
   border-radius: 10px;
   overflow: hidden;
-  background: var(--pv-cream-soft, #f4ede4);
+  background: transparent;
+  text-align: center;
   cursor: pointer;
   transition:
     border-color 180ms var(--pv-ease-out),
@@ -91,6 +119,12 @@
 .aptplan__card.is-on {
   border-color: var(--pv-copper);
   box-shadow: 0 0 0 2px var(--pv-copper), 0 12px 26px -16px rgba(20, 19, 18, .55);
+}
+.aptplan__media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--pv-cream-soft, #f4ede4);
 }
 .aptplan__img {
   position: absolute;
@@ -132,6 +166,30 @@
   text-transform: uppercase;
   opacity: 0.85;
 }
+.aptplan__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 10px 12px;
+}
+.aptplan__type {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  color: var(--pv-text-on-dark);
+  transition: color 180ms var(--pv-ease-out);
+}
+.aptplan__card.is-on .aptplan__type {
+  color: var(--pv-copper-bright, var(--pv-copper));
+}
+.aptplan__detail {
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--pv-text-on-dark-muted);
+}
 
 @media (max-width: 720px) {
   .aptplan { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -155,7 +213,11 @@
 }
 .kalk-trades__item.is-disabled button { cursor: not-allowed; }
 
-@media (max-width: 720px) {
-  .haus-types { grid-template-columns: 1fr; }
+@media (max-width: 980px) {
+  .kalk-board .haus-types--photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .kalk-board .haus-types--photos { grid-template-columns: 1fr; }
   .kalk-chips--equal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

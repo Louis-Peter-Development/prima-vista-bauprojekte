@@ -275,7 +275,7 @@ function renderAssistantText(
   return nodes;
 }
 
-function ConciergeIcon({
+function MessageIcon({
   name,
   className,
 }: {
@@ -405,9 +405,9 @@ function BrandRail() {
       </div>
 
       <div className="pv-chat-rail__proof">
-        <span><ConciergeIcon name="clock" /> {t('rail.proofResponse')}</span>
-        <span><ConciergeIcon name="calendar" /> {t('rail.proofMeeting')}</span>
-        <span><ConciergeIcon name="shield" /> {t('rail.proofGuarantee')}</span>
+        <span><MessageIcon name="clock" /> {t('rail.proofResponse')}</span>
+        <span><MessageIcon name="calendar" /> {t('rail.proofMeeting')}</span>
+        <span><MessageIcon name="shield" /> {t('rail.proofGuarantee')}</span>
       </div>
 
       <address className="pv-chat-rail__contact">
@@ -429,7 +429,7 @@ function ChatHeader({ onClose }: { onClose: () => void }) {
         <small><span aria-hidden="true" /> {t('header.status')}</small>
       </div>
       <Link className="pv-chat-panel__human" to="/kontakt" onClick={onClose}>
-        <ConciergeIcon name="user" />
+        <MessageIcon name="user" />
         {t('header.human')}
       </Link>
       <button
@@ -802,7 +802,7 @@ function ChatWidget() {
                   title={t('composer.attach')}
                   disabled={sending}
                 >
-                  <ConciergeIcon name="paperclip" />
+                  <MessageIcon name="paperclip" />
                 </button>
                 <textarea
                   ref={inputRef}
@@ -821,13 +821,13 @@ function ChatWidget() {
                   aria-label={t('composer.send')}
                 >
                   <span>{t('composer.send')}</span>
-                  <ConciergeIcon name="send" />
+                  <MessageIcon name="send" />
                 </button>
               </div>
             </form>
             {error && <div className="pv-chat-panel__error">{error}</div>}
             <p className="pv-chat-panel__footnote">
-              <ConciergeIcon name="lock" /> {t('footnote')}
+              <MessageIcon name="lock" /> {t('footnote')}
             </p>
           </section>
         </div>

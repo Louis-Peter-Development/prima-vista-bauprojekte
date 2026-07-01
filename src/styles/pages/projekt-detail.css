@@ -9,9 +9,20 @@
   overflow: hidden;
 }
 .pd-hero__bg {
+  position: relative;
   background-size: cover;
   background-position: center;
-  filter: saturate(.86) contrast(1.04);
+  filter: brightness(1.04) saturate(1.05) contrast(1.02);
+  transform: scale(1.01);
+}
+.pd-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(20, 19, 18, .04) 0%, rgba(20, 19, 18, 0) 58%),
+    linear-gradient(to top, rgba(20, 19, 18, .10) 0%, rgba(20, 19, 18, 0) 38%);
+  pointer-events: none;
 }
 .pd-hero__content {
   position: relative;

@@ -52,7 +52,7 @@ export default function PackageDetailSection({ pkg }: PackageDetailSectionProps)
         {includes.map((item) => <li key={item}>{item}</li>)}
       </ul>
       <div className="pkg-detail__actions">
-        <Link className={`btn ${pkg.ctaDark ? 'btn--dark' : 'btn--light'}`} to="/kontakt">
+        <Link className="btn btn--appointment" to="/kontakt">
           {t(`${base}.ctaLabel`)} <span className="arrow">&gt;</span>
         </Link>
         {pkg.detailTo && (

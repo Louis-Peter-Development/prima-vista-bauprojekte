@@ -25,7 +25,7 @@ export const PACKAGES: Package[] = [
     num: '02',
     variant: 'paper',
     reverse: true,
-    photo: '/assets/img/photo-parkett-altbau.webp',
+    photo: '/assets/img/projects/eiche-parkett-01.webp',
     detailTo: '/wohnung-sanierung',
   },
   {

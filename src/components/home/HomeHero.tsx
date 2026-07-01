@@ -121,9 +121,21 @@ export default function HomeHero() {
           <div></div>
           <div className="hero__cta">
             <small>{t('hero.ctaSmall')}</small>
-            <Link className="btn btn--light" to="/kontakt">
+            <Link className="btn btn--appointment btn--shimmer" to="/kontakt">
               {t('hero.cta')} <span className="arrow">&gt;</span>
             </Link>
+            <div className="hero__proof-cards" aria-label={t('promise.eyebrow')}>
+              <div className="hero__proof-card hero__proof-card--dark">
+                <span>{t('stats.projects.label')}</span>
+                <strong>412+</strong>
+                <small>{t('stats.projects.desc')}</small>
+              </div>
+              <div className="hero__proof-card">
+                <span>{t('reviews.source')}</span>
+                <strong>4.9</strong>
+                <small>{t('reviews.starsSuffix')}</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>

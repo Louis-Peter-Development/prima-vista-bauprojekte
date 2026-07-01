@@ -20,16 +20,10 @@ const PRODUCT_DICT: Partial<Record<Locale, Record<string, string>>> = {
 // They are NEVER edited. This map is consulted at RENDER time only, to swap the
 // *displayed* string for EN/IT while the underlying German data stays intact.
 //
-// SCOPE: it is intentionally seeded only with the bounded, high-visibility
-// CATEGORY titles, CATEGORY leads and SUBSECTION titles — there are a few dozen
-// distinct ones (generic section names like "Material", "Optionale Positionen",
-// the trade section headers, etc.). They are keyed by their canonical German
-// string, which is stable and unique enough to act as the lookup key.
-//
-// The ~5,738 individual product `row.title` values are NOT translated here:
-// that is a deliberate bulk-translation TODO. `localizeCatalog` falls back to
-// the German title for any key that is not present, so products simply render
-// in German until the per-product catalog is filled in.
+// SCOPE: curated overrides cover the bounded, high-visibility category titles,
+// leads and subsection titles. The PRODUCT_DICT JSON files then cover the full
+// calculator display catalog for EN/IT. French currently falls back to German
+// for product/catalog strings unless a curated override exists.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const CATALOG_TRANSLATIONS: Map<string, Partial<Record<Exclude<Locale, 'de'>, string>>> = new Map([
@@ -137,10 +131,10 @@ export const CATALOG_TRANSLATIONS: Map<string, Partial<Record<Exclude<Locale, 'd
 
 /**
  * Render-only catalog localizer. Returns the localized display string for a
- * catalog title/lead if one is seeded in {@link CATALOG_TRANSLATIONS}, else the
- * German fallback. `key` is the stable lookup key — the canonical German string
- * for category/subsection titles, or a product `sku` for per-product titles
- * (per-product translations are an intentional TODO and fall back to German).
+ * catalog title/lead/product string if a curated override or full catalog
+ * dictionary entry exists, else the German fallback. `key` is the stable lookup
+ * key — usually the canonical German string, with SKU lookups falling back to
+ * the German display text when the dictionary is source-string keyed.
  */
 export function localizeCatalog(key: string, german: string, locale: Locale): string {
   if (locale === 'de') return german;

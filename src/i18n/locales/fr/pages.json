@@ -22,7 +22,31 @@
     "photosEyebrow": "Aperçus",
     "photosTitleSuffix": "de près.",
     "photosIntro": "Impressions choisies de matière, de détail et d'exécution.",
-    "photosAria": "{{label}} en images"
+    "photosAria": "{{label}} en images",
+    "photoSets": {
+      "abdichtung": { "label": "Étanchéité", "images": [{ "alt": "Travaux d'étanchéité en zone humide" }] },
+      "badsanierung": { "label": "Rénovation de salle de bain", "images": [{ "alt": "Salle de bain terminée avec baignoire îlot et douche de plain-pied" }, { "alt": "Salle de bain en cours d'aménagement avec raccordements sanitaires préparés" }, { "alt": "Pose d'un WC suspendu pendant la rénovation de salle de bain" }] },
+      "barrierefreiheit": { "label": "Accessibilité", "images": [{ "alt": "Salle de bain compacte accessible avec douche basse" }, { "alt": "Transformation de salle de bain avec espace de circulation libre" }] },
+      "boeden": { "label": "Sols & revêtements", "images": [{ "alt": "Séjour avec revêtement de sol grand format" }, { "alt": "Sol en bois clair avec raccord mural net" }, { "alt": "Sol poli dans un espace de vie ouvert" }] },
+      "dach": { "label": "Rénovation de toiture", "images": [{ "alt": "Rénovation de toiture avec échafaudage et nouvelles fenêtres de toit" }] },
+      "elektro": { "label": "Installation électrique", "images": [{ "alt": "Détails électriques avec interrupteurs, prises et éclairage" }, { "alt": "Tableau électrique ouvert avec câblage propre" }, { "alt": "Intérieur avec éclairage d'accentuation et appliques murales" }] },
+      "fassade": { "label": "Façades & isolation", "images": [{ "alt": "Façade claire rénovée avec fenêtres et volets roulants" }, { "alt": "Composition de façade avec isolation et vue extérieure moderne" }] },
+      "fenster": { "label": "Fenêtres", "images": [{ "alt": "Fenêtre posée avec embrasures isolées" }, { "alt": "Travaux de fenêtre en aménagement intérieur avec échelle" }, { "alt": "Bandeau de fenêtres dans le cloisonnement avant remise" }] },
+      "garten": { "label": "Jardin & extérieurs", "images": [{ "alt": "Terrasse avec pergola et dalles de pierre" }, { "alt": "Éclairage de jardin avec espace extérieur végétalisé" }, { "alt": "Sous-structure de terrasse avant la surface finale" }] },
+      "kueche": { "label": "Cuisines & menuiserie", "images": [{ "alt": "Cuisine avec îlot, suspensions et éléments intégrés" }, { "alt": "Linéaire de cuisine avec évier et grande fenêtre" }, { "alt": "Montage de cuisine avec plan de travail et raccordement d'eau" }] },
+      "maler": { "label": "Peinture & laquage", "images": [{ "alt": "Peintre appliquant une peinture sur un mur intérieur rénové" }, { "alt": "Travaux de laquage au pistolet" }, { "alt": "Mur d'accent avec outils de peinture dans la pièce" }] },
+      "rohbau": { "label": "Gros œuvre", "images": [{ "alt": "Surface de gros œuvre avec murs en béton et passages techniques préparés" }, { "alt": "Gros œuvre avec ossature métallique et installations préparées" }] },
+      "trockenbau": { "label": "Cloisons sèches", "images": [{ "alt": "Ossature de plafond en cloison sèche avec câbles préparés" }, { "alt": "Cloison sèche avec profils métalliques et panneaux bois en cours de pose" }, { "alt": "Ossature de faux plafond pendant l'aménagement intérieur" }] },
+      "treppen": { "label": "Escaliers & garde-corps", "images": [{ "alt": "Escalier intérieur lumineux avec garde-corps" }, { "alt": "Escalier extérieur métallique sur un bâtiment" }, { "alt": "Escalier en béton avec finition murale nette" }] },
+      "tueren": { "label": "Portes & huisseries", "images": [{ "alt": "Couloir avec portes intérieures et huisseries posées" }, { "alt": "Porte d'entrée moderne et façade vitrée" }, { "alt": "Détail de porte vitrée et de balcon sur une façade moderne" }] },
+      "wasser": { "label": "Eau & sanitaire", "images": [{ "alt": "Installation sanitaire avec module en applique" }, { "alt": "Installation en applique pour WC et raccordements d'eau" }, { "alt": "Compteur d'eau et tuyauterie pendant l'aménagement" }] },
+      "heizkoerper": { "label": "Radiateurs", "images": [{ "alt": "Radiateur moderne dans un séjour rénové" }, { "alt": "Radiateur dans un séjour après modernisation du chauffage" }] },
+      "fussbodenheizung": { "label": "Chauffage au sol", "images": [{ "alt": "Chauffage au sol posé dans les combles pendant la rénovation" }, { "alt": "Chauffage au sol dans les combles avant la chape" }, { "alt": "Combles terminés après installation du chauffage au sol" }] },
+      "waermepumpe": { "label": "Pompe à chaleur", "images": [{ "alt": "Unité extérieure d'une pompe à chaleur air-eau sur un bâtiment" }] },
+      "gasHeizung": { "label": "Chauffage au gaz", "images": [{ "alt": "Radiateur dans un séjour après modernisation du chauffage" }] },
+      "saunaofen": { "label": "Poêle de sauna", "images": [{ "alt": "Salle de bain bien-être comme environnement pour poêle de sauna et technique de chauffage" }] },
+      "zaeune": { "label": "Clôtures & portails", "images": [{ "alt": "Clôture métallique moderne avec portail d'entrée" }, { "alt": "Clôture bois avec brise-vue le long d'une maison" }] }
+    }
   },
   "trade": {
     "badsanierung": { "metaTitle": "Rénovation de salle de bain et WC invités", "crumbLabel": "Corps de métier · Rénovation de salle de bain", "title": "Calculer la<br/><em>rénovation de salle de bain.</em>", "lede": "Du WC invités moderne à la salle de bain complète d'exception : configurez votre rénovation et obtenez des coûts transparents pour le sanitaire, le carrelage et les équipements.", "variants": "4 concepts", "trades": "Sanitaire et carrelage", "endEyebrow": "Le moment d'une nouvelle salle de bain ?", "endTitle": "Nous planifions le <em>sanitaire</em><br/>et le design sur place.", "endCta": "Demander pour la salle de bain" },
@@ -135,7 +159,7 @@
   "gewerke": {
     "crumbLabel": "Corps de métier · Prestations de construction",
     "title": "Dix-neuf<br/>corps de métier,<br/><em>une seule main.</em>",
-    "lede": "Découvrez des produits sur mesure, des matériaux de construction et des forfaits complets pour tous les corps de métier — coordonnés par notre direction de chantier à Francfort et Emmenbrücke.",
+    "lede": "Découvrez des produits sur mesure, des matériaux de construction et des forfaits complets pour tous les corps de métier — coordonnés par notre direction de chantier en Allemagne et en Suisse.",
     "metaSelectionLabel": "Sélection",
     "metaSelectionValue": "19 corps de métier",
     "metaCoordLabel": "Coordination",

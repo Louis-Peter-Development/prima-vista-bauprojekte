@@ -7,8 +7,8 @@ export type WohnungTypeOption = {
   defaultArea: number;
   factor: number;
   multiLevel: boolean;
-  /** 3D floor-plan render for this size, shown as a live preview in the picker. */
-  floorplan: string;
+  /** Preview image for this apartment type, shown in the picker. */
+  previewImage: string;
 };
 
 export type AreaOption = {
@@ -26,10 +26,10 @@ export type WohnungGewerk = {
 };
 
 export const WOHNUNG_TYPES: WohnungTypeOption[] = [
-  { value: 'studio', label: '1-Zimmer · Studio', detail: 'Kompakte Etagenwohnung', defaultArea: 50, factor: 0.96, multiLevel: false, floorplan: '/assets/img/leistungen/wohnung-grundriss-50.webp' },
-  { value: '2zi', label: '2-Zimmer-Wohnung', detail: 'Standard-Etagenwohnung', defaultArea: 100, factor: 1.00, multiLevel: false, floorplan: '/assets/img/leistungen/wohnung-grundriss-100.webp' },
-  { value: '3zi', label: '3-Zimmer-Wohnung', detail: 'Familienwohnung mit mehr Trennwänden', defaultArea: 150, factor: 1.04, multiLevel: false, floorplan: '/assets/img/leistungen/wohnung-grundriss-150.webp' },
-  { value: 'maisonette', label: 'Maisonette · 4+ Zimmer', detail: 'Mehrgeschossig oder Penthouse', defaultArea: 200, factor: 1.12, multiLevel: true, floorplan: '/assets/img/leistungen/wohnung-grundriss-200.webp' },
+  { value: 'studio', label: '1-Zimmer · Studio', detail: 'Kompakte Etagenwohnung', defaultArea: 50, factor: 0.96, multiLevel: false, previewImage: '/assets/img/leistungen/wohnung-sanierung-studio.webp' },
+  { value: '2zi', label: '2-Zimmer-Wohnung', detail: 'Standard-Etagenwohnung', defaultArea: 100, factor: 1.00, multiLevel: false, previewImage: '/assets/img/leistungen/wohnung-sanierung-2zimmer.webp' },
+  { value: '3zi', label: '3-Zimmer-Wohnung', detail: 'Geräumige Familienwohnung', defaultArea: 150, factor: 1.04, multiLevel: false, previewImage: '/assets/img/leistungen/wohnung-sanierung-3zimmer.webp' },
+  { value: 'maisonette', label: 'Maisonette · 4+ Zimmer', detail: 'Mehrgeschossig oder Penthouse', defaultArea: 200, factor: 1.12, multiLevel: true, previewImage: '/assets/img/leistungen/wohnung-sanierung-maisonette.webp' },
 ];
 
 export const AREA_OPTIONS: AreaOption[] = [

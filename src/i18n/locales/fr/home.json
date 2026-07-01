@@ -1,6 +1,6 @@
 {
   "hero": {
-    "toplineLocation": "Francfort & Emmenbrücke",
+    "toplineLocation": "Allemagne & Suisse",
     "toplineTagline": "Rénovation & réfection — projets de construction depuis 2014",
     "toplineIssue": "N° 26 / Printemps 2026",
     "headline1": "<em>Une</em> vision.",
@@ -12,7 +12,14 @@
     "cta": "Prendre rendez-vous"
   },
   "marquee": {
-    "items": ["Rénovation", "Réfection", "Aménagement de restaurant", "Salles de bains", "Cuisines", "Sols", "Électricité", "Chauffage", "Façade", "Peinture & laque", "Escaliers", "Cloisons sèches"]
+    "aria": "Avantages Prima Vista",
+    "proofs": {
+      "contact": { "title": "Interlocuteur personnel", "desc": "Un contact. Pleine responsabilité." },
+      "fixedPrice": { "title": "Garantie de prix fixe", "desc": "Coûts transparents. Pas de surprises." },
+      "schedule": { "title": "Respect des délais", "desc": "Ponctuel, fiable et planifiable." },
+      "warranty": { "title": "Garantie de 5 ans", "desc": "Une qualité sur laquelle vous pouvez compter." },
+      "region": { "title": "Allemagne & Suisse", "desc": "Deux sites. Une promesse de qualité." }
+    }
   },
   "heroPhotos": {
     "aria": "Aperçus de nos projets",
@@ -27,12 +34,12 @@
   "featured": {
     "eyebrow": "Projets sélectionnés",
     "title": "Tout juste sortis de<br/>l'<em>atelier.</em>",
-    "meta": "Francfort · Wiesbaden · Lucerne",
+    "meta": "Allemagne · Suisse",
     "viewAll": "Voir tous les projets",
     "projects": {
-      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Restaurant Zoi, Francfort" },
-      "proj--b": { "ttl": "Villa béton apparent", "alt": "Villa béton apparent, Lucerne" },
-      "proj--c": { "ttl": "Cuisine en chêne", "alt": "Cuisine en chêne, Francfort" },
+      "proj--a": { "ttl": "Maison Bad Soden", "alt": "Maison individuelle à Bad Soden, séjour rénové" },
+      "proj--b": { "ttl": "Zoi — Restaurant", "alt": "Restaurant Zoi, Francfort" },
+      "proj--c": { "ttl": "Riad — Restaurant", "alt": "Restaurant Riad, Francfort-Sachsenhausen" },
       "proj--d": { "ttl": "Salle de bains spa — Hôtel", "alt": "Salle de bains spa, hôtel" },
       "proj--e": { "ttl": "Office Lobby", "alt": "Hall de bureaux, Francfort" }
     }
@@ -73,7 +80,7 @@
     "totalLabel": "Investissement estimé",
     "totalNote": "Contractuel après relevé sur place.",
     "sigName": "Daniel Vogel · Direction de chantier",
-    "sigPlace": "Francfort/Lucerne",
+    "sigPlace": "Allemagne/Suisse",
     "docs": [
       { "num": "№ 06 / BA-2026-142", "projekt": "Rénovation d'appartement · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Salle de bains, cuisine, électricité, peinture", "standard": "Haut de gamme", "investition": "184 – 226 k €", "datum": "17 mai 2026" },
       { "num": "№ 06 / BA-2026-089", "projekt": "Rénovation de maison · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Toiture, façade, chauffage, gros œuvre", "standard": "Premium", "investition": "320 – 385 k €", "datum": "22 mai 2026" },
@@ -86,12 +93,12 @@
     "p1": "Nous croyons à une rénovation sans transferts : un entrepreneur général qui assume la responsabilité de chaque corps de métier — du gros œuvre au dernier joint de meuble. Vous parlez à un seul interlocuteur, garant de tout.",
     "p2": "Cette clarté n'est pas un confort, mais la condition d'espaces qui, dans quinze ans, dégageront encore la même sérénité qu'au premier jour.",
     "list": {
-      "1": "Direction de chantier incl.",
-      "2": "Tous les matériaux",
-      "3": "Garantie de prix fixe",
-      "4": "Rendez-vous sous 48 h",
-      "5": "Date de livraison ferme",
-      "6": "5 ans de garantie"
+      "1": { "title": "Direction de chantier incl.", "desc": "Daniel & Monica" },
+      "2": { "title": "Tous les matériaux", "desc": "Depuis 2014" },
+      "3": { "title": "Garantie de prix fixe", "desc": "Allemagne & Suisse" },
+      "4": { "title": "Rendez-vous sous 48 h", "desc": "Contact direct" },
+      "5": { "title": "Date de livraison ferme", "desc": "Planification documentée" },
+      "6": { "title": "5 ans de garantie", "desc": "Réception propre" }
     }
   },
   "packages": {
@@ -130,7 +137,7 @@
     "intro": "Les chiffres ne créent pas d'espaces — mais ils disent avec quel sérieux nous prenons la mission. Voici un aperçu sobre de notre travail depuis 2014.",
     "since": {
       "label": "Direction de chantier depuis",
-      "desc": "Fondée par Daniel et Monica à Frankfurt am Main."
+      "desc": "Fondée par Daniel et Monica."
     },
     "projects": {
       "label": "Projets achevés",
@@ -215,11 +222,11 @@
     "eyebrow": "À propos",
     "title": "Une entreprise de construction<br/>gérée comme une<br/><em>entreprise familiale.</em>",
     "p1": "Daniel et Monica dirigent Prima Vista depuis 2014 — en couple, en directeurs de chantier, en interlocuteurs. Qui construit ici ne parle pas à un centre d'appels, mais aux personnes dont le nom figure sur le contrat.",
-    "p2": "Depuis le siège de Francfort, nous suivons des projets en Hesse ; depuis Emmenbrücke, toute la Suisse centrale. Les deux bureaux partagent matériaux, plans et standards — vous bénéficiez partout de la même exigence.",
+    "p2": "En Allemagne et en Suisse, nous suivons vos projets avec les mêmes matériaux, plans et standards — vous bénéficiez partout de la même exigence.",
     "sigName": "Daniel & Monica",
     "sigRole": "Fondateurs & direction de chantier",
     "photoAlt": "Daniel et Monica — fondateurs de Prima Vista Bauprojekte",
-    "photoLabel": "Daniel & Monica — Francfort, 2026"
+    "photoLabel": "Daniel & Monica — 2026"
   },
   "testimonial": {
     "quote": "Nous appréhendions la rénovation — et nous avons été surpris : Prima Vista a livré dans les délais, proprement et avec une telle précision que nous avons pu emménager un mois plus tôt.",
@@ -228,7 +235,7 @@
   },
   "finalCta": {
     "title": "Parlons de<br/>votre <em>projet de construction.</em>",
-    "p": "Première consultation gratuite. Rendez-vous sous 48 heures, sur place ou en visioconférence — à Francfort et à Emmenbrücke.",
+    "p": "Première consultation gratuite. Rendez-vous sous 48 heures, sur place ou en visioconférence — en Allemagne et en Suisse.",
     "appointment": "Prendre rendez-vous",
     "toCalculator": "Ouvrir le calculateur",
     "expressQuote": "Devis express"

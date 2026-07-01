@@ -386,7 +386,9 @@
   letter-spacing: 0.075em;
   text-transform: uppercase;
   color: var(--pv-ink);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
 .kalk-trades__lead {
   font-family: var(--pv-font-body);
@@ -869,4 +871,32 @@
   .kalk-cat__hint,
   .kalk-leaves__hint { width: 100%; margin-left: 0; }
   .kalk-cat__opt { padding: 20px 22px 22px; }
+}
+
+@media (max-width: 380px) {
+  .kalk-trades__item button {
+    grid-template-columns: 22px minmax(0, 1fr);
+    grid-template-areas:
+      "check body"
+      "num price";
+    align-items: start;
+    gap: 8px 10px;
+  }
+  .kalk-trades__check {
+    grid-area: check;
+    align-self: start;
+    margin-top: 1px;
+  }
+  .kalk-trades__num {
+    grid-area: num;
+  }
+  .kalk-trades__body {
+    grid-area: body;
+    padding-right: 0;
+  }
+  .kalk-trades__price {
+    grid-area: price;
+    justify-self: start;
+    align-self: start;
+  }
 }

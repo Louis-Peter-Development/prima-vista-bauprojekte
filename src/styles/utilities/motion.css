@@ -94,7 +94,7 @@
   to { opacity: 1; transform: scale(1.04); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 880px) {
   .js-reveal .reveal--left,
   .js-reveal .reveal--right {
     transform: translateY(20px);

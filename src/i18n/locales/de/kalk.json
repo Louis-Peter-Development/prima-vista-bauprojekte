@@ -3,7 +3,7 @@
     "metaTitle": "Kostenkalkulator für Sanierung & Bau",
     "crumbLabel": "Kalkulator · Live-Schätzung",
     "title": "Was kostet<br/>Ihr <em>Bauprojekt?</em>",
-    "lede": "Ein paar Klicks. Eine ehrliche Spanne. Auf Basis von Daten aus über 400 abgeschlossenen Projekten in Hessen und der Innerschweiz — ohne Anmeldung, ohne Verkaufstaktik.",
+    "lede": "Ein paar Klicks. Eine ehrliche Spanne. Auf Basis von Daten aus über 400 abgeschlossenen Projekten in Deutschland und der Schweiz — ohne Anmeldung, ohne Verkaufstaktik.",
     "meta": [
       {
         "label": "Berechnung",
@@ -203,7 +203,7 @@
     "gewerkeCount": "<em>{{count}}</em> von {{total}} gewählt",
     "multiLevelOnly": "Nur für mehrgeschossige Objekte",
     "configHint": "Wählen Sie Ihre gewünschte Konfiguration",
-    "floorplanAlt": "Beispiel-Grundriss: {{label}}",
+    "floorplanAlt": "Beispielbild: {{label}}",
     "livingArea": "Wohnfläche"
   },
   "reno": {
@@ -342,7 +342,7 @@
       },
       "3zi": {
         "label": "3-Zimmer-Wohnung",
-        "detail": "Familienwohnung mit mehr Trennwänden"
+        "detail": "Geräumige Familienwohnung"
       },
       "maisonette": {
         "label": "Maisonette · 4+ Zimmer",

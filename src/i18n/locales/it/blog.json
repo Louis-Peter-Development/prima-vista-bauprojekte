@@ -4,7 +4,7 @@
   "masthead": {
     "issue": "Numero №{{number}}",
     "issueEmpty": "Numero №—",
-    "place": "Francoforte · Lucerna · MMXXVI",
+    "place": "Germania · Svizzera · MMXXVI",
     "eyebrow": "Il Magazine",
     "name": "Magazine",
     "sub": "Idee, materiali e decisioni per spazi migliori — progettazione, processo e artigianato attorno a ristrutturazione, allestimento e rinnovo."
@@ -15,7 +15,7 @@
     "focusLabel": "Focus",
     "focusValue": "Residenziale · Commerciale · Ristorazione",
     "regionLabel": "Regione",
-    "regionValue": "Francoforte · Lucerna",
+    "regionValue": "Germania · Svizzera",
     "archiveLabel": "Archivio",
     "archiveValue_one": "{{count}} articolo",
     "archiveValue_other": "{{count}} articoli"

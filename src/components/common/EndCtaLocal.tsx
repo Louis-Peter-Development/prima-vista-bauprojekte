@@ -43,13 +43,14 @@ export default function EndCtaLocal({
       },
     };
   }
+  const ctaClassName = `btn ${to === '/kontakt' ? 'btn--appointment' : 'btn--light'} btn--shimmer`;
 
   return (
     <section className="end-cta-local" style={style}>
       <div className="end-cta-local__inner reveal-group">
         <SectionEyebrow>{eyebrow}</SectionEyebrow>
         <h2>{title}</h2>
-        <Link className="btn btn--light btn--shimmer" to={to} state={contactState}>{ctaLabel} <span className="arrow">&gt;</span></Link>
+        <Link className={ctaClassName} to={to} state={contactState}>{ctaLabel} <span className="arrow">&gt;</span></Link>
       </div>
     </section>
   );

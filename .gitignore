@@ -17,6 +17,7 @@ dist
 dist-ssr
 build
 out
+output
 
 # Local env files
 .env
@@ -36,6 +37,9 @@ out
 
 # Vite cache
 .vite
+
+# Local browser/test artifacts
+.playwright-cli/
 
 # TypeScript
 *.tsbuildinfo

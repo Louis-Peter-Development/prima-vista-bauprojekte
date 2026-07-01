@@ -3,9 +3,9 @@ import { Link } from '../../i18n/Link';
 
 const HERO_END_PHOTOS = [
   { key: 'rohbau', src: '/assets/img/leistungen/rohbau-trockenbau-01.webp', to: '/rohbau-abbruch', width: 1200, height: 900 },
-  { key: 'bad', src: '/assets/img/leistungen/badsanierung-05.webp', to: '/badsanierung', width: 1200, height: 1600 },
-  { key: 'kueche', src: '/assets/img/leistungen/kuechen-moebelbau-02.webp', to: '/kuechen-moebelbau', width: 1402, height: 1122 },
-  { key: 'gastro', src: '/assets/img/proj-zoi-01.webp', to: '/projekte', width: 1600, height: 1200 },
+  { key: 'bad', src: '/assets/img/projects/bad-soden-einfamilienhaus-07.webp', to: '/badsanierung', width: 1086, height: 1448 },
+  { key: 'kueche', src: '/assets/img/projects/bad-soden-einfamilienhaus-05.webp', to: '/kuechen-moebelbau', width: 1448, height: 1086 },
+  { key: 'gastro', src: '/assets/img/proj-restaurant-dining.webp', to: '/gastronomie-ausbau', width: 1448, height: 1086 },
 ] as const;
 
 export default function HomeHeroPhotos() {

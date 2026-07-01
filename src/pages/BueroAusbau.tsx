@@ -3,7 +3,7 @@ import BueroAusbauCalculator from '../components/buero-ausbau/BueroAusbauCalcula
 
 export default function BueroAusbau() {
   return (
-    <CalcPage pageKey="buero" crumbNumber="09" backgroundImage="/assets/img/photo-office-light.webp" className="kalk-intro">
+    <CalcPage pageKey="buero" crumbNumber="09" backgroundImage="/assets/img/photo-office-modern.webp" className="kalk-intro">
       <BueroAusbauCalculator />
     </CalcPage>
   );

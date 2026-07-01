@@ -49,7 +49,7 @@ export default function GastronomieAusbau() {
     <CalcPage
       pageKey="gastro"
       crumbNumber="07"
-      backgroundImage="/assets/img/proj-moroccan-dining.webp"
+      backgroundImage="/assets/img/proj-restaurant-dining.webp"
       className="kalk-intro"
     >
       <div className="kalkulator__inner">

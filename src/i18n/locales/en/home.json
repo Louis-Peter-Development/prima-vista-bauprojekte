@@ -1,6 +1,6 @@
 {
   "hero": {
-    "toplineLocation": "Frankfurt & Emmenbrücke",
+    "toplineLocation": "Germany & Switzerland",
     "toplineTagline": "Renovation & refurbishment — building since 2014",
     "toplineIssue": "N° 26 / Spring 2026",
     "headline1": "<em>One</em> vision.",
@@ -12,7 +12,14 @@
     "cta": "Book an appointment"
   },
   "marquee": {
-    "items": ["Renovation", "Refurbishment", "Restaurant fit-out", "Bathrooms", "Kitchens", "Floors", "Electrical", "Heating", "Façades", "Painting", "Stairs", "Drywall"]
+    "aria": "Prima Vista advantages",
+    "proofs": {
+      "contact": { "title": "Personal point of contact", "desc": "One contact. Full responsibility." },
+      "fixedPrice": { "title": "Fixed-price guarantee", "desc": "Transparent costs. No surprises." },
+      "schedule": { "title": "Schedule reliability", "desc": "Punctual, dependable and plannable." },
+      "warranty": { "title": "5-year warranty", "desc": "Quality you can rely on." },
+      "region": { "title": "Germany & Switzerland", "desc": "Two locations. One quality promise." }
+    }
   },
   "heroPhotos": {
     "aria": "A look inside our projects",
@@ -27,12 +34,12 @@
   "featured": {
     "eyebrow": "Selected projects",
     "title": "Fresh from the<br/><em>workshop.</em>",
-    "meta": "Frankfurt · Wiesbaden · Lucerne",
+    "meta": "Germany · Switzerland",
     "viewAll": "See all projects",
     "projects": {
-      "proj--a": { "ttl": "Zoi — Restaurant", "alt": "Zoi restaurant, Frankfurt" },
-      "proj--b": { "ttl": "Exposed-Concrete Villa", "alt": "Exposed-concrete villa, Lucerne" },
-      "proj--c": { "ttl": "Oak Kitchen", "alt": "Oak kitchen, Frankfurt" },
+      "proj--a": { "ttl": "Bad Soden Detached House", "alt": "Bad Soden detached house, finished living area" },
+      "proj--b": { "ttl": "Zoi — Restaurant", "alt": "Zoi restaurant, Frankfurt" },
+      "proj--c": { "ttl": "Riad — Restaurant", "alt": "Riad restaurant, Frankfurt-Sachsenhausen" },
       "proj--d": { "ttl": "Spa Bath — Hotel", "alt": "Spa bathroom, hotel" },
       "proj--e": { "ttl": "Office Lobby", "alt": "Office lobby, Frankfurt" }
     }
@@ -73,7 +80,7 @@
     "totalLabel": "Estimated investment",
     "totalNote": "Binding after an on-site measure-up.",
     "sigName": "Daniel Vogel · Site management",
-    "sigPlace": "Frankfurt/Lucerne",
+    "sigPlace": "Germany/Switzerland",
     "docs": [
       { "num": "№ 06 / BA-2026-142", "projekt": "Apartment renovation · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bath, kitchen, electrical, painting", "standard": "Upscale", "investition": "€ 184–226k", "datum": "17 May 2026" },
       { "num": "№ 06 / BA-2026-089", "projekt": "House renovation · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Roof, façade, heating, shell", "standard": "Premium", "investition": "€ 320–385k", "datum": "22 May 2026" },
@@ -86,12 +93,12 @@
     "p1": "We believe in renovation without hand-offs: a single main contractor who owns every trade — from the bare shell to the last cabinet seam. You deal with one point of contact who stands behind all of it.",
     "p2": "That clarity isn't a luxury. It's what lets a space still feel as calm in fifteen years as it did on the first day.",
     "list": {
-      "1": "Site management included",
-      "2": "All materials",
-      "3": "Fixed-price guarantee",
-      "4": "Appointment within 48 h",
-      "5": "Firm completion date",
-      "6": "5-year workmanship warranty"
+      "1": { "title": "Site management incl.", "desc": "Daniel & Monica" },
+      "2": { "title": "All materials", "desc": "Since 2014" },
+      "3": { "title": "Fixed-price guarantee", "desc": "Germany & Switzerland" },
+      "4": { "title": "Appointment in 48 h", "desc": "Direct contact" },
+      "5": { "title": "Firm completion date", "desc": "Documented planning" },
+      "6": { "title": "5-year workmanship warranty", "desc": "Clean handover" }
     }
   },
   "packages": {
@@ -130,7 +137,7 @@
     "intro": "Numbers don't build spaces — but they show how seriously we take the brief. A plain, honest cut through our work since 2014.",
     "since": {
       "label": "Building since",
-      "desc": "Founded by Daniel and Monica in Frankfurt am Main."
+      "desc": "Founded by Daniel and Monica."
     },
     "projects": {
       "label": "Completed projects",
@@ -215,11 +222,11 @@
     "eyebrow": "About us",
     "title": "A construction firm<br/>run like a<br/><em>family business.</em>",
     "p1": "Daniel and Monica have led Prima Vista since 2014 — as a couple, as site managers, as your point of contact. Build with us and you talk not to a call centre, but to the people whose names are on the contract.",
-    "p2": "From our Frankfurt base we look after projects across Hesse; from Emmenbrücke, all of Central Switzerland. Both offices share materials, plans and standards — you get the same standard everywhere.",
+    "p2": "Across Germany and Switzerland, we look after projects with the same materials, plans and standards — you get the same standard everywhere.",
     "sigName": "Daniel & Monica",
     "sigRole": "Founders & site management",
     "photoAlt": "Daniel and Monica — founders of Prima Vista Bauprojekte",
-    "photoLabel": "Daniel & Monica — Frankfurt, 2026"
+    "photoLabel": "Daniel & Monica — 2026"
   },
   "testimonial": {
     "quote": "We were dreading the renovation — and were taken by surprise: Prima Vista delivered on time, clean and so precisely that we moved in a month early.",
@@ -228,7 +235,7 @@
   },
   "finalCta": {
     "title": "Let's talk about<br/>your <em>building project.</em>",
-    "p": "First consultation free. An appointment within 48 hours, on site or by video — in Frankfurt and Emmenbrücke.",
+    "p": "First consultation free. An appointment within 48 hours, on site or by video — in Germany and Switzerland.",
     "appointment": "Book an appointment",
     "toCalculator": "Open the calculator",
     "expressQuote": "Express quote"
