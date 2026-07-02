@@ -1,6 +1,6 @@
 {
-  "name": "Construction Concierge",
-  "greeting": "Hello and welcome to Prima Vista. I am your Construction Concierge. Tell us briefly about your project, or pick a topic below.",
+  "name": "Building Advisor",
+  "greeting": "Hello and welcome to Prima Vista. I am your Building Advisor. Tell us briefly about your project, or pick a topic below.",
   "suggestions": [
     "Request a complete renovation",
     "Fixed-price estimate",
@@ -8,15 +8,15 @@
     "Speak with Daniel or Monica"
   ],
   "rail": {
-    "ariaLabel": "Prima Vista Construction Concierge",
+    "ariaLabel": "Prima Vista Building Advisor",
     "brandLabel": "Prima Vista home",
-    "eyebrow": "Construction Concierge",
-    "heading": "A concierge<br/>who listens.",
+    "eyebrow": "Building Advisor",
+    "heading": "A consultant<br/>who listens.",
     "paragraph": "Tell us about your project, from a single bathroom to a complete renovation. We assess your plans and show you the next sensible step.",
     "proofResponse": "Usually an instant reply",
     "proofMeeting": "First consultation within 48 hours",
     "proofGuarantee": "Fixed price and site management included",
-    "location": "Frankfurt am Main · Emmenbrücke"
+    "location": "Germany · Switzerland"
   },
   "header": {
     "status": "Online · Reply < 5 min",
@@ -26,7 +26,7 @@
   "welcome": {
     "eyebrow": "Welcome",
     "heading": "Hello.",
-    "paragraph": "Pick a topic or write freely. The more specific the property type, location and scope, the more precisely the concierge can guide you."
+    "paragraph": "Pick a topic or write freely. The more specific the property type, location and scope, the more precisely the Building Advisor can guide you."
   },
   "typingAria": "Writing a reply",
   "suggestionsAria": "Suggested topics",
@@ -38,12 +38,12 @@
   },
   "footnote": "Encrypted and confidential · You are speaking with the Prima Vista team",
   "launcher": {
-    "start": "Start the Construction Concierge",
-    "open": "Open the Construction Concierge",
+    "start": "Start the Building Advisor",
+    "open": "Open the Building Advisor",
     "dismiss": "Dismiss notice",
     "previewText": "Hello, would you tell us briefly about your project?"
   },
-  "panelAria": "Prima Vista Construction Concierge",
-  "error": "The Construction Concierge is not yet configured locally.",
+  "panelAria": "Prima Vista Building Advisor",
+  "error": "The Building Advisor is not yet configured locally.",
   "fallbackMessage": "Sorry, we are having a technical problem right now. Please write to us directly at office@primavista-bauprojekte.com or call us on +49 1578 98 18 308."
 }

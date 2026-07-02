@@ -15,7 +15,7 @@
     "countryDe": "Germany",
     "countryCh": "Switzerland",
     "mediaAlt": "Bright meeting room for project consultations",
-    "mediaCaption": "First consultation · Frankfurt & Emmenbrücke"
+    "mediaCaption": "First consultation · Germany & Switzerland"
   },
   "form": {
     "eyebrow": "Send an enquiry",
@@ -38,8 +38,8 @@
     },
     "regionLabel": "Region",
     "regions": {
-      "frankfurt": "Frankfurt & Hesse",
-      "innerschweiz": "Central Switzerland",
+      "frankfurt": "Germany",
+      "innerschweiz": "Switzerland",
       "ausserhalb": "Elsewhere"
     },
     "budgetLabel": "Budget range",

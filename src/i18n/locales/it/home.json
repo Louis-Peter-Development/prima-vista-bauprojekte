@@ -1,6 +1,6 @@
 {
   "hero": {
-    "toplineLocation": "Francoforte & Emmenbrücke",
+    "toplineLocation": "Germania & Svizzera",
     "toplineTagline": "Ristrutturazione & rinnovo — progetti edilizi dal 2014",
     "toplineIssue": "N° 26 / Primavera 2026",
     "headline1": "<em>Una</em> visione.",
@@ -12,7 +12,14 @@
     "cta": "Fissa un appuntamento"
   },
   "marquee": {
-    "items": ["Ristrutturazione", "Rinnovo", "Allestimento ristorazione", "Bagni", "Cucine", "Pavimenti", "Impianti elettrici", "Riscaldamento", "Facciate", "Imbiancatura", "Scale", "Cartongesso"]
+    "aria": "Vantaggi Prima Vista",
+    "proofs": {
+      "contact": { "title": "Referente personale", "desc": "Un contatto. Piena responsabilità." },
+      "fixedPrice": { "title": "Garanzia di prezzo fisso", "desc": "Costi trasparenti. Nessuna sorpresa." },
+      "schedule": { "title": "Rispetto delle scadenze", "desc": "Puntuale, affidabile e pianificabile." },
+      "warranty": { "title": "Garanzia di 5 anni", "desc": "Qualità su cui può contare." },
+      "region": { "title": "Germania & Svizzera", "desc": "Due sedi. Una promessa di qualità." }
+    }
   },
   "heroPhotos": {
     "aria": "Uno sguardo ai nostri progetti",
@@ -27,12 +34,12 @@
   "featured": {
     "eyebrow": "Progetti selezionati",
     "title": "Appena usciti dal<br/><em>laboratorio.</em>",
-    "meta": "Francoforte · Wiesbaden · Lucerna",
+    "meta": "Germania · Svizzera",
     "viewAll": "Vedi tutti i progetti",
     "projects": {
-      "proj--a": { "ttl": "Zoi — Ristorante", "alt": "Ristorante Zoi, Francoforte" },
-      "proj--b": { "ttl": "Villa in cemento a vista", "alt": "Villa in cemento a vista, Lucerna" },
-      "proj--c": { "ttl": "Cucina in rovere", "alt": "Cucina in rovere, Francoforte" },
+      "proj--a": { "ttl": "Casa Bad Soden", "alt": "Casa unifamiliare a Bad Soden, zona giorno ristrutturata" },
+      "proj--b": { "ttl": "Zoi — Ristorante", "alt": "Ristorante Zoi, Francoforte" },
+      "proj--c": { "ttl": "Riad — Ristorante", "alt": "Ristorante Riad, Francoforte-Sachsenhausen" },
       "proj--d": { "ttl": "Bagno Spa — Hotel", "alt": "Bagno spa, hotel" },
       "proj--e": { "ttl": "Office Lobby", "alt": "Lobby ufficio, Francoforte" }
     }
@@ -73,7 +80,7 @@
     "totalLabel": "Investimento stimato",
     "totalNote": "Vincolante dopo il rilievo in loco.",
     "sigName": "Daniel Vogel · Direzione lavori",
-    "sigPlace": "Francoforte/Lucerna",
+    "sigPlace": "Germania/Svizzera",
     "docs": [
       { "num": "№ 06 / BA-2026-142", "projekt": "Ristrutturazione appartamento · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bagno, cucina, impianti, imbianchino", "standard": "Di pregio", "investition": "€ 184–226 mila", "datum": "17 maggio 2026" },
       { "num": "№ 06 / BA-2026-089", "projekt": "Ristrutturazione casa · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Tetto, facciata, riscaldamento, struttura", "standard": "Premium", "investition": "€ 320–385 mila", "datum": "22 maggio 2026" },
@@ -86,12 +93,12 @@
     "p1": "Crediamo in una ristrutturazione senza passaggi di mano: un unico general contractor che risponde di ogni lavorazione — dalla struttura grezza all'ultima giunzione dei mobili. Lei parla con un solo referente, che garantisce per tutto.",
     "p2": "Questa chiarezza non è un lusso: è la condizione perché gli ambienti trasmettano, tra quindici anni, la stessa serenità del primo giorno.",
     "list": {
-      "1": "Direzione lavori inclusa",
-      "2": "Tutti i materiali",
-      "3": "Garanzia di prezzo fisso",
-      "4": "Appuntamento entro 48 h",
-      "5": "Data di consegna certa",
-      "6": "5 anni di garanzia"
+      "1": { "title": "Direzione lavori inclusa", "desc": "Daniel & Monica" },
+      "2": { "title": "Tutti i materiali", "desc": "Dal 2014" },
+      "3": { "title": "Garanzia di prezzo fisso", "desc": "Germania & Svizzera" },
+      "4": { "title": "Appuntamento entro 48 h", "desc": "Contatto diretto" },
+      "5": { "title": "Data di consegna certa", "desc": "Pianificazione documentata" },
+      "6": { "title": "5 anni di garanzia", "desc": "Consegna pulita" }
     }
   },
   "packages": {
@@ -130,7 +137,7 @@
     "intro": "I numeri non costruiscono ambienti — ma dicono quanto sul serio prendiamo l'incarico. Uno sguardo sobrio al nostro lavoro dal 2014.",
     "since": {
       "label": "Sul campo dal",
-      "desc": "Fondata da Daniel e Monica a Francoforte sul Meno."
+      "desc": "Fondata da Daniel e Monica."
     },
     "projects": {
       "label": "Progetti completati",
@@ -215,11 +222,11 @@
     "eyebrow": "Chi siamo",
     "title": "Un'impresa edile<br/>gestita come<br/>un'<em>azienda di famiglia.</em>",
     "p1": "Daniel e Monica guidano Prima Vista dal 2014 — come coppia, come direttori dei lavori, come referenti. Chi costruisce con noi non parla con un call center, ma con le persone il cui nome è sul contratto.",
-    "p2": "Dalla sede di Francoforte seguiamo i progetti in Assia; da Emmenbrücke, tutta la Svizzera centrale. I due uffici condividono materiali, progetti e standard — ovunque riceve la stessa qualità.",
+    "p2": "In Germania e Svizzera seguiamo i progetti con gli stessi materiali, progetti e standard — ovunque riceve la stessa qualità.",
     "sigName": "Daniel & Monica",
     "sigRole": "Fondatori & direzione lavori",
     "photoAlt": "Daniel e Monica — fondatori di Prima Vista Bauprojekte",
-    "photoLabel": "Daniel & Monica — Francoforte, 2026"
+    "photoLabel": "Daniel & Monica — 2026"
   },
   "testimonial": {
     "quote": "Temevamo la ristrutturazione — e siamo stati sorpresi: Prima Vista ha consegnato puntuale, pulito e così preciso che siamo riusciti a trasferirci un mese prima.",
@@ -228,7 +235,7 @@
   },
   "finalCta": {
     "title": "Parliamo del<br/>suo <em>progetto edilizio.</em>",
-    "p": "Prima consulenza gratuita. Appuntamento entro 48 ore, in loco o in videochiamata — a Francoforte ed Emmenbrücke.",
+    "p": "Prima consulenza gratuita. Appuntamento entro 48 ore, in loco o in videochiamata — in Germania e Svizzera.",
     "appointment": "Fissa un appuntamento",
     "toCalculator": "Apri il preventivatore",
     "expressQuote": "Preventivo express"

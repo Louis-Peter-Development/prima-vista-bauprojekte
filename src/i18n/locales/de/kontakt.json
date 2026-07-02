@@ -15,7 +15,7 @@
     "countryDe": "Deutschland",
     "countryCh": "Schweiz",
     "mediaAlt": "Heller Besprechungsraum für die Projektberatung",
-    "mediaCaption": "Erstberatung · Frankfurt & Emmenbrücke"
+    "mediaCaption": "Erstberatung · Deutschland & Schweiz"
   },
   "form": {
     "eyebrow": "Anfrage senden",
@@ -38,8 +38,8 @@
     },
     "regionLabel": "Region",
     "regions": {
-      "frankfurt": "Frankfurt & Hessen",
-      "innerschweiz": "Innerschweiz",
+      "frankfurt": "Deutschland",
+      "innerschweiz": "Schweiz",
       "ausserhalb": "Außerhalb"
     },
     "budgetLabel": "Budget-Rahmen",

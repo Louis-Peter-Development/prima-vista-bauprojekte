@@ -31,7 +31,7 @@ export default function Gewerke() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/leistungen/badsanierung-05.webp"
+        backgroundImage="/assets/img/projects/spa-bad-hotel-01.webp"
         backgroundImages={heroImages}
         crumbNumber="03"
         crumbLabel={t('gewerke.crumbLabel')}

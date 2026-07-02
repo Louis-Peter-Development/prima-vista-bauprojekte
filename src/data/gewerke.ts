@@ -21,16 +21,16 @@ export type FeaturedTrade = {
 };
 
 export const PREVIEW_IMAGES: Record<TradeKey, string> = {
-  bad: '/assets/img/leistungen/badsanierung-05.webp',
+  bad: '/assets/img/projects/spa-bad-hotel-01.webp',
   kueche: '/assets/img/leistungen/kuechen-moebelbau-02.webp',
   fassade: '/assets/img/leistungen/fassadensanierung-01.webp',
   dach: '/assets/img/leistungen/dachsanierung-01.webp',
   elektro: '/assets/img/leistungen/elektroinstallation-01.webp',
   boden: '/assets/img/leistungen/boeden-belaege-11.webp',
   treppen: '/assets/img/leistungen/treppen-gelaender-01.webp',
-  heizung: '/assets/img/leistungen/waermepumpe-01.webp',
+  heizung: '/assets/img/projects/bad-soden-einfamilienhaus-11.webp',
   abdichtung: '/assets/img/leistungen/abdichtung-keller-01.webp',
-  maler: '/assets/img/leistungen/maler-lackierer-03.webp',
+  maler: '/assets/img/projects/bad-soden-einfamilienhaus-12.webp',
   trockenbau: '/assets/img/leistungen/trockenbau-decke-01.webp',
   sanitaer: '/assets/img/leistungen/wasserinstallation-04.webp',
   rohbau: '/assets/img/leistungen/rohbau-trockenbau-01.webp',
@@ -39,7 +39,7 @@ export const PREVIEW_IMAGES: Record<TradeKey, string> = {
   garten: '/assets/img/leistungen/garten-aussenanlagen-01.webp',
   barrierefreiheit: '/assets/img/leistungen/badsanierung-06.webp',
   fenster: '/assets/img/leistungen/fenstertechnik-02.webp',
-  thermen: '/assets/img/proj-spa-bath.webp',
+  thermen: '/assets/img/projects/spa-bad-hotel-01.webp',
 };
 
 export const TRADES: TradeRow[] = [
@@ -67,7 +67,7 @@ export const TRADES: TradeRow[] = [
 export const FEATURED_TRADES: FeaturedTrade[] = [
   {
     key: 'bad',
-    src: '/assets/img/leistungen/badsanierung-05.webp',
+    src: '/assets/img/projects/spa-bad-hotel-01.webp',
     feature: true,
     detailTo: '/badsanierung',
   },

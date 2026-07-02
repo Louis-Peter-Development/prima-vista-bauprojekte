@@ -15,7 +15,7 @@
     "countryDe": "Allemagne",
     "countryCh": "Suisse",
     "mediaAlt": "Salle de réunion lumineuse pour les consultations de projet",
-    "mediaCaption": "Première consultation · Francfort et Emmenbrücke"
+    "mediaCaption": "Première consultation · Allemagne & Suisse"
   },
   "form": {
     "eyebrow": "Envoyer une demande",
@@ -38,8 +38,8 @@
     },
     "regionLabel": "Région",
     "regions": {
-      "frankfurt": "Francfort et Hesse",
-      "innerschweiz": "Suisse centrale",
+      "frankfurt": "Allemagne",
+      "innerschweiz": "Suisse",
       "ausserhalb": "Ailleurs"
     },
     "budgetLabel": "Fourchette de budget",

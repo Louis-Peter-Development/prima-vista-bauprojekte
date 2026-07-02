@@ -2,13 +2,13 @@
   "overview": {
     "crumbLabel": "Projekte · Werkschau",
     "title": "Räume aus<br/>der <em>Werkstatt.</em>",
-    "lede": "Eine Auswahl der Projekte, die wir 2024 bis 2026 abgeschlossen haben — Wohnsitz, Gastronomie und gemischte Nutzungen in Hessen und der Innerschweiz.",
+    "lede": "Eine Auswahl der Projekte, die wir 2024 bis 2026 abgeschlossen haben — Wohnsitz, Gastronomie und gemischte Nutzungen in Deutschland und der Schweiz.",
     "metaShownLabel": "Gezeigt",
     "metaShownValue": "{{count}} Projekte",
     "metaPeriodLabel": "Zeitraum",
     "metaPeriodValue": "2024–2026",
     "metaRegionLabel": "Region",
-    "metaRegionValue": "DE Frankfurt · CH Luzern",
+    "metaRegionValue": "Deutschland · Schweiz",
     "metaPortfolioLabel": "Vollständiges Portfolio",
     "metaPortfolioValue": "Auf Anfrage",
     "endEyebrow": "Ihr Projekt",
@@ -27,17 +27,13 @@
   "map": {
     "eyebrow": "Standorte",
     "title": "Gebaut in zwei<br/>Ländern, gleicher<br/><em>Anspruch.</em>",
-    "intro": "Von der Frankfurter Zentrale aus betreuen wir Projekte in ganz Hessen. Aus Emmenbrücke heraus die Innerschweiz. Beide Büros teilen Bauleiter, Lieferanten und Standards.",
+    "intro": "In Deutschland und der Schweiz betreuen wir Projekte mit denselben Bauleitern, Lieferanten und Standards.",
     "cities": {
-      "frankfurt": "Frankfurt am Main",
-      "emmenbruecke": "Emmenbrücke / Luzern",
-      "wiesbaden": "Wiesbaden",
-      "zug": "Zug, Zürich",
-      "darmstadt": "Darmstadt, Offenbach",
-      "innerschweiz": "Innerschweiz"
+      "germany": "Deutschland",
+      "switzerland": "Schweiz"
     },
     "photoAlt": "Prima Vista Team auf der Baustelle",
-    "photoLabel": "Team Frankfurt — 2026"
+    "photoLabel": "Team Prima Vista — 2026"
   },
   "gallery": {
     "more": "Mehr erfahren"
@@ -74,6 +70,22 @@
     "videoFallback": "{{headline}} — Video {{n}}"
   },
   "items": {
+    "bad-soden-einfamilienhaus": {
+      "title": "Einfamilienhaus Bad Soden · 2026",
+      "ttl": "Einfamilienhaus Bad Soden",
+      "meta": "Wohnsitz · Bad Soden · 2026",
+      "headline": "Einfamilienhaus Bad Soden",
+      "location": "Bad Soden am Taunus",
+      "area": "Einfamilienhaus",
+      "duration": "Komplettsanierung",
+      "scope": "Schlüsselfertiger Innenausbau",
+      "description": [
+        "Komplettsanierung eines Einfamilienhauses in Bad Soden am Taunus — vom entkernten Bestand bis zum wohnfertigen Innenausbau.",
+        "Der Ausbau umfasste Dachgeschoss, Trockenbau, Fußbodenheizung mit Estrich, hochwertige Bodenbeläge, Tapezierarbeiten, Malerarbeiten und die Koordination der Ausbaugewerke.",
+        "Die Fotostrecke zeigt den Weg von Rohbau- und Fassadenphase über technische Arbeiten bis zu den fertigen Wohn-, Bad- und Schlafräumen."
+      ],
+      "gewerke": ["Dachgeschossausbau", "Trockenbau", "Fußbodenheizung", "Estrich", "Bodenbelag", "Tapezierarbeiten", "Malerarbeiten", "Badsanierung", "Innenausbau"]
+    },
     "zoi-restaurant": {
       "title": "Zoi — Restaurant · Frankfurt · 2026",
       "ttl": "Zoi Restaurant",

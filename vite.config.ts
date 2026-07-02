@@ -1,5 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { defineConfig, loadEnv, type Plugin, type ViteDevServer } from 'vite';
+import { defineConfig } from 'vitest/config';
+import { loadEnv, type Plugin, type ViteDevServer } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -195,7 +196,7 @@ export default defineConfig(({ mode }) => {
           name: 'Prima Vista Bauprojekte',
           short_name: 'Prima Vista',
           description:
-            'Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.',
+            'Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Deutschland und der Schweiz.',
           theme_color: '#1a1a1a',
           background_color: '#e8dfdf',
           display: 'standalone',
@@ -265,6 +266,29 @@ export default defineConfig(({ mode }) => {
         },
       }),
     ],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            const normalized = id.replaceAll('\\', '/');
+            if (normalized.includes('/src/i18n/catalog/')) return 'i18n-catalog';
+            const localeMatch = normalized.match(/\/src\/i18n\/locales\/([^/]+)\//);
+            if (localeMatch) return `i18n-${localeMatch[1]}`;
+          },
+        },
+      },
+    },
+    test: {
+      exclude: [
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.git/**',
+        '**/.cache/**',
+        '**/.output/**',
+        '**/coverage/**',
+        '**/.claude/**',
+      ],
+    },
     server: { host: true, port: Number(process.env.PORT) || 5177, strictPort: true, open: !process.env.PORT },
   };
 });

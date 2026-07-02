@@ -69,7 +69,7 @@
                 </span>
               </a>
               <p class="pv-footer__brand-blurb">
-                Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Frankfurt und Emmenbrücke.
+                Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Deutschland und der Schweiz.
               </p>
             </div>
             <div>

@@ -1,37 +1,68 @@
-/* ---- Marquee ticker ---- */
+/* ---- Proof strip ---- */
 .marquee {
-  background: var(--pv-cream);
-  border-top: 1px solid rgba(26, 26, 26, .12);
-  border-bottom: 1px solid rgba(26, 26, 26, .12);
-  padding: 24px 0;
-  overflow: hidden;
+  --home-proof-bg: #f6efeb;
+  --home-proof-border: rgba(92, 69, 59, .13);
+  --home-proof-icon: #6d1f2b;
+  --home-proof-title: #241f1c;
+  --home-proof-text: #645d57;
+
+  background: var(--home-proof-bg);
+  border-top: 1px solid var(--home-proof-border);
+  border-bottom: 1px solid var(--home-proof-border);
+}
+:root[data-theme='dark'] .marquee {
+  --home-proof-bg: #11100f;
+  --home-proof-border: rgba(241, 233, 226, .12);
+  --home-proof-icon: var(--pv-copper-bright);
+  --home-proof-title: var(--pv-bone);
+  --home-proof-text: var(--pv-text-on-dark-muted);
 }
 .marquee__track {
-  display: flex;
-  gap: 60px;
-  white-space: nowrap;
-  animation: marquee 60s linear infinite;
-  width: max-content;
+  max-width: var(--pv-shell);
+  margin: 0 auto;
+  padding: 0 var(--pv-shell-gutter);
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .marquee__item {
-  font-family: var(--pv-font-display);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--pv-ink-2);
-  display: inline-flex;
+  min-height: 128px;
+  padding: 26px 28px;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 22px;
   align-items: center;
-  gap: 60px;
+  border-left: 1px solid var(--home-proof-border);
 }
-.marquee__item::after {
-  content: '';
-  width: 8px; height: 8px;
-  background: var(--pv-copper);
-  border-radius: 50%;
-  display: inline-block;
+.marquee__item:last-child {
+  border-right: 1px solid var(--home-proof-border);
 }
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.marquee__icon {
+  width: 54px;
+  height: 54px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--home-proof-icon);
+}
+.marquee__icon svg {
+  width: 50px;
+  height: 50px;
+  stroke-width: 1.25;
+}
+.marquee__copy {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+.marquee__copy strong {
+  font-family: var(--pv-font-display);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.25;
+  color: var(--home-proof-title);
+}
+.marquee__copy small {
+  font-family: var(--pv-font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--home-proof-text);
 }

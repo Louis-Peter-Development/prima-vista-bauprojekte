@@ -1,6 +1,6 @@
 {
-  "name": "Bau-Concierge",
-  "greeting": "Guten Tag und herzlich willkommen bei Prima Vista. Ich bin Ihr Bau-Concierge. Erzählen Sie uns kurz von Ihrem Vorhaben, oder wählen Sie unten ein Thema.",
+  "name": "Bau-Berater",
+  "greeting": "Guten Tag und herzlich willkommen bei Prima Vista. Ich bin Ihr Bau-Berater. Erzählen Sie uns kurz von Ihrem Vorhaben, oder wählen Sie unten ein Thema.",
   "suggestions": [
     "Komplett-Sanierung anfragen",
     "Festpreis-Schätzung",
@@ -8,15 +8,15 @@
     "Mit Daniel oder Monica sprechen"
   ],
   "rail": {
-    "ariaLabel": "Prima Vista Bau-Concierge",
+    "ariaLabel": "Prima Vista Bau-Berater",
     "brandLabel": "Prima Vista Startseite",
-    "eyebrow": "Bau-Concierge",
-    "heading": "Ein Concierge,<br/>der zuhört.",
+    "eyebrow": "Bau-Berater",
+    "heading": "Ein Berater,<br/>der zuhört.",
     "paragraph": "Erzählen Sie uns von Ihrem Projekt, vom einzelnen Bad bis zur Komplett-Sanierung. Wir qualifizieren Ihr Vorhaben und zeigen den nächsten sinnvollen Schritt.",
     "proofResponse": "Antwort meist sofort",
     "proofMeeting": "Erstgespräch in 48 Stunden",
     "proofGuarantee": "Festpreis und Bauleitung inklusive",
-    "location": "Frankfurt am Main · Emmenbrücke"
+    "location": "Deutschland · Schweiz"
   },
   "header": {
     "status": "Online · Antwort < 5 Min",
@@ -26,7 +26,7 @@
   "welcome": {
     "eyebrow": "Willkommen",
     "heading": "Guten Tag.",
-    "paragraph": "Wählen Sie ein Thema oder schreiben Sie frei. Je konkreter Objektart, Lage und Umfang sind, desto präziser kann der Concierge einordnen."
+    "paragraph": "Wählen Sie ein Thema oder schreiben Sie frei. Je konkreter Objektart, Lage und Umfang sind, desto präziser kann der Bau-Berater einordnen."
   },
   "typingAria": "Antwort wird geschrieben",
   "suggestionsAria": "Themenvorschläge",
@@ -38,12 +38,12 @@
   },
   "footnote": "Verschlüsselt und vertraulich · Sie sprechen mit dem Prima Vista Team",
   "launcher": {
-    "start": "Bau-Concierge starten",
-    "open": "Bau-Concierge öffnen",
+    "start": "Bau-Berater starten",
+    "open": "Bau-Berater öffnen",
     "dismiss": "Hinweis schließen",
     "previewText": "Guten Tag, erzählen Sie uns kurz von Ihrem Projekt?"
   },
-  "panelAria": "Bau-Concierge von Prima Vista",
-  "error": "Der Bau-Concierge ist lokal noch nicht konfiguriert.",
+  "panelAria": "Bau-Berater von Prima Vista",
+  "error": "Der Bau-Berater ist lokal noch nicht konfiguriert.",
   "fallbackMessage": "Entschuldigung, gerade gibt es ein technisches Problem. Bitte schreiben Sie uns direkt an office@primavista-bauprojekte.com oder rufen Sie uns unter +49 1578 98 18 308 an."
 }

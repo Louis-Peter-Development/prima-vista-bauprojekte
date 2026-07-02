@@ -51,6 +51,9 @@ export default function FeaturedProjects() {
         <Link className="btn btn--light" to="/projekte">
           {t('featured.viewAll')} <span className="arrow">&gt;</span>
         </Link>
+        <Link className="btn btn--appointment" to="/kontakt">
+          {t('finalCta.appointment')} <span className="arrow">&gt;</span>
+        </Link>
       </div>
     </section>
   );

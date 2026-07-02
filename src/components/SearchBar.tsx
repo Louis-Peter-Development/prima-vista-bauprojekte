@@ -34,6 +34,7 @@ export default function SearchBar({ className = '' }: { className?: string }) {
 
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
+  const [compactOpen, setCompactOpen] = useState(false);
   const [active, setActive] = useState(0);
   const [posts, setPosts] = useState<PostLite[]>([]);
 
@@ -104,7 +105,10 @@ export default function SearchBar({ className = '' }: { className?: string }) {
   useEffect(() => {
     if (!open) return;
     const onClick = (e: MouseEvent) => {
-      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
+        setOpen(false);
+        setCompactOpen(false);
+      }
     };
     document.addEventListener('mousedown', onClick);
     return () => document.removeEventListener('mousedown', onClick);
@@ -113,6 +117,7 @@ export default function SearchBar({ className = '' }: { className?: string }) {
   const go = (path: string) => {
     navigate(localizedPath(path));
     setOpen(false);
+    setCompactOpen(false);
     setQuery('');
     inputRef.current?.blur();
   };
@@ -120,6 +125,7 @@ export default function SearchBar({ className = '' }: { className?: string }) {
   const onKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Escape') {
       setOpen(false);
+      setCompactOpen(false);
       inputRef.current?.blur();
       return;
     }
@@ -141,7 +147,20 @@ export default function SearchBar({ className = '' }: { className?: string }) {
   let flatIndex = -1;
 
   return (
-    <div className={`pv-search ${className}`} ref={rootRef}>
+    <div className={`pv-search${compactOpen ? ' is-compact-open' : ''} ${className}`} ref={rootRef}>
+      <button
+        type="button"
+        className="pv-search__trigger"
+        aria-label={t('search.open')}
+        aria-expanded={compactOpen}
+        onClick={() => {
+          setCompactOpen(true);
+          setOpen(true);
+          requestAnimationFrame(() => inputRef.current?.focus());
+        }}
+      >
+        <SearchIcon aria-hidden="true" />
+      </button>
       <div className="pv-search__field">
         <SearchIcon className="pv-search__icon" aria-hidden="true" />
         <input
@@ -163,14 +182,20 @@ export default function SearchBar({ className = '' }: { className?: string }) {
           onFocus={() => setOpen(true)}
           onKeyDown={onKeyDown}
         />
-        {query && (
+        {(query || compactOpen) && (
           <button
             type="button"
             className="pv-search__clear"
             aria-label={t('search.close')}
             onClick={() => {
-              setQuery('');
-              inputRef.current?.focus();
+              if (query) {
+                setQuery('');
+                inputRef.current?.focus();
+              } else {
+                setOpen(false);
+                setCompactOpen(false);
+                inputRef.current?.blur();
+              }
             }}
           >
             <CloseIcon aria-hidden="true" />

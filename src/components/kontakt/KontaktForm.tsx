@@ -229,8 +229,8 @@ export default function KontaktForm() {
           <div className="form-field form-field--select">
             <label htmlFor="region">{t('form.regionLabel')}</label>
             <select id="region" value={form.region} onChange={(e) => update('region', e.target.value)}>
-              <option value="Frankfurt & Hessen">{t('form.regions.frankfurt')}</option>
-              <option value="Innerschweiz">{t('form.regions.innerschweiz')}</option>
+              <option value="Deutschland">{t('form.regions.frankfurt')}</option>
+              <option value="Schweiz">{t('form.regions.innerschweiz')}</option>
               <option value="Außerhalb">{t('form.regions.ausserhalb')}</option>
             </select>
           </div>

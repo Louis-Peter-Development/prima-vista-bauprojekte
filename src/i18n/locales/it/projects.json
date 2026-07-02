@@ -2,13 +2,13 @@
   "overview": {
     "crumbLabel": "Progetti · Vetrina",
     "title": "Spazi dal<br/><em>laboratorio.</em>",
-    "lede": "Una selezione dei progetti che abbiamo completato tra il 2024 e il 2026 — abitazioni, ristorazione e spazi a uso misto in Assia e nella Svizzera centrale.",
+    "lede": "Una selezione dei progetti che abbiamo completato tra il 2024 e il 2026 — abitazioni, ristorazione e spazi a uso misto in Germania e Svizzera.",
     "metaShownLabel": "Mostrati",
     "metaShownValue": "{{count}} progetti",
     "metaPeriodLabel": "Periodo",
     "metaPeriodValue": "2024–2026",
     "metaRegionLabel": "Regione",
-    "metaRegionValue": "DE Francoforte · CH Lucerna",
+    "metaRegionValue": "Germania · Svizzera",
     "metaPortfolioLabel": "Portfolio completo",
     "metaPortfolioValue": "Su richiesta",
     "endEyebrow": "Il suo progetto",
@@ -27,17 +27,13 @@
   "map": {
     "eyebrow": "Sedi",
     "title": "Costruito in due<br/>Paesi, con la stessa<br/><em>ambizione.</em>",
-    "intro": "Dalla sede di Francoforte seguiamo i progetti in tutta l'Assia. Da Emmenbrücke, la Svizzera centrale. I due uffici condividono direttori dei lavori, fornitori e standard.",
+    "intro": "In Germania e Svizzera seguiamo i progetti con gli stessi direttori dei lavori, fornitori e standard.",
     "cities": {
-      "frankfurt": "Francoforte sul Meno",
-      "emmenbruecke": "Emmenbrücke / Lucerna",
-      "wiesbaden": "Wiesbaden",
-      "zug": "Zugo, Zurigo",
-      "darmstadt": "Darmstadt, Offenbach",
-      "innerschweiz": "Svizzera centrale"
+      "germany": "Germania",
+      "switzerland": "Svizzera"
     },
     "photoAlt": "Il team Prima Vista in cantiere",
-    "photoLabel": "Team Francoforte — 2026"
+    "photoLabel": "Team Prima Vista — 2026"
   },
   "gallery": {
     "more": "Scopri di più"
@@ -74,6 +70,22 @@
     "videoFallback": "{{headline}} — video {{n}}"
   },
   "items": {
+    "bad-soden-einfamilienhaus": {
+      "title": "Casa unifamiliare Bad Soden · 2026",
+      "ttl": "Casa Bad Soden",
+      "meta": "Residenza · Bad Soden · 2026",
+      "headline": "Casa unifamiliare Bad Soden",
+      "location": "Bad Soden am Taunus",
+      "area": "Casa unifamiliare",
+      "duration": "Ristrutturazione completa",
+      "scope": "Interni chiavi in mano",
+      "description": [
+        "Ristrutturazione completa di una casa unifamiliare a Bad Soden am Taunus — dall'esistente riportato al grezzo fino agli interni pronti da abitare.",
+        "L'intervento ha incluso mansarda, cartongesso, riscaldamento a pavimento con massetto, pavimenti di qualità, tappezzeria, tinteggiatura e coordinamento delle lavorazioni interne.",
+        "La sequenza fotografica mostra il percorso da grezzo e facciata agli impianti tecnici, fino a soggiorno, bagno e camere completati."
+      ],
+      "gewerke": ["Mansarda", "Cartongesso", "Riscaldamento a pavimento", "Massetto", "Pavimentazione", "Tappezzeria", "Tinteggiatura", "Ristrutturazione bagno", "Finiture interne"]
+    },
     "zoi-restaurant": {
       "title": "Zoi — Ristorante · Francoforte · 2026",
       "ttl": "Zoi Restaurant",

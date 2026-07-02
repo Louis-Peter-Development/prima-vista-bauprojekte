@@ -73,7 +73,7 @@ export default function Heizmethoden() {
               <Link className="btn btn--solid" to="/blitz-angebot">
                 {t('heizmethoden.ctaQuote')} <span className="arrow">&gt;</span>
               </Link>
-              <Link className="btn btn--light" to="/kontakt">
+              <Link className="btn btn--appointment" to="/kontakt">
                 {t('heizmethoden.ctaConsult')} <span className="arrow">&gt;</span>
               </Link>
             </div>

@@ -56,6 +56,11 @@
    Always-dark hero: a background photo + scrim, with the editorial
    nameplate content over it (light text, pinned so it holds in both themes). */
 .mag-masthead {
+  --mag-hero-image-filter: brightness(1.02) saturate(1.05) contrast(1.02);
+  --mag-hero-overlay:
+    linear-gradient(90deg, rgba(232, 223, 223, .44) 0%, rgba(232, 223, 223, .28) 42%, rgba(232, 223, 223, .10) 74%, rgba(232, 223, 223, .02) 100%),
+    linear-gradient(to top, rgba(232, 223, 223, .38) 0%, rgba(232, 223, 223, .14) 48%, rgba(232, 223, 223, .22) 100%);
+
   position: relative;
   background: var(--pv-cream);
   color: var(--mag-text);
@@ -68,27 +73,23 @@
   height: 100%;
   object-fit: cover;
   transform: scale(1.04);
+  filter: var(--mag-hero-image-filter);
   z-index: 0;
   animation: hero-photo-in 1400ms var(--pv-ease-out) both;
 }
-/* Cream wash that fades the photo into the page — the same treatment as the
-   PageIntro hero. theme.css-style dark gradient supplied below for dark mode. */
 .mag-masthead::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(to bottom,
-    rgba(232, 223, 223, 0.22) 0%,
-    rgba(232, 223, 223, 0.5) 50%,
-    rgba(232, 223, 223, 0.8) 100%);
+  background: var(--mag-hero-overlay);
 }
-[data-theme='dark'] .mag-masthead::after {
-  background: linear-gradient(to bottom,
-    rgba(17, 16, 15, .34) 0%,
-    rgba(17, 16, 15, .68) 48%,
-    rgba(17, 16, 15, .94) 100%);
+[data-theme='dark'] .mag-masthead {
+  --mag-hero-image-filter: brightness(1.04) saturate(1.06) contrast(1.02);
+  --mag-hero-overlay:
+    linear-gradient(90deg, rgba(17, 16, 15, .46) 0%, rgba(17, 16, 15, .28) 42%, rgba(17, 16, 15, .08) 74%, rgba(17, 16, 15, .03) 100%),
+    linear-gradient(to top, rgba(17, 16, 15, .40) 0%, rgba(17, 16, 15, .14) 48%, rgba(17, 16, 15, .24) 100%);
 }
 .mag-masthead__inner {
   position: relative;

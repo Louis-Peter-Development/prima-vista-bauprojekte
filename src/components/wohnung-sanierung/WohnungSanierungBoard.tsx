@@ -15,6 +15,7 @@ export default function WohnungSanierungBoard({
   onWohnungTypeChange,
 }: Props) {
   const { t } = useTranslation('kalk');
+  const unit = t('reno.areaUnit');
   function chooseWohnungType(value: WohnungType) {
     onWohnungTypeChange(value);
     scrollToCalculatorResult();
@@ -28,20 +29,40 @@ export default function WohnungSanierungBoard({
           <span className="kalk-board__label">{t('board.wohnungType')}</span>
           <span className="kalk-board__hint">{t('board.wohnungTypeHint')}</span>
         </div>
-        <div className="haus-types">
-          {WOHNUNG_TYPES.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              className={`haus-types__opt${option.value === wohnungType ? ' is-on' : ''}`}
-              onClick={() => chooseWohnungType(option.value)}
-              aria-pressed={option.value === wohnungType}
-            >
-              <span className="haus-types__factor">× {option.factor.toFixed(2).replace('.', ',')}</span>
-              <span className="haus-types__label">{t(`wohnung.types.${option.value}.label`, { defaultValue: option.label })}</span>
-              <span className="haus-types__detail">{t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail })}</span>
-            </button>
-          ))}
+        <div className="aptplan">
+          {WOHNUNG_TYPES.map((option) => {
+            const label = t(`wohnung.types.${option.value}.label`, { defaultValue: option.label });
+            const detail = t(`wohnung.types.${option.value}.detail`, { defaultValue: option.detail });
+            return (
+              <button
+                key={option.value}
+                type="button"
+                className={`aptplan__card${option.value === wohnungType ? ' is-on' : ''}`}
+                onClick={() => chooseWohnungType(option.value)}
+                aria-pressed={option.value === wohnungType}
+                aria-label={t('board.floorplanAlt', { label })}
+              >
+                <span className="aptplan__media">
+                  <img
+                    className="aptplan__img"
+                    src={option.previewImage}
+                    alt=""
+                    width="640"
+                    height="340"
+                    loading="lazy"
+                  />
+                  <span className="aptplan__cap">
+                    <span className="aptplan__area">{option.defaultArea} {unit}</span>
+                    <span className="aptplan__label">{t('board.livingArea')}</span>
+                  </span>
+                </span>
+                <span className="aptplan__foot">
+                  <span className="aptplan__type">{label}</span>
+                  <span className="aptplan__detail">{detail}</span>
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

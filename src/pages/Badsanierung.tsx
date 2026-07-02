@@ -3,7 +3,7 @@ import BadsanierungConfigurator from '../components/gewerke/BadsanierungConfigur
 
 export default function Badsanierung() {
   return (
-    <GewerkePage tradeKey="badsanierung" crumbNumber="04" backgroundImage="/assets/img/leistungen/badsanierung-02.webp" photoSet="badsanierung" className="kalk-intro">
+    <GewerkePage tradeKey="badsanierung" crumbNumber="04" backgroundImage="/assets/img/projects/spa-bad-hotel-01.webp" photoSet="badsanierung" className="kalk-intro">
       <BadsanierungConfigurator />
     </GewerkePage>
   );

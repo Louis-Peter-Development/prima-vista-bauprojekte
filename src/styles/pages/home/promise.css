@@ -38,5 +38,14 @@
   color: var(--pv-ink-2);
   margin: 0 0 22px;
 }
+.promise__actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 34px;
+}
+.promise__appointment {
+  justify-content: center;
+  min-width: min(100%, 320px);
+}
 /* .promise__list rules moved to src/styles/components/promise-list.css
    so they apply on Blitz-Angebot and Kontakt as well as Home. */

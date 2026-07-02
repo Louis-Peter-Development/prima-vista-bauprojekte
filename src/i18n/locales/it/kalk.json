@@ -3,7 +3,7 @@
     "metaTitle": "Preventivatore per ristrutturazione e costruzione",
     "crumbLabel": "Preventivatore · Stima dal vivo",
     "title": "Quanto costa il<br/>suo <em>progetto edilizio?</em>",
-    "lede": "Pochi clic. Una fascia onesta. Sulla base dei dati di oltre 400 progetti completati in Assia e nella Svizzera centrale — senza registrazione, senza tattiche di vendita.",
+    "lede": "Pochi clic. Una fascia onesta. Sulla base dei dati di oltre 400 progetti completati in Germania e Svizzera — senza registrazione, senza tattiche di vendita.",
     "meta": [
       {
         "label": "Calcolo",
@@ -202,7 +202,9 @@
     "gewerke": "Lavorazioni",
     "gewerkeCount": "<em>{{count}}</em> di {{total}} selezionate",
     "multiLevelOnly": "Solo per immobili su più livelli",
-    "configHint": "Scelga la configurazione desiderata"
+    "configHint": "Scelga la configurazione desiderata",
+    "floorplanAlt": "Immagine di esempio: {{label}}",
+    "livingArea": "Superficie"
   },
   "reno": {
     "aria": "Configuratore di ristrutturazione",
@@ -340,7 +342,7 @@
       },
       "3zi": {
         "label": "Appartamento trilocale",
-        "detail": "Appartamento familiare con più pareti divisorie"
+        "detail": "Ampio appartamento familiare"
       },
       "maisonette": {
         "label": "Maisonette · 4+ locali",
@@ -497,271 +499,763 @@
       "field": "Sistema di impermeabilizzazione",
       "hint": "Scelga il tipo di impermeabilizzazione",
       "types": {
-        "abdichtung": { "label": "Impermeabilizzazione completa", "detail": "Pacchetto completo" },
-        "abdichtungHorizontal": { "label": "Impermeabilizzazione orizzontale", "detail": "Barriera orizzontale" },
-        "abdichtungPerimeter": { "label": "Impermeabilizzazione perimetrale", "detail": "Impermeabilizzazione esterna" },
-        "abdichtungKeller": { "label": "Impermeabilizzazione cantina (interna)", "detail": "Impermeabilizzazione interna" }
+        "abdichtung": {
+          "label": "Impermeabilizzazione completa",
+          "detail": "Pacchetto completo"
+        },
+        "abdichtungHorizontal": {
+          "label": "Impermeabilizzazione orizzontale",
+          "detail": "Barriera orizzontale"
+        },
+        "abdichtungPerimeter": {
+          "label": "Impermeabilizzazione perimetrale",
+          "detail": "Impermeabilizzazione esterna"
+        },
+        "abdichtungKeller": {
+          "label": "Impermeabilizzazione cantina (interna)",
+          "detail": "Impermeabilizzazione interna"
+        }
       }
     },
     "bad": {
       "field": "Configurazione del bagno",
       "types": {
-        "badGaeste": { "label": "WC ospiti", "detail": "Tutte le varianti" },
-        "badKomplett": { "label": "Vasca & doccia", "detail": "Bagno completo" },
-        "badWanne": { "label": "Bagno con vasca", "detail": "Solo con vasca" },
-        "badDusche": { "label": "Bagno con doccia", "detail": "Solo con doccia" },
-        "badWhirlpool": { "label": "Bagno con idromassaggio", "detail": "Solo con idromassaggio" },
-        "badWhirlpoolDusche": { "label": "Idromassaggio & doccia", "detail": "Bagno completo di lusso" },
-        "badBarrierefrei": { "label": "Bagno accessibile", "detail": "Adatto a sedia a rotelle" }
+        "badGaeste": {
+          "label": "WC ospiti",
+          "detail": "Tutte le varianti"
+        },
+        "badKomplett": {
+          "label": "Vasca & doccia",
+          "detail": "Bagno completo"
+        },
+        "badWanne": {
+          "label": "Bagno con vasca",
+          "detail": "Solo con vasca"
+        },
+        "badDusche": {
+          "label": "Bagno con doccia",
+          "detail": "Solo con doccia"
+        },
+        "badWhirlpool": {
+          "label": "Bagno con idromassaggio",
+          "detail": "Solo con idromassaggio"
+        },
+        "badWhirlpoolDusche": {
+          "label": "Idromassaggio & doccia",
+          "detail": "Bagno completo di lusso"
+        },
+        "badBarrierefrei": {
+          "label": "Bagno accessibile",
+          "detail": "Adatto a sedia a rotelle"
+        }
       }
     },
     "barrierefrei": {
       "field": "Esigenza",
       "hint": "Scelga il concetto desiderato",
       "types": {
-        "barrierefreiDusche": { "label": "Doccia a filo pavimento", "detail": "Conversione in doccia a livello" },
-        "barrierefreiWc": { "label": "WC & lavabo", "detail": "Accessibile e adatto a sedia a rotelle" },
-        "barrierefreiSenioren": { "label": "Bagno per anziani", "detail": "Antiscivolo, maniglioni & ristrutturazione parziale" },
-        "barrierefreiRollstuhl": { "label": "Adatto a sedia a rotelle", "detail": "Conversione completa secondo DIN 18040-2" }
+        "barrierefreiDusche": {
+          "label": "Doccia a filo pavimento",
+          "detail": "Conversione in doccia a livello"
+        },
+        "barrierefreiWc": {
+          "label": "WC & lavabo",
+          "detail": "Accessibile e adatto a sedia a rotelle"
+        },
+        "barrierefreiSenioren": {
+          "label": "Bagno per anziani",
+          "detail": "Antiscivolo, maniglioni & ristrutturazione parziale"
+        },
+        "barrierefreiRollstuhl": {
+          "label": "Adatto a sedia a rotelle",
+          "detail": "Conversione completa secondo DIN 18040-2"
+        }
       }
     },
     "boden": {
       "field": "Tipo di rivestimento",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "boedenParkettVerlegung": { "label": "Parquet", "detail": "Posa" },
-        "boedenLaminatVerlegung": { "label": "Laminato", "detail": "Posa" },
-        "boedenFliesenVerlegung": { "label": "Piastrelle", "detail": "Posa" },
-        "boedenSockelleisten": { "label": "Battiscopa", "detail": "Posa" },
-        "boedenParkettAufbereiten": { "label": "Parquet", "detail": "Ripristino" },
-        "boedenKorkboden": { "label": "Pavimento in sughero", "detail": "Posa" },
-        "boedenVinyl": { "label": "Vinile o linoleum", "detail": "Posa" },
-        "boedenEstrichplatten": { "label": "Pannelli per massetto", "detail": "Posa" },
-        "boedenSichtestrich": { "label": "Massetto a vista", "detail": "Posa" },
-        "boedenTeppich": { "label": "Moquette", "detail": "Posa" },
-        "boedenAlles": { "label": "Tutto sui pavimenti", "detail": "Forfait" }
+        "boedenParkettVerlegung": {
+          "label": "Parquet",
+          "detail": "Posa"
+        },
+        "boedenLaminatVerlegung": {
+          "label": "Laminato",
+          "detail": "Posa"
+        },
+        "boedenFliesenVerlegung": {
+          "label": "Piastrelle",
+          "detail": "Posa"
+        },
+        "boedenSockelleisten": {
+          "label": "Battiscopa",
+          "detail": "Posa"
+        },
+        "boedenParkettAufbereiten": {
+          "label": "Parquet",
+          "detail": "Ripristino"
+        },
+        "boedenKorkboden": {
+          "label": "Pavimento in sughero",
+          "detail": "Posa"
+        },
+        "boedenVinyl": {
+          "label": "Vinile o linoleum",
+          "detail": "Posa"
+        },
+        "boedenEstrichplatten": {
+          "label": "Pannelli per massetto",
+          "detail": "Posa"
+        },
+        "boedenSichtestrich": {
+          "label": "Massetto a vista",
+          "detail": "Posa"
+        },
+        "boedenTeppich": {
+          "label": "Moquette",
+          "detail": "Posa"
+        },
+        "boedenAlles": {
+          "label": "Tutto sui pavimenti",
+          "detail": "Forfait"
+        }
       }
     },
     "dach": {
       "field": "Variante di tetto",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "dachAlles": { "label": "Tutto sulla ristrutturazione del tetto", "detail": "Tetto completo" },
-        "dachNeubedachung": { "label": "Rifacimento copertura", "detail": "Manto di copertura" },
-        "dachDachstuhl": { "label": "Struttura del tetto", "detail": "Costruzione" },
-        "dachInnenausbau": { "label": "Allestimento interno del tetto", "detail": "Sottotetto" },
-        "dachDaemmung": { "label": "Isolamento del tetto", "detail": "Efficienza energetica" },
-        "dachGauben": { "label": "Abbaini", "detail": "Più spazio" },
-        "dachFenster": { "label": "Finestre da tetto", "detail": "Illuminazione" },
-        "dachanhebung": { "label": "Sollevamento idraulico del tetto", "detail": "Sopraelevazione" },
-        "flachdach": { "label": "Rivestimento tetto piano", "detail": "Tetto piano" },
-        "dachbodenDaemmung": { "label": "Isolamento del sottotetto", "detail": "Solaio di copertura" }
+        "dachAlles": {
+          "label": "Tutto sulla ristrutturazione del tetto",
+          "detail": "Tetto completo"
+        },
+        "dachNeubedachung": {
+          "label": "Rifacimento copertura",
+          "detail": "Manto di copertura"
+        },
+        "dachDachstuhl": {
+          "label": "Struttura del tetto",
+          "detail": "Costruzione"
+        },
+        "dachInnenausbau": {
+          "label": "Allestimento interno del tetto",
+          "detail": "Sottotetto"
+        },
+        "dachDaemmung": {
+          "label": "Isolamento del tetto",
+          "detail": "Efficienza energetica"
+        },
+        "dachGauben": {
+          "label": "Abbaini",
+          "detail": "Più spazio"
+        },
+        "dachFenster": {
+          "label": "Finestre da tetto",
+          "detail": "Illuminazione"
+        },
+        "dachanhebung": {
+          "label": "Sollevamento idraulico del tetto",
+          "detail": "Sopraelevazione"
+        },
+        "flachdach": {
+          "label": "Rivestimento tetto piano",
+          "detail": "Tetto piano"
+        },
+        "dachbodenDaemmung": {
+          "label": "Isolamento del sottotetto",
+          "detail": "Solaio di copertura"
+        }
       }
     },
     "elektro": {
       "field": "Impianto elettrico",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "elektroAlles": { "label": "Tutto sull'elettrico", "detail": "Pacchetto completo" },
-        "elektroNeuinstallation": { "label": "Nuovo impianto", "detail": "Per piano" },
-        "elektroSicherungskasten": { "label": "Quadro elettrico", "detail": "Distribuzione" },
-        "elektroNetzwerk": { "label": "Rete & bus", "detail": "Dati & KNX" },
-        "elektroEinzelinstallation": { "label": "Installazione singola", "detail": "Linea & elemento" },
-        "elektroLichttechnik": { "label": "Illuminotecnica", "detail": "Illuminazione" },
-        "elektroFreeHome": { "label": "Free Home", "detail": "Smart home" },
-        "elektroRolladen": { "label": "Comando tapparelle", "detail": "Schermatura" },
-        "elektroSprechanlagen": { "label": "Citofoni", "detail": "Comunicazione porta" }
+        "elektroAlles": {
+          "label": "Tutto sull'elettrico",
+          "detail": "Pacchetto completo"
+        },
+        "elektroNeuinstallation": {
+          "label": "Nuovo impianto",
+          "detail": "Per piano"
+        },
+        "elektroSicherungskasten": {
+          "label": "Quadro elettrico",
+          "detail": "Distribuzione"
+        },
+        "elektroNetzwerk": {
+          "label": "Rete & bus",
+          "detail": "Dati & KNX"
+        },
+        "elektroEinzelinstallation": {
+          "label": "Installazione singola",
+          "detail": "Linea & elemento"
+        },
+        "elektroLichttechnik": {
+          "label": "Illuminotecnica",
+          "detail": "Illuminazione"
+        },
+        "elektroFreeHome": {
+          "label": "Free Home",
+          "detail": "Smart home"
+        },
+        "elektroRolladen": {
+          "label": "Comando tapparelle",
+          "detail": "Schermatura"
+        },
+        "elektroSprechanlagen": {
+          "label": "Citofoni",
+          "detail": "Comunicazione porta"
+        }
       }
     },
     "fassade": {
       "field": "Lavori di facciata",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "fassadeAlles": { "label": "Tutto sulla facciata", "detail": "Tutte le varianti" },
-        "fassadeDaemmung": { "label": "Isolamento & tinteggiatura", "detail": "Cappotto termico" },
-        "fassadeAnstrich": { "label": "Tinteggiatura", "detail": "Facciata" },
-        "fassadeHolzverkleidung": { "label": "Rivestimento in legno", "detail": "Facciata" },
-        "fassadeSockeldaemmung": { "label": "Isolamento dello zoccolo", "detail": "Zoccolo" },
-        "fassadeKlinkerSteinriemchen": { "label": "Listelli in klinker", "detail": "Rivestimento" },
-        "fassadePlattenverkleidung": { "label": "Rivestimento a pannelli", "detail": "Facciata" },
-        "fassadeNatursteinverkleidung": { "label": "Pietra naturale", "detail": "Rivestimento" },
-        "fassadeVorhangfassade": { "label": "Facciata ventilata", "detail": "Facciata" },
-        "fassadeVerblendmauerwerk": { "label": "Muratura faccia a vista", "detail": "Facciata" }
+        "fassadeAlles": {
+          "label": "Tutto sulla facciata",
+          "detail": "Tutte le varianti"
+        },
+        "fassadeDaemmung": {
+          "label": "Isolamento & tinteggiatura",
+          "detail": "Cappotto termico"
+        },
+        "fassadeAnstrich": {
+          "label": "Tinteggiatura",
+          "detail": "Facciata"
+        },
+        "fassadeHolzverkleidung": {
+          "label": "Rivestimento in legno",
+          "detail": "Facciata"
+        },
+        "fassadeSockeldaemmung": {
+          "label": "Isolamento dello zoccolo",
+          "detail": "Zoccolo"
+        },
+        "fassadeKlinkerSteinriemchen": {
+          "label": "Listelli in klinker",
+          "detail": "Rivestimento"
+        },
+        "fassadePlattenverkleidung": {
+          "label": "Rivestimento a pannelli",
+          "detail": "Facciata"
+        },
+        "fassadeNatursteinverkleidung": {
+          "label": "Pietra naturale",
+          "detail": "Rivestimento"
+        },
+        "fassadeVorhangfassade": {
+          "label": "Facciata ventilata",
+          "detail": "Facciata"
+        },
+        "fassadeVerblendmauerwerk": {
+          "label": "Muratura faccia a vista",
+          "detail": "Facciata"
+        }
       }
     },
     "fenster": {
       "field": "Lavori sui serramenti",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "fensterAlles": { "label": "Tutto sui serramenti", "detail": "Tutte le varianti" },
-        "fensterKunststoff": { "label": "Finestre in PVC", "detail": "Montaggio" },
-        "fensterHolz": { "label": "Finestre in legno", "detail": "Montaggio" },
-        "fensterAluminium": { "label": "Finestre in alluminio", "detail": "Montaggio" },
-        "fensterFensterlaeden": { "label": "Persiane", "detail": "Montaggio" },
-        "fensterRolladen": { "label": "Tapparella", "detail": "Montaggio" },
-        "fensterDachfenster": { "label": "Finestre da tetto", "detail": "Montaggio" },
-        "fensterBalkontueren": { "label": "Porte-finestre da balcone", "detail": "Montaggio" },
-        "fensterCarportGaragentore": { "label": "Porte da garage", "detail": "Carport" },
-        "fensterFensterLackierung": { "label": "Verniciatura finestre", "detail": "Pittore" },
-        "fensterMarkisen": { "label": "Tende da sole", "detail": "Montaggio" }
+        "fensterAlles": {
+          "label": "Tutto sui serramenti",
+          "detail": "Tutte le varianti"
+        },
+        "fensterKunststoff": {
+          "label": "Finestre in PVC",
+          "detail": "Montaggio"
+        },
+        "fensterHolz": {
+          "label": "Finestre in legno",
+          "detail": "Montaggio"
+        },
+        "fensterAluminium": {
+          "label": "Finestre in alluminio",
+          "detail": "Montaggio"
+        },
+        "fensterFensterlaeden": {
+          "label": "Persiane",
+          "detail": "Montaggio"
+        },
+        "fensterRolladen": {
+          "label": "Tapparella",
+          "detail": "Montaggio"
+        },
+        "fensterDachfenster": {
+          "label": "Finestre da tetto",
+          "detail": "Montaggio"
+        },
+        "fensterBalkontueren": {
+          "label": "Porte-finestre da balcone",
+          "detail": "Montaggio"
+        },
+        "fensterCarportGaragentore": {
+          "label": "Porte da garage",
+          "detail": "Carport"
+        },
+        "fensterFensterLackierung": {
+          "label": "Verniciatura finestre",
+          "detail": "Pittore"
+        },
+        "fensterMarkisen": {
+          "label": "Tende da sole",
+          "detail": "Montaggio"
+        }
       }
     },
     "garten": {
       "field": "Lavori esterni",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "gartenAlles": { "label": "Tutto sul giardino", "detail": "Tutte le varianti" },
-        "gartenBeleuchtung": { "label": "Illuminazione", "detail": "Area esterna" },
-        "gartenBlockstufen": { "label": "Gradini monoblocco", "detail": "Area esterna" },
-        "gartenCarport": { "label": "Carport", "detail": "Montaggio" },
-        "gartenHochbeete": { "label": "Aiuole rialzate", "detail": "Giardino" },
-        "gartenGartenhaus": { "label": "Casetta da giardino", "detail": "Montaggio" },
-        "gartenGartenmauern": { "label": "Muri da giardino", "detail": "Muratura" },
-        "gartenGeraetehaus": { "label": "Casetta attrezzi", "detail": "Montaggio" },
-        "gartenPavillon": { "label": "Padiglione", "detail": "Montaggio" },
-        "gartenTerrassenHolz": { "label": "Terrazza in legno", "detail": "Rivestimento" },
-        "gartenTerrassenStein": { "label": "Terrazza in pietra", "detail": "Rivestimento" },
-        "gartenUeberdachung": { "label": "Copertura", "detail": "Terrazza" },
-        "gartenWintergarten": { "label": "Giardino d'inverno", "detail": "Montaggio" },
-        "gartenZaunanlagen": { "label": "Recinzioni", "detail": "Area esterna" },
-        "gartenWasserwirtschaft": { "label": "Gestione delle acque", "detail": "Allacciamenti" }
+        "gartenAlles": {
+          "label": "Tutto sul giardino",
+          "detail": "Tutte le varianti"
+        },
+        "gartenBeleuchtung": {
+          "label": "Illuminazione",
+          "detail": "Area esterna"
+        },
+        "gartenBlockstufen": {
+          "label": "Gradini monoblocco",
+          "detail": "Area esterna"
+        },
+        "gartenCarport": {
+          "label": "Carport",
+          "detail": "Montaggio"
+        },
+        "gartenHochbeete": {
+          "label": "Aiuole rialzate",
+          "detail": "Giardino"
+        },
+        "gartenGartenhaus": {
+          "label": "Casetta da giardino",
+          "detail": "Montaggio"
+        },
+        "gartenGartenmauern": {
+          "label": "Muri da giardino",
+          "detail": "Muratura"
+        },
+        "gartenGeraetehaus": {
+          "label": "Casetta attrezzi",
+          "detail": "Montaggio"
+        },
+        "gartenPavillon": {
+          "label": "Padiglione",
+          "detail": "Montaggio"
+        },
+        "gartenTerrassenHolz": {
+          "label": "Terrazza in legno",
+          "detail": "Rivestimento"
+        },
+        "gartenTerrassenStein": {
+          "label": "Terrazza in pietra",
+          "detail": "Rivestimento"
+        },
+        "gartenUeberdachung": {
+          "label": "Copertura",
+          "detail": "Terrazza"
+        },
+        "gartenWintergarten": {
+          "label": "Giardino d'inverno",
+          "detail": "Montaggio"
+        },
+        "gartenZaunanlagen": {
+          "label": "Recinzioni",
+          "detail": "Area esterna"
+        },
+        "gartenWasserwirtschaft": {
+          "label": "Gestione delle acque",
+          "detail": "Allacciamenti"
+        }
       }
     },
     "heiz": {
       "field": "Lavori di riscaldamento",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "heizmethodenHeizkoerper": { "label": "Radiatori", "detail": "Montaggio & materiale" },
-        "heizmethodenHeizstraenge": { "label": "Colonne di riscaldamento", "detail": "A vista / sotto traccia" },
-        "heizmethodenFussbodenheizung": { "label": "Riscaldamento a pavimento", "detail": "Riscaldamento a superficie" },
-        "heizmethodenWaermepumpe": { "label": "Pompa di calore", "detail": "Pompa di calore aria" },
-        "heizmethodenGasHeizung": { "label": "Riscaldamento a gas", "detail": "Tecnologia a condensazione" },
-        "heizmethodenPelletofen": { "label": "Stufa a pellet", "detail": "Calore a pellet" },
-        "heizmethodenSaunaofen": { "label": "Stufa per sauna", "detail": "Sauna & accessori" }
+        "heizmethodenHeizkoerper": {
+          "label": "Radiatori",
+          "detail": "Montaggio & materiale"
+        },
+        "heizmethodenHeizstraenge": {
+          "label": "Colonne di riscaldamento",
+          "detail": "A vista / sotto traccia"
+        },
+        "heizmethodenFussbodenheizung": {
+          "label": "Riscaldamento a pavimento",
+          "detail": "Riscaldamento a superficie"
+        },
+        "heizmethodenWaermepumpe": {
+          "label": "Pompa di calore",
+          "detail": "Pompa di calore aria"
+        },
+        "heizmethodenGasHeizung": {
+          "label": "Riscaldamento a gas",
+          "detail": "Tecnologia a condensazione"
+        },
+        "heizmethodenPelletofen": {
+          "label": "Stufa a pellet",
+          "detail": "Calore a pellet"
+        },
+        "heizmethodenSaunaofen": {
+          "label": "Stufa per sauna",
+          "detail": "Sauna & accessori"
+        }
       }
     },
     "kueche": {
       "field": "Lavori di cucina",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "kuecheAlles": { "label": "Tutto sulle cucine", "detail": "Tutte le varianti" },
-        "kuecheKomplettkueche": { "label": "Cucina completa", "detail": "Montaggio" },
-        "kuecheSingleMinikuechen": { "label": "Cucina singola / mini", "detail": "Montaggio" },
-        "kuecheBuerokueche": { "label": "Cucina da ufficio", "detail": "Montaggio" },
-        "kuecheEinbaukueche": { "label": "Cucina su misura", "detail": "Montaggio" },
-        "kuecheKuechenzeile": { "label": "Cucina lineare", "detail": "Montaggio" },
-        "kuecheArbeitsplatteSpuele": { "label": "Piano di lavoro & lavello", "detail": "Servizio aggiuntivo" },
-        "kuecheDunstabzugshaube": { "label": "Cappa aspirante", "detail": "Montaggio" },
-        "kuecheBodenDecken": { "label": "Pavimento & soffitti", "detail": "Cucina" },
-        "kuecheElektroBeleuchtung": { "label": "Elettrico & illuminazione", "detail": "Cucina" },
-        "kuecheWasserinstallation": { "label": "Impianto idrico", "detail": "Cucina" }
+        "kuecheAlles": {
+          "label": "Tutto sulle cucine",
+          "detail": "Tutte le varianti"
+        },
+        "kuecheKomplettkueche": {
+          "label": "Cucina completa",
+          "detail": "Montaggio"
+        },
+        "kuecheSingleMinikuechen": {
+          "label": "Cucina singola / mini",
+          "detail": "Montaggio"
+        },
+        "kuecheBuerokueche": {
+          "label": "Cucina da ufficio",
+          "detail": "Montaggio"
+        },
+        "kuecheEinbaukueche": {
+          "label": "Cucina su misura",
+          "detail": "Montaggio"
+        },
+        "kuecheKuechenzeile": {
+          "label": "Cucina lineare",
+          "detail": "Montaggio"
+        },
+        "kuecheArbeitsplatteSpuele": {
+          "label": "Piano di lavoro & lavello",
+          "detail": "Servizio aggiuntivo"
+        },
+        "kuecheDunstabzugshaube": {
+          "label": "Cappa aspirante",
+          "detail": "Montaggio"
+        },
+        "kuecheBodenDecken": {
+          "label": "Pavimento & soffitti",
+          "detail": "Cucina"
+        },
+        "kuecheElektroBeleuchtung": {
+          "label": "Elettrico & illuminazione",
+          "detail": "Cucina"
+        },
+        "kuecheWasserinstallation": {
+          "label": "Impianto idrico",
+          "detail": "Cucina"
+        }
       }
     },
     "maler": {
       "field": "Lavori di pittura",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "malerAlles": { "label": "Tutto sulla pittura", "detail": "Tutte le varianti" },
-        "malerAnstrich": { "label": "Tinteggiatura", "detail": "Superfici murarie" },
-        "malerGlaettenAnstrich": { "label": "Rasatura & tinteggiatura", "detail": "Pareti" },
-        "malerTapezieren": { "label": "Tappezzeria", "detail": "Superfici murarie" },
-        "malerDeckenLackierung": { "label": "Soffitti in legno", "detail": "Verniciatura" },
-        "malerHeizkoerperLackierung": { "label": "Radiatori", "detail": "Verniciatura" },
-        "malerFensterLackierung": { "label": "Finestre", "detail": "Verniciatura" },
-        "malerTuerenLackierung": { "label": "Porte", "detail": "Verniciatura" },
-        "malerTreppenGelaenderLackierung": { "label": "Scale/ringhiere", "detail": "Verniciatura" },
-        "malerFassadenAnstrich": { "label": "Tinteggiatura facciata", "detail": "Superfici esterne" }
+        "malerAlles": {
+          "label": "Tutto sulla pittura",
+          "detail": "Tutte le varianti"
+        },
+        "malerAnstrich": {
+          "label": "Tinteggiatura",
+          "detail": "Superfici murarie"
+        },
+        "malerGlaettenAnstrich": {
+          "label": "Rasatura & tinteggiatura",
+          "detail": "Pareti"
+        },
+        "malerTapezieren": {
+          "label": "Tappezzeria",
+          "detail": "Superfici murarie"
+        },
+        "malerDeckenLackierung": {
+          "label": "Soffitti in legno",
+          "detail": "Verniciatura"
+        },
+        "malerHeizkoerperLackierung": {
+          "label": "Radiatori",
+          "detail": "Verniciatura"
+        },
+        "malerFensterLackierung": {
+          "label": "Finestre",
+          "detail": "Verniciatura"
+        },
+        "malerTuerenLackierung": {
+          "label": "Porte",
+          "detail": "Verniciatura"
+        },
+        "malerTreppenGelaenderLackierung": {
+          "label": "Scale/ringhiere",
+          "detail": "Verniciatura"
+        },
+        "malerFassadenAnstrich": {
+          "label": "Tinteggiatura facciata",
+          "detail": "Superfici esterne"
+        }
       }
     },
     "rohbau": {
       "field": "Lavori di costruzione grezza",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "rohbauAlles": { "label": "Tutto sulla costruzione grezza", "detail": "Tutte le varianti" },
-        "rohbauAbbruch": { "label": "Demolizione", "detail": "Prestazioni" },
-        "rohbauEstrich": { "label": "Massetto", "detail": "Posa" },
-        "rohbauStahltraeger": { "label": "Trave in acciaio", "detail": "Installazione" },
-        "rohbauVerputzen": { "label": "Intonacatura", "detail": "Pareti" },
-        "rohbauLichtschaechte": { "label": "Bocche di lupo", "detail": "Montaggio" },
-        "rohbauSchornstein": { "label": "Camino", "detail": "Costruzione" },
-        "rohbauMauerwerk": { "label": "Muratura", "detail": "Realizzazione" },
-        "rohbauPflastern": { "label": "Pavimentazione esterna", "detail": "Area esterna" }
+        "rohbauAlles": {
+          "label": "Tutto sulla costruzione grezza",
+          "detail": "Tutte le varianti"
+        },
+        "rohbauAbbruch": {
+          "label": "Demolizione",
+          "detail": "Prestazioni"
+        },
+        "rohbauEstrich": {
+          "label": "Massetto",
+          "detail": "Posa"
+        },
+        "rohbauStahltraeger": {
+          "label": "Trave in acciaio",
+          "detail": "Installazione"
+        },
+        "rohbauVerputzen": {
+          "label": "Intonacatura",
+          "detail": "Pareti"
+        },
+        "rohbauLichtschaechte": {
+          "label": "Bocche di lupo",
+          "detail": "Montaggio"
+        },
+        "rohbauSchornstein": {
+          "label": "Camino",
+          "detail": "Costruzione"
+        },
+        "rohbauMauerwerk": {
+          "label": "Muratura",
+          "detail": "Realizzazione"
+        },
+        "rohbauPflastern": {
+          "label": "Pavimentazione esterna",
+          "detail": "Area esterna"
+        }
       }
     },
     "treppen": {
       "field": "Lavori sulle scale",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "treppenAlles": { "label": "Tutto sulle scale", "detail": "Tutte le varianti" },
-        "treppenHolztreppe": { "label": "Scala in legno", "detail": "Montaggio" },
-        "treppenBetontreppe": { "label": "Scala in cemento", "detail": "Montaggio" },
-        "treppenDurchbruch": { "label": "Vano scala", "detail": "Apertura" },
-        "treppenGelaender": { "label": "Ringhiera", "detail": "Montaggio" },
-        "treppenAussentreppe": { "label": "Scala esterna", "detail": "Montaggio" },
-        "treppenRaumspartreppe": { "label": "Scala salvaspazio", "detail": "Montaggio" },
-        "treppenDachbodentreppe": { "label": "Scala per soffitta", "detail": "Montaggio" },
-        "treppenSpindeltreppe": { "label": "Scala a chiocciola", "detail": "Montaggio" },
-        "treppenAufbereiten": { "label": "Ripristino scale", "detail": "Ristrutturazione" },
-        "treppenBelegung": { "label": "Rivestimento scale", "detail": "Rivestimento" }
+        "treppenAlles": {
+          "label": "Tutto sulle scale",
+          "detail": "Tutte le varianti"
+        },
+        "treppenHolztreppe": {
+          "label": "Scala in legno",
+          "detail": "Montaggio"
+        },
+        "treppenBetontreppe": {
+          "label": "Scala in cemento",
+          "detail": "Montaggio"
+        },
+        "treppenDurchbruch": {
+          "label": "Vano scala",
+          "detail": "Apertura"
+        },
+        "treppenGelaender": {
+          "label": "Ringhiera",
+          "detail": "Montaggio"
+        },
+        "treppenAussentreppe": {
+          "label": "Scala esterna",
+          "detail": "Montaggio"
+        },
+        "treppenRaumspartreppe": {
+          "label": "Scala salvaspazio",
+          "detail": "Montaggio"
+        },
+        "treppenDachbodentreppe": {
+          "label": "Scala per soffitta",
+          "detail": "Montaggio"
+        },
+        "treppenSpindeltreppe": {
+          "label": "Scala a chiocciola",
+          "detail": "Montaggio"
+        },
+        "treppenAufbereiten": {
+          "label": "Ripristino scale",
+          "detail": "Ristrutturazione"
+        },
+        "treppenBelegung": {
+          "label": "Rivestimento scale",
+          "detail": "Rivestimento"
+        }
       }
     },
     "trockenbau": {
       "field": "Lavori in cartongesso",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "trockenbauAlles": { "label": "Tutto sul cartongesso", "detail": "Tutte le varianti" },
-        "trockenbauDecken": { "label": "Controsoffitti", "detail": "Soffitti" },
-        "trockenbauWaendeStellen": { "label": "Realizzazione pareti", "detail": "Orditura" },
-        "trockenbauWaendeVerkleiden": { "label": "Rivestimento pareti", "detail": "Lastratura" },
-        "trockenbauEstrich": { "label": "Massetto/pavimento", "detail": "Cartongesso" },
-        "trockenbauDachschraegen": { "label": "Falde inclinate", "detail": "Allestimento" }
+        "trockenbauAlles": {
+          "label": "Tutto sul cartongesso",
+          "detail": "Tutte le varianti"
+        },
+        "trockenbauDecken": {
+          "label": "Controsoffitti",
+          "detail": "Soffitti"
+        },
+        "trockenbauWaendeStellen": {
+          "label": "Realizzazione pareti",
+          "detail": "Orditura"
+        },
+        "trockenbauWaendeVerkleiden": {
+          "label": "Rivestimento pareti",
+          "detail": "Lastratura"
+        },
+        "trockenbauEstrich": {
+          "label": "Massetto/pavimento",
+          "detail": "Cartongesso"
+        },
+        "trockenbauDachschraegen": {
+          "label": "Falde inclinate",
+          "detail": "Allestimento"
+        }
       }
     },
     "tueren": {
       "field": "Lavori sulle porte",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "tuerenAlles": { "label": "Tutto sulle porte", "detail": "Tutte le varianti" },
-        "tuerenZimmertueren": { "label": "Porte interne", "detail": "Montaggio" },
-        "tuerenSchiebetueren": { "label": "Porte scorrevoli", "detail": "Montaggio" },
-        "tuerenGlastueren": { "label": "Porte in vetro", "detail": "Montaggio" },
-        "tuerenBalkonTerrassen": { "label": "Balcone/terrazza", "detail": "Porte" },
-        "tuerenHaustueren": { "label": "Porte d'ingresso", "detail": "Montaggio" },
-        "tuerenKellertueren": { "label": "Porte per cantina", "detail": "Montaggio" },
-        "tuerenGaragentore": { "label": "Porte da garage", "detail": "Montaggio" },
-        "tuerenToreEinfahrt": { "label": "Cancelli/accesso", "detail": "Montaggio" }
+        "tuerenAlles": {
+          "label": "Tutto sulle porte",
+          "detail": "Tutte le varianti"
+        },
+        "tuerenZimmertueren": {
+          "label": "Porte interne",
+          "detail": "Montaggio"
+        },
+        "tuerenSchiebetueren": {
+          "label": "Porte scorrevoli",
+          "detail": "Montaggio"
+        },
+        "tuerenGlastueren": {
+          "label": "Porte in vetro",
+          "detail": "Montaggio"
+        },
+        "tuerenBalkonTerrassen": {
+          "label": "Balcone/terrazza",
+          "detail": "Porte"
+        },
+        "tuerenHaustueren": {
+          "label": "Porte d'ingresso",
+          "detail": "Montaggio"
+        },
+        "tuerenKellertueren": {
+          "label": "Porte per cantina",
+          "detail": "Montaggio"
+        },
+        "tuerenGaragentore": {
+          "label": "Porte da garage",
+          "detail": "Montaggio"
+        },
+        "tuerenToreEinfahrt": {
+          "label": "Cancelli/accesso",
+          "detail": "Montaggio"
+        }
       }
     },
     "wasser": {
       "field": "Lavori idraulici",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "wasserAlles": { "label": "Tutto sull'acqua", "detail": "Tutte le varianti" },
-        "wasserBadezimmer": { "label": "Bagno", "detail": "Impianto idrico" },
-        "wasserGaesteWc": { "label": "WC ospiti", "detail": "Impianto idrico" },
-        "wasserKueche": { "label": "Cucina", "detail": "Impianto idrico" },
-        "wasserWaschmaschine": { "label": "Lavatrice", "detail": "Allacciamento" },
-        "wasserKeller": { "label": "Cantina", "detail": "Impianto idrico" },
-        "wasserGarten": { "label": "Giardino", "detail": "Impianto idrico" },
-        "wasserSpuelkasten": { "label": "Cassetta di scarico", "detail": "Sostituzione" },
-        "wasserHauptstrang": { "label": "Colonna principale", "detail": "Tubazione" }
+        "wasserAlles": {
+          "label": "Tutto sull'acqua",
+          "detail": "Tutte le varianti"
+        },
+        "wasserBadezimmer": {
+          "label": "Bagno",
+          "detail": "Impianto idrico"
+        },
+        "wasserGaesteWc": {
+          "label": "WC ospiti",
+          "detail": "Impianto idrico"
+        },
+        "wasserKueche": {
+          "label": "Cucina",
+          "detail": "Impianto idrico"
+        },
+        "wasserWaschmaschine": {
+          "label": "Lavatrice",
+          "detail": "Allacciamento"
+        },
+        "wasserKeller": {
+          "label": "Cantina",
+          "detail": "Impianto idrico"
+        },
+        "wasserGarten": {
+          "label": "Giardino",
+          "detail": "Impianto idrico"
+        },
+        "wasserSpuelkasten": {
+          "label": "Cassetta di scarico",
+          "detail": "Sostituzione"
+        },
+        "wasserHauptstrang": {
+          "label": "Colonna principale",
+          "detail": "Tubazione"
+        }
       }
     },
     "zaeune": {
       "field": "Lavori di recinzione",
       "hint": "Scelga il preventivatore desiderato",
       "types": {
-        "zaeuneAluminium": { "label": "Recinzione in alluminio", "detail": "Montaggio" },
-        "zaeuneHolz": { "label": "Recinzione in legno", "detail": "Montaggio" },
-        "zaeuneGlas": { "label": "Recinzione in vetro", "detail": "Montaggio" },
-        "zaeuneMetall": { "label": "Recinzione in metallo", "detail": "Montaggio" },
-        "zaeuneDoppelstab": { "label": "Pannelli a doppia barra", "detail": "Montaggio" },
-        "zaeuneGabionen": { "label": "Recinzione a gabbioni", "detail": "Montaggio" },
-        "zaeuneSichtschutz": { "label": "Recinzione frangivista", "detail": "Montaggio" },
-        "zaeuneMaschendraht": { "label": "Recinzione a rete metallica", "detail": "Montaggio" },
-        "zaeuneSteck": { "label": "Recinzione a incastro", "detail": "Montaggio" },
-        "zaeuneVorgarten": { "label": "Recinzione per giardino frontale", "detail": "Montaggio" },
-        "zaeuneSichtschutzstreifen": { "label": "Strisce frangivista", "detail": "Montaggio" }
+        "zaeuneAluminium": {
+          "label": "Recinzione in alluminio",
+          "detail": "Montaggio"
+        },
+        "zaeuneHolz": {
+          "label": "Recinzione in legno",
+          "detail": "Montaggio"
+        },
+        "zaeuneGlas": {
+          "label": "Recinzione in vetro",
+          "detail": "Montaggio"
+        },
+        "zaeuneMetall": {
+          "label": "Recinzione in metallo",
+          "detail": "Montaggio"
+        },
+        "zaeuneDoppelstab": {
+          "label": "Pannelli a doppia barra",
+          "detail": "Montaggio"
+        },
+        "zaeuneGabionen": {
+          "label": "Recinzione a gabbioni",
+          "detail": "Montaggio"
+        },
+        "zaeuneSichtschutz": {
+          "label": "Recinzione frangivista",
+          "detail": "Montaggio"
+        },
+        "zaeuneMaschendraht": {
+          "label": "Recinzione a rete metallica",
+          "detail": "Montaggio"
+        },
+        "zaeuneSteck": {
+          "label": "Recinzione a incastro",
+          "detail": "Montaggio"
+        },
+        "zaeuneVorgarten": {
+          "label": "Recinzione per giardino frontale",
+          "detail": "Montaggio"
+        },
+        "zaeuneSichtschutzstreifen": {
+          "label": "Strisce frangivista",
+          "detail": "Montaggio"
+        }
       }
     }
   },

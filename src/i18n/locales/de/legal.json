@@ -63,7 +63,7 @@
     "chatbot": {
       "title": "Chatbot",
       "hClaude": "Claude-basierter Chatbot",
-      "p1": "Wir setzen auf dieser Website einen Chatbot („Bau-Concierge“) ein, der auf dem KI-Modell Claude des Anbieters Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA, basiert. Der Chatbot ist nur aktiv, wenn Sie über das Cookie-Banner Ihre Einwilligung erteilt haben.",
+      "p1": "Wir setzen auf dieser Website einen Chatbot („Bau-Berater“) ein, der auf dem KI-Modell Claude des Anbieters Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA, basiert. Der Chatbot ist nur aktiv, wenn Sie über das Cookie-Banner Ihre Einwilligung erteilt haben.",
       "hData": "Verarbeitete Daten",
       "p2": "Wenn Sie den Chatbot nutzen, werden die von Ihnen im Chat eingegebenen Inhalte sowie technische Metadaten (z. B. Zeitpunkt der Anfrage, IP-Adresse) verarbeitet, um Ihre Anfrage zu beantworten und den Dienst technisch bereitzustellen. Ihre Eingaben werden von unserem Server an die Schnittstelle von Anthropic übermittelt und dort zur Generierung der Antwort verarbeitet.",
       "hLegal": "Rechtsgrundlage",

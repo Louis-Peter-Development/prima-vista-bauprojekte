@@ -1,6 +1,6 @@
 {
-  "name": "Concierge edile",
-  "greeting": "Buongiorno e benvenuto in Prima Vista. Sono il suo Concierge edile. Ci racconti brevemente il suo progetto, oppure scelga un tema qui sotto.",
+  "name": "Consulente edilizio",
+  "greeting": "Buongiorno e benvenuto in Prima Vista. Sono il suo consulente edilizio. Ci racconti brevemente il suo progetto, oppure scelga un tema qui sotto.",
   "suggestions": [
     "Richiedere una ristrutturazione completa",
     "Stima a prezzo fisso",
@@ -8,15 +8,15 @@
     "Parlare con Daniel o Monica"
   ],
   "rail": {
-    "ariaLabel": "Concierge edile di Prima Vista",
+    "ariaLabel": "Consulente edilizio di Prima Vista",
     "brandLabel": "Pagina iniziale Prima Vista",
-    "eyebrow": "Concierge edile",
-    "heading": "Un concierge<br/>che ascolta.",
+    "eyebrow": "Consulente edilizio",
+    "heading": "Un consulente<br/>che ascolta.",
     "paragraph": "Ci racconti il suo progetto, da un singolo bagno alla ristrutturazione completa. Valutiamo il suo progetto e le indichiamo il prossimo passo sensato.",
     "proofResponse": "Risposta di solito immediata",
     "proofMeeting": "Primo colloquio entro 48 ore",
     "proofGuarantee": "Prezzo fisso e direzione lavori inclusi",
-    "location": "Frankfurt am Main · Emmenbrücke"
+    "location": "Germania · Svizzera"
   },
   "header": {
     "status": "Online · Risposta < 5 min",
@@ -26,7 +26,7 @@
   "welcome": {
     "eyebrow": "Benvenuto",
     "heading": "Buongiorno.",
-    "paragraph": "Scelga un tema o scriva liberamente. Più precisi sono il tipo di immobile, la posizione e l'ampiezza, più precisamente il concierge potrà orientarla."
+    "paragraph": "Scelga un tema o scriva liberamente. Più precisi sono il tipo di immobile, la posizione e l'ampiezza, più precisamente il consulente edilizio potrà orientarla."
   },
   "typingAria": "Risposta in scrittura",
   "suggestionsAria": "Temi suggeriti",
@@ -38,12 +38,12 @@
   },
   "footnote": "Crittografato e riservato · Sta parlando con il team di Prima Vista",
   "launcher": {
-    "start": "Avvia il Concierge edile",
-    "open": "Apri il Concierge edile",
+    "start": "Avvia il consulente edilizio",
+    "open": "Apri il consulente edilizio",
     "dismiss": "Chiudi l'avviso",
     "previewText": "Buongiorno, ci racconta brevemente il suo progetto?"
   },
-  "panelAria": "Concierge edile di Prima Vista",
-  "error": "Il Concierge edile non è ancora configurato in locale.",
+  "panelAria": "Consulente edilizio di Prima Vista",
+  "error": "Il consulente edilizio non è ancora configurato in locale.",
   "fallbackMessage": "Ci scusiamo, al momento c'è un problema tecnico. Ci scriva direttamente a office@primavista-bauprojekte.com oppure ci chiami al +49 1578 98 18 308."
 }

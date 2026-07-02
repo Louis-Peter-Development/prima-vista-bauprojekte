@@ -71,7 +71,7 @@ export default function Kalkulator() {
     <>
       <PageIntro
         className="kalk-intro"
-        backgroundImage="/assets/img/photo-parkett-altbau.webp"
+        backgroundImage="/assets/img/projects/eiche-parkett-01.webp"
         crumbNumber="06"
         crumbLabel={t('intro.crumbLabel')}
         title={<Trans i18nKey="kalk:intro.title" components={{ em: <em />, br: <br /> }} />}

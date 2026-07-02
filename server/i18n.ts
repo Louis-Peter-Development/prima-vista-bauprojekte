@@ -183,23 +183,23 @@ const KONTAKT_ART_LABELS: CodeLabelMap = {
 // Kontakt `region` — POSTed as a canonical German string value.
 const REGION_LABELS: CodeLabelMap = {
   de: {
-    'Frankfurt & Hessen': 'Frankfurt & Hessen',
-    Innerschweiz: 'Innerschweiz',
+    Deutschland: 'Deutschland',
+    Schweiz: 'Schweiz',
     Außerhalb: 'Außerhalb',
   },
   en: {
-    'Frankfurt & Hessen': 'Frankfurt & Hesse',
-    Innerschweiz: 'Central Switzerland',
+    Deutschland: 'Germany',
+    Schweiz: 'Switzerland',
     Außerhalb: 'Elsewhere',
   },
   it: {
-    'Frankfurt & Hessen': 'Francoforte & Assia',
-    Innerschweiz: 'Svizzera centrale',
+    Deutschland: 'Germania',
+    Schweiz: 'Svizzera',
     Außerhalb: 'Altrove',
   },
   fr: {
-    'Frankfurt & Hessen': 'Francfort & Hesse',
-    Innerschweiz: 'Suisse centrale',
+    Deutschland: 'Allemagne',
+    Schweiz: 'Suisse',
     Außerhalb: 'Ailleurs',
   },
 };

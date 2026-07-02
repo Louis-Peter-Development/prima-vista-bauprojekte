@@ -45,7 +45,7 @@ export default function Projekte() {
   return (
     <>
       <PageIntro
-        backgroundImage="/assets/img/proj-concrete-sofa-tall.webp"
+        backgroundImage="/assets/img/projects/bad-soden-einfamilienhaus-01.webp"
         crumbNumber="04"
         crumbLabel={t('overview.crumbLabel')}
         title={<Trans i18nKey="projects:overview.title" components={{ em: <em />, br: <br /> }} />}

@@ -4,7 +4,7 @@
   "masthead": {
     "issue": "Ausgabe №{{number}}",
     "issueEmpty": "Ausgabe №—",
-    "place": "Frankfurt · Luzern · MMXXVI",
+    "place": "Deutschland · Schweiz · MMXXVI",
     "eyebrow": "Das Magazin",
     "name": "Magazin",
     "sub": "Ideen, Material und Entscheidungen für bessere Räume — Planung, Ablauf und Handwerk rund um Sanierung, Ausbau und Renovierung."
@@ -15,7 +15,7 @@
     "focusLabel": "Fokus",
     "focusValue": "Wohnsitz · Gewerbe · Gastro",
     "regionLabel": "Region",
-    "regionValue": "Frankfurt · Luzern",
+    "regionValue": "Deutschland · Schweiz",
     "archiveLabel": "Archiv",
     "archiveValue_one": "{{count}} Beitrag",
     "archiveValue_other": "{{count}} Beiträge"

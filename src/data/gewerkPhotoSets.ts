@@ -20,9 +20,9 @@ export const GEWERK_PHOTO_SETS = {
   badsanierung: {
     label: 'Badsanierung',
     images: [
-      { src: '/assets/img/leistungen/badsanierung-02.webp', alt: 'Modernes Bad mit Dusche und Waschtisch', width: 1501, height: 1048 },
-      { src: '/assets/img/leistungen/badsanierung-05.webp', alt: 'Ausgebautes Bad mit WC und Dusche', width: 1200, height: 1600 },
-      { src: '/assets/img/leistungen/badsanierung-01.webp', alt: 'Dunkles Wellnessbad mit beleuchteten Spiegeln', width: 1086, height: 1448 },
+      { src: '/assets/img/projects/spa-bad-hotel-01.webp', alt: 'Fertig saniertes Bad mit freistehender Wanne und bodengleicher Dusche', width: 1536, height: 1024 },
+      { src: '/assets/img/projects/spa-bad-hotel-02.webp', alt: 'Badumbau im Ausbau mit vorbereiteten Sanitäranschlüssen', width: 1536, height: 1024 },
+      { src: '/assets/img/projects/spa-bad-hotel-03.webp', alt: 'Montage eines Wand-WCs während der Badsanierung', width: 1448, height: 1086 },
     ],
   },
   barrierefreiheit: {
@@ -88,7 +88,7 @@ export const GEWERK_PHOTO_SETS = {
   maler: {
     label: 'Maler & Lackierer',
     images: [
-      { src: '/assets/img/leistungen/maler-lackierer-03.webp', alt: 'Maler beim Streichen einer Innenwand', width: 737, height: 1600 },
+      { src: '/assets/img/projects/bad-soden-einfamilienhaus-12.webp', alt: 'Maler beim Streichen einer Innenwand im sanierten Wohnraum', width: 1448, height: 1086 },
       { src: '/assets/img/leistungen/maler-lackierer-06.webp', alt: 'Lackierarbeiten mit Sprühgerät', width: 1536, height: 1024 },
       { src: '/assets/img/leistungen/maler-lackierer-08.webp', alt: 'Akzentwand mit Malerwerkzeug im Raum', width: 1536, height: 1024 },
     ],
@@ -142,7 +142,9 @@ export const GEWERK_PHOTO_SETS = {
   fussbodenheizung: {
     label: 'Fußbodenheizung',
     images: [
-      { src: '/assets/img/leistungen/fussbodenheizung-01.webp', alt: 'Fußbodenheizung im vorbereiteten Bodenaufbau', width: 900, height: 1600 },
+      { src: '/assets/img/projects/bad-soden-einfamilienhaus-11.webp', alt: 'Verlegte Fußbodenheizung im Dachgeschoss während der Sanierung', width: 1086, height: 1448 },
+      { src: '/assets/img/projects/bad-soden-einfamilienhaus-09.webp', alt: 'Fußbodenheizung im Dachgeschoss vor dem Estrich', width: 2048, height: 1182 },
+      { src: '/assets/img/projects/bad-soden-einfamilienhaus-10.webp', alt: 'Fertig ausgebautes Dachgeschoss nach der Fußbodenheizung', width: 1190, height: 1322 },
     ],
   },
   waermepumpe: {
@@ -160,7 +162,7 @@ export const GEWERK_PHOTO_SETS = {
   saunaofen: {
     label: 'Saunaofen',
     images: [
-      { src: '/assets/img/proj-spa-bath.webp', alt: 'Wellnessbereich als Umfeld für Saunaofen und Ofentechnik', width: 1500, height: 1125 },
+      { src: '/assets/img/projects/spa-bad-hotel-01.webp', alt: 'Wellnessbad als Umfeld für Saunaofen und Ofentechnik', width: 1536, height: 1024 },
     ],
   },
   zaeune: {

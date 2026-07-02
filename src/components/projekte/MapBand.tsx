@@ -1,13 +1,9 @@
 import { Trans, useTranslation } from 'react-i18next';
 import SectionEyebrow from '../common/SectionEyebrow';
 
-const CITIES: Array<[string, string]> = [
-  ['DE', 'frankfurt'],
-  ['CH', 'emmenbruecke'],
-  ['DE', 'wiesbaden'],
-  ['CH', 'zug'],
-  ['DE', 'darmstadt'],
-  ['CH', 'innerschweiz'],
+const COUNTRIES: Array<[string, string]> = [
+  ['DE', 'germany'],
+  ['CH', 'switzerland'],
 ];
 
 export default function MapBand() {
@@ -22,7 +18,7 @@ export default function MapBand() {
           </h2>
           <p>{t('map.intro')}</p>
           <ul className="map-band__cities">
-            {CITIES.map(([country, key]) => (
+            {COUNTRIES.map(([country, key]) => (
               <li key={`${country}-${key}`}><span className="num">{country}</span><span className="city">{t(`map.cities.${key}`)}</span></li>
             ))}
           </ul>

@@ -1,6 +1,6 @@
 {
-  "name": "Concierge travaux",
-  "greeting": "Bonjour et bienvenue chez Prima Vista. Je suis votre concierge travaux. Parlez-nous brièvement de votre projet, ou choisissez un thème ci-dessous.",
+  "name": "Conseiller travaux",
+  "greeting": "Bonjour et bienvenue chez Prima Vista. Je suis votre conseiller travaux. Parlez-nous brièvement de votre projet, ou choisissez un thème ci-dessous.",
   "suggestions": [
     "Demander une rénovation complète",
     "Estimation à prix fixe",
@@ -8,15 +8,15 @@
     "Parler à Daniel ou Monica"
   ],
   "rail": {
-    "ariaLabel": "Concierge travaux de Prima Vista",
+    "ariaLabel": "Conseiller travaux de Prima Vista",
     "brandLabel": "Page d'accueil Prima Vista",
-    "eyebrow": "Concierge travaux",
-    "heading": "Un concierge<br/>à votre écoute.",
+    "eyebrow": "Conseiller travaux",
+    "heading": "Un conseiller<br/>à votre écoute.",
     "paragraph": "Parlez-nous de votre projet, d'une simple salle de bains à la rénovation complète. Nous qualifions votre projet et vous indiquons la prochaine étape pertinente.",
     "proofResponse": "Réponse généralement immédiate",
     "proofMeeting": "Premier entretien sous 48 heures",
     "proofGuarantee": "Prix fixe et direction de chantier inclus",
-    "location": "Frankfurt am Main · Emmenbrücke"
+    "location": "Allemagne · Suisse"
   },
   "header": {
     "status": "En ligne · Réponse < 5 min",
@@ -26,7 +26,7 @@
   "welcome": {
     "eyebrow": "Bienvenue",
     "heading": "Bonjour.",
-    "paragraph": "Choisissez un thème ou écrivez librement. Plus le type de bien, l'emplacement et l'ampleur sont précis, plus le concierge pourra vous orienter avec exactitude."
+    "paragraph": "Choisissez un thème ou écrivez librement. Plus le type de bien, l'emplacement et l'ampleur sont précis, plus le conseiller travaux pourra vous orienter avec exactitude."
   },
   "typingAria": "Réponse en cours de rédaction",
   "suggestionsAria": "Thèmes suggérés",
@@ -38,12 +38,12 @@
   },
   "footnote": "Chiffré et confidentiel · Vous échangez avec l'équipe Prima Vista",
   "launcher": {
-    "start": "Lancer le concierge travaux",
-    "open": "Ouvrir le concierge travaux",
+    "start": "Lancer le conseiller travaux",
+    "open": "Ouvrir le conseiller travaux",
     "dismiss": "Fermer l'avis",
     "previewText": "Bonjour, parlez-nous brièvement de votre projet ?"
   },
-  "panelAria": "Concierge travaux de Prima Vista",
-  "error": "Le concierge travaux n'est pas encore configuré en local.",
+  "panelAria": "Conseiller travaux de Prima Vista",
+  "error": "Le conseiller travaux n'est pas encore configuré en local.",
   "fallbackMessage": "Désolé, un problème technique survient actuellement. Veuillez nous écrire directement à office@primavista-bauprojekte.com ou nous appeler au +49 1578 98 18 308."
 }

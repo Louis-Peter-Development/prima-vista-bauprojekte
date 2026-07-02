@@ -16,6 +16,11 @@
   gap: 96px;
   align-items: center;
 }
+.founders__media {
+  display: grid;
+  gap: 24px;
+  align-self: start;
+}
 .founders__photo {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -40,6 +45,10 @@
   gap: 12px;
 }
 .founders__photo-label .num { color: var(--pv-copper-bright); font-family: var(--pv-font-mono); }
+.founders__appointment {
+  justify-content: center;
+  width: min(100%, 360px);
+}
 .founders__body .eyebrow { color: var(--pv-copper-bright); }
 .founders__body h2 {
   font-family: var(--pv-font-serif);

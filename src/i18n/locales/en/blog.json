@@ -4,7 +4,7 @@
   "masthead": {
     "issue": "Issue №{{number}}",
     "issueEmpty": "Issue №—",
-    "place": "Frankfurt · Lucerne · MMXXVI",
+    "place": "Germany · Switzerland · MMXXVI",
     "eyebrow": "The Magazine",
     "name": "Magazine",
     "sub": "Ideas, materials and decisions for better spaces — planning, process and craftsmanship around renovation, fit-out and refurbishment."
@@ -15,7 +15,7 @@
     "focusLabel": "Focus",
     "focusValue": "Residential · Commercial · Hospitality",
     "regionLabel": "Region",
-    "regionValue": "Frankfurt · Lucerne",
+    "regionValue": "Germany · Switzerland",
     "archiveLabel": "Archive",
     "archiveValue_one": "{{count}} article",
     "archiveValue_other": "{{count}} articles"

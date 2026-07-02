@@ -22,7 +22,31 @@
     "photosEyebrow": "Uno sguardo",
     "photosTitleSuffix": "da vicino.",
     "photosIntro": "Impressioni selezionate di materiale, dettaglio ed esecuzione.",
-    "photosAria": "{{label}} in immagini"
+    "photosAria": "{{label}} in immagini",
+    "photoSets": {
+      "abdichtung": { "label": "Impermeabilizzazione", "images": [{ "alt": "Lavori di impermeabilizzazione in zona umida" }] },
+      "badsanierung": { "label": "Ristrutturazione bagno", "images": [{ "alt": "Bagno finito con vasca freestanding e doccia a filo pavimento" }, { "alt": "Bagno in fase di allestimento con collegamenti sanitari predisposti" }, { "alt": "Montaggio di un WC sospeso durante la ristrutturazione del bagno" }] },
+      "barrierefreiheit": { "label": "Accessibilità", "images": [{ "alt": "Bagno compatto accessibile con doccia bassa" }, { "alt": "Trasformazione bagno con spazio libero di movimento" }] },
+      "boeden": { "label": "Pavimenti & rivestimenti", "images": [{ "alt": "Zona giorno con pavimento di grande formato" }, { "alt": "Pavimento in legno chiaro con raccordo parete pulito" }, { "alt": "Superficie pavimentata lucidata in spazio giorno aperto" }] },
+      "dach": { "label": "Ristrutturazione tetto", "images": [{ "alt": "Ristrutturazione del tetto con ponteggio e nuove finestre da tetto" }] },
+      "elektro": { "label": "Impianto elettrico", "images": [{ "alt": "Dettagli elettrici con interruttori, prese e illuminazione" }, { "alt": "Quadro elettrico aperto con cablaggio ordinato" }, { "alt": "Interno con illuminazione d'accento e applique" }] },
+      "fassade": { "label": "Facciate & isolamento", "images": [{ "alt": "Facciata chiara rinnovata con finestre e tapparelle" }, { "alt": "Stratigrafia di facciata con isolamento e vista esterna moderna" }] },
+      "fenster": { "label": "Serramenti", "images": [{ "alt": "Finestra installata con spallette isolate" }, { "alt": "Lavori su finestra durante l'allestimento interno con scala" }, { "alt": "Fascia finestrata nel cartongesso prima della consegna" }] },
+      "garten": { "label": "Giardino & esterni", "images": [{ "alt": "Terrazza con pergola e lastre in pietra" }, { "alt": "Illuminazione da giardino con area esterna piantumata" }, { "alt": "Sottofondo della terrazza prima della finitura" }] },
+      "kueche": { "label": "Cucine & mobili", "images": [{ "alt": "Cucina con isola, lampade a sospensione e arredi integrati" }, { "alt": "Blocco cucina con lavello e grande finestra" }, { "alt": "Montaggio cucina con piano di lavoro e allaccio acqua" }] },
+      "maler": { "label": "Pittura & verniciatura", "images": [{ "alt": "Imbianchino che tinteggia una parete interna in uno spazio ristrutturato" }, { "alt": "Lavori di verniciatura a spruzzo" }, { "alt": "Parete d'accento con strumenti da pittura nella stanza" }] },
+      "rohbau": { "label": "Struttura", "images": [{ "alt": "Area al grezzo con pareti in cemento e percorsi impiantistici predisposti" }, { "alt": "Struttura al grezzo con parete a montanti metallici e impianti predisposti" }] },
+      "trockenbau": { "label": "Cartongesso", "images": [{ "alt": "Sottostruttura in cartongesso a soffitto con cavi predisposti" }, { "alt": "Parete in cartongesso con profili metallici e pannelli in legno in posa" }, { "alt": "Sottostruttura di controsoffitto durante l'allestimento interno" }] },
+      "treppen": { "label": "Scale & ringhiere", "images": [{ "alt": "Scala interna luminosa con ringhiera" }, { "alt": "Scala esterna metallica su un edificio" }, { "alt": "Scala in cemento con finitura parete pulita" }] },
+      "tueren": { "label": "Porte & telai", "images": [{ "alt": "Corridoio con porte interne e telai montati" }, { "alt": "Porta d'ingresso moderna e facciata vetrata" }, { "alt": "Dettaglio di balcone e porta vetrata su facciata moderna" }] },
+      "wasser": { "label": "Acqua & idraulica", "images": [{ "alt": "Installazione sanitaria con modulo controparete" }, { "alt": "Installazione controparete per WC e collegamenti acqua" }, { "alt": "Contatore dell'acqua e tubazioni durante l'allestimento" }] },
+      "heizkoerper": { "label": "Radiatori", "images": [{ "alt": "Radiatore moderno in una zona giorno ristrutturata" }, { "alt": "Radiatore nel soggiorno dopo la modernizzazione del riscaldamento" }] },
+      "fussbodenheizung": { "label": "Riscaldamento a pavimento", "images": [{ "alt": "Riscaldamento a pavimento posato nel sottotetto durante la ristrutturazione" }, { "alt": "Riscaldamento a pavimento nel sottotetto prima del massetto" }, { "alt": "Sottotetto finito dopo l'installazione del riscaldamento a pavimento" }] },
+      "waermepumpe": { "label": "Pompa di calore", "images": [{ "alt": "Unità esterna di una pompa di calore aria-acqua sull'edificio" }] },
+      "gasHeizung": { "label": "Riscaldamento a gas", "images": [{ "alt": "Radiatore nel soggiorno dopo la modernizzazione del riscaldamento" }] },
+      "saunaofen": { "label": "Stufa per sauna", "images": [{ "alt": "Bagno wellness come ambiente per stufa sauna e tecnologia di riscaldamento" }] },
+      "zaeune": { "label": "Recinzioni & cancelli", "images": [{ "alt": "Recinzione metallica moderna con cancello carrabile" }, { "alt": "Recinzione in legno con schermatura lungo una casa" }] }
+    }
   },
   "trade": {
     "badsanierung": { "metaTitle": "Ristrutturazione bagno & WC ospiti", "crumbLabel": "Lavori · Ristrutturazione bagno", "title": "Calcola la<br/><em>ristrutturazione del bagno.</em>", "lede": "Dal moderno WC per gli ospiti al bagno completo esclusivo: configuri la sua ristrutturazione e ottenga costi trasparenti per idraulica, piastrelle e sanitari.", "variants": "4 concept", "trades": "Idraulica & piastrelle", "endEyebrow": "È tempo di un nuovo bagno?", "endTitle": "Progettiamo <em>idraulica</em><br/>e design in loco.", "endCta": "Richiedi per il bagno" },
@@ -135,7 +159,7 @@
   "gewerke": {
     "crumbLabel": "Lavori · Prestazioni edili",
     "title": "Diciannove<br/>lavorazioni,<br/><em>un'unica mano.</em>",
-    "lede": "Scopra prodotti su misura, materiali da costruzione e pacchetti completi per ogni lavorazione — coordinati dalla nostra direzione lavori a Francoforte ed Emmenbrücke.",
+    "lede": "Scopra prodotti su misura, materiali da costruzione e pacchetti completi per ogni lavorazione — coordinati dalla nostra direzione lavori in Germania e Svizzera.",
     "metaSelectionLabel": "Selezione",
     "metaSelectionValue": "19 lavorazioni",
     "metaCoordLabel": "Coordinamento",

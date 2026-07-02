@@ -12,13 +12,10 @@
   padding-left: 0;
 }
 .promise__list li {
-  font-family: var(--pv-font-display);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--pv-ink-2);
-  display: flex;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
   gap: 12px;
 }
 .promise__list .num {
@@ -26,4 +23,26 @@
   font-size: 11px;
   color: var(--pv-copper-ink);
   font-weight: 500;
+  line-height: 1.4;
+}
+.promise__list-copy {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+.promise__list-copy strong {
+  font-family: var(--pv-font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.promise__list-copy small {
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+  color: var(--pv-text-on-light-muted);
 }
