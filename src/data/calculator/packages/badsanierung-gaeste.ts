@@ -208,7 +208,7 @@ export const packageBadGaeste: RenovationPackage = {
               sku: "HEIZ-101-MON",
               type: "optional",
               unit: "Stk",
-              basePrice: 149,
+              basePrice: 195,
               enabled: false,
               optional: true,
               minQuantity: 1,

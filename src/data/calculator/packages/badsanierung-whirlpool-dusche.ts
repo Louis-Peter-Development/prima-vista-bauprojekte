@@ -276,7 +276,7 @@ export const packageBadWhirlpoolDusche: RenovationPackage = {
               sku: "HEIZ-101-MON",
               type: "service",
               unit: "Stk",
-              basePrice: 149,
+              basePrice: 195,
               enabled: true,
               optional: false,
               minQuantity: 1,

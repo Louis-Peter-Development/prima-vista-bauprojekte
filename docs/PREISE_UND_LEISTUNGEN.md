@@ -193,7 +193,7 @@ Der Detailkalkulator arbeitet mit genauen Einzelpreisen für Material, Montage u
 - **Wände in Trockenbauweise** (`PV-TRO-200`): `49,00 € / qm` (Montage)
 - **Vorsatzwände** (`PV-TRO-300`): `49,00 € / qm` (Montage)
 - **Verspachtelung streichfertig** (`PV-TRO-101`): `22,82 € / qm`
-- **Türloch in GK-Wand herstellen** (`PV-TRO-201`): `64,22 € / Stück`
+- **Türloch in GK-Wand herstellen** (`PV-TRO-201`): `180,00 € / Stück`
 - **Rigips Gipsplatte 12,5 mm** (`PV-MAT-GK`): `3,49 € / qm` (Material)
 - **Feuchtraum-Gipsplatte imprägniert** (`PV-MAT-GKBI`): `8,90 € / qm` (Material)
 - **Rohrkasten / Koffer bauen** (`PV-TRO-401`): `235,91 € / Stück`
@@ -209,7 +209,7 @@ Der Detailkalkulator arbeitet mit genauen Einzelpreisen für Material, Montage u
 
 ### 3.4 Maler & Oberflächen
 - **Glättung mit Feinspachtel** (`PV-MAL-101`): `17,90 € / qm`
-- **Anstrich Wand- & Deckenflächen** (`PV-MAL-201`): `9,85 € / qm`
+- **Anstrich Wand- & Deckenflächen** (`PV-MAL-201`): `14,50 € / qm`
 - **Grundierung** (`PV-MAL-102`): `3,91 € / qm`
 - **Alttapeten entfernen & entsorgen** (`PV-MAL-103`): `7,87 € / qm`
 
@@ -221,7 +221,7 @@ Der Detailkalkulator arbeitet mit genauen Einzelpreisen für Material, Montage u
 - **WC-Montageelement mit Spülkasten** (`PV-WAS-MAT-02`): `390,06 € / Stück`
 
 ### 3.6 Heizung
-- **Heizkörper Montage** (`PV-HEI-101`): `149,00 € / Stk`
+- **Heizkörper Montage** (`PV-HEI-101`): `195,00 € / Stk`
 - **Badheizkörper weiß** (`PV-HEI-MAT-01`): `388,95 € / Stk`
 - **Heizstränge bis 5 m** (`PV-HEI-301`): `434,56 € / Stück`
 - **Bodenheizung Montagepaket** (`PV-HEI-FBH-100`): `89,00 € / qm`
