@@ -184,7 +184,6 @@
   border-color: rgba(241, 233, 226, .14);
 }
 
-:root[data-theme='dark'] .pv-mobile-menu__cta,
 :root[data-theme='dark'] .kalk-board .haus-types__opt.is-on,
 :root[data-theme='dark'] .haus-types__opt.is-on,
 :root[data-theme='dark'] .kalk-chip.is-on,
