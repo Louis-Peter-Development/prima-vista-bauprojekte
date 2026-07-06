@@ -366,24 +366,94 @@
   text-transform: uppercase;
   white-space: normal;
 }
+/* Featured project spotlight at the top of the menu */
+.pv-mobile-menu__featured {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  margin: 16px 22px 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--pv-ink-2);
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 320ms var(--pv-ease-out), transform 320ms var(--pv-ease-out);
+  transition-delay: 80ms;
+}
+.pv-mobile-menu.is-open .pv-mobile-menu__featured { opacity: 1; transform: translateY(0); }
+.pv-mobile-menu__featured img {
+  display: block;
+  width: 100%;
+  height: clamp(120px, 20vh, 200px);
+  object-fit: cover;
+  transition: transform 800ms var(--pv-ease-out);
+}
+.pv-mobile-menu__featured:hover img { transform: scale(1.05); }
+.pv-mobile-menu__featured::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 19, 18, .8) 0%, rgba(20, 19, 18, .32) 48%, rgba(20, 19, 18, 0) 80%);
+}
+.pv-mobile-menu__featured-cap {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.pv-mobile-menu__featured-eyebrow {
+  font-family: var(--pv-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pv-copper-bright);
+}
+.pv-mobile-menu__featured-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pv-mobile-menu__featured-ttl {
+  font-family: var(--pv-font-display);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pv-bone);
+}
+.pv-mobile-menu__featured-yr {
+  font-family: var(--pv-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--pv-copper-bright);
+}
+.pv-mobile-menu__featured-more {
+  font-family: var(--pv-font-display);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 223, .78);
+}
+.pv-mobile-menu__featured-more .arrow { font-weight: 300; }
+/* Short viewports: drop the spotlight so the nav + CTA always fit */
+@media (max-height: 700px) {
+  .pv-mobile-menu__featured { display: none; }
+}
+
+/* Layout only — colors/typography come from .btn.btn--appointment */
 .pv-mobile-menu__cta {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 16px 22px;
-  background: var(--pv-ink-1);
-  color: var(--pv-bone);
-  text-decoration: none;
-  border-radius: 2px;
-  font-family: var(--pv-font-display);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition: background 200ms var(--pv-ease-out);
 }
-.pv-mobile-menu__cta:hover { background: var(--pv-ink-3); }
 .pv-mobile-menu__cta .arrow { font-weight: 300; font-size: 14px; }
 
 /* ── Services dropdown ─────────────────────────────────────────────────── */
@@ -618,6 +688,11 @@
     transform: translateY(-50%);
     z-index: 140;
   }
+  /* The open field spans the header — hide the logo underneath it */
+  .pv-header__inner:has(.pv-search--header.is-compact-open) .pv-logo {
+    opacity: 0;
+    visibility: hidden;
+  }
   .pv-search--header.is-compact-open .pv-search__field {
     position: static;
     width: 100%;
@@ -642,6 +717,9 @@
 }
 
 @media (max-width: 600px) {
+  .pv-mobile-menu__featured {
+    margin: 12px 20px 0;
+  }
   .pv-mobile-menu__nav {
     align-items: flex-start;
     padding: 12px 20px 0;
@@ -683,7 +761,5 @@
   .pv-mobile-menu__cta {
     min-height: 42px;
     padding: 12px 16px;
-    font-size: 10.5px;
-    letter-spacing: 0.14em;
   }
 }

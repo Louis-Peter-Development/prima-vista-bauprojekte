@@ -20,9 +20,9 @@ export default function HomeMarquee() {
 
   return (
     <section className="marquee" aria-label={t('marquee.aria')}>
-      <div className="marquee__track" role="list">
-        {PROOF_ITEMS.map(({ key, Icon }) => (
-          <span className="marquee__item" role="listitem" key={key}>
+      <div className="marquee__track reveal-group" role="list">
+        {PROOF_ITEMS.map(({ key, Icon }, i) => (
+          <span className="marquee__item" role="listitem" key={key} style={{ ['--i' as string]: i }}>
             <span className="marquee__icon" aria-hidden="true">
               <Icon />
             </span>

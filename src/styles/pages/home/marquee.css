@@ -47,6 +47,39 @@
   width: 50px;
   height: 50px;
   stroke-width: 1.25;
+  transition: transform 300ms var(--pv-ease-out);
+}
+.marquee__item:hover .marquee__icon svg {
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* Icon line-work draws itself in as each item reveals.
+   80 exceeds the longest stroke in these 24×24 icons, so every shape
+   starts fully hidden and ends fully drawn. */
+.js-reveal .marquee__icon :is(path, circle, rect) {
+  stroke-dasharray: 80;
+  stroke-dashoffset: 80;
+}
+.js-reveal .marquee__track.is-in .marquee__icon :is(path, circle, rect) {
+  animation: marquee-icon-draw 650ms var(--pv-ease-out) both;
+  animation-delay: calc(260ms + var(--i, 0) * 70ms);
+}
+/* The accent stroke (checkmark, ribbon, door …) snaps in a beat later */
+.js-reveal .marquee__track.is-in .marquee__icon :is(path, circle, rect):last-child {
+  animation-duration: 400ms;
+  animation-delay: calc(700ms + var(--i, 0) * 70ms);
+}
+@keyframes marquee-icon-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .marquee__icon :is(path, circle, rect) {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .marquee__icon svg { transition: none; }
 }
 .marquee__copy {
   min-width: 0;

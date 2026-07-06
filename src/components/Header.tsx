@@ -7,6 +7,8 @@ import LanguageSwitcher from './LanguageSwitcher';
 import SearchBar from './SearchBar';
 import { ChevronDownIcon } from './icons';
 import { useTheme } from '../hooks/useTheme';
+import { FEATURED_HOME_PROJECTS, FEATURED_HOME_TITLES } from '../data/home';
+import { PROJECTS } from '../data/projects';
 
 type NavItem = { to: string; labelKey: string; activeOn?: string[] };
 
@@ -30,6 +32,12 @@ const TRAILING_NAV: NavItem[] = [
   { to: '/#ueber-uns', labelKey: 'nav.about' },
   { to: '/kontakt', labelKey: 'nav.contact' },
 ];
+
+// Project spotlighted at the bottom of the mobile menu (first home highlight).
+// Links to the project detail page when one exists.
+const MENU_PROJECT = FEATURED_HOME_PROJECTS[0];
+const MENU_PROJECT_ENTRY = PROJECTS.find((p) => p.src === MENU_PROJECT.src);
+const MENU_PROJECT_LINK = MENU_PROJECT_ENTRY?.detail ? `/projekte/${MENU_PROJECT_ENTRY.slug}` : '/projekte';
 
 function itemMatches(item: NavItem, pathname: string): boolean {
   if (item.to === '/') return pathname === '/';
@@ -198,6 +206,28 @@ export default function Header() {
         aria-label={t('nav.ariaPrimary')}
         hidden={!open}
       >
+        <Link to={MENU_PROJECT_LINK} className="pv-mobile-menu__featured" onClick={() => setOpen(false)}>
+          <img
+            src={MENU_PROJECT.src}
+            alt={t(`home:featured.projects.${MENU_PROJECT.gridClass}.alt`, { defaultValue: MENU_PROJECT.alt })}
+            width={MENU_PROJECT.width}
+            height={MENU_PROJECT.height}
+            loading="lazy"
+          />
+          <span className="pv-mobile-menu__featured-cap">
+            <span className="pv-mobile-menu__featured-eyebrow">{t('mobileMenu.focus')}</span>
+            <span className="pv-mobile-menu__featured-row">
+              <span className="pv-mobile-menu__featured-ttl">
+                {t(`home:featured.projects.${MENU_PROJECT.gridClass}.ttl`, { defaultValue: FEATURED_HOME_TITLES[MENU_PROJECT.gridClass] })}
+              </span>
+              <span className="pv-mobile-menu__featured-yr">{MENU_PROJECT.year}</span>
+            </span>
+            <span className="pv-mobile-menu__featured-more">
+              {t('cta.learnMore')} <span className="arrow">&gt;</span>
+            </span>
+          </span>
+        </Link>
+
         <nav className="pv-mobile-menu__nav" aria-label={t('nav.ariaMobile')}>
           <ul className="pv-mobile-menu__list">
             <li style={{ ['--i' as string]: 0 }}>
@@ -275,7 +305,7 @@ export default function Header() {
               </span>
             </button>
           </div>
-          <Link to="/blitz-angebot" className="pv-mobile-menu__cta" onClick={() => setOpen(false)}>
+          <Link to="/blitz-angebot" className="btn btn--appointment btn--shimmer pv-mobile-menu__cta" onClick={() => setOpen(false)}>
             {t('cta.expressQuote')} <span className="arrow">&gt;</span>
           </Link>
         </div>
