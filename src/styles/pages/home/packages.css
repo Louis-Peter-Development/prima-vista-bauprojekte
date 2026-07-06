@@ -283,6 +283,11 @@
 .packages-showcase__head-cta {
   color: var(--showcase-title);
   border-color: color-mix(in srgb, var(--showcase-title) 42%, transparent);
+  /* Long labels (FR/IT) must wrap instead of widening the aside column
+     past the viewport on narrow desktop widths. */
+  white-space: normal;
+  text-align: left;
+  line-height: 1.4;
 }
 
 .packages-showcase__grid {
