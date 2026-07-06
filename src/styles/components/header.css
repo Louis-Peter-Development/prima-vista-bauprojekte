@@ -716,6 +716,33 @@
   }
 }
 
+/* Crowded desktop widths: the inline field collides with the nav links, so
+   collapse the search to its icon here too. The open field expands in place
+   and the links step aside while it's open. */
+@media (min-width: 1081px) and (max-width: 1440px) and (hover: hover) {
+  .pv-search--header .pv-search__trigger {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+  }
+  .pv-search--header:not(.is-compact-open) .pv-search__field {
+    display: none;
+  }
+  .pv-search--header.is-compact-open .pv-search__trigger {
+    display: none;
+  }
+  .pv-search--header.is-compact-open {
+    flex: 1 1 auto;
+    max-width: 420px;
+  }
+  .pv-search--header.is-compact-open .pv-search__field {
+    width: 100%;
+  }
+  .pv-header__inner:has(.pv-search--header.is-compact-open) .pv-nav__list {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .pv-mobile-menu__featured {
     margin: 12px 20px 0;
