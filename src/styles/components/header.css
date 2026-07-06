@@ -738,6 +738,9 @@
   .pv-search--header.is-compact-open .pv-search__field {
     width: 100%;
   }
+  .pv-search--header.is-compact-open .pv-search__input {
+    width: 100%;
+  }
   .pv-header__inner:has(.pv-search--header.is-compact-open) .pv-nav__list {
     display: none;
   }
