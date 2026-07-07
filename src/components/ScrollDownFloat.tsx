@@ -20,13 +20,14 @@ export default function ScrollDownFloat() {
       const viewportHeight = window.innerHeight;
       const scrollHeight = document.documentElement.scrollHeight;
       const footer = document.querySelector('.pv-footer');
+      const cookieBannerOpen = Boolean(document.querySelector('.pv-cookie'));
       const footerTop = footer instanceof HTMLElement
         ? footer.getBoundingClientRect().top
         : Number.POSITIVE_INFINITY;
       const canScrollMore = scrollY + viewportHeight < scrollHeight - BOTTOM_EPSILON;
       const footerReached = footerTop <= viewportHeight + FOOTER_HIDE_MARGIN;
 
-      setVisible(canScrollMore && !footerReached);
+      setVisible(canScrollMore && !footerReached && !cookieBannerOpen);
     };
 
     const requestUpdate = () => {
