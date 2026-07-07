@@ -293,6 +293,15 @@
   .hero__cta { align-items: stretch; }
   .hero__cta small { font-size: 10px; letter-spacing: 0.18em; }
   .hero__cta .btn { justify-content: center; width: 100%; }
+  .hero__scroll-cue {
+    bottom: 12px;
+    width: 40px;
+    height: 40px;
+  }
+  .hero__scroll-cue svg {
+    width: 19px;
+    height: 19px;
+  }
   .hero__proof-cards {
     width: 100%;
     grid-template-columns: 1fr;
@@ -608,6 +617,11 @@
   .hero__cta {
     gap: 0;
   }
+  .hero__scroll-cue {
+    bottom: 8px;
+    width: 36px;
+    height: 36px;
+  }
   .hero__cta small,
   .hero__proof-cards {
     display: none;
@@ -621,7 +635,8 @@
   .hero__topline,
   .hero__meta > div:first-child,
   .hero__cta small,
-  .hero__proof-cards {
+  .hero__proof-cards,
+  .hero__scroll-cue {
     display: none;
   }
   .hero__inner {

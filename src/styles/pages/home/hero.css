@@ -233,6 +233,43 @@
 .hero__proof-card--dark small {
   color: var(--pv-text-on-dark-muted);
 }
+.hero__scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(14px, 2.4svh, 28px);
+  z-index: 2;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pv-bone);
+  background: rgba(20, 19, 18, .58);
+  border: 1px solid rgba(241, 233, 226, .28);
+  border-radius: 50%;
+  box-shadow: 0 18px 36px rgba(18, 15, 13, .24);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transform: translateX(-50%);
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  animation: pvHeroScrollCue 1800ms ease-in-out 1600ms infinite;
+}
+.hero__scroll-cue:hover,
+.hero__scroll-cue:focus-visible {
+  color: var(--pv-copper-bright);
+  background: rgba(20, 19, 18, .76);
+  border-color: rgba(200, 154, 106, .62);
+  transform: translateX(-50%) translateY(2px);
+}
+.hero__scroll-cue:focus-visible {
+  outline: 2px solid var(--pv-copper-bright);
+  outline-offset: 4px;
+}
+.hero__scroll-cue svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
+}
 @keyframes pvHeroImageIn {
   from {
     opacity: 0;
@@ -285,6 +322,14 @@
     transform: translateY(0);
   }
 }
+@keyframes pvHeroScrollCue {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hero__bg-slideshow,
@@ -292,7 +337,8 @@
   .hero__headline-line,
   .hero__meta-num,
   .hero__lede,
-  .hero__cta {
+  .hero__cta,
+  .hero__scroll-cue {
     animation: none;
   }
 }
