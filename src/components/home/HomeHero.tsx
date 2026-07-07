@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
 import { HERO_SLIDES } from '../../data/home';
-import { ChevronDownIcon } from '../icons';
 
 const PARALLAX_RANGE = 600;
 /** Stay on slide 1 long enough that LCP measurement settles before the
@@ -19,15 +18,6 @@ export default function HomeHero() {
   const [mountedSlides, setMountedSlides] = useState<Set<number>>(() => new Set([0]));
   const heroRef = useRef<HTMLElement | null>(null);
   const { t } = useTranslation('home');
-
-  const scrollToNextSection = () => {
-    const current = heroRef.current;
-    const next = current?.nextElementSibling;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (next instanceof HTMLElement) {
-      next.scrollIntoView({ block: 'start', behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-    }
-  };
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | undefined;
@@ -149,9 +139,6 @@ export default function HomeHero() {
           </div>
         </div>
       </div>
-      <button className="hero__scroll-cue" type="button" onClick={scrollToNextSection} aria-label={t('hero.scrollDown')}>
-        <ChevronDownIcon aria-hidden="true" />
-      </button>
     </section>
   );
 }
