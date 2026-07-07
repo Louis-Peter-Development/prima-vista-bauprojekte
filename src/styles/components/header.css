@@ -793,3 +793,136 @@
     padding: 12px 16px;
   }
 }
+
+@media (max-width: 360px) {
+  .pv-mobile-menu__featured,
+  .pv-mobile-menu__list li[data-mobile-nav="projekte"] {
+    display: none;
+  }
+  .pv-mobile-menu__nav {
+    padding: 8px 16px 0;
+  }
+  .pv-mobile-menu__link,
+  .pv-mobile-menu__group-head {
+    min-height: 34px;
+    padding: 5px 0;
+  }
+  .pv-mobile-menu__subgrid {
+    gap: 3px;
+    padding-bottom: 6px;
+  }
+  .pv-mobile-menu__sublink {
+    min-height: 26px;
+    padding: 0 9px;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+  .pv-mobile-menu__label {
+    font-size: 12px;
+    letter-spacing: 0.07em;
+  }
+  .pv-mobile-menu__foot {
+    padding: 10px 16px max(12px, env(safe-area-inset-bottom));
+  }
+  .pv-mobile-menu__controls {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .pv-mobile-menu__controls .pv-lang,
+  .pv-theme-toggle--mobile {
+    min-height: 36px;
+    padding: 0 8px;
+  }
+  .pv-mobile-menu__control-label {
+    display: none;
+  }
+  .pv-mobile-menu__cta {
+    min-height: 40px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 1080px) and (orientation: landscape) {
+  .pv-mobile-menu__featured,
+  .pv-mobile-menu__list li[data-mobile-nav="projekte"] {
+    display: none;
+  }
+}
+
+@media (max-width: 1080px) and (max-height: 480px) and (orientation: landscape) {
+  .pv-mobile-menu {
+    justify-content: flex-start;
+  }
+  .pv-mobile-menu__nav {
+    align-items: flex-start;
+    padding: 8px 16px 0;
+  }
+  .pv-mobile-menu__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    column-gap: 18px;
+    align-items: start;
+  }
+  .pv-mobile-menu__link,
+  .pv-mobile-menu__group-head {
+    min-height: 28px;
+    padding: 3px 0;
+  }
+  .pv-mobile-menu__subgrid {
+    gap: 2px;
+    padding-bottom: 4px;
+  }
+  .pv-mobile-menu__sublink {
+    min-height: 22px;
+    padding: 0 8px;
+    font-size: 8.5px;
+    letter-spacing: 0.07em;
+  }
+  .pv-mobile-menu__label {
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+  }
+  .pv-mobile-menu__num {
+    display: none;
+  }
+  .pv-mobile-menu__foot {
+    padding: 6px 16px max(8px, env(safe-area-inset-bottom));
+  }
+  .pv-mobile-menu__controls {
+    display: none;
+  }
+  .pv-mobile-menu__cta {
+    min-height: 36px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 1080px) and (max-height: 320px) and (orientation: landscape) {
+  .pv-mobile-menu__nav {
+    padding-top: 4px;
+  }
+  .pv-mobile-menu__link,
+  .pv-mobile-menu__group-head {
+    min-height: 23px;
+    padding: 2px 0;
+  }
+  .pv-mobile-menu__subgrid {
+    gap: 1px;
+    padding-bottom: 2px;
+  }
+  .pv-mobile-menu__sublink {
+    min-height: 19px;
+    font-size: 8px;
+  }
+  .pv-mobile-menu__label {
+    font-size: 9.5px;
+  }
+  .pv-mobile-menu__foot {
+    padding-top: 4px;
+    padding-bottom: max(4px, env(safe-area-inset-bottom));
+  }
+  .pv-mobile-menu__cta {
+    min-height: 32px;
+    padding: 6px 12px;
+  }
+}
