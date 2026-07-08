@@ -1,0 +1,78 @@
+/* ----- Global scroll-down cue ----- */
+.pv-scroll-down {
+  position: fixed;
+  left: 50%;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 38;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pv-bone);
+  background: rgba(20, 19, 18, .58);
+  border: 1px solid rgba(241, 233, 226, .28);
+  border-radius: 50%;
+  box-shadow: 0 18px 36px rgba(18, 15, 13, .24);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(-50%, 8px, 0);
+  transition:
+    opacity 220ms var(--pv-ease-out),
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 220ms var(--pv-ease-out);
+}
+.pv-scroll-down.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(-50%, 0, 0);
+  animation: pvGlobalScrollCue 1800ms ease-in-out 700ms infinite;
+}
+.pv-scroll-down:hover,
+.pv-scroll-down:focus-visible {
+  color: var(--pv-copper-bright);
+  background: rgba(20, 19, 18, .76);
+  border-color: rgba(200, 154, 106, .62);
+  transform: translate3d(-50%, 2px, 0);
+}
+.pv-scroll-down:focus-visible {
+  outline: 2px solid var(--pv-copper-bright);
+  outline-offset: 4px;
+}
+.pv-scroll-down svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.8;
+}
+@keyframes pvGlobalScrollCue {
+  0%, 100% { transform: translate3d(-50%, 0, 0); }
+  50% { transform: translate3d(-50%, 5px, 0); }
+}
+@media (max-width: 640px) {
+  .pv-scroll-down {
+    width: 40px;
+    height: 40px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+  .pv-scroll-down svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+@media (max-width: 1080px) and (max-height: 480px) and (orientation: landscape) {
+  .pv-scroll-down {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pv-scroll-down,
+  .pv-scroll-down.is-visible {
+    animation: none;
+    transition: opacity 160ms linear, color 160ms linear, background 160ms linear, border-color 160ms linear;
+    transform: translate3d(-50%, 0, 0);
+  }
+}

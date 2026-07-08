@@ -266,7 +266,11 @@ export default function Header() {
               const active = itemMatches(item, pathname);
               const number = String(i + 3).padStart(2, '0');
               return (
-              <li key={item.to} style={{ ['--i' as string]: i + 2 }}>
+              <li
+                key={item.to}
+                data-mobile-nav={item.to.replace(/^\/#?/, '') || 'home'}
+                style={{ ['--i' as string]: i + 2 }}
+              >
                 <NavLink
                   to={item.to}
                   className={`pv-mobile-menu__link${active ? ' is-active' : ''}`}

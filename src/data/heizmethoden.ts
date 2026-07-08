@@ -48,7 +48,7 @@ export const HEIZMETHODEN: Heizmethode[] = [
   {
     key: 'pellet',
     title: 'Pelletofen',
-    photo: '/assets/img/leistungen/gas-heizung-01.webp',
+    photo: '/assets/img/products/743-1204.jpg',
     detailTo: '/pelletofen',
     desc: 'Holzpellets als CO₂-neutrale Alternative — als Zentralheizung mit Pufferspeicher oder als Einzelraum-Heizgerät im Wohnbereich.',
   },

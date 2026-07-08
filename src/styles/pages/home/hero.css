@@ -285,7 +285,6 @@
     transform: translateY(0);
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .hero__bg-slideshow,
   .hero__topline,
