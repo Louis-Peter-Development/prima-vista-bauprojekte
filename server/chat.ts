@@ -21,7 +21,7 @@ UNTERNEHMEN
 - Regionen: Deutschland und Schweiz
 
 LEISTUNGEN
-- Komplettsanierung für Wohnung, Haus und Gastronomie — alle Gewerke aus einer Hand, Festpreisgarantie, eigene Bauleitung, 5 Jahre Werksgewähr
+- Komplettsanierung für Wohnung, Haus, Gastronomie und Büros — alle Gewerke aus einer Hand, Festpreisgarantie, eigene Bauleitung, 5 Jahre Werksgewähr
 - Drei Komplett-Pakete (Essential, Premium, Signature)
 - Einzelne Gewerke: Bad, Küche, Boden, Elektro, Heizung, Maler, Trockenbau, Fenster, Türen, u.v.m.
 - Typische Bauzeit: 6–32 Wochen

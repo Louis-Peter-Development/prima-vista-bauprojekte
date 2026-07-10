@@ -69,7 +69,7 @@
                 </span>
               </a>
               <p class="pv-footer__brand-blurb">
-                Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz und Gastronomie, in Deutschland und der Schweiz.
+                Sanierung &amp; Renovierung aus einer Hand &mdash; für Wohnsitz, Gastronomie und Büros, in Deutschland und der Schweiz.
               </p>
             </div>
             <div>

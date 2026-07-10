@@ -196,7 +196,7 @@ export default defineConfig(({ mode }) => {
           name: 'Prima Vista Bauprojekte',
           short_name: 'Prima Vista',
           description:
-            'Sanierung & Renovierung aus einer Hand — für Wohnsitz und Gastronomie, in Deutschland und der Schweiz.',
+            'Sanierung & Renovierung aus einer Hand — für Wohnsitz, Gastronomie und Büros, in Deutschland und der Schweiz.',
           theme_color: '#1a1a1a',
           background_color: '#e8dfdf',
           display: 'standalone',
