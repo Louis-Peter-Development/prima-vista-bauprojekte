@@ -272,6 +272,33 @@
   overflow: hidden;
   align-self: start;
 }
+.kontakt__form-wrap--contact {
+  top: calc(var(--pv-header-height) + 24px);
+  max-height: calc(100svh - var(--pv-header-height) - 48px);
+  display: flex;
+  flex-direction: column;
+}
+.kontakt__form-wrap--contact > form {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 12px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--pv-copper) transparent;
+}
+.kontakt__form-wrap--contact > form::-webkit-scrollbar {
+  width: 8px;
+}
+.kontakt__form-wrap--contact > form::-webkit-scrollbar-track {
+  background: transparent;
+}
+.kontakt__form-wrap--contact > form::-webkit-scrollbar-thumb {
+  background: var(--pv-copper);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
 .kontakt__form-num {
   position: absolute;
   top: -18px;
@@ -645,7 +672,8 @@
   margin-bottom: 4px;
 }
 .form-field { margin-bottom: 20px; }
-.form-field label {
+.form-field label,
+.form-field__legend {
   display: block;
   font-family: var(--pv-font-display);
   font-weight: 600;
@@ -654,6 +682,16 @@
   text-transform: uppercase;
   color: var(--kontakt-form-muted);
   margin-bottom: 8px;
+}
+.form-field--options {
+  min-width: 0;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+}
+.form-field__legend {
+  width: 100%;
+  padding: 0;
 }
 .form-field input,
 .form-field select,
@@ -739,8 +777,24 @@
   margin-bottom: 8px;
 }
 .form-chips input { display: none; }
+.form-chips--project-type > span { position: relative; }
+.form-chips--project-type input {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  opacity: 0;
+}
 .form-chips label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
   padding: 10px 16px;
   font-family: var(--pv-font-display);
   font-weight: 600;
@@ -755,6 +809,40 @@
   transition: all 200ms var(--pv-ease-out);
   margin-bottom: 0;
 }
+.form-chips--project-type input:focus-visible + label {
+  outline: 2px solid var(--pv-copper-bright);
+  outline-offset: 3px;
+}
+.form-chip__check {
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--pv-copper-bright);
+  border-radius: 50%;
+  background: var(--kontakt-form-bg);
+  color: var(--pv-copper-bright);
+  box-shadow: 0 0 0 2px var(--kontakt-form-bg);
+  place-items: center;
+  font-family: var(--pv-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  opacity: 0;
+  transform: scale(.7);
+  transition:
+    opacity 140ms var(--pv-ease-out),
+    transform 200ms var(--pv-ease-out);
+}
+.form-chips--project-type input:checked + label .form-chip__check {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .form-chip__check { transition: none; }
+}
 .form-chips label:hover {
   border-color: var(--pv-copper);
   color: var(--pv-copper);
@@ -763,6 +851,13 @@
   background: var(--kontakt-chip-active-bg);
   color: var(--kontakt-chip-active-text);
   border-color: var(--kontakt-chip-active-bg);
+  font-weight: 700;
+}
+:root[data-theme='dark'] .kontakt .form-chips--project-type input:checked + label {
+  background: var(--pv-copper-bright);
+  color: var(--pv-ink-1);
+  border-color: var(--pv-copper-bright);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--pv-copper-bright) 24%, transparent);
 }
 
 .form-choice-groups {
@@ -966,6 +1061,13 @@
   .kontakt__inner, .kontakt__offices, .faq__inner { grid-template-columns: 1fr; gap: 32px; }
   .form-row { grid-template-columns: 1fr; }
   .kontakt__form-wrap { position: relative; top: auto; padding: 40px 32px; }
+  .kontakt__form-wrap--contact { max-height: none; display: block; }
+  .kontakt__form-wrap--contact > form {
+    min-height: auto;
+    overflow-y: visible;
+    padding-right: 0;
+    scrollbar-gutter: auto;
+  }
   .kontakt__form-num { font-size: 100px; }
 }
 
