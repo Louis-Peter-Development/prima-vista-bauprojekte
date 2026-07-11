@@ -109,7 +109,7 @@ export default function KontaktForm() {
     const firstName = form.vorname.trim();
     const email = form.email.trim();
     return (
-      <div className="kontakt__form-wrap kontakt__form-wrap--success reveal reveal--right" data-delay="1">
+      <div className="kontakt__form-wrap kontakt__form-wrap--contact kontakt__form-wrap--success reveal reveal--right" data-delay="1">
         <div className="kontakt__form-success">
           <div className="kontakt__form-eyebrow"><span className="rule-red"></span> {t('form.success.eyebrow')}</div>
           <h3 className="kontakt__form-title">
@@ -137,13 +137,13 @@ export default function KontaktForm() {
   }
 
   return (
-    <div className="kontakt__form-wrap reveal reveal--right" data-delay="1">
+    <div className="kontakt__form-wrap kontakt__form-wrap--contact reveal reveal--right" data-delay="1">
       <div className="kontakt__form-eyebrow"><span className="rule-red"></span> {t('form.eyebrow')}</div>
-      <h3 className="kontakt__form-title">
+      <h3 className="kontakt__form-title" id="kontakt-form-title">
         <Trans i18nKey="kontakt:form.title" components={{ em: <em />, br: <br /> }} />
       </h3>
 
-      <form onSubmit={onSubmit} noValidate>
+      <form onSubmit={onSubmit} noValidate aria-labelledby="kontakt-form-title">
         {submitError && (
           <div className="form-submit-error" role="alert">{submitError}</div>
         )}
@@ -207,9 +207,9 @@ export default function KontaktForm() {
           </div>
         </div>
 
-        <div className="form-field">
-          <label>{t('form.artLabel')}</label>
-          <div className="form-chips">
+        <fieldset className="form-field form-field--options">
+          <legend className="form-field__legend">{t('form.artLabel')}</legend>
+          <div className="form-chips form-chips--project-type">
             {CONTACT_ART_OPTIONS.map(({ value }) => (
               <span key={value}>
                 <input
@@ -219,11 +219,14 @@ export default function KontaktForm() {
                   checked={form.art === value}
                   onChange={() => update('art', value)}
                 />
-                <label htmlFor={`art-${value}`}>{t(`form.art.${value}`)}</label>
+                <label htmlFor={`art-${value}`}>
+                  <span className="form-chip__check" aria-hidden="true">✓</span>
+                  {t(`form.art.${value}`)}
+                </label>
               </span>
             ))}
           </div>
-        </div>
+        </fieldset>
 
         <div className="form-row">
           <div className="form-field form-field--select">

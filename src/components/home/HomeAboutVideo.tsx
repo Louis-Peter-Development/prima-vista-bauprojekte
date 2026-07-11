@@ -4,8 +4,8 @@ import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/us
 import { useVideoActive } from '../../hooks/useVideoPlayback';
 
 const ABOUT_VIDEO_ID = 'pm5HSjADlOs';
-// Self-hosted poster shown before consent so no request reaches Google/YouTube.
-const LOCAL_POSTER = '/assets/img/proj-team-jacket.webp';
+// Self-hosted video frame shown before play so no thumbnail request depends on YouTube.
+const LOCAL_POSTER = '/assets/img/founders-video-poster.webp';
 
 export default function HomeAboutVideo() {
   const { t } = useTranslation('home');
@@ -51,18 +51,7 @@ export default function HomeAboutVideo() {
           aria-label={consented ? t('aboutVideo.playAria', { title: videoTitle }) : t('aboutVideo.consentAria', { title: videoTitle })}
         >
           <img
-            src={consented ? `https://i.ytimg.com/vi/${ABOUT_VIDEO_ID}/maxresdefault.jpg` : LOCAL_POSTER}
-            onError={
-              consented
-                ? (event) => {
-                    const img = event.currentTarget;
-                    if (!img.dataset.fallback) {
-                      img.dataset.fallback = '1';
-                      img.src = `https://i.ytimg.com/vi/${ABOUT_VIDEO_ID}/hqdefault.jpg`;
-                    }
-                  }
-                : undefined
-            }
+            src={LOCAL_POSTER}
             alt=""
             width={1280}
             height={720}

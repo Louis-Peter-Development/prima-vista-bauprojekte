@@ -7,7 +7,7 @@ import type { ProjectVideo } from './ProjectVideos';
 type ProjectFeatureVideoProps = {
   video: ProjectVideo;
   headline: string;
-  /** Self-hosted poster shown before consent so no request reaches Google/YouTube. */
+  /** Self-hosted poster shown before play so no thumbnail request depends on YouTube. */
   poster: string;
 };
 
@@ -58,18 +58,7 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
           >
             <img
               className="pd-video__poster"
-              src={consented ? `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg` : poster}
-              onError={
-                consented
-                  ? (e) => {
-                      const img = e.currentTarget;
-                      if (!img.dataset.fallback) {
-                        img.dataset.fallback = '1';
-                        img.src = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
-                      }
-                    }
-                  : undefined
-              }
+              src={poster}
               alt=""
               width={1280}
               height={720}
