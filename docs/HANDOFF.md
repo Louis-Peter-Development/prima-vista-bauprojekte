@@ -78,7 +78,12 @@ Each re-confirmed zero-importer before deletion; build proves nothing referenced
 - Send the client a branded email with a PDF or web summary and send the same lead details to the Prima Vista office/admin workflow.
 - Add a manual-review fallback for unusual, incomplete, high-value, or out-of-range projects; prevent duplicate sends and keep an audit record of the submitted answers and calculation version.
 - Reconcile the automation with the current homepage promise that the **Bauleitung prüft** the request and sends the written estimate within 24 hours; decide whether standard requests are fully automatic or require approval before sending.
-- Status: **idea only / not implemented**; captured during the live client website walkthrough for later scoping.
+- Status: **implemented 2026-07-18** (fully automatic, per Louis' decision). How it works:
+  - `netlify/functions/blitz.ts` → `server/blitzFlow.ts`: consent-gated decision → dedup check → emails → Mongo audit record (`BlitzRequest` in `_shared/db.ts`, includes inputs, estimate, calc version, dedup key). DB unreachable ⇒ graceful fallback to the manual 24-h flow.
+  - Pricing (`server/blitzEstimate.ts`): (a) calculator handoffs — grand total re-derived server-side from sanitized line items (client totals ignored), ±0.9/1.15 band, detailed PDF attached; (b) Haus-/Wohnung-Sanierung package requests with plausible m² — priced from `server/blitzRates.generated.ts`, engine-exact net tables sampled from the live calculator packages (regenerate: `node scripts/generate-blitz-rates.mjs`), band widened by subtype spread. Corridor €3k–900k; Gastronomie/Büro, single trades, heating, odd areas ⇒ manual review.
+  - Emails: localized customer estimate (range, assumptions, "verbindlich nach Aufmaß" disclaimer) + German office notification marked "automatisch beantwortet" with the sent figures. `MAIL_DRY_RUN=1` logs instead of sending (dev).
+  - Frontend: Blitz form step 5 gained a required GDPR/email-consent checkbox; success panel is mode-aware (instant vs. 24 h). Promise copy (home + blitz page, all 4 locales) now says instant for standard requests, 24 h for special cases.
+  - Duplicate sends suppressed for 24 h per (email + answers + estimate) hash. Verified end-to-end via dev middleware (auto pakete / auto kalkulator incl. PDF / manual) and the full form wizard; all gates green.
 
 ### Calendar date picker for the contact form
 

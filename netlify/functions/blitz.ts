@@ -1,12 +1,14 @@
-import { sendBlitzEmails, type BlitzPayload } from '../../server/mail.js';
+import { processBlitzSubmission, type BlitzStore } from '../../server/blitzFlow.js';
+import type { BlitzPayload } from '../../server/mail.js';
 import { normalizeLocale } from '../../server/i18n.js';
+import { connectDb } from './_shared/db';
 import { json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Bound how many calculator rows an untrusted payload can expand into the
-// rendered email, mirroring the calculator-pdf endpoint.
+// rendered email/PDF, mirroring the calculator-pdf endpoint.
 const MAX_PICKS = 80;
 const MAX_ROWS_PER_PICK = 250;
 const MAX_TOTAL_ROWS = 1200;
@@ -54,6 +56,12 @@ function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
             unit: asString(item.unit),
             unitPrice: asNumber(item.unitPrice),
             subtotal: asNumber(item.subtotal),
+            sku: asString(item.sku) || undefined,
+            description: asString(item.description) || undefined,
+            image: asString(item.image) || undefined,
+            category: asString(item.category) || undefined,
+            subcategory: asString(item.subcategory) || undefined,
+            type: asString(item.type) || undefined,
           };
         }).filter((row): row is NonNullable<typeof row> => Boolean(row && row.label))
         : undefined;
@@ -63,6 +71,12 @@ function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
         key: asString(pick.key),
         label: asString(pick.label),
         subtotal: asNumber(pick.subtotal),
+        sku: asString(pick.sku) || undefined,
+        description: asString(pick.description) || undefined,
+        image: asString(pick.image) || undefined,
+        category: asString(pick.category) || undefined,
+        subcategory: asString(pick.subcategory) || undefined,
+        type: asString(pick.type) || undefined,
         tradeKey: asString(pick.tradeKey) || undefined,
         tradeLabel: asString(pick.tradeLabel) || undefined,
         rows,
@@ -79,6 +93,8 @@ function sanitizeKalkulator(v: unknown): BlitzPayload['kalkulator'] {
     scopeLabel: asString(source.scopeLabel) || undefined,
     area: asNumber(source.area),
     picks,
+    // The client's totals are display hints only — the automatic estimate
+    // re-derives the grand total from the sanitized picks (server/blitzEstimate).
     totalMin: asNumber(source.totalMin),
     totalMax: asNumber(source.totalMax),
     totalMid: asNumber(source.totalMid),
@@ -102,6 +118,7 @@ export function validateBlitzPayload(body: unknown): BlitzPayload | { error: str
     name: asString(b.name),
     email: asString(b.email),
     tel: asString(b.tel),
+    dsgvo: b.dsgvo === true,
     locale: normalizeLocale(b.locale),
   };
   if (!payload.name) return { error: 'name is required' };
@@ -112,6 +129,24 @@ export function validateBlitzPayload(body: unknown): BlitzPayload | { error: str
   if (!payload.groesse) payload.groesse = 'Noch offen';
   if (!payload.starttermin) return { error: 'starttermin is required' };
   return payload;
+}
+
+async function mongoStore(): Promise<BlitzStore> {
+  const { BlitzRequest } = await connectDb();
+  return {
+    async wasRecentlySent(dedupKey, windowMs) {
+      const existing = await BlitzRequest.findOne({
+        dedupKey,
+        mode: 'auto',
+        emailStatus: 'sent',
+        createdAt: { $gte: new Date(Date.now() - windowMs) },
+      }).lean();
+      return Boolean(existing);
+    },
+    async save(record) {
+      await BlitzRequest.create(record);
+    },
+  };
 }
 
 export default async (req: Request) => {
@@ -136,9 +171,20 @@ export default async (req: Request) => {
     return json(result, { status: 400 });
   }
 
+  // Without the audit/dedup store there is no safe automatic sending — an
+  // unreachable DB degrades to the classic manual 24-hour flow.
+  let store: BlitzStore | undefined;
+  let forceManualReason: string | undefined;
   try {
-    await sendBlitzEmails(result);
-    return json({ ok: true });
+    store = await mongoStore();
+  } catch (err) {
+    console.error('[blitz] store unavailable, falling back to manual flow', err);
+    forceManualReason = 'store-unavailable';
+  }
+
+  try {
+    const outcome = await processBlitzSubmission(result, store, { forceManualReason });
+    return json({ ok: true, mode: outcome.mode });
   } catch (err) {
     console.error('[blitz] send failed', err);
     return json({ error: 'Send failed' }, { status: 502 });

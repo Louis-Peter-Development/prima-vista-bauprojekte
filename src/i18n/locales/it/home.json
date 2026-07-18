@@ -73,7 +73,7 @@
   },
   "blitzLive": {
     "label": "Stima preliminare dei costi",
-    "stamp": "In 24 h",
+    "stamp": "In pochi minuti",
     "rowProjekt": "Progetto",
     "rowStandort": "Località",
     "rowGewerke": "Lavorazioni",
@@ -167,12 +167,12 @@
   },
   "blitz": {
     "eyebrow": "№ 06 · Preventivo express",
-    "title": "Prezzo fisso, nero su bianco.<br/>In <em>24 ore.</em>",
-    "p": "Qualcosa di più concreto? Compili un breve modulo — verifichiamo, calcoliamo e inviamo una stima scritta preliminare via e-mail, controfirmata dalla nostra direzione lavori.",
+    "title": "La Sua stima, nero su bianco.<br/>In <em>pochi minuti.</em>",
+    "p": "Qualcosa di più concreto? Compili un breve modulo — le richieste standard vengono calcolate subito sulla nostra base prezzi verificata; i casi particolari vengono esaminati personalmente dalla direzione lavori entro 24 ore.",
     "steps": {
       "1": "Compila il breve modulo (3 minuti)",
-      "2": "La direzione lavori valuta struttura e lavorazioni",
-      "3": "Preventivo scritto entro 24 ore"
+      "2": "Calcolo automatico su base prezzi verificata",
+      "3": "Stima subito via e-mail — casi particolari entro 24 h"
     },
     "request": "Richiedi un preventivo express",
     "appointment": "Fissa un appuntamento"

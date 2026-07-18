@@ -108,6 +108,8 @@ export default function BlitzForm() {
   }
   const [errors, setErrors] = useState<BlitzErrors>({});
   const [sent, setSent] = useState(false);
+  // 'auto': the estimate was emailed immediately; 'manual': classic 24h review.
+  const [sentMode, setSentMode] = useState<'auto' | 'manual'>('manual');
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   // If we came in from the kalkulator, skip category and service selection.
@@ -211,6 +213,11 @@ export default function BlitzForm() {
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (step !== finalStep || submitting) return;
+    if (!form.dsgvo) {
+      setErrors({ dsgvo: t('form.consentError') });
+      requestAnimationFrame(() => document.getElementById('blitz-dsgvo')?.focus());
+      return;
+    }
     setSubmitError(null);
     setSubmitting(true);
     try {
@@ -236,6 +243,7 @@ export default function BlitzForm() {
           name: form.name.trim(),
           email: form.email.trim(),
           tel: form.tel.trim(),
+          dsgvo: form.dsgvo,
           locale,
         }),
       });
@@ -243,6 +251,8 @@ export default function BlitzForm() {
         const err = await res.json().catch(() => ({}));
         throw new Error(err.error || `HTTP ${res.status}`);
       }
+      const data = await res.json().catch(() => ({}));
+      setSentMode(data.mode === 'auto' ? 'auto' : 'manual');
       setSent(true);
     } catch (err) {
       const msg = err instanceof Error ? err.message : t('form.errorUnknown');
@@ -264,19 +274,19 @@ export default function BlitzForm() {
         tabIndex={-1}
       >
         <div className="kontakt__form-success">
-          <div className="kontakt__form-eyebrow"><span className="rule-red"></span> {t('form.successEyebrow')}</div>
+          <div className="kontakt__form-eyebrow"><span className="rule-red"></span> {sentMode === 'auto' ? t('form.successAutoEyebrow') : t('form.successEyebrow')}</div>
           <h3 className="kontakt__form-title">
             {t('form.successTitle')}{firstName && <>, <em>{firstName}</em></>}.
           </h3>
           <p className="kontakt__form-success-body">
-            <Trans i18nKey="blitz:form.successBody" values={{ email }} components={{ s: <strong /> }} />
+            <Trans i18nKey={sentMode === 'auto' ? 'blitz:form.successAutoBody' : 'blitz:form.successBody'} values={{ email }} components={{ s: <strong /> }} />
             {tel && <Trans i18nKey="blitz:form.successBodyPhone" values={{ tel }} components={{ s: <strong /> }} />}
             .
           </p>
           <ol className="kontakt__form-success-steps">
-            <li><span className="num">01</span>{t('form.successStep1')}</li>
-            <li><span className="num">02</span>{t('form.successStep2')}</li>
-            <li><span className="num">03</span>{t('form.successStep3')}</li>
+            <li><span className="num">01</span>{sentMode === 'auto' ? t('form.successAutoStep1') : t('form.successStep1')}</li>
+            <li><span className="num">02</span>{sentMode === 'auto' ? t('form.successAutoStep2') : t('form.successStep2')}</li>
+            <li><span className="num">03</span>{sentMode === 'auto' ? t('form.successAutoStep3') : t('form.successStep3')}</li>
           </ol>
           <div className="kontakt__form-success-actions">
             <Link className="btn btn--light" to="/">{t('form.successToHome')} <span className="arrow">&gt;</span></Link>
@@ -566,6 +576,25 @@ export default function BlitzForm() {
                   <label htmlFor="tel">{t('form.telLabel')}</label>
                   <input id="tel" type="tel" placeholder={t('form.telPlaceholder')} value={form.tel} onChange={(e) => update('tel', e.target.value)} required />
                 </div>
+              </div>
+
+              <div className={`form-check${errors.dsgvo ? ' is-invalid' : ''}`}>
+                <input
+                  type="checkbox"
+                  id="blitz-dsgvo"
+                  checked={form.dsgvo}
+                  onChange={(e) => update('dsgvo', e.target.checked)}
+                  aria-invalid={errors.dsgvo ? true : undefined}
+                  aria-describedby={errors.dsgvo ? 'blitz-dsgvo-error' : undefined}
+                />
+                <label htmlFor="blitz-dsgvo">
+                  {t('form.consent')} <Link to="/datenschutz">{t('form.consentLink')}</Link>.
+                  {errors.dsgvo && (
+                    <span id="blitz-dsgvo-error" className="form-field__error" role="alert">
+                      {errors.dsgvo}
+                    </span>
+                  )}
+                </label>
               </div>
             </div>
           )}

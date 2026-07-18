@@ -73,7 +73,7 @@
   },
   "blitzLive": {
     "label": "Estimation préalable des coûts",
-    "stamp": "Sous 24 h",
+    "stamp": "En minutes",
     "rowProjekt": "Projet",
     "rowStandort": "Emplacement",
     "rowGewerke": "Travaux",
@@ -167,12 +167,12 @@
   },
   "blitz": {
     "eyebrow": "№ 06 · Devis express",
-    "title": "Prix fixe, noir sur blanc.<br/>En <em>24 heures.</em>",
-    "p": "Quelque chose de plus concret ? Remplissez un court formulaire — nous vérifions, calculons et envoyons une estimation de coûts écrite et préalable, par e-mail, contresignée par notre direction de chantier.",
+    "title": "Votre estimation, noir sur blanc.<br/>En <em>quelques minutes.</em>",
+    "p": "Quelque chose de plus concret ? Remplissez un court formulaire — les demandes standard sont calculées immédiatement sur notre base de prix vérifiée ; les cas particuliers sont examinés personnellement par la direction de chantier sous 24 heures.",
     "steps": {
       "1": "Remplir le court formulaire (3 minutes)",
-      "2": "La direction de chantier vérifie l'existant et les corps de métier",
-      "3": "Devis écrit en 24 heures"
+      "2": "Calcul automatique sur base de prix vérifiée",
+      "3": "Estimation immédiate par e-mail — cas particuliers sous 24 h"
     },
     "request": "Demander un devis express",
     "appointment": "Prendre rendez-vous"

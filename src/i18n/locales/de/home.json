@@ -73,7 +73,7 @@
   },
   "blitzLive": {
     "label": "Vorab-Kostenschätzung",
-    "stamp": "In 24 Std.",
+    "stamp": "In Minuten",
     "rowProjekt": "Projekt",
     "rowStandort": "Standort",
     "rowGewerke": "Gewerke",
@@ -167,12 +167,12 @@
   },
   "blitz": {
     "eyebrow": "№ 06 · Blitz-Angebot",
-    "title": "Festpreis. Schwarz auf weiß.<br/>In <em>24 Stunden.</em>",
-    "p": "Etwas konkreter? Beantworten Sie ein Kurzformular — wir prüfen, kalkulieren und schicken eine schriftliche Vorab-Kostenschätzung, per Mail, von unserer Bauleitung gegengezeichnet.",
+    "title": "Ihre Schätzung. Schwarz auf weiß.<br/>In <em>Minuten.</em>",
+    "p": "Etwas konkreter? Beantworten Sie ein Kurzformular — Standardanfragen kalkuliert unser System sofort auf geprüfter Preisbasis; Sonderfälle prüft die Bauleitung persönlich innerhalb von 24 Stunden.",
     "steps": {
       "1": "Kurzformular ausfüllen (3 Minuten)",
-      "2": "Bauleitung prüft Substanz & Gewerke",
-      "3": "Schriftliches Angebot in 24 Stunden"
+      "2": "Automatische Kalkulation auf geprüfter Preisbasis",
+      "3": "Schätzung sofort per E-Mail — Sonderfälle in 24 Std."
     },
     "request": "Blitz-Angebot anfordern",
     "appointment": "Termin vereinbaren"

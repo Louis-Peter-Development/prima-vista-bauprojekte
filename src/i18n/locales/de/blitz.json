@@ -2,16 +2,21 @@
   "intro": {
     "crumb": "Blitz-Angebot · Vorab-Schätzung",
     "title": "Das Blitz<br/><em>Angebot.</em>",
-    "lede": "Sie wissen genau, was Sie wollen? Beantworten Sie ein paar konkrete Fragen zu Fläche und Gewerken. Wir analysieren und schicken Ihnen innerhalb von 24 Stunden eine erste, handfeste Kostenschätzung ohne langes Vorab-Telefonat.",
+    "lede": "Sie wissen genau, was Sie wollen? Beantworten Sie ein paar konkrete Fragen zu Fläche und Gewerken. Standardanfragen kalkulieren wir sofort — Ihre Vorab-Kostenschätzung ist in wenigen Minuten im Postfach; Sonderfälle prüft die Bauleitung innerhalb von 24 Stunden.",
     "list1": "Kostenlose Ersteinschätzung",
-    "list2": "Antwort garantiert in 24 Std.",
+    "list2": "Schätzung sofort — spätestens in 24 Std.",
     "list3": "Realistische Preisspanne",
     "mediaAlt": "Altbau vor der Sanierung als Grundlage für ein Blitz-Angebot",
     "mediaCaption": "Substanzaufnahme · Vorab-Schätzung"
   },
   "form": {
     "step": "Schritt {{current}} von {{total}}",
-    "art": { "pakete": "Komplett-Pakete", "gewerke": "Gewerke", "heizung": "Heizmethoden", "anderes": "Anderes" },
+    "art": {
+      "pakete": "Komplett-Pakete",
+      "gewerke": "Gewerke",
+      "heizung": "Heizmethoden",
+      "anderes": "Anderes"
+    },
     "artPrompt": "Welcher Bereich passt zu Ihrem Vorhaben?",
     "servicePromptGewerke": "Welche Gewerke passen zu Ihrem Vorhaben? (Mehrfachauswahl)",
     "servicePromptOther": "Welche Leistung oder welcher Detail-Rechner passt zu Ihrem Vorhaben?",
@@ -54,7 +59,7 @@
     "emailPlaceholder": "ihre@email.de",
     "telLabel": "Telefon",
     "telPlaceholder": "Für eventuelle Rückfragen",
-    "note": "Schätzung in 24 Std.",
+    "note": "Schätzung sofort — spätestens in 24 Std.",
     "back": "Zurück",
     "next": "Weiter",
     "submit": "Angebot anfordern",
@@ -69,6 +74,14 @@
     "successStep2": "Sie erhalten eine schriftliche Vorab-Kostenschätzung.",
     "successStep3": "Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.",
     "successToHome": "Zur Startseite",
-    "successToProjects": "Projekte ansehen"
+    "successToProjects": "Projekte ansehen",
+    "consent": "Ich bin damit einverstanden, dass meine Angaben zur Kalkulation verwendet werden und ich die Vorab-Kostenschätzung per E-Mail erhalte. Eine Weitergabe an Dritte erfolgt nicht.",
+    "consentLink": "Datenschutz",
+    "consentError": "Bitte bestätigen Sie die Datenschutzhinweise.",
+    "successAutoEyebrow": "Schätzung versendet",
+    "successAutoBody": "Ihre Vorab-Kostenschätzung wurde automatisch kalkuliert und ist bereits unterwegs — per E-Mail an <s>{{email}}</s>",
+    "successAutoStep1": "Prüfen Sie Ihr Postfach — die Schätzung mit Spanne und Annahmen liegt dort bereit.",
+    "successAutoStep2": "Antworten Sie direkt auf die E-Mail, wenn Sie Fragen haben — Sie schreiben mit der Bauleitung.",
+    "successAutoStep3": "Auf Wunsch vereinbaren wir eine Besichtigung — verbindlich wird der Preis nach Aufmaß."
   }
 }

@@ -73,7 +73,7 @@
   },
   "blitzLive": {
     "label": "Preliminary cost estimate",
-    "stamp": "In 24 h",
+    "stamp": "In minutes",
     "rowProjekt": "Project",
     "rowStandort": "Location",
     "rowGewerke": "Trades",
@@ -167,12 +167,12 @@
   },
   "blitz": {
     "eyebrow": "№ 06 · Express quote",
-    "title": "A fixed price, in writing.<br/>Within <em>24 hours.</em>",
-    "p": "Something more concrete? Fill in a short form — we review it, run the numbers and send a written preliminary estimate by email, countersigned by our site management.",
+    "title": "Your estimate, in writing.<br/>Within <em>minutes.</em>",
+    "p": "Something more concrete? Fill in a short form — standard requests are calculated instantly on our verified price basis; special cases are reviewed personally by our site management within 24 hours.",
     "steps": {
       "1": "Fill in the short form (3 minutes)",
-      "2": "Site management checks structure & trades",
-      "3": "Written quote within 24 hours"
+      "2": "Automatic calculation on a verified price basis",
+      "3": "Estimate by email instantly — special cases within 24 h"
     },
     "request": "Request an express quote",
     "appointment": "Book an appointment"

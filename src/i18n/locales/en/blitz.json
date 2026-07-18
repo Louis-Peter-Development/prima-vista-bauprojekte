@@ -2,16 +2,21 @@
   "intro": {
     "crumb": "Express quote · Preliminary estimate",
     "title": "The express<br/><em>quote.</em>",
-    "lede": "You know exactly what you want? Answer a few concrete questions about area and trades. We analyse them and send you an initial, solid cost estimate within 24 hours — without a long preliminary phone call.",
+    "lede": "You know exactly what you want? Answer a few concrete questions about area and trades. Standard requests are calculated immediately — your preliminary cost estimate reaches your inbox within minutes; special cases are reviewed by our site management within 24 hours.",
     "list1": "Free initial assessment",
-    "list2": "Reply guaranteed within 24 h",
+    "list2": "Instant estimate — 24 h at most",
     "list3": "A realistic price range",
     "mediaAlt": "A period building before renovation as the basis for an express quote",
     "mediaCaption": "Fabric survey · Preliminary estimate"
   },
   "form": {
     "step": "Step {{current}} of {{total}}",
-    "art": { "pakete": "Complete packages", "gewerke": "Trades", "heizung": "Heating methods", "anderes": "Other" },
+    "art": {
+      "pakete": "Complete packages",
+      "gewerke": "Trades",
+      "heizung": "Heating methods",
+      "anderes": "Other"
+    },
     "artPrompt": "Which area suits your project?",
     "servicePromptGewerke": "Which trades suit your project? (multiple choice)",
     "servicePromptOther": "Which service or detailed calculator suits your project?",
@@ -54,7 +59,7 @@
     "emailPlaceholder": "you@email.com",
     "telLabel": "Phone",
     "telPlaceholder": "For any follow-up questions",
-    "note": "Estimate within 24 h",
+    "note": "Estimate instantly — within 24 h at most",
     "back": "Back",
     "next": "Next",
     "submit": "Request a quote",
@@ -69,6 +74,14 @@
     "successStep2": "You receive a written preliminary cost estimate.",
     "successStep3": "If you wish, we refine the quote on site — binding after a measure-up.",
     "successToHome": "Go to home page",
-    "successToProjects": "View projects"
+    "successToProjects": "View projects",
+    "consent": "I agree that my details may be used for the calculation and that I will receive the preliminary cost estimate by email. They will not be passed on to third parties.",
+    "consentLink": "Privacy",
+    "consentError": "Please confirm the privacy notice.",
+    "successAutoEyebrow": "Estimate sent",
+    "successAutoBody": "Your preliminary cost estimate has been calculated automatically and is already on its way — by email to <s>{{email}}</s>",
+    "successAutoStep1": "Check your inbox — the estimate with its range and assumptions is waiting there.",
+    "successAutoStep2": "Reply directly to the email if you have questions — you will be writing with our site management.",
+    "successAutoStep3": "On request we arrange a site visit — the price becomes binding after measurement."
   }
 }
