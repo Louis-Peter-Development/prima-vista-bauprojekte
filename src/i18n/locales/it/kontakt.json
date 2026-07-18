@@ -64,6 +64,10 @@
       "emailFormat": "Controlli il formato dell'indirizzo e-mail.",
       "msg": "Descriva brevemente il suo progetto.",
       "dsgvo": "Confermi l'informativa sulla privacy.",
+      "terminZeitRequired": "Scelga un orario esatto.",
+      "terminAlternativZeitRequired": "Scelga un orario esatto anche per l'appuntamento alternativo.",
+      "slotUnavailable": "Questo orario è appena stato occupato. Scelga un altro appuntamento disponibile.",
+      "availabilityUnavailable": "Al momento non è possibile verificare con sicurezza la disponibilità del calendario. Riprovi tra poco.",
       "unknown": "Errore sconosciuto",
       "submit": "Non è stato possibile inviare la sua richiesta ({{error}}). Riprovi o ci scriva direttamente a office@primavista-bauprojekte.com."
     },
@@ -81,24 +85,22 @@
     "termin": {
       "label": "Data preferita per la prima consulenza",
       "optional": "(facoltativo)",
-      "hint": "La data preferita è una preferenza — la confermiamo entro 48 ore o proponiamo alternative.",
+      "hint": "L'appuntamento esatto di due ore viene riservato nel calendario collegato. Diventa vincolante con la nostra conferma entro 48 ore.",
       "calendarAria": "Calendario per la scelta della data",
       "prevMonth": "Mese precedente",
       "nextMonth": "Mese successivo",
-      "busyDay": "già occupato",
-      "legend": "I giorni in grigio sono già occupati.",
-      "zeitLabel": "Fascia oraria",
-      "zeit": {
-        "flexibel": "Flessibile",
-        "vormittag": "Mattina",
-        "nachmittag": "Pomeriggio"
-      },
+      "busyDay": "nessun appuntamento libero di due ore",
+      "legend": "Gli orari disponibili sono calcolati dal calendario collegato; i dettagli privati degli eventi restano nascosti.",
+      "zeitLabel": "Orario esatto (2 ore)",
+      "timeLoading": "Caricamento degli orari disponibili…",
+      "timeSelect": "Scelga un orario",
+      "timeUnavailable": "Non sono rimasti orari adatti disponibili per questo giorno.",
       "artLabel": "Tipo di appuntamento",
       "art": {
         "vorOrt": "In loco",
         "video": "Video"
       },
-      "altLabel": "Aggiungere una data alternativa"
+      "altLabel": "Aggiungere una data e un orario alternativi"
     }
   },
   "faqSection": {

@@ -1188,10 +1188,32 @@
   margin: 10px 0 0;
   font-family: var(--pv-font-body);
   font-size: 11px;
+  line-height: 1.45;
+  color: var(--kontakt-form-muted);
+}
+.pv-datepicker__time {
+  position: relative;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--kontakt-control-border);
+}
+.pv-datepicker__time.form-field--select::after {
+  top: 46px;
+  bottom: auto;
+}
+.pv-datepicker__time select { padding-right: 28px; }
+.pv-datepicker__time.is-invalid select { border-bottom-color: var(--pv-red); }
+.pv-datepicker__time.is-invalid label { color: var(--pv-red); }
+.pv-datepicker__time-status {
+  margin: 8px 0 2px;
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  line-height: 1.5;
   color: var(--kontakt-form-muted);
 }
 
 .termin-details { margin-top: 18px; }
+.termin-art-select { max-width: 380px; }
 .termin-alt summary {
   font-family: var(--pv-font-body);
   font-size: 13px;

@@ -64,6 +64,10 @@
       "emailFormat": "Please check the format of your email address.",
       "msg": "Please briefly describe your project.",
       "dsgvo": "Please confirm the privacy notice.",
+      "terminZeitRequired": "Please choose an exact time.",
+      "terminAlternativZeitRequired": "Please also choose an exact time for the alternative appointment.",
+      "slotUnavailable": "That time has just been taken. Please choose another available appointment.",
+      "availabilityUnavailable": "Calendar availability cannot be checked safely right now. Please try again shortly.",
       "unknown": "Unknown error",
       "submit": "Your enquiry could not be sent ({{error}}). Please try again or write to us directly at office@primavista-bauprojekte.com."
     },
@@ -81,24 +85,22 @@
     "termin": {
       "label": "Preferred date for the initial consultation",
       "optional": "(optional)",
-      "hint": "Your preferred date is a preference — we confirm it within 48 hours or suggest alternatives.",
+      "hint": "The exact two-hour appointment is held in the linked calendar. It becomes binding when we confirm it within 48 hours.",
       "calendarAria": "Calendar for choosing a date",
       "prevMonth": "Previous month",
       "nextMonth": "Next month",
-      "busyDay": "already booked",
-      "legend": "Greyed-out days are already booked.",
-      "zeitLabel": "Time window",
-      "zeit": {
-        "flexibel": "Flexible",
-        "vormittag": "Morning",
-        "nachmittag": "Afternoon"
-      },
+      "busyDay": "no free two-hour appointment",
+      "legend": "Available times are calculated from the linked calendar; private event details remain hidden.",
+      "zeitLabel": "Exact time (2 hours)",
+      "timeLoading": "Loading available times…",
+      "timeSelect": "Choose a time",
+      "timeUnavailable": "No suitable time remains available on this day.",
       "artLabel": "Appointment type",
       "art": {
         "vorOrt": "On site",
         "video": "Video"
       },
-      "altLabel": "Add an alternative date"
+      "altLabel": "Add an alternative date and time"
     }
   },
   "faqSection": {

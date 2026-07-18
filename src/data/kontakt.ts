@@ -9,9 +9,11 @@ export type ContactFormState = {
   msg: string;
   /** Preferred consultation date (ISO yyyy-mm-dd) — optional preference. */
   wunschtermin: string;
-  terminZeit: 'vormittag' | 'nachmittag' | 'flexibel';
+  /** Exact Berlin start time (HH:mm) for a two-hour consultation. */
+  terminZeit: string;
   terminArt: 'vor-ort' | 'video';
   terminAlternativ: string;
+  terminAlternativZeit: string;
   dsgvo: boolean;
 };
 
@@ -33,9 +35,10 @@ export const INITIAL_CONTACT_FORM: ContactFormState = {
   budget: 'Bitte wählen',
   msg: '',
   wunschtermin: '',
-  terminZeit: 'flexibel',
+  terminZeit: '',
   terminArt: 'vor-ort',
   terminAlternativ: '',
+  terminAlternativZeit: '',
   dsgvo: false,
 };
 
