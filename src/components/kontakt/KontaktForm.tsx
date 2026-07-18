@@ -9,6 +9,7 @@ import {
   type ContactLocationState,
   type ContactFormState,
 } from '../../data/kontakt';
+import DatePickerField from './DatePickerField';
 
 type KontaktErrors = Partial<Record<keyof ContactFormState, string>>;
 
@@ -88,6 +89,10 @@ export default function KontaktForm() {
           region: form.region,
           budget: form.budget,
           msg: form.msg.trim(),
+          wunschtermin: form.wunschtermin || undefined,
+          terminZeit: form.wunschtermin ? form.terminZeit : undefined,
+          terminArt: form.wunschtermin ? form.terminArt : undefined,
+          terminAlternativ: form.wunschtermin ? form.terminAlternativ || undefined : undefined,
           dsgvo: form.dsgvo,
           locale,
         }),
@@ -248,6 +253,60 @@ export default function KontaktForm() {
             </select>
           </div>
         </div>
+
+        <fieldset className="form-field form-field--options form-field--termin">
+          <legend className="form-field__legend">
+            {t('form.termin.label')} <span className="form-field__hint">{t('form.termin.optional')}</span>
+          </legend>
+          <DatePickerField
+            idPrefix="wunschtermin"
+            value={form.wunschtermin}
+            onChange={(date) => {
+              update('wunschtermin', date);
+              if (!date) update('terminAlternativ', '');
+            }}
+            excludeDate={form.terminAlternativ || undefined}
+          />
+          {form.wunschtermin && (
+            <div className="termin-details">
+              <div className="form-row">
+                <div className="form-field form-field--select">
+                  <label htmlFor="terminZeit">{t('form.termin.zeitLabel')}</label>
+                  <select
+                    id="terminZeit"
+                    value={form.terminZeit}
+                    onChange={(e) => update('terminZeit', e.target.value as ContactFormState['terminZeit'])}
+                  >
+                    <option value="flexibel">{t('form.termin.zeit.flexibel')}</option>
+                    <option value="vormittag">{t('form.termin.zeit.vormittag')}</option>
+                    <option value="nachmittag">{t('form.termin.zeit.nachmittag')}</option>
+                  </select>
+                </div>
+                <div className="form-field form-field--select">
+                  <label htmlFor="terminArt">{t('form.termin.artLabel')}</label>
+                  <select
+                    id="terminArt"
+                    value={form.terminArt}
+                    onChange={(e) => update('terminArt', e.target.value as ContactFormState['terminArt'])}
+                  >
+                    <option value="vor-ort">{t('form.termin.art.vorOrt')}</option>
+                    <option value="video">{t('form.termin.art.video')}</option>
+                  </select>
+                </div>
+              </div>
+              <details className="termin-alt">
+                <summary>{t('form.termin.altLabel')}</summary>
+                <DatePickerField
+                  idPrefix="terminAlternativ"
+                  value={form.terminAlternativ}
+                  onChange={(date) => update('terminAlternativ', date)}
+                  excludeDate={form.wunschtermin || undefined}
+                />
+              </details>
+            </div>
+          )}
+          <p className="termin-hint">{t('form.termin.hint')}</p>
+        </fieldset>
 
         <div className={`form-field${errors.msg ? ' is-invalid' : ''}`}>
           <label htmlFor="msg">{t('form.msgLabel')}</label>

@@ -186,13 +186,30 @@ function mailDevPlugin(): Plugin {
           sendJson(res, 500, { error: 'Send failed', detail: message });
         }
       });
+      // Month availability for the /kontakt date picker (mirrors /api/termine).
+      server.middlewares.use('/api/termine', async (req, res, next) => {
+        if (req.method !== 'GET') return next();
+        try {
+          const month = new URL(req.url ?? '', 'http://localhost').searchParams.get('month') ?? '';
+          if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) {
+            sendJson(res, 400, { error: 'invalid month' });
+            return;
+          }
+          const mod = (await server.ssrLoadModule('/server/terminAvailability.ts')) as
+            typeof import('./server/terminAvailability');
+          sendJson(res, 200, await mod.getMonthAvailability(month));
+        } catch (err) {
+          console.error('[mail-dev:termine]', err instanceof Error ? err.message : err);
+          sendJson(res, 200, { configured: false, days: {} });
+        }
+      });
     },
   };
 }
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE', 'MAIL_DRY_RUN', 'MONGODB_URI', 'MONGODB_DB', 'JWT_SECRET', 'GOOGLE_CLIENT_ID', 'ADMIN_GOOGLE_EMAIL'] as const) {
+  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE', 'MAIL_DRY_RUN', 'MONGODB_URI', 'MONGODB_DB', 'JWT_SECRET', 'GOOGLE_CLIENT_ID', 'ADMIN_GOOGLE_EMAIL', 'GOOGLE_CALENDAR_ID', 'GOOGLE_SA_EMAIL', 'GOOGLE_SA_KEY'] as const) {
     if (env[key]) process.env[key] = env[key];
   }
   return {

@@ -7,6 +7,11 @@ export type ContactFormState = {
   region: string;
   budget: string;
   msg: string;
+  /** Preferred consultation date (ISO yyyy-mm-dd) — optional preference. */
+  wunschtermin: string;
+  terminZeit: 'vormittag' | 'nachmittag' | 'flexibel';
+  terminArt: 'vor-ort' | 'video';
+  terminAlternativ: string;
   dsgvo: boolean;
 };
 
@@ -27,6 +32,10 @@ export const INITIAL_CONTACT_FORM: ContactFormState = {
   region: 'Deutschland',
   budget: 'Bitte wählen',
   msg: '',
+  wunschtermin: '',
+  terminZeit: 'flexibel',
+  terminArt: 'vor-ort',
+  terminAlternativ: '',
   dsgvo: false,
 };
 

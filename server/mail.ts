@@ -14,6 +14,9 @@ import {
   gewerkeLabel,
   kontaktArtLabel,
   starterminLabel as starterminLabelFor,
+  terminArtLabel,
+  terminZeitLabel,
+  formatDateLong,
   formatEuro as formatEuroFor,
   formatQuantity as formatQuantityFor,
   interpolate,
@@ -88,6 +91,11 @@ export type KontaktPayload = {
   region?: string;
   budget?: string;
   msg: string;
+  /** Preferred consultation date (ISO yyyy-mm-dd) — a preference, not a booking. */
+  wunschtermin?: string;
+  terminZeit?: string;
+  terminArt?: string;
+  terminAlternativ?: string;
   /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
   locale?: Locale;
 };
@@ -576,6 +584,16 @@ ${items
 // German-speaking Prima Vista team. The submitted German display values
 // (p.art / p.region / p.budget) are shown verbatim.
 
+function kontaktTerminRows(p: KontaktPayload, locale: Locale = 'de'): string {
+  if (!p.wunschtermin) return '';
+  return [
+    row(tt(locale, 'kontaktRowWunschtermin'), formatDateLong(p.wunschtermin, locale)),
+    row(tt(locale, 'kontaktRowZeitfenster'), p.terminZeit ? terminZeitLabel(locale, p.terminZeit) : ''),
+    row(tt(locale, 'kontaktRowTerminart'), p.terminArt ? terminArtLabel(locale, p.terminArt) : ''),
+    row(tt(locale, 'kontaktRowAlternativ'), p.terminAlternativ ? formatDateLong(p.terminAlternativ, locale) : ''),
+  ].join('');
+}
+
 function kontaktOfficeHtml(p: KontaktPayload): string {
   const rows = [
     row('Name', `${p.vorname} ${p.nachname}`),
@@ -584,11 +602,19 @@ function kontaktOfficeHtml(p: KontaktPayload): string {
     row('Art', p.art || ''),
     row('Region', p.region || ''),
     row('Budget', p.budget || ''),
+    kontaktTerminRows(p),
   ].join('');
+  const terminCallout = p.wunschtermin
+    ? callout(
+      'Wunschtermin angefragt',
+      `Der Termin ist noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten. Ein vorläufiger, transparenter Kalendereintrag wurde angelegt, sofern der Kalender verbunden ist.`,
+    )
+    : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
 <h2 style="margin:32px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Nachricht</h2>
 ${bodyParagraph(p.msg)}
+${terminCallout}
 <p style="margin:24px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.5;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">
 Antworten Sie direkt auf diese E-Mail, um mit ${escape(p.vorname)} in Kontakt zu treten.
 </p>`;
@@ -605,9 +631,16 @@ function kontaktOfficeText(p: KontaktPayload): string {
     p.art ? `Art: ${p.art}` : '',
     p.region ? `Region: ${p.region}` : '',
     p.budget ? `Budget: ${p.budget}` : '',
+    p.wunschtermin ? `Wunschtermin: ${formatDateLong(p.wunschtermin, 'de')}` : '',
+    p.wunschtermin && p.terminZeit ? `Zeitfenster: ${terminZeitLabel('de', p.terminZeit)}` : '',
+    p.wunschtermin && p.terminArt ? `Terminart: ${terminArtLabel('de', p.terminArt)}` : '',
+    p.wunschtermin && p.terminAlternativ ? `Alternativtermin: ${formatDateLong(p.terminAlternativ, 'de')}` : '',
     ``,
     `Nachricht:`,
     p.msg,
+    p.wunschtermin
+      ? `\nWunschtermin angefragt: noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten.`
+      : '',
     ``,
     `— Antworten Sie direkt auf diese E-Mail, um mit ${p.vorname} in Kontakt zu treten.`,
   ]
@@ -634,12 +667,17 @@ function kontaktConfirmHtml(p: KontaktPayload, locale: Locale): string {
     row(tt(locale, 'kontaktRowEmail'), p.email),
     row(tt(locale, 'kontaktRowTel'), p.tel || ''),
     row(tt(locale, 'kontaktRowArt'), kontaktArtDisplay(p, locale)),
+    kontaktTerminRows(p, locale),
   ].join('');
+  const terminNote = p.wunschtermin
+    ? `<p style="margin:16px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.55;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">${nl2br(tt(locale, 'kontaktTerminNote'))}</p>`
+    : '';
   const body = `
 ${bodyParagraph(
   interpolate(tt(locale, 'kontaktIntro'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
 )}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;">${echo}</table>
+${terminNote}
 <h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'nextSteps'))}</h2>
 ${steps([
   tt(locale, 'kontaktStep1'),
@@ -655,6 +693,11 @@ function kontaktConfirmText(p: KontaktPayload, locale: Locale): string {
     interpolate(tt(locale, 'kontaktTitle'), { name: p.vorname }),
     ``,
     interpolate(tt(locale, 'kontaktIntroText'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
+    p.wunschtermin ? `\n${tt(locale, 'kontaktRowWunschtermin')}: ${formatDateLong(p.wunschtermin, locale)}` : '',
+    p.wunschtermin && p.terminZeit ? `${tt(locale, 'kontaktRowZeitfenster')}: ${terminZeitLabel(locale, p.terminZeit)}` : '',
+    p.wunschtermin && p.terminArt ? `${tt(locale, 'kontaktRowTerminart')}: ${terminArtLabel(locale, p.terminArt)}` : '',
+    p.wunschtermin && p.terminAlternativ ? `${tt(locale, 'kontaktRowAlternativ')}: ${formatDateLong(p.terminAlternativ, locale)}` : '',
+    p.wunschtermin ? `${tt(locale, 'kontaktTerminNote')}` : '',
     ``,
     `${tt(locale, 'nextSteps')}:`,
     `01  ${tt(locale, 'kontaktStep1')}`,

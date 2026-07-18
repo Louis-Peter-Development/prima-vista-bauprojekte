@@ -95,7 +95,12 @@ Each re-confirmed zero-importer before deletion; build proves nothing referenced
 - Only expose available appointment slots to website visitors—not private calendar event names, attendees, descriptions, or other calendar details.
 - Carry the selected date and appointment details into the office notification, customer confirmation, admin/lead record, and any future automatic Blitz-Angebot workflow.
 - Keep the existing “Termin in 48 Stunden” promise clear: the requested date is a preference until Prima Vista confirms availability.
-- Status: **idea only / not implemented**; captured for the contact-form update during the live client website walkthrough.
+- Status: **implemented 2026-07-18** (full Google Calendar integration, per Louis' decision). How it works:
+  - `/kontakt` form gained an optional **Wunschtermin** section: custom localized month-grid picker (`src/components/kontakt/DatePickerField.tsx`) — no past dates, no Sundays, 6-month horizon — plus time window (Vormittag/Nachmittag/Flexibel), type (vor Ort/Video), and a collapsible alternative date. Clearly framed as a preference; "Termin in 48 Stunden" confirmation promise unchanged.
+  - Availability: `GET /api/termine?month=` (`netlify/functions/termine.ts` → `server/terminAvailability.ts`) exposes **per-day booleans only**, derived from Google free/busy (a day is free with a ≥2h gap inside 08–18 Berlin time). No event titles/attendees ever reach the browser. Cached 5 min, rate-limited.
+  - Submission: date carried into the office email (with a "noch nicht bestätigt — in 48 Std. bestätigen" callout), the localized customer confirmation, and a **tentative, transparent** all-day event on the office calendar (never blocks availability; best-effort — a Calendar error can't fail the enquiry).
+  - Auth: service account via `google-auth-library` (already a dependency). Env: `GOOGLE_CALENDAR_ID`, `GOOGLE_SA_EMAIL`, `GOOGLE_SA_KEY` (documented in `.env.example`); the office calendar must be shared with the service-account address ("Make changes to events"). **Without the env vars everything degrades gracefully** to a preference-only picker — so the feature is live-safe before the credentials exist.
+  - ⚠️ Not yet exercised against the real calendar — needs the Netlify env vars (setup steps were given to Louis); free/busy shading and event creation should be smoke-tested after they're set.
 
 ## Verify locally
 ```
