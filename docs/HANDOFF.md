@@ -68,7 +68,7 @@ Each re-confirmed zero-importer before deletion; build proves nothing referenced
 - Before editing, confirm whether **2014 remains the legal Prima Vista founding year**. If so, do not replace every 2014 reference blindly; distinguish personal experience from company history.
 - Recommended German wording: **“Daniel und Monica sind seit 2006 im Bauwesen tätig und führen Prima Vista seit 2014.”**
 - When implementing, update the relevant homepage copy/statistic consistently in all four locales (`de`, `en`, `fr`, `it`) and revise the duration wording derived from the year.
-- Status: **not implemented yet**; captured during the live client website walkthrough for a later update.
+- Status: **implemented 2026-07-18** — Louis confirmed the company dates to **2006** (2014 dropped entirely). All 2014 references replaced with 2006 in all four locales' `home.json` (hero tagline, materials chip, stats intro, founders paragraph); stats title now "Zwanzig Jahre. Eine Linie." with EN/FR/IT equivalents; `Home.tsx` counter target set to 2006; chat assistant prompt (`server/chat.ts`, Gründung) updated. Verified live in all four locales; typecheck/lint/tests/build green.
 
 ### Automatic Blitz-Angebot after website intake
 

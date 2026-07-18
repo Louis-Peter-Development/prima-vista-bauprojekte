@@ -1,7 +1,7 @@
 {
   "hero": {
     "toplineLocation": "Germany & Switzerland",
-    "toplineTagline": "Renovation & refurbishment — building since 2014",
+    "toplineTagline": "Renovation & refurbishment — building since 2006",
     "toplineIssue": "N° 26 / Spring 2026",
     "headline1": "<em>One</em> vision.",
     "headline2": "<em>One</em> address.",
@@ -95,7 +95,7 @@
     "p2": "That clarity isn't a luxury. It's what lets a space still feel as calm in fifteen years as it did on the first day.",
     "list": {
       "1": { "title": "Site management incl.", "desc": "Daniel & Monica" },
-      "2": { "title": "All materials", "desc": "Since 2014" },
+      "2": { "title": "All materials", "desc": "Since 2006" },
       "3": { "title": "Fixed-price guarantee", "desc": "Germany & Switzerland" },
       "4": { "title": "Appointment in 48 h", "desc": "Direct contact" },
       "5": { "title": "Firm completion date", "desc": "Documented planning" },
@@ -134,8 +134,8 @@
     }
   },
   "stats": {
-    "title": "Twelve years. <em>One line.</em>",
-    "intro": "Numbers don't build spaces — but they show how seriously we take the brief. A plain, honest cut through our work since 2014.",
+    "title": "Twenty years. <em>One line.</em>",
+    "intro": "Numbers don't build spaces — but they show how seriously we take the brief. A plain, honest cut through our work since 2006.",
     "since": {
       "label": "Building since",
       "desc": "Founded by Daniel and Monica."
@@ -222,7 +222,7 @@
   "founders": {
     "eyebrow": "About us",
     "title": "A construction firm<br/>run like a<br/><em>family business.</em>",
-    "p1": "Daniel and Monica have led Prima Vista since 2014 — as a couple, as site managers, as your point of contact. Build with us and you talk not to a call centre, but to the people whose names are on the contract.",
+    "p1": "Daniel and Monica have led Prima Vista since 2006 — as a couple, as site managers, as your point of contact. Build with us and you talk not to a call centre, but to the people whose names are on the contract.",
     "p2": "Across Germany and Switzerland, we look after projects with the same materials, plans and standards — you get the same standard everywhere.",
     "sigName": "Daniel & Monica",
     "sigRole": "Founders & site management",

@@ -1,7 +1,7 @@
 {
   "hero": {
     "toplineLocation": "Allemagne & Suisse",
-    "toplineTagline": "Rénovation & réfection — projets de construction depuis 2014",
+    "toplineTagline": "Rénovation & réfection — projets de construction depuis 2006",
     "toplineIssue": "N° 26 / Printemps 2026",
     "headline1": "<em>Une</em> vision.",
     "headline2": "<em>Une</em> adresse.",
@@ -95,7 +95,7 @@
     "p2": "Cette clarté n'est pas un confort, mais la condition d'espaces qui, dans quinze ans, dégageront encore la même sérénité qu'au premier jour.",
     "list": {
       "1": { "title": "Direction de chantier incl.", "desc": "Daniel & Monica" },
-      "2": { "title": "Tous les matériaux", "desc": "Depuis 2014" },
+      "2": { "title": "Tous les matériaux", "desc": "Depuis 2006" },
       "3": { "title": "Garantie de prix fixe", "desc": "Allemagne & Suisse" },
       "4": { "title": "Rendez-vous sous 48 h", "desc": "Contact direct" },
       "5": { "title": "Date de livraison ferme", "desc": "Planification documentée" },
@@ -134,8 +134,8 @@
     }
   },
   "stats": {
-    "title": "Douze ans. <em>Une ligne.</em>",
-    "intro": "Les chiffres ne créent pas d'espaces — mais ils disent avec quel sérieux nous prenons la mission. Voici un aperçu sobre de notre travail depuis 2014.",
+    "title": "Vingt ans. <em>Une ligne.</em>",
+    "intro": "Les chiffres ne créent pas d'espaces — mais ils disent avec quel sérieux nous prenons la mission. Voici un aperçu sobre de notre travail depuis 2006.",
     "since": {
       "label": "Direction de chantier depuis",
       "desc": "Fondée par Daniel et Monica."
@@ -222,7 +222,7 @@
   "founders": {
     "eyebrow": "À propos",
     "title": "Une entreprise de construction<br/>gérée comme une<br/><em>entreprise familiale.</em>",
-    "p1": "Daniel et Monica dirigent Prima Vista depuis 2014 — en couple, en directeurs de chantier, en interlocuteurs. Qui construit ici ne parle pas à un centre d'appels, mais aux personnes dont le nom figure sur le contrat.",
+    "p1": "Daniel et Monica dirigent Prima Vista depuis 2006 — en couple, en directeurs de chantier, en interlocuteurs. Qui construit ici ne parle pas à un centre d'appels, mais aux personnes dont le nom figure sur le contrat.",
     "p2": "En Allemagne et en Suisse, nous suivons vos projets avec les mêmes matériaux, plans et standards — vous bénéficiez partout de la même exigence.",
     "sigName": "Daniel & Monica",
     "sigRole": "Fondateurs & direction de chantier",

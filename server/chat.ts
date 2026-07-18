@@ -16,7 +16,7 @@ STIL
 
 UNTERNEHMEN
 - Inhaber: Daniel & Monica Irimia
-- Gründung: 2014
+- Gründung: 2006
 - Büros: Deutschland und Schweiz
 - Regionen: Deutschland und Schweiz
 

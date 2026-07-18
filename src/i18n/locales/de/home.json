@@ -1,7 +1,7 @@
 {
   "hero": {
     "toplineLocation": "Deutschland & Schweiz",
-    "toplineTagline": "Sanierung & Renovierung — Bauprojekte seit 2014",
+    "toplineTagline": "Sanierung & Renovierung — Bauprojekte seit 2006",
     "toplineIssue": "N° 26 / Frühjahr 2026",
     "headline1": "<em>Eine</em> Vision.",
     "headline2": "<em>Eine</em> Adresse.",
@@ -95,7 +95,7 @@
     "p2": "Diese Klarheit ist kein Komfort, sondern die Voraussetzung für Räume, die in fünfzehn Jahren noch dieselbe Ruhe ausstrahlen wie am ersten Tag.",
     "list": {
       "1": { "title": "Bauleitung inkl.", "desc": "Daniel & Monica" },
-      "2": { "title": "Alle Materialien", "desc": "Seit 2014" },
+      "2": { "title": "Alle Materialien", "desc": "Seit 2006" },
       "3": { "title": "Festpreisgarantie", "desc": "Deutschland & Schweiz" },
       "4": { "title": "Termin in 48 Std.", "desc": "Direkter Kontakt" },
       "5": { "title": "Festes Endtermin-Datum", "desc": "Dokumentierte Planung" },
@@ -134,8 +134,8 @@
     }
   },
   "stats": {
-    "title": "Zwölf Jahre. <em>Eine Linie.</em>",
-    "intro": "Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2014.",
+    "title": "Zwanzig Jahre. <em>Eine Linie.</em>",
+    "intro": "Zahlen schaffen keine Räume — aber sie sagen, wie ernst wir den Auftrag nehmen. Hier ein nüchterner Schnitt durch unser Schaffen seit 2006.",
     "since": {
       "label": "Bauleitung seit",
       "desc": "Gegründet von Daniel und Monica."
@@ -222,7 +222,7 @@
   "founders": {
     "eyebrow": "Über uns",
     "title": "Ein Bauunternehmen<br/>geführt wie ein<br/><em>Familienbetrieb.</em>",
-    "p1": "Daniel und Monica führen Prima Vista seit 2014 — als Paar, als Bauleiter, als Ansprechpartner. Wer hier baut, redet nicht mit einem Callcenter, sondern mit den Menschen, deren Namen am Vertrag stehen.",
+    "p1": "Daniel und Monica führen Prima Vista seit 2006 — als Paar, als Bauleiter, als Ansprechpartner. Wer hier baut, redet nicht mit einem Callcenter, sondern mit den Menschen, deren Namen am Vertrag stehen.",
     "p2": "In Deutschland und der Schweiz betreuen wir Projekte mit denselben Materialien, Plänen und Standards — Sie bekommen überall denselben Anspruch.",
     "sigName": "Daniel & Monica",
     "sigRole": "Gründer & Bauleitung",
