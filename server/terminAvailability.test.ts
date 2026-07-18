@@ -1,8 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
   berlinInstant,
+  berlinInstantAt,
+  buildConsultationEvent,
+  consultationEndTime,
   isDayAvailable,
   isSunday,
+  isValidConsultationTime,
+  listAvailableSlots,
   listMonthDays,
 } from './terminAvailability.js';
 import { validateKontaktPayload } from '../netlify/functions/contact.js';
@@ -11,6 +16,13 @@ function busy(dateStr: string, fromHour: number, toHour: number) {
   return {
     start: berlinInstant(dateStr, fromHour).getTime(),
     end: berlinInstant(dateStr, toHour).getTime(),
+  };
+}
+
+function busyAt(dateStr: string, fromTime: string, toTime: string) {
+  return {
+    start: berlinInstantAt(dateStr, fromTime).getTime(),
+    end: berlinInstantAt(dateStr, toTime).getTime(),
   };
 }
 
@@ -51,6 +63,54 @@ describe('isDayAvailable', () => {
   });
 });
 
+describe('exact consultation slots', () => {
+  const monday = '2026-07-20';
+
+  it('offers half-hour starts for exact two-hour appointments', () => {
+    const slots = listAvailableSlots(monday, []);
+    expect(slots).toHaveLength(17);
+    expect(slots[0]).toBe('08:00');
+    expect(slots[1]).toBe('08:30');
+    expect(slots.at(-1)).toBe('16:00');
+    expect(consultationEndTime('09:30')).toBe('11:30');
+  });
+
+  it('removes every slot that overlaps an existing calendar event', () => {
+    const slots = listAvailableSlots(monday, [busyAt(monday, '09:30', '11:00')]);
+    expect(slots).not.toContain('08:00');
+    expect(slots).not.toContain('09:30');
+    expect(slots).not.toContain('10:30');
+    expect(slots).toContain('11:00');
+  });
+
+  it('accepts only starts inside the 08–18 working window', () => {
+    expect(isValidConsultationTime('08:00')).toBe(true);
+    expect(isValidConsultationTime('09:30')).toBe(true);
+    expect(isValidConsultationTime('16:00')).toBe(true);
+    expect(isValidConsultationTime('07:30')).toBe(false);
+    expect(isValidConsultationTime('16:30')).toBe(false);
+    expect(isValidConsultationTime('vormittag')).toBe(false);
+  });
+
+  it('builds a precise two-hour blocking Google Calendar event', () => {
+    const event = buildConsultationEvent({
+      date: monday,
+      name: 'Test Person',
+      email: 'test@example.com',
+      terminArt: 'video',
+      terminZeit: '09:30',
+      alternativeDate: '2026-07-21',
+      alternativeTime: '14:00',
+    });
+    expect(event.start).toEqual({ dateTime: '2026-07-20T07:30:00.000Z', timeZone: 'Europe/Berlin' });
+    expect(event.end).toEqual({ dateTime: '2026-07-20T09:30:00.000Z', timeZone: 'Europe/Berlin' });
+    expect(event.transparency).toBe('opaque');
+    expect(event.status).toBe('tentative');
+    expect(event.description).toContain('Uhrzeit: 09:30–11:30 Uhr');
+    expect(event.description).toContain('Alternativtermin: 2026-07-21, 14:00–16:00 Uhr');
+  });
+});
+
 describe('listMonthDays', () => {
   it('enumerates the month, respecting leap years', () => {
     expect(listMonthDays('2026-02')).toHaveLength(28);
@@ -80,18 +140,18 @@ describe('validateKontaktPayload — appointment fields', () => {
     return isoDate;
   }
 
-  it('accepts a plausible future date with enums', () => {
+  it('accepts a plausible future date with an exact time', () => {
     const date = future(10);
     const result = validateKontaktPayload({
       ...base,
       wunschtermin: date,
-      terminZeit: 'vormittag',
+      terminZeit: '09:30',
       terminArt: 'video',
     });
     expect('error' in result).toBe(false);
     if ('error' in result) return;
     expect(result.wunschtermin).toBe(date);
-    expect(result.terminZeit).toBe('vormittag');
+    expect(result.terminZeit).toBe('09:30');
     expect(result.terminArt).toBe('video');
   });
 
@@ -105,16 +165,22 @@ describe('validateKontaktPayload — appointment fields', () => {
     }
   });
 
-  it('drops unknown enum values', () => {
+  it('rejects a preferred date without a valid exact time', () => {
     const result = validateKontaktPayload({
       ...base,
       wunschtermin: future(10),
-      terminZeit: 'midnight',
-      terminArt: 'hologram',
+      terminZeit: 'vormittag',
     });
-    expect('error' in result).toBe(false);
-    if ('error' in result) return;
-    expect(result.terminZeit).toBeUndefined();
-    expect(result.terminArt).toBeUndefined();
+    expect(result).toEqual({ error: 'terminZeit is required' });
+  });
+
+  it('requires an exact time when an alternative date is supplied', () => {
+    const result = validateKontaktPayload({
+      ...base,
+      wunschtermin: future(10),
+      terminZeit: '09:00',
+      terminAlternativ: future(12),
+    });
+    expect(result).toEqual({ error: 'terminAlternativZeit is required' });
   });
 });

@@ -64,6 +64,10 @@
       "emailFormat": "Veuillez vérifier le format de l'adresse e-mail.",
       "msg": "Veuillez décrire brièvement votre projet.",
       "dsgvo": "Veuillez confirmer la politique de confidentialité.",
+      "terminZeitRequired": "Veuillez choisir une heure exacte.",
+      "terminAlternativZeitRequired": "Veuillez également choisir une heure exacte pour le rendez-vous alternatif.",
+      "slotUnavailable": "Cette heure vient d'être réservée. Veuillez choisir un autre rendez-vous disponible.",
+      "availabilityUnavailable": "La disponibilité du calendrier ne peut pas être vérifiée de manière fiable pour le moment. Veuillez réessayer dans quelques instants.",
       "unknown": "Erreur inconnue",
       "submit": "Votre demande n'a pas pu être envoyée ({{error}}). Veuillez réessayer ou nous écrire directement à office@primavista-bauprojekte.com."
     },
@@ -81,24 +85,22 @@
     "termin": {
       "label": "Date souhaitée pour le premier entretien",
       "optional": "(facultatif)",
-      "hint": "Votre date souhaitée est une préférence — nous la confirmons sous 48 heures ou proposons des alternatives.",
+      "hint": "Le rendez-vous exact de deux heures est réservé dans le calendrier connecté. Il devient définitif après notre confirmation sous 48 heures.",
       "calendarAria": "Calendrier pour choisir une date",
       "prevMonth": "Mois précédent",
       "nextMonth": "Mois suivant",
-      "busyDay": "déjà réservé",
-      "legend": "Les jours grisés sont déjà réservés.",
-      "zeitLabel": "Créneau horaire",
-      "zeit": {
-        "flexibel": "Flexible",
-        "vormittag": "Matin",
-        "nachmittag": "Après-midi"
-      },
+      "busyDay": "aucun rendez-vous libre de deux heures",
+      "legend": "Les heures disponibles sont calculées depuis le calendrier connecté ; les détails privés des événements restent masqués.",
+      "zeitLabel": "Heure exacte (2 heures)",
+      "timeLoading": "Chargement des heures disponibles…",
+      "timeSelect": "Choisir une heure",
+      "timeUnavailable": "Aucune heure adaptée n'est encore disponible ce jour-là.",
       "artLabel": "Type de rendez-vous",
       "art": {
         "vorOrt": "Sur place",
         "video": "Visio"
       },
-      "altLabel": "Indiquer une date alternative"
+      "altLabel": "Indiquer une date et une heure alternatives"
     }
   },
   "faqSection": {

@@ -58,6 +58,10 @@ export default function KontaktForm() {
     }
     if (!form.msg.trim()) next.msg = t('form.errors.msg');
     if (!form.dsgvo) next.dsgvo = t('form.errors.dsgvo');
+    if (form.wunschtermin && !form.terminZeit) next.terminZeit = t('form.errors.terminZeitRequired');
+    if (form.terminAlternativ && !form.terminAlternativZeit) {
+      next.terminAlternativZeit = t('form.errors.terminAlternativZeitRequired');
+    }
     return next;
   }
 
@@ -93,12 +97,15 @@ export default function KontaktForm() {
           terminZeit: form.wunschtermin ? form.terminZeit : undefined,
           terminArt: form.wunschtermin ? form.terminArt : undefined,
           terminAlternativ: form.wunschtermin ? form.terminAlternativ || undefined : undefined,
+          terminAlternativZeit: form.terminAlternativ ? form.terminAlternativZeit : undefined,
           dsgvo: form.dsgvo,
           locale,
         }),
       });
       if (!res.ok) {
         const err = await res.json().catch(() => ({}));
+        if (err.error === 'slot_unavailable') throw new Error(t('form.errors.slotUnavailable'));
+        if (err.error === 'availability_unavailable') throw new Error(t('form.errors.availabilityUnavailable'));
         throw new Error(err.error || `HTTP ${res.status}`);
       }
       setSent(true);
@@ -263,36 +270,29 @@ export default function KontaktForm() {
             value={form.wunschtermin}
             onChange={(date) => {
               update('wunschtermin', date);
-              if (!date) update('terminAlternativ', '');
+              if (!date) {
+                update('terminAlternativ', '');
+                update('terminAlternativZeit', '');
+              }
             }}
+            timeId="terminZeit"
+            timeValue={form.terminZeit}
+            onTimeChange={(time) => update('terminZeit', time)}
+            timeError={errors.terminZeit}
             excludeDate={form.terminAlternativ || undefined}
           />
           {form.wunschtermin && (
             <div className="termin-details">
-              <div className="form-row">
-                <div className="form-field form-field--select">
-                  <label htmlFor="terminZeit">{t('form.termin.zeitLabel')}</label>
-                  <select
-                    id="terminZeit"
-                    value={form.terminZeit}
-                    onChange={(e) => update('terminZeit', e.target.value as ContactFormState['terminZeit'])}
-                  >
-                    <option value="flexibel">{t('form.termin.zeit.flexibel')}</option>
-                    <option value="vormittag">{t('form.termin.zeit.vormittag')}</option>
-                    <option value="nachmittag">{t('form.termin.zeit.nachmittag')}</option>
-                  </select>
-                </div>
-                <div className="form-field form-field--select">
-                  <label htmlFor="terminArt">{t('form.termin.artLabel')}</label>
-                  <select
-                    id="terminArt"
-                    value={form.terminArt}
-                    onChange={(e) => update('terminArt', e.target.value as ContactFormState['terminArt'])}
-                  >
-                    <option value="vor-ort">{t('form.termin.art.vorOrt')}</option>
-                    <option value="video">{t('form.termin.art.video')}</option>
-                  </select>
-                </div>
+              <div className="form-field form-field--select termin-art-select">
+                <label htmlFor="terminArt">{t('form.termin.artLabel')}</label>
+                <select
+                  id="terminArt"
+                  value={form.terminArt}
+                  onChange={(e) => update('terminArt', e.target.value as ContactFormState['terminArt'])}
+                >
+                  <option value="vor-ort">{t('form.termin.art.vorOrt')}</option>
+                  <option value="video">{t('form.termin.art.video')}</option>
+                </select>
               </div>
               <details className="termin-alt">
                 <summary>{t('form.termin.altLabel')}</summary>
@@ -300,6 +300,10 @@ export default function KontaktForm() {
                   idPrefix="terminAlternativ"
                   value={form.terminAlternativ}
                   onChange={(date) => update('terminAlternativ', date)}
+                  timeId="terminAlternativZeit"
+                  timeValue={form.terminAlternativZeit}
+                  onTimeChange={(time) => update('terminAlternativZeit', time)}
+                  timeError={errors.terminAlternativZeit}
                   excludeDate={form.wunschtermin || undefined}
                 />
               </details>

@@ -361,14 +361,6 @@ const GEWERKE_LABELS: CodeLabelMap = {
   },
 };
 
-// Kontakt preferred-appointment time window / type codes.
-const TERMIN_ZEIT_LABELS: CodeLabelMap = {
-  de: { vormittag: 'Vormittag', nachmittag: 'Nachmittag', flexibel: 'Flexibel' },
-  en: { vormittag: 'Morning', nachmittag: 'Afternoon', flexibel: 'Flexible' },
-  it: { vormittag: 'Mattina', nachmittag: 'Pomeriggio', flexibel: 'Flessibile' },
-  fr: { vormittag: 'Matin', nachmittag: 'Après-midi', flexibel: 'Flexible' },
-};
-
 const TERMIN_ART_LABELS: CodeLabelMap = {
   de: { 'vor-ort': 'Vor Ort', video: 'Video' },
   en: { 'vor-ort': 'On site', video: 'Video' },
@@ -401,7 +393,6 @@ export const kontaktArtLabel = (locale: Locale, code: string) => labelFrom(KONTA
 export const regionLabel = (locale: Locale, code: string) => labelFrom(REGION_LABELS, locale, code);
 export const budgetLabel = (locale: Locale, code: string) => labelFrom(BUDGET_LABELS, locale, code);
 export const gewerkeLabel = (locale: Locale, code: string) => labelFrom(GEWERKE_LABELS, locale, code);
-export const terminZeitLabel = (locale: Locale, code: string) => labelFrom(TERMIN_ZEIT_LABELS, locale, code);
 export const terminArtLabel = (locale: Locale, code: string) => labelFrom(TERMIN_ART_LABELS, locale, code);
 
 // ----- Flat customer-facing string catalogue -----
@@ -438,10 +429,10 @@ const STRINGS = {
     kontaktStep2: 'Sie erhalten eine schriftliche Antwort oder einen Rückruf.',
     kontaktStep3: 'Auf Wunsch vereinbaren wir einen Termin vor Ort.',
     kontaktRowWunschtermin: 'Wunschtermin',
-    kontaktRowZeitfenster: 'Zeitfenster',
+    kontaktRowZeitfenster: 'Uhrzeit',
     kontaktRowTerminart: 'Terminart',
     kontaktRowAlternativ: 'Alternativtermin',
-    kontaktTerminNote: 'Ihr Wunschtermin ist vorgemerkt — verbindlich wird er erst mit unserer Bestätigung innerhalb von 48 Stunden.',
+    kontaktTerminNote: 'Ihr genauer Wunschtermin ist im Kalender vorgemerkt — verbindlich wird er erst mit unserer Bestätigung innerhalb von 48 Stunden.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte',
@@ -611,10 +602,10 @@ const STRINGS = {
     kontaktStep2: 'You receive a written reply or a call back.',
     kontaktStep3: 'On request, we arrange an on-site appointment.',
     kontaktRowWunschtermin: 'Preferred date',
-    kontaktRowZeitfenster: 'Time window',
+    kontaktRowZeitfenster: 'Exact time',
     kontaktRowTerminart: 'Appointment type',
     kontaktRowAlternativ: 'Alternative date',
-    kontaktTerminNote: 'Your preferred date is noted — it only becomes binding once we confirm it within 48 hours.',
+    kontaktTerminNote: 'Your exact preferred time is reserved in the calendar — it only becomes binding once we confirm it within 48 hours.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'We have received your express quote request — Prima Vista Bauprojekte',
@@ -784,10 +775,10 @@ const STRINGS = {
     kontaktStep2: 'Riceverà una risposta scritta o una richiamata.',
     kontaktStep3: 'Su richiesta fissiamo un appuntamento in loco.',
     kontaktRowWunschtermin: 'Data preferita',
-    kontaktRowZeitfenster: 'Fascia oraria',
+    kontaktRowZeitfenster: 'Orario esatto',
     kontaktRowTerminart: 'Tipo di appuntamento',
     kontaktRowAlternativ: 'Data alternativa',
-    kontaktTerminNote: 'La Sua data preferita è stata annotata — diventa vincolante solo con la nostra conferma entro 48 ore.',
+    kontaktTerminNote: 'L’orario esatto da Lei preferito è riservato nel calendario — diventa vincolante solo con la nostra conferma entro 48 ore.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Abbiamo ricevuto la Sua richiesta di preventivo express — Prima Vista Bauprojekte',
@@ -957,10 +948,10 @@ const STRINGS = {
     kontaktStep2: 'Vous recevez une réponse écrite ou un rappel téléphonique.',
     kontaktStep3: 'Sur demande, nous convenons d’un rendez-vous sur place.',
     kontaktRowWunschtermin: 'Date souhaitée',
-    kontaktRowZeitfenster: 'Créneau horaire',
+    kontaktRowZeitfenster: 'Heure exacte',
     kontaktRowTerminart: 'Type de rendez-vous',
     kontaktRowAlternativ: 'Date alternative',
-    kontaktTerminNote: 'Votre date souhaitée est notée — elle ne devient définitive qu’après notre confirmation sous 48 heures.',
+    kontaktTerminNote: 'L’heure exacte souhaitée est réservée dans le calendrier — elle ne devient définitive qu’après notre confirmation sous 48 heures.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Nous avons bien reçu votre demande express — Prima Vista Bauprojekte',

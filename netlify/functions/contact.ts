@@ -1,6 +1,13 @@
 import { sendKontaktEmails, type KontaktPayload } from '../../server/mail.js';
 import { normalizeLocale } from '../../server/i18n.js';
-import { berlinToday, createConsultationEvent, isSunday } from '../../server/terminAvailability.js';
+import {
+  berlinToday,
+  createConsultationEvent,
+  deleteConsultationEvent,
+  isConsultationSlotAvailable,
+  isSunday,
+  isValidConsultationTime,
+} from '../../server/terminAvailability.js';
 import { json, methodNotAllowed } from './_shared/http';
 import { checkRateLimit, hasSpamTrap, rateLimitResponse } from './_shared/rate-limit';
 
@@ -33,11 +40,21 @@ function sanitizeEnum<T extends string>(v: unknown, allowed: readonly T[]): T | 
   return (allowed as readonly string[]).includes(value) ? value as T : undefined;
 }
 
+function sanitizeTerminZeit(v: unknown): string | undefined {
+  const value = asString(v);
+  return isValidConsultationTime(value) ? value : undefined;
+}
+
 export function validateKontaktPayload(body: unknown): KontaktPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
   if (hasSpamTrap(body)) return { error: 'Spam detected' };
   const b = body as Record<string, unknown>;
   const wunschtermin = sanitizeWunschtermin(b.wunschtermin);
+  const terminZeit = wunschtermin ? sanitizeTerminZeit(b.terminZeit) : undefined;
+  const terminAlternativ = wunschtermin ? sanitizeWunschtermin(b.terminAlternativ) : undefined;
+  const terminAlternativZeit = terminAlternativ ? sanitizeTerminZeit(b.terminAlternativZeit) : undefined;
+  if (wunschtermin && !terminZeit) return { error: 'terminZeit is required' };
+  if (terminAlternativ && !terminAlternativZeit) return { error: 'terminAlternativZeit is required' };
   const payload: KontaktPayload = {
     vorname: asString(b.vorname),
     nachname: asString(b.nachname),
@@ -48,9 +65,10 @@ export function validateKontaktPayload(body: unknown): KontaktPayload | { error:
     budget: asString(b.budget) || undefined,
     msg: asString(b.msg),
     wunschtermin,
-    terminZeit: wunschtermin ? sanitizeEnum(b.terminZeit, ['vormittag', 'nachmittag', 'flexibel'] as const) : undefined,
+    terminZeit,
     terminArt: wunschtermin ? sanitizeEnum(b.terminArt, ['vor-ort', 'video'] as const) : undefined,
-    terminAlternativ: wunschtermin ? sanitizeWunschtermin(b.terminAlternativ) : undefined,
+    terminAlternativ,
+    terminAlternativZeit,
     locale: normalizeLocale(b.locale),
   };
   if (!payload.vorname) return { error: 'vorname is required' };
@@ -86,30 +104,51 @@ export default async (req: Request) => {
     return json(result, { status: 400 });
   }
 
-  try {
-    await sendKontaktEmails(result);
-  } catch (err) {
-    console.error('[contact] send failed', err);
-    return json({ error: 'Send failed' }, { status: 502 });
+  if (result.wunschtermin && result.terminZeit) {
+    try {
+      const available = await isConsultationSlotAvailable(result.wunschtermin, result.terminZeit);
+      if (!available) return json({ error: 'slot_unavailable' }, { status: 409 });
+    } catch (err) {
+      console.error('[contact] calendar availability check failed', err);
+      return json({ error: 'availability_unavailable' }, { status: 503 });
+    }
   }
 
-  // Best-effort: surface the request on the office calendar. The emails are
-  // already out, so a Calendar hiccup must never fail the submission.
-  if (result.wunschtermin) {
+  // A successful appointment submission must have its exact timed event in
+  // the linked calendar. Create it before sending confirmations, and roll it
+  // back if the email delivery subsequently fails.
+  let calendarEventId: string | undefined;
+  if (result.wunschtermin && result.terminZeit) {
     try {
-      await createConsultationEvent({
+      calendarEventId = await createConsultationEvent({
         date: result.wunschtermin,
         name: `${result.vorname} ${result.nachname}`,
         email: result.email,
         tel: result.tel,
         terminArt: result.terminArt ?? 'vor-ort',
-        terminZeit: result.terminZeit ?? 'flexibel',
+        terminZeit: result.terminZeit,
         alternativeDate: result.terminAlternativ,
+        alternativeTime: result.terminAlternativZeit,
         note: result.msg,
       });
     } catch (err) {
       console.error('[contact] calendar event failed', err);
+      return json({ error: 'availability_unavailable' }, { status: 503 });
     }
+  }
+
+  try {
+    await sendKontaktEmails(result);
+  } catch (err) {
+    console.error('[contact] send failed', err);
+    if (calendarEventId) {
+      try {
+        await deleteConsultationEvent(calendarEventId);
+      } catch (rollbackError) {
+        console.error('[contact] calendar rollback failed', rollbackError);
+      }
+    }
+    return json({ error: 'Send failed' }, { status: 502 });
   }
 
   return json({ ok: true });

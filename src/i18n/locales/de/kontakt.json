@@ -64,6 +64,10 @@
       "emailFormat": "Bitte prüfen Sie das Format der E-Mail-Adresse.",
       "msg": "Bitte beschreiben Sie kurz Ihr Vorhaben.",
       "dsgvo": "Bitte bestätigen Sie die Datenschutzhinweise.",
+      "terminZeitRequired": "Bitte wählen Sie eine genaue Uhrzeit.",
+      "terminAlternativZeitRequired": "Bitte wählen Sie auch für den Alternativtermin eine genaue Uhrzeit.",
+      "slotUnavailable": "Diese Uhrzeit wurde inzwischen belegt. Bitte wählen Sie einen anderen freien Termin.",
+      "availabilityUnavailable": "Die Kalenderverfügbarkeit kann gerade nicht sicher geprüft werden. Bitte versuchen Sie es gleich noch einmal.",
       "unknown": "Unbekannter Fehler",
       "submit": "Ihre Anfrage konnte nicht gesendet werden ({{error}}). Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an office@primavista-bauprojekte.com."
     },
@@ -81,24 +85,22 @@
     "termin": {
       "label": "Wunschtermin für die Erstberatung",
       "optional": "(optional)",
-      "hint": "Ihr Wunschtermin ist eine Präferenz — wir bestätigen ihn innerhalb von 48 Stunden oder schlagen Alternativen vor.",
+      "hint": "Der genaue Zwei-Stunden-Termin wird im verbundenen Kalender vorgemerkt. Verbindlich wird er mit unserer Bestätigung innerhalb von 48 Stunden.",
       "calendarAria": "Kalender zur Terminauswahl",
       "prevMonth": "Vorheriger Monat",
       "nextMonth": "Nächster Monat",
-      "busyDay": "bereits belegt",
-      "legend": "Ausgegraute Tage sind bereits belegt.",
-      "zeitLabel": "Zeitfenster",
-      "zeit": {
-        "flexibel": "Flexibel",
-        "vormittag": "Vormittag",
-        "nachmittag": "Nachmittag"
-      },
+      "busyDay": "kein freier Zwei-Stunden-Termin",
+      "legend": "Freie Uhrzeiten werden aus dem verbundenen Kalender berechnet; private Ereignisdetails bleiben verborgen.",
+      "zeitLabel": "Exakte Uhrzeit (2 Stunden)",
+      "timeLoading": "Freie Uhrzeiten werden geladen…",
+      "timeSelect": "Uhrzeit wählen",
+      "timeUnavailable": "Für diesen Tag ist keine passende Uhrzeit mehr frei.",
       "artLabel": "Terminart",
       "art": {
         "vorOrt": "Vor Ort",
         "video": "Video"
       },
-      "altLabel": "Alternativtermin angeben"
+      "altLabel": "Alternativtermin mit Uhrzeit angeben"
     }
   },
   "faqSection": {

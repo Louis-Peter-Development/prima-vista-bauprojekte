@@ -33,7 +33,7 @@ export default async (req: Request) => {
   try {
     const availability = await getMonthAvailability(month);
     return json(availability, {
-      headers: { 'cache-control': 'public, max-age=300' },
+      headers: { 'cache-control': 'public, max-age=30' },
     });
   } catch (err) {
     console.error('[termine] availability failed', err);

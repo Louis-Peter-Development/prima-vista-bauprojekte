@@ -15,7 +15,6 @@ import {
   kontaktArtLabel,
   starterminLabel as starterminLabelFor,
   terminArtLabel,
-  terminZeitLabel,
   formatDateLong,
   formatEuro as formatEuroFor,
   formatQuantity as formatQuantityFor,
@@ -23,6 +22,7 @@ import {
   normalizeLocale,
   tt,
 } from './i18n.js';
+import { consultationEndTime } from './terminAvailability.js';
 
 const FROM = process.env.MAIL_FROM ?? 'Prima Vista Bauprojekte <noreply@primavista-bauprojekte.com>';
 const TO_OFFICE = process.env.MAIL_TO_OFFICE ?? 'office@primavista-bauprojekte.com';
@@ -96,6 +96,7 @@ export type KontaktPayload = {
   terminZeit?: string;
   terminArt?: string;
   terminAlternativ?: string;
+  terminAlternativZeit?: string;
   /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
   locale?: Locale;
 };
@@ -588,10 +589,23 @@ function kontaktTerminRows(p: KontaktPayload, locale: Locale = 'de'): string {
   if (!p.wunschtermin) return '';
   return [
     row(tt(locale, 'kontaktRowWunschtermin'), formatDateLong(p.wunschtermin, locale)),
-    row(tt(locale, 'kontaktRowZeitfenster'), p.terminZeit ? terminZeitLabel(locale, p.terminZeit) : ''),
+    row(tt(locale, 'kontaktRowZeitfenster'), p.terminZeit ? formatTerminZeit(p.terminZeit, locale) : ''),
     row(tt(locale, 'kontaktRowTerminart'), p.terminArt ? terminArtLabel(locale, p.terminArt) : ''),
-    row(tt(locale, 'kontaktRowAlternativ'), p.terminAlternativ ? formatDateLong(p.terminAlternativ, locale) : ''),
+    row(
+      tt(locale, 'kontaktRowAlternativ'),
+      p.terminAlternativ ? formatTerminDateTime(p.terminAlternativ, p.terminAlternativZeit, locale) : '',
+    ),
   ].join('');
+}
+
+function formatTerminZeit(time: string, locale: Locale): string {
+  const range = `${time}–${consultationEndTime(time)}`;
+  return locale === 'de' ? `${range} Uhr` : range;
+}
+
+function formatTerminDateTime(date: string, time: string | undefined, locale: Locale): string {
+  const formattedDate = formatDateLong(date, locale);
+  return time ? `${formattedDate} · ${formatTerminZeit(time, locale)}` : formattedDate;
 }
 
 function kontaktOfficeHtml(p: KontaktPayload): string {
@@ -607,7 +621,7 @@ function kontaktOfficeHtml(p: KontaktPayload): string {
   const terminCallout = p.wunschtermin
     ? callout(
       'Wunschtermin angefragt',
-      `Der Termin ist noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten. Ein vorläufiger, transparenter Kalendereintrag wurde angelegt, sofern der Kalender verbunden ist.`,
+      `Der Termin ist noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten. Der genaue Zeitraum ist vorläufig im verbundenen Kalender reserviert.`,
     )
     : '';
   const body = `
@@ -632,9 +646,11 @@ function kontaktOfficeText(p: KontaktPayload): string {
     p.region ? `Region: ${p.region}` : '',
     p.budget ? `Budget: ${p.budget}` : '',
     p.wunschtermin ? `Wunschtermin: ${formatDateLong(p.wunschtermin, 'de')}` : '',
-    p.wunschtermin && p.terminZeit ? `Zeitfenster: ${terminZeitLabel('de', p.terminZeit)}` : '',
+    p.wunschtermin && p.terminZeit ? `Uhrzeit: ${formatTerminZeit(p.terminZeit, 'de')}` : '',
     p.wunschtermin && p.terminArt ? `Terminart: ${terminArtLabel('de', p.terminArt)}` : '',
-    p.wunschtermin && p.terminAlternativ ? `Alternativtermin: ${formatDateLong(p.terminAlternativ, 'de')}` : '',
+    p.wunschtermin && p.terminAlternativ
+      ? `Alternativtermin: ${formatTerminDateTime(p.terminAlternativ, p.terminAlternativZeit, 'de')}`
+      : '',
     ``,
     `Nachricht:`,
     p.msg,
@@ -694,9 +710,11 @@ function kontaktConfirmText(p: KontaktPayload, locale: Locale): string {
     ``,
     interpolate(tt(locale, 'kontaktIntroText'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
     p.wunschtermin ? `\n${tt(locale, 'kontaktRowWunschtermin')}: ${formatDateLong(p.wunschtermin, locale)}` : '',
-    p.wunschtermin && p.terminZeit ? `${tt(locale, 'kontaktRowZeitfenster')}: ${terminZeitLabel(locale, p.terminZeit)}` : '',
+    p.wunschtermin && p.terminZeit ? `${tt(locale, 'kontaktRowZeitfenster')}: ${formatTerminZeit(p.terminZeit, locale)}` : '',
     p.wunschtermin && p.terminArt ? `${tt(locale, 'kontaktRowTerminart')}: ${terminArtLabel(locale, p.terminArt)}` : '',
-    p.wunschtermin && p.terminAlternativ ? `${tt(locale, 'kontaktRowAlternativ')}: ${formatDateLong(p.terminAlternativ, locale)}` : '',
+    p.wunschtermin && p.terminAlternativ
+      ? `${tt(locale, 'kontaktRowAlternativ')}: ${formatTerminDateTime(p.terminAlternativ, p.terminAlternativZeit, locale)}`
+      : '',
     p.wunschtermin ? `${tt(locale, 'kontaktTerminNote')}` : '',
     ``,
     `${tt(locale, 'nextSteps')}:`,

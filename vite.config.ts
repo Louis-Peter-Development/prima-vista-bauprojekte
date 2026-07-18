@@ -200,7 +200,7 @@ function mailDevPlugin(): Plugin {
           sendJson(res, 200, await mod.getMonthAvailability(month));
         } catch (err) {
           console.error('[mail-dev:termine]', err instanceof Error ? err.message : err);
-          sendJson(res, 200, { configured: false, days: {} });
+          sendJson(res, 200, { configured: false, days: {}, slots: {} });
         }
       });
     },
