@@ -61,6 +61,37 @@ Each re-confirmed zero-importer before deletion; build proves nothing referenced
 - Second review pass on areas this one didn't deeply cover: admin blog/auth flow, the 87k lines of pricing data.
 - Exercise live endpoints (contact/blitz/calculator-pdf/auth/reviews) in a preview/deploy env.
 
+## Pending client walkthrough updates — 2026-07-16
+
+- **Company history / experience:** Daniel and Monica started working in construction in **2006**.
+- The homepage currently presents **2014** in several places, including the “Bauleitung seit 2.014” statistic, “Zwölf Jahre. Eine Linie.”, the hero/supporting copy, and the About section.
+- Before editing, confirm whether **2014 remains the legal Prima Vista founding year**. If so, do not replace every 2014 reference blindly; distinguish personal experience from company history.
+- Recommended German wording: **“Daniel und Monica sind seit 2006 im Bauwesen tätig und führen Prima Vista seit 2014.”**
+- When implementing, update the relevant homepage copy/statistic consistently in all four locales (`de`, `en`, `fr`, `it`) and revise the duration wording derived from the year.
+- Status: **not implemented yet**; captured during the live client website walkthrough for a later update.
+
+### Automatic Blitz-Angebot after website intake
+
+- **Feature idea:** After a prospective client describes the project and provides the required details on the website, automatically calculate and email a branded **Blitz-Angebot / Vorab-Kostenschätzung** to the client.
+- Reuse the structured project inputs already collected by the website/chat and ask follow-up questions when required information is missing (for example object type, location, area, requested trades, standard, timing, contact details, and email consent).
+- Generate a clear price range rather than an unverified binding fixed price, include assumptions and exclusions, and state that the final offer is confirmed after review/site inspection.
+- Send the client a branded email with a PDF or web summary and send the same lead details to the Prima Vista office/admin workflow.
+- Add a manual-review fallback for unusual, incomplete, high-value, or out-of-range projects; prevent duplicate sends and keep an audit record of the submitted answers and calculation version.
+- Reconcile the automation with the current homepage promise that the **Bauleitung prüft** the request and sends the written estimate within 24 hours; decide whether standard requests are fully automatic or require approval before sending.
+- Status: **idea only / not implemented**; captured during the live client website walkthrough for later scoping.
+
+### Calendar date picker for the contact form
+
+- Add a **preferred appointment date** field with a visual calendar/date picker to the `/kontakt` “Erstberatung” form.
+- Connect availability and appointment creation to the Google Calendar associated with **`primavista.bauprojekte@gmail.com`**.
+- Use Google OAuth/service authorization during implementation; never place Google credentials or refresh tokens in frontend code or commit them to the repository.
+- Do not allow past dates; clearly show unavailable dates and use the correct localized date format in all supported languages.
+- Consider an optional preferred time/time window, appointment type (**vor Ort** or **Video**), and an alternative date so the office can schedule the consultation without an extra email round trip.
+- Only expose available appointment slots to website visitors—not private calendar event names, attendees, descriptions, or other calendar details.
+- Carry the selected date and appointment details into the office notification, customer confirmation, admin/lead record, and any future automatic Blitz-Angebot workflow.
+- Keep the existing “Termin in 48 Stunden” promise clear: the requested date is a preference until Prima Vista confirms availability.
+- Status: **idea only / not implemented**; captured for the contact-form update during the live client website walkthrough.
+
 ## Verify locally
 ```
 npm run typecheck && npm run lint && npm run test:run && npm run build
