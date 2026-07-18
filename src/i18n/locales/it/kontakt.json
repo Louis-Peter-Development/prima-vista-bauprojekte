@@ -77,6 +77,28 @@
       "step3": "Se desidera, fissiamo un appuntamento in loco.",
       "toHome": "Vai alla home",
       "toProjects": "Vedi i progetti"
+    },
+    "termin": {
+      "label": "Data preferita per la prima consulenza",
+      "optional": "(facoltativo)",
+      "hint": "La data preferita è una preferenza — la confermiamo entro 48 ore o proponiamo alternative.",
+      "calendarAria": "Calendario per la scelta della data",
+      "prevMonth": "Mese precedente",
+      "nextMonth": "Mese successivo",
+      "busyDay": "già occupato",
+      "legend": "I giorni in grigio sono già occupati.",
+      "zeitLabel": "Fascia oraria",
+      "zeit": {
+        "flexibel": "Flessibile",
+        "vormittag": "Mattina",
+        "nachmittag": "Pomeriggio"
+      },
+      "artLabel": "Tipo di appuntamento",
+      "art": {
+        "vorOrt": "In loco",
+        "video": "Video"
+      },
+      "altLabel": "Aggiungere una data alternativa"
     }
   },
   "faqSection": {

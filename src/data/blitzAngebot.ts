@@ -7,6 +7,7 @@ export type BlitzFormState = {
   name: string;
   email: string;
   tel: string;
+  dsgvo: boolean;
 };
 
 export const INITIAL_BLITZ_FORM: BlitzFormState = {
@@ -18,6 +19,7 @@ export const INITIAL_BLITZ_FORM: BlitzFormState = {
   name: '',
   email: '',
   tel: '',
+  dsgvo: false,
 };
 
 export const BLITZ_ART_OPTIONS: Array<{ value: BlitzFormState['art']; label: string }> = [

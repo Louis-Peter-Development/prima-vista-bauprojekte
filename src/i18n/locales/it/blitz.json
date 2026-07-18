@@ -2,16 +2,21 @@
   "intro": {
     "crumb": "Preventivo express · Stima preliminare",
     "title": "Il preventivo<br/><em>express.</em>",
-    "lede": "Sa esattamente cosa desidera? Risponda ad alcune domande concrete su superficie e lavorazioni. Le analizziamo e le inviamo entro 24 ore una prima stima dei costi concreta, senza una lunga telefonata preliminare.",
+    "lede": "Sa esattamente cosa desidera? Risponda ad alcune domande concrete su superficie e lavorazioni. Le richieste standard vengono calcolate subito — la Sua stima preliminare arriva nella Sua casella in pochi minuti; i casi particolari vengono esaminati dalla direzione lavori entro 24 ore.",
     "list1": "Prima valutazione gratuita",
-    "list2": "Risposta garantita entro 24 h",
+    "list2": "Stima immediata — max 24 h",
     "list3": "Una fascia di prezzo realistica",
     "mediaAlt": "Un edificio d'epoca prima della ristrutturazione come base per un preventivo express",
     "mediaCaption": "Rilievo della struttura · Stima preliminare"
   },
   "form": {
     "step": "Passo {{current}} di {{total}}",
-    "art": { "pakete": "Pacchetti completi", "gewerke": "Lavorazioni", "heizung": "Riscaldamento", "anderes": "Altro" },
+    "art": {
+      "pakete": "Pacchetti completi",
+      "gewerke": "Lavorazioni",
+      "heizung": "Riscaldamento",
+      "anderes": "Altro"
+    },
     "artPrompt": "Quale ambito è adatto al suo progetto?",
     "servicePromptGewerke": "Quali lavorazioni sono adatte al suo progetto? (scelta multipla)",
     "servicePromptOther": "Quale prestazione o preventivatore di dettaglio è adatto al suo progetto?",
@@ -54,7 +59,7 @@
     "emailPlaceholder": "lei@email.com",
     "telLabel": "Telefono",
     "telPlaceholder": "Per eventuali chiarimenti",
-    "note": "Stima entro 24 h",
+    "note": "Stima immediata — entro max 24 h",
     "back": "Indietro",
     "next": "Avanti",
     "submit": "Richiedi il preventivo",
@@ -69,6 +74,14 @@
     "successStep2": "Riceve una stima scritta preliminare dei costi.",
     "successStep3": "Se desidera, perfezioniamo il preventivo in loco — vincolante dopo il rilievo.",
     "successToHome": "Vai alla home",
-    "successToProjects": "Vedi i progetti"
+    "successToProjects": "Vedi i progetti",
+    "consent": "Acconsento all'utilizzo dei miei dati per il calcolo e alla ricezione della stima preliminare via e-mail. Non verranno trasmessi a terzi.",
+    "consentLink": "Privacy",
+    "consentError": "Confermi l'informativa sulla privacy.",
+    "successAutoEyebrow": "Stima inviata",
+    "successAutoBody": "La Sua stima preliminare dei costi è stata calcolata automaticamente ed è già in viaggio — via e-mail a <s>{{email}}</s>",
+    "successAutoStep1": "Controlli la Sua casella di posta — la stima con forbice e presupposti La attende lì.",
+    "successAutoStep2": "Risponda direttamente all'e-mail per qualsiasi domanda — scriverà con la nostra direzione lavori.",
+    "successAutoStep3": "Su richiesta fissiamo un sopralluogo — il prezzo diventa vincolante dopo il rilievo."
   }
 }

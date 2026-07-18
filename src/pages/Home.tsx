@@ -196,7 +196,7 @@ export default function Home() {
           <div className="stats__grid">
             <div className="stat reveal">
               <span className="stat__label">{t('stats.since.label')}</span>
-              <Counter className="stat__num" target={2014} style={{ textAlign: 'left' }} />
+              <Counter className="stat__num" target={2006} style={{ textAlign: 'left' }} />
               <span className="stat__desc">{t('stats.since.desc')}</span>
             </div>
             <div className="stat reveal" data-delay="1">

@@ -77,6 +77,28 @@
       "step3": "If you wish, we arrange an on-site appointment.",
       "toHome": "Go to home page",
       "toProjects": "View projects"
+    },
+    "termin": {
+      "label": "Preferred date for the initial consultation",
+      "optional": "(optional)",
+      "hint": "Your preferred date is a preference — we confirm it within 48 hours or suggest alternatives.",
+      "calendarAria": "Calendar for choosing a date",
+      "prevMonth": "Previous month",
+      "nextMonth": "Next month",
+      "busyDay": "already booked",
+      "legend": "Greyed-out days are already booked.",
+      "zeitLabel": "Time window",
+      "zeit": {
+        "flexibel": "Flexible",
+        "vormittag": "Morning",
+        "nachmittag": "Afternoon"
+      },
+      "artLabel": "Appointment type",
+      "art": {
+        "vorOrt": "On site",
+        "video": "Video"
+      },
+      "altLabel": "Add an alternative date"
     }
   },
   "faqSection": {

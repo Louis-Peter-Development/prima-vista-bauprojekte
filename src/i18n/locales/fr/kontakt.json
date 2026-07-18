@@ -77,6 +77,28 @@
       "step3": "Si vous le souhaitez, nous fixons un rendez-vous sur place.",
       "toHome": "Aller à l'accueil",
       "toProjects": "Voir les projets"
+    },
+    "termin": {
+      "label": "Date souhaitée pour le premier entretien",
+      "optional": "(facultatif)",
+      "hint": "Votre date souhaitée est une préférence — nous la confirmons sous 48 heures ou proposons des alternatives.",
+      "calendarAria": "Calendrier pour choisir une date",
+      "prevMonth": "Mois précédent",
+      "nextMonth": "Mois suivant",
+      "busyDay": "déjà réservé",
+      "legend": "Les jours grisés sont déjà réservés.",
+      "zeitLabel": "Créneau horaire",
+      "zeit": {
+        "flexibel": "Flexible",
+        "vormittag": "Matin",
+        "nachmittag": "Après-midi"
+      },
+      "artLabel": "Type de rendez-vous",
+      "art": {
+        "vorOrt": "Sur place",
+        "video": "Visio"
+      },
+      "altLabel": "Indiquer une date alternative"
     }
   },
   "faqSection": {

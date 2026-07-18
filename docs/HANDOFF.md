@@ -61,6 +61,47 @@ Each re-confirmed zero-importer before deletion; build proves nothing referenced
 - Second review pass on areas this one didn't deeply cover: admin blog/auth flow, the 87k lines of pricing data.
 - Exercise live endpoints (contact/blitz/calculator-pdf/auth/reviews) in a preview/deploy env.
 
+## Pending client walkthrough updates — 2026-07-16
+
+- **Company history / experience:** Daniel and Monica started working in construction in **2006**.
+- The homepage currently presents **2014** in several places, including the “Bauleitung seit 2.014” statistic, “Zwölf Jahre. Eine Linie.”, the hero/supporting copy, and the About section.
+- Before editing, confirm whether **2014 remains the legal Prima Vista founding year**. If so, do not replace every 2014 reference blindly; distinguish personal experience from company history.
+- Recommended German wording: **“Daniel und Monica sind seit 2006 im Bauwesen tätig und führen Prima Vista seit 2014.”**
+- When implementing, update the relevant homepage copy/statistic consistently in all four locales (`de`, `en`, `fr`, `it`) and revise the duration wording derived from the year.
+- Status: **implemented 2026-07-18** — Louis confirmed the company dates to **2006** (2014 dropped entirely). All 2014 references replaced with 2006 in all four locales' `home.json` (hero tagline, materials chip, stats intro, founders paragraph); stats title now "Zwanzig Jahre. Eine Linie." with EN/FR/IT equivalents; `Home.tsx` counter target set to 2006; chat assistant prompt (`server/chat.ts`, Gründung) updated. Verified live in all four locales; typecheck/lint/tests/build green.
+
+### Automatic Blitz-Angebot after website intake
+
+- **Feature idea:** After a prospective client describes the project and provides the required details on the website, automatically calculate and email a branded **Blitz-Angebot / Vorab-Kostenschätzung** to the client.
+- Reuse the structured project inputs already collected by the website/chat and ask follow-up questions when required information is missing (for example object type, location, area, requested trades, standard, timing, contact details, and email consent).
+- Generate a clear price range rather than an unverified binding fixed price, include assumptions and exclusions, and state that the final offer is confirmed after review/site inspection.
+- Send the client a branded email with a PDF or web summary and send the same lead details to the Prima Vista office/admin workflow.
+- Add a manual-review fallback for unusual, incomplete, high-value, or out-of-range projects; prevent duplicate sends and keep an audit record of the submitted answers and calculation version.
+- Reconcile the automation with the current homepage promise that the **Bauleitung prüft** the request and sends the written estimate within 24 hours; decide whether standard requests are fully automatic or require approval before sending.
+- Status: **implemented 2026-07-18** (fully automatic, per Louis' decision). How it works:
+  - `netlify/functions/blitz.ts` → `server/blitzFlow.ts`: consent-gated decision → dedup check → emails → Mongo audit record (`BlitzRequest` in `_shared/db.ts`, includes inputs, estimate, calc version, dedup key). DB unreachable ⇒ graceful fallback to the manual 24-h flow.
+  - Pricing (`server/blitzEstimate.ts`): (a) calculator handoffs — grand total re-derived server-side from sanitized line items (client totals ignored), ±0.9/1.15 band, detailed PDF attached; (b) Haus-/Wohnung-Sanierung package requests with plausible m² — priced from `server/blitzRates.generated.ts`, engine-exact net tables sampled from the live calculator packages (regenerate: `node scripts/generate-blitz-rates.mjs`), band widened by subtype spread. Corridor €3k–900k; Gastronomie/Büro, single trades, heating, odd areas ⇒ manual review.
+  - Emails: localized customer estimate (range, assumptions, "verbindlich nach Aufmaß" disclaimer) + German office notification marked "automatisch beantwortet" with the sent figures. `MAIL_DRY_RUN=1` logs instead of sending (dev).
+  - Frontend: Blitz form step 5 gained a required GDPR/email-consent checkbox; success panel is mode-aware (instant vs. 24 h). Promise copy (home + blitz page, all 4 locales) now says instant for standard requests, 24 h for special cases.
+  - Duplicate sends suppressed for 24 h per (email + answers + estimate) hash. Verified end-to-end via dev middleware (auto pakete / auto kalkulator incl. PDF / manual) and the full form wizard; all gates green.
+
+### Calendar date picker for the contact form
+
+- Add a **preferred appointment date** field with a visual calendar/date picker to the `/kontakt` “Erstberatung” form.
+- Connect availability and appointment creation to the Google Calendar associated with **`primavista.bauprojekte@gmail.com`**.
+- Use Google OAuth/service authorization during implementation; never place Google credentials or refresh tokens in frontend code or commit them to the repository.
+- Do not allow past dates; clearly show unavailable dates and use the correct localized date format in all supported languages.
+- Consider an optional preferred time/time window, appointment type (**vor Ort** or **Video**), and an alternative date so the office can schedule the consultation without an extra email round trip.
+- Only expose available appointment slots to website visitors—not private calendar event names, attendees, descriptions, or other calendar details.
+- Carry the selected date and appointment details into the office notification, customer confirmation, admin/lead record, and any future automatic Blitz-Angebot workflow.
+- Keep the existing “Termin in 48 Stunden” promise clear: the requested date is a preference until Prima Vista confirms availability.
+- Status: **implemented 2026-07-18** (full Google Calendar integration, per Louis' decision). How it works:
+  - `/kontakt` form gained an optional **Wunschtermin** section: custom localized month-grid picker (`src/components/kontakt/DatePickerField.tsx`) — no past dates, no Sundays, 6-month horizon — plus time window (Vormittag/Nachmittag/Flexibel), type (vor Ort/Video), and a collapsible alternative date. Clearly framed as a preference; "Termin in 48 Stunden" confirmation promise unchanged.
+  - Availability: `GET /api/termine?month=` (`netlify/functions/termine.ts` → `server/terminAvailability.ts`) exposes **per-day booleans only**, derived from Google free/busy (a day is free with a ≥2h gap inside 08–18 Berlin time). No event titles/attendees ever reach the browser. Cached 5 min, rate-limited.
+  - Submission: date carried into the office email (with a "noch nicht bestätigt — in 48 Std. bestätigen" callout), the localized customer confirmation, and a **tentative, transparent** all-day event on the office calendar (never blocks availability; best-effort — a Calendar error can't fail the enquiry).
+  - Auth: service account via `google-auth-library` (already a dependency). Env: `GOOGLE_CALENDAR_ID`, `GOOGLE_SA_EMAIL`, `GOOGLE_SA_KEY` (documented in `.env.example`); the office calendar must be shared with the service-account address ("Make changes to events"). **Without the env vars everything degrades gracefully** to a preference-only picker — so the feature is live-safe before the credentials exist.
+  - **Configured and smoke-tested 2026-07-18:** dedicated Google Cloud project `prima-vista-calendar-260718`; Calendar API enabled; service account `website-calendar@prima-vista-calendar-260718.iam.gserviceaccount.com`; the `primavista.bauprojekte@gmail.com` calendar grants it **Make changes to events**. `GOOGLE_CALENDAR_ID`, `GOOGLE_SA_EMAIL`, and write-only `GOOGLE_SA_KEY` are scoped to Netlify Functions for production, deploy previews, and branch deploys. The `development` deploy returned `configured: true` availability, the live picker showed Google-backed disabled days, and a tentative/transparent test event was created, read back, and deleted successfully.
+
 ## Verify locally
 ```
 npm run typecheck && npm run lint && npm run test:run && npm run build

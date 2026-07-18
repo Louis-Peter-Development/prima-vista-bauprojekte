@@ -144,10 +144,11 @@ function blogDevPlugin(): Plugin {
  */
 function mailDevPlugin(): Plugin {
   type MailModule = typeof import('./server/mail');
+  type BlitzFlowModule = typeof import('./server/blitzFlow');
 
   const handle = (
     server: ViteDevServer,
-    method: keyof Pick<MailModule, 'sendKontaktEmails' | 'sendBlitzEmails'>,
+    method: keyof Pick<MailModule, 'sendKontaktEmails'>,
   ) => async (req: IncomingMessage, res: ServerResponse, next: () => void) => {
     if (req.method !== 'POST') return next();
     try {
@@ -167,14 +168,48 @@ function mailDevPlugin(): Plugin {
     name: 'pv-mail-dev',
     configureServer(server) {
       server.middlewares.use('/api/contact', handle(server, 'sendKontaktEmails'));
-      server.middlewares.use('/api/blitz', handle(server, 'sendBlitzEmails'));
+      // Blitz runs the same decision + email flow as the Netlify function.
+      // Prod validates/sanitizes in the function; dev forwards the raw body
+      // (as before) and skips the audit store — no dedup/persistence locally.
+      server.middlewares.use('/api/blitz', async (req, res, next) => {
+        if (req.method !== 'POST') return next();
+        try {
+          const body = await readJson(req);
+          const flow = (await server.ssrLoadModule('/server/blitzFlow.ts')) as BlitzFlowModule;
+          const result = await flow.processBlitzSubmission(
+            body as Parameters<BlitzFlowModule['processBlitzSubmission']>[0],
+          );
+          sendJson(res, 200, { ok: true, mode: result.mode });
+        } catch (err) {
+          const message = err instanceof Error ? err.message : String(err);
+          console.error('[mail-dev:blitz]', message);
+          sendJson(res, 500, { error: 'Send failed', detail: message });
+        }
+      });
+      // Month availability for the /kontakt date picker (mirrors /api/termine).
+      server.middlewares.use('/api/termine', async (req, res, next) => {
+        if (req.method !== 'GET') return next();
+        try {
+          const month = new URL(req.url ?? '', 'http://localhost').searchParams.get('month') ?? '';
+          if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month)) {
+            sendJson(res, 400, { error: 'invalid month' });
+            return;
+          }
+          const mod = (await server.ssrLoadModule('/server/terminAvailability.ts')) as
+            typeof import('./server/terminAvailability');
+          sendJson(res, 200, await mod.getMonthAvailability(month));
+        } catch (err) {
+          console.error('[mail-dev:termine]', err instanceof Error ? err.message : err);
+          sendJson(res, 200, { configured: false, days: {} });
+        }
+      });
     },
   };
 }
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE', 'MONGODB_URI', 'MONGODB_DB', 'JWT_SECRET', 'GOOGLE_CLIENT_ID', 'ADMIN_GOOGLE_EMAIL'] as const) {
+  for (const key of ['ANTHROPIC_API_KEY', 'RESEND_API_KEY', 'MAIL_FROM', 'MAIL_TO_OFFICE', 'MAIL_DRY_RUN', 'MONGODB_URI', 'MONGODB_DB', 'JWT_SECRET', 'GOOGLE_CLIENT_ID', 'ADMIN_GOOGLE_EMAIL', 'GOOGLE_CALENDAR_ID', 'GOOGLE_SA_EMAIL', 'GOOGLE_SA_KEY'] as const) {
     if (env[key]) process.env[key] = env[key];
   }
   return {

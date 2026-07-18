@@ -7,12 +7,16 @@
 
 import { Resend } from 'resend';
 import { buildCalculatorPdf, type CalculatorPdfPayload } from './calculatorPdf.js';
+import type { BlitzEstimate } from './blitzEstimate.js';
 import {
   type Locale,
   artLabel as artLabelFor,
   gewerkeLabel,
   kontaktArtLabel,
   starterminLabel as starterminLabelFor,
+  terminArtLabel,
+  terminZeitLabel,
+  formatDateLong,
   formatEuro as formatEuroFor,
   formatQuantity as formatQuantityFor,
   interpolate,
@@ -56,6 +60,12 @@ function ensureEmailSent(result: ResendSendResult, context: string): void {
 }
 
 async function sendEmail(payload: Parameters<Resend['emails']['send']>[0], context: string): Promise<void> {
+  // Dev/test escape hatch: log instead of sending, so the full flow can be
+  // exercised without a Resend key and without emailing real people.
+  if (process.env.MAIL_DRY_RUN === '1') {
+    console.log(`[mail] DRY RUN — "${context}" → ${String(payload.to)} · ${payload.subject}`);
+    return;
+  }
   const result = await withTimeout(getResend().emails.send(payload), RESEND_TIMEOUT_MS, `Resend ${context}`);
   ensureEmailSent(result, context);
 }
@@ -81,6 +91,11 @@ export type KontaktPayload = {
   region?: string;
   budget?: string;
   msg: string;
+  /** Preferred consultation date (ISO yyyy-mm-dd) — a preference, not a booking. */
+  wunschtermin?: string;
+  terminZeit?: string;
+  terminArt?: string;
+  terminAlternativ?: string;
   /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
   locale?: Locale;
 };
@@ -97,6 +112,8 @@ export type BlitzPayload = {
   name: string;
   email: string;
   tel: string;
+  /** GDPR/email consent checkbox — required for the automatic estimate. */
+  dsgvo?: boolean;
   /** Request locale — localizes the CUSTOMER confirmation only. Defaults 'de'. */
   locale?: Locale;
 };
@@ -567,6 +584,16 @@ ${items
 // German-speaking Prima Vista team. The submitted German display values
 // (p.art / p.region / p.budget) are shown verbatim.
 
+function kontaktTerminRows(p: KontaktPayload, locale: Locale = 'de'): string {
+  if (!p.wunschtermin) return '';
+  return [
+    row(tt(locale, 'kontaktRowWunschtermin'), formatDateLong(p.wunschtermin, locale)),
+    row(tt(locale, 'kontaktRowZeitfenster'), p.terminZeit ? terminZeitLabel(locale, p.terminZeit) : ''),
+    row(tt(locale, 'kontaktRowTerminart'), p.terminArt ? terminArtLabel(locale, p.terminArt) : ''),
+    row(tt(locale, 'kontaktRowAlternativ'), p.terminAlternativ ? formatDateLong(p.terminAlternativ, locale) : ''),
+  ].join('');
+}
+
 function kontaktOfficeHtml(p: KontaktPayload): string {
   const rows = [
     row('Name', `${p.vorname} ${p.nachname}`),
@@ -575,11 +602,19 @@ function kontaktOfficeHtml(p: KontaktPayload): string {
     row('Art', p.art || ''),
     row('Region', p.region || ''),
     row('Budget', p.budget || ''),
+    kontaktTerminRows(p),
   ].join('');
+  const terminCallout = p.wunschtermin
+    ? callout(
+      'Wunschtermin angefragt',
+      `Der Termin ist noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten. Ein vorläufiger, transparenter Kalendereintrag wurde angelegt, sofern der Kalender verbunden ist.`,
+    )
+    : '';
   const body = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>
 <h2 style="margin:32px 0 12px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">Nachricht</h2>
 ${bodyParagraph(p.msg)}
+${terminCallout}
 <p style="margin:24px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.5;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">
 Antworten Sie direkt auf diese E-Mail, um mit ${escape(p.vorname)} in Kontakt zu treten.
 </p>`;
@@ -596,9 +631,16 @@ function kontaktOfficeText(p: KontaktPayload): string {
     p.art ? `Art: ${p.art}` : '',
     p.region ? `Region: ${p.region}` : '',
     p.budget ? `Budget: ${p.budget}` : '',
+    p.wunschtermin ? `Wunschtermin: ${formatDateLong(p.wunschtermin, 'de')}` : '',
+    p.wunschtermin && p.terminZeit ? `Zeitfenster: ${terminZeitLabel('de', p.terminZeit)}` : '',
+    p.wunschtermin && p.terminArt ? `Terminart: ${terminArtLabel('de', p.terminArt)}` : '',
+    p.wunschtermin && p.terminAlternativ ? `Alternativtermin: ${formatDateLong(p.terminAlternativ, 'de')}` : '',
     ``,
     `Nachricht:`,
     p.msg,
+    p.wunschtermin
+      ? `\nWunschtermin angefragt: noch nicht bestätigt — bitte innerhalb von 48 Stunden bestätigen oder Alternativen anbieten.`
+      : '',
     ``,
     `— Antworten Sie direkt auf diese E-Mail, um mit ${p.vorname} in Kontakt zu treten.`,
   ]
@@ -625,12 +667,17 @@ function kontaktConfirmHtml(p: KontaktPayload, locale: Locale): string {
     row(tt(locale, 'kontaktRowEmail'), p.email),
     row(tt(locale, 'kontaktRowTel'), p.tel || ''),
     row(tt(locale, 'kontaktRowArt'), kontaktArtDisplay(p, locale)),
+    kontaktTerminRows(p, locale),
   ].join('');
+  const terminNote = p.wunschtermin
+    ? `<p style="margin:16px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.55;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">${nl2br(tt(locale, 'kontaktTerminNote'))}</p>`
+    : '';
   const body = `
 ${bodyParagraph(
   interpolate(tt(locale, 'kontaktIntro'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
 )}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 0 0;">${echo}</table>
+${terminNote}
 <h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'nextSteps'))}</h2>
 ${steps([
   tt(locale, 'kontaktStep1'),
@@ -646,6 +693,11 @@ function kontaktConfirmText(p: KontaktPayload, locale: Locale): string {
     interpolate(tt(locale, 'kontaktTitle'), { name: p.vorname }),
     ``,
     interpolate(tt(locale, 'kontaktIntroText'), { email: p.email, phone: kontaktPhoneSuffix(p, locale) }),
+    p.wunschtermin ? `\n${tt(locale, 'kontaktRowWunschtermin')}: ${formatDateLong(p.wunschtermin, locale)}` : '',
+    p.wunschtermin && p.terminZeit ? `${tt(locale, 'kontaktRowZeitfenster')}: ${terminZeitLabel(locale, p.terminZeit)}` : '',
+    p.wunschtermin && p.terminArt ? `${tt(locale, 'kontaktRowTerminart')}: ${terminArtLabel(locale, p.terminArt)}` : '',
+    p.wunschtermin && p.terminAlternativ ? `${tt(locale, 'kontaktRowAlternativ')}: ${formatDateLong(p.terminAlternativ, locale)}` : '',
+    p.wunschtermin ? `${tt(locale, 'kontaktTerminNote')}` : '',
     ``,
     `${tt(locale, 'nextSteps')}:`,
     `01  ${tt(locale, 'kontaktStep1')}`,
@@ -663,7 +715,7 @@ function kontaktConfirmText(p: KontaktPayload, locale: Locale): string {
 // Office notification — intentionally kept in GERMAN regardless of the request
 // locale: it is read by the German-speaking Prima Vista team, so the shared
 // helpers are called with the default 'de'.
-function blitzOfficeHtml(p: BlitzPayload): string {
+function blitzOfficeHtml(p: BlitzPayload, autoEstimate?: BlitzEstimate): string {
   const rows = [
     row('Name', p.name),
     row('E-Mail', p.email),
@@ -684,16 +736,20 @@ ${blitzServiceSectionHtml('Gewählte Leistungen / Anfragebereich', p, 'de', 28)}
 ${calculatorBlock}
 ${legacyCalculatorBlock}
 ${msgBlock}
-${callout(
+${autoEstimate ? blitzAutoOfficeCallout(p, autoEstimate) : callout(
   'Nächster Schritt',
   `Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten. Eine Antwort auf diese E-Mail geht direkt an ${p.email}.`,
 )}`;
-  return shell(`Blitz-Anfrage von ${escape(p.name)}`, 'Blitz-Angebot · 24-Std-Schätzung', body);
+  return shell(
+    `Blitz-Anfrage von ${escape(p.name)}`,
+    autoEstimate ? 'Blitz-Angebot · Automatisch beantwortet' : 'Blitz-Angebot · 24-Std-Schätzung',
+    body,
+  );
 }
 
-function blitzOfficeText(p: BlitzPayload): string {
+function blitzOfficeText(p: BlitzPayload, autoEstimate?: BlitzEstimate): string {
   return [
-    `Neue Blitz-Anfrage`,
+    autoEstimate ? `Neue Blitz-Anfrage — automatisch beantwortet` : `Neue Blitz-Anfrage`,
     ``,
     `Name: ${p.name}`,
     `E-Mail: ${p.email}`,
@@ -716,7 +772,9 @@ function blitzOfficeText(p: BlitzPayload): string {
     !p.kalkulator && isLegacyCalculatorNote(p.msg) ? `\nÜbernommene Kalkulation:\n${cleanLegacyCalculatorNote(p.msg)}` : '',
     p.msg && !isLegacyCalculatorNote(p.msg) ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
     ``,
-    `Nächster Schritt: Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten.`,
+    autoEstimate
+      ? `Automatische Vorab-Schätzung versendet: ${formatEuro(autoEstimate.totalMin)} – ${formatEuro(autoEstimate.totalMax)} (Mittelwert ${formatEuro(autoEstimate.totalMid)}). Kein manueller Versand nötig.`
+      : `Nächster Schritt: Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten.`,
   ]
     .filter(Boolean)
     .join('\n');
@@ -797,6 +855,104 @@ function blitzConfirmText(p: BlitzPayload, locale: Locale): string {
     tt(locale, 'signatureName'),
     tt(locale, 'company'),
   ].join('\n');
+}
+
+// ----- Customer automatic estimate — Blitz (localized by request locale) -----
+
+function estimateBlockHtml(estimate: BlitzEstimate, locale: Locale): string {
+  const midLine = [
+    `${tt(locale, 'rowMid')}: ${formatEuro(estimate.totalMid, locale)}`,
+    estimate.perM2 > 0 ? `${tt(locale, 'rowGuideValue')}: ${formatEuro(estimate.perM2, locale)} / m²` : '',
+  ].filter(Boolean).join(' · ');
+  return `
+<div style="margin:24px 0;padding:22px 24px;background:${COLORS.bg};border-left:3px solid ${COLORS.red};">
+  <div style="font-family:Helvetica, Arial, sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:${COLORS.copper};margin-bottom:10px;">${escape(tt(locale, 'blitzAutoRangeLabel'))}</div>
+  <div style="font-family:Georgia, 'Times New Roman', serif;font-style:italic;font-weight:500;font-size:28px;line-height:1.2;color:${COLORS.ink};">${escape(`${formatEuro(estimate.totalMin, locale)} – ${formatEuro(estimate.totalMax, locale)}`)}</div>
+  <div style="margin-top:8px;font-family:Helvetica, Arial, sans-serif;font-size:13px;line-height:1.5;color:${COLORS.muted};">${escape(midLine)}</div>
+  <div style="margin-top:6px;font-family:Helvetica, Arial, sans-serif;font-size:11px;line-height:1.5;color:${COLORS.muted};">${escape(tt(locale, 'blitzAutoRangeNote'))}</div>
+</div>`;
+}
+
+function blitzAutoHtml(p: BlitzPayload, estimate: BlitzEstimate, pdfAttached: boolean, locale: Locale): string {
+  const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
+  const body = `
+${bodyParagraph(tt(locale, 'blitzAutoIntro'))}
+${estimateBlockHtml(estimate, locale)}
+<h2 style="margin:24px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'blitzYourDetails'))}</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${blitzProjectRows(p, locale)}</table>
+${blitzServiceSectionHtml(tt(locale, 'blitzYourServices'), p, locale, 28)}
+${pdfAttached ? bodyParagraph(tt(locale, 'blitzAutoPdfNote')) : ''}
+${sectionTitle(tt(locale, 'blitzAutoAssumptions'))}
+${bodyParagraph(tt(locale, 'blitzAutoAssumption1'))}
+${bodyParagraph(tt(locale, 'blitzAutoAssumption2'))}
+${bodyParagraph(tt(locale, 'blitzAutoAssumption3'))}
+<p style="margin:16px 0 0 0;padding:14px 16px;background:${COLORS.bg};font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:1.55;color:${COLORS.muted};border-left:2px solid ${COLORS.copper};">${nl2br(tt(locale, 'blitzAutoDisclaimer'))}</p>
+<h2 style="margin:32px 0 8px 0;font-family:Helvetica, Arial, sans-serif;font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:${COLORS.copper};">${escape(tt(locale, 'nextSteps'))}</h2>
+${steps([
+  tt(locale, 'blitzAutoStep1'),
+  tt(locale, 'blitzAutoStep2'),
+  tt(locale, 'blitzAutoStep3'),
+])}
+${bodyParagraph(tt(locale, 'signature'))}`;
+  return shell(interpolate(tt(locale, 'blitzAutoTitle'), { name: escape(firstName) }), tt(locale, 'blitzAutoEyebrow'), body);
+}
+
+function blitzAutoText(p: BlitzPayload, estimate: BlitzEstimate, pdfAttached: boolean, locale: Locale): string {
+  const firstName = p.name.trim().split(/\s+/)[0] ?? p.name;
+  const isDe = locale === 'de';
+  const artDisplay = isDe ? p.artLabel : artLabelFor(locale, p.art);
+  const starttermin = isDe ? p.starterminLabel : starterminLabelFor(locale, p.starttermin);
+  return [
+    interpolate(tt(locale, 'blitzAutoTitle'), { name: firstName }),
+    ``,
+    tt(locale, 'blitzAutoIntro'),
+    ``,
+    `${tt(locale, 'blitzAutoRangeLabel')}: ${formatEuro(estimate.totalMin, locale)} – ${formatEuro(estimate.totalMax, locale)}`,
+    `${tt(locale, 'rowMid')}: ${formatEuro(estimate.totalMid, locale)}`,
+    estimate.perM2 > 0 ? `${tt(locale, 'rowGuideValue')}: ${formatEuro(estimate.perM2, locale)} / m²` : '',
+    tt(locale, 'blitzAutoRangeNote'),
+    ``,
+    `${tt(locale, 'blitzYourDetails')}:`,
+    `· ${tt(locale, 'rowObjectType')}: ${p.kalkulator?.kindLabel || artDisplay}`,
+    `· ${blitzScopeLabel(p, locale)}: ${p.kalkulator ? calculatorScopeValue(p, p.kalkulator, locale) : blitzScopeValue(p)}`,
+    `· ${tt(locale, 'rowStart')}: ${starttermin}`,
+    blitzServiceSectionText(tt(locale, 'blitzYourServices'), p, locale),
+    pdfAttached ? `\n${tt(locale, 'blitzAutoPdfNote')}` : '',
+    ``,
+    `${tt(locale, 'blitzAutoAssumptions')}:`,
+    `· ${tt(locale, 'blitzAutoAssumption1')}`,
+    `· ${tt(locale, 'blitzAutoAssumption2')}`,
+    `· ${tt(locale, 'blitzAutoAssumption3')}`,
+    ``,
+    tt(locale, 'blitzAutoDisclaimer'),
+    ``,
+    `${tt(locale, 'nextSteps')}:`,
+    `01  ${tt(locale, 'blitzAutoStep1')}`,
+    `02  ${tt(locale, 'blitzAutoStep2')}`,
+    `03  ${tt(locale, 'blitzAutoStep3')}`,
+    ``,
+    tt(locale, 'signatureLine1'),
+    tt(locale, 'signatureName'),
+    tt(locale, 'company'),
+  ].filter((line) => line !== '').join('\n');
+}
+
+// Office notification for an automatically answered request — German, mirrors
+// blitzOfficeHtml but swaps the 24-hour action callout for the sent estimate.
+function blitzAutoOfficeCallout(p: BlitzPayload, estimate: BlitzEstimate): string {
+  const basis = estimate.basis === 'kalkulator'
+    ? 'Kalkulator-Übernahme (Summen serverseitig neu berechnet)'
+    : 'Komplett-Paket · Preisbasis Kalkulator';
+  const detailLines = estimate.details?.length
+    ? `\n${estimate.details.map((d) => `${d.label}: ${formatEuro(d.net)}`).join('\n')}`
+    : '';
+  return callout(
+    'Automatische Vorab-Schätzung versendet',
+    `Der Kunde hat automatisch eine Vorab-Kostenschätzung erhalten: `
+    + `${formatEuro(estimate.totalMin)} – ${formatEuro(estimate.totalMax)} `
+    + `(Mittelwert ${formatEuro(estimate.totalMid)}${estimate.perM2 > 0 ? `, ca. ${formatEuro(estimate.perM2)} / m²` : ''}). `
+    + `Basis: ${basis}. Kein manueller Versand nötig — eine Antwort auf diese E-Mail geht direkt an ${p.email}.${detailLines}`,
+  );
 }
 
 // ----- Calculator-PDF covering email (localized by request locale) -----
@@ -912,6 +1068,44 @@ export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
     html: rendered.customer.html,
     text: rendered.customer.text,
   }, 'Blitz confirmation');
+}
+
+/** Automatic Blitz estimate: office notification (German, action-free) plus
+ *  the localized customer estimate. When the estimate is backed by an itemized
+ *  calculator handoff, the detailed PDF breakdown is attached. */
+export async function sendBlitzAutoEmails(payload: BlitzPayload, estimate: BlitzEstimate): Promise<void> {
+  const locale = normalizeLocale(payload.locale);
+  const pdfAttached = estimate.basis === 'kalkulator' && Boolean(payload.kalkulator?.picks?.length);
+
+  let attachments: Array<{ filename: string; content: Buffer }> | undefined;
+  if (pdfAttached && payload.kalkulator) {
+    const pdf = await buildCalculatorPdf({
+      email: payload.email,
+      consent: true,
+      kalkulator: payload.kalkulator,
+      locale,
+    });
+    attachments = [{ filename: 'prima-vista-vorab-schaetzung.pdf', content: pdf }];
+  }
+
+  await sendEmail({
+    from: FROM,
+    to: TO_OFFICE,
+    replyTo: payload.email,
+    subject: `Blitz-Anfrage · ${payload.name} · ${blitzRequestContext(payload)} · automatisch beantwortet`,
+    html: blitzOfficeHtml(payload, estimate),
+    text: blitzOfficeText(payload, estimate),
+  }, 'Blitz office (auto)');
+
+  await sendEmail({
+    from: FROM,
+    to: payload.email,
+    replyTo: TO_OFFICE,
+    subject: tt(locale, 'blitzAutoSubject'),
+    html: blitzAutoHtml(payload, estimate, pdfAttached, locale),
+    text: blitzAutoText(payload, estimate, pdfAttached, locale),
+    ...(attachments ? { attachments } : {}),
+  }, 'Blitz estimate');
 }
 
 export async function sendCalculatorPdfEmail(payload: CalculatorPdfPayload): Promise<void> {

@@ -361,6 +361,34 @@ const GEWERKE_LABELS: CodeLabelMap = {
   },
 };
 
+// Kontakt preferred-appointment time window / type codes.
+const TERMIN_ZEIT_LABELS: CodeLabelMap = {
+  de: { vormittag: 'Vormittag', nachmittag: 'Nachmittag', flexibel: 'Flexibel' },
+  en: { vormittag: 'Morning', nachmittag: 'Afternoon', flexibel: 'Flexible' },
+  it: { vormittag: 'Mattina', nachmittag: 'Pomeriggio', flexibel: 'Flessibile' },
+  fr: { vormittag: 'Matin', nachmittag: 'Après-midi', flexibel: 'Flexible' },
+};
+
+const TERMIN_ART_LABELS: CodeLabelMap = {
+  de: { 'vor-ort': 'Vor Ort', video: 'Video' },
+  en: { 'vor-ort': 'On site', video: 'Video' },
+  it: { 'vor-ort': 'In loco', video: 'Video' },
+  fr: { 'vor-ort': 'Sur place', video: 'Visio' },
+};
+
+/** "Fr., 24. Juli 2026" — localized long date for an ISO yyyy-mm-dd string. */
+export function formatDateLong(dateStr: string, locale: Locale): string {
+  const date = new Date(`${dateStr}T12:00:00Z`);
+  if (Number.isNaN(date.getTime())) return dateStr;
+  return new Intl.DateTimeFormat(LOCALE_TO_BCP47[locale], {
+    timeZone: 'UTC',
+    weekday: 'short',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+}
+
 /** Look up a canonical code/value in a code→label map, falling back to the raw
  *  code when there is no mapping (so an unknown value still renders something). */
 function labelFrom(map: CodeLabelMap, locale: Locale, code: string): string {
@@ -373,6 +401,8 @@ export const kontaktArtLabel = (locale: Locale, code: string) => labelFrom(KONTA
 export const regionLabel = (locale: Locale, code: string) => labelFrom(REGION_LABELS, locale, code);
 export const budgetLabel = (locale: Locale, code: string) => labelFrom(BUDGET_LABELS, locale, code);
 export const gewerkeLabel = (locale: Locale, code: string) => labelFrom(GEWERKE_LABELS, locale, code);
+export const terminZeitLabel = (locale: Locale, code: string) => labelFrom(TERMIN_ZEIT_LABELS, locale, code);
+export const terminArtLabel = (locale: Locale, code: string) => labelFrom(TERMIN_ART_LABELS, locale, code);
 
 // ----- Flat customer-facing string catalogue -----
 //
@@ -407,6 +437,11 @@ const STRINGS = {
     kontaktStep1: 'Wir lesen Ihre Angaben und bereiten erste Fragen vor.',
     kontaktStep2: 'Sie erhalten eine schriftliche Antwort oder einen Rückruf.',
     kontaktStep3: 'Auf Wunsch vereinbaren wir einen Termin vor Ort.',
+    kontaktRowWunschtermin: 'Wunschtermin',
+    kontaktRowZeitfenster: 'Zeitfenster',
+    kontaktRowTerminart: 'Terminart',
+    kontaktRowAlternativ: 'Alternativtermin',
+    kontaktTerminNote: 'Ihr Wunschtermin ist vorgemerkt — verbindlich wird er erst mit unserer Bestätigung innerhalb von 48 Stunden.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte',
@@ -422,6 +457,23 @@ const STRINGS = {
     blitzStep2: 'Sie erhalten eine schriftliche Vorab-Kostenschätzung.',
     blitzStep3: 'Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.',
     blitzStep3Text: 'Auf Wunsch verfeinern wir das Angebot vor Ort.',
+
+    // --- blitz automatic estimate (customer) ---
+    blitzAutoSubject: 'Ihre Vorab-Kostenschätzung — Prima Vista Bauprojekte',
+    blitzAutoTitle: 'Ihre Vorab-Kostenschätzung, {name}.',
+    blitzAutoEyebrow: 'Vorab-Kostenschätzung · Blitz-Angebot',
+    blitzAutoIntro: 'Vielen Dank für Ihre Anfrage. Auf Basis Ihrer Angaben haben wir Ihre Vorab-Kostenschätzung direkt kalkuliert — auf der geprüften Preisbasis unseres Online-Kalkulators.',
+    blitzAutoRangeLabel: 'Geschätzte Investition',
+    blitzAutoRangeNote: 'Alle Beträge netto zzgl. gesetzlicher MwSt.',
+    blitzAutoAssumptions: 'Annahmen & Hinweise',
+    blitzAutoAssumption1: 'Kalkuliert in der Standard-Ausführungsstufe bei üblicher Bestandssituation.',
+    blitzAutoAssumption2: 'Nicht enthalten: Sonderlösungen wie Statik-Eingriffe, Schadstoffsanierung oder Auflagen des Denkmalschutzes.',
+    blitzAutoAssumption3: 'Die Spanne deckt typische Ausstattungs- und Gebäudevarianten ab; Ihr konkretes Projekt kann davon abweichen.',
+    blitzAutoDisclaimer: 'Diese Vorab-Schätzung ist kein verbindliches Angebot. Verbindliche Preise entstehen nach Besichtigung, Aufmaß und Materialbemusterung — von unserer Bauleitung geprüft und gegengezeichnet.',
+    blitzAutoPdfNote: 'Im Anhang finden Sie die detaillierte PDF-Aufstellung Ihrer Kalkulator-Auswahl.',
+    blitzAutoStep1: 'Antworten Sie auf diese E-Mail oder vereinbaren Sie direkt einen Termin — unsere Bauleitung prüft Ihr Projekt persönlich.',
+    blitzAutoStep2: 'Vor-Ort-Besichtigung und Aufmaß durch Daniel oder Monica.',
+    blitzAutoStep3: 'Sie erhalten Ihr verbindliches Festpreis-Angebot — schwarz auf weiß.',
 
     // blitz project rows / calculator summary (customer)
     rowRequest: 'Anfrage',
@@ -558,6 +610,11 @@ const STRINGS = {
     kontaktStep1: 'We review your details and prepare initial questions.',
     kontaktStep2: 'You receive a written reply or a call back.',
     kontaktStep3: 'On request, we arrange an on-site appointment.',
+    kontaktRowWunschtermin: 'Preferred date',
+    kontaktRowZeitfenster: 'Time window',
+    kontaktRowTerminart: 'Appointment type',
+    kontaktRowAlternativ: 'Alternative date',
+    kontaktTerminNote: 'Your preferred date is noted — it only becomes binding once we confirm it within 48 hours.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'We have received your express quote request — Prima Vista Bauprojekte',
@@ -573,6 +630,23 @@ const STRINGS = {
     blitzStep2: 'You receive a written preliminary cost estimate.',
     blitzStep3: 'On request, we refine the quote on site — binding after measurement.',
     blitzStep3Text: 'On request, we refine the quote on site.',
+
+    // --- blitz automatic estimate (customer) ---
+    blitzAutoSubject: 'Your preliminary cost estimate — Prima Vista Bauprojekte',
+    blitzAutoTitle: 'Your preliminary cost estimate, {name}.',
+    blitzAutoEyebrow: 'Preliminary cost estimate · Express quote',
+    blitzAutoIntro: 'Thank you for your enquiry. Based on your details we have calculated your preliminary cost estimate right away — on the verified price basis of our online calculator.',
+    blitzAutoRangeLabel: 'Estimated investment',
+    blitzAutoRangeNote: 'All amounts net, plus statutory VAT.',
+    blitzAutoAssumptions: 'Assumptions & notes',
+    blitzAutoAssumption1: 'Calculated at the Standard finish level assuming a typical existing structure.',
+    blitzAutoAssumption2: 'Not included: special measures such as structural interventions, hazardous-material remediation or heritage-protection requirements.',
+    blitzAutoAssumption3: 'The range covers typical fit-out and building variants; your specific project may differ.',
+    blitzAutoDisclaimer: 'This preliminary estimate is not a binding quote. Binding prices are determined after a site visit, measurement and material sampling — reviewed and countersigned by our site management.',
+    blitzAutoPdfNote: 'Attached you will find the detailed PDF breakdown of your calculator selection.',
+    blitzAutoStep1: 'Reply to this email or book an appointment right away — our site management reviews your project personally.',
+    blitzAutoStep2: 'On-site visit and measurement by Daniel or Monica.',
+    blitzAutoStep3: 'You receive your binding fixed-price quote — in black and white.',
 
     // blitz project rows / calculator summary (customer)
     rowRequest: 'Request',
@@ -709,6 +783,11 @@ const STRINGS = {
     kontaktStep1: 'Esaminiamo i Suoi dati e prepariamo le prime domande.',
     kontaktStep2: 'Riceverà una risposta scritta o una richiamata.',
     kontaktStep3: 'Su richiesta fissiamo un appuntamento in loco.',
+    kontaktRowWunschtermin: 'Data preferita',
+    kontaktRowZeitfenster: 'Fascia oraria',
+    kontaktRowTerminart: 'Tipo di appuntamento',
+    kontaktRowAlternativ: 'Data alternativa',
+    kontaktTerminNote: 'La Sua data preferita è stata annotata — diventa vincolante solo con la nostra conferma entro 48 ore.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Abbiamo ricevuto la Sua richiesta di preventivo express — Prima Vista Bauprojekte',
@@ -724,6 +803,23 @@ const STRINGS = {
     blitzStep2: 'Riceverà una stima preliminare dei costi per iscritto.',
     blitzStep3: 'Su richiesta affiniamo l’offerta in loco — vincolante dopo il rilievo.',
     blitzStep3Text: 'Su richiesta affiniamo l’offerta in loco.',
+
+    // --- blitz automatic estimate (customer) ---
+    blitzAutoSubject: 'La Sua stima preliminare dei costi — Prima Vista Bauprojekte',
+    blitzAutoTitle: 'La Sua stima preliminare dei costi, {name}.',
+    blitzAutoEyebrow: 'Stima preliminare dei costi · Preventivo express',
+    blitzAutoIntro: 'Grazie per la Sua richiesta. Sulla base dei Suoi dati abbiamo calcolato subito la Sua stima preliminare dei costi — sulla base prezzi verificata del nostro preventivatore online.',
+    blitzAutoRangeLabel: 'Investimento stimato',
+    blitzAutoRangeNote: 'Tutti gli importi netti, più IVA di legge.',
+    blitzAutoAssumptions: 'Presupposti e note',
+    blitzAutoAssumption1: 'Calcolata al livello di finitura Standard con una situazione edilizia tipica.',
+    blitzAutoAssumption2: 'Non incluse: soluzioni speciali come interventi strutturali, bonifica di materiali nocivi o vincoli di tutela dei beni culturali.',
+    blitzAutoAssumption3: 'La forbice copre varianti tipiche di allestimento ed edificio; il Suo progetto specifico può discostarsene.',
+    blitzAutoDisclaimer: 'Questa stima preliminare non è un’offerta vincolante. I prezzi vincolanti vengono definiti dopo sopralluogo, rilievo e campionatura dei materiali — verificati e controfirmati dalla nostra direzione lavori.',
+    blitzAutoPdfNote: 'In allegato trova il riepilogo PDF dettagliato della Sua selezione dal preventivatore.',
+    blitzAutoStep1: 'Risponda a questa e-mail o fissi subito un appuntamento — la nostra direzione lavori esamina personalmente il Suo progetto.',
+    blitzAutoStep2: 'Sopralluogo e rilievo in loco con Daniel o Monica.',
+    blitzAutoStep3: 'Riceverà la Sua offerta vincolante a prezzo fisso — nero su bianco.',
 
     // blitz project rows / calculator summary (customer)
     rowRequest: 'Richiesta',
@@ -860,6 +956,11 @@ const STRINGS = {
     kontaktStep1: 'Nous étudions vos informations et préparons les premières questions.',
     kontaktStep2: 'Vous recevez une réponse écrite ou un rappel téléphonique.',
     kontaktStep3: 'Sur demande, nous convenons d’un rendez-vous sur place.',
+    kontaktRowWunschtermin: 'Date souhaitée',
+    kontaktRowZeitfenster: 'Créneau horaire',
+    kontaktRowTerminart: 'Type de rendez-vous',
+    kontaktRowAlternativ: 'Date alternative',
+    kontaktTerminNote: 'Votre date souhaitée est notée — elle ne devient définitive qu’après notre confirmation sous 48 heures.',
 
     // --- blitz customer confirmation ---
     blitzSubject: 'Nous avons bien reçu votre demande express — Prima Vista Bauprojekte',
@@ -875,6 +976,23 @@ const STRINGS = {
     blitzStep2: 'Vous recevez une estimation de coûts préliminaire par écrit.',
     blitzStep3: 'Sur demande, nous affinons l’offre sur place — ferme après métré.',
     blitzStep3Text: 'Sur demande, nous affinons l’offre sur place.',
+
+    // --- blitz automatic estimate (customer) ---
+    blitzAutoSubject: 'Votre estimation de coûts préliminaire — Prima Vista Bauprojekte',
+    blitzAutoTitle: 'Votre estimation de coûts préliminaire, {name}.',
+    blitzAutoEyebrow: 'Estimation préliminaire · Offre express',
+    blitzAutoIntro: 'Merci pour votre demande. Sur la base de vos informations, nous avons calculé immédiatement votre estimation de coûts préliminaire — sur la base de prix vérifiée de notre calculateur en ligne.',
+    blitzAutoRangeLabel: 'Investissement estimé',
+    blitzAutoRangeNote: 'Tous les montants sont nets, TVA légale en sus.',
+    blitzAutoAssumptions: 'Hypothèses et remarques',
+    blitzAutoAssumption1: 'Calculée au niveau de finition Standard pour un bâti existant typique.',
+    blitzAutoAssumption2: 'Non compris : solutions particulières telles qu’interventions structurelles, dépollution ou exigences liées aux monuments historiques.',
+    blitzAutoAssumption3: 'La fourchette couvre des variantes typiques d’aménagement et de bâtiment ; votre projet concret peut s’en écarter.',
+    blitzAutoDisclaimer: 'Cette estimation préliminaire n’est pas une offre ferme. Les prix fermes sont établis après visite, métré et échantillonnage des matériaux — vérifiés et contresignés par notre direction de chantier.',
+    blitzAutoPdfNote: 'Vous trouverez en pièce jointe le récapitulatif PDF détaillé de votre sélection du calculateur.',
+    blitzAutoStep1: 'Répondez à cet e-mail ou convenez directement d’un rendez-vous — notre direction de chantier examine personnellement votre projet.',
+    blitzAutoStep2: 'Visite sur place et métré par Daniel ou Monica.',
+    blitzAutoStep3: 'Vous recevez votre offre ferme à prix fixe — noir sur blanc.',
 
     // blitz project rows / calculator summary (customer)
     rowRequest: 'Demande',

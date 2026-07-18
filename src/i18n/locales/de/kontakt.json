@@ -77,6 +77,28 @@
       "step3": "Auf Wunsch vereinbaren wir einen Termin vor Ort.",
       "toHome": "Zur Startseite",
       "toProjects": "Projekte ansehen"
+    },
+    "termin": {
+      "label": "Wunschtermin für die Erstberatung",
+      "optional": "(optional)",
+      "hint": "Ihr Wunschtermin ist eine Präferenz — wir bestätigen ihn innerhalb von 48 Stunden oder schlagen Alternativen vor.",
+      "calendarAria": "Kalender zur Terminauswahl",
+      "prevMonth": "Vorheriger Monat",
+      "nextMonth": "Nächster Monat",
+      "busyDay": "bereits belegt",
+      "legend": "Ausgegraute Tage sind bereits belegt.",
+      "zeitLabel": "Zeitfenster",
+      "zeit": {
+        "flexibel": "Flexibel",
+        "vormittag": "Vormittag",
+        "nachmittag": "Nachmittag"
+      },
+      "artLabel": "Terminart",
+      "art": {
+        "vorOrt": "Vor Ort",
+        "video": "Video"
+      },
+      "altLabel": "Alternativtermin angeben"
     }
   },
   "faqSection": {

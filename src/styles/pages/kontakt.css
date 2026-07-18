@@ -1108,3 +1108,101 @@
   .faq__q { font-size: 16px; padding: 20px 0; gap: 16px; }
   .faq__a-inner { padding: 0 0 24px; }
 }
+
+/* ----- Wunschtermin date picker (Erstberatung) ----- */
+.form-field--termin { margin-top: 4px; }
+.form-field--termin .form-field__hint {
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--kontakt-form-muted);
+}
+
+.pv-datepicker {
+  border: 1px solid var(--kontakt-control-border);
+  padding: 14px 16px 12px;
+  max-width: 380px;
+  background: transparent;
+}
+.pv-datepicker__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.pv-datepicker__month {
+  font-family: var(--pv-font-body);
+  font-size: 14px;
+  color: var(--kontakt-form-text);
+  text-transform: capitalize;
+}
+.pv-datepicker__nav {
+  background: transparent;
+  border: none;
+  color: var(--kontakt-accent);
+  font-size: 22px;
+  line-height: 1;
+  padding: 2px 12px;
+  cursor: pointer;
+  transition: opacity 160ms var(--pv-ease-out);
+}
+.pv-datepicker__nav:disabled { opacity: 0.25; cursor: default; }
+.pv-datepicker__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.pv-datepicker__weekday {
+  font-family: var(--pv-font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kontakt-form-muted);
+  text-align: center;
+  padding-bottom: 4px;
+}
+.pv-datepicker__day {
+  aspect-ratio: 1;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--kontakt-form-text);
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 160ms var(--pv-ease-out), background 160ms var(--pv-ease-out);
+}
+.pv-datepicker__day:hover:not(:disabled) { border-color: var(--kontakt-accent); }
+.pv-datepicker__day:disabled {
+  color: var(--kontakt-form-muted);
+  opacity: 0.35;
+  cursor: default;
+}
+.pv-datepicker__day.is-busy { text-decoration: line-through; }
+.pv-datepicker__day.is-selected {
+  background: var(--kontakt-chip-active-bg);
+  color: var(--kontakt-chip-active-text);
+  border-color: var(--kontakt-chip-active-bg);
+}
+.pv-datepicker__legend {
+  margin: 10px 0 0;
+  font-family: var(--pv-font-body);
+  font-size: 11px;
+  color: var(--kontakt-form-muted);
+}
+
+.termin-details { margin-top: 18px; }
+.termin-alt summary {
+  font-family: var(--pv-font-body);
+  font-size: 13px;
+  color: var(--kontakt-accent);
+  cursor: pointer;
+  margin: 4px 0 12px;
+}
+.termin-hint {
+  margin: 12px 0 0;
+  font-family: var(--pv-font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--kontakt-form-muted);
+}

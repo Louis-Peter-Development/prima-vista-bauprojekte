@@ -40,9 +40,45 @@ export interface UserDocument {
   updatedAt: Date;
 }
 
+// Audit record for a Blitz-Angebot submission (automatic or manual). The
+// snapshot of the submitted answers + the computed estimate/calc version is
+// what makes an automatically sent quote reconstructible later.
+export interface BlitzRequestDocument {
+  name: string;
+  email: string;
+  tel: string;
+  art: string;
+  artLabel: string;
+  gewerke: string[];
+  groesse: string;
+  starttermin: string;
+  starterminLabel: string;
+  msg: string;
+  locale: string;
+  consent: boolean;
+  hasKalkulator: boolean;
+  kalkulator?: unknown;
+  mode: 'auto' | 'manual';
+  reason?: string;
+  emailStatus: 'sent' | 'skipped-duplicate';
+  estimate?: {
+    basis: string;
+    totalMin: number;
+    totalMid: number;
+    totalMax: number;
+    perM2: number;
+    areaM2: number;
+  };
+  calcVersion: string;
+  dedupKey: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 export type PostModel = Model<PostDocument>;
 export type CommentModel = Model<CommentDocument>;
 export type UserModel = Model<UserDocument>;
+export type BlitzRequestModel = Model<BlitzRequestDocument>;
 
 type Cache = {
   conn: typeof mongoose | null;
@@ -113,6 +149,45 @@ const userSchema = new Schema<UserDocument>(
   { timestamps: true },
 );
 
+const blitzRequestSchema = new Schema<BlitzRequestDocument>(
+  {
+    name: { type: String, required: true, trim: true },
+    email: { type: String, required: true, lowercase: true, trim: true, index: true },
+    tel: { type: String, default: '', trim: true },
+    art: { type: String, default: '', trim: true },
+    artLabel: { type: String, default: '', trim: true },
+    gewerke: { type: [String], default: [] },
+    groesse: { type: String, default: '', trim: true },
+    starttermin: { type: String, default: '', trim: true },
+    starterminLabel: { type: String, default: '', trim: true },
+    msg: { type: String, default: '' },
+    locale: { type: String, default: 'de' },
+    consent: { type: Boolean, default: false },
+    hasKalkulator: { type: Boolean, default: false },
+    kalkulator: { type: Schema.Types.Mixed, default: undefined },
+    mode: { type: String, enum: ['auto', 'manual'], required: true, index: true },
+    reason: { type: String, default: undefined },
+    emailStatus: { type: String, enum: ['sent', 'skipped-duplicate'], required: true },
+    estimate: {
+      type: new Schema(
+        {
+          basis: { type: String, required: true },
+          totalMin: { type: Number, required: true },
+          totalMid: { type: Number, required: true },
+          totalMax: { type: Number, required: true },
+          perM2: { type: Number, default: 0 },
+          areaM2: { type: Number, default: 0 },
+        },
+        { _id: false },
+      ),
+      default: undefined,
+    },
+    calcVersion: { type: String, default: '' },
+    dedupKey: { type: String, default: '', index: true },
+  },
+  { timestamps: true },
+);
+
 function models() {
   const Post =
     (mongoose.models.Post as PostModel | undefined) ??
@@ -123,8 +198,11 @@ function models() {
   const User =
     (mongoose.models.User as UserModel | undefined) ??
     mongoose.model<UserDocument>('User', userSchema);
+  const BlitzRequest =
+    (mongoose.models.BlitzRequest as BlitzRequestModel | undefined) ??
+    mongoose.model<BlitzRequestDocument>('BlitzRequest', blitzRequestSchema);
 
-  return { Post, Comment, User };
+  return { Post, Comment, User, BlitzRequest };
 }
 
 export async function connectDb() {

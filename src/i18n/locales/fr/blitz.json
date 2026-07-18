@@ -2,16 +2,21 @@
   "intro": {
     "crumb": "Devis express · Estimation préalable",
     "title": "Le devis<br/><em>express.</em>",
-    "lede": "Vous savez exactement ce que vous voulez ? Répondez à quelques questions concrètes sur la surface et les corps de métier. Nous analysons et vous envoyons sous 24 heures une première estimation de coûts concrète, sans long entretien téléphonique préalable.",
+    "lede": "Vous savez exactement ce que vous voulez ? Répondez à quelques questions concrètes sur la surface et les corps de métier. Les demandes standard sont calculées immédiatement — votre estimation préliminaire arrive dans votre boîte mail en quelques minutes ; les cas particuliers sont examinés par la direction de chantier sous 24 heures.",
     "list1": "Première estimation gratuite",
-    "list2": "Réponse garantie sous 24 h",
+    "list2": "Estimation immédiate — 24 h max.",
     "list3": "Une fourchette de prix réaliste",
     "mediaAlt": "Bâtiment ancien avant rénovation comme base d'un devis express",
     "mediaCaption": "Relevé de l'existant · Estimation préalable"
   },
   "form": {
     "step": "Étape {{current}} sur {{total}}",
-    "art": { "pakete": "Forfaits complets", "gewerke": "Travaux", "heizung": "Chauffage", "anderes": "Autre" },
+    "art": {
+      "pakete": "Forfaits complets",
+      "gewerke": "Travaux",
+      "heizung": "Chauffage",
+      "anderes": "Autre"
+    },
     "artPrompt": "Quel domaine correspond à votre projet ?",
     "servicePromptGewerke": "Quels travaux correspondent à votre projet ? (choix multiple)",
     "servicePromptOther": "Quelle prestation ou quel calculateur détaillé correspond à votre projet ?",
@@ -54,7 +59,7 @@
     "emailPlaceholder": "vous@email.com",
     "telLabel": "Téléphone",
     "telPlaceholder": "Pour d'éventuelles questions",
-    "note": "Estimation sous 24 h",
+    "note": "Estimation immédiate — sous 24 h max.",
     "back": "Retour",
     "next": "Suivant",
     "submit": "Demander le devis",
@@ -69,6 +74,14 @@
     "successStep2": "Vous recevez une estimation de coûts écrite et préalable.",
     "successStep3": "Si vous le souhaitez, nous affinons le devis sur place — contractuel après relevé.",
     "successToHome": "Aller à l'accueil",
-    "successToProjects": "Voir les projets"
+    "successToProjects": "Voir les projets",
+    "consent": "J'accepte que mes données soient utilisées pour le calcul et que je reçoive l'estimation préliminaire par e-mail. Elles ne seront pas transmises à des tiers.",
+    "consentLink": "Confidentialité",
+    "consentError": "Veuillez confirmer la politique de confidentialité.",
+    "successAutoEyebrow": "Estimation envoyée",
+    "successAutoBody": "Votre estimation de coûts préliminaire a été calculée automatiquement et est déjà en route — par e-mail à <s>{{email}}</s>",
+    "successAutoStep1": "Consultez votre boîte mail — l'estimation avec fourchette et hypothèses vous y attend.",
+    "successAutoStep2": "Répondez directement à l'e-mail si vous avez des questions — vous échangez avec notre direction de chantier.",
+    "successAutoStep3": "Sur demande, nous convenons d'une visite sur place — le prix devient ferme après métré."
   }
 }
