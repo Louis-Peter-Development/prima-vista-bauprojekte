@@ -844,7 +844,7 @@
     opacity 140ms var(--pv-ease-out),
     transform 200ms var(--pv-ease-out);
 }
-.form-chips--project-type input:checked + label .form-chip__check {
+.form-chips input:checked + label .form-chip__check {
   opacity: 1;
   transform: scale(1);
 }
@@ -861,7 +861,7 @@
   border-color: var(--kontakt-chip-active-bg);
   font-weight: 700;
 }
-:root[data-theme='dark'] .kontakt .form-chips--project-type input:checked + label {
+:root[data-theme='dark'] .kontakt .form-chips input:checked + label {
   background: var(--pv-copper-bright);
   color: var(--pv-ink-1);
   border-color: var(--pv-copper-bright);
@@ -935,9 +935,10 @@
 
 .form-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px 24px;
   padding-top: 12px;
   border-top: 1px solid var(--kontakt-form-rule);
 }
@@ -959,7 +960,9 @@
 
 .form-actions__buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  margin-left: auto;
 }
 
 .form-step.fade-in {
@@ -1108,6 +1111,7 @@
   .form-chips { gap: 6px; }
   .form-chips label { padding: 9px 12px; font-size: 10.5px; letter-spacing: 0.14em; }
   .form-actions { flex-direction: column; align-items: stretch; gap: 16px; }
+  .form-actions__buttons { margin-left: 0; }
   .form-actions .btn { justify-content: center; }
 
   .faq { padding: 80px 0 96px; }
