@@ -98,7 +98,7 @@ export default function HausSanierungConfigurator({ embedded }: Props) {
           area={area}
           picked={picked}
           factor={factor}
-          kindLabel={selectedType?.label ?? 'Haus-Sanierung'}
+          kindLabel={selectedType?.label ?? 'Haussanierung'}
         />
       )}
     </div>

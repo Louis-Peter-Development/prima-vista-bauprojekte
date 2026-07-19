@@ -70,7 +70,7 @@ export default function GastronomieAusbau() {
           area={area}
           picked={picked}
           factor={factor}
-          kindLabel={GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType)?.label ?? 'Gastronomie-Ausbau'}
+          kindLabel={GASTRONOMIE_TYPES.find((t) => t.value === gastronomieType)?.label ?? 'Gastronomieausbau'}
         />
       </div>
     </CalcPage>

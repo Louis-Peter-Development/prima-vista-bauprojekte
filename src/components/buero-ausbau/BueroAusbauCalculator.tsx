@@ -75,7 +75,7 @@ export default function BueroAusbauCalculator({ embedded }: Props) {
         area={area}
         picked={picked}
         factor={factor}
-        kindLabel={selectedType?.label ?? 'Büro-Ausbau'}
+        kindLabel={selectedType?.label ?? 'Büroausbau'}
       />
     </div>
   );

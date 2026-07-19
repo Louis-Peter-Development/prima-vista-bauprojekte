@@ -23,7 +23,7 @@ export const INITIAL_BLITZ_FORM: BlitzFormState = {
 };
 
 export const BLITZ_ART_OPTIONS: Array<{ value: BlitzFormState['art']; label: string }> = [
-  { value: 'pakete', label: 'Komplett-Pakete' },
+  { value: 'pakete', label: 'Komplettpakete' },
   { value: 'gewerke', label: 'Gewerke' },
   { value: 'heizung', label: 'Heizmethoden' },
   { value: 'anderes', label: 'Anderes' },
@@ -38,12 +38,12 @@ export type BlitzServiceGroup = {
 export const BLITZ_SERVICE_GROUPS: BlitzServiceGroup[] = [
   {
     key: 'pakete',
-    label: 'Komplett-Pakete',
+    label: 'Komplettpakete',
     options: [
-      'Haus-Sanierung',
-      'Wohnung-Sanierung',
-      'Gastronomie-Ausbau',
-      'Büro-Ausbau',
+      'Haussanierung',
+      'Wohnungssanierung',
+      'Gastronomieausbau',
+      'Büroausbau',
     ],
   },
   {
@@ -75,9 +75,9 @@ export const BLITZ_SERVICE_GROUPS: BlitzServiceGroup[] = [
     options: [
       'Heizkörper',
       'Heizstränge',
-      'Fußboden-Heizung',
-      'Luft-Wärmepumpe',
-      'Gas-Heizung',
+      'Fußbodenheizung',
+      'Luftwärmepumpe',
+      'Gasheizung',
       'Pelletofen',
       'Saunaofen',
     ],
@@ -86,7 +86,7 @@ export const BLITZ_SERVICE_GROUPS: BlitzServiceGroup[] = [
 
 export const BLITZ_GEWERKE_OPTIONS = BLITZ_SERVICE_GROUPS.flatMap((group) => group.options);
 
-/* ----- Handoff from Kalkulator → Blitz-Angebot ----- */
+/* ----- Handoff from Kalkulator → Blitzangebot ----- */
 
 export type KalkulatorRow = {
   /** Cleaned product title without trailing pricing markers. */
@@ -185,10 +185,10 @@ export function inferTradeFromSku(sku: string | undefined): { key: string; label
 /** Map kalkulator gewerke/trade keys → BLITZ_GEWERKE_OPTIONS labels. */
 const KALKULATOR_TO_BLITZ_GEWERKE: Record<string, string> = {
   // Package-level choices
-  haus: 'Haus-Sanierung',
-  wohnung: 'Wohnung-Sanierung',
-  gastronomie: 'Gastronomie-Ausbau',
-  buero: 'Büro-Ausbau',
+  haus: 'Haussanierung',
+  wohnung: 'Wohnungssanierung',
+  gastronomie: 'Gastronomieausbau',
+  buero: 'Büroausbau',
 
   // Haus / Wohnung
   bad: 'Bäder & Sanitär',
@@ -215,7 +215,7 @@ const KALKULATOR_TO_BLITZ_GEWERKE: Record<string, string> = {
   abdichtung: 'Abdichtung & Keller',
   abbruch: 'Rohbau & Abbruch',
   heizflaechen: 'Heizkörper',
-  thermen: 'Luft-Wärmepumpe',
+  thermen: 'Luftwärmepumpe',
   treppen: 'Treppen & Geländer',
   garten: 'Garten & Außenanlagen',
   barrierefreiheit: 'Barrierefreiheit',
@@ -239,13 +239,13 @@ const KALKULATOR_TO_BLITZ_GEWERKE: Record<string, string> = {
   gart: 'Garten & Außenanlagen',
   trep: 'Treppen & Geländer',
   tr: 'Treppen & Geländer',
-  pv: 'Luft-Wärmepumpe',
+  pv: 'Luftwärmepumpe',
   carp: 'Küchen & Möbelbau',
   // Gastronomie
-  lueftung: 'Luft-Wärmepumpe',
-  kuehlung: 'Luft-Wärmepumpe',
+  lueftung: 'Luftwärmepumpe',
+  kuehlung: 'Luftwärmepumpe',
   // Büro
-  klima: 'Luft-Wärmepumpe',
+  klima: 'Luftwärmepumpe',
 };
 
 function normalizeChoiceLabel(value: string): string {
@@ -346,7 +346,7 @@ export function formatKalkulatorMessage(handoff: KalkulatorHandoff): string {
     `— Aus dem Kalkulator übernommen —`,
     `Objektart: ${handoff.kindLabel}`,
     `Fläche: ${handoff.area} m²`,
-    `Vorab-Schätzung: ${TSD(handoff.totalMin)} – ${TSD(handoff.totalMax)} (Mittelwert ${TSD(handoff.totalMid)} · ca. € ${Math.round(handoff.perM2).toLocaleString('de-DE')} / m²)`,
+    `Kostenschätzung: ${TSD(handoff.totalMin)} – ${TSD(handoff.totalMax)} (Mittelwert ${TSD(handoff.totalMid)} · ca. € ${Math.round(handoff.perM2).toLocaleString('de-DE')} / m²)`,
     ``,
     `Gewählte Gewerke:`,
   ];

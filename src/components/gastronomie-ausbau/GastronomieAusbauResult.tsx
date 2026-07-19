@@ -43,7 +43,7 @@ export default function GastronomieAusbauResult({
           label: g.label,
           subtotal: g.pricePerM2 * area * factor,
           description: g.lede,
-          category: 'Gastronomie-Ausbau',
+          category: 'Gastronomieausbau',
           type: 'Gewerk',
         })),
         totalMin,

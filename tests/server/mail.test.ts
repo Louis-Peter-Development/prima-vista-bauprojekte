@@ -63,7 +63,7 @@ describe('Blitz email rendering', () => {
   it('renders clear office and customer emails without PDF attachments', () => {
     const emails = renderBlitzEmails(sampleBlitzPayload);
 
-    expect(emails.office.subject).toContain('Blitz-Anfrage');
+    expect(emails.office.subject).toContain('Blitzanfrage');
     expect(emails.office.replyTo).toBe('max@example.com');
     expect(emails.office.html).toContain('Gewählte Leistungen / Anfragebereich');
     expect(emails.office.html).toContain('Übernommene Kalkulation');
@@ -72,7 +72,7 @@ describe('Blitz email rendering', () => {
     expect(emails.office.html).not.toContain('Reply geht');
 
     expect(emails.customer.to).toBe('max@example.com');
-    expect(emails.customer.subject).toContain('Ihre Blitz-Anfrage ist eingegangen');
+    expect(emails.customer.subject).toContain('Ihre Blitzanfrage ist eingegangen');
     expect(emails.customer.html).toContain('Ihre Angaben');
     expect(emails.customer.html).toContain('Ihre ausgewählten Leistungen');
     expect(emails.customer.html).toContain('So geht es weiter');
@@ -133,7 +133,7 @@ describe('Blitz email rendering', () => {
 describe('Blitz email localization (customer confirmation)', () => {
   it('defaults to German when no locale is provided (byte-for-byte unchanged)', () => {
     const emails = renderBlitzEmails(sampleBlitzPayload);
-    expect(emails.customer.subject).toBe('Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte');
+    expect(emails.customer.subject).toBe('Ihre Blitzanfrage ist eingegangen — Prima Vista Bauprojekte');
     expect(emails.customer.html).toContain('Ihre Angaben');
     expect(emails.customer.text).toContain('So geht es weiter:');
   });
@@ -156,7 +156,7 @@ describe('Blitz email localization (customer confirmation)', () => {
     expect(emails.customer.text).toContain('Doors & frames');
 
     // Office: stays German regardless of request locale.
-    expect(emails.office.subject).toContain('Blitz-Anfrage');
+    expect(emails.office.subject).toContain('Blitzanfrage');
     expect(emails.office.html).toContain('Gewählte Leistungen / Anfragebereich');
     expect(emails.office.html).toContain('Übernommene Kalkulation');
     expect(emails.office.html).not.toMatch(/What happens next|Kind regards/);

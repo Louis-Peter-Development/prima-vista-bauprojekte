@@ -43,18 +43,18 @@ export const HAUS_GEWERKE: HausGewerk[] = [
   { key: 'bad', num: '02', label: 'Badsanierung & Gäste-WC', lead: 'Wanne, Dusche, Sanitärobjekte', pricePerM2: 420 },
   { key: 'boeden', num: '03', label: 'Böden & Dielen', lead: 'Parkett, Fliesen, Vinyl, Estrich', pricePerM2: 140 },
   { key: 'dach', num: '04', label: 'Dachsanierung', lead: 'Eindeckung, Dämmung, Dachstuhl', pricePerM2: 280, requiresDach: true },
-  { key: 'elektro', num: '05', label: 'Elektro-Installation', lead: 'Verteilung, Leitungen, KNX, Licht', pricePerM2: 180 },
+  { key: 'elektro', num: '05', label: 'Elektroinstallation', lead: 'Verteilung, Leitungen, KNX, Licht', pricePerM2: 180 },
   { key: 'fassade', num: '06', label: 'Fassaden & Dämmung', lead: 'WDVS, Putz, Sockel, Anstrich', pricePerM2: 220 },
   { key: 'fenster', num: '07', label: 'Fenster & Balkontüren', lead: 'Kunststoff, Holz, Aluminium', pricePerM2: 240 },
   { key: 'heizflaechen', num: '08', label: 'Heizkörper & Bodenheizung', lead: 'Flächenheizung, Heizkörper, Stränge', pricePerM2: 160 },
   { key: 'maler', num: '09', label: 'Maler & Lackierung', lead: 'Wände, Decken, Heizkörper, Türen', pricePerM2: 95 },
   { key: 'planung', num: '10', label: 'Planung & Bauleitung', lead: 'Statik, Genehmigung, Koordination', pricePerM2: 120 },
-  { key: 'rohbau', num: '11', label: 'Rohbau-Leistungen', lead: 'Abbruch, Mauerwerk, Träger, Estrich', pricePerM2: 280 },
+  { key: 'rohbau', num: '11', label: 'Rohbauleistungen', lead: 'Abbruch, Mauerwerk, Träger, Estrich', pricePerM2: 280 },
   { key: 'thermen', num: '12', label: 'Thermen & Öfen', lead: 'Gas-, Öl-Therme, Wärmepumpe, Kamin', pricePerM2: 180 },
   { key: 'treppen', num: '13', label: 'Treppen & Geländer', lead: 'Holz, Beton, Aufbereitung', pricePerM2: 90 },
   { key: 'tueren', num: '14', label: 'Türen & Tore', lead: 'Zimmer-, Haus-, Schiebetüren, Tore', pricePerM2: 130 },
   { key: 'trockenbau', num: '15', label: 'Trockenbau', lead: 'Wände, Decken, Vorsatzschalen', pricePerM2: 110 },
-  { key: 'wasser', num: '16', label: 'Wasser-Installation', lead: 'Zu- und Abwasser, Hauptstrang', pricePerM2: 150 },
+  { key: 'wasser', num: '16', label: 'Wasserinstallation', lead: 'Zu- und Abwasser, Hauptstrang', pricePerM2: 150 },
 ];
 
 export function formatTsd(n: number): string {

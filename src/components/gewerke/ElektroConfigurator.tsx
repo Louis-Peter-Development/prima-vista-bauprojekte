@@ -32,7 +32,7 @@ export default function ElektroConfigurator() {
       case 'elektroEinzelinstallation': return 'Einzelinstallation';
       case 'elektroLichttechnik': return 'Lichttechnik & Beleuchtung';
       case 'elektroFreeHome': return 'Free Home';
-      case 'elektroRolladen': return 'Rolladen-Steuerung';
+      case 'elektroRolladen': return 'Rollladensteuerung';
       case 'elektroSprechanlagen': return 'Sprechanlagen';
       default: return 'Elektroinstallation';
     }

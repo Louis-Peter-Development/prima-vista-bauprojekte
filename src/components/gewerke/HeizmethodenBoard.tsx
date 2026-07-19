@@ -21,8 +21,8 @@ const TYPES: VariantDefinition[] = [
   { value: 'heizmethodenHeizkoerper', label: 'Heizkörper', detail: 'Montage & Material', num: '01' },
   { value: 'heizmethodenHeizstraenge', label: 'Heizstränge', detail: 'Aufputz / Unterputz', num: '02' },
   { value: 'heizmethodenFussbodenheizung', label: 'Fußbodenheizung', detail: 'Flächenheizung', num: '03' },
-  { value: 'heizmethodenWaermepumpe', label: 'Wärmepumpe', detail: 'Luft-Wärmepumpe', num: '04' },
-  { value: 'heizmethodenGasHeizung', label: 'Gas-Heizung', detail: 'Brennwerttechnik', num: '05' },
+  { value: 'heizmethodenWaermepumpe', label: 'Wärmepumpe', detail: 'Luftwärmepumpe', num: '04' },
+  { value: 'heizmethodenGasHeizung', label: 'Gasheizung', detail: 'Brennwerttechnik', num: '05' },
   { value: 'heizmethodenPelletofen', label: 'Pelletofen', detail: 'Pelletwärme', num: '06' },
   { value: 'heizmethodenSaunaofen', label: 'Saunaofen', detail: 'Sauna & Zubehör', num: '07' },
 ];

@@ -43,7 +43,7 @@ export default function BueroAusbauResult({
           label: gewerk.label,
           subtotal: gewerk.pricePerM2 * area * factor,
           description: gewerk.lede,
-          category: 'Büro-Ausbau',
+          category: 'Büroausbau',
           type: 'Gewerk',
         })),
         totalMin,

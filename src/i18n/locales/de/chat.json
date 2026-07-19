@@ -2,7 +2,7 @@
   "name": "Bau-Berater",
   "greeting": "Guten Tag und herzlich willkommen bei Prima Vista. Ich bin Ihr Bau-Berater. Erzählen Sie uns kurz von Ihrem Vorhaben, oder wählen Sie unten ein Thema.",
   "suggestions": [
-    "Komplett-Sanierung anfragen",
+    "Komplettsanierung anfragen",
     "Festpreis-Schätzung",
     "Heizung modernisieren",
     "Mit Daniel oder Monica sprechen"
@@ -12,7 +12,7 @@
     "brandLabel": "Prima Vista Startseite",
     "eyebrow": "Bau-Berater",
     "heading": "Ein Berater,<br/>der zuhört.",
-    "paragraph": "Erzählen Sie uns von Ihrem Projekt, vom einzelnen Bad bis zur Komplett-Sanierung. Wir qualifizieren Ihr Vorhaben und zeigen den nächsten sinnvollen Schritt.",
+    "paragraph": "Erzählen Sie uns von Ihrem Projekt, vom einzelnen Bad bis zur Komplettsanierung. Wir qualifizieren Ihr Vorhaben und zeigen den nächsten sinnvollen Schritt.",
     "proofResponse": "Antwort meist sofort",
     "proofMeeting": "Erstgespräch in 48 Stunden",
     "proofGuarantee": "Festpreis und Bauleitung inklusive",

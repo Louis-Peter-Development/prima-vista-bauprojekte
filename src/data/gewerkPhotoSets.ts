@@ -94,7 +94,7 @@ export const GEWERK_PHOTO_SETS = {
     ],
   },
   rohbau: {
-    label: 'Rohbau Leistungen',
+    label: 'Rohbauleistungen',
     images: [
       { src: '/assets/img/leistungen/rohbau-trockenbau-01.webp', alt: 'Rohbaufläche mit Betonwänden und vorbereiteten Leitungswegen', width: 1200, height: 900 },
       { src: '/assets/img/leistungen/rohbau-trockenbau-02.webp', alt: 'Rohbau mit Metallständerwand und vorbereiteten Installationen', width: 1200, height: 900 },
@@ -150,11 +150,11 @@ export const GEWERK_PHOTO_SETS = {
   waermepumpe: {
     label: 'Wärmepumpe',
     images: [
-      { src: '/assets/img/leistungen/waermepumpe-01.webp', alt: 'Außeneinheit einer Luft-Wärmepumpe am Gebäude', width: 1536, height: 1024 },
+      { src: '/assets/img/leistungen/waermepumpe-01.webp', alt: 'Außeneinheit einer Luftwärmepumpe am Gebäude', width: 1536, height: 1024 },
     ],
   },
   gasHeizung: {
-    label: 'Gas-Heizung',
+    label: 'Gasheizung',
     images: [
       { src: '/assets/img/leistungen/gas-heizung-01.webp', alt: 'Heizkörper im Wohnraum nach Heizungsmodernisierung', width: 1200, height: 1600 },
     ],

@@ -3,7 +3,7 @@
   "nav": {
     "home": "Start",
     "services": "Leistungen",
-    "packages": "Komplett-Pakete",
+    "packages": "Komplettpakete",
     "trades": "Gewerke",
     "heating": "Heizmethoden",
     "projects": "Projekte",
@@ -46,8 +46,8 @@
     "learnMore": "Mehr erfahren",
     "appointment": "Termin vereinbaren",
     "toCalculator": "Zum Kalkulator",
-    "requestExpress": "Blitz-Angebot anfordern",
-    "expressQuote": "Blitz-Angebot"
+    "requestExpress": "Blitzangebot anfordern",
+    "expressQuote": "Blitzangebot"
   },
   "contactPresetMsg": "Hallo Prima Vista Team,\n\nich interessiere mich für: {{topic}}.\n\nBitte melden Sie sich bei mir zur ersten Abstimmung.",
   "notFound": {
@@ -71,7 +71,7 @@
     "acceptAll": "Alle akzeptieren"
   },
   "footer": {
-    "blurb": "Sanierung & Renovierung aus einer Hand — für Wohnsitz, Gastronomie und Büros, in Deutschland und der Schweiz.",
+    "blurb": "Sanierung & Renovierung aus einer Hand — für Wohnprojekte, Gastronomie und Büros in Deutschland und der Schweiz.",
     "about": "Über uns",
     "locations": "Standorte",
     "services": "Leistungen",
@@ -79,12 +79,12 @@
     "countryDe": "Deutschland",
     "countryCh": "Schweiz",
     "links": {
-      "packages": "Komplett-Pakete",
+      "packages": "Komplettpakete",
       "trades": "Gewerke",
       "heating": "Heizmethoden",
       "calculator": "Kalkulator",
       "projects": "Projekte",
-      "express": "Blitz-Angebote",
+      "express": "Blitzangebote",
       "contactForm": "Kontaktformular"
     },
     "admin": "Admin",
