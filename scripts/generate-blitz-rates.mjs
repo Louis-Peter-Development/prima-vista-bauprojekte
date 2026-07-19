@@ -1,6 +1,6 @@
 /**
  * Regenerates server/blitzRates.generated.ts — the sampled net-price tables the
- * automatic Blitz-Angebot estimate uses server-side.
+ * automatic Blitzangebot estimate uses server-side.
  *
  * The server deliberately never imports from src/ (see server/i18n.ts), so the
  * haus/wohnung package catalogs are sampled here at build/authoring time

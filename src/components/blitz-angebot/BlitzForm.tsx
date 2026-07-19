@@ -23,10 +23,10 @@ type LocationState = { kalkulator?: KalkulatorHandoff } | null;
 // the server, which MUST stay German) to a `kalk` i18n leaf key so the DISPLAY
 // can be localized. Falls back to the German option string when unmapped.
 const SERVICE_OPTION_I18N: Record<string, string> = {
-  'Haus-Sanierung': 'kalk:leaves.pakete.haus.label',
-  'Wohnung-Sanierung': 'kalk:leaves.pakete.wohnung.label',
-  'Gastronomie-Ausbau': 'kalk:leaves.pakete.gastronomie.label',
-  'Büro-Ausbau': 'kalk:leaves.pakete.buero.label',
+  'Haussanierung': 'kalk:leaves.pakete.haus.label',
+  'Wohnungssanierung': 'kalk:leaves.pakete.wohnung.label',
+  'Gastronomieausbau': 'kalk:leaves.pakete.gastronomie.label',
+  'Büroausbau': 'kalk:leaves.pakete.buero.label',
   'Bäder & Sanitär': 'kalk:leaves.gewerke.bad.label',
   'Küchen & Möbelbau': 'kalk:leaves.gewerke.kueche.label',
   'Böden & Beläge': 'kalk:leaves.gewerke.boden.label',
@@ -46,9 +46,9 @@ const SERVICE_OPTION_I18N: Record<string, string> = {
   'Zäune & Tore': 'kalk:leaves.gewerke.zaeune.label',
   'Heizkörper': 'kalk:leaves.heizung.heizkoerper.label',
   'Heizstränge': 'kalk:leaves.heizung.heizstraenge.label',
-  'Fußboden-Heizung': 'kalk:leaves.heizung.fussboden.label',
-  'Luft-Wärmepumpe': 'kalk:leaves.heizung.waermepumpe.label',
-  'Gas-Heizung': 'kalk:leaves.heizung.gas.label',
+  'Fußbodenheizung': 'kalk:leaves.heizung.fussboden.label',
+  'Luftwärmepumpe': 'kalk:leaves.heizung.waermepumpe.label',
+  'Gasheizung': 'kalk:leaves.heizung.gas.label',
   'Pelletofen': 'kalk:leaves.heizung.pellet.label',
   'Saunaofen': 'kalk:leaves.heizung.sauna.label',
 };
@@ -56,8 +56,8 @@ const SERVICE_OPTION_I18N: Record<string, string> = {
 // Canonical German labels, submitted to the server (office reads them in DE).
 const STARTTERMIN_LABELS: Record<string, string> = {
   sofort: 'So schnell wie möglich',
-  '1-3m': 'In 1 – 3 Monaten',
-  '3-6m': 'In 3 – 6 Monaten',
+  '1-3m': 'In 1–3 Monaten',
+  '3-6m': 'In 3–6 Monaten',
   spaeter: 'Noch unklar / Nächstes Jahr',
 };
 

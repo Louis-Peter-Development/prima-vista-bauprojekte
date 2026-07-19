@@ -14,7 +14,7 @@ const ABDICHTUNG_TYPES: VariantDefinition[] = [
   { value: 'abdichtung', label: 'Komplette Abdichtung', detail: 'Komplettpaket', num: '01' },
   { value: 'abdichtungHorizontal', label: 'Horizontal-Abdichtung', detail: 'Horizontalsperre', num: '02' },
   { value: 'abdichtungPerimeter', label: 'Perimeter-Abdichtung', detail: 'Außenabdichtung', num: '03' },
-  { value: 'abdichtungKeller', label: 'Keller-Abdichtung (Innen)', detail: 'Innenabdichtung', num: '04' },
+  { value: 'abdichtungKeller', label: 'Kellerabdichtung (Innen)', detail: 'Innenabdichtung', num: '04' },
 ];
 
 type Props = {

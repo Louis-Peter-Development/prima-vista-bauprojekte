@@ -188,12 +188,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description: 'Zaunanlagen, Tore, Sichtschutz und Montage für Außenbereiche kalkulieren.',
   },
   '/komplett-pakete': {
-    title: 'Komplett-Pakete für Sanierung & Bau',
+    title: 'Komplettpakete für Sanierung & Bau',
     description: 'Komplettpakete für Haus, Wohnung, Gastronomie und Büro mit koordinierten Gewerken und transparentem Kostenrahmen.',
   },
   '/projekte': {
     title: 'Projekte & Referenzen',
-    description: 'Referenzen und Projektbeispiele von Prima Vista Bauprojekte für Wohnsitze, Gastronomie, Hotels und Gewerbe.',
+    description: 'Referenzen und Projektbeispiele von Prima Vista Bauprojekte für Wohnprojekte, Gastronomie, Hotels und Gewerbe.',
   },
   '/blog': {
     title: 'Magazin',
@@ -204,7 +204,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description: 'Kontakt zu Prima Vista Bauprojekte für Sanierung, Renovierung, Ausbau und Bauprojekte in Deutschland und der Schweiz.',
   },
   '/blitz-angebot': {
-    title: 'Blitz-Angebot in 24 Stunden',
+    title: 'Blitzangebot in 24 Stunden',
     description: 'Schnelle Projektanfrage für Sanierung und Ausbau mit Rückmeldung innerhalb von 24 Stunden an Werktagen.',
   },
   '/kalkulator': {
@@ -212,19 +212,19 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description: 'Interaktiver Kostenkalkulator für Haus, Wohnung, Gewerke und Heizmethoden mit transparenten Richtpreisen.',
   },
   '/haus-sanierung': {
-    title: 'Haus-Sanierung kalkulieren',
-    description: 'Haus-Sanierung mit Gewerken, Materialien und Richtpreisen Schritt für Schritt kalkulieren.',
+    title: 'Haussanierung kalkulieren',
+    description: 'Haussanierung mit Gewerken, Materialien und Richtpreisen Schritt für Schritt kalkulieren.',
   },
   '/wohnung-sanierung': {
-    title: 'Wohnung-Sanierung kalkulieren',
+    title: 'Wohnungssanierung kalkulieren',
     description: 'Wohnungssanierung für Studio, Zwei-Zimmer, Drei-Zimmer und Maisonette mit Kostenrahmen kalkulieren.',
   },
   '/gastronomie-ausbau': {
-    title: 'Gastronomie-Ausbau kalkulieren',
+    title: 'Gastronomieausbau kalkulieren',
     description: 'Ausbau für Restaurants, Bars, Cafés und Gastronomieflächen mit Gewerken und Richtpreisen kalkulieren.',
   },
   '/buero-ausbau': {
-    title: 'Büro-Ausbau kalkulieren',
+    title: 'Büroausbau kalkulieren',
     description: 'Büroflächen, Praxen und Arbeitswelten mit Ausbaugrad, Fläche, Gewerken und Richtpreisen kalkulieren.',
   },
   '/heizmethoden': {

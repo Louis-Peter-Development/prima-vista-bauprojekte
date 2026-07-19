@@ -15,7 +15,7 @@
       },
       {
         "label": "Genauigkeit",
-        "value": "−15 % / +20 % Vorab-Spanne"
+        "value": "−15 % / +20 % Kostenspanne"
       },
       {
         "label": "Festpreis",
@@ -32,7 +32,7 @@
   },
   "categories": {
     "pakete": {
-      "label": "Komplett-Pakete",
+      "label": "Komplettpakete",
       "description": "Schlüsselfertige Sanierung — Wohnen, Gastro oder Büro"
     },
     "gewerke": {
@@ -47,19 +47,19 @@
   "leaves": {
     "pakete": {
       "haus": {
-        "label": "Haus-Sanierung",
+        "label": "Haussanierung",
         "lead": "Generalsanierung — Dach bis Garten"
       },
       "wohnung": {
-        "label": "Wohnung-Sanierung",
+        "label": "Wohnungssanierung",
         "lead": "Bäder, Küchen, Böden, Elektrik"
       },
       "gastronomie": {
-        "label": "Gastronomie-Ausbau",
+        "label": "Gastronomieausbau",
         "lead": "Restaurant, Café, Bar oder Club"
       },
       "buero": {
-        "label": "Büro-Ausbau",
+        "label": "Büroausbau",
         "lead": "Office, Praxis, Open Space"
       }
     },
@@ -143,15 +143,15 @@
         "lead": "Steig- & Verteilstränge"
       },
       "fussboden": {
-        "label": "Fußboden-Heizung",
+        "label": "Fußbodenheizung",
         "lead": "Wassergeführt oder elektrisch"
       },
       "waermepumpe": {
-        "label": "Luft-Wärmepumpe",
+        "label": "Luftwärmepumpe",
         "lead": "Förderfähige Wärmequelle"
       },
       "gas": {
-        "label": "Gas-Heizung",
+        "label": "Gasheizung",
         "lead": "Brennwert"
       },
       "pellet": {
@@ -179,9 +179,9 @@
     "breakdownSub": "nach Gewerk",
     "bindingOffer": "Verbindliches Angebot",
     "appointment": "Termin vereinbaren",
-    "disclaimerHaus": "Vorab-Schätzung für die gewählten Haustyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß vor Ort.",
-    "disclaimerGastro": "Vorab-Schätzung für die gewählten Typ- und Gewerk-Optionen — exklusive Sondergewerke, Gastronomie-Konzessionen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung.",
-    "disclaimerBuero": "Vorab-Schätzung für die gewählten Bürotyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen, Mobiliar-Einzelpreise und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung."
+    "disclaimerHaus": "Kostenschätzung für die gewählten Haustyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß vor Ort.",
+    "disclaimerGastro": "Kostenschätzung für die gewählten Typ- und Gewerk-Optionen — exklusive Sondergewerke, Gastronomie-Konzessionen und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung.",
+    "disclaimerBuero": "Kostenschätzung für die gewählten Bürotyp- und Gewerk-Optionen — exklusive Sondergewerke, Genehmigungen, Mobiliar-Einzelpreise und Bauleitungspauschale. Verbindliche Preise nach Aufmaß und technischer Planung."
   },
   "types": {
     "material": "Material",
@@ -194,7 +194,7 @@
     "houseTypeHint": "Bestimmt Aufwand & Logistik",
     "gastroType": "Gastro-Typ",
     "gastroTypeHint": "Bestimmt Komplexität & Auflagen",
-    "bueroType": "Büro-Typ",
+    "bueroType": "Bürotyp",
     "bueroTypeHint": "Bestimmt Ausbaugrad & Technik",
     "wohnungType": "Wohnungstyp",
     "wohnungTypeHint": "Bestimmt Komplexität & Trennwände",
@@ -240,7 +240,7 @@
     "totalGross": "Gesamtsumme",
     "itemsCount": "{{count}} Positionen",
     "itemsOf": "{{active}} von {{total}} Positionen",
-    "disclaimer": "Vorab-Schätzung auf Basis der ausgewählten Positionen. Verbindliche Preise nach Aufmaß, Prüfung und Materialbemusterung.",
+    "disclaimer": "Kostenschätzung auf Basis der ausgewählten Positionen. Verbindliche Preise nach Aufmaß, Prüfung und Materialbemusterung.",
     "requestOffer": "Als Angebot anfragen",
     "areaUnit": "qm"
   },
@@ -281,7 +281,7 @@
         "lead": "Eindeckung, Dämmung, Dachstuhl"
       },
       "elektro": {
-        "label": "Elektro-Installation",
+        "label": "Elektroinstallation",
         "lead": "Verteilung, Leitungen, KNX, Licht"
       },
       "fassade": {
@@ -305,7 +305,7 @@
         "lead": "Statik, Genehmigung, Koordination"
       },
       "rohbau": {
-        "label": "Rohbau-Leistungen",
+        "label": "Rohbauleistungen",
         "lead": "Abbruch, Mauerwerk, Träger, Estrich"
       },
       "thermen": {
@@ -325,7 +325,7 @@
         "lead": "Wände, Decken, Vorsatzschalen"
       },
       "wasser": {
-        "label": "Wasser-Installation",
+        "label": "Wasserinstallation",
         "lead": "Zu- und Abwasser, Hauptstrang"
       }
     }
@@ -453,7 +453,7 @@
         "lede": "Gastro-Lüftung, Klimaanlage"
       },
       "kueche": {
-        "label": "Gastro-Küche",
+        "label": "Gastroküche",
         "lede": "Großküchentechnik, Edelstahlmöbel"
       },
       "kuehlung": {
@@ -512,7 +512,7 @@
           "detail": "Außenabdichtung"
         },
         "abdichtungKeller": {
-          "label": "Keller-Abdichtung (Innen)",
+          "label": "Kellerabdichtung (Innen)",
           "detail": "Innenabdichtung"
         }
       }
@@ -701,7 +701,7 @@
           "detail": "Smart Home"
         },
         "elektroRolladen": {
-          "label": "Rolladen-Steuerung",
+          "label": "Rollladensteuerung",
           "detail": "Beschattung"
         },
         "elektroSprechanlagen": {
@@ -890,10 +890,10 @@
         },
         "heizmethodenWaermepumpe": {
           "label": "Wärmepumpe",
-          "detail": "Luft-Wärmepumpe"
+          "detail": "Luftwärmepumpe"
         },
         "heizmethodenGasHeizung": {
-          "label": "Gas-Heizung",
+          "label": "Gasheizung",
           "detail": "Brennwerttechnik"
         },
         "heizmethodenPelletofen": {
@@ -1268,7 +1268,7 @@
     "emailPlaceholder": "E-Mail-Adresse eingeben",
     "submit": "Jetzt senden",
     "submitting": "Wird gesendet",
-    "consent": "Hiermit bestätige ich, dass ich die PDF per E-Mail erhalte und wünsche themenbezogene Informationen.",
+    "consent": "Hiermit bestätige ich, dass ich das PDF per E-Mail erhalten möchte, und willige in den Erhalt themenbezogener Informationen ein.",
     "previewEyebrow": "PDF-Vorschau",
     "previewTitle": "Details der Auswahl",
     "summaryPositions": "Positionen",

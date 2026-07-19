@@ -1,7 +1,7 @@
 /**
  * Email sending via Resend — shared by both Netlify functions and the
  * Vite dev middleware. Two flows are supported: contact form (KontaktForm)
- * and Blitz-Angebot (BlitzForm). Each flow sends a notification email to
+ * and Blitzangebot (BlitzForm). Each flow sends a notification email to
  * the office and a confirmation email back to the customer.
  */
 
@@ -320,13 +320,19 @@ function localeTag(locale: Locale): string {
 function isLegacyCalculatorNote(message: string): boolean {
   const normalized = message.toLocaleLowerCase('de-DE');
   return normalized.includes('aus dem kalkulator übernommen')
-    || (normalized.includes('vorab-schätzung') && normalized.includes('gewählte gewerke'));
+    || ((normalized.includes('kostenschätzung') || normalized.includes('vorab-schätzung'))
+      && normalized.includes('gewählte gewerke'));
 }
 
 function legacyCalculatorField(message: string, label: string): string | null {
   const escapedLabel = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const match = message.match(new RegExp(`^\\s*${escapedLabel}\\s*:\\s*(.+)$`, 'im'));
   return match?.[1]?.trim() || null;
+}
+
+function legacyCalculatorEstimate(message: string): string | null {
+  return legacyCalculatorField(message, 'Kostenschätzung')
+    ?? legacyCalculatorField(message, 'Vorab-Schätzung');
 }
 
 function legacyCalculatorScope(message: string): { label: string; value: string } | null {
@@ -379,7 +385,7 @@ function blitzProjectRows(p: BlitzPayload, locale: Locale = 'de'): string {
       row(tt(locale, 'rowRequest'), tt(locale, 'rowRequestValue')),
       row(tt(locale, 'rowCalculator'), legacyCalculatorField(p.msg, 'Objektart') || artDisplay),
       scope ? row(scope.label, scope.value) : row(blitzScopeLabel(p, locale), blitzScopeValue(p)),
-      row(tt(locale, 'rowEstimate'), legacyCalculatorField(p.msg, 'Vorab-Schätzung')),
+      row(tt(locale, 'rowEstimate'), legacyCalculatorEstimate(p.msg)),
       row(tt(locale, 'rowStart'), starttermin),
     ].join('');
   }
@@ -759,15 +765,15 @@ ${autoEstimate ? blitzAutoOfficeCallout(p, autoEstimate) : callout(
   `Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten. Eine Antwort auf diese E-Mail geht direkt an ${p.email}.`,
 )}`;
   return shell(
-    `Blitz-Anfrage von ${escape(p.name)}`,
-    autoEstimate ? 'Blitz-Angebot · Automatisch beantwortet' : 'Blitz-Angebot · 24-Std-Schätzung',
+    `Blitzanfrage von ${escape(p.name)}`,
+    autoEstimate ? 'Blitzangebot · Automatisch beantwortet' : 'Blitzangebot · Kostenschätzung in 24 Std.',
     body,
   );
 }
 
 function blitzOfficeText(p: BlitzPayload, autoEstimate?: BlitzEstimate): string {
   return [
-    autoEstimate ? `Neue Blitz-Anfrage — automatisch beantwortet` : `Neue Blitz-Anfrage`,
+    autoEstimate ? `Neue Blitzanfrage — automatisch beantwortet` : `Neue Blitzanfrage`,
     ``,
     `Name: ${p.name}`,
     `E-Mail: ${p.email}`,
@@ -780,9 +786,9 @@ function blitzOfficeText(p: BlitzPayload, autoEstimate?: BlitzEstimate): string 
         ? `${legacyCalculatorScope(p.msg)!.label}: ${legacyCalculatorScope(p.msg)!.value}`
         : '',
     p.kalkulator
-      ? `Vorab-Schätzung: ${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`
-      : isLegacyCalculatorNote(p.msg) && legacyCalculatorField(p.msg, 'Vorab-Schätzung')
-        ? `Vorab-Schätzung: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
+      ? `Kostenschätzung: ${formatEuro(p.kalkulator.totalMin)} – ${formatEuro(p.kalkulator.totalMax)}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorEstimate(p.msg)
+        ? `Kostenschätzung: ${legacyCalculatorEstimate(p.msg)}`
         : '',
     `Baubeginn: ${p.starterminLabel}`,
     blitzServiceSectionText('Gewählte Leistungen / Anfragebereich', p),
@@ -791,7 +797,7 @@ function blitzOfficeText(p: BlitzPayload, autoEstimate?: BlitzEstimate): string 
     p.msg && !isLegacyCalculatorNote(p.msg) ? `\nBesonderheiten / Kundennotiz:\n${p.msg}` : '',
     ``,
     autoEstimate
-      ? `Automatische Vorab-Schätzung versendet: ${formatEuro(autoEstimate.totalMin)} – ${formatEuro(autoEstimate.totalMax)} (Mittelwert ${formatEuro(autoEstimate.totalMid)}). Kein manueller Versand nötig.`
+      ? `Automatische Kostenschätzung versendet: ${formatEuro(autoEstimate.totalMin)} – ${formatEuro(autoEstimate.totalMax)} (Mittelwert ${formatEuro(autoEstimate.totalMid)}). Kein manueller Versand nötig.`
       : `Nächster Schritt: Innerhalb von 24 Stunden mit einer ersten Kostenschätzung antworten.`,
   ]
     .filter(Boolean)
@@ -855,8 +861,8 @@ function blitzConfirmText(p: BlitzPayload, locale: Locale): string {
         : '',
     p.kalkulator
       ? `· ${tt(locale, 'rowEstimate')}: ${formatEuro(p.kalkulator.totalMin, locale)} – ${formatEuro(p.kalkulator.totalMax, locale)}`
-      : isLegacyCalculatorNote(p.msg) && legacyCalculatorField(p.msg, 'Vorab-Schätzung')
-        ? `· ${tt(locale, 'rowEstimate')}: ${legacyCalculatorField(p.msg, 'Vorab-Schätzung')}`
+      : isLegacyCalculatorNote(p.msg) && legacyCalculatorEstimate(p.msg)
+        ? `· ${tt(locale, 'rowEstimate')}: ${legacyCalculatorEstimate(p.msg)}`
         : '',
     `· ${tt(locale, 'rowStart')}: ${starttermin}`,
     blitzServiceSectionText(tt(locale, 'blitzYourServices'), p, locale),
@@ -960,13 +966,13 @@ function blitzAutoText(p: BlitzPayload, estimate: BlitzEstimate, pdfAttached: bo
 function blitzAutoOfficeCallout(p: BlitzPayload, estimate: BlitzEstimate): string {
   const basis = estimate.basis === 'kalkulator'
     ? 'Kalkulator-Übernahme (Summen serverseitig neu berechnet)'
-    : 'Komplett-Paket · Preisbasis Kalkulator';
+    : 'Komplettpaket · Preisbasis Kalkulator';
   const detailLines = estimate.details?.length
     ? `\n${estimate.details.map((d) => `${d.label}: ${formatEuro(d.net)}`).join('\n')}`
     : '';
   return callout(
-    'Automatische Vorab-Schätzung versendet',
-    `Der Kunde hat automatisch eine Vorab-Kostenschätzung erhalten: `
+    'Automatische Kostenschätzung versendet',
+    `Der Kunde hat automatisch eine vorläufige Kostenschätzung erhalten: `
     + `${formatEuro(estimate.totalMin)} – ${formatEuro(estimate.totalMax)} `
     + `(Mittelwert ${formatEuro(estimate.totalMid)}${estimate.perM2 > 0 ? `, ca. ${formatEuro(estimate.perM2)} / m²` : ''}). `
     + `Basis: ${basis}. Kein manueller Versand nötig — eine Antwort auf diese E-Mail geht direkt an ${p.email}.${detailLines}`,
@@ -1030,7 +1036,7 @@ export function renderBlitzEmails(payload: BlitzPayload): {
       from: FROM,
       to: TO_OFFICE,
       replyTo: payload.email,
-      subject: `Blitz-Anfrage · ${payload.name} · ${blitzRequestContext(payload)}`,
+      subject: `Blitzanfrage · ${payload.name} · ${blitzRequestContext(payload)}`,
       html: blitzOfficeHtml(payload),
       text: blitzOfficeText(payload),
     },
@@ -1110,7 +1116,7 @@ export async function sendBlitzAutoEmails(payload: BlitzPayload, estimate: Blitz
     from: FROM,
     to: TO_OFFICE,
     replyTo: payload.email,
-    subject: `Blitz-Anfrage · ${payload.name} · ${blitzRequestContext(payload)} · automatisch beantwortet`,
+    subject: `Blitzanfrage · ${payload.name} · ${blitzRequestContext(payload)} · automatisch beantwortet`,
     html: blitzOfficeHtml(payload, estimate),
     text: blitzOfficeText(payload, estimate),
   }, 'Blitz office (auto)');

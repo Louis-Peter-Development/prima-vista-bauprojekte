@@ -22,7 +22,7 @@ export const HERO_SLIDES: HeroSlide[] = [
 export const HERO_IMAGES = HERO_SLIDES.map((s) => `/assets/img/hero/${s.name}-1600.webp`);
 
 export const HOME_TRADES = [
-  'Sanierung', 'Renovierung', 'Gastronomie-Ausbau', 'Bäder', 'Küchen', 'Böden',
+  'Sanierung', 'Renovierung', 'Gastronomieausbau', 'Bäder', 'Küchen', 'Böden',
   'Elektro', 'Heizung', 'Fassade', 'Maler & Lack', 'Treppen', 'Trockenbau',
 ];
 
@@ -40,7 +40,7 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
 export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number; width: number; height: number }> = [
   {
     src: '/assets/img/projects/bad-soden-einfamilienhaus-01.webp',
-    title: 'Einfamilienhaus Bad Soden — Wohnsitz · 2026',
+    title: 'Einfamilienhaus Bad Soden — Wohnen · 2026',
     year: '2026',
     alt: 'Einfamilienhaus Bad Soden, fertig sanierter Wohnbereich',
     gridClass: 'proj--a',

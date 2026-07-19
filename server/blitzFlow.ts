@@ -1,5 +1,5 @@
 /**
- * Orchestration for a validated Blitz-Angebot submission — shared by the
+ * Orchestration for a validated Blitzangebot submission — shared by the
  * Netlify function (with a Mongo-backed store) and the Vite dev middleware
  * (no store: no dedup/audit, but the same decision + email path).
  *

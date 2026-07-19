@@ -16,11 +16,11 @@ import type { BlitzPayload } from './mail.js';
 function basePayload(overrides: Partial<BlitzPayload> = {}): BlitzPayload {
   return {
     art: 'pakete',
-    artLabel: 'Komplett-Pakete',
+    artLabel: 'Komplettpakete',
     groesse: '120',
     starttermin: 'sofort',
     starterminLabel: 'So schnell wie möglich',
-    gewerke: ['Haus-Sanierung'],
+    gewerke: ['Haussanierung'],
     msg: '',
     name: 'Test Person',
     email: 'test@example.com',
@@ -53,7 +53,7 @@ describe('parseAreaM2', () => {
 });
 
 describe('decideBlitzEstimate — pakete', () => {
-  it('prices a Haus-Sanierung from the sampled series with a widened band', () => {
+  it('prices a Haussanierung from the sampled series with a widened band', () => {
     const decision = decideBlitzEstimate(basePayload());
     expect(decision.mode).toBe('auto');
     if (decision.mode !== 'auto') return;
@@ -70,18 +70,25 @@ describe('decideBlitzEstimate — pakete', () => {
     expect(decision.estimate.details).toHaveLength(4);
   });
 
-  it('prices a Wohnung-Sanierung', () => {
-    const decision = decideBlitzEstimate(basePayload({ gewerke: ['Wohnung-Sanierung'], groesse: '100' }));
+  it('prices a Wohnungssanierung', () => {
+    const decision = decideBlitzEstimate(basePayload({ gewerke: ['Wohnungssanierung'], groesse: '100' }));
     expect(decision.mode).toBe('auto');
     if (decision.mode !== 'auto') return;
     expect(decision.estimate.basis).toBe('pakete');
     expect(decision.estimate.areaM2).toBe(100);
   });
 
+  it('continues to accept legacy hyphenated package labels', () => {
+    const haus = decideBlitzEstimate(basePayload({ gewerke: ['Haus-Sanierung'] }));
+    const wohnung = decideBlitzEstimate(basePayload({ gewerke: ['Wohnung-Sanierung'], groesse: '100' }));
+    expect(haus.mode).toBe('auto');
+    expect(wohnung.mode).toBe('auto');
+  });
+
   it('keeps Gastronomie/Büro packages on the manual path (no rate data)', () => {
-    const gastro = decideBlitzEstimate(basePayload({ gewerke: ['Gastronomie-Ausbau'] }));
+    const gastro = decideBlitzEstimate(basePayload({ gewerke: ['Gastronomieausbau'] }));
     expect(gastro).toEqual({ mode: 'manual', reason: 'paket-not-priceable' });
-    const buero = decideBlitzEstimate(basePayload({ gewerke: ['Büro-Ausbau'] }));
+    const buero = decideBlitzEstimate(basePayload({ gewerke: ['Büroausbau'] }));
     expect(buero).toEqual({ mode: 'manual', reason: 'paket-not-priceable' });
   });
 

@@ -43,7 +43,7 @@ export const INITIAL_CONTACT_FORM: ContactFormState = {
 };
 
 export const CONTACT_ART_OPTIONS: Array<{ value: ContactFormState['art']; label: string }> = [
-  { value: 'haus', label: 'Haus-Sanierung' },
+  { value: 'haus', label: 'Haussanierung' },
   { value: 'wohnung', label: 'Wohnung' },
   { value: 'gastro', label: 'Gastronomie' },
   { value: 'buero', label: 'Büro' },

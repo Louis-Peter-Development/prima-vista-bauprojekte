@@ -42,7 +42,7 @@ export const AREA_OPTIONS: AreaOption[] = [
 export const WOHNUNG_GEWERKE: WohnungGewerk[] = [
   { key: 'bad', num: '01', label: 'Badsanierung & Gäste-WC', lede: 'Wanne, Dusche, Sanitärobjekte', pricePerM2: 420 },
   { key: 'boeden', num: '02', label: 'Böden & Dielen', lede: 'Parkett, Fliesen, Vinyl, Estrich', pricePerM2: 140 },
-  { key: 'elektro', num: '03', label: 'Elektro-Installation', lede: 'Verteilung, Leitungen, Licht, KNX', pricePerM2: 180 },
+  { key: 'elektro', num: '03', label: 'Elektroinstallation', lede: 'Verteilung, Leitungen, Licht, KNX', pricePerM2: 180 },
   { key: 'fenster', num: '04', label: 'Fenster & Balkontüren', lede: 'Kunststoff, Holz, Aluminium', pricePerM2: 240 },
   { key: 'heizflaechen', num: '05', label: 'Heizkörper & Bodenheizung', lede: 'Flächenheizung, Heizkörper, Stränge', pricePerM2: 160 },
   { key: 'kueche', num: '06', label: 'Küche & Möbelbau', lede: 'Einbauküche, Geräte, Schreinerei', pricePerM2: 380 },

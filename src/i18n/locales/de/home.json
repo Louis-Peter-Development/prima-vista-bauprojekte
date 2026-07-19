@@ -72,7 +72,7 @@
     ]
   },
   "blitzLive": {
-    "label": "Vorab-Kostenschätzung",
+    "label": "Vorläufige Kostenschätzung",
     "stamp": "In Minuten",
     "rowProjekt": "Projekt",
     "rowStandort": "Standort",
@@ -84,8 +84,8 @@
     "sigPlace": "Deutschland/Schweiz",
     "docs": [
       { "num": "№ 06 / BA-2026-142", "projekt": "Wohnungssanierung · 142 m²", "standort": "Frankfurt-Sachsenhausen", "gewerke": "Bad, Küche, Elektrik, Maler", "standard": "Gehoben", "investition": "€ 184 – 226 Tsd.", "datum": "17. Mai 2026" },
-      { "num": "№ 06 / BA-2026-089", "projekt": "Haus-Sanierung · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Dach, Fassade, Heizung, Rohbau", "standard": "Premium", "investition": "€ 320 – 385 Tsd.", "datum": "22. Mai 2026" },
-      { "num": "№ 06 / BA-2026-215", "projekt": "Gastronomie-Ausbau · 180 m²", "standort": "Luzern Innenstadt", "gewerke": "Lüftung, Sanitär, Trockenbau", "standard": "Objektbau / Gewerbe", "investition": "CHF 280 – 340 Tsd.", "datum": "02. Juni 2026" }
+      { "num": "№ 06 / BA-2026-089", "projekt": "Haussanierung · 210 m²", "standort": "Wiesbaden-Sonnenberg", "gewerke": "Dach, Fassade, Heizung, Rohbau", "standard": "Premium", "investition": "€ 320–385 Tsd.", "datum": "22. Mai 2026" },
+      { "num": "№ 06 / BA-2026-215", "projekt": "Gastronomieausbau · 180 m²", "standort": "Luzern Innenstadt", "gewerke": "Lüftung, Sanitär, Trockenbau", "standard": "Objektbau / Gewerbe", "investition": "CHF 280–340 Tsd.", "datum": "2. Juni 2026" }
     ]
   },
   "promise": {
@@ -98,38 +98,38 @@
       "2": { "title": "Alle Materialien", "desc": "Seit 2006" },
       "3": { "title": "Festpreisgarantie", "desc": "Deutschland & Schweiz" },
       "4": { "title": "Termin in 48 Std.", "desc": "Direkter Kontakt" },
-      "5": { "title": "Festes Endtermin-Datum", "desc": "Dokumentierte Planung" },
+      "5": { "title": "Verbindlicher Endtermin", "desc": "Dokumentierte Planung" },
       "6": { "title": "5 Jahre Werksgewähr", "desc": "Saubere Abnahme" }
     }
   },
   "packages": {
-    "eyebrow": "Komplett-Pakete",
+    "eyebrow": "Komplettpakete",
     "title": "Vier Wege zum<br/>fertigen <em>Raum.</em>",
     "intro": "Ob Einzimmer-Refresh, Büroausbau oder Generalsanierung: jedes Paket bündelt Planung, Bauleitung und alle Gewerke — mit klarem Preis und festem Endtermin.",
     "items": {
       "haus": {
         "num": "№ 01 — Komplett",
-        "title": "Haus-<br/>Sanierung",
+        "title": "Haussanierung",
         "desc": "Generalsanierung von Bestandsbauten — Dach, Fassade, Innenausbau aus einer Hand.",
-        "alt": "Haus-Sanierung"
+        "alt": "Haussanierung"
       },
       "wohnung": {
         "num": "№ 02 — Modular",
-        "title": "Wohnung-<br/>Sanierung",
+        "title": "Wohnungssanierung",
         "desc": "Bäder, Küchen, Böden, Elektrik: Etagenwohnungen — bewohnbar in 6–10 Wochen.",
-        "alt": "Wohnung-Sanierung"
+        "alt": "Wohnungssanierung"
       },
       "gastronomie": {
         "num": "№ 03 — Konzept",
-        "title": "Gastronomie-<br/>Ausbau",
+        "title": "Gastronomieausbau",
         "desc": "Restaurants, Bars, Hotels: von der Konzeptphase bis zur Eröffnung — schlüsselfertig.",
-        "alt": "Gastronomie-Ausbau"
+        "alt": "Gastronomieausbau"
       },
       "buero": {
         "num": "№ 04 — Büro",
-        "title": "Büro-<br/>Ausbau",
+        "title": "Büroausbau",
         "desc": "Büroflächen, Praxen und Arbeitswelten — bezugsfertig mit Technik, Akustik und Oberflächen.",
-        "alt": "Büro-Ausbau"
+        "alt": "Büroausbau"
       }
     }
   },
@@ -150,7 +150,7 @@
     },
     "onTime": {
       "label": "Termintreue",
-      "desc": "Festes Endtermin-Datum im Vertrag — sonst Konventionalstrafe."
+      "desc": "Verbindlicher Endtermin im Vertrag — andernfalls greift eine Vertragsstrafe."
     }
   },
   "calculator": {
@@ -166,7 +166,7 @@
     "appointment": "Termin vereinbaren"
   },
   "blitz": {
-    "eyebrow": "№ 06 · Blitz-Angebot",
+    "eyebrow": "№ 06 · Blitzangebot",
     "title": "Ihre Schätzung. Schwarz auf weiß.<br/>In <em>Minuten.</em>",
     "p": "Etwas konkreter? Beantworten Sie ein Kurzformular — Standardanfragen kalkuliert unser System sofort auf geprüfter Preisbasis; Sonderfälle prüft die Bauleitung persönlich innerhalb von 24 Stunden.",
     "steps": {
@@ -174,7 +174,7 @@
       "2": "Automatische Kalkulation auf geprüfter Preisbasis",
       "3": "Schätzung sofort per E-Mail — Sonderfälle in 24 Std."
     },
-    "request": "Blitz-Angebot anfordern",
+    "request": "Blitzangebot anfordern",
     "appointment": "Termin vereinbaren"
   },
   "trades": {
@@ -200,19 +200,19 @@
     "p": "Rüsten Sie mit unseren Paketen auf innovative Heizmethoden auf — förderfähig, geräuscharm und unabhängig vom Gas.",
     "pump": {
       "num": "№ 01",
-      "title": "Luftwärme-<br/>pumpe",
+      "title": "Luftwärmepumpe",
       "desc": "Bis zu 70 % Energieersparnis. Bestandsumstellung in 7–10 Tagen, BAFA-förderfähig.",
       "alt": "Luftwärmepumpe"
     },
     "risers": {
       "num": "№ 02",
-      "title": "Heizungs-<br/>stränge",
+      "title": "Heizungsstränge",
       "desc": "Vertikale Stränge mit hydraulischem Abgleich — präzise Wärmeverteilung, geringere Pumpenleistung.",
       "alt": "Heizungsstränge"
     },
     "radiators": {
       "num": "№ 03",
-      "title": "Design-<br/>Heizkörper",
+      "title": "Designheizkörper",
       "desc": "Architektonisch integrierte Flachheizkörper aus Aluminium — schlank, leise, niedertemperaturtauglich.",
       "alt": "Heizkörper"
     },
@@ -239,6 +239,6 @@
     "p": "Erste Beratung kostenlos. Termin innerhalb von 48 Stunden, vor Ort oder per Video — in Deutschland und der Schweiz.",
     "appointment": "Termin vereinbaren",
     "toCalculator": "Zum Kalkulator",
-    "expressQuote": "Blitz-Angebot"
+    "expressQuote": "Blitzangebot"
   }
 }

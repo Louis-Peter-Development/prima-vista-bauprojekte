@@ -24,7 +24,7 @@ export const HEIZMETHODEN: Heizmethode[] = [
   },
   {
     key: 'fussboden',
-    title: 'Fußboden-Heizung',
+    title: 'Fußbodenheizung',
     subtitle: 'Flächenheizung',
     photo: '/assets/img/projects/bad-soden-einfamilienhaus-11.webp',
     detailTo: '/fussbodenheizung',
@@ -32,14 +32,14 @@ export const HEIZMETHODEN: Heizmethode[] = [
   },
   {
     key: 'waermepumpe',
-    title: 'Luft-Wärmepumpe',
+    title: 'Luftwärmepumpe',
     photo: '/assets/img/leistungen/waermepumpe-01.webp',
     detailTo: '/waermepumpe',
     desc: 'Förderfähige Wärmequelle für gut gedämmte Häuser. Auslegung, Aufstellplanung, Schallgutachten und Inbetriebnahme aus einer Hand.',
   },
   {
     key: 'gas',
-    title: 'Gas-Heizung',
+    title: 'Gasheizung',
     subtitle: 'Brennwert',
     photo: '/assets/img/leistungen/gas-heizung-01.webp',
     detailTo: '/gas-heizung',

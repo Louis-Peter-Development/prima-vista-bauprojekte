@@ -40,7 +40,7 @@ export interface UserDocument {
   updatedAt: Date;
 }
 
-// Audit record for a Blitz-Angebot submission (automatic or manual). The
+// Audit record for a Blitzangebot submission (automatic or manual). The
 // snapshot of the submitted answers + the computed estimate/calc version is
 // what makes an automatically sent quote reconstructible later.
 export interface BlitzRequestDocument {

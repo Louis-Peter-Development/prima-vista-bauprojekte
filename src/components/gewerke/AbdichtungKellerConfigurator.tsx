@@ -22,7 +22,7 @@ export default function AbdichtungKellerConfigurator() {
     switch (type) {
       case 'abdichtungHorizontal': return 'Horizontal-Abdichtung';
       case 'abdichtungPerimeter': return 'Perimeter-Abdichtung';
-      case 'abdichtungKeller': return 'Keller-Abdichtung (Innen)';
+      case 'abdichtungKeller': return 'Kellerabdichtung (Innen)';
       case 'abdichtung': return 'Komplette Abdichtung';
       default: return 'Abdichtung';
     }

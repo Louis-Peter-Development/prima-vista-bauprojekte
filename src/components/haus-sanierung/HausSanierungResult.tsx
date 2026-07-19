@@ -41,7 +41,7 @@ export default function HausSanierungResult({
           label: g.label,
           subtotal: g.pricePerM2 * area * factor,
           description: g.lead,
-          category: 'Haus-Sanierung',
+          category: 'Haussanierung',
           type: 'Gewerk',
         })),
         totalMin,

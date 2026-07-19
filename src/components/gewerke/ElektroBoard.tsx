@@ -27,7 +27,7 @@ const ELEKTRO_TYPES: VariantDefinition[] = [
   { value: 'elektroEinzelinstallation', label: 'Einzelinstallation', detail: 'Zuleitung & Element', num: '05' },
   { value: 'elektroLichttechnik', label: 'Lichttechnik', detail: 'Beleuchtung', num: '06' },
   { value: 'elektroFreeHome', label: 'Free Home', detail: 'Smart Home', num: '07' },
-  { value: 'elektroRolladen', label: 'Rolladen-Steuerung', detail: 'Beschattung', num: '08' },
+  { value: 'elektroRolladen', label: 'Rollladensteuerung', detail: 'Beschattung', num: '08' },
   { value: 'elektroSprechanlagen', label: 'Sprechanlagen', detail: 'Türkommunikation', num: '09' },
 ];
 

@@ -9,7 +9,7 @@ import {
 describe('Blitz Angebot service choices', () => {
   it('starts with the broad top-level request areas', () => {
     expect(BLITZ_ART_OPTIONS).toEqual([
-      { value: 'pakete', label: 'Komplett-Pakete' },
+      { value: 'pakete', label: 'Komplettpakete' },
       { value: 'gewerke', label: 'Gewerke' },
       { value: 'heizung', label: 'Heizmethoden' },
       { value: 'anderes', label: 'Anderes' },
@@ -18,15 +18,15 @@ describe('Blitz Angebot service choices', () => {
 
   it('offers every calculator leaf choice in grouped form', () => {
     expect(BLITZ_SERVICE_GROUPS.map((group) => group.label)).toEqual([
-      'Komplett-Pakete',
+      'Komplettpakete',
       'Gewerke',
       'Heizmethoden',
     ]);
     expect(BLITZ_GEWERKE_OPTIONS).toEqual(expect.arrayContaining([
-      'Haus-Sanierung',
-      'Wohnung-Sanierung',
-      'Gastronomie-Ausbau',
-      'Büro-Ausbau',
+      'Haussanierung',
+      'Wohnungssanierung',
+      'Gastronomieausbau',
+      'Büroausbau',
       'Bäder & Sanitär',
       'Küchen & Möbelbau',
       'Böden & Beläge',
@@ -46,9 +46,9 @@ describe('Blitz Angebot service choices', () => {
       'Zäune & Tore',
       'Heizkörper',
       'Heizstränge',
-      'Fußboden-Heizung',
-      'Luft-Wärmepumpe',
-      'Gas-Heizung',
+      'Fußbodenheizung',
+      'Luftwärmepumpe',
+      'Gasheizung',
       'Pelletofen',
       'Saunaofen',
     ]));
@@ -65,7 +65,7 @@ describe('Blitz Angebot service choices', () => {
   it('uses the calculator kind label for specific heating calculators', () => {
     expect(mapKalkulatorPicksToBlitzGewerke([
       { key: 'section-01', label: 'Art der Ausführung', subtotal: 2000, tradeKey: 'heiz', tradeLabel: 'Heizung' },
-    ], 'Wärmepumpe')).toEqual(['Luft-Wärmepumpe']);
+    ], 'Wärmepumpe')).toEqual(['Luftwärmepumpe']);
     expect(mapKalkulatorPicksToBlitzGewerke([
       { key: 'section-01', label: 'Art der Ausführung', subtotal: 2000, tradeKey: 'bade', tradeLabel: 'Badezimmer' },
     ], 'Saunaofen')).toEqual(['Saunaofen']);

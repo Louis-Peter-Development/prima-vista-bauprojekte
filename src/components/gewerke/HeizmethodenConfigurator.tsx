@@ -19,7 +19,7 @@ const LABELS: Record<HeizmethodenType, string> = {
   heizmethodenHeizstraenge: 'Heizstränge',
   heizmethodenFussbodenheizung: 'Fußbodenheizung',
   heizmethodenWaermepumpe: 'Wärmepumpe',
-  heizmethodenGasHeizung: 'Gas-Heizung',
+  heizmethodenGasHeizung: 'Gasheizung',
   heizmethodenPelletofen: 'Pelletofen',
   heizmethodenSaunaofen: 'Saunaofen',
 };

@@ -1,11 +1,11 @@
 /**
- * Server-side estimate for the automatic Blitz-Angebot.
+ * Server-side estimate for the automatic Blitzangebot.
  *
  * Two pricing bases exist:
  *  - 'kalkulator': the submission carries an itemized calculator handoff; the
  *    grand total is re-derived from the sanitized line items (client totals are
  *    never trusted) exactly like the calculator-pdf endpoint does.
- *  - 'pakete': a Komplett-Paket request (Haus/Wohnung) with a plausible living
+ *  - 'pakete': a Komplettpaket request (Haus/Wohnung) with a plausible living
  *    area; priced against the sampled net tables in blitzRates.generated.ts,
  *    which mirror the live calculator packages' default configuration.
  *
@@ -41,6 +41,9 @@ const AREA_BOUNDS: Record<'haus' | 'wohnung', { min: number; max: number }> = {
 };
 
 const PAKET_LABEL_TO_GROUP: Record<string, 'haus' | 'wohnung'> = {
+  'Haussanierung': 'haus',
+  'Wohnungssanierung': 'wohnung',
+  // Cached clients may still submit the former spellings during rollout.
   'Haus-Sanierung': 'haus',
   'Wohnung-Sanierung': 'wohnung',
 };
@@ -157,6 +160,7 @@ export function decideBlitzEstimate(payload: BlitzPayload): BlitzDecision {
   }
   if (payload.art === 'pakete') {
     const pakete = payload.gewerke.filter((label) => label in PAKET_LABEL_TO_GROUP
+      || label === 'Gastronomieausbau' || label === 'Büroausbau'
       || label === 'Gastronomie-Ausbau' || label === 'Büro-Ausbau');
     if (pakete.length !== 1) return { mode: 'manual', reason: 'paket-selection-ambiguous' };
     return estimateForPakete(pakete[0], payload.groesse);

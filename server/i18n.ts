@@ -90,7 +90,7 @@ type CodeLabelMap = Record<Locale, Record<string, string>>;
 // Blitz `art` codes (BlitzFormState['art']).
 const BLITZ_ART_LABELS: CodeLabelMap = {
   de: {
-    pakete: 'Komplett-Pakete',
+    pakete: 'Komplettpakete',
     gewerke: 'Gewerke',
     heizung: 'Heizmethoden',
     anderes: 'Anderes',
@@ -119,8 +119,8 @@ const BLITZ_ART_LABELS: CodeLabelMap = {
 const STARTTERMIN_LABELS: CodeLabelMap = {
   de: {
     sofort: 'So schnell wie möglich',
-    '1-3m': 'In 1 – 3 Monaten',
-    '3-6m': 'In 3 – 6 Monaten',
+    '1-3m': 'In 1–3 Monaten',
+    '3-6m': 'In 3–6 Monaten',
     spaeter: 'Noch unklar / Nächstes Jahr',
   },
   en: {
@@ -147,7 +147,7 @@ const STARTTERMIN_LABELS: CodeLabelMap = {
 // CONTACT_ART_OPTIONS in src/data/kontakt.ts.
 const KONTAKT_ART_LABELS: CodeLabelMap = {
   de: {
-    haus: 'Haus-Sanierung',
+    haus: 'Haussanierung',
     wohnung: 'Wohnung',
     gastro: 'Gastronomie',
     buero: 'Büro',
@@ -240,10 +240,10 @@ const BUDGET_LABELS: CodeLabelMap = {
 // strings; only the display in the customer email is localized.
 const GEWERKE_LABELS: CodeLabelMap = {
   de: {
-    'Haus-Sanierung': 'Haus-Sanierung',
-    'Wohnung-Sanierung': 'Wohnung-Sanierung',
-    'Gastronomie-Ausbau': 'Gastronomie-Ausbau',
-    'Büro-Ausbau': 'Büro-Ausbau',
+    'Haussanierung': 'Haussanierung',
+    'Wohnungssanierung': 'Wohnungssanierung',
+    'Gastronomieausbau': 'Gastronomieausbau',
+    'Büroausbau': 'Büroausbau',
     'Bäder & Sanitär': 'Bäder & Sanitär',
     'Küchen & Möbelbau': 'Küchen & Möbelbau',
     'Böden & Beläge': 'Böden & Beläge',
@@ -263,17 +263,17 @@ const GEWERKE_LABELS: CodeLabelMap = {
     'Zäune & Tore': 'Zäune & Tore',
     Heizkörper: 'Heizkörper',
     Heizstränge: 'Heizstränge',
-    'Fußboden-Heizung': 'Fußboden-Heizung',
-    'Luft-Wärmepumpe': 'Luft-Wärmepumpe',
-    'Gas-Heizung': 'Gas-Heizung',
+    'Fußbodenheizung': 'Fußbodenheizung',
+    'Luftwärmepumpe': 'Luftwärmepumpe',
+    'Gasheizung': 'Gasheizung',
     Pelletofen: 'Pelletofen',
     Saunaofen: 'Saunaofen',
   },
   en: {
-    'Haus-Sanierung': 'House renovation',
-    'Wohnung-Sanierung': 'Apartment renovation',
-    'Gastronomie-Ausbau': 'Restaurant fit-out',
-    'Büro-Ausbau': 'Office fit-out',
+    'Haussanierung': 'House renovation',
+    'Wohnungssanierung': 'Apartment renovation',
+    'Gastronomieausbau': 'Restaurant fit-out',
+    'Büroausbau': 'Office fit-out',
     'Bäder & Sanitär': 'Bathrooms & plumbing',
     'Küchen & Möbelbau': 'Kitchens & cabinetry',
     'Böden & Beläge': 'Floors & coverings',
@@ -293,17 +293,17 @@ const GEWERKE_LABELS: CodeLabelMap = {
     'Zäune & Tore': 'Fences & gates',
     Heizkörper: 'Radiators',
     Heizstränge: 'Heating risers',
-    'Fußboden-Heizung': 'Underfloor heating',
-    'Luft-Wärmepumpe': 'Air-source heat pump',
-    'Gas-Heizung': 'Gas heating',
+    'Fußbodenheizung': 'Underfloor heating',
+    'Luftwärmepumpe': 'Air-source heat pump',
+    'Gasheizung': 'Gas heating',
     Pelletofen: 'Pellet stove',
     Saunaofen: 'Sauna heater',
   },
   it: {
-    'Haus-Sanierung': 'Ristrutturazione casa',
-    'Wohnung-Sanierung': 'Ristrutturazione appartamento',
-    'Gastronomie-Ausbau': 'Allestimento ristorazione',
-    'Büro-Ausbau': 'Allestimento ufficio',
+    'Haussanierung': 'Ristrutturazione casa',
+    'Wohnungssanierung': 'Ristrutturazione appartamento',
+    'Gastronomieausbau': 'Allestimento ristorazione',
+    'Büroausbau': 'Allestimento ufficio',
     'Bäder & Sanitär': 'Bagni & impianti sanitari',
     'Küchen & Möbelbau': 'Cucine & mobili',
     'Böden & Beläge': 'Pavimenti & rivestimenti',
@@ -323,17 +323,17 @@ const GEWERKE_LABELS: CodeLabelMap = {
     'Zäune & Tore': 'Recinzioni & cancelli',
     Heizkörper: 'Radiatori',
     Heizstränge: 'Colonne di riscaldamento',
-    'Fußboden-Heizung': 'Riscaldamento a pavimento',
-    'Luft-Wärmepumpe': 'Pompa di calore ad aria',
-    'Gas-Heizung': 'Riscaldamento a gas',
+    'Fußbodenheizung': 'Riscaldamento a pavimento',
+    'Luftwärmepumpe': 'Pompa di calore ad aria',
+    'Gasheizung': 'Riscaldamento a gas',
     Pelletofen: 'Stufa a pellet',
     Saunaofen: 'Stufa per sauna',
   },
   fr: {
-    'Haus-Sanierung': 'Rénovation de maison',
-    'Wohnung-Sanierung': 'Rénovation d’appartement',
-    'Gastronomie-Ausbau': 'Aménagement de restauration',
-    'Büro-Ausbau': 'Aménagement de bureau',
+    'Haussanierung': 'Rénovation de maison',
+    'Wohnungssanierung': 'Rénovation d’appartement',
+    'Gastronomieausbau': 'Aménagement de restauration',
+    'Büroausbau': 'Aménagement de bureau',
     'Bäder & Sanitär': 'Salles de bains & sanitaires',
     'Küchen & Möbelbau': 'Cuisines & agencement',
     'Böden & Beläge': 'Sols & revêtements',
@@ -353,9 +353,9 @@ const GEWERKE_LABELS: CodeLabelMap = {
     'Zäune & Tore': 'Clôtures & portails',
     Heizkörper: 'Radiateurs',
     Heizstränge: 'Colonnes de chauffage',
-    'Fußboden-Heizung': 'Chauffage au sol',
-    'Luft-Wärmepumpe': 'Pompe à chaleur air',
-    'Gas-Heizung': 'Chauffage au gaz',
+    'Fußbodenheizung': 'Chauffage au sol',
+    'Luftwärmepumpe': 'Pompe à chaleur air',
+    'Gasheizung': 'Chauffage au gaz',
     Pelletofen: 'Poêle à granulés',
     Saunaofen: 'Poêle de sauna',
   },
@@ -392,7 +392,17 @@ export const starterminLabel = (locale: Locale, code: string) => labelFrom(START
 export const kontaktArtLabel = (locale: Locale, code: string) => labelFrom(KONTAKT_ART_LABELS, locale, code);
 export const regionLabel = (locale: Locale, code: string) => labelFrom(REGION_LABELS, locale, code);
 export const budgetLabel = (locale: Locale, code: string) => labelFrom(BUDGET_LABELS, locale, code);
-export const gewerkeLabel = (locale: Locale, code: string) => labelFrom(GEWERKE_LABELS, locale, code);
+const LEGACY_GEWERKE_CODES: Record<string, string> = {
+  'Haus-Sanierung': 'Haussanierung',
+  'Wohnung-Sanierung': 'Wohnungssanierung',
+  'Gastronomie-Ausbau': 'Gastronomieausbau',
+  'Büro-Ausbau': 'Büroausbau',
+  'Fußboden-Heizung': 'Fußbodenheizung',
+  'Luft-Wärmepumpe': 'Luftwärmepumpe',
+  'Gas-Heizung': 'Gasheizung',
+};
+export const gewerkeLabel = (locale: Locale, code: string) =>
+  labelFrom(GEWERKE_LABELS, locale, LEGACY_GEWERKE_CODES[code] ?? code);
 export const terminArtLabel = (locale: Locale, code: string) => labelFrom(TERMIN_ART_LABELS, locale, code);
 
 // ----- Flat customer-facing string catalogue -----
@@ -435,42 +445,42 @@ const STRINGS = {
     kontaktTerminNote: 'Ihr genauer Wunschtermin ist im Kalender vorgemerkt — verbindlich wird er erst mit unserer Bestätigung innerhalb von 48 Stunden.',
 
     // --- blitz customer confirmation ---
-    blitzSubject: 'Ihre Blitz-Anfrage ist eingegangen — Prima Vista Bauprojekte',
+    blitzSubject: 'Ihre Blitzanfrage ist eingegangen — Prima Vista Bauprojekte',
     blitzTitle: 'Vielen Dank, {name}.',
-    blitzEyebrow: 'Eingangsbestätigung · Blitz-Angebot',
-    blitzIntro: 'Ihre Blitz-Anfrage ist bei uns eingegangen. Wir werten Ihr Projekt aus und stellen Ihnen innerhalb von 24 Stunden eine erste Kostenschätzung zu — per E-Mail an {email}{phone}.',
-    blitzIntroText: 'Ihre Blitz-Anfrage ist bei uns eingegangen. Sie erhalten innerhalb von 24 Stunden eine erste Kostenschätzung per E-Mail an {email}{phone}.',
+    blitzEyebrow: 'Eingangsbestätigung · Blitzangebot',
+    blitzIntro: 'Ihre Blitzanfrage ist bei uns eingegangen. Wir werten Ihr Projekt aus und senden Ihnen innerhalb von 24 Stunden eine erste Kostenschätzung per E-Mail an {email}{phone}.',
+    blitzIntroText: 'Ihre Blitzanfrage ist bei uns eingegangen. Sie erhalten innerhalb von 24 Stunden eine erste Kostenschätzung per E-Mail an {email}{phone}.',
     blitzYourDetails: 'Ihre Angaben',
     blitzYourServices: 'Ihre ausgewählten Leistungen',
     blitzYourNote: 'Ihre Notiz',
     blitzCalcHeading: 'Ihre übernommene Kalkulation',
-    blitzStep1: 'Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.',
-    blitzStep2: 'Sie erhalten eine schriftliche Vorab-Kostenschätzung.',
-    blitzStep3: 'Auf Wunsch verfeinern wir das Angebot vor Ort — verbindlich nach Aufmaß.',
+    blitzStep1: 'Die Bauleitung prüft Fläche bzw. Umfang, Standort und gewünschte Leistungen.',
+    blitzStep2: 'Sie erhalten eine schriftliche Kostenschätzung.',
+    blitzStep3: 'Auf Wunsch verfeinern wir das Angebot vor Ort. Verbindlich wird der Preis nach dem Aufmaß.',
     blitzStep3Text: 'Auf Wunsch verfeinern wir das Angebot vor Ort.',
 
     // --- blitz automatic estimate (customer) ---
-    blitzAutoSubject: 'Ihre Vorab-Kostenschätzung — Prima Vista Bauprojekte',
-    blitzAutoTitle: 'Ihre Vorab-Kostenschätzung, {name}.',
-    blitzAutoEyebrow: 'Vorab-Kostenschätzung · Blitz-Angebot',
-    blitzAutoIntro: 'Vielen Dank für Ihre Anfrage. Auf Basis Ihrer Angaben haben wir Ihre Vorab-Kostenschätzung direkt kalkuliert — auf der geprüften Preisbasis unseres Online-Kalkulators.',
+    blitzAutoSubject: 'Ihre vorläufige Kostenschätzung — Prima Vista Bauprojekte',
+    blitzAutoTitle: 'Ihre vorläufige Kostenschätzung, {name}.',
+    blitzAutoEyebrow: 'Kostenschätzung · Blitzangebot',
+    blitzAutoIntro: 'Vielen Dank für Ihre Anfrage. Auf Basis Ihrer Angaben haben wir Ihre vorläufige Kostenschätzung direkt berechnet — mit der geprüften Preisbasis unseres Online-Kalkulators.',
     blitzAutoRangeLabel: 'Geschätzte Investition',
     blitzAutoRangeNote: 'Alle Beträge netto zzgl. gesetzlicher MwSt.',
     blitzAutoAssumptions: 'Annahmen & Hinweise',
-    blitzAutoAssumption1: 'Kalkuliert in der Standard-Ausführungsstufe bei üblicher Bestandssituation.',
-    blitzAutoAssumption2: 'Nicht enthalten: Sonderlösungen wie Statik-Eingriffe, Schadstoffsanierung oder Auflagen des Denkmalschutzes.',
+    blitzAutoAssumption1: 'Kalkuliert in der standardmäßigen Ausführungsstufe bei üblicher Bestandssituation.',
+    blitzAutoAssumption2: 'Nicht enthalten: Sonderlösungen wie statische Eingriffe, Schadstoffsanierung oder Auflagen des Denkmalschutzes.',
     blitzAutoAssumption3: 'Die Spanne deckt typische Ausstattungs- und Gebäudevarianten ab; Ihr konkretes Projekt kann davon abweichen.',
-    blitzAutoDisclaimer: 'Diese Vorab-Schätzung ist kein verbindliches Angebot. Verbindliche Preise entstehen nach Besichtigung, Aufmaß und Materialbemusterung — von unserer Bauleitung geprüft und gegengezeichnet.',
+    blitzAutoDisclaimer: 'Diese Kostenschätzung ist kein verbindliches Angebot. Verbindliche Preise entstehen nach Besichtigung, Aufmaß und Materialbemusterung und werden von unserer Bauleitung geprüft und gegengezeichnet.',
     blitzAutoPdfNote: 'Im Anhang finden Sie die detaillierte PDF-Aufstellung Ihrer Kalkulator-Auswahl.',
     blitzAutoStep1: 'Antworten Sie auf diese E-Mail oder vereinbaren Sie direkt einen Termin — unsere Bauleitung prüft Ihr Projekt persönlich.',
     blitzAutoStep2: 'Vor-Ort-Besichtigung und Aufmaß durch Daniel oder Monica.',
-    blitzAutoStep3: 'Sie erhalten Ihr verbindliches Festpreis-Angebot — schwarz auf weiß.',
+    blitzAutoStep3: 'Sie erhalten Ihr verbindliches Festpreisangebot — schwarz auf weiß.',
 
     // blitz project rows / calculator summary (customer)
     rowRequest: 'Anfrage',
     rowRequestValue: 'Aus dem Kalkulator übernommen',
     rowCalculator: 'Rechner',
-    rowEstimate: 'Vorab-Schätzung',
+    rowEstimate: 'Kostenschätzung',
     rowStart: 'Baubeginn',
     rowObjectType: 'Objektart',
     rowMid: 'Mittelwert',
@@ -496,8 +506,8 @@ const STRINGS = {
 
     // --- PDF document (calculatorPdf.ts) ---
     pdfDocTitle: 'Prima Vista Kostenvoranschlag - {kind}',
-    pdfDocSubject: 'Vorab-Schätzung aus dem Kalkulator',
-    pdfHeaderTagline: 'SANIERUNG & BAU · VORAB-SCHÄTZUNG',
+    pdfDocSubject: 'Kostenschätzung aus dem Kalkulator',
+    pdfHeaderTagline: 'SANIERUNG & BAU · KOSTENSCHÄTZUNG',
     pdfBandTagline: 'SANIERUNG & BAU · AUFTRAGSUNTERLAGEN',
     pdfTitleEstimate: 'Kostenvoranschlag',
     pdfTitleProductDetails: 'Produktdetails',
@@ -508,7 +518,7 @@ const STRINGS = {
     pdfAddrZipCity: 'PLZ und Ort',
     pdfAddrState: 'Bundesland',
     pdfAddrCountry: 'Land',
-    pdfAddrTaxId: 'USt-ID / Steuernummer',
+    pdfAddrTaxId: 'USt-IdNr. / Steuernummer',
 
     pdfProjectDataTitle: 'Projekt- und Rechnungsdaten',
     pdfProjectDataIntro: 'Bitte bei Auftragserteilung ausfüllen. Die Kalkulator-Auswahl bleibt im Anhang nachvollziehbar.',
@@ -525,7 +535,7 @@ const STRINGS = {
     pdfFooterPhone: 'Telefon: +49 1578 98 18 308',
     pdfFooterEmail: 'E-Mail: office@primavista-bauprojekte.com',
     pdfFooterTaxNr: 'Steuernr.: 01483039527',
-    pdfFooterVatId: 'USt-ID: DE 358812805',
+    pdfFooterVatId: 'USt-IdNr.: DE 358812805',
     pdfFooterCourt: 'Amtsgericht Frankfurt am Main',
 
     pdfSummaryEyebrow: 'AUS DEM KALKULATOR',
@@ -533,7 +543,7 @@ const STRINGS = {
     pdfSummaryNet: 'Netto {value}',
     pdfSummaryVat: 'zzgl. 19 % MwSt. {value}',
     pdfSummaryScope: '{label}: {value}',
-    pdfSummaryEstimate: 'Vorab-Schätzung: {min} - {max}',
+    pdfSummaryEstimate: 'Kostenschätzung: {min} – {max}',
     pdfSummaryGuide: 'Richtwert: {value} / m²',
 
     pdfTableProduct: 'Produkt / Leistung',
@@ -547,7 +557,7 @@ const STRINGS = {
     pdfTotalNetSum: 'Gesamtnettosumme',
     pdfTotalVat: 'zzgl. 19 % MwSt.',
     pdfTotalGross: 'Gesamtsumme',
-    pdfDisclaimer: 'Diese Vorab-Schätzung basiert auf den im Online-Kalkulator ausgewählten Positionen. Verbindliche Preise entstehen nach Aufmaß, Prüfung der baulichen Situation und Materialbemusterung.',
+    pdfDisclaimer: 'Diese Kostenschätzung basiert auf den im Online-Kalkulator ausgewählten Positionen. Verbindliche Preise entstehen nach Aufmaß, Prüfung der baulichen Situation und Materialbemusterung.',
 
     pdfProductDetailsIntro: 'Details zu den ausgewählten Positionen aus dem Kalkulator. Mengen, Ausführung und Materialauswahl werden vor Ort geprüft und im finalen Angebot bestätigt.',
     pdfProductProdNr: 'Prod.-Nr.: {sku}',
@@ -558,7 +568,7 @@ const STRINGS = {
     pdfProductGenericDescription: '{label} ist Teil der ausgewählten Kalkulation im Bereich {category}. Menge, Ausführung und Materialauswahl werden vor Ort geprüft und im finalen Angebot bestätigt.',
 
     pdfSignTitle: 'Auftragserteilung und Bestätigungen',
-    pdfSignIntro: 'Diese Seite ist für die spätere Beauftragung vorgesehen. Die PDF-Aufstellung ist eine Vorab-Schätzung. Verbindlich wird der Auftrag erst nach Aufmaß, finalem Angebot und Unterschrift.',
+    pdfSignIntro: 'Diese Seite ist für die spätere Beauftragung vorgesehen. Die PDF-Aufstellung ist eine vorläufige Kostenschätzung. Verbindlich wird der Auftrag erst nach Aufmaß, finalem Angebot und Unterschrift.',
     pdfSignCard1Title: 'Auftrag nach finalem Angebot',
     pdfSignCard1Body: 'Ich beauftrage Prima Vista Bauprojekte auf Basis des finalisierten Angebots und des gemeinsam abgestimmten Ausführungszeitpunkts.',
     pdfSignCard2Title: 'Vertragsbedingungen gelesen',
