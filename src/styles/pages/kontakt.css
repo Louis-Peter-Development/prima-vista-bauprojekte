@@ -844,7 +844,7 @@
     opacity 140ms var(--pv-ease-out),
     transform 200ms var(--pv-ease-out);
 }
-.form-chips--project-type input:checked + label .form-chip__check {
+.form-chips input:checked + label .form-chip__check {
   opacity: 1;
   transform: scale(1);
 }
@@ -861,7 +861,7 @@
   border-color: var(--kontakt-chip-active-bg);
   font-weight: 700;
 }
-:root[data-theme='dark'] .kontakt .form-chips--project-type input:checked + label {
+:root[data-theme='dark'] .kontakt .form-chips input:checked + label {
   background: var(--pv-copper-bright);
   color: var(--pv-ink-1);
   border-color: var(--pv-copper-bright);

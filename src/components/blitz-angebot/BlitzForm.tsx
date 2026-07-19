@@ -334,7 +334,10 @@ export default function BlitzForm() {
                   {BLITZ_ART_OPTIONS.map(({ value }) => (
                     <span key={value}>
                       <input type="radio" name="blitz-art" id={`blitz-art-${value}`} checked={form.art === value} onChange={() => selectArt(value)} />
-                      <label htmlFor={`blitz-art-${value}`} onClick={() => selectArt(value)}>{t(`form.art.${value}`)}</label>
+                      <label htmlFor={`blitz-art-${value}`} onClick={() => selectArt(value)}>
+                        <span className="form-chip__check" aria-hidden="true">✓</span>
+                        {t(`form.art.${value}`)}
+                      </label>
                     </span>
                   ))}
                 </div>
@@ -425,6 +428,7 @@ export default function BlitzForm() {
                                     htmlFor={id}
                                     onClick={isMultiSelect ? undefined : () => selectServiceOption(option)}
                                   >
+                                    <span className="form-chip__check" aria-hidden="true">✓</span>
                                     {SERVICE_OPTION_I18N[option]
                                       ? t(SERVICE_OPTION_I18N[option], { defaultValue: option })
                                       : option}
