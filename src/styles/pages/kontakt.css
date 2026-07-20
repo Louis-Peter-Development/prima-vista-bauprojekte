@@ -282,6 +282,9 @@
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  touch-action: pan-y;
   padding-right: 12px;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
@@ -1067,6 +1070,26 @@
 .faq__item.is-open .faq__a { max-height: 320px; }
 
 .kontakt--blitz { padding-bottom: 160px; min-height: 100svh; }
+
+/* Avoid a nested form scroller on tablets and touch-first devices. iPadOS can
+   fail to hand a vertical swipe from the calendar controls to that inner
+   scroller, leaving the lower half of the form unreachable. Let the document
+   own the scroll instead so a swipe anywhere in the form continues the page. */
+@media (max-width: 1280px), (hover: none) and (pointer: coarse) {
+  .kontakt__form-wrap--contact {
+    position: relative;
+    top: auto;
+    max-height: none;
+    display: block;
+  }
+  .kontakt__form-wrap--contact > form {
+    min-height: auto;
+    overflow-y: visible;
+    touch-action: auto;
+    padding-right: 0;
+    scrollbar-gutter: auto;
+  }
+}
 
 @media (max-width: 880px) {
   .kontakt__inner, .kontakt__offices, .faq__inner { grid-template-columns: 1fr; gap: 32px; }
