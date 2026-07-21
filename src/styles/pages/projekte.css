@@ -92,7 +92,7 @@
 .g-card__img-link {
   position: absolute; inset: 0;
   display: block;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 .g-card__img-link img {
   position: absolute; inset: 0;
