@@ -5,25 +5,22 @@
  *  - 'kalkulator': the submission carries an itemized calculator handoff; the
  *    grand total is re-derived from the sanitized line items (client totals are
  *    never trusted) exactly like the calculator-pdf endpoint does.
- *  - 'pakete': a Komplettpaket request (Haus/Wohnung) with a plausible living
- *    area; priced against the sampled net tables in blitzRates.generated.ts,
- *    which mirror the live calculator packages' default configuration.
+ *  - 'pakete': a direct Komplettpaket request with a plausible area; the server
+ *    rebuilds the matching live calculator's Standard/default configuration
+ *    and returns the same itemized handoff used by the PDF generator.
  *
- * Everything else (single trades, heating, Gastronomie/Büro packages, missing
- * or implausible scope, totals outside the auto band) stays on the manual
- * 24-hour review path.
+ * Everything else (single trades, heating, missing or implausible scope,
+ * totals outside the auto band) stays on the manual 24-hour review path.
  */
 
 import {
-  BLITZ_RATES_AREA_MAX,
-  BLITZ_RATES_AREA_MIN,
-  BLITZ_RATES_AREA_STEP,
-  BLITZ_RATES_GENERATED_AT,
-  BLITZ_RATE_SERIES,
-} from './blitzRates.generated.js';
+  buildDefaultCalculatorCalculation,
+  isDefaultCalculatorPackageLabel,
+} from './blitzDefaultCalculator.js';
+import { BLITZ_DEFAULTS_GENERATED_AT } from './blitzRates.generated.js';
 import type { BlitzPayload, KalkulatorHandoff } from './mail.js';
 
-export const BLITZ_CALC_VERSION = `blitz-auto-v1+rates-${BLITZ_RATES_GENERATED_AT}`;
+export const BLITZ_CALC_VERSION = `blitz-auto-v2+calculator-defaults-${BLITZ_DEFAULTS_GENERATED_AT}`;
 
 // Automatic quotes only inside this net-total corridor; anything below is too
 // unspecific to be useful, anything above deserves personal attention.
@@ -34,20 +31,6 @@ export const ESTIMATE_MAX_TOTAL = 900_000;
 const BAND_MIN = 0.9;
 const BAND_MAX = 1.15;
 
-// Plausible living areas per package group. Outside → manual review.
-const AREA_BOUNDS: Record<'haus' | 'wohnung', { min: number; max: number }> = {
-  haus: { min: 40, max: 400 },
-  wohnung: { min: 20, max: 300 },
-};
-
-const PAKET_LABEL_TO_GROUP: Record<string, 'haus' | 'wohnung'> = {
-  'Haussanierung': 'haus',
-  'Wohnungssanierung': 'wohnung',
-  // Cached clients may still submit the former spellings during rollout.
-  'Haus-Sanierung': 'haus',
-  'Wohnung-Sanierung': 'wohnung',
-};
-
 export type BlitzEstimate = {
   basis: 'kalkulator' | 'pakete';
   totalMin: number;
@@ -55,7 +38,7 @@ export type BlitzEstimate = {
   totalMax: number;
   perM2: number;
   areaM2: number;
-  /** Per-subtype nets backing a 'pakete' estimate (for the office email). */
+  /** Trusted Standard/default configuration backing a package estimate. */
   details?: Array<{ label: string; net: number }>;
 };
 
@@ -65,20 +48,10 @@ export type BlitzDecision =
 
 /** Parse "120", "120,5", "ca. 120 m²" → 120.5; null when no usable number. */
 export function parseAreaM2(groesse: string): number | null {
-  const match = groesse.replace(',', '.').match(/\d+(?:\.\d+)?/);
+  const match = groesse.replace(',', '.').match(/-?\d+(?:\.\d+)?/);
   if (!match) return null;
   const value = Number(match[0]);
   return Number.isFinite(value) && value > 0 ? value : null;
-}
-
-/** Net at `area` for one series — linear interpolation between grid points. */
-function seriesNetAt(nets: readonly number[], area: number): number {
-  const clamped = Math.min(Math.max(area, BLITZ_RATES_AREA_MIN), BLITZ_RATES_AREA_MAX);
-  const position = (clamped - BLITZ_RATES_AREA_MIN) / BLITZ_RATES_AREA_STEP;
-  const lower = Math.floor(position);
-  const upper = Math.min(lower + 1, nets.length - 1);
-  const t = position - lower;
-  return nets[lower] * (1 - t) + nets[upper] * t;
 }
 
 /** Re-derive the grand total from sanitized picks — row sums when itemized,
@@ -121,35 +94,36 @@ function estimateForKalkulator(handoff: KalkulatorHandoff): BlitzDecision {
 }
 
 function estimateForPakete(paketLabel: string, groesse: string): BlitzDecision {
-  const group = PAKET_LABEL_TO_GROUP[paketLabel];
-  if (!group) return { mode: 'manual', reason: 'paket-not-priceable' };
+  if (!isDefaultCalculatorPackageLabel(paketLabel)) {
+    return { mode: 'manual', reason: 'paket-not-priceable' };
+  }
 
   const area = parseAreaM2(groesse);
   if (area === null) return { mode: 'manual', reason: 'area-missing' };
-  const bounds = AREA_BOUNDS[group];
-  if (area < bounds.min || area > bounds.max) {
+  const calculation = buildDefaultCalculatorCalculation(paketLabel, area);
+  if (!calculation) return { mode: 'manual', reason: 'paket-not-priceable' };
+  if (area < calculation.areaMin || area > calculation.areaMax) {
     return { mode: 'manual', reason: 'area-out-of-range' };
   }
 
-  const series = BLITZ_RATE_SERIES.filter((s) => s.group === group);
-  const nets = series.map((s) => seriesNetAt(s.nets, area));
-  const mid = nets.reduce((sum, net) => sum + net, 0) / nets.length;
+  const mid = recomputeKalkulatorMid(calculation.handoff);
   if (mid < ESTIMATE_MIN_TOTAL || mid > ESTIMATE_MAX_TOTAL) {
     return { mode: 'manual', reason: 'paket-total-out-of-range' };
   }
 
-  // Widen the band by the subtype spread: the visitor told us "house" or
-  // "apartment", not which of the four configurations it is.
   const estimate: BlitzEstimate = {
     basis: 'pakete',
-    totalMin: Math.round(Math.min(...nets) * BAND_MIN),
+    totalMin: Math.round(mid * calculation.bandMin),
     totalMid: Math.round(mid),
-    totalMax: Math.round(Math.max(...nets) * BAND_MAX),
+    totalMax: Math.round(mid * calculation.bandMax),
     perM2: area > 0 ? Math.round(mid / area) : 0,
     areaM2: area,
-    details: series.map((s, index) => ({ label: s.label, net: Math.round(nets[index]) })),
+    details: [{
+      label: `${calculation.handoff.kindLabel} · Standardkonfiguration`,
+      net: Math.round(mid),
+    }],
   };
-  return { mode: 'auto', estimate };
+  return { mode: 'auto', estimate, kalkulator: calculation.handoff };
 }
 
 /** Decide whether a validated Blitz submission qualifies for an automatic
@@ -159,9 +133,7 @@ export function decideBlitzEstimate(payload: BlitzPayload): BlitzDecision {
     return estimateForKalkulator(payload.kalkulator);
   }
   if (payload.art === 'pakete') {
-    const pakete = payload.gewerke.filter((label) => label in PAKET_LABEL_TO_GROUP
-      || label === 'Gastronomieausbau' || label === 'Büroausbau'
-      || label === 'Gastronomie-Ausbau' || label === 'Büro-Ausbau');
+    const pakete = payload.gewerke.filter(isDefaultCalculatorPackageLabel);
     if (pakete.length !== 1) return { mode: 'manual', reason: 'paket-selection-ambiguous' };
     return estimateForPakete(pakete[0], payload.groesse);
   }

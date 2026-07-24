@@ -2,7 +2,7 @@
   "intro": {
     "crumb": "Devis express · Estimation préalable",
     "title": "Le devis<br/><em>express.</em>",
-    "lede": "Vous savez exactement ce que vous voulez ? Répondez à quelques questions concrètes sur la surface et les corps de métier. Les demandes standard sont calculées immédiatement — votre estimation préliminaire arrive dans votre boîte mail en quelques minutes ; les cas particuliers sont examinés par la direction de chantier sous 24 heures.",
+    "lede": "Vous savez exactement ce que vous voulez ? Répondez à quelques questions concrètes sur la surface et les corps de métier. Les demandes standard sont calculées immédiatement — votre estimation préliminaire avec un PDF détaillé arrive dans votre boîte mail en quelques minutes ; les cas particuliers sont examinés par la direction de chantier sous 24 heures.",
     "list1": "Première estimation gratuite",
     "list2": "Estimation immédiate — 24 h max.",
     "list3": "Une fourchette de prix réaliste",
@@ -79,8 +79,8 @@
     "consentLink": "Confidentialité",
     "consentError": "Veuillez confirmer la politique de confidentialité.",
     "successAutoEyebrow": "Estimation envoyée",
-    "successAutoBody": "Votre estimation de coûts préliminaire a été calculée automatiquement et est déjà en route — par e-mail à <s>{{email}}</s>",
-    "successAutoStep1": "Consultez votre boîte mail — l'estimation avec fourchette et hypothèses vous y attend.",
+    "successAutoBody": "Votre estimation de coûts préliminaire a été établie avec le calcul standard de notre calculateur pour la dimension de projet que vous avez indiquée. L’e-mail avec le PDF détaillé est déjà en route vers <s>{{email}}</s>",
+    "successAutoStep1": "Consultez votre boîte mail — le PDF détaillé présente le calcul standard avec ses postes, sa fourchette et ses hypothèses.",
     "successAutoStep2": "Répondez directement à l'e-mail si vous avez des questions — vous échangez avec notre direction de chantier.",
     "successAutoStep3": "Sur demande, nous convenons d'une visite sur place — le prix devient ferme après métré."
   }

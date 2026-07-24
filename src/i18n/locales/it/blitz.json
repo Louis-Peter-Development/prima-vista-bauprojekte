@@ -2,7 +2,7 @@
   "intro": {
     "crumb": "Preventivo express · Stima preliminare",
     "title": "Il preventivo<br/><em>express.</em>",
-    "lede": "Sa esattamente cosa desidera? Risponda ad alcune domande concrete su superficie e lavorazioni. Le richieste standard vengono calcolate subito — la Sua stima preliminare arriva nella Sua casella in pochi minuti; i casi particolari vengono esaminati dalla direzione lavori entro 24 ore.",
+    "lede": "Sa esattamente cosa desidera? Risponda ad alcune domande concrete su superficie e lavorazioni. Le richieste standard vengono calcolate subito — la Sua stima preliminare con un PDF dettagliato arriva nella Sua casella in pochi minuti; i casi particolari vengono esaminati dalla direzione lavori entro 24 ore.",
     "list1": "Prima valutazione gratuita",
     "list2": "Stima immediata — max 24 h",
     "list3": "Una fascia di prezzo realistica",
@@ -79,8 +79,8 @@
     "consentLink": "Privacy",
     "consentError": "Confermi l'informativa sulla privacy.",
     "successAutoEyebrow": "Stima inviata",
-    "successAutoBody": "La Sua stima preliminare dei costi è stata calcolata automaticamente ed è già in viaggio — via e-mail a <s>{{email}}</s>",
-    "successAutoStep1": "Controlli la Sua casella di posta — la stima con forbice e presupposti La attende lì.",
+    "successAutoBody": "La Sua stima preliminare dei costi è stata elaborata con il calcolo standard del nostro preventivatore per le dimensioni del progetto da Lei indicate. L’e-mail con il PDF dettagliato è già in viaggio verso <s>{{email}}</s>",
+    "successAutoStep1": "Controlli la Sua casella di posta — il PDF dettagliato mostra il calcolo standard con voci, forbice e presupposti.",
     "successAutoStep2": "Risponda direttamente all'e-mail per qualsiasi domanda — scriverà con la nostra direzione lavori.",
     "successAutoStep3": "Su richiesta fissiamo un sopralluogo — il prezzo diventa vincolante dopo il rilievo."
   }

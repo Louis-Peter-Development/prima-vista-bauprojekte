@@ -193,10 +193,15 @@ describe('public endpoint validators', () => {
     };
 
     const pdf = await buildCalculatorPdf(payload);
+    const compactPdf = await buildCalculatorPdf(payload, { includeProductDetails: false });
 
     expect(pdf.subarray(0, 5).toString('utf8')).toBe('%PDF-');
     expect(pdf.length).toBeGreaterThan(1000);
-    expect((pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length).toBeGreaterThanOrEqual(4);
+    const fullPages = (pdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length;
+    const compactPages = (compactPdf.toString('latin1').match(/\/Type\s*\/Page\b/g) ?? []).length;
+    expect(fullPages).toBeGreaterThanOrEqual(4);
+    expect(compactPdf.subarray(0, 5).toString('utf8')).toBe('%PDF-');
+    expect(compactPages).toBe(fullPages - 1);
   });
 
   it('rejects calculator PDF requests without a positive total', () => {

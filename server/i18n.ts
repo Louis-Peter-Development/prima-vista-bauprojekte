@@ -3,9 +3,8 @@
  * outbound text (Resend confirmation emails + the generated calculator PDF).
  *
  * The server does NOT use i18next — this is a small, flat, typed translation
- * map plus a couple of helpers. The default locale is `de`, and the German
- * values here are copied verbatim from the original hardcoded strings so the
- * `de` output stays byte-for-byte identical to before this phase.
+ * map plus a couple of helpers. The default locale is `de`; every locale uses
+ * the same typed keys so customer-facing email and PDF wording stays aligned.
  *
  * Scope reminder: only CUSTOMER-facing output is localized. The internal office
  * notification emails stay German and do not use this module.
@@ -460,18 +459,18 @@ const STRINGS = {
     blitzStep3Text: 'Auf Wunsch verfeinern wir das Angebot vor Ort.',
 
     // --- blitz automatic estimate (customer) ---
-    blitzAutoSubject: 'Ihre vorläufige Kostenschätzung — Prima Vista Bauprojekte',
+    blitzAutoSubject: 'Ihre vorläufige Kostenschätzung mit Detail-PDF — Prima Vista Bauprojekte',
     blitzAutoTitle: 'Ihre vorläufige Kostenschätzung, {name}.',
     blitzAutoEyebrow: 'Kostenschätzung · Blitzangebot',
-    blitzAutoIntro: 'Vielen Dank für Ihre Anfrage. Auf Basis Ihrer Angaben haben wir Ihre vorläufige Kostenschätzung direkt berechnet — mit der geprüften Preisbasis unseres Online-Kalkulators.',
+    blitzAutoIntro: 'Vielen Dank für Ihre Anfrage. Wir haben die Standardberechnung unseres Online-Kalkulators auf Ihre angegebene Projektgröße angewendet und daraus Ihre vorläufige Kostenschätzung erstellt.',
     blitzAutoRangeLabel: 'Geschätzte Investition',
     blitzAutoRangeNote: 'Alle Beträge netto zzgl. gesetzlicher MwSt.',
     blitzAutoAssumptions: 'Annahmen & Hinweise',
-    blitzAutoAssumption1: 'Kalkuliert in der standardmäßigen Ausführungsstufe bei üblicher Bestandssituation.',
+    blitzAutoAssumption1: 'Kalkuliert mit der Standardkonfiguration des Online-Kalkulators, skaliert auf Ihre angegebene Projektgröße und bei üblicher Bestandssituation.',
     blitzAutoAssumption2: 'Nicht enthalten: Sonderlösungen wie statische Eingriffe, Schadstoffsanierung oder Auflagen des Denkmalschutzes.',
     blitzAutoAssumption3: 'Die Spanne deckt typische Ausstattungs- und Gebäudevarianten ab; Ihr konkretes Projekt kann davon abweichen.',
     blitzAutoDisclaimer: 'Diese Kostenschätzung ist kein verbindliches Angebot. Verbindliche Preise entstehen nach Besichtigung, Aufmaß und Materialbemusterung und werden von unserer Bauleitung geprüft und gegengezeichnet.',
-    blitzAutoPdfNote: 'Im Anhang finden Sie die detaillierte PDF-Aufstellung Ihrer Kalkulator-Auswahl.',
+    blitzAutoPdfNote: 'Im Anhang finden Sie die detaillierte PDF-Aufstellung dieser Standardberechnung — Position für Position und passend zu Ihrer angegebenen Projektgröße.',
     blitzAutoStep1: 'Antworten Sie auf diese E-Mail oder vereinbaren Sie direkt einen Termin — unsere Bauleitung prüft Ihr Projekt persönlich.',
     blitzAutoStep2: 'Vor-Ort-Besichtigung und Aufmaß durch Daniel oder Monica.',
     blitzAutoStep3: 'Sie erhalten Ihr verbindliches Festpreisangebot — schwarz auf weiß.',
@@ -633,18 +632,18 @@ const STRINGS = {
     blitzStep3Text: 'On request, we refine the quote on site.',
 
     // --- blitz automatic estimate (customer) ---
-    blitzAutoSubject: 'Your preliminary cost estimate — Prima Vista Bauprojekte',
+    blitzAutoSubject: 'Your preliminary cost estimate with detailed PDF — Prima Vista Bauprojekte',
     blitzAutoTitle: 'Your preliminary cost estimate, {name}.',
     blitzAutoEyebrow: 'Preliminary cost estimate · Express quote',
-    blitzAutoIntro: 'Thank you for your enquiry. Based on your details we have calculated your preliminary cost estimate right away — on the verified price basis of our online calculator.',
+    blitzAutoIntro: 'Thank you for your enquiry. We applied our online calculator’s standard calculation to your stated project size and used it to prepare your preliminary cost estimate.',
     blitzAutoRangeLabel: 'Estimated investment',
     blitzAutoRangeNote: 'All amounts net, plus statutory VAT.',
     blitzAutoAssumptions: 'Assumptions & notes',
-    blitzAutoAssumption1: 'Calculated at the Standard finish level assuming a typical existing structure.',
+    blitzAutoAssumption1: 'Calculated with the online calculator’s standard configuration, scaled to your stated project size and assuming a typical existing structure.',
     blitzAutoAssumption2: 'Not included: special measures such as structural interventions, hazardous-material remediation or heritage-protection requirements.',
     blitzAutoAssumption3: 'The range covers typical fit-out and building variants; your specific project may differ.',
     blitzAutoDisclaimer: 'This preliminary estimate is not a binding quote. Binding prices are determined after a site visit, measurement and material sampling — reviewed and countersigned by our site management.',
-    blitzAutoPdfNote: 'Attached you will find the detailed PDF breakdown of your calculator selection.',
+    blitzAutoPdfNote: 'The attached detailed PDF shows this standard calculation item by item, scaled to your stated project size.',
     blitzAutoStep1: 'Reply to this email or book an appointment right away — our site management reviews your project personally.',
     blitzAutoStep2: 'On-site visit and measurement by Daniel or Monica.',
     blitzAutoStep3: 'You receive your binding fixed-price quote — in black and white.',
@@ -806,18 +805,18 @@ const STRINGS = {
     blitzStep3Text: 'Su richiesta affiniamo l’offerta in loco.',
 
     // --- blitz automatic estimate (customer) ---
-    blitzAutoSubject: 'La Sua stima preliminare dei costi — Prima Vista Bauprojekte',
+    blitzAutoSubject: 'La Sua stima preliminare dei costi con PDF dettagliato — Prima Vista Bauprojekte',
     blitzAutoTitle: 'La Sua stima preliminare dei costi, {name}.',
     blitzAutoEyebrow: 'Stima preliminare dei costi · Preventivo express',
-    blitzAutoIntro: 'Grazie per la Sua richiesta. Sulla base dei Suoi dati abbiamo calcolato subito la Sua stima preliminare dei costi — sulla base prezzi verificata del nostro preventivatore online.',
+    blitzAutoIntro: 'Grazie per la Sua richiesta. Abbiamo applicato il calcolo standard del nostro preventivatore online alle dimensioni del progetto da Lei indicate e abbiamo così elaborato la Sua stima preliminare dei costi.',
     blitzAutoRangeLabel: 'Investimento stimato',
     blitzAutoRangeNote: 'Tutti gli importi netti, più IVA di legge.',
     blitzAutoAssumptions: 'Presupposti e note',
-    blitzAutoAssumption1: 'Calcolata al livello di finitura Standard con una situazione edilizia tipica.',
+    blitzAutoAssumption1: 'Calcolata con la configurazione standard del preventivatore online, adattata alle dimensioni del progetto da Lei indicate e ipotizzando una situazione edilizia tipica.',
     blitzAutoAssumption2: 'Non incluse: soluzioni speciali come interventi strutturali, bonifica di materiali nocivi o vincoli di tutela dei beni culturali.',
     blitzAutoAssumption3: 'La forbice copre varianti tipiche di allestimento ed edificio; il Suo progetto specifico può discostarsene.',
     blitzAutoDisclaimer: 'Questa stima preliminare non è un’offerta vincolante. I prezzi vincolanti vengono definiti dopo sopralluogo, rilievo e campionatura dei materiali — verificati e controfirmati dalla nostra direzione lavori.',
-    blitzAutoPdfNote: 'In allegato trova il riepilogo PDF dettagliato della Sua selezione dal preventivatore.',
+    blitzAutoPdfNote: 'Nel PDF dettagliato allegato trova questo calcolo standard voce per voce, adattato alle dimensioni del progetto da Lei indicate.',
     blitzAutoStep1: 'Risponda a questa e-mail o fissi subito un appuntamento — la nostra direzione lavori esamina personalmente il Suo progetto.',
     blitzAutoStep2: 'Sopralluogo e rilievo in loco con Daniel o Monica.',
     blitzAutoStep3: 'Riceverà la Sua offerta vincolante a prezzo fisso — nero su bianco.',
@@ -979,18 +978,18 @@ const STRINGS = {
     blitzStep3Text: 'Sur demande, nous affinons l’offre sur place.',
 
     // --- blitz automatic estimate (customer) ---
-    blitzAutoSubject: 'Votre estimation de coûts préliminaire — Prima Vista Bauprojekte',
+    blitzAutoSubject: 'Votre estimation de coûts préliminaire avec PDF détaillé — Prima Vista Bauprojekte',
     blitzAutoTitle: 'Votre estimation de coûts préliminaire, {name}.',
     blitzAutoEyebrow: 'Estimation préliminaire · Offre express',
-    blitzAutoIntro: 'Merci pour votre demande. Sur la base de vos informations, nous avons calculé immédiatement votre estimation de coûts préliminaire — sur la base de prix vérifiée de notre calculateur en ligne.',
+    blitzAutoIntro: 'Merci pour votre demande. Nous avons appliqué le calcul standard de notre calculateur en ligne à la dimension de projet que vous avez indiquée afin d’établir votre estimation de coûts préliminaire.',
     blitzAutoRangeLabel: 'Investissement estimé',
     blitzAutoRangeNote: 'Tous les montants sont nets, TVA légale en sus.',
     blitzAutoAssumptions: 'Hypothèses et remarques',
-    blitzAutoAssumption1: 'Calculée au niveau de finition Standard pour un bâti existant typique.',
+    blitzAutoAssumption1: 'Calculée avec la configuration standard du calculateur en ligne, adaptée à la dimension de projet indiquée et pour un bâti existant typique.',
     blitzAutoAssumption2: 'Non compris : solutions particulières telles qu’interventions structurelles, dépollution ou exigences liées aux monuments historiques.',
     blitzAutoAssumption3: 'La fourchette couvre des variantes typiques d’aménagement et de bâtiment ; votre projet concret peut s’en écarter.',
     blitzAutoDisclaimer: 'Cette estimation préliminaire n’est pas une offre ferme. Les prix fermes sont établis après visite, métré et échantillonnage des matériaux — vérifiés et contresignés par notre direction de chantier.',
-    blitzAutoPdfNote: 'Vous trouverez en pièce jointe le récapitulatif PDF détaillé de votre sélection du calculateur.',
+    blitzAutoPdfNote: 'Le PDF détaillé joint présente ce calcul standard poste par poste, adapté à la dimension de projet que vous avez indiquée.',
     blitzAutoStep1: 'Répondez à cet e-mail ou convenez directement d’un rendez-vous — notre direction de chantier examine personnellement votre projet.',
     blitzAutoStep2: 'Visite sur place et métré par Daniel ou Monica.',
     blitzAutoStep3: 'Vous recevez votre offre ferme à prix fixe — noir sur blanc.',

@@ -2,7 +2,7 @@
   "intro": {
     "crumb": "Blitzangebot · Kostenschätzung",
     "title": "Das <em>Blitzangebot.</em>",
-    "lede": "Sie wissen genau, was Sie wollen? Beantworten Sie ein paar konkrete Fragen zu Fläche und Gewerken. Standardanfragen bearbeiten wir sofort — Ihre vorläufige Kostenschätzung ist in wenigen Minuten im Postfach; Sonderfälle prüft die Bauleitung innerhalb von 24 Stunden.",
+    "lede": "Sie wissen genau, was Sie wollen? Beantworten Sie ein paar konkrete Fragen zu Fläche und Gewerken. Standardanfragen bearbeiten wir sofort — Ihre vorläufige Kostenschätzung mit detaillierter PDF-Aufstellung ist in wenigen Minuten im Postfach; Sonderfälle prüft die Bauleitung innerhalb von 24 Stunden.",
     "list1": "Kostenlose Ersteinschätzung",
     "list2": "Kostenschätzung sofort — spätestens in 24 Std.",
     "list3": "Realistische Preisspanne",
@@ -79,8 +79,8 @@
     "consentLink": "Datenschutz",
     "consentError": "Bitte bestätigen Sie die Datenschutzhinweise.",
     "successAutoEyebrow": "Schätzung versendet",
-    "successAutoBody": "Ihre vorläufige Kostenschätzung wurde automatisch berechnet und ist bereits per E-Mail an <s>{{email}}</s> unterwegs.",
-    "successAutoStep1": "Prüfen Sie Ihr Postfach — die Schätzung mit Spanne und Annahmen liegt dort bereit.",
+    "successAutoBody": "Ihre vorläufige Kostenschätzung wurde mit der Standardberechnung unseres Kalkulators für Ihre angegebene Projektgröße erstellt. Die E-Mail mit der detaillierten PDF ist bereits an <s>{{email}}</s> unterwegs.",
+    "successAutoStep1": "Prüfen Sie Ihr Postfach — die detaillierte PDF zeigt die Standardberechnung mit Positionen, Spanne und Annahmen.",
     "successAutoStep2": "Antworten Sie direkt auf die E-Mail, wenn Sie Fragen haben — Sie schreiben mit der Bauleitung.",
     "successAutoStep3": "Auf Wunsch vereinbaren wir eine Besichtigung — verbindlich wird der Preis nach Aufmaß."
   }

@@ -966,7 +966,7 @@ function blitzAutoText(p: BlitzPayload, estimate: BlitzEstimate, pdfAttached: bo
 function blitzAutoOfficeCallout(p: BlitzPayload, estimate: BlitzEstimate): string {
   const basis = estimate.basis === 'kalkulator'
     ? 'Kalkulator-Übernahme (Summen serverseitig neu berechnet)'
-    : 'Komplettpaket · Preisbasis Kalkulator';
+    : 'Blitzauswahl · Standardkonfiguration des Online-Kalkulators';
   const detailLines = estimate.details?.length
     ? `\n${estimate.details.map((d) => `${d.label}: ${formatEuro(d.net)}`).join('\n')}`
     : '';
@@ -1095,11 +1095,11 @@ export async function sendBlitzEmails(payload: BlitzPayload): Promise<void> {
 }
 
 /** Automatic Blitz estimate: office notification (German, action-free) plus
- *  the localized customer estimate. When the estimate is backed by an itemized
- *  calculator handoff, the detailed PDF breakdown is attached. */
+ *  the localized customer estimate. Any trusted, non-empty calculator handoff
+ *  is rendered as the detailed PDF breakdown and attached for the customer. */
 export async function sendBlitzAutoEmails(payload: BlitzPayload, estimate: BlitzEstimate): Promise<void> {
   const locale = normalizeLocale(payload.locale);
-  const pdfAttached = estimate.basis === 'kalkulator' && Boolean(payload.kalkulator?.picks?.length);
+  const pdfAttached = Boolean(payload.kalkulator?.picks?.length);
 
   let attachments: Array<{ filename: string; content: Buffer }> | undefined;
   if (pdfAttached && payload.kalkulator) {
@@ -1108,6 +1108,11 @@ export async function sendBlitzAutoEmails(payload: BlitzPayload, estimate: Blitz
       consent: true,
       kalkulator: payload.kalkulator,
       locale,
+    }, {
+      // Direct package defaults already include every priced line in the main
+      // table. Skip the repetitive product-card appendix to keep email size and
+      // generation time sensible; calculator-origin PDFs retain the appendix.
+      includeProductDetails: estimate.basis !== 'pakete',
     });
     attachments = [{ filename: 'prima-vista-vorab-schaetzung.pdf', content: pdf }];
   }
