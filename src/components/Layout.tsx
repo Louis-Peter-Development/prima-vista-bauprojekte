@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Outlet, useLocation, useNavigationType } from 'react-router-dom';
+import { Outlet, useLocation, useNavigationType } from 'react-router';
 import Header from './Header';
 import Footer from './Footer';
 import SocialRail from './SocialRail';

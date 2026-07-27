@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 
 /** Floating shortcut back to the admin panel. Only rendered when an admin is
  *  logged in (verified via the httpOnly session cookie) and the user is on a

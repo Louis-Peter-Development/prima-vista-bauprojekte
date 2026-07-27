@@ -4,7 +4,7 @@ import {
   NavLink as RouterNavLink,
   type LinkProps,
   type NavLinkProps,
-} from 'react-router-dom';
+} from 'react-router';
 
 import { localizedPath } from './routes';
 import { useLocale } from './useLocale';

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Link } from '../i18n/Link';
 import { toCanonicalPath } from '../i18n/routes';

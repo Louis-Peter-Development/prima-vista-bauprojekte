@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
 import { useLocale } from '../../i18n/useLocale';

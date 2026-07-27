@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 /** Reveals once the hero scrolls out of view and hides again once the
  *  footer is about to enter the viewport. Used by floating side elements

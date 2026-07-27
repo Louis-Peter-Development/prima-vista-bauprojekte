@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import { usePageTitle } from '../hooks/usePageTitle';
 import type { BlogPost } from '../types/blog';
 import '../styles/pages/blog.css';
