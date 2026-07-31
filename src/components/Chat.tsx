@@ -5,6 +5,7 @@ import { Link } from '../i18n/Link';
 import { useLocale } from '../i18n/useLocale';
 import { ChatIcon, CloseIcon, MailIcon, PhoneIcon, PinIcon } from './icons';
 import { useAnyVideoPlaying } from '../hooks/useVideoPlayback';
+import { escapeRegExp } from '../utils/contentSecurity';
 
 const INTERNAL_PATHS = [
   '/komplett-pakete',
@@ -17,7 +18,7 @@ const INTERNAL_PATHS = [
   '/datenschutz',
 ] as const;
 
-const ESCAPED_PATHS = INTERNAL_PATHS.map((p) => p.replace(/[/-]/g, '\\$&')).join('|');
+const ESCAPED_PATHS = INTERNAL_PATHS.map(escapeRegExp).join('|');
 const PATH_RE = new RegExp(
   `(\\*\\*[^*]+\\*\\*|\\((${ESCAPED_PATHS})\\)|(?<![\\w/])(${ESCAPED_PATHS})(?![\\w]))`,
   'g',
