@@ -43,7 +43,7 @@
 .proj {
   position: relative;
   overflow: hidden;
-  cursor: zoom-in;
+  cursor: pointer;
   background: var(--pv-ink-2);
 }
 .proj img {

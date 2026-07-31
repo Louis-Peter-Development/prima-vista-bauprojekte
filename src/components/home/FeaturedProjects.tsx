@@ -1,7 +1,6 @@
 import { Trans, useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
 import { FEATURED_HOME_PROJECTS, FEATURED_HOME_TITLES } from '../../data/home';
-import { projectAnchorId } from '../projekte/ProjectGallery';
 
 export default function FeaturedProjects() {
   const { t } = useTranslation('home');
@@ -26,7 +25,7 @@ export default function FeaturedProjects() {
             key={p.src}
             className={`proj ${p.gridClass} reveal`}
             data-delay={p.revealDelay}
-            to={`/projekte#${projectAnchorId(p.src)}`}
+            to={`/projekte/${p.slug}`}
           >
             <img
               src={p.src}

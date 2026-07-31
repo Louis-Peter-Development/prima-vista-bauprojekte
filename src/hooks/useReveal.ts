@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 /**
  * Auto-tag content inside <main> with reveal classes.

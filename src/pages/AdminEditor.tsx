@@ -1,5 +1,5 @@
 import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router';
 import BlogEditor from '../components/blog/BlogEditor';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { EMPTY_TIPTAP_DOC, type BlogPost, type PostStatus, type TiptapDoc } from '../types/blog';

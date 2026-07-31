@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from '../../i18n/Link';
-import type { LightboxItem } from '../Lightbox';
 import type { Project } from '../../data/projects';
 
 export function projectAnchorId(src: string): string {
@@ -15,9 +14,6 @@ type VisibleProject = {
 
 type ProjectGalleryProps = {
   visible: VisibleProject[];
-  lightboxItems: LightboxItem[];
-  getIndex: (project: Project) => number;
-  onOpen: (items: LightboxItem[], index: number) => void;
 };
 
 const projectLayoutSequence = ['feature', 'stack', 'stack', 'third', 'third', 'third', 'half', 'half'] as const;
@@ -31,9 +27,6 @@ function layoutForVisibleIndex(index: number): ProjectLayout {
 
 export default function ProjectGallery({
   visible,
-  lightboxItems,
-  getIndex,
-  onOpen,
 }: ProjectGalleryProps) {
   const { t } = useTranslation('projects');
   const totalVisible = visible.filter((project) => project.match).length;
@@ -61,13 +54,13 @@ export default function ProjectGallery({
             data-align={align}
             data-delay={p.revealDelay}
           >
-            <a
+            <Link
               className="g-card__img-link"
-              href={p.src}
-              onClick={(e) => {
-                e.preventDefault();
-                if (match) onOpen(lightboxItems, getIndex(p));
-              }}
+              to={`/projekte/${p.slug}`}
+              aria-label={t('gallery.openProject', {
+                defaultValue: `Projekt ${p.ttl} ansehen`,
+                project: t(`items.${p.slug}.ttl`, { defaultValue: p.ttl }),
+              })}
             >
               <img
                 src={p.src}
@@ -76,7 +69,7 @@ export default function ProjectGallery({
                 height={p.size === 'tall' ? 1500 : p.size === 'wide' ? 750 : 1125}
                 loading="lazy"
               />
-            </a>
+            </Link>
             <div className="g-card__body">
               <span className="g-card__num">{p.num}</span>
               <h3 className="g-card__ttl">{t(`items.${p.slug}.ttl`, { defaultValue: p.ttl })}</h3>

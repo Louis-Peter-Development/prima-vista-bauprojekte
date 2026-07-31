@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { useLocale, useLocalizedPath } from '../i18n/useLocale';
 import { SEARCH_INDEX, SEARCH_GROUP_LABELS, type SearchGroup } from '../data/searchIndex';

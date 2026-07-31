@@ -1,10 +1,5 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import {
-  BLITZ_RATE_SERIES,
-  BLITZ_RATES_AREA_MIN,
-  BLITZ_RATES_AREA_STEP,
-} from './blitzRates.generated.js';
-import {
   ESTIMATE_MAX_TOTAL,
   decideBlitzEstimate,
   parseAreaM2,
@@ -31,12 +26,21 @@ function basePayload(overrides: Partial<BlitzPayload> = {}): BlitzPayload {
   };
 }
 
-function gridNet(seriesId: string, area: number): number {
-  const series = BLITZ_RATE_SERIES.find((s) => s.id === seriesId);
-  if (!series) throw new Error(`series ${seriesId} missing`);
-  const index = (area - BLITZ_RATES_AREA_MIN) / BLITZ_RATES_AREA_STEP;
-  if (!Number.isInteger(index)) throw new Error('test area must be on the grid');
-  return series.nets[index];
+function expectDefaultHandoffTotal(
+  decision: ReturnType<typeof decideBlitzEstimate>,
+  roundedTotalMid: number,
+  exactTotalMid = roundedTotalMid,
+) {
+  expect(decision.mode).toBe('auto');
+  if (decision.mode !== 'auto') throw new Error(`expected auto estimate, received ${decision.reason}`);
+
+  const handoff = decision.kalkulator;
+  if (!handoff) throw new Error('expected a server-generated calculator handoff');
+
+  expect(decision.estimate.totalMid).toBe(roundedTotalMid);
+  expect(handoff.totalMid).toBeCloseTo(exactTotalMid, 6);
+  expect(recomputeKalkulatorMid(handoff)).toBeCloseTo(exactTotalMid, 6);
+  return { decision, handoff };
 }
 
 describe('parseAreaM2', () => {
@@ -49,33 +53,57 @@ describe('parseAreaM2', () => {
   it('returns null for non-numeric scope', () => {
     expect(parseAreaM2('Noch offen')).toBeNull();
     expect(parseAreaM2('')).toBeNull();
+    expect(parseAreaM2('-120')).toBeNull();
   });
 });
 
 describe('decideBlitzEstimate — pakete', () => {
-  it('prices a Haussanierung from the sampled series with a widened band', () => {
-    const decision = decideBlitzEstimate(basePayload());
-    expect(decision.mode).toBe('auto');
-    if (decision.mode !== 'auto') return;
+  it('builds the exact default 1e Haussanierung at an off-grid area', () => {
+    const { decision, handoff } = expectDefaultHandoffTotal(
+      decideBlitzEstimate(basePayload({ groesse: '83' })),
+      146_709,
+      146_708.88,
+    );
 
-    const nets = BLITZ_RATE_SERIES.filter((s) => s.group === 'haus').map((s) => gridNet(s.id, 120));
-    const mean = nets.reduce((sum, n) => sum + n, 0) / nets.length;
     expect(decision.estimate.basis).toBe('pakete');
-    expect(decision.estimate.totalMid).toBe(Math.round(mean));
-    expect(decision.estimate.totalMin).toBe(Math.round(Math.min(...nets) * 0.9));
-    expect(decision.estimate.totalMax).toBe(Math.round(Math.max(...nets) * 1.15));
-    expect(decision.estimate.totalMin).toBeLessThan(decision.estimate.totalMid);
-    expect(decision.estimate.totalMid).toBeLessThan(decision.estimate.totalMax);
-    expect(decision.estimate.perM2).toBe(Math.round(mean / 120));
-    expect(decision.estimate.details).toHaveLength(4);
+    expect(handoff.kindLabel).toBe('1× Etage ohne Dach');
+    expect(handoff.area).toBe(83);
+    expect(handoff.picks.flatMap((pick) => pick.rows ?? [])).toHaveLength(122);
   });
 
-  it('prices a Wohnungssanierung', () => {
-    const decision = decideBlitzEstimate(basePayload({ gewerke: ['Wohnungssanierung'], groesse: '100' }));
-    expect(decision.mode).toBe('auto');
-    if (decision.mode !== 'auto') return;
+  it('builds the exact default 2-Zimmer-Wohnung at 100 m²', () => {
+    const { decision, handoff } = expectDefaultHandoffTotal(
+      decideBlitzEstimate(basePayload({ gewerke: ['Wohnungssanierung'], groesse: '100' })),
+      147_156,
+      147_155.79,
+    );
+
     expect(decision.estimate.basis).toBe('pakete');
-    expect(decision.estimate.areaM2).toBe(100);
+    expect(handoff.kindLabel).toBe('2-Zimmer-Wohnung');
+    expect(handoff.area).toBe(100);
+    expect(handoff.picks.flatMap((pick) => pick.rows ?? [])).toHaveLength(107);
+  });
+
+  it('builds the default Restaurant calculation with all six default trades', () => {
+    const { handoff } = expectDefaultHandoffTotal(
+      decideBlitzEstimate(basePayload({ gewerke: ['Gastronomieausbau'], groesse: '60' })),
+      93_150,
+    );
+
+    expect(handoff.kindLabel).toBe('Restaurant');
+    expect(handoff.area).toBe(60);
+    expect(handoff.picks).toHaveLength(6);
+  });
+
+  it('builds the default Klassisches Büro calculation with all seven default trades', () => {
+    const { handoff } = expectDefaultHandoffTotal(
+      decideBlitzEstimate(basePayload({ gewerke: ['Büroausbau'], groesse: '50' })),
+      34_500,
+    );
+
+    expect(handoff.kindLabel).toBe('Klassisches Büro');
+    expect(handoff.area).toBe(50);
+    expect(handoff.picks).toHaveLength(7);
   });
 
   it('continues to accept legacy hyphenated package labels', () => {
@@ -85,14 +113,8 @@ describe('decideBlitzEstimate — pakete', () => {
     expect(wohnung.mode).toBe('auto');
   });
 
-  it('keeps Gastronomie/Büro packages on the manual path (no rate data)', () => {
-    const gastro = decideBlitzEstimate(basePayload({ gewerke: ['Gastronomieausbau'] }));
-    expect(gastro).toEqual({ mode: 'manual', reason: 'paket-not-priceable' });
-    const buero = decideBlitzEstimate(basePayload({ gewerke: ['Büroausbau'] }));
-    expect(buero).toEqual({ mode: 'manual', reason: 'paket-not-priceable' });
-  });
-
-  it('falls back to manual for missing or implausible areas', () => {
+  it('falls back to manual for negative, missing, or implausible areas', () => {
+    expect(decideBlitzEstimate(basePayload({ groesse: '-120' })).mode).toBe('manual');
     expect(decideBlitzEstimate(basePayload({ groesse: 'Noch offen' })))
       .toEqual({ mode: 'manual', reason: 'area-missing' });
     expect(decideBlitzEstimate(basePayload({ groesse: '12' })))

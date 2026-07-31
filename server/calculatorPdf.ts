@@ -21,6 +21,12 @@ export type CalculatorPdfPayload = {
   locale?: Locale;
 };
 
+export type CalculatorPdfOptions = {
+  /** Keep the detailed product-card appendix by default. Automatic estimates
+   *  can disable it when the itemized calculation table is sufficient. */
+  includeProductDetails?: boolean;
+};
+
 type PdfGroup = {
   key: string;
   label: string;
@@ -829,7 +835,10 @@ function addProductDetails(doc: PDFKit.PDFDocument, handoff: KalkulatorHandoff, 
   }
 }
 
-export async function buildCalculatorPdf(payload: CalculatorPdfPayload): Promise<Buffer> {
+export async function buildCalculatorPdf(
+  payload: CalculatorPdfPayload,
+  options: CalculatorPdfOptions = {},
+): Promise<Buffer> {
   const locale = normalizeLocale(payload.locale);
   const doc = new PDFDocument({
     size: 'A4',
@@ -885,7 +894,9 @@ export async function buildCalculatorPdf(payload: CalculatorPdfPayload): Promise
   ensureSpace(doc, disclaimerHeight + 14, locale);
   doc.text(disclaimer, PAGE.marginX, doc.y, { width: PAGE.width - (PAGE.marginX * 2) });
 
-  addProductDetails(doc, payload.kalkulator, locale);
+  if (options.includeProductDetails !== false) {
+    addProductDetails(doc, payload.kalkulator, locale);
+  }
 
   doc.addPage();
   addSignaturePage(doc, locale);

@@ -37,8 +37,9 @@ export const TRADES_PREVIEW: Array<{ num: string; name: string; lead: string; ke
   { num: '08', name: 'Trockenbau', lead: 'Wände, Decken', key: 'trockenbau', detailTo: '/trockenbau' },
 ];
 
-export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; year: string; alt: string; revealDelay?: number; width: number; height: number }> = [
+export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { slug: string; gridClass: string; year: string; alt: string; revealDelay?: number; width: number; height: number }> = [
   {
+    slug: 'bad-soden-einfamilienhaus',
     src: '/assets/img/projects/bad-soden-einfamilienhaus-01.webp',
     title: 'Einfamilienhaus Bad Soden — Wohnen · 2026',
     year: '2026',
@@ -48,6 +49,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     height: 1086,
   },
   {
+    slug: 'zoi-restaurant',
     src: '/assets/img/projects/zoi-restaurant-01.webp',
     title: 'Zoi — Restaurant · Frankfurt · 2026',
     year: '2026',
@@ -58,6 +60,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     height: 1237,
   },
   {
+    slug: 'riad-restaurant',
     src: '/assets/img/projects/riad-restaurant-01.webp',
     title: 'Riad — Restaurant · Frankfurt · 2025',
     year: '2025',
@@ -67,6 +70,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     height: 1600,
   },
   {
+    slug: 'spa-bad-hotel',
     src: '/assets/img/projects/spa-bad-hotel-01.webp',
     title: 'Spa-Bad — Hotel · Emmenbrücke · 2025',
     year: '2025',
@@ -77,6 +81,7 @@ export const FEATURED_HOME_PROJECTS: Array<LightboxItem & { gridClass: string; y
     height: 1024,
   },
   {
+    slug: 'office-lobby',
     src: '/assets/img/proj-spa-corridor.webp',
     title: 'Lobby — Office · Frankfurt · 2026',
     year: '2026',

@@ -1,5 +1,5 @@
 import { lazy, Suspense, type ReactElement } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router';
 import ErrorBoundary from './components/ErrorBoundary';
 import Layout from './components/Layout';
 import { LOCALES, ROUTE_KEYS, routePattern, toCanonicalPath } from './i18n/routes';

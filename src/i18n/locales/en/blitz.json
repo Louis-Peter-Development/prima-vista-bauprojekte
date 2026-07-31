@@ -2,7 +2,7 @@
   "intro": {
     "crumb": "Express quote · Preliminary estimate",
     "title": "The express<br/><em>quote.</em>",
-    "lede": "You know exactly what you want? Answer a few concrete questions about area and trades. Standard requests are calculated immediately — your preliminary cost estimate reaches your inbox within minutes; special cases are reviewed by our site management within 24 hours.",
+    "lede": "You know exactly what you want? Answer a few concrete questions about area and trades. Standard requests are calculated immediately — your preliminary cost estimate with a detailed PDF breakdown reaches your inbox within minutes; special cases are reviewed by our site management within 24 hours.",
     "list1": "Free initial assessment",
     "list2": "Instant estimate — 24 h at most",
     "list3": "A realistic price range",
@@ -79,8 +79,8 @@
     "consentLink": "Privacy",
     "consentError": "Please confirm the privacy notice.",
     "successAutoEyebrow": "Estimate sent",
-    "successAutoBody": "Your preliminary cost estimate has been calculated automatically and is already on its way — by email to <s>{{email}}</s>",
-    "successAutoStep1": "Check your inbox — the estimate with its range and assumptions is waiting there.",
+    "successAutoBody": "Your preliminary cost estimate was prepared using our calculator’s standard calculation for your stated project size. The email with the detailed PDF is already on its way to <s>{{email}}</s>",
+    "successAutoStep1": "Check your inbox — the detailed PDF shows the standard calculation with its items, range and assumptions.",
     "successAutoStep2": "Reply directly to the email if you have questions — you will be writing with our site management.",
     "successAutoStep3": "On request we arrange a site visit — the price becomes binding after measurement."
   }
