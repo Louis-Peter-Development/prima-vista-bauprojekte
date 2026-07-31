@@ -19,11 +19,30 @@ export type PostTranslations = {
 };
 
 export function sanitizePlainText(value: string, max = 4000): string {
-  return value
-    .replace(/<[^>]*>/g, '')
-    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '')
-    .trim()
-    .slice(0, max);
+  let plainText = '';
+  let insideTag = false;
+
+  for (const character of value) {
+    if (character === '<') {
+      insideTag = true;
+      continue;
+    }
+    if (character === '>') {
+      insideTag = false;
+      continue;
+    }
+    if (insideTag) continue;
+
+    const codePoint = character.codePointAt(0) ?? 0;
+    const isDisallowedControl =
+      (codePoint >= 0x00 && codePoint <= 0x08) ||
+      codePoint === 0x0b ||
+      codePoint === 0x0c ||
+      (codePoint >= 0x0e && codePoint <= 0x1f);
+    if (!isDisallowedControl) plainText += character;
+  }
+
+  return plainText.trim().slice(0, max);
 }
 
 export function slugify(value: string): string {

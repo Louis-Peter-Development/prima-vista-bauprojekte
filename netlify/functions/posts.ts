@@ -14,6 +14,7 @@ import {
 } from './_shared/content';
 import { asString, errorResponse, json, methodNotAllowed, readJson } from './_shared/http';
 import { normalizeLocale, type Locale } from '../../server/i18n.js';
+import { normalizeCoverImageUrl } from '../../src/utils/contentSecurity';
 
 type PostPayload = {
   title: string;
@@ -39,7 +40,7 @@ function serialize(
     title: source.title,
     slug: post.slug,
     author: post.author,
-    coverImageUrl: post.coverImageUrl,
+    coverImageUrl: normalizeCoverImageUrl(post.coverImageUrl),
     body: source.body,
     excerpt: source.excerpt,
     readingTime: source.readingTime,
@@ -117,17 +118,21 @@ function translationsFrom(value: unknown): PostTranslations {
   return translations;
 }
 
-function validatePayload(body: unknown): PostPayload | { error: string } {
+export function validatePostPayload(body: unknown): PostPayload | { error: string } {
   if (!body || typeof body !== 'object') return { error: 'Invalid body' };
   const record = body as Record<string, unknown>;
   const title = sanitizePlainText(asString(record.title), 140);
   const author = sanitizePlainText(asString(record.author) || 'Prima Vista Bauprojekte', 80);
-  const coverImageUrl = asString(record.coverImageUrl);
+  const requestedCoverImageUrl = asString(record.coverImageUrl);
+  const coverImageUrl = normalizeCoverImageUrl(requestedCoverImageUrl);
   const status = record.status === 'published' ? 'published' : 'draft';
   const tiptapBody = record.body;
 
   if (!title) return { error: 'title is required' };
   if (!isTiptapDoc(tiptapBody)) return { error: 'body must be a TipTap document' };
+  if (requestedCoverImageUrl && !coverImageUrl) {
+    return { error: 'coverImageUrl must use /assets/img/ or /api/uploads/' };
+  }
 
   return {
     title,
@@ -176,7 +181,7 @@ async function getPost(req: Request, context: Context, slug: string) {
 async function createPost(req: Request, context: Context) {
   if (!verifyAdmin(req, context)) return json({ error: 'Unauthorized' }, { status: 401 });
 
-  const payload = validatePayload(await readJson(req));
+  const payload = validatePostPayload(await readJson(req));
   if ('error' in payload) return json(payload, { status: 400 });
 
   const { Post } = await connectDb();
@@ -228,7 +233,7 @@ async function reorderPost(req: Request, context: Context, slug: string) {
 async function updatePost(req: Request, context: Context, slug: string) {
   if (!verifyAdmin(req, context)) return json({ error: 'Unauthorized' }, { status: 401 });
 
-  const payload = validatePayload(await readJson(req));
+  const payload = validatePostPayload(await readJson(req));
   if ('error' in payload) return json(payload, { status: 400 });
 
   const { Post } = await connectDb();

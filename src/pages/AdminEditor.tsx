@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router';
 import BlogEditor from '../components/blog/BlogEditor';
 import { usePageTitle } from '../hooks/usePageTitle';
 import { EMPTY_TIPTAP_DOC, type BlogPost, type PostStatus, type TiptapDoc } from '../types/blog';
+import { normalizeCoverImageUrl } from '../utils/contentSecurity';
 import '../styles/pages/blog.css';
 
 // The admin editor lives outside the localized URL space, so its UI/labels stay
@@ -41,6 +42,8 @@ export default function AdminEditor() {
   const [authorized, setAuthorized] = useState(false);
 
   const active = content[lang];
+  const safeCoverImageUrl = normalizeCoverImageUrl(coverImageUrl);
+  const hasInvalidCoverImageUrl = Boolean(coverImageUrl.trim()) && !safeCoverImageUrl;
   const setActive = (patch: Partial<LangContent>) =>
     setContent((current) => ({ ...current, [lang]: { ...current[lang], ...patch } }));
 
@@ -90,6 +93,11 @@ export default function AdminEditor() {
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setMessage('');
+    if (hasInvalidCoverImageUrl) {
+      setMessage('Titelbild-URL muss unter /assets/img/ oder /api/uploads/ liegen.');
+      return;
+    }
+
     // Include en/it only when they have a title (the server further requires a
     // valid body); absent languages fall back to German on the public site.
     const translations: Record<string, LangContent> = {};
@@ -102,7 +110,7 @@ export default function AdminEditor() {
       body: JSON.stringify({
         title: content.de.title,
         author,
-        coverImageUrl,
+        coverImageUrl: safeCoverImageUrl,
         status,
         body: content.de.body,
         translations,
@@ -202,16 +210,21 @@ export default function AdminEditor() {
                 {uploading ? 'Wird hochgeladen...' : 'Vom Gerät hochladen'}
                 <input type="file" accept="image/*" onChange={uploadCoverImage} disabled={uploading} />
               </label>
-              {coverImageUrl && (
-                <a className="btn btn--light" href={coverImageUrl} target="_blank" rel="noreferrer">
+              {safeCoverImageUrl && (
+                <a className="btn btn--light" href={safeCoverImageUrl} target="_blank" rel="noreferrer">
                   Bild ansehen
                 </a>
               )}
             </div>
-            {coverImageUrl && (
+            {safeCoverImageUrl && (
               <div className="blog-admin-upload__preview">
-                <img src={coverImageUrl} alt="Titelbild-Vorschau" />
+                <img src={safeCoverImageUrl} alt="Titelbild-Vorschau" />
               </div>
+            )}
+            {hasInvalidCoverImageUrl && (
+              <p className="blog-admin-upload__error" role="alert">
+                Nur Bilder unter /assets/img/ oder /api/uploads/ sind erlaubt.
+              </p>
             )}
             {uploadError && <p className="blog-admin-upload__error">{uploadError}</p>}
           </div>
