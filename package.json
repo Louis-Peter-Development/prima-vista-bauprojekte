@@ -20,7 +20,7 @@
         "netlify:dev": "netlify dev"
     },
     "dependencies": {
-        "@anthropic-ai/sdk": "^0.100.1",
+        "@anthropic-ai/sdk": "^0.115.0",
         "@netlify/blobs": "^10.7.11",
         "@netlify/functions": "^5.3.0",
         "@tiptap/extension-image": "^3.29.2",
