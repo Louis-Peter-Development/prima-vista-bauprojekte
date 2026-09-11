@@ -11,15 +11,17 @@
 }
 .pv-cookie__content {
   width: min(960px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: rgba(20, 19, 18, .96);
   color: var(--pv-bone);
   border: 1px solid rgba(236, 229, 223, .16);
   box-shadow: 0 28px 80px -36px rgba(0, 0, 0, .78);
   padding: 28px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 28px;
-  align-items: end;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
   pointer-events: auto;
 }
 .pv-cookie__eyebrow {
@@ -84,4 +86,76 @@
 .pv-cookie__actions .btn--light:hover {
   color: var(--pv-copper-bright);
   border-color: var(--pv-copper-bright);
+}
+.pv-cookie__preferences {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.pv-cookie__preferences legend {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.pv-cookie__option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid rgba(236, 229, 223, .25);
+  cursor: pointer;
+}
+.pv-cookie__option input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--pv-copper-bright);
+}
+.pv-cookie__option strong,
+.pv-cookie__option span span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.pv-cookie__option span span {
+  margin-top: 4px;
+  color: var(--pv-text-on-dark-muted);
+}
+.pv-cookie__option:has(input:disabled) {
+  cursor: default;
+  border-style: dashed;
+}
+.pv-cookie__option:focus-within {
+  outline: 2px solid var(--pv-copper-bright);
+  outline-offset: 2px;
+}
+.pv-cookie p.pv-cookie__error {
+  color: var(--pv-bone);
+}
+.pv-cookie-settings {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--pv-font-display);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--footer-faint);
+  cursor: pointer;
+}
+.pv-cookie-settings:hover {
+  color: var(--footer-hover);
+}
+.pv-cookie-settings:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+@media (max-width: 640px) {
+  .pv-cookie__preferences { grid-template-columns: minmax(0, 1fr); }
+  .pv-cookie__content { max-height: calc(100dvh - 24px); }
 }

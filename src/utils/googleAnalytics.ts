@@ -1,4 +1,4 @@
-import { hasAnalyticsConsent, readConsent } from '../hooks/useConsent';
+import { hasAdsMeasurementConsent, hasAnalyticsConsent, readConsent } from '../hooks/useConsent';
 
 const DEFAULT_GOOGLE_ANALYTICS_ID = 'G-ZSYN2EKHTF';
 // Fall back to the built-in ID only in production builds, so `vite dev` (and
@@ -51,13 +51,51 @@ function ensureDataLayer() {
   };
 }
 
+function consentSignals(analyticsGranted: boolean, adsMeasurementGranted = false) {
+  const adsGranted = analyticsGranted && adsMeasurementGranted;
+  return {
+    analytics_storage: analyticsGranted ? 'granted' : 'denied',
+    ad_storage: adsGranted ? 'granted' : 'denied',
+    ad_user_data: adsGranted ? 'granted' : 'denied',
+    // Measurement does not authorize personalized advertising or remarketing.
+    ad_personalization: 'denied',
+  };
+}
+
+function applyCurrentConsent() {
+  const consent = readConsent();
+  window.gtag?.('consent', 'update', consentSignals(
+    hasAnalyticsConsent(consent), hasAdsMeasurementConsent(consent),
+  ));
+}
+
 function initializeGoogleAnalytics() {
   if (!GOOGLE_ANALYTICS_ID || typeof window === 'undefined' || typeof document === 'undefined') {
     return false;
   }
-  if (googleAnalyticsInitialized) return true;
+  if (!analyticsAllowedNow()) return false;
+  if (googleAnalyticsInitialized) {
+    // Consent may have changed while a form request was in flight, before the
+    // React effect runs. Apply the current choice before dispatching an event.
+    applyCurrentConsent();
+    return true;
+  }
 
   ensureDataLayer();
+  // Queue defaults and the visitor's explicit choice before the Google loader
+  // or config can send data. Legacy "accept all" never grants the new purpose.
+  window.gtag?.('consent', 'default', consentSignals(false));
+  window.gtag?.('set', 'ads_data_redaction', true);
+  applyCurrentConsent();
+  window.gtag?.('js', new Date());
+  // Disable the automatic page_view; this is a SPA, so views are sent
+  // explicitly per route via trackGoogleAnalyticsPageView (incl. the first one).
+  window.gtag?.('config', GOOGLE_ANALYTICS_ID, {
+    anonymize_ip: true,
+    send_page_view: false,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
   if (!document.getElementById(GTAG_SCRIPT_ID)) {
     const script = document.createElement('script');
     script.id = GTAG_SCRIPT_ID;
@@ -65,24 +103,18 @@ function initializeGoogleAnalytics() {
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GOOGLE_ANALYTICS_ID)}`;
     document.head.append(script);
   }
-
-  window.gtag?.('js', new Date());
-  // Disable the automatic page_view; this is a SPA, so views are sent
-  // explicitly per route via trackGoogleAnalyticsPageView (incl. the first one).
-  window.gtag?.('config', GOOGLE_ANALYTICS_ID, {
-    anonymize_ip: true,
-    send_page_view: false,
-  });
   googleAnalyticsInitialized = true;
   return true;
 }
 
-export function updateGoogleAnalyticsConsent(granted: boolean) {
+export function updateGoogleAnalyticsConsent(granted: boolean, adsMeasurementGranted = false) {
   if (typeof window === 'undefined') return;
 
   if (granted) {
     if (initializeGoogleAnalytics()) {
-      window.gtag?.('consent', 'update', { analytics_storage: 'granted' });
+      window.gtag?.('consent', 'update', consentSignals(
+        true, adsMeasurementGranted && hasAdsMeasurementConsent(readConsent()),
+      ));
     }
     return;
   }
@@ -90,7 +122,7 @@ export function updateGoogleAnalyticsConsent(granted: boolean) {
   // Withdrawal: if GA was loaded earlier this session, tell it to stop using
   // analytics storage. If it was never loaded, there is nothing to disable.
   if (googleAnalyticsInitialized) {
-    window.gtag?.('consent', 'update', { analytics_storage: 'denied' });
+    window.gtag?.('consent', 'update', consentSignals(false));
   }
 }
 

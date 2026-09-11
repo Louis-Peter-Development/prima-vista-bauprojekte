@@ -58,7 +58,9 @@
       "p1": "Questo sito web utilizza Google Analytics, qualora lei accetti i servizi di analisi opzionali nell'avviso sui cookie. Il fornitore è Google Ireland Limited, Gordon House, Barrow Street, Dublino 4, Irlanda. Utilizziamo Google Analytics per analizzare le visualizzazioni delle pagine e l'utilizzo del sito e per migliorare la nostra offerta.",
       "p2": "Google Analytics può utilizzare cookie come «_ga» e trattare dati tecnici quali informazioni sul dispositivo e sul browser, indirizzi IP abbreviati, pagine consultate, referrer e orari di utilizzo. Il trattamento dei dati soggetti a consenso avviene esclusivamente sulla base del suo consenso ai sensi dell'art. 6, par. 1, lett. a) GDPR; il consenso è revocabile in qualsiasi momento con effetto per il futuro.",
       "p3pre": "Ulteriori informazioni sono disponibili nell'informativa sulla privacy di Google all'indirizzo ",
-      "p3post": "."
+      "p3post": ".",
+      "hAdsMeasurement": "Misurazione pubblicitaria con Google Ads",
+      "pAdsMeasurement": "Utilizziamo Google Analytics e Google Ads per collegare le richieste inviate correttamente ai nostri annunci solo se lei acconsente separatamente alla misurazione pubblicitaria. È necessario anche il suo consenso all'analisi del sito. Possono essere utilizzati cookie, informazioni tecniche sul browser e identificatori dei clic sugli annunci. Nomi, indirizzi e-mail, messaggi e altri contenuti dei moduli non vengono mai trasmessi negli eventi di misurazione. Non utilizziamo questa misurazione per il remarketing o la pubblicità personalizzata. Può revocare il suo consenso in qualsiasi momento nelle «Impostazioni dei cookie», con effetto per il futuro."
     },
     "chatbot": {
       "title": "Chatbot",

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
 import { useVideoActive } from '../../hooks/useVideoPlayback';
@@ -16,7 +16,10 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
-  useVideoActive(active);
+  useVideoActive(consented && active);
+  useEffect(() => {
+    if (!consented) setActive(false);
+  }, [consented]);
   const title = video.label ?? t('detail.featureFallback', { headline });
 
   function handleActivate() {
@@ -40,7 +43,7 @@ export default function ProjectFeatureVideo({ video, headline, poster }: Project
           </p>
         )}
 
-        {active ? (
+        {consented && active ? (
           <div className="pd-video pd-video--playing pd-feature__media">
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1`}

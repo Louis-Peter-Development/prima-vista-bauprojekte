@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
 import { useVideoActive } from '../../hooks/useVideoPlayback';
@@ -13,7 +13,10 @@ export default function HomeAboutVideo() {
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState(false);
-  useVideoActive(active);
+  useVideoActive(consented && active);
+  useEffect(() => {
+    if (!consented) setActive(false);
+  }, [consented]);
 
   function handleActivate() {
     if (!consented) {
@@ -34,7 +37,7 @@ export default function HomeAboutVideo() {
         </p>
       )}
 
-      {active ? (
+      {consented && active ? (
         <div className="founders-video__frame founders-video__frame--playing">
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${ABOUT_VIDEO_ID}?autoplay=1&rel=0`}

@@ -62,6 +62,8 @@ export default function Datenschutz() {
         <h3>{t('datenschutz.analytics.hGa')}</h3>
         <p>{t('datenschutz.analytics.p1')}</p>
         <p>{t('datenschutz.analytics.p2')}</p>
+        <h3>{t('datenschutz.analytics.hAdsMeasurement')}</h3>
+        <p>{t('datenschutz.analytics.pAdsMeasurement')}</p>
         <p>
           {t('datenschutz.analytics.p3pre')}
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>

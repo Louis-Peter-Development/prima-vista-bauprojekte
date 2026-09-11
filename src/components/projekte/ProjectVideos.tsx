@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { hasYouTubeConsent, openConsentBanner, useConsent } from '../../hooks/useConsent';
 import { useVideoActive } from '../../hooks/useVideoPlayback';
@@ -17,7 +17,10 @@ export default function ProjectVideos({ videos, headline, poster }: ProjectVideo
   const consent = useConsent();
   const consented = hasYouTubeConsent(consent);
   const [active, setActive] = useState<Set<string>>(() => new Set());
-  useVideoActive(active.size > 0);
+  useVideoActive(consented && active.size > 0);
+  useEffect(() => {
+    if (!consented) setActive((previous) => previous.size ? new Set() : previous);
+  }, [consented]);
 
   function handleActivate(id: string) {
     if (!consented) {
@@ -46,7 +49,7 @@ export default function ProjectVideos({ videos, headline, poster }: ProjectVideo
         <div className="pd-videos__grid">
           {videos.map((video, i) => {
             const title = video.label ?? t('detail.videoFallback', { headline, n: i + 1 });
-            const isActive = active.has(video.id);
+            const isActive = consented && active.has(video.id);
 
             if (isActive) {
               return (
