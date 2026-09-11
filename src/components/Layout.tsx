@@ -10,7 +10,7 @@ import Chat from './Chat';
 import CookieConsent from './CookieConsent';
 import { LightboxProvider } from './Lightbox';
 import { useReveal } from '../hooks/useReveal';
-import { hasAnalyticsConsent, useConsent } from '../hooks/useConsent';
+import { hasAdsMeasurementConsent, hasAnalyticsConsent, hasChatbotConsent, useConsent } from '../hooks/useConsent';
 import { getRouteMeta } from '../data/routeMeta';
 import { setPageMeta } from '../utils/metadata';
 import LocaleSync from '../i18n/LocaleSync';
@@ -262,6 +262,7 @@ function GoogleAnalyticsTracker() {
   const location = useLocation();
   const hasTrackedPath = useRef('');
   const analyticsAllowed = hasAnalyticsConsent(consent);
+  const adsMeasurementAllowed = hasAdsMeasurementConsent(consent);
   const pagePath = `${location.pathname}${location.search}${location.hash}`;
 
   useEffect(() => {
@@ -271,8 +272,8 @@ function GoogleAnalyticsTracker() {
 
   useEffect(() => {
     if (!hasGoogleAnalyticsConfig()) return;
-    updateGoogleAnalyticsConsent(analyticsAllowed);
-  }, [analyticsAllowed]);
+    updateGoogleAnalyticsConsent(analyticsAllowed, adsMeasurementAllowed);
+  }, [analyticsAllowed, adsMeasurementAllowed]);
 
   useEffect(() => {
     if (!hasGoogleAnalyticsConfig() || !analyticsAllowed) return;
@@ -288,6 +289,7 @@ function GoogleAnalyticsTracker() {
 export default function Layout() {
   useReveal();
   const isDesktop = useIsDesktop();
+  const consent = useConsent();
   return (
     <LightboxProvider>
       <LocaleSync />
@@ -302,7 +304,7 @@ export default function Layout() {
       <BookingFloat />
       <ScrollDownFloat />
       <AdminBackFloat />
-      {isDesktop && <Chat />}
+      {isDesktop && hasChatbotConsent(consent) && <Chat />}
       <CookieConsent />
       <Footer />
     </LightboxProvider>

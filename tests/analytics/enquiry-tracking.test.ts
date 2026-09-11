@@ -132,7 +132,9 @@ describe('consented enquiry tracking', () => {
     analytics.updateGoogleAnalyticsConsent(false);
     analytics.trackGoogleAnalyticsLead('calculator', { ok: true }, { ok: true }, {});
     expect(eventCalls()).toHaveLength(0);
-    expect(gtag).toHaveBeenCalledWith('consent', 'update', { analytics_storage: 'denied' });
+    expect(gtag).toHaveBeenCalledWith('consent', 'update', {
+      analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    });
   });
 
   it('does not replay a completed unconsented flow after consent is granted', () => {
@@ -155,6 +157,48 @@ describe('consented enquiry tracking', () => {
     vi.resetModules();
     const disabledAnalytics = await import('../../src/utils/googleAnalytics');
     disabledAnalytics.trackGoogleAnalyticsLead('contact', { ok: true }, { ok: true }, {});
+    expect(gtag).not.toHaveBeenCalled();
+  });
+});
+
+describe('explicit advertising measurement consent', () => {
+  const deniedAds = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+
+  it('keeps legacy accept-all analytics consent separate from advertising', () => {
+    consent(true);
+    analytics.updateGoogleAnalyticsConsent(true, true);
+    expect(gtag).toHaveBeenCalledWith('consent', 'default', { analytics_storage: 'denied', ...deniedAds });
+    expect(gtag).toHaveBeenLastCalledWith('consent', 'update', { analytics_storage: 'granted', ...deniedAds });
+    const commands = gtag.mock.calls.map(([command]) => command);
+    expect(commands.indexOf('consent')).toBeLessThan(commands.indexOf('config'));
+    expect(gtag).toHaveBeenCalledWith('config', GA_ID, expect.objectContaining({
+      allow_google_signals: false, allow_ad_personalization_signals: false,
+    }));
+  });
+
+  it('grants measurement only after the new explicit choice, never personalization', () => {
+    storedConsent = JSON.stringify({ version: 2, choice: 'custom', analytics: true, adsMeasurement: true });
+    analytics.updateGoogleAnalyticsConsent(true, true);
+    expect(gtag).toHaveBeenLastCalledWith('consent', 'update', {
+      analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'denied',
+    });
+    expect(appendScript).toHaveBeenCalledTimes(1);
+  });
+
+  it('revokes ad measurement before a pending successful lead is dispatched', () => {
+    storedConsent = JSON.stringify({ version: 2, choice: 'all', analytics: true, adsMeasurement: true });
+    analytics.updateGoogleAnalyticsConsent(true, true);
+    storedConsent = JSON.stringify({ version: 2, choice: 'custom', analytics: true, adsMeasurement: false });
+    gtag.mockClear();
+    analytics.trackGoogleAnalyticsLead('contact', { ok: true }, { ok: true }, {});
+    expect(gtag.mock.calls[0]).toEqual(['consent', 'update', { analytics_storage: 'granted', ...deniedAds }]);
+    expect(eventCalls('generate_lead')).toHaveLength(1);
+  });
+
+  it('does not initialize on a page view without analytics consent', () => {
+    storedConsent = JSON.stringify({ version: 2, choice: 'custom', analytics: false, adsMeasurement: true });
+    analytics.trackGoogleAnalyticsPageView('/kontakt');
+    expect(appendScript).not.toHaveBeenCalled();
     expect(gtag).not.toHaveBeenCalled();
   });
 });

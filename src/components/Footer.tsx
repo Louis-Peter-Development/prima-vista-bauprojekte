@@ -2,6 +2,7 @@ import { useLocation } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { Link } from '../i18n/Link';
 import { toCanonicalPath } from '../i18n/routes';
+import { openConsentBanner } from '../hooks/useConsent';
 import { ChatIcon, FacebookIcon, InstagramIcon, MailIcon, YoutubeIcon } from './icons';
 
 export default function Footer() {
@@ -164,6 +165,7 @@ export default function Footer() {
             <Link to="/admin/blog">{t('footer.admin')}</Link>
             <Link to="/impressum">{t('footer.imprint')}</Link>
             <Link to="/datenschutz">{t('footer.privacy')}</Link>
+            <button className="pv-cookie-settings" type="button" onClick={openConsentBanner}>{t('cookie.settings')}</button>
           </div>
         </div>
       </div>
