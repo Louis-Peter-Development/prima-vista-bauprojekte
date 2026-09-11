@@ -39,6 +39,26 @@ describe.each(['netlify-cli', '@netlify/zip-it-and-ship-it'])('%s TOML parser', 
     expect(() => toml.parse('[package\nname = "broken"')).toThrow();
   });
 
+  it('allows the observed consented GA4 collectors without weakening script restrictions', () => {
+    const source = readFileSync(new URL('../../netlify.toml', import.meta.url), 'utf8');
+    const config = toml.parse(source);
+    const headers = config.headers as { for: string; values: Record<string, string> }[];
+    const policy = headers.find((entry) => entry.for === '/*')?.values['Content-Security-Policy'];
+    expect(policy).toBeTypeOf('string');
+    const directives = new Map(policy!.split(';').map((directive) => {
+      const [name, ...sources] = directive.trim().split(/\s+/);
+      return [name, sources];
+    }));
+    expect(directives.get('connect-src')).toEqual(expect.arrayContaining([
+      'https://www.google-analytics.com', 'https://analytics.google.com', 'https://www.google.com',
+    ]));
+    expect(directives.get('connect-src')).not.toEqual(expect.arrayContaining(['*']));
+    expect(directives.get('script-src')).not.toEqual(expect.arrayContaining(["'unsafe-eval'"]));
+    expect(directives.get('script-src')).not.toEqual(expect.arrayContaining(["'unsafe-inline'"]));
+    expect(directives.get('object-src')).toEqual(["'none'"]);
+    expect(directives.get('frame-ancestors')).toEqual(["'self'"]);
+  });
+
   it.each([
     ['arrays', `value=${'['.repeat(3000)}1${']'.repeat(3000)}`],
     ['inline tables', `value=${'{item='.repeat(3000)}1${'}'.repeat(3000)}`],
